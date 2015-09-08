@@ -1,0 +1,56 @@
+/*!
+ * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    font-size: 14px;
+}
+
+/*Fix for jumping navbar when modals get active: https://github.com/twbs/bootstrap/issues/14040*/
+body.modal-open {
+    overflow-y: auto !important;
+    padding-right: 0 !important;
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+#chat-wrap {
+    border: 1px solid #eee;
+    /*margin: 0 0 15px 0;*/
+}
+
+#chat-area {
+    height: 120px;
+    overflow: auto;
+    border: 1px solid #ddd; 
+    padding: 10px;
+    background: #fff; 
+    border-radius: 6px;
+    margin: 0;
+    /*line-height: 2em;*/
+ }
+  
+#chat-area span  { 
+    color: white; 
+    background: #333; 
+    padding: 4px 8px; 
+    border-radius: 0.5em; 
+    margin: 0 5px 0 0; 
+}
+
+/*#chat-area p {
+    padding: 8px 0;
+}*/

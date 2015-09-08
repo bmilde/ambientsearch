@@ -1,0 +1,16 @@
+INSTALL
+
+Flask is needed to run the scripts, it has an integrated web server:
+
+pip install flask
+
+You also need a redis server running on your local machine 
+
+To start the server:
+python python/event_server.py
+
+For actual microphone input (needs Kaldi server running somewhere):
+python python/mic_client.py
+
+To simulate microphone input (easier to debug):
+python python/simulate_mic_input.py
