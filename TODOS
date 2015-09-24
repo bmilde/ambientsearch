@@ -1,10 +1,8 @@
 TODOS
 - Extend python python/simulate_mic_input.py to simulate keywords and add more events
-- Test out wiki_search.py (this is untested code)
 - Display wikipedia data dynamically with js, according to incoming events, extend bridge.py as nessecary
 - Additional event for points of interest on a map (Benjamin: I will work on the NLP part of this, simulate as nessecary)
 - History? Maybe past keywords are accesisable by scrolling the page
 - Settings? What could be good to include here, e.g. language (there will be German and English)
 - Pause button to stop speech input
 - Figure out best font sizes and if everything resizes correctly and responsively on a big screen, and if everything still looks good on a laptop at the same time
-- There is currently too much space above "Relevant" and "Speech input" headlines
