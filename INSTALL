@@ -4,7 +4,7 @@ Flask is needed to run the scripts, it has an integrated web server:
 
 pip install flask
 
-You also need a redis server running on your local machine 
+You also need a redis server (http://redis.io/) running on your local machine 
 
 To start the server:
 python python/event_server.py
