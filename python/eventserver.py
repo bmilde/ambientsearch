@@ -5,6 +5,7 @@ import redis
 import mic_client
 import os
 import json
+from werkzeug.serving import WSGIRequestHandler
 
 base_path = os.getcwd() + '/'
 print "base_path:",base_path
@@ -15,6 +16,9 @@ app._static_folder = base_path
 app._static_files_root_folder_path = base_path
 
 red = redis.StrictRedis()
+
+long_poll_timeout = 0.5
+long_poll_timeout_burst = 0.08
 
 #Send event to the event stream
 def event_stream():
@@ -29,6 +33,17 @@ def event_stream():
 def stream():
     return flask.Response(event_stream(),
                           mimetype="text/event-stream")
+
+#Traditional long polling. This is the fall back, if a browser does not support server side events.
+@app.route('/stream_poll')
+def poll():
+    pubsub = red.pubsub()
+    pubsub.subscribe('ambient')
+    message = pubsub.get_message(timeout=long_poll_timeout)
+    while(message != None):
+        yield message
+        message = pubsub.get_message(timeout=long_poll_timeout_burst)
+    return ""
 
 @app.route('/addUtterance', methods=['POST'])
 def addUtterance():
@@ -71,5 +86,6 @@ def send_fonts(path):
                           
 if __name__ == '__main__':
     app.debug = True
+    WSGIRequestHandler.protocol_version = "HTTP/1.1"
     app.run(threaded=True)  
  
