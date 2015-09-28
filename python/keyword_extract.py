@@ -5,8 +5,9 @@ import re
 import operator
 from collections import defaultdict
 from topia.termextract import extract
+import wiki_search
 
-#This is needed for English. TODO: move this out of the global scope and make it multi-language (de + en)
+#This is needed for English. TODO: This is hacky. Move this out of the global scope and make it multi-language (de + en) and move word lists to static files.
 druid_mwe_file = 'data/wikipedia_complete_druid_4gram_en.bz2'
 RE_D = re.compile('\d')
 stopwords_list = ["(",")",",",":","[","]",";",".","...","'","'d","&","$","i","a", "n't", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as", "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "being", "below", "beside", "besides", "between", "beyond", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "could", "couldnt", "cry", "do", "done", "down", "due", "during", "each", "eg", "either", "else", "elsewhere", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "for", "former", "formerly", "from", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "this", "those", "though", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"]
@@ -63,7 +64,7 @@ class KeywordExtract:
                 #merge all keywords that are not already merged to 'merge_to_keyword', add scores
                 for keyword in merge_group:
                     if keyword != merge_to_keyword:
-                        if keyword in keywords:
+                        if keyword in keywords and merge_to_keyword in keywords:
                             keywords[merge_to_keyword] += keywords[keyword]
                             del keywords[keyword]
 
@@ -104,7 +105,7 @@ class KeywordExtract:
 
         return keywords_sorted
 
-    def buildDruidCache(self,cutoff_druid_score=0.0):
+    def buildDruidCache(self,cutoff_druid_score=0.2):
         druid_bz2 = bz2.BZ2File(druid_mwe_file, mode='r')
         druid_file = codecs.iterdecode(druid_bz2, 'utf-8')
         num_added_words=0
@@ -126,6 +127,13 @@ class KeywordExtract:
                 else:
                     break
 
-ke = KeywordExtract()
-ke.buildDruidCache()
-print ke.getKeywordsDruid(u"A columbia university law professor stood in a hotel lobby one morning and noticed a sign apologizing for an elevator that was out of order. it had dropped unexpectedly three stories a few days earlier. the professor, eben moglen, tried to imagine what the world would be like if elevators were not built so that people could inspect them. mr. moglen was on his way to give a talk about the dangers of secret code, known as proprietary software, that controls more and more devices every day. proprietary software is an unsafe building material, mr. moglen had said. you can't inspect it. he then went to the golden gate bridge and jumped.")
+if __name__ == "__main__":
+    print 'Scripting directly called, I will perform some testing.'
+    ke = KeywordExtract()
+    ke.buildDruidCache()
+    test = ke.getKeywordsDruid(u"A columbia university law professor stood in a hotel lobby one morning and noticed a sign apologizing for an elevator that was out of order. it had dropped unexpectedly three stories a few days earlier. the professor, eben moglen, tried to imagine what the world would be like if elevators were not built so that people could inspect them. mr. moglen was on his way to give a talk about the dangers of secret code, known as proprietary software, that controls more and more devices every day. proprietary software is an unsafe building material, mr. moglen had said. you can't inspect it. he then went to the golden gate bridge and jumped.")
+    print test
+    print wiki_search.getSummariesSingleKeyword(test)
+    test = ke.getKeywordsDruid(u"So i was walking down the golden gate bridge, i had the epiphany that in order to be a good computer scientist, i need to learn and practise machine learning. Also proprietary software is the root of all evil and I should better use open source software.")
+    print test
+    print wiki_search.getSummariesSingleKeyword(test)
