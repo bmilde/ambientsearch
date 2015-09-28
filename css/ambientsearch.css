@@ -33,7 +33,7 @@ footer {
 }
 
 #chat-area {
-    height: 120px;
+    height: 130px;
     overflow: auto;
     border: 1px solid #ddd; 
     padding: 10px;
