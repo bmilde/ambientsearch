@@ -20,17 +20,26 @@ def filterBrackets(test_str):
             ret += i
     return ret
 
-def getSummariesSingleKeyword(keywords,lang="en"):
+# Input: sorted list of tuples (keyword,scores), maximal number of articles (can be more keywords, if no)
+# This version does not perform clustering
+def getSummariesSingleKeyword(keywords, max_articles=4, lang="en"):
 	wikipedia.set_lang(lang)
 	articles,summaries = [],[]
-	for keyword in keywords:
+
+	num_results = 0
+
+	for keyword,score in keywords:
+		if num_results >= max_articles:
+			break
 		#check cache first
 		if 	keyword in keyword_cache:
 			articles.append(keyword_cache[keyword])
+			num_results += 1
 		else:
 			result = wikipedia.search(keyword)
 			if len(result) > 0:
 				articles.append(result[0])
+				num_results += 1
 				keyword_cache[keyword] = result[0]
 			else:
 				keyword_cache[keyword] = ""
