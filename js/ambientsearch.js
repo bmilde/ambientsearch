@@ -1,3 +1,17 @@
+/*Events: relevant documents*/
+
+wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').text);
+
+function addRelevantEntry(json_event) {
+	if (json_event["type"] == "wiki")
+	{
+		html = wikiEntryTemplate(json_event);
+		console.log(html);
+		$(html).hide().appendTo("#relevantDocs").fadeIn(500);
+	}
+}
+
+/*Events: speech recognition feedback*/
 function renderUtterance(json_event) {
 	return '<span>'+json_event.speaker+':</span> '+json_event.utterance
 }
@@ -12,20 +26,25 @@ function replaceLastUtterance(json_event) {
 	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 }
 
+/*Dispatch events from EventSource*/
+
 var source = new EventSource('/stream');
-var utts = []
+var utts = [];
 
 source.onmessage = function (event) {
 	json_event = JSON.parse(event.data);
 	if (json_event.handle == 'addUtterance')
 	{
-		utts.push(json_event.utterance)
-		addUtterance(json_event)
+		utts.push(json_event.utterance);
+		addUtterance(json_event);
 	}
 	else if (json_event.handle == 'replaceLastUtterance')
 	{
-		utts.pop()
-		utts.push(json_event.utterance)
-		replaceLastUtterance(json_event)
+		utts.pop();
+		utts.push(json_event.utterance);
+		replaceLastUtterance(json_event);
+	}else if (json_event.handle == 'addRelevantEntry')
+	{
+		addRelevantEntry(json_event);
 	}
 };

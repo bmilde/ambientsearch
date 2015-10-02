@@ -2,7 +2,9 @@ import wikipedia
 
 summary_cache = {}
 keyword_cache = {}
+wiki_cache = {}
 
+#Remove text between () and [] in a string, taken from http://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
 def filterBrackets(test_str):
     ret = ''
     skip1c = 0
@@ -22,14 +24,15 @@ def filterBrackets(test_str):
 
 # Input: sorted list of tuples (keyword,scores), maximal number of articles (can be more keywords, if no)
 # This version does not perform clustering
-def getSummariesSingleKeyword(keywords, max_articles=4, lang="en"):
+def getSummariesSingleKeyword(keywords, max_entries=4, lang='en', pics_folder='pics/'):
 	wikipedia.set_lang(lang)
-	articles,summaries = [],[]
+	articles = []
+	summary_box_info = {}
 
 	num_results = 0
 
 	for keyword,score in keywords:
-		if num_results >= max_articles:
+		if num_results >= max_entries:
 			break
 		#check cache first
 		if 	keyword in keyword_cache:
@@ -38,18 +41,25 @@ def getSummariesSingleKeyword(keywords, max_articles=4, lang="en"):
 		else:
 			result = wikipedia.search(keyword)
 			if len(result) > 0:
-				articles.append(result[0])
-				num_results += 1
-				keyword_cache[keyword] = result[0]
+				try:
+					article = result[0]
+					summary = filterBrackets(wikipedia.summary(article, sentences=1))
+					articles.append((article,summary,score))
+					num_results += 1
+					keyword_cache[keyword] = (article,summary,score)
+				except Exception as e: #TODO: we should jut ignore DisambiguationError and report the rest
+					pass
 			else:
-				keyword_cache[keyword] = ""
+				keyword_cache[keyword] = ("","",0.0)
 				
-	for article in articles:
+	for article,summary,score in articles:
 		if article != '':
-			if article in summary_cache:
-				summaries += [summary_cache[article]]
+
+			if article in wiki_cache:
+				wiki_article = wiki_cache[article]
 			else:
-				summary = filterBrackets(wikipedia.summary(article, sentences=1))
-				summaries += [summary]
-				summary_cache[article] = summary
-	return summaries
+				wiki_article = wikipedia.page(article)
+
+			summary_box_info[wiki_article.title] = {'title':wiki_article.title,'text':summary,'url':wiki_article.url,'score':score}
+
+	return summary_box_info

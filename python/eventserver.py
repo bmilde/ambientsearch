@@ -34,7 +34,7 @@ def stream():
     return flask.Response(event_stream(),
                           mimetype="text/event-stream")
 
-#Traditional long polling. This is the fall back, if a browser does not support server side events.
+#Traditional long polling. This is the fall back, if a browser does not support server side events. TODO: test and handle disconnects
 @app.route('/stream_poll')
 def poll():
     pubsub = red.pubsub()
@@ -43,19 +43,15 @@ def poll():
     while(message != None):
         yield message
         message = pubsub.get_message(timeout=long_poll_timeout_burst)
-    return ""
 
+#This could also be replaced with just using redis for message passing
 @app.route('/addUtterance', methods=['POST'])
-def addUtterance():
-    print "addUtterance"
-    received_json = flask.request.json
-    red.publish('ambient', json.dumps(received_json))
-    return "ok"
-    
 @app.route('/replaceLastUtterance', methods=['POST'])
-def replaceLastUtterance():
-    print "replaceLastUtterance"
+@app.route('/addRelevantEntry', methods=['POST'])
+@app.route('/delRelevantEntry', methods=['POST'])
+def generate_event():
     received_json = flask.request.json
+    print received_json
     red.publish('ambient', json.dumps(received_json))
     return "ok"
 

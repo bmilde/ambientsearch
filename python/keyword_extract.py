@@ -6,6 +6,9 @@ import operator
 from collections import defaultdict
 from topia.termextract import extract
 import wiki_search
+import os.path
+import sys
+
 
 #This is needed for English. TODO: This is hacky. Move this out of the global scope and make it multi-language (de + en) and move word lists to static files.
 druid_mwe_file = 'data/wikipedia_complete_druid_4gram_en.bz2'
@@ -15,7 +18,15 @@ stopwords = dict(zip([unicode(word) for word in stopwords_list],[1]*len(stopword
 
 common_words = {}
 
-with codecs.open('data/1-1000_en.txt','r','utf-8') as common_words_file:
+common_words_filename = 'data/1-1000_en.txt'
+if not os.path.isfile(common_words_filename):
+    common_words_filename = 'python/'+common_words_filename
+    if not os.path.isfile(common_words_filename):
+        print 'Could not find data/1-1000_en.txt!'
+        sys.exit(-1)
+
+
+with codecs.open(common_words_filename,'r','utf-8') as common_words_file:
     for line in common_words_file:
         common_words[line[:-1]] = 1
 

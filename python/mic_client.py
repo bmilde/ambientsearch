@@ -16,10 +16,14 @@ import nltk
 import traceback
 import requests
 import redis
+import wiki_search
+import keyword_extract
+import concurrent.futures
 
 from topia.termextract import extract
 
 from bridge import KeywordClient,KeywordClientHacky
+future_keyword_executor = concurrent.futures.ProcessPoolExecutor(max_workers=1)
 
 std_speaker = "You"
 
@@ -37,8 +41,6 @@ def rate_limited(maxPerSecond):
             return ret
         return rate_limited_function
     return decorate
-
-
 
 class KaldiClient(WebSocketClient):
 
@@ -60,9 +62,9 @@ class KaldiClient(WebSocketClient):
             if self.paudio.get_device_info_by_host_api_device_index(0,i).get('maxInputChannels')>0:
                 if 'Yamaha' in self.paudio.get_device_info_by_host_api_device_index(0,i).get('name'):
                     return i
-        print 'No yamaha microphone found, defaulting to first available input device...'
+        print 'No yamaha microphone found, defaulting to last available input device...'
 
-        for i in range (0,numdevices):
+        for i in reversed(range (0,numdevices)):
             if self.paudio.get_device_info_by_host_api_device_index(0,i).get('maxInputChannels')>0:
                 return i
 
@@ -87,6 +89,8 @@ class KaldiClient(WebSocketClient):
 
         self.keyword_extractor = extract.TermExtractor()
         self.keyword_extractor.filter = extract.permissiveFilter
+
+        self.last_relevant_entries = {}
 
         if self.send_to_keywordserver:
             self.keyword_client.addUtterance('','speaker1')
@@ -128,32 +132,28 @@ class KaldiClient(WebSocketClient):
         t = threading.Thread(target=send_data_to_ws)
         t.start()
 
-    def getKeywords(self, currentHyp, contextWords=200, ignoreNumRecentWords=1, maxKeywords=7):
+    def send_relevant_entry_updates(self,complete_transcript,max_entries=4):
+        print 'send_relevant_entry_updates called'
+        keywords = ke.getKeywordsDruid(complete_transcript)
+        relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
+        print relevant_entries
 
-        tokens = nltk.word_tokenize(u' '.join(self.final_hyps) + u' ' + currentHyp)[-contextWords:(None if currentHyp == '' else -ignoreNumRecentWords)] 
-        #tags = nltk.pos_tag(tokens)
+        #generate add relevant entries
+        for key in set(relevant_entries) - set(self.last_relevant_entries):
+            entry = relevant_entries[key]
+            self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"])
+            print 'add',key
+        #generate del relevant entries
+        for key in set(self.last_relevant_entries) - set(relevant_entries):
+            entry = self.last_relevant_entries[key]
+            self.keyword_client.delRelevantEntry("wiki", entry["title"])
+            print 'del',key
 
-        past_tag = None
-        extracted_keywords = self.keyword_extractor(' '.join(tokens))
-        extracted_keywords = sorted(extracted_keywords, key=lambda x: x[1]*x[2], reverse=True)
-        #print extracted_keywords
-        keywords = [keyword[0] for keyword in extracted_keywords]
+        self.last_relevant_entries = relevant_entries
+        #now send updates
+        return relevant_entries
 
-        #Get keywords as a list of nouns. MWEs are heuristically choosen if two preceedings tokens share the same noun tag.
-        #for touple in tags:
-        #    word,tag = touple
-        #    
-        #    if tag in ['NN', 'NNP', 'NNPS', 'NNS']:
-        #	if past_tag and past_tag in ['NN', 'NNP', 'NNPS', 'NNS']:
-        #	    keywords[0] += ' ' + word   
-        #	else:	
-        #	    keywords = [word] + keywords		    
-        #   past_tag = tag
-        #
-        #keywords = [touple[0] for touple in tags if touple[1] in ['NN', 'NNP', 'NNPS', 'NNS']]
-
-        return keywords[:maxKeywords]
-
+    # received decoding message from upstream Kaldi server
     def received_message(self, m):
         try:
             response = json.loads(str(m))
@@ -165,22 +165,23 @@ class KaldiClient(WebSocketClient):
                     if response['result']['final']:
                         if trans not in ['a.','I.','i.','the.','but.','one.','it.','she.']:
                             self.final_hyps.append(trans)
-                            keyword_list = self.getKeywords('')			    
-
+                            		    
                             if self.send_to_keywordserver:
                                 self.keyword_client.replaceLastUtterance(self.last_hyp, trans, std_speaker)
                                 self.keyword_client.addUtterance('',std_speaker)
                                 self.last_hyp = ''
-                                self.keyword_client.setKeywordList(keyword_list)
-                            print u'\r\033[K',trans.replace(u'\n', u'\\n'),u'        Keywords: [',u','.join(keyword_list),u']' 
+
+                                complete_transcript = '\n'.join(sentence[:-1] for sentence in self.final_hyps)
+                                #non-blocking
+                                future_relevant_entries = future_keyword_executor.submit(self.send_relevant_entry_updates(complete_transcript))
+                                
+                            print u'\r\033[K',trans.replace(u'\n', u'\\n')
                     else:
-                        keyword_list = self.getKeywords(trans)
                         if self.send_to_keywordserver:
                             self.keyword_client.replaceLastUtterance(self.last_hyp, trans, std_speaker)
                             self.last_hyp = trans
-                            self.keyword_client.setKeywordList(keyword_list) 
                         print_trans = trans.replace(u'\n', u'\\n')
-                        print u'\r\033[K',print_trans,u'        Keywords: [',u','.join(keyword_list),u']'
+                        print u'\r\033[K',print_trans
                 if 'adaptation_state' in response:
                     if self.save_adaptation_state_filename:
                         print u'Saving adaptation state to %s' % self.save_adaptation_state_filename
@@ -233,4 +234,6 @@ def main():
 
 if __name__ == "__main__":
     args = main()
+    ke = keyword_extract.KeywordExtract()
+    ke.buildDruidCache()
     connect_ws(args)

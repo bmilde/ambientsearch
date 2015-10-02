@@ -12,14 +12,19 @@ class KeywordClient():
         r = requests.get(self.server_url+'getSettings')
         return r.json()
 
-    def setKeywordList(self, keyword_list):
-        data = {'keywords':keyword_list}
-        r = requests.post(self.server_url+'setKeywordList', data=json.dumps(data), headers=self.request_header)
-        return r.status_code
+    #def setKeywordList(self, keyword_list):
+    #    data = {'keywords':keyword_list}
+    #    r = requests.post(self.server_url+'setKeywordList', data=json.dumps(data), headers=self.request_header)
+    #    return r.status_code
         
-    def addRelevantEntry(self, type,title,text,url):
-        data = {'type':type,'title':title,'text':text,'url':url}
+    def addRelevantEntry(self, type, title, text, url, score):
+        data = {'handle':'addRelevantEntry','type':type,'entry_id':title.replace(' ','_'),'title':title,'text':text,'url':url,'score':score}
         r = requests.post(self.server_url+'addRelevantEntry', data=json.dumps(data), headers=self.request_header)
+        return r.status_code
+
+    def delRelevantEntry(self, type, title):
+        data = {'handle':'delRelevantEntry','type':type,'title':title}
+        r = requests.post(self.server_url+'delRelevantEntry', data=json.dumps(data), headers=self.request_header)
         return r.status_code
 
     def addUtterance(self, utterance,speaker):
