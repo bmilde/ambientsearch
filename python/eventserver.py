@@ -20,10 +20,12 @@ red = redis.StrictRedis()
 long_poll_timeout = 0.5
 long_poll_timeout_burst = 0.08
 
+ambient_server_channel = 'ambient'
+
 #Send event to the event stream
 def event_stream():
     pubsub = red.pubsub()
-    pubsub.subscribe('ambient')
+    pubsub.subscribe(ambient_server_channel)
     for message in pubsub.listen():
         print 'New message:', message
         yield 'data: %s\n\n' % message['data']
@@ -38,7 +40,7 @@ def stream():
 @app.route('/stream_poll')
 def poll():
     pubsub = red.pubsub()
-    pubsub.subscribe('ambient')
+    pubsub.subscribe(ambient_server_channel)
     message = pubsub.get_message(timeout=long_poll_timeout)
     while(message != None):
         yield message
@@ -52,7 +54,7 @@ def poll():
 def generate_event():
     received_json = flask.request.json
     print received_json
-    red.publish('ambient', json.dumps(received_json))
+    red.publish(ambient_server_channel, json.dumps(received_json))
     return "ok"
 
 #These should ideally be served with a real web server, but for developping purposes, serving static files with Flask is also ok:

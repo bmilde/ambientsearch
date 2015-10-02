@@ -1,5 +1,8 @@
 import requests
 import json
+import redis
+
+red = redis.StrictRedis()
 
 #Abstracts away the details of communicating with the ambient server
 class KeywordClient():
@@ -11,11 +14,6 @@ class KeywordClient():
     def getSettings():
         r = requests.get(self.server_url+'getSettings')
         return r.json()
-
-    #def setKeywordList(self, keyword_list):
-    #    data = {'keywords':keyword_list}
-    #    r = requests.post(self.server_url+'setKeywordList', data=json.dumps(data), headers=self.request_header)
-    #    return r.status_code
         
     def addRelevantEntry(self, type, title, text, url, score):
         data = {'handle':'addRelevantEntry','type':type,'entry_id':title.replace(' ','_'),'title':title,'text':text,'url':url,'score':score}
@@ -36,6 +34,10 @@ class KeywordClient():
         data = {'handle':'replaceLastUtterance','old_utterance':old_utterance,'utterance':new_utterance,'speaker':speaker}
         r = requests.post(self.server_url+'replaceLastUtterance', data=json.dumps(data), headers=self.request_header)
         return r.status_code
+
+    def completeUtterance(self, utterance, speaker):
+        data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker}
+        red.publish('ambient_transcript_only', json.dumps(data))
         
 #Abstracts away the details of communicating with the ambient server, hacky version
 class KeywordClientHacky():

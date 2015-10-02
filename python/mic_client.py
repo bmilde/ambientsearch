@@ -23,7 +23,6 @@ import concurrent.futures
 from topia.termextract import extract
 
 from bridge import KeywordClient,KeywordClientHacky
-future_keyword_executor = concurrent.futures.ProcessPoolExecutor(max_workers=1)
 
 std_speaker = "You"
 
@@ -87,13 +86,11 @@ class KaldiClient(WebSocketClient):
         self.keyword_client = KeywordClient(keyword_server_url)
         self.send_to_keywordserver = not (keyword_server_url == '')
 
-        self.keyword_extractor = extract.TermExtractor()
-        self.keyword_extractor.filter = extract.permissiveFilter
-
-        self.last_relevant_entries = {}
+        #self.keyword_extractor = extract.TermExtractor()
+        #self.keyword_extractor.filter = extract.permissiveFilter
 
         if self.send_to_keywordserver:
-            self.keyword_client.addUtterance('','speaker1')
+            self.keyword_client.addUtterance('','You')
             self.last_hyp = ''
 
     #@rate_limited(4)
@@ -132,27 +129,6 @@ class KaldiClient(WebSocketClient):
         t = threading.Thread(target=send_data_to_ws)
         t.start()
 
-    def send_relevant_entry_updates(self,complete_transcript,max_entries=4):
-        print 'send_relevant_entry_updates called'
-        keywords = ke.getKeywordsDruid(complete_transcript)
-        relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
-        print relevant_entries
-
-        #generate add relevant entries
-        for key in set(relevant_entries) - set(self.last_relevant_entries):
-            entry = relevant_entries[key]
-            self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"])
-            print 'add',key
-        #generate del relevant entries
-        for key in set(self.last_relevant_entries) - set(relevant_entries):
-            entry = self.last_relevant_entries[key]
-            self.keyword_client.delRelevantEntry("wiki", entry["title"])
-            print 'del',key
-
-        self.last_relevant_entries = relevant_entries
-        #now send updates
-        return relevant_entries
-
     # received decoding message from upstream Kaldi server
     def received_message(self, m):
         try:
@@ -168,13 +144,14 @@ class KaldiClient(WebSocketClient):
                             		    
                             if self.send_to_keywordserver:
                                 self.keyword_client.replaceLastUtterance(self.last_hyp, trans, std_speaker)
+                                self.keyword_client.completeUtterance(trans, std_speaker)
                                 self.keyword_client.addUtterance('',std_speaker)
                                 self.last_hyp = ''
 
                                 complete_transcript = '\n'.join(sentence[:-1] for sentence in self.final_hyps)
-                                #non-blocking
-                                future_relevant_entries = future_keyword_executor.submit(self.send_relevant_entry_updates(complete_transcript))
                                 
+
+
                             print u'\r\033[K',trans.replace(u'\n', u'\\n')
                     else:
                         if self.send_to_keywordserver:
@@ -231,9 +208,8 @@ def main():
 
     return args
 
-
 if __name__ == "__main__":
     args = main()
-    ke = keyword_extract.KeywordExtract()
-    ke.buildDruidCache()
+    #ke = keyword_extract.KeywordExtract()
+    #ke.buildDruidCache()
     connect_ws(args)
