@@ -103,88 +103,68 @@
         <!-- /.row -->
 
         <!-- Page Features -->
-        <div class="row text-center">
+        <div class="row text-center" id="relevantDocs">
 
-            <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
-                    <div class="modal fade" id="wikiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog modal-lg modal-sm" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Jaguar</h4>
-                            </div>
-                            <div class="modal-body">
-                                <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" width="99%" height="500px" src="https://en.wikipedia.org/w/index.php?title=Jaguar&printable=yes"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+            <!-- Template for the dot.js template engine (https://raw.githubusercontent.com/olado/doT/master/doT.js) -->
+            <script id="relevantDocs_tmpl" type="text/x-dot-template">
+                <div class="col-sm-4 col-md-3 col-xl-3 hero-feature" id="{{=it.entry_id}}">
+                        <div class="modal fade" id="{{=it.entry_id}}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog modal-lg modal-sm" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">{{=it.title}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" width="99%" height="500px" src="{{=it.url}}&printable=yes"></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <div class="thumbnail">
-                    <img style="height: 160px" src="pics/test/jaguar_wiki.jpg" alt="">
-                    <div class="caption">
-                        <h3><a data-toggle="modal" data-target="#wikiModal">Jaguar</a></h3>
-                        <p>The jaguar, Panthera onca, is a big cat, a feline in the Panthera genus, and is the only extant Panthera species native to the Americas. </p>
-                        <!-- a href="#" class="btn btn-default">More Info</a-->
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
-                
-                <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog modal-lg modal-sm" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Namibia</h4>
-                            </div>
-                            <div class="modal-body">
-                                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="99%" height="500px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                            </div>
+                    <div class="thumbnail">
+                        <!--img style="height: 160px" src="pics/test/jaguar_wiki.jpg" alt=""-->
+                        <div class="caption">
+                            <h3><a data-toggle="modal" data-target="#{{=it.entry_id}}Modal">{{=it.title}}</a></h3>
+                            <p>{{=it.text}}</p>
+                            <!-- a href="#" class="btn btn-default">More Info</a-->
                         </div>
                     </div>
-                
-                <div class="thumbnail">
-                    <div class="caption">
-                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="190px" height="140px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
-                        <h3><a data-toggle="modal" data-target="#mapModal">Namibia</a></h3>
-                        <p>Namibia is a country in southern Africa whose western border is the Atlantic Ocean.</p>
-                    </div>
                 </div>
-            </div>
+            </script>
 
-            <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3><a>Demo Keyword</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <!--a href="#" class="btn btn-default">More Info</a--> 
-                        </p>
+            <script id="relevantDocsMap_tmpl" type="text/x-dot-template">
+                <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
+                    
+                    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog modal-lg modal-sm" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Namibia</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="99%" height="500px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="190px" height="140px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
+                            <h3><a data-toggle="modal" data-target="#mapModal">Namibia</a></h3>
+                            <p>Namibia is a country in southern Africa whose western border is the Atlantic Ocean.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </script>
 
-            <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3><a>Demo Keyword</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <!--a href="#" class="btn btn-default">More Info</a--> 
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- /.row -->
 
@@ -207,6 +187,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js"></script>
+
+    <!-- dot template engine -->
+    <script src="js/dot.js"></script>
 
     <!-- Ambient Search JavaScript -->
     <script src="js/ambientsearch.js"></script>
