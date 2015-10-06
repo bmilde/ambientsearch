@@ -4,7 +4,6 @@ __author__ = 'Benjamin Milde'
 
 import flask
 import redis
-import mic_client
 import os
 import json
 from werkzeug.serving import WSGIRequestHandler
@@ -59,6 +58,8 @@ def generate_event():
     print received_json
     red.publish(ambient_server_channel, json.dumps(received_json))
     return "ok"
+
+@app.route('/reset_topics', methods=['POST'])
 
 #These should ideally be served with a real web server, but for developping purposes, serving static files with Flask is also ok:
 #START static files
