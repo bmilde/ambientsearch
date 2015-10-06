@@ -15,6 +15,9 @@ from bridge import KeywordClient
 
 red = redis.StrictRedis()
 
+#redis channel with relevant messages for this python module
+my_redis_channel = 'ambient_transcript_only'
+
 # Helper function :  Find an entry in a list of dictionaries 
 # http://stackoverflow.com/questions/4391697/find-the-index-of-a-dict-within-a-list-by-matching-the-dicts-value
 def find_entry_pos_in_list(lst, key, value):
@@ -42,7 +45,7 @@ class EventGenerator:
     #Todo: for other languages than English, utf8 de and encoding will be needed
     def start_listen(self):
         pubsub = red.pubsub()
-        pubsub.subscribe('ambient_transcript_only')
+        pubsub.subscribe(my_redis_channel)
         for message in pubsub.listen():
             print 'New message:', message, type(message["data"])
             if type(message["data"]) == str:
@@ -62,8 +65,9 @@ class EventGenerator:
     def addDisplayEntry(entry,max_entries=4):
         insert_pos = bisect.bisect(self.displayed_entries, float(entry["score"]))
         
-        #Only add if we want to insert it into the max_entries best entries
+        #Only add entry if we want to insert it into the max_entries best entries
         if insert_pos < max_entries:
+            #Determine position by its score
             bisect.insort(self.displayed_entries, float(entry["score"]))
             
             len_displayed_entries = len(displayed_entries)
@@ -88,6 +92,7 @@ class EventGenerator:
     def delDisplayEntry(entry_type,title):
         self.keyword_client.delRelevantEntry(entry_type, title)
 
+    @profile
     def send_relevant_entry_updates(self,max_entries=4):
         print 'send_relevant_entry_updates called'
         keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
