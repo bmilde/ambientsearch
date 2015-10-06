@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 __author__ = 'Benjamin Milde'
 
 import argparse
@@ -84,6 +86,7 @@ class KaldiClient(WebSocketClient):
         self.paudio = pyaudio.PyAudio()
         self.print_devices()
         self.keyword_client = KeywordClient(keyword_server_url)
+        self.keyword_client.reset()
         self.send_to_keywordserver = not (keyword_server_url == '')
 
         #self.keyword_extractor = extract.TermExtractor()

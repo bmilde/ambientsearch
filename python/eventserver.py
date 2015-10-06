@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 __author__ = 'Benjamin Milde'
 
 import flask
@@ -51,6 +53,7 @@ def poll():
 @app.route('/replaceLastUtterance', methods=['POST'])
 @app.route('/addRelevantEntry', methods=['POST'])
 @app.route('/delRelevantEntry', methods=['POST'])
+@app.route('/reset', methods=['POST'])
 def generate_event():
     received_json = flask.request.json
     print received_json

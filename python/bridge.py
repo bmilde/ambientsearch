@@ -1,27 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+__author__ = 'Benjamin Milde'
+
 import requests
 import json
 import redis
 
 red = redis.StrictRedis()
 
+def idFromTitle(title):
+    return title.replace(' ','_').replace("'",'_')
+
 #Abstracts away the details of communicating with the ambient server
 class KeywordClient():
 
     def __init__(self,server_url):
-	self.server_url = server_url
-	self.request_header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        self.server_url = server_url
+        self.request_header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
     def getSettings():
         r = requests.get(self.server_url+'getSettings')
         return r.json()
         
     def addRelevantEntry(self, type, title, text, url, score):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id':title.replace(' ','_'),'title':title,'text':text,'url':url,'score':score}
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(title)}
         r = requests.post(self.server_url+'addRelevantEntry', data=json.dumps(data), headers=self.request_header)
         return r.status_code
 
     def delRelevantEntry(self, type, title):
-        data = {'handle':'delRelevantEntry','type':type,'title':title}
+        data = {'handle':'delRelevantEntry','type':type,'title': title, 'entry_id': idFromTitle(title)}
         r = requests.post(self.server_url+'delRelevantEntry', data=json.dumps(data), headers=self.request_header)
         return r.status_code
 
@@ -38,6 +45,12 @@ class KeywordClient():
     def completeUtterance(self, utterance, speaker):
         data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker}
         red.publish('ambient_transcript_only', json.dumps(data))
+
+    def reset(self):
+        data = {'handle':'reset'}
+        red.publish('ambient_transcript_only', json.dumps(data))
+        r = requests.post(self.server_url+'reset', data=json.dumps(data), headers=self.request_header)
+        return r.status_code
         
 #Abstracts away the details of communicating with the ambient server, hacky version
 class KeywordClientHacky():

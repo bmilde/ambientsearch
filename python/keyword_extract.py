@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+__author__ = 'Benjamin Milde'
+
 import nltk
 import bz2
 import codecs
@@ -8,7 +12,6 @@ from topia.termextract import extract
 import wiki_search
 import os.path
 import sys
-
 
 #This is needed for English. TODO: This is hacky. Move this out of the global scope and make it multi-language (de + en) and move word lists to static files.
 
@@ -120,6 +123,7 @@ class KeywordExtract:
 
         return keywords_sorted
 
+    #Build a dictionary of DRUID keywords. Input is basically a filelist with multiwordness scores for 1-4 grams produced from the algorithm. Numbers and stopwords are filtered, the rest is taken as is.
     def buildDruidCache(self,cutoff_druid_score=0.2):
         druid_bz2 = bz2.BZ2File(druid_mwe_file, mode='r')
         druid_file = codecs.iterdecode(druid_bz2, 'utf-8')
@@ -130,6 +134,7 @@ class KeywordExtract:
             words = split[1].lower()
             druid_score = split[2]
             has_number = RE_D.search(words)
+            #exlude any lines that have one or more numbers in them
             if not has_number:
                 words_split = words.split(u' ')
                 float_druid_score = float(druid_score)
