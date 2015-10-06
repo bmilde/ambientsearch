@@ -1,4 +1,6 @@
 TODOS
+
+- Allow the use of 
 - Extend python python/simulate_mic_input.py to simulate keywords and add more events
 - Display wikipedia data dynamically with js, according to incoming events, extend bridge.py as nessecary => nearly done, sorting/ranking and delete has to be still implemented
 - Additional event for points of interest on a map (Benjamin: I will work on the NLP part of this, simulate as nessecary)
@@ -6,3 +8,8 @@ TODOS
 - Settings? What could be good to include here, e.g. language (there will be German and English)
 - Pause button to stop speech input
 - Figure out best font sizes and if everything resizes correctly and responsively on a big screen, and if everything still looks good on a laptop at the same time
+
+What can be experimented on to improve relevant document display and online performance:
+
+(1) Right now, relevant articles are determined after a full utterance. This could also be done on the fly.
+(2) Starting/warmup phase: some lowly ranking keywords will be used in the beginning, maybe restrict number of relevant entries at first
