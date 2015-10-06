@@ -7,8 +7,12 @@ function addRelevantEntry(json_event) {
 	{
 		html = wikiEntryTemplate(json_event);
 		console.log(html);
-		$(html).hide().appendTo("#relevantDocs").fadeIn(500);
+		$(html).hide().appendTo("#relevantDocs").fadeIn(800);
 	}
+}
+
+function delRelevantEntry(json_event) {
+	$("#"+json_event["entry_id"]).remove();
 }
 
 /*Events: speech recognition feedback*/
@@ -24,6 +28,11 @@ function addUtterance(json_event) {
 function replaceLastUtterance(json_event) {
 	$('#chat-area p:last').html(renderUtterance(json_event))
 	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+}
+
+function reset() {
+	$("#chat-area").empty();
+	$("#relevantDocs").empty();
 }
 
 /*Dispatch events from EventSource*/
@@ -46,5 +55,11 @@ source.onmessage = function (event) {
 	}else if (json_event.handle == 'addRelevantEntry')
 	{
 		addRelevantEntry(json_event);
+	}else if (json_event.handle == 'delRelevantEntry')
+	{
+		delRelevantEntry(json_event);
+	}else if (json_event.handle == 'reset')
+	{
+		reset();
 	}
 };
