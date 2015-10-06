@@ -53,8 +53,10 @@ class EventGenerator:
                         self.complete_transcript.append(json_message["utterance"])
                         self.send_relevant_entry_updates()
                     elif json_message["handle"] == "reset":
+                        print 'reset all'
                         self.complete_transcript = []
-                        self.last_relevant_entries = []
+                        self.relevant_entries = {}
+                        self.displayed_entries = []
 
     # Add a relevant entry to the display
     def addDisplayEntry(entry,max_entries=4):
