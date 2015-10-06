@@ -1,28 +1,42 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+__author__ = 'Benjamin Milde'
+
 import time
+import redis
 from bridge import KeywordClient, KeywordClientHacky
 
-std_spk = "You"
-utt = ""
-old_utt = ""
+class SimluateInput:
+    def __init__(self):
+        self.ks = KeywordClient(server_url="http://localhost:5000/")
+        self.std_spk = "You"
+        self.last_hyp = ""
 
-ks = KeywordClient(server_url="http://localhost:5000/")
-old_utt = utt
-utt = "This"
-ks.addUtterance(utt,std_spk)
-time.sleep(0.5)
+    def update(self, utterance, delay):
+        time.sleep(delay)
+        self.ks.replaceLastUtterance(self.last_hyp,utterance, self.std_spk)
+        self.last_hyp = utterance
 
-old_utt = utt
-utt = "This is"
-ks.replaceLastUtterance(old_utt,utt,std_spk)
-time.sleep(0.4)
+    def add_new(self, utterance,delay):
+        time.sleep(delay)
+        self.ks.addUtterance(utterance, self.std_spk)
 
-old_utt = utt
-utt = "This is a"
-ks.replaceLastUtterance(old_utt,utt,std_spk)
-time.sleep(0.2)
+    def complete(self, utterance):
+        self.ks.completeUtterance(utterance, self.std_spk)
 
-old_utt = utt
-utt = "This is a test"
-ks.replaceLastUtterance(old_utt,utt,std_spk)
-time.sleep(0.5)
+    def get_delay(self, word):
+        return len(word) * 0.05
 
+    def simulateSentence(self, sentence):
+        split = sentence.split(" ")
+        firstword = split[0]
+        self.add_new(firstword,self.get_delay(firstword))
+        for x in xrange(2,len(split)+1):
+            self.update(' '.join(split[:x]),self.get_delay(split[x-1]))
+        self.complete(sentence)
+        self.last_hyp = ""
+        
+
+if __name__ == '__main__':            
+    si = SimluateInput()
+    si.simulateSentence("computational linguistics is a field that is primarily concerned with and natural language processing from the linguistic and computer standpoint of few it has roots in the rule based systems artificial intelligence")
