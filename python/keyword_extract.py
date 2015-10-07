@@ -55,19 +55,6 @@ class KeywordExtract:
         #print extracted_keywords
         keywords = [keyword[0] for keyword in extracted_keywords]
 
-        #Get keywords as a list of nouns. MWEs are heuristically choosen if two preceedings tokens share the same noun tag.
-        #for touple in tags:
-        #    word,tag = touple
-        #    
-        #    if tag in ['NN', 'NNP', 'NNPS', 'NNS']:
-        #	if past_tag and past_tag in ['NN', 'NNP', 'NNPS', 'NNS']:
-        #	    keywords[0] += ' ' + word   
-        #	else:	
-        #	    keywords = [word] + keywords		    
-        #   past_tag = tag
-        #
-        #keywords = [touple[0] for touple in tags if touple[1] in ['NN', 'NNP', 'NNPS', 'NNS']]
-
         return keywords[:maxKeywords]
 
     #merges keywords and their scores (dict), with keywords_pos dict: index as key, value is a lit of keywords.
