@@ -47,12 +47,11 @@ class KeywordExtract:
     def getKeywordsTermLib(self, currentHyp, contextWords=200, ignoreNumRecentWords=1, maxKeywords=7):
 
         tokens = nltk.word_tokenize(u' '.join(self.final_hyps) + u' ' + currentHyp)[-contextWords:(None if currentHyp == '' else -ignoreNumRecentWords)] 
-        #tags = nltk.pos_tag(tokens)
 
         past_tag = None
         extracted_keywords = self.keyword_extractor(' '.join(tokens))
         extracted_keywords = sorted(extracted_keywords, key=lambda x: x[1]*x[2], reverse=True)
-        #print extracted_keywords
+        
         keywords = [keyword[0] for keyword in extracted_keywords]
 
         return keywords[:maxKeywords]
