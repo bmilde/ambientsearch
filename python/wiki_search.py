@@ -29,6 +29,7 @@ def filterBrackets(test_str):
 
 # Input: sorted list of tuples (keyword,scores), maximal number of articles (can be more keywords, if no)
 # This version does not perform clustering
+#@profile
 def getSummariesSingleKeyword(keywords, max_entries=4, lang='en', pics_folder='pics/'):
     with Timer() as t:
         wikipedia.set_lang(lang)

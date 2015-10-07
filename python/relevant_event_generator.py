@@ -92,7 +92,7 @@ class EventGenerator:
     def delDisplayEntry(entry_type,title):
         self.keyword_client.delRelevantEntry(entry_type, title)
 
-    @profile
+    #@profile
     def send_relevant_entry_updates(self,max_entries=4):
         print 'send_relevant_entry_updates called'
         keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
