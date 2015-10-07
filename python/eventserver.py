@@ -47,6 +47,12 @@ def poll():
         yield message
         message = pubsub.get_message(timeout=long_poll_timeout_burst)
 
+@app.route('/voteUnrelevant', methods=['POST'])
+def voteUnrelevant():
+    received_json = flask.request.json
+    print received_json
+    return "ok"
+
 #This could also be replaced with just using redis for message passing
 @app.route('/addUtterance', methods=['POST'])
 @app.route('/replaceLastUtterance', methods=['POST'])
