@@ -20,9 +20,6 @@ import requests
 import redis
 import wiki_search
 import keyword_extract
-import concurrent.futures
-
-from topia.termextract import extract
 
 from bridge import KeywordClient,KeywordClientHacky
 
