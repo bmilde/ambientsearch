@@ -61,7 +61,7 @@ class EventGenerator:
                         self.relevant_entries = {}
                         self.displayed_entries = []
 
-    # Add a relevant entry to the display
+    # Add a relevant entry to the display, specify how many entries should be allowed maximally 
     def addDisplayEntry(entry,max_entries=4):
         insert_pos = bisect.bisect(self.displayed_entries, float(entry["score"]))
         
@@ -92,8 +92,9 @@ class EventGenerator:
     def delDisplayEntry(entry_type,title):
         self.keyword_client.delRelevantEntry(entry_type, title)
 
-    #@profile
-    def send_relevant_entry_updates(self,max_entries=4):
+    # Send relevant entry updates to the display, given a new full utterance. 
+    # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
+    def send_relevant_entry_updates(self,max_entries=4, decay=.9):
         print 'send_relevant_entry_updates called'
         keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
         new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
@@ -118,7 +119,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Command line client for kaldigstserver and the ambient visualization server')
     parser.add_argument('-a', '--ambient-uri', type=str, default='http://localhost:5000/', dest='ambient_uri', help='Ambient server websocket URI')
-    parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.2, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
+    parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.1, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
         'lower value will find more keywords, but takes longer to load and needs more memory')
 
     args = parser.parse_args()

@@ -21,7 +21,7 @@ import redis
 import wiki_search
 import keyword_extract
 
-from bridge import KeywordClient,KeywordClientHacky
+from bridge import KeywordClient
 
 std_speaker = "You"
 
