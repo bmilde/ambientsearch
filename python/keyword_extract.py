@@ -75,15 +75,17 @@ class KeywordExtract:
         return keywords
 
     #You have to call buildDruidCache, before you call this function
+    #Todo: parameterize penality_factor and gram_factor
     def getKeywordsDruid(self, tokens, maxKeywords=5):
 
-        keywords = {}
+        keywords = defaultdict(int)
         keywords_pos = defaultdict(list)
 
         if len(self.keyword_dict) == 0:
             print 'Warning, no Druid cache found. Wont be able to detect keywords.'
             return []
 
+        #automatically tokenize strings if nessecary
         if type(tokens) is str or type(tokens) is unicode:
             tokens = nltk.word_tokenize(tokens)
 
@@ -98,7 +100,7 @@ class KeywordExtract:
                         penality_factor = 0.1
                     else:
                         penality_factor = 1.0
-                    keywords[search_gram] = self.keyword_dict[search_gram]*(x*gram_factor)*penality_factor
+                    keywords[search_gram] += self.keyword_dict[search_gram]*(x*gram_factor)*penality_factor
 
                     for pos in xrange(i,x+i):
                         keywords_pos[pos] += [search_gram]
