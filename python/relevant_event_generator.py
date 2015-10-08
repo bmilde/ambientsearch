@@ -95,6 +95,13 @@ class EventGenerator:
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
     def send_relevant_entry_updates(self,max_entries=4, decay=.9):
+
+        #Do the decay for the displayed entries:
+        #TODO: handle duplicate keywords and updated scores
+
+        for entry in self.displayed_entries:
+            entry["score"] *= decay
+
         print 'send_relevant_entry_updates called'
         keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
         new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
