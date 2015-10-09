@@ -53,14 +53,14 @@ class KaldiClient(WebSocketClient):
             if self.paudio.get_device_info_by_host_api_device_index(0,i).get('maxOutputChannels')>0:
                 print "Output Device id ", i, " - ", self.paudio.get_device_info_by_host_api_device_index(0,i).get('name')
 
-    def getYamahaID(self):
+    def getAudioDeviceByString(audioDeviceName):
         info = self.paudio.get_host_api_info_by_index(0)
         numdevices = info.get('deviceCount')
         for i in range (0,numdevices):
             if self.paudio.get_device_info_by_host_api_device_index(0,i).get('maxInputChannels')>0:
-                if 'Yamaha' in self.paudio.get_device_info_by_host_api_device_index(0,i).get('name'):
+                if audioDeviceName in self.paudio.get_device_info_by_host_api_device_index(0,i).get('name'):
                     return i
-        print 'No yamaha microphone found, defaulting to last available input device...'
+        print 'No ',audioDeviceName,' microphone found, defaulting to last available input device...'
 
         for i in reversed(range (0,numdevices)):
             if self.paudio.get_device_info_by_host_api_device_index(0,i).get('maxInputChannels')>0:
@@ -71,7 +71,7 @@ class KaldiClient(WebSocketClient):
         return -1		    
 
     def __init__(self, filename, url, protocols=None, extensions=None, heartbeat_freq=None, byterate=32000,
-                 save_adaptation_state_filename=None, send_adaptation_state_filename=None, keyword_server_url = ''):
+                 save_adaptation_state_filename=None, send_adaptation_state_filename=None, keyword_server_url = '', input_microphone_id=-1):
         super(KaldiClient, self).__init__(url, protocols, extensions, heartbeat_freq)
         self.final_hyps = []
         self.fn = filename
@@ -93,6 +93,8 @@ class KaldiClient(WebSocketClient):
             self.keyword_client.addUtterance('','You')
             self.last_hyp = ''
 
+        self.input_microphone_id = input_microphone_id
+
     #@rate_limited(4)
     def send_data(self, data):
         if data is not None:
@@ -103,13 +105,14 @@ class KaldiClient(WebSocketClient):
         def send_data_to_ws():
             buffer_size = 1024
 
-            yamahaID = self.getYamahaID()
-            if yamahaID == -1:
-                sys.exit(-1)
-            else:
-                print 'Selecting device',yamahaID,'as input device'
+            if  self.input_microphone_id == -1:
+                self.input_microphone_id = self.getAudioDeviceByString("Yamaha")
+                if self.input_microphone_id == -1:
+                    sys.exit(-1)
+                else:
+                    print 'Selecting device',self.input_microphone_id,'as input device'
 
-            stream = self.paudio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024, input_device_index = yamahaID) #buffer   
+            stream = self.paudio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024, input_device_index = self.input_microphone_id) #buffer   
             #f = open(self.fn, "rb")
             if self.send_adaptation_state_filename is not None:
                 print >> sys.stderr, "Sending adaptation state from %s" % self.send_adaptation_state_filename
@@ -188,7 +191,7 @@ def connect_ws(args):
         content_type = "audio/x-raw, layout=(string)interleaved, rate=(int)%d, format=(string)S16LE, channels=(int)1" %(args.rate/2)
 
     ws = KaldiClient('', args.uri + '?%s' % (urllib.urlencode([("content-type", content_type)])), byterate=args.rate,
-                  save_adaptation_state_filename=args.save_adaptation_state, send_adaptation_state_filename=args.send_adaptation_state, keyword_server_url=args.ambient_uri)
+                  save_adaptation_state_filename=args.save_adaptation_state, send_adaptation_state_filename=args.send_adaptation_state, keyword_server_url=args.ambient_uri,input_microphone_id=args.input_device_id)
     ws.connect()
     #print 'Disconnected.'
     result = ws.get_full_hyp()
@@ -204,6 +207,7 @@ def main():
     parser.add_argument('--send-adaptation-state', help='Send adaptation state from file')
     parser.add_argument('--content-type', default='', help='Use the specified content type (empty by default, for raw files the default is  audio/x-raw, layout=(string)interleaved, rate=(int)<rate>, format=(string)S16LE, channels=(int)1')
     parser.add_argument('--audiofile', help='Audio file to be sent to the server', default='', type=str)
+    parser.add_argument('-i','--input-device-id', help='Manually set the input device ID', default=-1, type=int)
     args = parser.parse_args()
 
     return args
