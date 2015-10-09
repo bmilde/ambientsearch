@@ -4,21 +4,21 @@ wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').te
 fadeInTimeMs = 800
 
 function addRelevantEntry(json_event) {
-	if (json_event["type"] == "wiki")
+	if (json_event['type'] == 'wiki')
 	{
 		html = wikiEntryTemplate(json_event);
 		console.log(html);
 		if(json_event['insert_before'] == '#end#')
 		{
-			$(html).hide().appendTo("#relevantDocs").fadeIn(fadeInTimeMs);
+			$(html).hide().appendTo('#relevantDocs').fadeIn(fadeInTimeMs);
 		}else{
-			$(html).hide().insertBefore("#"+json_event['insert_before']).fadeIn(fadeInTimeMs);
+			$(html).hide().insertBefore('#'+json_event['insert_before']).fadeIn(fadeInTimeMs);
 		}
 	}
 }
 
 function delRelevantEntry(json_event) {
-	$("#"+json_event["entry_id"]).remove();
+	$('#'+json_event['entry_id']).remove();
 }
 
 /*Events: speech recognition feedback*/
