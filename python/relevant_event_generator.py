@@ -18,14 +18,6 @@ red = redis.StrictRedis()
 #redis channel with relevant messages for this python module
 my_redis_channel = 'ambient_transcript_only'
 
-# Helper function :  Find an entry in a list of dictionaries 
-# http://stackoverflow.com/questions/4391697/find-the-index-of-a-dict-within-a-list-by-matching-the-dicts-value
-def find_entry_pos_in_list(lst, key, value):
-    for i, dic in enumerate(lst):
-        if dic[key] == value:
-            return i
-    return -1
-
 # Helper class for addDisplayEntry and managing a list of displayed items with bisect:
 # See: http://stackoverflow.com/questions/1344308/in-python-find-item-in-list-of-dicts-using-bisect 
 class dict_list_index_get_member(object):
