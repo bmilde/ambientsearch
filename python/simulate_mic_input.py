@@ -26,7 +26,7 @@ class SimluateInput:
         self.ks.completeUtterance(utterance, self.std_spk)
 
     def get_delay(self, word):
-        return len(word) * 0.03
+        return len(word) * 0.05
 
     def simulateSentence(self, sentence):
         split = sentence.split(" ")
@@ -44,3 +44,5 @@ if __name__ == '__main__':
     si.simulateSentence("red blood cells are round with a flattish, indented center, like doughnuts without a hole.")
     si.simulateSentence("new york city is one of the major cities")
     si.simulateSentence("i have been to new york city")
+    si.simulateSentence("to brookyln and harlem")
+    
