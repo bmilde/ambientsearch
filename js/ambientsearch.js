@@ -1,13 +1,19 @@
 /*Events: relevant documents*/
 
 wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').text);
+fadeInTimeMs = 800
 
 function addRelevantEntry(json_event) {
 	if (json_event["type"] == "wiki")
 	{
 		html = wikiEntryTemplate(json_event);
 		console.log(html);
-		$(html).hide().appendTo("#relevantDocs").fadeIn(800);
+		if(json_event['insert_before'] == '#end#')
+		{
+			$(html).hide().appendTo("#relevantDocs").fadeIn(fadeInTimeMs);
+		}else{
+			$(html).hide().insertBefore("#"+json_event['insert_before']).fadeIn(fadeInTimeMs);
+		}
 	}
 }
 
@@ -31,8 +37,8 @@ function replaceLastUtterance(json_event) {
 }
 
 function reset() {
-	$("#chat-area").empty();
-	$("#relevantDocs").empty();
+	$('#chat-area').empty();
+	$('#relevantDocs').empty();
 }
 
 /*Dispatch events from EventSource*/

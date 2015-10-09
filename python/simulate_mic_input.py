@@ -4,13 +4,14 @@ __author__ = 'Benjamin Milde'
 
 import time
 import redis
-from bridge import KeywordClient, KeywordClientHacky
+from bridge import KeywordClient
 
 class SimluateInput:
     def __init__(self):
         self.ks = KeywordClient(server_url="http://localhost:5000/")
         self.std_spk = "You"
         self.last_hyp = ""
+        self.ks.reset()
 
     def update(self, utterance, delay):
         time.sleep(delay)
@@ -25,7 +26,7 @@ class SimluateInput:
         self.ks.completeUtterance(utterance, self.std_spk)
 
     def get_delay(self, word):
-        return len(word) * 0.05
+        return len(word) * 0.03
 
     def simulateSentence(self, sentence):
         split = sentence.split(" ")
@@ -40,3 +41,6 @@ class SimluateInput:
 if __name__ == '__main__':            
     si = SimluateInput()
     si.simulateSentence("computational linguistics is a field that is primarily concerned with and natural language processing from the linguistic and computer standpoint of few it has roots in the rule based systems artificial intelligence")
+    si.simulateSentence("red blood cells are round with a flattish, indented center, like doughnuts without a hole.")
+    si.simulateSentence("new york city is one of the major cities")
+    si.simulateSentence("i have been to new york city")

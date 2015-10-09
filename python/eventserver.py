@@ -25,6 +25,7 @@ ambient_server_channel = 'ambient'
 
 #Send event to the event stream
 def event_stream():
+    print "New connection to event_stream!"
     pubsub = red.pubsub()
     pubsub.subscribe(ambient_server_channel)
     for message in pubsub.listen():

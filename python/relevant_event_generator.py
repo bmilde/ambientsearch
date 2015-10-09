@@ -26,6 +26,31 @@ def find_entry_pos_in_list(lst, key, value):
             return i
     return -1
 
+# Helper class for addDisplayEntry and managing a list of displayed items with bisect:
+# See: http://stackoverflow.com/questions/1344308/in-python-find-item-in-list-of-dicts-using-bisect 
+class dict_list_index_get_member(object):
+    def __init__(self, dict_list, member):
+        self.dict_list = dict_list
+        self.member = member
+    def __getitem__(self, index):
+        return self.dict_list[index][self.member]
+    def __len__(self):
+        return self.dict_list.__len__()
+
+# Helper function for addDisplayEntry, the bisect module has unfortunafely no flag to reverse the ordering (we want bigger to lower values as sorting)
+# Todo: choose more appropriate container, refactor
+# See http://stackoverflow.com/questions/2247394/python-bisect-it-is-possible-to-work-with-descending-sorted-lists
+def reverse_bisect(a, x, lo=0, hi=None):
+    if lo < 0:
+        raise ValueError('lo must be non-negative')
+    if hi is None:
+        hi = len(a)
+    while lo < hi:
+        mid = (lo+hi)//2
+        if x > a[mid]: hi = mid
+        else: lo = mid+1
+    return lo
+
 # This event generator listens for incoming complete utterance redis events
 # and starts the process of finding relevant information after each utterance with the keyword_extract module
 # (relevant text and pictures are downloaded in a blocking manner using wiki_search)
@@ -51,7 +76,6 @@ class EventGenerator:
             if type(message["data"]) == str:
                 json_message = json.loads(message["data"])
                 if "handle" in json_message:
-                    print json_message
                     if json_message["handle"] == "completeUtterance":
                         self.complete_transcript.append(json_message["utterance"])
                         self.send_relevant_entry_updates()
@@ -62,15 +86,18 @@ class EventGenerator:
                         self.displayed_entries = []
 
     # Add a relevant entry to the display, specify how many entries should be allowed maximally 
-    def addDisplayEntry(entry,max_entries=4):
-        insert_pos = bisect.bisect(self.displayed_entries, float(entry["score"]))
+    def addDisplayEntry(self, entry_type, entry, max_entries=4):
+        print 'add', entry["title"], entry["score"]
+        #Determine position by its score
+
+        displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,"score")
+        insert_pos = reverse_bisect(displayed_entries_get_score, float(entry["score"]))
         
         #Only add entry if we want to insert it into the max_entries best entries
         if insert_pos < max_entries:
-            #Determine position by its score
-            bisect.insort(self.displayed_entries, float(entry["score"]))
             
-            len_displayed_entries = len(displayed_entries)
+            self.displayed_entries.insert(insert_pos, dict(entry))
+            len_displayed_entries = len(self.displayed_entries)
 
             #In this case, one of the previous best entries needs to be deleted:
             if(len_displayed_entries > max_entries):
@@ -78,19 +105,26 @@ class EventGenerator:
                 for entry in self.displayed_entries[max_entries:]:
                     self.delDisplayEntry(entry_type,title)
 
-                self.displayed_entries = self.displayed_entries[:max_entries]
-                len_displayed_entries = len(displayed_entries)
+                #self.displayed_entries = self.displayed_entries[:max_entries]
+                len_displayed_entries = len(self.displayed_entries)
 
             if insert_pos == len_displayed_entries -1:
                 insert_before = '#end#'
+                print 'Insert',entry["title"],'at the end'
             else:
-                insert_before = self.displayed_entries[insert_before+1]["title"]
+                insert_before = self.displayed_entries[insert_pos+1]["title"]
+                print 'Insert',entry["title"],'before',insert_before
 
             self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"], insert_before)
 
     # Delete a relevant entry from the display
-    def delDisplayEntry(entry_type,title):
-        self.keyword_client.delRelevantEntry(entry_type, title)
+    def delDisplayEntry(self, entry_type,title):
+        print 'del',title
+        for i,display_entry in list(enumerate(self.displayed_entries)):
+            if (display_entry["title"] == title):
+                self.keyword_client.delRelevantEntry(entry_type, title)
+                del self.displayed_entries[i]
+                break
 
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
@@ -98,27 +132,43 @@ class EventGenerator:
 
         #Do the decay for the displayed entries:
         #TODO: handle duplicate keywords and updated scores
-
         for entry in self.displayed_entries:
             entry["score"] *= decay
 
         print 'send_relevant_entry_updates called'
         keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
         new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
-        print new_relevant_entries
+
+        new_relevant_entries_set = set(new_relevant_entries)
+        relevant_entries_set = set(self.relevant_entries)
 
         #generate del relevant entries
-        for key in set(self.relevant_entries) - set(new_relevant_entries):
+        for key in relevant_entries_set - new_relevant_entries_set:
             entry = self.relevant_entries[key]
-            self.keyword_client.delRelevantEntry("wiki", entry["title"])
-            print 'del',key
+            self.delDisplayEntry("wiki", entry["title"])
+            
         #generate add relevant entries
-        for key in set(new_relevant_entries) - set(self.relevant_entries):
+        for key in new_relevant_entries_set - relevant_entries_set:
             entry = new_relevant_entries[key]
-            self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"])
-            print 'add',key
+            self.addDisplayEntry("wiki", entry)
 
-        #TODO: Update scores of existing entries in self.displayed_entries (?)
+        #now look for changed scores (happens if a keyword got more important and gets mentioned again)   
+        for key in (new_relevant_entries_set & relevant_entries_set):
+            entry = new_relevant_entries[key]
+            if entry["score"] > self.relevant_entries[key]["score"]:
+                print "score change for:",entry["title"], self.relevant_entries[key]["score"], "->", entry["score"]
+                found_displayed_entry = False
+                for display_entry in self.displayed_entries:
+                    #already displayed, we could delete and read it, to reflect the new placement
+                    if display_entry["title"] == key:
+                        found_displayed_entry = True
+                        self.delDisplayEntry("wiki", entry["title"])
+                        self.addDisplayEntry("wiki", entry)
+                        break
+
+                if not found_displayed_entry:
+                    #not displayed, try to see if the higher score gets results in a document that is more important
+                    self.addRelevantEntry("wiki", entry)
 
         self.relevant_entries = new_relevant_entries
 

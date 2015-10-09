@@ -22,8 +22,8 @@ class KeywordClientHttp():
         r = requests.get(self.server_url+'getSettings')
         return r.json()
         
-    def addRelevantEntry(self, type, title, text, url, score):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(title)}
+    def addRelevantEntry(self, type, title, text, url, score, insert_before):
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(insert_before)}
         r = requests.post(self.server_url+'addRelevantEntry', data=json.dumps(data), headers=self.request_header)
         return r.status_code
 
@@ -63,8 +63,8 @@ class KeywordClient():
         r = requests.get(self.server_url+'getSettings')
         return r.json()
         
-    def addRelevantEntry(self, type, title, text, url, score):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(title)}
+    def addRelevantEntry(self, type, title, text, url, score, insert_before):
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(insert_before)}
         red.publish('ambient', json.dumps(data))
 
     def delRelevantEntry(self, type, title):

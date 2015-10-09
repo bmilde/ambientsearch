@@ -105,7 +105,7 @@ class KeywordExtract:
                     for pos in xrange(i,x+i):
                         keywords_pos[pos] += [search_gram]
 
-        print keywords_pos
+        #print keywords_pos
         keywords = self.mergeKeywords(keywords, keywords_pos)
         keywords_sorted = sorted(keywords.items(), key=operator.itemgetter(1), reverse=True)
 
