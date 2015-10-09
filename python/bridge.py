@@ -9,7 +9,7 @@ import redis
 red = redis.StrictRedis()
 
 def idFromTitle(title):
-    return title.replace(' ','_').replace("'",'_')
+    return title.replace(' ','_').replace("'",'_').replace('(','_')
 
 #Abstracts away the details of communicating with the ambient server
 class KeywordClientHttp():
