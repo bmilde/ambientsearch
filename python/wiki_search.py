@@ -31,7 +31,7 @@ def filterBrackets(test_str):
 # This version does not perform clustering
 #@profile
 def getSummariesSingleKeyword(keywords, max_entries=4, lang='en', pics_folder='pics/'):
-    timer = Timer()
+    timer = Timer(verbose=True)
     timer.start()
     wikipedia.set_lang(lang)
     articles = []
@@ -71,5 +71,5 @@ def getSummariesSingleKeyword(keywords, max_entries=4, lang='en', pics_folder='p
                 wiki_article = wikipedia.page(article)
 
             summary_box_info[wiki_article.title] = {'title':wiki_article.title,'text':summary,'url':"https://en.wikipedia.org/w/index.php?title="+wiki_article.title.replace(' ','_'),'score':score}
-    timer.end()
+    timer.stop()
     return summary_box_info
