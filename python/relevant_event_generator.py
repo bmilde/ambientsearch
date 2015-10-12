@@ -9,6 +9,7 @@ import wiki_search
 import argparse
 import json
 import bisect
+from timer import Timer
 from datetime import datetime
 
 from bridge import KeywordClient
@@ -95,9 +96,10 @@ class EventGenerator:
             if(len_displayed_entries > max_entries):
                 #Send delete entry events to entries those score is below the four best showed entries
                 for entry in self.displayed_entries[max_entries:]:
-                    self.delDisplayEntry(entry_type,title)
+                    print 'del', entry["title"]
+                    self.keyword_client.delRelevantEntry(entry_type, entry["title"])
 
-                #self.displayed_entries = self.displayed_entries[:max_entries]
+                self.displayed_entries = self.displayed_entries[:max_entries]
                 len_displayed_entries = len(self.displayed_entries)
 
             if insert_pos == len_displayed_entries -1:
@@ -122,47 +124,54 @@ class EventGenerator:
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
     def send_relevant_entry_updates(self,max_entries=4, decay=.9):
 
-        #Do the decay for the displayed entries:
-        #TODO: handle duplicate keywords and updated scores
-        for entry in self.displayed_entries:
-            entry["score"] *= decay
-
         print 'send_relevant_entry_updates called'
-        keywords = self.ke.getKeywordsDruid('\n'.join([sentence[:-1] for sentence in self.complete_transcript]))
-        new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
+        with Timer() as t:
 
-        new_relevant_entries_set = set(new_relevant_entries)
-        relevant_entries_set = set(self.relevant_entries)
+            #Do the decay for the displayed entries:
+            #TODO: handle duplicate keywords and updated scores
+            for entry in self.displayed_entries:
+                entry["score"] *= decay
 
-        #generate del relevant entries
-        for key in relevant_entries_set - new_relevant_entries_set:
-            entry = self.relevant_entries[key]
-            self.delDisplayEntry("wiki", entry["title"])
-            
-        #generate add relevant entries
-        for key in new_relevant_entries_set - relevant_entries_set:
-            entry = new_relevant_entries[key]
-            self.addDisplayEntry("wiki", entry)
+            keywords = self.ke.getKeywordsDruid(self.complete_transcript[-1])
+            print keywords
+            new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
 
-        #now look for changed scores (happens if a keyword got more important and gets mentioned again)   
-        for key in (new_relevant_entries_set & relevant_entries_set):
-            entry = new_relevant_entries[key]
-            if entry["score"] > self.relevant_entries[key]["score"]:
-                print "score change for:",entry["title"], self.relevant_entries[key]["score"], "->", entry["score"]
-                found_displayed_entry = False
-                for display_entry in self.displayed_entries:
-                    #already displayed, we could delete and read it, to reflect the new placement
-                    if display_entry["title"] == key:
-                        found_displayed_entry = True
-                        self.delDisplayEntry("wiki", entry["title"])
+            new_relevant_entries_set = set(new_relevant_entries)
+            relevant_entries_set = set(self.relevant_entries)
+
+            #generate del relevant entries
+            #for key in relevant_entries_set - new_relevant_entries_set:
+            #    entry = self.relevant_entries[key]
+            #    self.delDisplayEntry("wiki", entry["title"])
+                
+            #generate add relevant entries
+            for key in new_relevant_entries_set - relevant_entries_set:
+                entry = new_relevant_entries[key]
+                self.addDisplayEntry("wiki", entry)
+
+            #now look for changed scores (happens if a keyword got more important and gets mentioned again)   
+            for key in (new_relevant_entries_set & relevant_entries_set):
+                entry = new_relevant_entries[key]
+                if entry["score"] > self.relevant_entries[key]["score"]:
+                    print "score change for:",entry["title"], self.relevant_entries[key]["score"], "->", entry["score"]
+                    found_displayed_entry = False
+                    for display_entry in self.displayed_entries:
+                        #already displayed, we could delete and read it, to reflect the new placement
+                        if display_entry["title"] == key:
+                            found_displayed_entry = True
+                            self.delDisplayEntry("wiki", entry["title"])
+                            self.addDisplayEntry("wiki", entry)
+                            break
+
+                    if not found_displayed_entry:
+                        #not displayed, try to see if the higher score gets results in a document that is more important
                         self.addDisplayEntry("wiki", entry)
-                        break
 
-                if not found_displayed_entry:
-                    #not displayed, try to see if the higher score gets results in a document that is more important
-                    self.addRelevantEntry("wiki", entry)
+            for key in new_relevant_entries_set - relevant_entries_set:
+                self.relevant_entries[key] = new_relevant_entries[key]
 
-        self.relevant_entries = new_relevant_entries
+        print 'send_relevant_entry_updates finished. Time needed:', t, 'seconds.'
+        print 'displayed entries should now be:',self.displayed_entries
 
 if __name__ == "__main__":
 

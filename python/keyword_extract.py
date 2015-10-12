@@ -76,7 +76,7 @@ class KeywordExtract:
 
     #You have to call buildDruidCache, before you call this function
     #Todo: parameterize penality_factor and gram_factor
-    def getKeywordsDruid(self, tokens, maxKeywords=5):
+    def getKeywordsDruid(self, tokens):
 
         keywords = defaultdict(int)
         keywords_pos = defaultdict(list)
@@ -85,10 +85,11 @@ class KeywordExtract:
             print 'Warning, no Druid cache found. Wont be able to detect keywords.'
             return []
 
-        #automatically tokenize strings if nessecary
+        #Automatically tokenize strings if nessecary
         if type(tokens) is str or type(tokens) is unicode:
             tokens = nltk.word_tokenize(tokens)
 
+        #Unigram to fourgram
         for x in xrange(1,5):
             seq = nltk.ngrams(tokens, x)
             for i,gram in enumerate(seq):
@@ -105,7 +106,7 @@ class KeywordExtract:
                     for pos in xrange(i,x+i):
                         keywords_pos[pos] += [search_gram]
 
-        #print keywords_pos
+        #Print keywords_pos
         keywords = self.mergeKeywords(keywords, keywords_pos)
         keywords_sorted = sorted(keywords.items(), key=operator.itemgetter(1), reverse=True)
 
