@@ -10,10 +10,16 @@ class Timer(object):
         self.verbose = verbose
 
     def __enter__(self):
-        self.start = time.time()
+        self.start()
         return self
 
     def __exit__(self, *args):
+        self.stop()
+
+    def start(self):
+        self.start = time.time()
+
+    def stop(self):
         self.end = time.time()
         self.secs = self.end - self.start
         self.msecs = self.secs * 1000  # millisecs
