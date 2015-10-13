@@ -1,7 +1,9 @@
 TODOS
+#####
 
-- Reset button for relevant keywords
-- Allow the use of 
+- Reset button for relevant entries (to manually reset the topics)
+- Allow the use of subtitled movies as input
+- Support German input
 - Extend python python/simulate_mic_input.py to simulate keywords and add more events
 - Display wikipedia data dynamically with js, according to incoming events, extend bridge.py as nessecary => nearly done, sorting/ranking and delete has to be still implemented
 - Additional event for points of interest on a map (Benjamin: I will work on the NLP part of this, simulate as nessecary)

@@ -1,16 +1,37 @@
 INSTALL
+#######
 
-Flask is needed to run the scripts, it has an integrated web server:
+Prequisites: Currently a running local redis server is needed, see http://redis.io/
+e.g. on Debian/Ubuntu, this can be install with: sudo apt-get install redis-server
 
-pip install flask
+You also need Python-2.7 with a couple of additional modules that you can easily install with pip:
 
-You also need a redis server (http://redis.io/) running on your local machine to run the scripts.
+pip install flask pyredis nltk wikipedia ws4py pyaudio topia.termextract
 
-To start the event server:
+You can now start the scripts from the root directory of the project:
+
+- To start the event server:
+
 python python/event_server.py
 
-For actual microphone input (needs Kaldi server running somewhere):
+- To start the module that finds relevant information:
+
+python python/relevant_event_generator.py
+
+You can now open http://localhost:5000/ in your browser!
+
+- To simulate microphone input (easier to debug):
+python python/simulate_mic_input.py
+
+- For actual microphone input (needs a Kaldi server instance):
 python python/mic_client.py
 
-To simulate microphone input (easier to debug):
-python python/simulate_mic_input.py
+Windows specific prerequistes
+#############################
+
+If you have Windows, you should first install Cygwin, which will install basic GNU tools. In the installer, be sure to select and install atleast python-2.7,bash and gcc
+
+Then you need to install pip, which can be done in the cygwin terminal:
+easy_install-2.7 pip
+
+You'll find your drives in /cygdrive/, from which you can follow the guide above
