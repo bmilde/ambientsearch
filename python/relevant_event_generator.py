@@ -80,9 +80,13 @@ class EventGenerator:
 
     # Add a relevant entry to the display, specify how many entries should be allowed maximally 
     def addDisplayEntry(self, entry_type, entry, max_entries=4):
-        print 'add', entry["title"], entry["score"]
-        #Determine position by its score
+        print 'check to add', entry["title"], entry["score"]
+        
+        #TODO: Refactor the entry_type diretly into entry
+        if "type" not in entry:
+            entry["type"] = entry_type
 
+        #Determine position by its score
         displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,"score")
         insert_pos = reverse_bisect(displayed_entries_get_score, float(entry["score"]))
         
@@ -95,9 +99,9 @@ class EventGenerator:
             #In this case, one of the previous best entries needs to be deleted:
             if(len_displayed_entries > max_entries):
                 #Send delete entry events to entries those score is below the four best showed entries
-                for entry in self.displayed_entries[max_entries:]:
-                    print 'del', entry["title"]
-                    self.keyword_client.delRelevantEntry(entry_type, entry["title"])
+                for display_entry in self.displayed_entries[max_entries:]:
+                    print 'del', display_entry["title"], 'score fell below max_entries'
+                    self.keyword_client.delRelevantEntry(display_entry["type"], display_entry["title"])
 
                 self.displayed_entries = self.displayed_entries[:max_entries]
                 len_displayed_entries = len(self.displayed_entries)
@@ -109,20 +113,25 @@ class EventGenerator:
                 insert_before = self.displayed_entries[insert_pos+1]["title"]
                 print 'Insert',entry["title"],'before',insert_before
 
+            print 'add', entry["title"], entry["score"]
             self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"], insert_before)
+
+        else:
+            print "Insert pos is:", insert_pos, "below max_entries for",  entry["title"]
 
     # Delete a relevant entry from the display
     def delDisplayEntry(self, entry_type,title):
         print 'del',title
         for i,display_entry in list(enumerate(self.displayed_entries)):
             if (display_entry["title"] == title):
+                print 'del', entry["title"]
                 self.keyword_client.delRelevantEntry(entry_type, title)
                 del self.displayed_entries[i]
                 break
 
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
-    def send_relevant_entry_updates(self,max_entries=4, decay=.9):
+    def send_relevant_entry_updates(self,max_entries=4, decay=.8):
 
         print 'send_relevant_entry_updates called'
         with Timer() as t:
@@ -159,8 +168,8 @@ class EventGenerator:
                         #already displayed, we could delete and read it, to reflect the new placement
                         if display_entry["title"] == key:
                             found_displayed_entry = True
-                            self.delDisplayEntry("wiki", entry["title"])
-                            self.addDisplayEntry("wiki", entry)
+                            #self.delDisplayEntry("wiki", entry["title"])
+                            #self.addDisplayEntry("wiki", entry)
                             break
 
                     if not found_displayed_entry:
