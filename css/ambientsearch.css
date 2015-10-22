@@ -56,6 +56,52 @@ h1, .h1, h2, .h2, h3, .h3 {
     margin-bottom: 8px;
 }
 
-/*#chat-area p {
-    padding: 8px 0;
-}*/
+.btn-round-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.btn-black {
+  color: white;
+  background-color: #333;
+  border-color: #333;
+}
+
+.a-close-icon {
+    color: #333;
+    text-align: right;
+    font-size: 140%;
+    padding-bottom: 0; 
+    margin-bottom: 0;
+}
+
+.star-icon {
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fdd600;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=80);
+    opacity: .8;
+    /*Button specific:*/
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.star-icon:focus {
+    text-decoration: none;
+    cursor: pointer;
+    .opacity(.5);
+}
+
+.close-darker {
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=70);
+    opacity: .7;
+}

@@ -125,6 +125,8 @@
                             </div>
                         </div>
                     <div class="thumbnail">
+                        <button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
+                        <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
                         <!--img style="height: 160px" src="pics/test/jaguar_wiki.jpg" alt=""-->
                         <div class="caption">
                             <h3><a data-toggle="modal" data-target="#{{=it.entry_id}}Modal">{{=it.title}}</a></h3>
