@@ -41,8 +41,10 @@ class SimluateInput:
 if __name__ == '__main__':            
     si = SimluateInput()
     si.simulateSentence("computational linguistics is a field that is primarily concerned with and natural language processing from the linguistic and computer standpoint of few it has roots in the rule based systems artificial intelligence")
+    si.simulateSentence("and now i change the topic completely")
     si.simulateSentence("red blood cells are round with a flattish, indented center, like doughnuts without a hole.")
+    si.simulateSentence("and now i change the topic again")
     si.simulateSentence("new york city is one of the major cities")
     si.simulateSentence("i have been to new york city")
     si.simulateSentence("to brookyln and harlem")
-    
+
