@@ -1,7 +1,7 @@
 TODOS
 #####
 
-- Star and close (Benjamin: non-functional buttons were already in my local copy, pushed this now)
+- Starring relevant entries like a bookmark and closing relevant entries (Benjamin: non-functional buttons were already in my local copy, pushed this now)
 - Pictures, what source? Wiki or Flicker?
 - Bug: Modal can be deleted while it is displayed. Open relevant entries should never be deleted from the display.
 - Reset button to remove all relevant entries (to manually reset the topic)
