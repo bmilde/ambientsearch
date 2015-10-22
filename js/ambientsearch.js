@@ -1,17 +1,28 @@
+/*
+ambientsearch.js - Receive and display events from an event stream.
+
+Author: Benjamin Milde
+*/
+
+
 /*Events: relevant documents*/
 
+/*This generates a template function for the template in index.html with the id relevantDocs_tmpl*/
 wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').text);
 fadeInTimeMs = 800
 
 function addRelevantEntry(json_event) {
 	if (json_event['type'] == 'wiki')
 	{
+		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
 		html = wikiEntryTemplate(json_event);
 		console.log(html);
 		if(json_event['insert_before'] == '#end#')
 		{
+			//Insert entry as the least important entry
 			$(html).hide().appendTo('#relevantDocs').fadeIn(fadeInTimeMs);
 		}else{
+			//Insert entry and show that it is more imortant than the entry in 'insert_before'
 			$(html).hide().insertBefore('#'+json_event['insert_before']).fadeIn(fadeInTimeMs);
 		}
 	}
@@ -45,6 +56,29 @@ function reset() {
 
 var source = new EventSource('/stream');
 var utts = [];
+
+/*
+Currently, we have following events: addUtterance, replaceLastUtterance, addRelevantEntry, delRelevantEntry and reset.
+
+addUtterance and replaceLastUtterance are used to stream and display speech hypothesis to the user in real time.
+The old hypothesis are replaced with new ones until a new utterance (sentence) is added.
+
+E.g.
+{"handle": "addUtterance", "utterance": "just like.", "speaker": "You"}
+{"handle": "replaceLastUtterance", "utterance": "just like you.", "old_utterance": "just like.", "speaker": "You"}
+
+addRelevantEntry and delRelevantEntry add or delete relevant entries to the display. Currently, there is only one type, "wiki". Since there is a ranking between displayed entries, "insert_before" indicates the id of the relevant entry that should be after this new element. The special marker "#end#" is used to indicate that element should be added as the last relevant in the current list.
+
+E.g.
+{"handle": "delRelevantEntry", "type": "wiki", "entry_id": "EXPOSE",  "title": "EXPOSE"}
+{"handle": "addRelevantEntry", "type": "wiki", "insert_before": "Just_Show_Me_How_to_Love_You", "score": 0.5138, "title": "Just Like", "url": "https://en.wikipedia.org/w/index.php?title=Just_Like", "entry_id": "Just_Like", "text": "\\"Just Like\\" is a song recorded by Marvin Gaye in 1978 but wasn\'t released until after the release of Gaye\'s posthumous 1985 album, Romantically Yours."}
+
+Lastely, the "reset" handle is used to indicate that all text in the speech recognition and all relevant entries should be deleted, i.e. the website should reset itself to its initial state.
+
+E.g.
+{"handle": "reset"}
+
+*/
 
 source.onmessage = function (event) {
 	json_event = JSON.parse(event.data);
