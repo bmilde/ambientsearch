@@ -16,15 +16,33 @@ function addRelevantEntry(json_event) {
 	{
 		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
 		html = wikiEntryTemplate(json_event);
-		console.log(html);
+		//console.log(html);
 		if(json_event['insert_before'] == '#end#')
 		{
 			//Insert entry as the least important entry
-			$(html).hide().appendTo('#relevantDocs').fadeIn(fadeInTimeMs);
+			$(html).hide().appendTo('#relevantDocs');
 		}else{
 			//Insert entry and show that it is more imortant than the entry in 'insert_before'
-			$(html).hide().insertBefore('#'+json_event['insert_before']).fadeIn(fadeInTimeMs);
+			$(html).hide().insertBefore('#'+json_event['insert_before']);
 		}
+
+		// request image from flickr
+		var flickr_request_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a34f8c69b8924a4d286539815457ebac&text=" + json_event['entry_id'] + "&sort=relevance&per_page=1&page=1&format=json&nojsoncallback=1";
+		$.getJSON(flickr_request_url, function(data) {
+			//console.log(data);
+
+			if(data['stat'] == "ok" && data['photos']['photo'].length > 0) {
+				var photo = data['photos']['photo'][0];
+				var image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_q.jpg";
+
+				$('<img src="' + image_url +'" alt="' + json_event['entry_id'] + '" />').insertBefore('#'+json_event['entry_id']+' div.caption');
+				//console.log(json_event['entry_id'] + " " + image_url);
+			} else {
+				//console.log(json_event['entry_id'] + " no image found");
+			}
+		});
+
+		$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
 	}
 }
 
