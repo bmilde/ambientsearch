@@ -27,7 +27,7 @@ function addRelevantEntry(json_event) {
 		}
 
 		// request image from flickr
-		var flickr_request_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a34f8c69b8924a4d286539815457ebac&text=" + json_event['entry_id'] + "&sort=relevance&per_page=1&page=1&format=json&nojsoncallback=1";
+		var flickr_request_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=fed915bcf3c85271ac6f9ef1823175bf&text=" + json_event['entry_id'] + "&sort=relevance&per_page=1&page=1&format=json&nojsoncallback=1";
 		$.getJSON(flickr_request_url, function(data) {
 			//console.log(data);
 
