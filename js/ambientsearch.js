@@ -40,14 +40,15 @@ function addRelevantEntry(json_event) {
 			} else {
 				//console.log(json_event['entry_id'] + " no image found");
 			}
+
+			$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
 		});
 
-		$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
 	}
 }
 
 function delRelevantEntry(json_event) {
-	$('#'+json_event['entry_id']).remove();
+	closeEntry(json_event['entry_id']);
 }
 
 /*Events: speech recognition feedback*/
