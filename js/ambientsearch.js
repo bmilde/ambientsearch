@@ -71,6 +71,21 @@ function reset() {
 	$('#relevantDocs').empty();
 }
 
+
+
+function starEntry(entry_id) {
+	// TODO ajax url?
+	//$.get(url);
+}
+
+function closeEntry(entry_id) {
+	if($('#' + entry_id + ' div.modal').is(':visible')) {
+		// TODO do what? close modal and remove entry? or leave modal open and keep entry (->more than 4 relevant entries)?
+	} else { 
+		$('#' + entry_id).remove();
+	}
+}
+
 /*Dispatch events from EventSource*/
 
 var source = new EventSource('/stream');
