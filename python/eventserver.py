@@ -49,31 +49,31 @@ def poll():
         message = pubsub.get_message(timeout=long_poll_timeout_burst)
 
 @app.route('/closed', methods=['POST'])
-def voteUnrelevant():
+def closed():
     received_json = flask.request.json
     print received_json
     return "ok"
 
 @app.route('/starred', methods=['POST'])
-def voteUnrelevant():
+def starred():
     received_json = flask.request.json
     print received_json
     return "ok"
 
 @app.route('/unstarred', methods=['POST'])
-def voteUnrelevant():
+def unstarred():
     received_json = flask.request.json
     print received_json
     return "ok"
 
 @app.route('/viewing', methods=['POST'])
-def voteUnrelevant():
+def viewing():
     received_json = flask.request.json
     print received_json
     return "ok"
 
 @app.route('/viewingClosed', methods=['POST'])
-def voteUnrelevant():
+def viewingClosed():
     received_json = flask.request.json
     print received_json
     return "ok"
