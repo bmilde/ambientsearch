@@ -117,25 +117,25 @@ function starEntry(entry_id) {
 	if(index > -1) { 
 		// unstar entry
 		starredEntries.splice(index, 1);
-		//TODO: $.get(unstar_url);
+		//TODO_url: $.get(unstar_url);
 	} else { 
 		// star entry
 		starredEntries.push(entry_id);
-		//TODO: $.get(star_url);
+		//TODO_url: $.get(star_url);
 	}
 
 	$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
 }
 
 function closeEntry(entry_id) {
-	//TODO: $.get(close_url)
+	//TODO_url: $.get(close_url)
 	removeEntry(entry_id);
 }
 
 function resetConversation() {
 	starredEntries = [];
-	//$.get('/reset'); // TODO: change route to GET & calling '/reset' doesn't send 'handle=reset'
-	reset(); // TODO: remove
+	//$.get('/reset'); // TODO_reset: change route to GET & calling '/reset' doesn't send 'handle=reset'
+	reset(); // TODO_reset: remove
 }
 
 
