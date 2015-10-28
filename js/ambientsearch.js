@@ -16,7 +16,6 @@ function addRelevantEntry(json_event) {
 	{
 		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
 		html = wikiEntryTemplate(json_event);
-		//console.log(html);
 		if(json_event['insert_before'] == '#end#')
 		{
 			//Insert entry as the least important entry
@@ -26,29 +25,20 @@ function addRelevantEntry(json_event) {
 			$(html).hide().insertBefore('#'+json_event['insert_before']);
 		}
 
-		// request image from flickr
-		var flickr_request_url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=fed915bcf3c85271ac6f9ef1823175bf&text=" + json_event['entry_id'] + "&sort=relevance&per_page=1&page=1&format=json&nojsoncallback=1";
-		$.getJSON(flickr_request_url, function(data) {
-			//console.log(data);
-
-			if(data['stat'] == "ok" && data['photos']['photo'].length > 0) {
-				var photo = data['photos']['photo'][0];
-				var image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_q.jpg";
-
-				$('<img src="' + image_url +'" alt="' + json_event['entry_id'] + '" />').insertBefore('#'+json_event['entry_id']+' div.caption');
-				//console.log(json_event['entry_id'] + " " + image_url);
-			} else {
-				//console.log(json_event['entry_id'] + " no image found");
+		// add flickr image
+		getFlickrImage(json_event['entry_id'], function(image_found, image_url) {
+			if(image_found) {
+				addImage(json_event['entry_id'], image_url)				
 			}
 
 			$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
 		});
-
+		
 	}
 }
 
 function delRelevantEntry(json_event) {
-	closeEntry(json_event['entry_id']);
+	removeEntry(json_event['entry_id']);
 }
 
 /*Events: speech recognition feedback*/
@@ -64,26 +54,6 @@ function addUtterance(json_event) {
 function replaceLastUtterance(json_event) {
 	$('#chat-area p:last').html(renderUtterance(json_event))
 	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
-}
-
-function reset() {
-	$('#chat-area').empty();
-	$('#relevantDocs').empty();
-}
-
-
-
-function starEntry(entry_id) {
-	// TODO ajax url?
-	//$.get(url);
-}
-
-function closeEntry(entry_id) {
-	if($('#' + entry_id + ' div.modal').is(':visible')) {
-		// TODO do what? close modal and remove entry? or leave modal open and keep entry (->more than 4 relevant entries)?
-	} else { 
-		$('#' + entry_id).remove();
-	}
 }
 
 /*Dispatch events from EventSource*/
@@ -137,3 +107,90 @@ source.onmessage = function (event) {
 		reset();
 	}
 };
+
+
+/* user called methods */
+
+var starredEntries = [];
+function starEntry(entry_id) {
+	var index = starredEntries.indexOf(entry_id);
+	if(index > -1) { 
+		// unstar entry
+		starredEntries.splice(index, 1);
+		//TODO: $.get(unstar_url);
+	} else { 
+		// star entry
+		starredEntries.push(entry_id);
+		//TODO: $.get(star_url);
+	}
+
+	$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+}
+
+function closeEntry(entry_id) {
+	//TODO: $.get(close_url)
+	removeEntry(entry_id);
+}
+
+function resetConversation() {
+	starredEntries = [];
+	//$.get('/reset'); // TODO: change route to GET & calling '/reset' doesn't send 'handle=reset'
+	reset(); // TODO: remove
+}
+
+
+
+/* utility */
+
+function removeEntry(entry_id) {
+	if($('#' + entry_id + ' div.modal').is(':visible') === false) {
+		$('#' + entry_id).remove();
+
+		var index = starredEntries.indexOf(entry_id);
+		if(index > -1) {
+			starredEntries.splice(index, 1);
+		}
+	}
+}
+
+function reset() {
+	$('#chat-area').empty();
+	$('#relevantDocs').empty();
+}
+
+function addImage(entry_id, image_url) {
+	$('<img src="' + image_url +'" class="flickr-image" alt="' + entry_id + '" />').insertBefore('#'+entry_id+' div.caption');
+}
+
+function getFlickrImage(searchTerm, callback) {
+	var flickr_sort = $('#flickrSort').val();
+	var flickr_api_key = 'fed915bcf3c85271ac6f9ef1823175bf';
+	var flickr_request_url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickr_api_key + '&text=' + searchTerm + '&sort=' + flickr_sort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
+
+	$.getJSON(flickr_request_url, function(data) {
+		var image_found = (data['stat'] == "ok" && data['photos']['photo'].length > 0);
+		var image_url;
+		if(image_found) {
+			var photo = data['photos']['photo'][0];
+			image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_q.jpg";
+		}
+	
+		callback(image_found, image_url);
+	});
+}
+
+
+/* bindings */
+
+$('#flickrSort').change(function() {
+	// replace flickr images
+	$('#relevantDocs > div').each(function(index, element) {
+		var entry_id = $(this).attr('id');
+		getFlickrImage(entry_id, function(image_found, image_url) {
+			$('#' + entry_id + ' .flickr-image').remove();
+			if(image_found) {
+				addImage(entry_id, image_url);
+			}
+		}); 
+	});
+});
