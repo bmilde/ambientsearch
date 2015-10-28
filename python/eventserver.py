@@ -48,10 +48,39 @@ def poll():
         yield message
         message = pubsub.get_message(timeout=long_poll_timeout_burst)
 
-@app.route('/voteUnrelevant', methods=['POST'])
+@app.route('/closed', methods=['POST'])
 def voteUnrelevant():
     received_json = flask.request.json
     print received_json
+    return "ok"
+
+@app.route('/starred', methods=['POST'])
+def voteUnrelevant():
+    received_json = flask.request.json
+    print received_json
+    return "ok"
+
+@app.route('/unstarred', methods=['POST'])
+def voteUnrelevant():
+    received_json = flask.request.json
+    print received_json
+    return "ok"
+
+@app.route('/viewing', methods=['POST'])
+def voteUnrelevant():
+    received_json = flask.request.json
+    print received_json
+    return "ok"
+
+@app.route('/viewingClosed', methods=['POST'])
+def voteUnrelevant():
+    received_json = flask.request.json
+    print received_json
+    return "ok"
+
+@app.route('/reset', methods=['GET'])
+def reset():
+    print "reset called"
     return "ok"
 
 #This could also be replaced with just using redis for message passing
