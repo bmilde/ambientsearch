@@ -33,7 +33,14 @@ function addRelevantEntry(json_event) {
 
 			$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
 		});
-		
+
+		// add view open/close events
+		$('#'+json_event['entry_id']+'Modal').on('show.bs.modal', function(e) {
+			$.postJSON('/viewing', JSON.stringify({"entry_id": json_event['entry_id']}), null);
+		});
+		$('#'+json_event['entry_id']+'Modal').on('hide.bs.modal', function(e) {
+			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": json_event['entry_id']}), null);
+		});
 	}
 }
 
@@ -116,26 +123,31 @@ function starEntry(entry_id) {
 	var index = starredEntries.indexOf(entry_id);
 	if(index > -1) { 
 		// unstar entry
-		starredEntries.splice(index, 1);
-		//TODO_url: $.get(unstar_url);
+		$.postJSON('/unstarrd', JSON.stringify({"entry_id": entry_id}), function() {
+			starredEntries.splice(index, 1);
+			$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+		});
 	} else { 
 		// star entry
-		starredEntries.push(entry_id);
-		//TODO_url: $.get(star_url);
+		console.log(entry_id);
+		$.postJSON('/starred', JSON.stringify({"entry_id": entry_id}), function() {
+			starredEntries.push(entry_id);
+			$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+		});
 	}
 
-	$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
 }
 
 function closeEntry(entry_id) {
-	//TODO_url: $.get(close_url)
-	removeEntry(entry_id);
+	if(removeEntry(entry_id)) {
+		$.postJSON('/closed', JSON.stringify({"entry_id": entry_id}), null);
+	}
 }
 
 function resetConversation() {
 	starredEntries = [];
-	//$.get('/reset'); // TODO_reset: change route to GET & calling '/reset' doesn't send 'handle=reset'
-	reset(); // TODO_reset: remove
+	$.get('/reset');
+	//reset(); //TODO remove
 }
 
 
@@ -150,7 +162,10 @@ function removeEntry(entry_id) {
 		if(index > -1) {
 			starredEntries.splice(index, 1);
 		}
+
+		return true;
 	}
+	return false;
 }
 
 function reset() {
@@ -178,6 +193,16 @@ function getFlickrImage(searchTerm, callback) {
 		callback(image_found, image_url);
 	});
 }
+
+jQuery["postJSON"] = function( url, data, callback ) {
+    return jQuery.ajax({
+        url: url,
+        type: "POST",
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        success: callback
+    });
+};
 
 
 /* bindings */
