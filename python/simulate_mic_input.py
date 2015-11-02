@@ -27,7 +27,7 @@ class SimluateInput:
         self.ks.completeUtterance(utterance, self.std_spk)
 
     def get_delay(self, word):
-        return len(word) * 0.05
+        return len(word) * 0.015
 
     def simulateSentence(self, sentence):
         split = sentence.split(" ")

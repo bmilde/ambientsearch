@@ -51,30 +51,35 @@ def poll():
 @app.route('/closed', methods=['POST'])
 def closed():
     received_json = flask.request.json
+    print "closed called"
     print received_json
     return "ok"
 
 @app.route('/starred', methods=['POST'])
 def starred():
     received_json = flask.request.json
+    print "starred called"
     print received_json
     return "ok"
 
 @app.route('/unstarred', methods=['POST'])
 def unstarred():
     received_json = flask.request.json
+    print "unstarred called"
     print received_json
     return "ok"
 
 @app.route('/viewing', methods=['POST'])
 def viewing():
     received_json = flask.request.json
+    print "viewing called"
     print received_json
     return "ok"
 
 @app.route('/viewingClosed', methods=['POST'])
 def viewingClosed():
     received_json = flask.request.json
+    print "viewingClosed called"
     print received_json
     return "ok"
 
