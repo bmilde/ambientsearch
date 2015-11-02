@@ -49,7 +49,7 @@ def reverse_bisect(a, x, lo=0, hi=None):
 # (relevant text and pictures are downloaded in a blocking manner using wiki_search)
 class EventGenerator:
 
-    def __init__(self,keyword_server_url, keyword_extrator):
+    def __init__(self,keyword_server_url, keyword_extrator, lang="en"):
         self.complete_transcript = []
 
         #dict with all relevant entries
@@ -58,6 +58,7 @@ class EventGenerator:
         self.displayed_entries = []
         self.keyword_client = KeywordClient(keyword_server_url)
         self.ke = keyword_extrator
+        self.lang = lang
 
     #Listen loop (redis)
     #Todo: for other languages than English, utf8 de and encoding will be needed
@@ -77,6 +78,8 @@ class EventGenerator:
                         self.complete_transcript = []
                         self.relevant_entries = {}
                         self.displayed_entries = []
+                    elif json_message["handle"] == "setLanguage":
+                        print 'set language' #todo
 
     # Add a relevant entry to the display, specify how many entries should be allowed maximally 
     def addDisplayEntry(self, entry_type, entry, max_entries=4):
@@ -143,7 +146,7 @@ class EventGenerator:
 
             keywords = self.ke.getKeywordsDruid(self.complete_transcript[-1])
             print keywords
-            new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang='en',pics_folder='pics/')
+            new_relevant_entries = wiki_search.getSummariesSingleKeyword(keywords,max_entries,lang=self.lang,pics_folder='pics/')
 
             new_relevant_entries_set = set(new_relevant_entries)
             relevant_entries_set = set(self.relevant_entries)
@@ -188,10 +191,11 @@ if __name__ == "__main__":
     parser.add_argument('-a', '--ambient-uri', type=str, default='http://localhost:5000/', dest='ambient_uri', help='Ambient server websocket URI')
     parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.1, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
         'lower value will find more keywords, but takes longer to load and needs more memory')
+    parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
 
     args = parser.parse_args()
-    ke = keyword_extract.KeywordExtract()
+    ke = keyword_extract.KeywordExtract(lang=args.language)
     ke.buildDruidCache(cutoff_druid_score=args.cutoff_druid_score)
 
-    event_gen = EventGenerator(args.ambient_uri, ke)
+    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language)
     event_gen.start_listen()

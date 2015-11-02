@@ -4,6 +4,7 @@ __author__ = 'Benjamin Milde'
 
 import time
 import redis
+import argparse
 from bridge import KeywordClient
 
 class SimluateInput:
@@ -36,9 +37,8 @@ class SimluateInput:
             self.update(' '.join(split[:x]),self.get_delay(split[x-1]))
         self.complete(sentence)
         self.last_hyp = ""
-        
 
-if __name__ == '__main__':            
+def simulate_en():        
     si = SimluateInput()
     si.simulateSentence("computational linguistics is a field that is primarily concerned with and natural language processing from the linguistic and computer standpoint of few it has roots in the rule based systems artificial intelligence")
     si.simulateSentence("and now i change the topic completely")
@@ -47,4 +47,26 @@ if __name__ == '__main__':
     si.simulateSentence("new york city is one of the major cities")
     si.simulateSentence("i have been to new york city")
     si.simulateSentence("to brookyln and harlem")
+
+def simulate_de():
+    si = SimluateInput()
+    si.simulateSentence("Sprachwissenschaft, auch Linguistik, ist eine Wissenschaft, die in verschiedenen Herangehensweisen die menschliche Sprache untersucht.")
+    si.simulateSentence("Inhalt sprachwissenschaftlicher Forschung ist die Sprache als System und im Gebrauch, ihre einzelnen Bestandteile und Einheiten sowie deren Bedeutungen.")
+    si.simulateSentence("Des Weiteren beschäftigt sich die Sprachwissenschaft mit Entstehung, Herkunft und geschichtlicher Entwicklung von Sprache, mit ihrer vielseitigen Anwendung in der schriftlichen und mündlichen Kommunikation, mit dem Wahrnehmen, Erlernen und Artikulieren von Sprache sowie mit den möglicherweise damit einhergehenden Störungen.")
+    si.simulateSentence("Nun wechseln wir das Thema!")
+    si.simulateSentence("Wie wäre es mit der Frankfurter Rundschau")
+    si.simulateSentence("und der akuellen Lage in Syrien?")
+
+#def use_textfile(lang): todo    
+
+if __name__ == '__main__':            
+    parser = argparse.ArgumentParser(description='Command line test client - simulate ASR input.')
+    parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
+
+    args = parser.parse_args()
+
+    if args.language == 'en':
+        simulate_en()
+    elif args.language == 'de':
+        simulate_de()
 

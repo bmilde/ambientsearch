@@ -13,14 +13,9 @@ import wiki_search
 import os.path
 import sys
 
-#This is needed for English. TODO: This is hacky. Move this out of the global scope and make it multi-language (de + en) and move word lists to static files.
-
-#compiled regex that can check if a string contains numbers
-RE_D = re.compile('\d')
-stopwords_list = ["(",")",",",":","[","]",";",".","...","'","'d","&","$","i","a", "n't", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as", "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "being", "below", "beside", "besides", "between", "beyond", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "could", "couldnt", "cry", "do", "done", "down", "due", "during", "each", "eg", "either", "else", "elsewhere", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "for", "former", "formerly", "from", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "this", "those", "though", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"]
-stopwords = dict(zip([unicode(word) for word in stopwords_list],[1]*len(stopwords_list)))
-
-common_words = {}
+#stopwords_list = ["(",")",",",":","[","]",";",".","...","'","'d","&","$","i","a", "n't", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as", "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "being", "below", "beside", "besides", "between", "beyond", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "could", "couldnt", "cry", "do", "done", "down", "due", "during", "each", "eg", "either", "else", "elsewhere", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "for", "former", "formerly", "from", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "this", "those", "though", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"]
+#stopwords = dict(zip([unicode(word) for word in stopwords_list],[1]*len(stopwords_list)))
+#common_words = {}
 
 def check_path(path):
     if not os.path.isfile(path):
@@ -30,19 +25,31 @@ def check_path(path):
             sys.exit(-1)
     return path
 
-common_words_filename = check_path('data/1-1000_en.txt')
-druid_mwe_file = check_path('data/wikipedia_complete_druid_4gram_en.bz2')
-
-with codecs.open(common_words_filename,'r','utf-8') as common_words_file:
-    for line in common_words_file:
-        common_words[line[:-1]] = 1
 
 class KeywordExtract:
 
-    def __init__(self):
+    def __init__(self, lang='en'):
+        self.lang = lang
         self.keyword_extractor = extract.TermExtractor()
         self.keyword_extractor.filter = extract.permissiveFilter
         self.keyword_dict = {}
+
+        self.common_words_filename = check_path('data/1-1000_'+lang+'.txt')
+        self.stopwords_filename = check_path('data/stopwords_'+lang+'.txt')
+        self.druid_mwe_file = check_path('data/druid_'+lang+'.bz2')
+
+        self.common_words = {}
+        with codecs.open(self.common_words_filename,'r','utf-8') as common_words_file:
+            for line in common_words_file:
+                self.common_words[line[:-1]] = 1
+
+        self.stopwords = {}
+        with codecs.open(self.stopwords_filename,'r','utf-8') as stop_words_file:
+            for line in stop_words_file:
+                self.stopwords[line[:-1]] = 1
+
+        #compiled regex that can check if a string contains numbers
+        self.RE_D = re.compile('\d')
 
     def getKeywordsTermLib(self, currentHyp, contextWords=200, ignoreNumRecentWords=1, maxKeywords=7):
 
@@ -97,7 +104,7 @@ class KeywordExtract:
                 #We score and rank keywords heuristically here and modify the druid score a bit: common words get penalized more, multiwords get a better score
                 if len(search_gram) > 2 and search_gram in self.keyword_dict:
                     gram_factor = 1.0
-                    if search_gram in common_words or search_gram[:-1] in common_words:
+                    if search_gram in self.common_words or search_gram[:-1] in self.common_words:
                         penality_factor = 0.1
                     else:
                         penality_factor = 1.0
@@ -114,7 +121,7 @@ class KeywordExtract:
 
     #Build a dictionary of DRUID keywords. Input is basically a filelist with multiwordness scores for 1-4 grams produced from the algorithm. Numbers and stopwords are filtered, the rest is taken as is.
     def buildDruidCache(self,cutoff_druid_score=0.2):
-        druid_bz2 = bz2.BZ2File(druid_mwe_file, mode='r')
+        druid_bz2 = bz2.BZ2File(self.druid_mwe_file, mode='r')
         druid_file = codecs.iterdecode(druid_bz2, 'utf-8')
         num_added_words=0
 
@@ -122,13 +129,13 @@ class KeywordExtract:
             split = line.split(u'\t')
             words = split[1].lower()
             druid_score = split[2]
-            has_number = RE_D.search(words)
+            has_number = self.RE_D.search(words)
             #exlude any lines that have one or more numbers in them
             if not has_number:
                 words_split = words.split(u' ')
                 float_druid_score = float(druid_score)
                 if float_druid_score > cutoff_druid_score:
-                    if not any((word in stopwords) for word in words_split):
+                    if not any((word in self.stopwords) for word in words_split):
                         self.keyword_dict[words] = float_druid_score
                         num_added_words += 1
                         if num_added_words % 1000 == 0:
@@ -138,7 +145,7 @@ class KeywordExtract:
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
-    ke = KeywordExtract()
+    ke = KeywordExtract(lang="en")
     ke.buildDruidCache()
     test = ke.getKeywordsDruid(u"A columbia university law professor stood in a hotel lobby one morning and noticed a sign apologizing for an elevator that was out of order. it had dropped unexpectedly three stories a few days earlier. the professor, eben moglen, tried to imagine what the world would be like if elevators were not built so that people could inspect them. mr. moglen was on his way to give a talk about the dangers of secret code, known as proprietary software, that controls more and more devices every day. proprietary software is an unsafe building material, mr. moglen had said. you can't inspect it. he then went to the golden gate bridge and jumped.")
     print test
