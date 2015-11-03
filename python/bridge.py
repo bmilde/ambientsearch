@@ -5,11 +5,14 @@ __author__ = 'Benjamin Milde'
 import requests
 import json
 import redis
+import re
 
 red = redis.StrictRedis()
 
+#Todo: refactor. This has been mved to the relevant event generator 
 def idFromTitle(title):
-    return title.replace(' ','_').replace("'",'_').replace('(','_')
+    return re.sub(r'[^\w]', '_', title.replace(' ','_'))
+    #return title.replace(' ','_').replace("'",'_').replace('(','_')
 
 #Abstracts away the details of communicating with the ambient server
 class KeywordClientHttp():
@@ -23,7 +26,7 @@ class KeywordClientHttp():
         return r.json()
         
     def addRelevantEntry(self, type, title, text, url, score, insert_before):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(insert_before)}
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before}
         r = requests.post(self.server_url+'addRelevantEntry', data=json.dumps(data), headers=self.request_header)
         return r.status_code
 
@@ -64,7 +67,7 @@ class KeywordClient():
         return r.json()
         
     def addRelevantEntry(self, type, title, text, url, score, insert_before):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': idFromTitle(insert_before)}
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before}
         red.publish('ambient', json.dumps(data))
 
     def delRelevantEntry(self, type, title):

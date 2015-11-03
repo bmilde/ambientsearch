@@ -9,6 +9,7 @@ import wiki_search
 import argparse
 import json
 import bisect
+import re
 from timer import Timer
 from datetime import datetime
 
@@ -18,6 +19,8 @@ red = redis.StrictRedis()
 
 #redis channel with relevant messages for this python module
 my_redis_channel = 'ambient_transcript_only'
+
+end_marker = '_end_'
 
 # Helper class for addDisplayEntry and managing a list of displayed items with bisect:
 # See: http://stackoverflow.com/questions/1344308/in-python-find-item-in-list-of-dicts-using-bisect 
@@ -44,12 +47,15 @@ def reverse_bisect(a, x, lo=0, hi=None):
         else: lo = mid+1
     return lo
 
+def idFromTitle(title):
+    return re.sub(r'[^\w]', '_', title.replace(' ','_'))
+
 # This event generator listens for incoming complete utterance redis events
 # and starts the process of finding relevant information after each utterance with the keyword_extract module
 # (relevant text and pictures are downloaded in a blocking manner using wiki_search)
 class EventGenerator:
 
-    def __init__(self,keyword_server_url, keyword_extrator, lang="en"):
+    def __init__(self,keyword_server_url, keyword_extrator, lang='en'):
         self.complete_transcript = []
 
         #dict with all relevant entries
@@ -66,32 +72,37 @@ class EventGenerator:
         pubsub = red.pubsub()
         pubsub.subscribe(my_redis_channel)
         for message in pubsub.listen():
-            print 'New message:', message, type(message["data"])
-            if type(message["data"]) == str:
-                json_message = json.loads(message["data"])
-                if "handle" in json_message:
-                    if json_message["handle"] == "completeUtterance":
-                        self.complete_transcript.append(json_message["utterance"])
+            print 'New message:', message, type(message['data'])
+            if type(message['data']) == str:
+                json_message = json.loads(message['data'])
+                if 'handle' in json_message:
+                    if json_message['handle'] == 'completeUtterance':
+                        self.complete_transcript.append(json_message['utterance'])
                         self.send_relevant_entry_updates()
-                    elif json_message["handle"] == "reset":
+                    if json_message['handle'] == 'closed':
+                        self.delDisplayId(json_message['entry_id'])
+                    elif json_message['handle'] == 'reset':
                         print 'reset all'
                         self.complete_transcript = []
                         self.relevant_entries = {}
                         self.displayed_entries = []
-                    elif json_message["handle"] == "setLanguage":
+                    elif json_message['handle'] == 'setLanguage':
                         print 'set language' #todo
 
     # Add a relevant entry to the display, specify how many entries should be allowed maximally 
     def addDisplayEntry(self, entry_type, entry, max_entries=4):
-        print 'check to add', entry["title"], entry["score"]
+        print 'check to add', entry['title'], entry['score']
         
         #TODO: Refactor the entry_type diretly into entry
-        if "type" not in entry:
-            entry["type"] = entry_type
+        if 'type' not in entry:
+            entry['type'] = entry_type
+
+        if 'entry_id' not in entry:
+            entry['entry_id'] = idFromTitle(entry['title'])
 
         #Determine position by its score
-        displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,"score")
-        insert_pos = reverse_bisect(displayed_entries_get_score, float(entry["score"]))
+        displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,'score')
+        insert_pos = reverse_bisect(displayed_entries_get_score, float(entry['score']))
         
         #Only add entry if we want to insert it into the max_entries best entries
         if insert_pos < max_entries:
@@ -103,32 +114,42 @@ class EventGenerator:
             if(len_displayed_entries > max_entries):
                 #Send delete entry events to entries those score is below the four best showed entries
                 for display_entry in self.displayed_entries[max_entries:]:
-                    print 'del', display_entry["title"], 'score fell below max_entries'
-                    self.keyword_client.delRelevantEntry(display_entry["type"], display_entry["title"])
+                    print 'del', display_entry['entry_id'], 'score fell below max_entries'
+                    self.keyword_client.delRelevantEntry(display_entry['type'], display_entry['title'])
 
                 self.displayed_entries = self.displayed_entries[:max_entries]
                 len_displayed_entries = len(self.displayed_entries)
 
             if insert_pos == len_displayed_entries -1:
-                insert_before = '#end#'
-                print 'Insert',entry["title"],'at the end'
+                insert_before = end_marker
+                print 'Insert',entry['entry_id'],'at the end'
             else:
-                insert_before = self.displayed_entries[insert_pos+1]["title"]
-                print 'Insert',entry["title"],'before',insert_before
+                insert_before = self.displayed_entries[insert_pos+1]['entry_id']
+                print 'Insert',entry['entry_id'],'before',insert_before
 
-            print 'add', entry["title"], entry["score"]
-            self.keyword_client.addRelevantEntry("wiki", entry["title"], entry["text"], entry["url"], entry["score"], insert_before)
+            print 'add', entry['title'], entry['score']
+            self.keyword_client.addRelevantEntry('wiki', entry['title'], entry['text'], entry['url'], entry['score'], insert_before)
 
         else:
             print "Insert pos is:", insert_pos, "below max_entries for",  entry["title"]
 
     # Delete a relevant entry from the display
-    def delDisplayEntry(self, entry_type,title):
+    def delDisplayEntry(self, entry_type, title):
         print 'del',title
         for i,display_entry in list(enumerate(self.displayed_entries)):
             if (display_entry["title"] == title):
                 print 'del', entry["title"]
                 self.keyword_client.delRelevantEntry(entry_type, title)
+                del self.displayed_entries[i]
+                break
+
+    # Delete a relevant entry from the model (without sending updates to the display)
+    def delDisplayId(self, entry_id):
+        print 'del',entry_id
+        for i,display_entry in list(enumerate(self.displayed_entries)):
+            if (display_entry['entry_id'] == entry_id):
+                print 'del', entry_id
+                #self.keyword_client.delRelevantEntry(entry_type, title)
                 del self.displayed_entries[i]
                 break
 

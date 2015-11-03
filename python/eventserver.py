@@ -22,6 +22,7 @@ long_poll_timeout = 0.5
 long_poll_timeout_burst = 0.08
 
 ambient_server_channel = 'ambient'
+relevant_event_generator_channel = 'ambient_transcript_only'
 
 #Send event to the event stream
 def event_stream():
@@ -53,6 +54,8 @@ def closed():
     received_json = flask.request.json
     print "closed called"
     print received_json
+    data = {'handle':'closed', 'entry_id':received_json['entry_id']}
+    red.publish(relevant_event_generator_channel, json.dumps(data))
     return "ok"
 
 @app.route('/starred', methods=['POST'])
@@ -85,10 +88,13 @@ def viewingClosed():
 
 @app.route('/reset', methods=['GET'])
 def reset():
-    print "reset called"
+    print "Reset called from browser"
+    data = {'handle':'reset'}
+    red.publish(relevant_event_generator_channel, json.dumps(data))
+    
     return "ok"
 
-#This could also be replaced with just using redis for message passing
+#These are now replaced by using redis and message passing. Do we still need them?
 @app.route('/addUtterance', methods=['POST'])
 @app.route('/replaceLastUtterance', methods=['POST'])
 @app.route('/addRelevantEntry', methods=['POST'])
