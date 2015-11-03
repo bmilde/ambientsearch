@@ -77,17 +77,19 @@ class EventGenerator:
                 json_message = json.loads(message['data'])
                 if 'handle' in json_message:
                     if json_message['handle'] == 'completeUtterance':
+                        print 'handle: completeUtterance'
                         self.complete_transcript.append(json_message['utterance'])
                         self.send_relevant_entry_updates()
                     if json_message['handle'] == 'closed':
+                        print 'handle: closed'
                         self.delDisplayId(json_message['entry_id'])
                     elif json_message['handle'] == 'reset':
-                        print 'reset all'
+                        print 'handle: reset all'
                         self.complete_transcript = []
                         self.relevant_entries = {}
                         self.displayed_entries = []
                     elif json_message['handle'] == 'setLanguage':
-                        print 'set language' #todo
+                        print 'handle: set language' #todo
 
     # Add a relevant entry to the display, specify how many entries should be allowed maximally 
     def addDisplayEntry(self, entry_type, entry, max_entries=4):
