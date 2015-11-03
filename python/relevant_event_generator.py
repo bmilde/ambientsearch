@@ -83,6 +83,7 @@ class EventGenerator:
                     if json_message['handle'] == 'closed':
                         print 'handle: closed'
                         self.delDisplayId(json_message['entry_id'])
+                        print json_message
                     elif json_message['handle'] == 'reset':
                         print 'handle: reset all'
                         self.complete_transcript = []
@@ -147,7 +148,7 @@ class EventGenerator:
 
     # Delete a relevant entry from the model (without sending updates to the display)
     def delDisplayId(self, entry_id):
-        print 'del',entry_id
+        print 'del id',entry_id
         for i,display_entry in list(enumerate(self.displayed_entries)):
             if (display_entry['entry_id'] == entry_id):
                 print 'del', entry_id
