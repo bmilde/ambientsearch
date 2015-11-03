@@ -49,7 +49,7 @@
                 <ul class="nav navbar-nav">
                    <!-- Button trigger modal -->
                    <li class="nav-item">
-                    <a data-toggle="modal" data-target="#settingsModal">
+                    <a data-toggle="modal" data-target="#settings-modal">
                         <span class="glyphicon glyphicon-cog"></span> 
                     </a>
                     </li>
@@ -61,27 +61,44 @@
     </nav>
 
     <!-- Modals -->
-    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="settings-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Settings</h4>
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                <h4 class="modal-title">Settings</h4>
+	            </div>
+	            <div class="modal-body">
+					<div class="form-group">
+						<label for="flickrSort">Flickr Bilder</label>
+						<select name="flickrSort" id="flickrSort">
+							<option value="relevance">Relevanz</option>
+							<option value="interestingness-desc">Interessant</option>
+						</select>
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	            	<button type="button" class="btn btn-default" onclick="resetConversation()">Reset Conversation</button>
+	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                <button type="button" class="btn btn-primary">Save changes</button>
+	            </div>
             </div>
-            <div class="modal-body">
-				<div class="form-group">
-					<label for="flickrSort">Flickr Bilder</label>
-					<select name="flickrSort" id="flickrSort">
-						<option value="relevance">Relevanz</option>
-						<option value="interestingness-desc">Interessant</option>
-					</select>
-				</div>
-            </div>
-            <div class="modal-footer">
-            	<button type="button" class="btn btn-default" onclick="resetConversation()">Reset Conversation</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="entry-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg modal-sm" role="document">
+            <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                <h4 class="modal-title"></h4>
+	            </div>
+	            <div class="modal-body">
+	                <iframe id="entry-modal-iframe" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" width="99%" height="500px" src=""></iframe>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	            </div>
             </div>
         </div>
     </div>
@@ -91,102 +108,34 @@
     <!-- Page Content -->
     <div class="container">
 
-        <h3>Speech input</h3>
-        <!-- Jumbotron Header -->
-        <!--header class="jumbotron"-->
-            <div id="chat-area">
-            	<p><span >Computer: </span><i>Hi! I'm listening</i></p>
+    	<div class="row">
+	    	<div id="speech-input" class="col-md-9">
+				<h2>Speech input</h2>
+	    		<div id="chat-area">
+	            	<p><span >Computer: </span><i>Hi! I'm listening</i></p>
+				</div>
 			</div>
-        <!--/header-->
+			<div id="additional-information" class="col-md-3">
+				<h2>Additional Information</h2>
+			</div>
+    	</div>
 
-        <br/>
+        <h2>Relevant Entries</h2>
+    	<div id="relevant-entries" class="row">
+    		<script id="relevant-entry-template" type="text/x-dot-template">
+	    		<div class="col-md-3 re-{{=it.entry_id}}">
+	    			<div class="relevant-entry" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}">
+						<button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
+		                <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
+		                <h3><a onclick="showModal('{{=it.entry_id}}')">{{=it.title}}</a></h3>
+		                <p>{{=it.text}}</p>
+	                </div>	
+	    		</div>
+    		</script>
+    	</div>
 
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Relevant</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center" id="relevantDocs">
-
-            <!-- Template for the dot.js template engine (https://raw.githubusercontent.com/olado/doT/master/doT.js) -->
-            <script id="relevantDocs_tmpl" type="text/x-dot-template">
-                <div class="col-sm-4 col-md-3 col-xl-3 hero-feature" id="{{=it.entry_id}}">
-                        <div class="modal fade" id="{{=it.entry_id}}Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog modal-lg modal-sm" role="document">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">{{=it.title}}</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" width="99%" height="500px" src="{{=it.url}}&printable=yes"></iframe>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="thumbnail">
-                        <button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
-                        <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
-                        <!--img style="height: 160px" src="pics/test/jaguar_wiki.jpg" alt=""-->
-                        <div class="caption">
-                            <h3><a data-toggle="modal" data-target="#{{=it.entry_id}}Modal">{{=it.title}}</a></h3>
-                            <p>{{=it.text}}</p>
-                            <!-- a href="#" class="btn btn-default">More Info</a-->
-                        </div>
-                    </div>
-                </div>
-            </script>
-
-            <script id="relevantDocsMap_tmpl" type="text/x-dot-template">
-                <div class="col-sm-4 col-md-3 col-xl-3 hero-feature">
-                    
-                    <div class="modal fade" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog modal-lg modal-sm" role="document">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Namibia</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="99%" height="500px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="190px" height="140px" src="https://maps.google.com/maps?hl=en&q=Namibia&ie=UTF8&t=k&z=3&iwloc=B&output=embed"></iframe>
-                            <h3><a data-toggle="modal" data-target="#mapModal">Namibia</a></h3>
-                            <p>Namibia is a country in southern Africa whose western border is the Atlantic Ocean.</p>
-                        </div>
-                    </div>
-                </div>
-            </script>
-
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
-        <!--footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Benjamin Milde, TU-Darmstadt</p>
-                </div>
-            </div>
-        </footer-->
+        <h2>Timeline</h2>
+    	<ul id="timeline" class="timeline"></ul>
 
     </div>
     <!-- /.container -->

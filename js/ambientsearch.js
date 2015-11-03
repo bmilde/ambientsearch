@@ -8,44 +8,61 @@ Author: Benjamin Milde
 /*Events: relevant documents*/
 
 /*This generates a template function for the template in index.html with the id relevantDocs_tmpl*/
-wikiEntryTemplate = doT.template(document.getElementById('relevantDocs_tmpl').text);
-fadeInTimeMs = 800
+var wikiEntryTemplate = doT.template(document.getElementById('relevant-entry-template').text);
+var fadeInTimeMs = 800;
+var xlBreakPoint = 1800;
+var imageSize = 's';
+var timelineInverted = false;
 
 function addRelevantEntry(json_event) {
-	if (json_event['type'] == 'wiki')
+	if(json_event['type'] == 'wiki')
 	{
 		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
-		html = wikiEntryTemplate(json_event);
-		if(json_event['insert_before'] == '_end_')
-		{
+		var html = wikiEntryTemplate(json_event);
+		var element = $(html);
+		if(json_event['insert_before'] == '_end_') {
 			//Insert entry as the least important entry
-			$(html).hide().appendTo('#relevantDocs');
-		}else{
+			element.hide().appendTo('#relevant-entries');
+		} else {
 			//Insert entry and show that it is more imortant than the entry in 'insert_before'
-			$(html).hide().insertBefore('#'+json_event['insert_before']);
+			element.hide().insertBefore('#relevant-entries .re-'+json_event['insert_before']);
 		}
 
 		// add flickr image
-		getFlickrImage(json_event['entry_id'], function(image_found, image_url) {
+		getFlickrImage(json_event['entry_id'], imageSize, function(image_found, image_url) {
 			if(image_found) {
-				addImage(json_event['entry_id'], image_url)				
+				element.children('.relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
 			}
-
-			$('#'+json_event['entry_id']).fadeIn(fadeInTimeMs);
-		});
-
-		// add view open/close events
-		$('#'+json_event['entry_id']+'Modal').on('show.bs.modal', function(e) {
-			$.postJSON('/viewing', JSON.stringify({"entry_id": json_event['entry_id']}), null);
-		});
-		$('#'+json_event['entry_id']+'Modal').on('hide.bs.modal', function(e) {
-			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": json_event['entry_id']}), null);
+			element.fadeIn(fadeInTimeMs);
 		});
 	}
 }
 
 function delRelevantEntry(json_event) {
-	removeEntry(json_event['entry_id']);
+	
+	var element = $('#relevant-entries .re-' + json_event['entry_id'] + ' .relevant-entry');
+	element.detach();
+	element.addClass('timeline-panel');
+
+	if(imageSize == 'q') {
+		var image = element.children('.flickr-image')
+		var newUrl = image.attr('src').replace('_q.jpg', '_s.jpg');
+		image.attr('src', newUrl);
+	}
+
+	var newElement = $('<li><div class="timeline-badge"><i class="glyphicon glyphicon-asterisk"></i></div></li>');
+	newElement.hide();
+	newElement.append(element);
+	newElement.addClass('re-' + json_event['entry_id']);
+
+	if(timelineInverted)
+		newElement.addClass('timeline-inverted');
+	timelineInverted = !timelineInverted;
+
+	$('#timeline').prepend(newElement);
+	newElement.slideDown(fadeInTimeMs / 2);
+
+	$('#relevant-entries .re-' + json_event['entry_id']).remove();
 }
 
 /*Events: speech recognition feedback*/
@@ -123,61 +140,66 @@ function starEntry(entry_id) {
 	var index = starredEntries.indexOf(entry_id);
 	if(index > -1) { 
 		// unstar entry
-		$.postJSON('/unstarrd', JSON.stringify({"entry_id": entry_id}), function() {
+		$.postJSON('/unstarred', JSON.stringify({"entry_id": entry_id}), function() {
 			starredEntries.splice(index, 1);
-			$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+			$('.re-' + entry_id + ' button.star-icon span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
 		});
 	} else { 
 		// star entry
-		console.log(entry_id);
 		$.postJSON('/starred', JSON.stringify({"entry_id": entry_id}), function() {
 			starredEntries.push(entry_id);
-			$('#' + entry_id + ' button.star-icon span').toggleClass('glyphicon-star-empty').toggleClass('glyphicon-star');
+			$('.re-' + entry_id + ' button.star-icon span').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
 		});
 	}
 
 }
 
 function closeEntry(entry_id) {
-	if(removeEntry(entry_id)) {
-		$.postJSON('/closed', JSON.stringify({"entry_id": entry_id}), null);
-	}
+	$.postJSON('/closed', JSON.stringify({"entry_id": entry_id}), function() {
+		$('#relevant-entries .re-' + entry_id).remove();
+
+		var timeline_entry = $('#timeline .re-' + entry_id);
+		timeline_entry.fadeOut(fadeInTimeMs, function() {
+			timeline_entry.nextAll().toggleClass('timeline-inverted');
+			timeline_entry.remove();
+		});
+	});
+}
+
+function showModal(entry_id) {
+	$.postJSON('/viewing', JSON.stringify({"entry_id": entry_id}), function() {
+		var title = $('.re-' + entry_id + ' h3').text();
+		var url = $('.re-' + entry_id + ' .relevant-entry').attr('data-modal-url');
+
+		$('#entry-modal h4.modal-title').html(title);
+		$('#entry-modal-iframe').attr('src', url + '&printable=yes');
+
+		$('#entry-modal').on('hide.bs.modal', function(e) {
+			$('#entry-modal').off('hide.bs.modal');
+			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": entry_id}), null);
+		});
+
+		$('#entry-modal').modal('show');
+	});
 }
 
 function resetConversation() {
-	starredEntries = [];
 	$.get('/reset');
-	//reset(); //TODO remove
+	reset(); // TODO remove
 }
 
 
 
 /* utility */
 
-function removeEntry(entry_id) {
-	if($('#' + entry_id + ' div.modal').is(':visible') === false) {
-		$('#' + entry_id).remove();
-
-		var index = starredEntries.indexOf(entry_id);
-		if(index > -1) {
-			starredEntries.splice(index, 1);
-		}
-
-		return true;
-	}
-	return false;
-}
-
 function reset() {
+	starredEntries = [];
 	$('#chat-area').empty();
-	$('#relevantDocs').empty();
+	$('#relevant-entries').empty();
+	$('#timeline').empty();
 }
 
-function addImage(entry_id, image_url) {
-	$('<img src="' + image_url +'" class="flickr-image" alt="' + entry_id + '" />').insertBefore('#'+entry_id+' div.caption');
-}
-
-function getFlickrImage(searchTerm, callback) {
+function getFlickrImage(searchTerm, size, callback) {
 	var flickr_sort = $('#flickrSort').val();
 	var flickr_api_key = 'fed915bcf3c85271ac6f9ef1823175bf';
 	var flickr_request_url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickr_api_key + '&text=' + searchTerm + '&sort=' + flickr_sort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
@@ -187,7 +209,7 @@ function getFlickrImage(searchTerm, callback) {
 		var image_url;
 		if(image_found) {
 			var photo = data['photos']['photo'][0];
-			image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_q.jpg";
+			image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_" + size + ".jpg";
 		}
 	
 		callback(image_found, image_url);
@@ -207,15 +229,53 @@ jQuery["postJSON"] = function( url, data, callback ) {
 
 /* bindings */
 
+$(document).ready(function() {
+	resetConversation();
+
+	if($(window).width() >= xlBreakPoint)
+		imageSize = 'q';
+	else
+		imageSize = 's';
+});
+
 $('#flickrSort').change(function() {
-	// replace flickr images
-	$('#relevantDocs > div').each(function(index, element) {
-		var entry_id = $(this).attr('id');
-		getFlickrImage(entry_id, function(image_found, image_url) {
-			$('#' + entry_id + ' .flickr-image').remove();
+	// update images
+	$('.relevant-entry').each(function(index, element) {
+		var element = $(this);
+		var entry_id = element.attr('data-entry-id');
+
+		var size = 's';
+		if(element.parents('#relevant-entries').length > 0)
+			size = imageSize;
+
+		getFlickrImage(entry_id, size, function(image_found, image_url) {
 			if(image_found) {
-				addImage(entry_id, image_url);
+				if(element.has('.flickr-image')) {
+					element.children('.flickr-image').attr('src', image_url);
+				} else {
+					element.prepend('<img src="' + image_url +'" class="flickr-image" alt="' + entry_id + '" />');	
+				}
+			} else {
+				element.children('.flickr-image').remove();
 			}
 		}); 
 	});
+});
+
+$(window).resize(function() {
+	var oldSize = imageSize;
+	var newSize = 's';
+	if($(window).width() >= xlBreakPoint)
+		newSize = 'q';
+
+	if(oldSize != newSize) {
+		imageSize = newSize;
+
+		// update images
+		$('#relevant-entries .flickr-image').each(function() {
+			var url = $(this).attr('src');
+			url = url.replace('_'+oldSize+'.jpg', '_'+newSize+'.jpg');
+			$(this).attr('src', url);
+		});
+	}
 });
