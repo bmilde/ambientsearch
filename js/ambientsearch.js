@@ -18,22 +18,22 @@ function addRelevantEntry(json_event) {
 	if(json_event['type'] == 'wiki')
 	{
 		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
-		html = wikiEntryTemplate(json_event);
+		var html = wikiEntryTemplate(json_event);
+		var element = $(html);
 		if(json_event['insert_before'] == '#end#') {
 			//Insert entry as the least important entry
-			$(html).hide().appendTo('#relevant-entries');
+			element.hide().appendTo('#relevant-entries');
 		} else {
 			//Insert entry and show that it is more imortant than the entry in 'insert_before'
-			$(html).hide().insertBefore('#relevant-entries .re-'+json_event['insert_before']);
+			element.hide().insertBefore('#relevant-entries .re-'+json_event['insert_before']);
 		}
 
 		// add flickr image
 		getFlickrImage(json_event['entry_id'], imageSize, function(image_found, image_url) {
 			if(image_found) {
-				$('#relevant-entries .re-' + json_event['entry_id'] + ' .relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
+				element.children('.relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
 			}
-
-			$('#relevant-entries .re-'+json_event['entry_id']).fadeIn(fadeInTimeMs);
+			element.fadeIn(fadeInTimeMs);
 		});
 	}
 }
@@ -45,11 +45,9 @@ function delRelevantEntry(json_event) {
 	element.addClass('timeline-panel');
 
 	if(imageSize == 'q') {
-		element.children('.flickr-image').each(function() {
-			var url = $(this).attr('src');
-			url = url.replace('_q.jpg', '_s.jpg');
-			$(this).attr('src', url);
-		});
+		var image = element.children('.flickr-image')
+		var newUrl = image.attr('src').replace('_q.jpg', '_s.jpg');
+		image.attr('src', newUrl);
 	}
 
 	var newElement = $('<li><div class="timeline-badge"><i class="glyphicon glyphicon-asterisk"></i></div></li>');
@@ -62,7 +60,7 @@ function delRelevantEntry(json_event) {
 	timelineInverted = !timelineInverted;
 
 	$('#timeline').prepend(newElement);
-	newElement.fadeIn(fadeInTimeMs);
+	newElement.slideDown(fadeInTimeMs / 2);
 
 	$('#relevant-entries .re-' + json_event['entry_id']).remove();
 }
@@ -158,7 +156,13 @@ function starEntry(entry_id) {
 
 function closeEntry(entry_id) {
 	$.postJSON('/closed', JSON.stringify({"entry_id": entry_id}), function() {
-		$('.re-' + entry_id).remove();
+		$('#relevant-entries .re-' + entry_id).remove();
+
+		var timeline_entry = $('#timeline .re-' + entry_id);
+		timeline_entry.fadeOut(fadeInTimeMs, function() {
+			timeline_entry.nextAll().toggleClass('timeline-inverted');
+			timeline_entry.remove();
+		});
 	});
 }
 
@@ -226,6 +230,8 @@ jQuery["postJSON"] = function( url, data, callback ) {
 /* bindings */
 
 $(document).ready(function() {
+	resetConversation();
+
 	if($(window).width() >= xlBreakPoint)
 		imageSize = 'q';
 	else
