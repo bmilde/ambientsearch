@@ -2,11 +2,12 @@ INSTALL
 #######
 
 Prequisites: Currently a running local redis server is needed, see http://redis.io/
-e.g. on Debian/Ubuntu, this can be install with: sudo apt-get install redis-server
+e.g. on Debian/Ubuntu, this can be easily installed with: sudo apt-get install redis-server
+on Mac/OS X: brew install redis (and you need to start the redis-server program manually in a console)
 
 You also need Python-2.7 with a couple of additional modules that you can easily install with pip:
 
-pip install flask pyredis nltk wikipedia ws4py pyaudio topia.termextract
+pip install flask redis nltk wikipedia ws4py pyaudio topia.termextract
 
 You can now start the scripts from the root directory of the project:
 
@@ -14,17 +15,17 @@ You can now start the scripts from the root directory of the project:
 
 python python/event_server.py
 
-- To start the module that finds relevant information:
+- To start the module that finds relevant information (use -l to choose your language):
 
-python python/relevant_event_generator.py
+python python/relevant_event_generator.py -l <en,de>
 
 You can now open http://localhost:5000/ in your browser!
 
 - To simulate microphone input (easier to debug):
-python python/simulate_mic_input.py
+python python/simulate_mic_input.py -l <en,de>
 
-- For actual microphone input (needs a Kaldi server instance):
-python python/mic_client.py
+- For actual microphone input (needs a Kaldi server instance, English only at the moment):
+python python/mic_client.py -i <mic_number>
 
 Windows specific prerequistes
 #############################
@@ -34,4 +35,4 @@ If you have Windows, you should first install Cygwin, which will install basic G
 Then you need to install pip, which can be done in the cygwin terminal:
 easy_install-2.7 pip
 
-You'll find your drives in /cygdrive/, from which you can follow the guide above
+You'll find your drives in /cygdrive/, from which you can follow the guide above.
