@@ -185,7 +185,6 @@ function showModal(entry_id) {
 
 function resetConversation() {
 	$.get('/reset');
-	reset(); // TODO remove
 }
 
 

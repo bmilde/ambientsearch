@@ -20,7 +20,7 @@ body.modal-open {
 }
 
 #relevant-entries .relevant-entry {
-    padding: 4px;
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
