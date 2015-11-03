@@ -16,7 +16,7 @@ function addRelevantEntry(json_event) {
 	{
 		/*Get html for a wikiEntry with the dot.js template function (See also relevantDocs_tmpl in index.html)*/
 		html = wikiEntryTemplate(json_event);
-		if(json_event['insert_before'] == '#end#')
+		if(json_event['insert_before'] == '_end_')
 		{
 			//Insert entry as the least important entry
 			$(html).hide().appendTo('#relevantDocs');
