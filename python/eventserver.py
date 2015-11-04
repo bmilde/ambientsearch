@@ -6,6 +6,8 @@ import flask
 import redis
 import os
 import json
+import bs4
+
 from werkzeug.serving import WSGIRequestHandler
 
 base_path = os.getcwd() + '/'
@@ -23,6 +25,7 @@ long_poll_timeout_burst = 0.08
 
 ambient_server_channel = 'ambient'
 relevant_event_generator_channel = 'ambient_transcript_only'
+return_string_ok = "ok"
 
 #Send event to the event stream
 def event_stream():
@@ -56,43 +59,42 @@ def closed():
     print received_json
     data = {'handle':'closed', 'entry_id':received_json['entry_id']}
     red.publish(relevant_event_generator_channel, json.dumps(data))
-    return "ok"
+    return return_string_ok
 
 @app.route('/starred', methods=['POST'])
 def starred():
     received_json = flask.request.json
     print "starred called"
     print received_json
-    return "ok"
+    return return_string_ok
 
 @app.route('/unstarred', methods=['POST'])
 def unstarred():
     received_json = flask.request.json
     print "unstarred called"
     print received_json
-    return "ok"
+    return return_string_ok
 
 @app.route('/viewing', methods=['POST'])
 def viewing():
     received_json = flask.request.json
     print "viewing called"
     print received_json
-    return "ok"
+    return return_string_ok
 
 @app.route('/viewingClosed', methods=['POST'])
 def viewingClosed():
     received_json = flask.request.json
     print "viewingClosed called"
     print received_json
-    return "ok"
+    return return_string_ok
 
 @app.route('/reset', methods=['GET'])
 def reset():
     print "Reset called from browser"
     data = {'handle':'reset'}
     red.publish(relevant_event_generator_channel, json.dumps(data))
-    
-    return "ok"
+    return return_string_ok
 
 #These are now replaced by using redis and message passing. Do we still need them?
 @app.route('/addUtterance', methods=['POST'])
@@ -104,9 +106,23 @@ def generate_event():
     received_json = flask.request.json
     print received_json
     red.publish(ambient_server_channel, json.dumps(received_json))
-    return "ok"
+    return return_string_ok
 
-@app.route('/reset_topics', methods=['POST'])
+# This is for the flow player, which can send its subtitles 
+# They look like this: "<p>Guten Abend</p><br/><p>aus dem Gasometer in Berlin.</p><br/>"
+# We use beautiful Soup to strip all elements (see: http://stackoverflow.com/questions/1936466/beautifulsoup-grab-visible-webpage-text)
+
+@app.route('/addSubtitle', methods=['POST'])
+def add_subtitle():
+    received_json = flask.request.json
+    print received_json
+    soup = bs4.BeautifulSoup(received_json["text"])
+    text = u' '.join(soup.findAll(text=True))
+    print text
+    return return_string_ok
+
+# TODO
+#@app.route('/reset_topics', methods=['POST'])
 
 #These should ideally be served with a real web server, but for developping purposes, serving static files with Flask is also ok:
 #START static files
@@ -114,6 +130,11 @@ def generate_event():
 def root():
     print 'root called'
     return app.send_static_file('index.html')
+
+@app.route('/flow_player')
+def flow_player():
+    print 'flow player called'
+    return app.send_static_file('flow_player.html')
 
 @app.route('/css/<path:path>')
 def send_css(path):
@@ -130,11 +151,15 @@ def send_pics(path):
 @app.route('/fonts/<path:path>')
 def send_fonts(path):
     return flask.send_from_directory(base_path+'fonts', path)
+
+@app.route('/test_videos/<path:path>')
+def test_videos(path):
+    print 'Sending test video:', path
+    return flask.send_from_directory(base_path+'test_videos', path)
     
 #END static files
                           
 if __name__ == '__main__':
     app.debug = True
     WSGIRequestHandler.protocol_version = "HTTP/1.1"
-    app.run(threaded=True)  
- 
+    app.run(threaded=True)
