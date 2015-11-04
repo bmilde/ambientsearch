@@ -1,0 +1,95 @@
+<!doctype html>
+
+<html>
+<head>
+   <meta charset="utf-8">
+
+   <title>Demo Video 1</title>
+
+   <!-- optimize mobile versions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- The "functional" skin, "functional.css", "minimalist.css" and "playful.css" are available -->
+   <link rel="stylesheet" href="//releases.flowplayer.org/6.0.3/skin/functional.css">
+
+   <!-- Minimal styling for this standalone page (can be removed) -->
+   <style>
+   body {
+      font-family: "myriad pro", tahoma, verdana, arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+   }
+   #content {
+      margin: 50px auto;
+      max-width: 982px;
+   }
+   
+</style>
+
+   <!-- CSS for this demo -->
+   <link rel="stylesheet" href="//flowplayer.org/media/css/demos/basics/subtitles.css">
+   
+      <!-- Flowplayer depends on jquery for video tag based setups -->
+   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+   
+   <!-- Flowplayer-->
+   <script src="//releases.flowplayer.org/6.0.3/flowplayer.min.js"></script>
+
+
+</head>
+
+<body>
+<div id="content">
+
+<div id="with-subtitles" class="flowplayer" data-ratio="0.5625" data-embed="true">
+   <video>
+      <source type="video/mp4"
+              src="/test_videos/Guenther_Jauch-Seehofers_Ultimatum-2058748085.mp4">
+      <source type="video/flash"
+              src="mp4:functional">
+
+      <!--track kind="subtitles" default srclang="en" label="English"
+             src="/standalone/basics/subtitles-en.vtt"-->
+      <track kind="subtitles" srclang="de" label="Deutsch"
+             src="/test_videos/Guenther_Jauch-Seehofers_Ultimatum-2058748085.vtt"></video>
+</div>
+
+</div><!--/end content -->
+</body>
+
+<script>
+jQuery["postJSON"] = function( url, data, callback ) {
+    return jQuery.ajax({
+        url: url,
+        type: "POST",
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        success: callback
+    });
+};
+
+$(function() {
+   flowplayer().on("cuepoint", function (e, api, cuepoint) {
+        if (cuepoint.subtitle) {
+           console.log(cuepoint.subtitle);
+           $.postJSON('/addSubtitle', JSON.stringify(cuepoint.subtitle), function() {});
+        }
+ 
+        // end of a subtitle
+        if (cuepoint.subtitleEnd) {
+       
+        }
+
+      //if (cuepoint.time == 0.5) api.speed( .75 );
+      //$("#cue").text(cuepoint.time);
+   });
+});
+
+///var player = flowplayer();
+//player.on("cuepoint", function(e, api, cuepoint) {
+//   // start of a subtitle
+//});
+</script>
+
+</html>
