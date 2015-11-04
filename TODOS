@@ -20,7 +20,9 @@ What can be experimented on to improve relevant document display and online perf
 
 
 ToDo:
--IMPORTANT!!! remove ",()" and other forbidden characters from entry_id (backend)
--send "handle=reset" when "/reset" (GET) is called (backend) -> remove "reset()" from resetConversation()
 -GUI upside down (speech input at the bottom and timeline goes up)
 -additional informations??? (pause/continue button)
+-load images for entries that are instantly removed (no images in timeline)
+
+-iframe ersetzen / schriftart sans-serif
+-show starred entries
