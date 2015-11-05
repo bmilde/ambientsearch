@@ -26,6 +26,6 @@ class Timer(object):
         if self.verbose:
             print 'elapsed time: %f ms' % self.msecs
 
-    def current_secs():
+    def current_secs(self):
         self.stop()
         return self.secs
