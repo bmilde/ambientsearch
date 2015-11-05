@@ -70,6 +70,10 @@ class KeywordClient():
             self.timer.start()
             self.timer_started = True
 
+    def resetTimer(self):
+        self.timer_started = False
+        self.timer.start()
+
     def getSettings(self):
         r = requests.get(self.server_url+'getSettings')
         return r.json()
@@ -104,7 +108,6 @@ class KeywordClient():
     def reset(self):
         data = {'handle':'reset'}
         red.publish('ambient_transcript_only', json.dumps(data))
-        self.timer_started = False
-        self.timer.start()
+        self.resetTimer()
         r = requests.post(self.server_url+'reset', data=json.dumps(data), headers=self.request_header)
         return r.status_code
