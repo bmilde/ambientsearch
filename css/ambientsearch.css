@@ -241,22 +241,18 @@ h1, .h1, h2, .h2, h3, .h3 {
   right: auto;
 }
 
-.timeline-badge.primary {
-  background-color: #2e6da4 !important;
+.importance-100 .timeline-badge {
+  background-color: #00f !important;
 }
 
-.timeline-badge.success {
-  background-color: #3f903f !important;
+.importance-075 .timeline-badge {
+  background-color: #06f !important;
 }
 
-.timeline-badge.warning {
-  background-color: #f0ad4e !important;
+.importance-050 .timeline-badge {
+  background-color: #0bf !important;
 }
 
-.timeline-badge.danger {
-  background-color: #d9534f !important;
-}
-
-.timeline-badge.info {
-  background-color: #5bc0de !important;
+.importance-025 .timeline-badge {
+  background-color: #0ff !important;
 }

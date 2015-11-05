@@ -84,6 +84,13 @@ function delRelevantEntry(jsonEvent) {
 			timelineEntry.addClass('timeline-inverted');
 		timelineInverted = !timelineInverted;
 
+		// add importance class
+		var score = entryContent.attr('data-score');
+		if(score <= 0.25) timelineEntry.addClass('importance-025');
+		else if(score <= 0.5) timelineEntry.addClass('importance-050');
+		else if(score <= 0.75) timelineEntry.addClass('importance-075');
+		else timelineEntry.addClass('importance-100');
+
 		// slide in new timeline entry
 		timelineEntry.slideDown( {
 			duration: fadeInTimeMs / 2,
