@@ -6,6 +6,7 @@ import requests
 import json
 import redis
 import re
+from timer import Timer
 
 red = redis.StrictRedis()
 
@@ -61,33 +62,49 @@ class KeywordClient():
     def __init__(self,server_url=""):
         self.server_url = server_url
         self.request_header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+        self.timer_started = False
+        self.timer = Timer()
 
-    def getSettings():
+    def checkTimer(self):
+        if not self.timer_started:
+            self.timer.start()
+            self.timer_started = True
+
+    def getSettings(self):
         r = requests.get(self.server_url+'getSettings')
         return r.json()
         
     def addRelevantEntry(self, type, title, text, url, score, insert_before):
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before}
+        self.checkTimer()
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before, 'time': float(timer.current_secs())}
+        print data
         red.publish('ambient', json.dumps(data))
 
     def delRelevantEntry(self, type, title):
-        data = {'handle':'delRelevantEntry','type':type,'title': title, 'entry_id': idFromTitle(title)}
+        self.checkTimer()
+        data = {'handle':'delRelevantEntry','type':type,'title': title, 'entry_id': idFromTitle(title), 'time': float(timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
     def addUtterance(self, utterance,speaker):
-        data = {'handle':'addUtterance','utterance':utterance,'speaker':speaker}
+        self.checkTimer()
+        data = {'handle':'addUtterance','utterance':utterance,'speaker':speaker, 'time': float(timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
     def replaceLastUtterance(self, old_utterance,new_utterance,speaker):
-        data = {'handle':'replaceLastUtterance','old_utterance':old_utterance,'utterance':new_utterance,'speaker':speaker}
+        self.checkTimer()
+        data = {'handle':'replaceLastUtterance','old_utterance':old_utterance,'utterance':new_utterance,'speaker':speaker, 'time': float(timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
     def completeUtterance(self, utterance, speaker):
-        data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker}
+        self.checkTimer()
+        data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker , 'time': float(timer.current_secs())}
+        print data
         red.publish('ambient_transcript_only', json.dumps(data))
 
     def reset(self):
         data = {'handle':'reset'}
         red.publish('ambient_transcript_only', json.dumps(data))
+        self.timer_started = False
+        self.timer.start()
         r = requests.post(self.server_url+'reset', data=json.dumps(data), headers=self.request_header)
         return r.status_code
