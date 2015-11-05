@@ -15,26 +15,35 @@ var imageSize = 's';
 var timelineInverted = false;
 var scrollBottom = true;
 
-function addRelevantEntry(json_event) {
-	console.log('addRelevantEntry ' + json_event['entry_id']);
+function addRelevantEntry(jsonEvent) {
+	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
 
-	if(json_event['type'] == 'wiki')
+	if(jsonEvent['type'] == 'wiki')
 	{
-		// create new element from template
-		var element = $(wikiEntryTemplate(json_event));
+		// create new entry from template
+		var entry = $(wikiEntryTemplate(jsonEvent));
+		var entryContent = entry.children('.entry-content');
 
-		// insert element at designated location
-		if(json_event['insert_before'] == '_end_')
-			element.hide().appendTo('#relevant-entries');
+		// insert entry at designated location
+		if(jsonEvent['insert_before'] == '_end_')
+			entry.hide().appendTo('#relevant-entries');
 		else
-			element.hide().insertBefore('#relevant-entries .re-'+json_event['insert_before']);
+			entry.hide().insertBefore('#relevant-entries .entry-'+jsonEvent['insert_before']);
 
 		// add flickr image
-		getFlickrImage(json_event['entry_id'], imageSize, function(image_url) {
-			if(image_url)
-				$('.re-' + json_event['entry_id'] + ' .relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
+		getFlickrImage(jsonEvent['entry_id'], imageSize, function(imageUrl) {
+			if(imageUrl) {
+				entryContent.prepend('<img src="' + imageUrl +'" class="flickr-image" alt="' + jsonEvent['entry_id'] + '" />');
 
-			element.fadeIn({
+				// fix image size if entry is moved to timeline by now
+				if(entryContent.parents('#timeline').length == 1 && imageSize == 'q') {
+					var image = entryContent.children('.flickr-image');
+					var newUrl = image.attr('src').replace('_q.jpg', '_s.jpg');
+					image.attr('src', newUrl);
+				}
+			}
+			
+			entry.fadeIn({
 				duration: fadeInTimeMs,
 				progress: function() {
 					if(scrollBottom) 
@@ -45,37 +54,38 @@ function addRelevantEntry(json_event) {
 	}
 }
 
-function delRelevantEntry(json_event) {
-	console.log('delRelevantEntry ' + json_event['entry_id']);
+function delRelevantEntry(jsonEvent) {
+	console.log('delRelevantEntry ' + jsonEvent['entry_id']);
 	
-	var element = $('#relevant-entries .re-' + json_event['entry_id'] + ' .relevant-entry');
-	if(element.length == 1) {
+	var relevantEntry = $('#relevant-entries .entry-' + jsonEvent['entry_id']);
+	var entryContent = relevantEntry.children('.entry-content');
+	if(relevantEntry.length == 1) {
 		// detach content and remove old relevant entry
-		element.detach();
-		$('#relevant-entries .re-' + json_event['entry_id']).remove();
+		entryContent.detach();
+		relevantEntry.remove();
 
 		// update image size to smaller thumbnail
-		if(imageSize == 'q') {
-			var image = element.children('.flickr-image')
+		var image = entryContent.children('.flickr-image')
+		if(image.length == 1 && imageSize == 'q') {
 			var newUrl = image.attr('src').replace('_q.jpg', '_s.jpg');
 			image.attr('src', newUrl);
 		}
 
-		// construct timeline element
-		element.addClass('timeline-panel');
-		var newElement = $('<li><div class="timeline-badge"><i class="glyphicon glyphicon-asterisk"></i></div></li>');
-		newElement.hide();
-		newElement.append(element);
-		newElement.addClass('re-' + json_event['entry_id']);
-		$('#timeline').append(newElement);
+		// construct timeline entry
+		entryContent.addClass('timeline-panel');
+		var timelineEntry = $('<li class="timeline-entry"><div class="timeline-badge"><i class="glyphicon glyphicon-asterisk"></i></div></li>');
+		timelineEntry.hide();
+		timelineEntry.append(entryContent);
+		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
+		$('#timeline').append(timelineEntry);
 
 		// determine timeline position (left/right)
 		if(timelineInverted)
-			newElement.addClass('timeline-inverted');
+			timelineEntry.addClass('timeline-inverted');
 		timelineInverted = !timelineInverted;
 
-		// slide in new timeline element
-		newElement.slideDown( {
+		// slide in new timeline entry
+		timelineEntry.slideDown( {
 			duration: fadeInTimeMs / 2,
 			progress: function() {
 				if(scrollBottom) 
@@ -87,17 +97,17 @@ function delRelevantEntry(json_event) {
 }
 
 /*Events: speech recognition feedback*/
-function renderUtterance(json_event) {
-	return '<span>'+json_event.speaker+':</span> '+json_event.utterance
+function renderUtterance(jsonEvent) {
+	return '<span>'+jsonEvent.speaker+':</span> '+jsonEvent.utterance
 }
 
-function addUtterance(json_event) {
-	$('#chat-area').append('<p>'+renderUtterance(json_event)+' _</p>')
+function addUtterance(jsonEvent) {
+	$('#chat-area').append('<p>'+renderUtterance(jsonEvent)+' </p>')
 	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 }
 
-function replaceLastUtterance(json_event) {
-	$('#chat-area p:last').html(renderUtterance(json_event))
+function replaceLastUtterance(jsonEvent) {
+	$('#chat-area p:last').html(renderUtterance(jsonEvent))
 	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 }
 
@@ -130,24 +140,24 @@ E.g.
 */
 
 source.onmessage = function (event) {
-	json_event = JSON.parse(event.data);
-	if (json_event.handle == 'addUtterance')
+	jsonEvent = JSON.parse(event.data);
+	if (jsonEvent.handle == 'addUtterance')
 	{
-		utts.push(json_event.utterance);
-		addUtterance(json_event);
+		utts.push(jsonEvent.utterance);
+		addUtterance(jsonEvent);
 	}
-	else if (json_event.handle == 'replaceLastUtterance')
+	else if (jsonEvent.handle == 'replaceLastUtterance')
 	{
 		utts.pop();
-		utts.push(json_event.utterance);
-		replaceLastUtterance(json_event);
-	}else if (json_event.handle == 'addRelevantEntry')
+		utts.push(jsonEvent.utterance);
+		replaceLastUtterance(jsonEvent);
+	}else if (jsonEvent.handle == 'addRelevantEntry')
 	{
-		addRelevantEntry(json_event);
-	}else if (json_event.handle == 'delRelevantEntry')
+		addRelevantEntry(jsonEvent);
+	}else if (jsonEvent.handle == 'delRelevantEntry')
 	{
-		delRelevantEntry(json_event);
-	}else if (json_event.handle == 'reset')
+		delRelevantEntry(jsonEvent);
+	}else if (jsonEvent.handle == 'reset')
 	{
 		reset();
 	}
@@ -156,63 +166,62 @@ source.onmessage = function (event) {
 
 /* user called methods */
 
-var starredEntries = [];
+function starEntry(entryID) {
+	var entryContent = $('.entry-' + entryID + ' .entry-content');
 
-function starEntry(entry_id) {
-	var index = starredEntries.indexOf(entry_id);
-	if(index > -1) { 
+	if(entryContent.hasClass('starred')) { 
 		// unstar entry
-		console.log('unstar ' + entry_id);
-		$.postJSON('/unstarred', JSON.stringify({"entry_id": entry_id}), function() {
-			starredEntries.splice(index, 1);
-			$('.re-' + entry_id + ' button.star-icon span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+		console.log('unstar ' + entryID);
+		$.postJSON('/unstarred', JSON.stringify({"entry_id": entryID}), function() {
+			entryContent.find('button.star-icon span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+			entryContent.removeClass('starred');
 		});
 	} else { 
 		// star entry
-		console.log('star ' + entry_id);
-		$.postJSON('/starred', JSON.stringify({"entry_id": entry_id}), function() {
-			starredEntries.push(entry_id);
-			$('.re-' + entry_id + ' button.star-icon span').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+		console.log('star ' + entryID);
+		$.postJSON('/starred', JSON.stringify({"entry_id": entryID}), function() {
+			entryContent.find('button.star-icon span').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+			entryContent.addClass('starred');
 		});
 	}
 
 }
 
-function closeEntry(entry_id) {
-	console.log('closeEntry ' + entry_id);
+function closeEntry(entryID) {
+	console.log('closeEntry ' + entryID);
 
-	$.postJSON('/closed', JSON.stringify({"entry_id": entry_id}), function() {
+	$.postJSON('/closed', JSON.stringify({"entry_id": entryID}), function() {
 		// remove relevant entry
-		$('#relevant-entries .re-' + entry_id).remove();
+		$('#relevant-entries .entry-' + entryID).remove();
 
 		// remove timeline entry/ies and align following entries left/right
-		var timeline_entry = $('#timeline .re-' + entry_id);
-		timeline_entry.fadeOut(fadeInTimeMs, function() {
-			timeline_entry.remove();
-			timeline_entry.nextAll().toggleClass('timeline-inverted');
+		var timelineEntry = $('#timeline .entry-' + entryID);
+		timelineEntry.fadeOut(fadeInTimeMs, function() {
+			timelineEntry.remove();
+			timelineEntry.nextAll().toggleClass('timeline-inverted');
 		});
 	});
 }
 
-function showModal(entry_id) {
-	console.log('showModal ' + entry_id);
+function showModal(entryID) {
+	console.log('showModal ' + entryID);
 
-	$.postJSON('/viewing', JSON.stringify({"entry_id": entry_id}), function() {
+	$.postJSON('/viewing', JSON.stringify({"entry_id": entryID}), function() {
 		
 		// set title
-		var title = $('.re-' + entry_id + ' h3').text();
+		var title = $('.entry-' + entryID + ' h3').text();
 		$('#entry-modal h4.modal-title').html(title);
 		
 		// set iframe content
-		var url = $('.re-' + entry_id + ' .relevant-entry').attr('data-modal-url');
+		var url = $('.entry-' + entryID + ' .entry-content').attr('data-modal-url');
 		$('#entry-modal-iframe').attr('src', url + '&printable=yes');
 
 		// register onClose-event
 		$('#entry-modal').on('hide.bs.modal', function(e) {
-			console.log('closeModal ' + entry_id);
+			console.log('closeModal ' + entryID);
 
 			$('#entry-modal').off('hide.bs.modal');
-			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": entry_id}), null);
+			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": entryID}), null);
 		});
 
 		$('#entry-modal').modal('show');
@@ -231,26 +240,25 @@ function resetConversation() {
 
 function reset() {
 	console.log('reset called');
-	starredEntries = [];
 	$('#chat-area').empty();
 	$('#relevant-entries').empty();
 	$('#timeline').empty();
 }
 
 function getFlickrImage(searchTerm, size, callback) {
-	var flickr_sort = $('#flickrSort').val();
-	var flickr_api_key = 'fed915bcf3c85271ac6f9ef1823175bf';
-	var flickr_request_url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickr_api_key + '&text=' + searchTerm + '&sort=' + flickr_sort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
+	var flickrSort = $('#flickrSort').val();
+	var flickrApiKey = 'fed915bcf3c85271ac6f9ef1823175bf';
+	var flickrRequestUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrApiKey + '&text=' + searchTerm + '&sort=' + flickrSort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
 
 
-	$.getJSON(flickr_request_url, function(data) {
-		var image_url = "";
+	$.getJSON(flickrRequestUrl, function(data) {
+		var imageUrl = "";
 		if(data['stat'] == "ok" && data['photos']['photo'].length > 0) {
 			var photo = data['photos']['photo'][0];
-			image_url = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_" + size + ".jpg";
+			imageUrl = "https://farm" + photo['farm'] + ".staticflickr.com/" + photo['server'] + "/" + photo['id'] + "_" + photo['secret'] + "_" + size + ".jpg";
 		}
 
-		callback(image_url);
+		callback(imageUrl);
 	});
 }
 
@@ -281,23 +289,23 @@ $('#flickrSort').change(function() {
 	console.log('flickrSort updated');
 
 	// update images
-	$('.relevant-entry').each(function(index, element) {
+	$('.entry-content').each(function(index, element) {
 		var element = $(this);
-		var entry_id = element.attr('data-entry-id');
+		var entryID = element.attr('data-entry-id');
 
 		// determine image size ('s' for timeline and 'q' or 's' for relevant entries depending on current image size)
 		var size = 's';
 		if(element.parents('#relevant-entries').length > 0)
 			size = imageSize;
 
-		getFlickrImage(entry_id, size, function(image_url) {
-			if(image_url) {
+		getFlickrImage(entryID, size, function(imageUrl) {
+			if(imageUrl) {
 				if(element.has('.flickr-image')) {
 					// replace image
-					element.children('.flickr-image').attr('src', image_url);
+					element.children('.flickr-image').attr('src', imageUrl);
 				} else {
 					// add image
-					element.prepend('<img src="' + image_url +'" class="flickr-image" alt="' + entry_id + '" />');	
+					element.prepend('<img src="' + imageUrl +'" class="flickr-image" alt="' + entryID + '" />');	
 				}
 			} else {
 				// remove image

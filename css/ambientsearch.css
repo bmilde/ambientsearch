@@ -21,7 +21,7 @@ body.modal-open {
     margin-bottom: 20px;
 }
 
-#relevant-entries .relevant-entry {
+#relevant-entries .entry-content {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -40,7 +40,11 @@ body.modal-open {
     margin-left: 8px;
 }
 
-.relevant-entry h3 {
+.entry-content.starred {
+  background: #ffc;
+}
+
+.entry-content h3 {
     text-align: center;
 }
 

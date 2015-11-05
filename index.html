@@ -114,8 +114,8 @@
         <h2>Relevant Entries</h2>
         <div id="relevant-entries" class="row">
             <script id="relevant-entry-template" type="text/x-dot-template">
-                <div class="col-md-3 re-{{=it.entry_id}}">
-                    <div class="relevant-entry" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}">
+                <div class="col-md-3 entry-{{=it.entry_id}}">
+                    <div class="entry-content" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}" data-score={{=it.score}}>
                         <button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
                         <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
                         <h3><a onclick="showModal('{{=it.entry_id}}')">{{=it.title}}</a></h3>
