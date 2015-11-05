@@ -55,7 +55,7 @@ def idFromTitle(title):
 # (relevant text and pictures are downloaded in a blocking manner using wiki_search)
 class EventGenerator:
 
-    def __init__(self,keyword_server_url, keyword_extrator, lang='en'):
+    def __init__(self,keyword_server_url, keyword_extrator, lang='en', decay=0.95, max_entries=4):
         self.complete_transcript = []
 
         #dict with all relevant entries
@@ -65,6 +65,8 @@ class EventGenerator:
         self.keyword_client = KeywordClient(keyword_server_url)
         self.ke = keyword_extrator
         self.lang = lang
+        self.decay = decay
+        self.max_entries = max_entries
 
     #Listen loop (redis)
     #Todo: for other languages than English, utf8 de and encoding will be needed
@@ -79,7 +81,7 @@ class EventGenerator:
                     if json_message['handle'] == 'completeUtterance':
                         print 'handle: completeUtterance'
                         self.complete_transcript.append(json_message['utterance'])
-                        self.send_relevant_entry_updates()
+                        self.send_relevant_entry_updates(self.max_entries,self.decay)
                     if json_message['handle'] == 'closed':
                         print 'handle: closed'
                         self.delDisplayId(json_message['entry_id'])
@@ -217,10 +219,11 @@ if __name__ == "__main__":
     parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.1, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
         'lower value will find more keywords, but takes longer to load and needs more memory')
     parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
+    parser.add_argument('-d', '--decay', type=float, default = 0.95, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
 
     args = parser.parse_args()
     ke = keyword_extract.KeywordExtract(lang=args.language)
     ke.buildDruidCache(cutoff_druid_score=args.cutoff_druid_score)
 
-    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language)
+    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay)
     event_gen.start_listen()
