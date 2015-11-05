@@ -89,6 +89,7 @@ class EventGenerator:
                         self.complete_transcript = []
                         self.relevant_entries = {}
                         self.displayed_entries = []
+                        self.keyword_client.resetTimer()
                     elif json_message['handle'] == 'setLanguage':
                         print 'handle: set language' #todo
 

@@ -12,6 +12,7 @@ from topia.termextract import extract
 import wiki_search
 import os.path
 import sys
+import math
 
 def check_path(path):
     if not os.path.isfile(path):
@@ -88,6 +89,14 @@ class KeywordExtract:
 
         return keywords
 
+    #See http://www.wolframalpha.com/input/?i=plot+%28sigmoid%28x%29+-+0.5%29*2+from+0+to+4
+    # Squishes values between 0 and 1 with a sigmoid-like function
+    def normalize_keywordscore(self, x):
+        if x < 0.0:
+            return 0.0
+        x *= 1.5
+        return ((1.0 / (1.0 + math.exp(-x)))-0.5)*2.0
+
     #You have to call buildDruidCache, before you call this function
     #Todo: parameterize penality_factor and gram_factor
     def getKeywordsDruid(self, tokens):
@@ -123,8 +132,11 @@ class KeywordExtract:
         #Print keywords_pos
         keywords = self.mergeKeywords(keywords, keywords_pos)
         keywords_sorted = sorted(keywords.items(), key=operator.itemgetter(1), reverse=True)
+        # Normalize scores to be in the range of 0.0 - 1.0
+        keywords_sorted_normalized = [(item[0],self.normalize_keywordscore(item[1])) for item in keywords_sorted]
+        print 'keywords_sorted_normalized:',keywords_sorted_normalized
 
-        return keywords_sorted
+        return keywords_sorted_normalized
 
     #Build a dictionary of DRUID keywords. Input is basically a filelist with multiwordness scores for 1-4 grams produced from the algorithm. Numbers and stopwords are filtered, the rest is taken as is.
     def buildDruidCache(self,cutoff_druid_score=0.2):

@@ -17,11 +17,15 @@ class Timer(object):
         self.stop()
 
     def start(self):
-        self.start = time.time()
+        self.start_time = time.time()
 
     def stop(self):
-        self.end = time.time()
-        self.secs = self.end - self.start
+        self.end_time = time.time()
+        self.secs = self.end_time - self.start_time
         self.msecs = self.secs * 1000  # millisecs
         if self.verbose:
             print 'elapsed time: %f ms' % self.msecs
+
+    def current_secs(self):
+        self.stop()
+        return self.secs
