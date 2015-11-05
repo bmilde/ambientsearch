@@ -222,6 +222,7 @@ function showModal(entry_id) {
 function resetConversation() {
 	console.log('resetConversation() called');
 	$.get('/reset');
+	reset();
 }
 
 
