@@ -14,6 +14,7 @@ var xlBreakPoint = 1800;
 var imageSize = 's';
 var timelineInverted = false;
 var scrollBottom = true;
+var scrollChatAreaBottom = true;
 
 function addRelevantEntry(jsonEvent) {
 	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
@@ -104,18 +105,17 @@ function delRelevantEntry(jsonEvent) {
 }
 
 /*Events: speech recognition feedback*/
-function renderUtterance(jsonEvent) {
-	return '<span>'+jsonEvent.speaker+':</span> '+jsonEvent.utterance
-}
 
 function addUtterance(jsonEvent) {
 	$('#chat-area').append('<p>'+renderUtterance(jsonEvent)+' </p>')
-	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+	if(scrollChatAreaBottom)
+		document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 }
 
 function replaceLastUtterance(jsonEvent) {
 	$('#chat-area p:last').html(renderUtterance(jsonEvent))
-	document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
+	if(scrollChatAreaBottom)
+		document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 }
 
 /*Dispatch events from EventSource*/
@@ -245,6 +245,10 @@ function resetConversation() {
 
 /* utility */
 
+function renderUtterance(jsonEvent) {
+	return '<span>'+jsonEvent.speaker+':</span> '+jsonEvent.utterance
+}
+
 function reset() {
 	console.log('reset called');
 	$('#chat-area').empty();
@@ -345,9 +349,17 @@ $(window).resize(function() {
 
 $(window).scroll(function() { 
 	// check if user has scrolled to bottom of the page  
-	if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	if($(window).scrollTop() + $(window).height() == $(document).height())
 		scrollBottom = true;
-	} else {
+	else
 		scrollBottom = false;
-	}
+});
+
+$('#chat-area').scroll(function() { 
+	var element = $(this);
+	// check if user has scrolled to bottom of the chat area  
+	if(element[0].scrollHeight - element.scrollTop() == element.innerHeight())
+		scrollChatAreaBottom = true;
+	else
+		scrollChatAreaBottom = false;
 });
