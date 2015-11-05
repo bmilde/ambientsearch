@@ -47,7 +47,12 @@ def getSummariesSingleKeyword(keywords, max_entries=4, lang='en', pics_folder='p
             articles.append(keyword_cache[keyword])
             num_results += 1
         else:
-            result = wikipedia.search(keyword)
+            try:
+                result = wikipedia.search(keyword)
+            except (requests.exceptions.ConnectionError, requests.exceptions.HTTPError, requests.exceptions.ConnectTimeout, requests.exceptions.RetryError, requests.exceptions.InvalidURL, requests.exceptions.SSLError) as e:
+                print 'WARNING! Connection error in wiki_search!'
+                result = []
+                pass
             if len(result) > 0:
                 try:
                     article = result[0]
