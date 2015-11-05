@@ -23,12 +23,8 @@ ToDo:
 -GUI upside down (speech input at the bottom and timeline goes up) -> start at bottom
 -serialisieren
 -time in timeline (2min) + aktuelle zeit
--load images for entries that are instantly removed (no images in timeline)
 -timeline links/rechts farbe?
 -iframe ersetzen / schriftart sans-serif
 -show starred entries
 
 -tranlate i18n
-
-
--reset

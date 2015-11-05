@@ -32,7 +32,7 @@ function addRelevantEntry(json_event) {
 		// add flickr image
 		getFlickrImage(json_event['entry_id'], imageSize, function(image_url) {
 			if(image_url)
-				element.children('.relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
+				$('.re-' + json_event['entry_id'] + ' .relevant-entry').prepend('<img src="' + image_url +'" class="flickr-image" alt="' + json_event['entry_id'] + '" />');
 
 			element.fadeIn({
 				duration: fadeInTimeMs,
