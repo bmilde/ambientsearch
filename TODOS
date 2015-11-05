@@ -20,11 +20,16 @@ What can be experimented on to improve relevant document display and online perf
 
 
 ToDo:
--GUI upside down (speech input at the bottom and timeline goes up) -> start at bottom
 -serialisieren
--time in timeline (2min) + aktuelle zeit
--timeline links/rechts farbe?
+	-time in timeline (2min) + aktuelle zeit
+	-timeline links/rechts farbe?
 -iframe ersetzen / schriftart sans-serif
--show starred entries
+	-show starred entries timeline filter
+	-timeline filter score
 
--tranlate i18n
+-tranlate i18n settings headline
+
+
+-double image add
+-replace img if no img
+-starred -> yellow background

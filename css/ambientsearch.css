@@ -15,7 +15,9 @@ body.modal-open {
     padding-right: 0 !important;
 }
 
-#relevant-entries {
+#timeline,
+#relevant-entries,
+#bottom-bar {
     margin-bottom: 20px;
 }
 
