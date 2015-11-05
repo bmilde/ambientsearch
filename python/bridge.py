@@ -76,28 +76,28 @@ class KeywordClient():
         
     def addRelevantEntry(self, type, title, text, url, score, insert_before):
         self.checkTimer()
-        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before, 'time': float(timer.current_secs())}
+        data = {'handle':'addRelevantEntry','type':type,'entry_id': idFromTitle(title),'title':title,'text':text,'url':url,'score':score, 'insert_before': insert_before, 'time': float(self.timer.current_secs())}
         print data
         red.publish('ambient', json.dumps(data))
 
     def delRelevantEntry(self, type, title):
         self.checkTimer()
-        data = {'handle':'delRelevantEntry','type':type,'title': title, 'entry_id': idFromTitle(title), 'time': float(timer.current_secs())}
+        data = {'handle':'delRelevantEntry','type':type,'title': title, 'entry_id': idFromTitle(title), 'time': float(self.timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
-    def addUtterance(self, utterance,speaker):
+    def addUtterance(self, utterance, speaker):
         self.checkTimer()
-        data = {'handle':'addUtterance','utterance':utterance,'speaker':speaker, 'time': float(timer.current_secs())}
+        data = {'handle':'addUtterance','utterance':utterance,'speaker':speaker, 'time': float(self.timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
-    def replaceLastUtterance(self, old_utterance,new_utterance,speaker):
+    def replaceLastUtterance(self, old_utterance, new_utterance, speaker):
         self.checkTimer()
-        data = {'handle':'replaceLastUtterance','old_utterance':old_utterance,'utterance':new_utterance,'speaker':speaker, 'time': float(timer.current_secs())}
+        data = {'handle':'replaceLastUtterance','old_utterance':old_utterance,'utterance':new_utterance,'speaker':speaker, 'time': float(self.timer.current_secs())}
         red.publish('ambient', json.dumps(data))
 
     def completeUtterance(self, utterance, speaker):
         self.checkTimer()
-        data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker , 'time': float(timer.current_secs())}
+        data = {'handle':'completeUtterance','utterance':utterance,'speaker':speaker , 'time': float(self.timer.current_secs())}
         print data
         red.publish('ambient_transcript_only', json.dumps(data))
 
