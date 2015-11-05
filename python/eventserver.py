@@ -7,6 +7,7 @@ import redis
 import os
 import json
 import bs4
+import bridge
 
 from werkzeug.serving import WSGIRequestHandler
 
@@ -26,6 +27,8 @@ long_poll_timeout_burst = 0.08
 ambient_server_channel = 'ambient'
 relevant_event_generator_channel = 'ambient_transcript_only'
 return_string_ok = "ok"
+
+kc = bridge.KeywordClient()
 
 #Send event to the event stream
 def event_stream():
@@ -116,9 +119,11 @@ def generate_event():
 def add_subtitle():
     received_json = flask.request.json
     print received_json
-    soup = bs4.BeautifulSoup(received_json["text"])
+    soup = bs4.BeautifulSoup(received_json['text'])
     text = u' '.join(soup.findAll(text=True))
-    print text
+    kc.addUtterance(utterance='',speaker='TV')
+    kc.replaceLastUtterance(new_utterance=text,old_utterance='',speaker='TV')
+    kc.completeUtterance(utterance=text,speaker='TV')
     return return_string_ok
 
 # TODO

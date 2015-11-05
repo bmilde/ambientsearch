@@ -58,7 +58,7 @@ class KeywordClientHttp():
 #Do most of the message passing with redis, now standard version
 class KeywordClient():
 
-    def __init__(self,server_url):
+    def __init__(self,server_url=""):
         self.server_url = server_url
         self.request_header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 

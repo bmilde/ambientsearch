@@ -207,7 +207,7 @@ class EventGenerator:
                 self.relevant_entries[key] = new_relevant_entries[key]
 
         print 'send_relevant_entry_updates finished. Time needed:', t.secs, 'seconds.'
-        print 'displayed entries should now be:',self.displayed_entries
+        print 'Displayed entries should now be:',[entry['title'] for entry in self.displayed_entries]
 
 if __name__ == "__main__":
 
