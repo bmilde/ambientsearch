@@ -108,36 +108,35 @@
     <!-- Page Content -->
     <div class="container">
 
-    	<div class="row">
-	    	<div id="speech-input" class="col-md-9">
-				<h2>Speech Input</h2>
-	    		<div id="chat-area">
-	            	<p><span >Computer: </span><i>Hi! I'm listening</i></p>
-				</div>
-			</div>
-			<div id="additional-information" class="col-md-3">
-				<h2>Additional Information</h2>
-			</div>
-    	</div>
-
-        <h2>Relevant Entries</h2>
-    	<div id="relevant-entries" class="row">
-    		<script id="relevant-entry-template" type="text/x-dot-template">
-	    		<div class="col-md-3 re-{{=it.entry_id}}">
-	    			<div class="relevant-entry" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}">
-						<button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
-		                <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
-		                <h3><a onclick="showModal('{{=it.entry_id}}')">{{=it.title}}</a></h3>
-		                <p>{{=it.text}}</p>
-	                </div>	
-	    		</div>
-    		</script>
-    	</div>
-
         <h2>Timeline</h2>
     	<ul id="timeline" class="timeline"></ul>
 
-    </div>
+        <h2>Relevant Entries</h2>
+        <div id="relevant-entries" class="row">
+            <script id="relevant-entry-template" type="text/x-dot-template">
+                <div class="col-md-3 re-{{=it.entry_id}}">
+                    <div class="relevant-entry" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}">
+                        <button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
+                        <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
+                        <h3><a onclick="showModal('{{=it.entry_id}}')">{{=it.title}}</a></h3>
+                        <p>{{=it.text}}</p>
+                    </div>  
+                </div>
+            </script>
+        </div>
+
+        <div class="row">
+            <div id="speech-input" class="col-md-9">
+                <h2>Speech Input</h2>
+                <div id="chat-area">
+                    <p><span >Computer: </span><i>Hi! I'm listening</i></p>
+                </div>
+            </div>
+            <div id="additional-information" class="col-md-3">
+                <h2>Additional Information</h2>
+            </div>
+        </div>
+
     <!-- /.container -->
 
     <!-- jQuery -->
