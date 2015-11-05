@@ -13,10 +13,6 @@ import wiki_search
 import os.path
 import sys
 
-#stopwords_list = ["(",")",",",":","[","]",";",".","...","'","'d","&","$","i","a", "n't", "about", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as", "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "being", "below", "beside", "besides", "between", "beyond", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "could", "couldnt", "cry", "do", "done", "down", "due", "during", "each", "eg", "either", "else", "elsewhere", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "for", "former", "formerly", "from", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "this", "those", "though", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"]
-#stopwords = dict(zip([unicode(word) for word in stopwords_list],[1]*len(stopwords_list)))
-#common_words = {}
-
 def check_path(path):
     if not os.path.isfile(path):
         path = 'python/'+path
@@ -25,6 +21,17 @@ def check_path(path):
             sys.exit(-1)
     return path
 
+# Filter hypens at the beginning and/or end of a word
+# E.g. "schlechteste -> schlechteste
+# There are many unicode hyphen variant (which all look very similar), we also want ot filter these
+def filterHyphens(word):
+    if word.startswith(u'"') or word.startswith(u"'") or word.startswith(u'"') or word.startswith(u'"') or word.startswith(u'"') or word.startswith(u'"'):
+        word = word[1:]
+
+    if word.endswith(u'"') or word.endswith(u"'") or word.endswith(u'"') or word.endswith(u'"') or word.endswith(u'"') or word.endswith(u'"'):
+        word = word[:-1]
+
+    return word
 
 class KeywordExtract:
 
@@ -132,7 +139,7 @@ class KeywordExtract:
             has_number = self.RE_D.search(words)
             #exlude any lines that have one or more numbers in them
             if not has_number:
-                words_split = words.split(u' ')
+                words_split = [filterHyphens(word) for word in words.split(u' ')]
                 float_druid_score = float(druid_score)
                 if float_druid_score > cutoff_druid_score:
                     if not any((word in self.stopwords) for word in words_split):
