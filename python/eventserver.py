@@ -96,7 +96,7 @@ def viewingClosed():
 def reset():
     print "Reset called from browser"
     #reset local timer in keyword client
-    self.kc.resetTimer()
+    kc.resetTimer()
     data = {'handle':'reset'}
     red.publish(relevant_event_generator_channel, json.dumps(data))
     return return_string_ok
