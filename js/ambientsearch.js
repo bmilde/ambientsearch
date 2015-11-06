@@ -295,7 +295,16 @@ function renderUtterance(jsonEvent) {
 
 function reset() {
 	console.log('reset called');
+
 	time = 0;
+	scrollChatAreaBottom = true;
+	scrollBottom = true;
+
+	filterMinScore = 0;
+	filterStarredOnly = false;
+	$('#filter-starredOnly').bootstrapSwitch('state', false);
+	$('#filter-minScore').slider('setValue', filterMinScore);
+
 	$('#chat-area').empty();
 	$('#relevant-entries').empty();
 	$('.timeline-entry').remove();
@@ -345,16 +354,9 @@ jQuery["postJSON"] = function( url, data, callback ) {
 /* bindings */
 
 $(document).ready(function() {
-	resetConversation();
-
-	// determine image size depending on window width
-	if($(window).width() >= xlBreakPoint)
-		imageSize = 'q';
-	else
-		imageSize = 's';
 
 	// init filter-starred-swicth
-	$("[name='filter-starred']").bootstrapSwitch({
+	$("[name='filter-starredOnly']").bootstrapSwitch({
 		state: filterStarredOnly,
 		size: 'mini',
 		onSwitchChange: function(event, state) {
@@ -376,6 +378,14 @@ $(document).ready(function() {
 		filterMinScore = event['value']['newValue'];
 		filterTimeline();
 	});
+
+	resetConversation();
+
+	// determine image size depending on window width
+	if($(window).width() >= xlBreakPoint)
+		imageSize = 'q';
+	else
+		imageSize = 's';
 });
 
 $('#flickrSort').change(function() {
