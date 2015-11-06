@@ -220,9 +220,10 @@ if __name__ == "__main__":
         'lower value will find more keywords, but takes longer to load and needs more memory')
     parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
     parser.add_argument('-d', '--decay', type=float, default = 0.95, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
+    parser.add_argument('-e', '--extra-keywords', type=str, default = '', dest = 'extra_keywords', help='Add these user defined extra keywords (filename)')
 
     args = parser.parse_args()
-    ke = keyword_extract.KeywordExtract(lang=args.language)
+    ke = keyword_extract.KeywordExtract(lang=args.language, extra_keywords=args.extra_keywords)
     ke.buildDruidCache(cutoff_druid_score=args.cutoff_druid_score)
 
     event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay)
