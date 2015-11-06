@@ -36,8 +36,9 @@ def filterHyphens(word):
 
 class KeywordExtract:
 
-    def __init__(self, lang='en'):
+    def __init__(self, lang='en', extra_keywords=''):
         self.lang = lang
+        self.extra_keywords = extra_keywords
         self.keyword_extractor = extract.TermExtractor()
         self.keyword_extractor.filter = extract.permissiveFilter
         self.keyword_dict = {}
@@ -161,6 +162,12 @@ class KeywordExtract:
                             print words, self.keyword_dict[words]
                 else:
                     break
+        if self.extra_keywords != '':
+            with codecs.open(self.extra_keywords) as infile:
+                for line in infile:
+                    words = line[:-1].lower()
+                    print 'Loading user set keyword:',words
+                    self.keyword_dict[words] = 3.0
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
