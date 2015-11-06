@@ -10,11 +10,17 @@ Author: Benjamin Milde
 /*This generates a template function for the template in index.html with the id relevantDocs_tmpl*/
 var wikiEntryTemplate = doT.template(document.getElementById('relevant-entry-template').text);
 var fadeInTimeMs = 800;
+
 var xlBreakPoint = 1800;
 var imageSize = 's';
+
 var timelineInverted = false;
+
 var scrollBottom = true;
 var scrollChatAreaBottom = true;
+
+var filterStarredOnly = false;
+var filterMinScore = 0;
 
 function addRelevantEntry(jsonEvent) {
 	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
@@ -80,10 +86,6 @@ function delRelevantEntry(jsonEvent) {
 		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
 		$('#timeline').append(timelineEntry);
 
-		// determine timeline position (left/right)
-		if(timelineInverted)
-			timelineEntry.addClass('timeline-inverted');
-		timelineInverted = !timelineInverted;
 
 		// add importance class
 		var score = entryContent.attr('data-score');
@@ -92,14 +94,27 @@ function delRelevantEntry(jsonEvent) {
 		else if(score <= 0.75) timelineEntry.addClass('importance-075');
 		else timelineEntry.addClass('importance-100');
 
-		// slide in new timeline entry
-		timelineEntry.slideDown( {
-			duration: fadeInTimeMs / 2,
-			progress: function() {
-				if(scrollBottom) 
-					window.scrollTo(0,document.body.scrollHeight);
+		var starred = entryContent.hasClass('starred');
+		var score = entryContent.attr('data-score');
+
+		if(showEntry(starred, score)) {
+			// determine timeline position (left/right)
+			if(timelineInverted) {
+				timelineEntry.addClass('timeline-inverted');
 			}
-		});
+			timelineInverted = !timelineInverted;
+
+			// slide in new timeline entry
+			timelineEntry.slideDown( {
+				duration: fadeInTimeMs / 2,
+				progress: function() {
+					if(scrollBottom) 
+						window.scrollTo(0,document.body.scrollHeight);
+				}
+			});
+		}
+
+		
 	}
 
 }
@@ -201,11 +216,12 @@ function closeEntry(entryID) {
 		// remove relevant entry
 		$('#relevant-entries .entry-' + entryID).remove();
 
-		// remove timeline entry/ies and align following entries left/right
+		// remove timeline entry/ies
 		var timelineEntry = $('#timeline .entry-' + entryID);
 		timelineEntry.fadeOut(fadeInTimeMs, function() {
 			timelineEntry.remove();
-			timelineEntry.nextAll().toggleClass('timeline-inverted');
+			filterTimeline();
+			$(this).remove();
 		});
 	});
 }
@@ -241,6 +257,32 @@ function resetConversation() {
 	reset();
 }
 
+function filterTimeline() {
+	console.log('filterTimeline starredOnly=' + filterStarredOnly + ' minScore=' + filterMinScore);
+
+	var entries = $('li.timeline-entry');
+	entries.removeClass('timeline-inverted');
+
+	timelineInverted = false;
+	entries.each(function() {
+		var entry = $(this);
+		var entryContent = entry.children('.entry-content');
+
+		var starred = entryContent.hasClass('starred');
+		var score = entryContent.attr('data-score');
+
+		if(showEntry(starred, score)) {
+			if(timelineInverted)
+				entry.addClass('timeline-inverted');
+			timelineInverted = !timelineInverted;
+			
+			entry.show();
+		} else {
+			entry.hide();
+		}
+	});
+}
+
 
 
 /* utility */
@@ -273,6 +315,10 @@ function getFlickrImage(searchTerm, size, callback) {
 	});
 }
 
+function showEntry(starred, score) {
+	return ((!filterStarredOnly || (filterStarredOnly && starred)) && score >= filterMinScore);
+}
+
 jQuery["postJSON"] = function( url, data, callback ) {
     return jQuery.ajax({
         url: url,
@@ -294,6 +340,30 @@ $(document).ready(function() {
 		imageSize = 'q';
 	else
 		imageSize = 's';
+
+	// init filter-starred-swicth
+	$("[name='filter-starred']").bootstrapSwitch({
+		state: filterStarredOnly,
+		size: 'mini',
+		onSwitchChange: function(event, state) {
+			filterStarredOnly = state;
+			filterTimeline();
+		}
+	});
+
+	// init filter-minScore-slider
+	var slider = $('#filter-minScore');
+	slider.slider({
+		min: 0,
+		max: 1,
+		step: 0.05,
+		value: filterMinScore,
+		tooltip_position: 'bottom'
+	});
+	slider.on('change', function(event) {
+		filterMinScore = event['value']['newValue'];
+		filterTimeline();
+	});
 });
 
 $('#flickrSort').change(function() {
@@ -362,4 +432,9 @@ $('#chat-area').scroll(function() {
 		scrollChatAreaBottom = true;
 	else
 		scrollChatAreaBottom = false;
+});
+
+$('#entry-modal-iframe').load(function() {
+	console.log('ready');
+	$(this).contents().find('html').css('background-color', 'red');
 });

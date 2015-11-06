@@ -256,3 +256,10 @@ h1, .h1, h2, .h2, h3, .h3 {
 .importance-025 .timeline-badge {
   background-color: #0ff !important;
 }
+
+.navbar-form label {
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 50px;
+  color: #aaa;
+}

@@ -20,16 +20,7 @@ What can be experimented on to improve relevant document display and online perf
 
 
 ToDo:
--serialisieren
-	-time in timeline (2min) + aktuelle zeit
-	-timeline links/rechts farbe?
--iframe ersetzen / schriftart sans-serif
-	-show starred entries timeline filter
-	-timeline filter score
-
+-time in timeline (2min) + aktuelle zeit
+-iframe ersetzen / schriftart sans-serif	
 -tranlate i18n settings headline
 
-
--double image add
--replace img if no img
--starred -> yellow background
