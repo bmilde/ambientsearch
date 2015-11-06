@@ -19,6 +19,14 @@ a {
   cursor: pointer;
 }
 
+.slider-handle {
+  background: #aaa;
+}
+
+.slider-selection {
+  background: none;
+}
+
 #timeline {
   margin-bottom: 40px;
 }
@@ -246,22 +254,6 @@ h1, .h1, h2, .h2, h3, .h3 {
   border-right-width: 14px;
   left: -14px;
   right: auto;
-}
-
-.importance-100 .timeline-badge {
-  background-color: #00f !important;
-}
-
-.importance-075 .timeline-badge {
-  background-color: #06f !important;
-}
-
-.importance-050 .timeline-badge {
-  background-color: #0bf !important;
-}
-
-.importance-025 .timeline-badge {
-  background-color: #0ff !important;
 }
 
 .navbar-form label {

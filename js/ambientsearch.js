@@ -22,6 +22,9 @@ var scrollChatAreaBottom = true;
 var filterStarredOnly = false;
 var filterMinScore = 0;
 
+var colorScoreLow = [128,128,255];
+var colorScoreHigh = [255,64,64];
+
 var time = 0;
 
 function addRelevantEntry(jsonEvent) {
@@ -89,12 +92,13 @@ function delRelevantEntry(jsonEvent) {
 		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
 		timelineEntry.insertBefore('#time');
 
-		// add importance class
+		// determine badge color from score
 		var score = entryContent.attr('data-score');
-		if(score <= 0.25) timelineEntry.addClass('importance-025');
-		else if(score <= 0.5) timelineEntry.addClass('importance-050');
-		else if(score <= 0.75) timelineEntry.addClass('importance-075');
-		else timelineEntry.addClass('importance-100');
+		var badge = timelineEntry.children('.timeline-badge');
+		var color = [Math.round(colorScoreLow[0] + score * (colorScoreHigh[0] - colorScoreLow[0])), Math.round(colorScoreLow[1] + score * (colorScoreHigh[1] - colorScoreLow[1])), Math.round(colorScoreLow[2] + score * (colorScoreHigh[2] - colorScoreLow[2]))];
+		badge.css({
+			backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
+		});
 
 		var starred = entryContent.hasClass('starred');
 		var score = entryContent.attr('data-score');
@@ -374,9 +378,14 @@ $(document).ready(function() {
 		value: filterMinScore,
 		tooltip_position: 'bottom'
 	});
+
 	slider.on('change', function(event) {
 		filterMinScore = event['value']['newValue'];
 		filterTimeline();
+	});
+
+	$('.slider-track').css({
+		background: 'linear-gradient(to right, rgb('+colorScoreLow[0]+','+colorScoreLow[1]+','+colorScoreLow[2]+'), rgb('+colorScoreHigh[0]+','+colorScoreHigh[1]+','+colorScoreHigh[2]+'))'
 	});
 
 	resetConversation();
