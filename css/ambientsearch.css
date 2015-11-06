@@ -59,6 +59,11 @@ a {
   background: #ffc;
 }
 
+.timeline > li > .timeline-panel.starred:after {
+  border-left: 14px solid #ffc;
+  border-right: 0 solid #ffc;
+}
+
 .entry-content h3 {
     text-align: center;
 }
