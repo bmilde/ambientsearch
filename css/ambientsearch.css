@@ -262,3 +262,11 @@ h1, .h1, h2, .h2, h3, .h3 {
   margin-left: 50px;
   color: #aaa;
 }
+
+.lang_en {
+  display:none;
+}
+
+#additional-information {
+  display:none;
+}
