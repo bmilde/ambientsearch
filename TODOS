@@ -20,7 +20,10 @@ What can be experimented on to improve relevant document display and online perf
 
 
 ToDo:
--time in timeline (2min) + aktuelle zeit
 -iframe ersetzen / schriftart sans-serif	
 -tranlate i18n settings headline
+
+-use time from entry -> sort on timeline insert
+-display time in chat area (for each utterance)
+
 
