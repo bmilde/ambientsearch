@@ -56,11 +56,13 @@
                 </ul>
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
-                        <label for="filter-starred">Starred only</label>
+                        <label for="filter-starred" class="lang_en">Timeline: Starred only</label>
+                        <label for="filter-starred" class="lang_de">Verlauf: Nur Bookmarks</label>
                         <input type="checkbox" name="filter-starred" id="filter-starred" />
                     </div>
                     <div class="form-group">
-                        <label for="filter-minScore">minScore</label>
+                        <label for="filter-minScore" class="lang_en">Minimum relevance</label>
+                        <label for="filter-minScore" class="lang_de">Mindestrelevanz</label>
                         <input type="text" name="filter-minScore" id="filter-minScore" />
                     </div>
                 </form>
@@ -76,21 +78,25 @@
             <div class="modal-content">
 	            <div class="modal-header">
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	                <h4 class="modal-title">Settings</h4>
+	                <h4 class="modal-title lang_en">Settings</h4>
+                    <h4 class="modal-title lang_de">Einstellungen</h4>
 	            </div>
 	            <div class="modal-body">
 					<div class="form-group">
-						<label for="flickrSort">Flickr Bilder</label>
-						<select name="flickrSort" id="flickrSort">
+						<label for="flickrSort" class="lang_de">Flickr Bilder</label>
+						<select name="flickrSort" id="flickrSort" class="lang_de">
 							<option value="relevance">Relevanz</option>
 							<option value="interestingness-desc">Interessant</option>
 						</select>
 					</div>
 	            </div>
 	            <div class="modal-footer">
-	            	<button type="button" class="btn btn-default" onclick="resetConversation()">Reset Conversation</button>
-	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-primary">Save changes</button>
+	            	<button type="button" class="btn btn-default lang_en" onclick="resetConversation()">Reset Conversation</button>
+	                <button type="button" class="btn btn-default lang_en" data-dismiss="modal">Close</button>
+	                <button type="button" class="btn btn-primary lang_en">Save changes</button>
+                    <button type="button" class="btn btn-default lang_de" onclick="resetConversation()">Konversation zurücksetzen</button>
+                    <button type="button" class="btn btn-default lang_de" data-dismiss="modal">Schließen</button>
+                    <button type="button" class="btn btn-primary lang_de">Speichern</button>
 	            </div>
             </div>
         </div>
@@ -118,14 +124,16 @@
     <!-- Page Content -->
     <div class="container">
 
-        <h2>Timeline</h2>
+        <h2 class="lang_de">Verlauf</h2>
+        <h2 class="lang_en">Timeline</h2>
     	<ul id="timeline" class="timeline">
             <li id="time">
                 <div class="timeline-badge">0:00</div>
             </li>   
         </ul>
 
-        <h2>Relevant Entries</h2>
+        <h2 class="lang_de">Relevante Informationen</h2>
+        <h2 class="lang_en">Relevant Entries</h2>
         <div id="relevant-entries" class="row">
             <script id="relevant-entry-template" type="text/x-dot-template">
                 <div class="col-md-3 col-sm-12 col-xs-12 entry-{{=it.entry_id}}">
@@ -141,13 +149,15 @@
 
         <div id="bottom-bar" class="row">
             <div id="speech-input" class="col-md-9">
-                <h2>Speech Input</h2>
+                <h2 class="lang_de">Spracheingabe</h2>
+                <h2 class="lang_en">Speech Input</h2>
                 <div id="chat-area">
                     <p><span >Computer: </span><i>Hi! I'm listening</i></p>
                 </div>
             </div>
             <div id="additional-information" class="col-md-3">
-                <h2>Additional Information</h2>
+                <h2 class="lang_en">Categories</h2>
+                <h2 class="lang_de">Kategorien</h2>
             </div>
         </div>
 
