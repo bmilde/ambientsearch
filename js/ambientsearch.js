@@ -22,6 +22,8 @@ var scrollChatAreaBottom = true;
 var filterStarredOnly = false;
 var filterMinScore = 0;
 
+var time = 0;
+
 function addRelevantEntry(jsonEvent) {
 	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
 
@@ -79,13 +81,13 @@ function delRelevantEntry(jsonEvent) {
 		}
 
 		// construct timeline entry
+		var timeString = getTimeString(time);
 		entryContent.addClass('timeline-panel');
-		var timelineEntry = $('<li class="timeline-entry"><div class="timeline-badge"><i class="glyphicon glyphicon-asterisk"></i></div></li>');
+		var timelineEntry = $('<li class="timeline-entry"><div class="timeline-badge">' + timeString + '</div></li>');
 		timelineEntry.hide();
 		timelineEntry.append(entryContent);
 		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
-		$('#timeline').append(timelineEntry);
-
+		timelineEntry.insertBefore('#time');
 
 		// add importance class
 		var score = entryContent.attr('data-score');
@@ -293,9 +295,10 @@ function renderUtterance(jsonEvent) {
 
 function reset() {
 	console.log('reset called');
+	time = 0;
 	$('#chat-area').empty();
 	$('#relevant-entries').empty();
-	$('#timeline').empty();
+	$('.timeline-entry').remove();
 }
 
 function getFlickrImage(searchTerm, size, callback) {
@@ -317,6 +320,15 @@ function getFlickrImage(searchTerm, size, callback) {
 
 function showEntry(starred, score) {
 	return ((!filterStarredOnly || (filterStarredOnly && starred)) && score >= filterMinScore);
+}
+
+function getTimeString(seconds) {
+	var minutesFormatted = Math.floor(seconds / 60);
+	var secondsFormatted = Math.round(seconds % 60);
+	if(secondsFormatted < 10)
+		secondsFormatted = '0' + secondsFormatted;
+
+	return minutesFormatted + ':' + secondsFormatted;
 }
 
 jQuery["postJSON"] = function( url, data, callback ) {
@@ -438,3 +450,11 @@ $('#entry-modal-iframe').load(function() {
 	console.log('ready');
 	$(this).contents().find('html').css('background-color', 'red');
 });
+
+window.setInterval(function() {
+	time = time + 1;
+
+	var timeString = getTimeString(time);
+	$('#time .timeline-badge').html(timeString);
+
+}, 1000);
