@@ -13,6 +13,7 @@ import re
 from timer import Timer
 from datetime import datetime
 from collections import defaultdict
+import codecs
 
 from bridge import KeywordClient
 
@@ -56,7 +57,7 @@ def idFromTitle(title):
 # (relevant text and pictures are downloaded in a blocking manner using wiki_search)
 class EventGenerator:
 
-    def __init__(self,keyword_server_url, keyword_extrator, lang='en', decay=0.95, max_entries=4):
+    def __init__(self,keyword_server_url, keyword_extrator, lang='en', decay=0.95, max_entries=4, blacklist_file=''):
         self.complete_transcript = []
 
         #dict with all relevant entries
@@ -78,6 +79,13 @@ class EventGenerator:
         else:
             print 'WARNING, unknown language', self.lang
             self.wiki_category_string = ''
+
+        self.blacklist_ids = {}
+        if blacklist_file != '':
+            with codecs.open('r',blacklist,'utf-8') as infile:
+                for line in infile:
+                    self.blacklist_ids[line[:-1]] = 1
+
 
     def topCategories(self,maxCategories=5):
         topCat = sorted(self.categories.items(), key=lambda x:x[1], reverse=True)[:maxCategories]
@@ -121,6 +129,9 @@ class EventGenerator:
 
         if 'entry_id' not in entry:
             entry['entry_id'] = idFromTitle(entry['title'])
+
+        if entry['entry_id'] in self.blacklist_ids:
+            return
 
         #Determine position by its score
         displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,'score')
@@ -243,10 +254,13 @@ if __name__ == "__main__":
     parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
     parser.add_argument('-d', '--decay', type=float, default = 0.95, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
     parser.add_argument('-e', '--extra-keywords', type=str, default = '', dest = 'extra_keywords', help='Add these user defined extra keywords (filename)')
+    parser.add_argument('-b', '--blacklist-ids', type=str, default = '', dest = 'bloacklist_ids', help='Never show these wikipedia ids!')
+
 
     args = parser.parse_args()
     ke = keyword_extract.KeywordExtract(lang=args.language, extra_keywords=args.extra_keywords)
     ke.buildDruidCache(cutoff_druid_score=args.cutoff_druid_score)
 
-    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay)
+    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay, blacklist_file=args.blacklist)
     event_gen.start_listen()
+
