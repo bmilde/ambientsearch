@@ -12,6 +12,7 @@ import bisect
 import re
 from timer import Timer
 from datetime import datetime
+from collections import defaultdict
 
 from bridge import KeywordClient
 
@@ -62,11 +63,26 @@ class EventGenerator:
         self.relevant_entries = {}
         #sorted list of displayed entries
         self.displayed_entries = []
+        #number of times a wikipedia category has been encountered, from all added articles
+        self.categories = defaultdict(int)
         self.keyword_client = KeywordClient(keyword_server_url)
         self.ke = keyword_extrator
         self.lang = lang
         self.decay = decay
         self.max_entries = max_entries
+
+        if self.lang == 'en':
+            self.wiki_category_string = u'Category:'
+        elif self.lang == 'de':
+            self.wiki_category_string = u''
+        else:
+            print 'WARNING, unknown language', self.lang
+            self.wiki_category_string = ''
+
+    def topCategories(self,maxCategories=5):
+        topCat = sorted(self.categories.items(), key=lambda x:x[1], reverse=True)[:maxCategories]
+        return [{'entry_id':idFromTitle(cat[0]),'title':cat[0].replace(u'Kategorie:',u''), 'url': u'http://' + self.lang + u'.wikipedia.org/w/index.php?title=' 
+                    + self.wiki_category_string + cat[0].replace(' ','_'), 'score': cat[1]} for cat in topCat if cat[1] > 1]
 
     #Listen loop (redis)
     #Todo: for other languages than English, utf8 de and encoding will be needed
@@ -187,6 +203,8 @@ class EventGenerator:
             for key in new_relevant_entries_set - relevant_entries_set:
                 entry = new_relevant_entries[key]
                 self.addDisplayEntry("wiki", entry)
+                for category in entry["categories"]:
+                    self.categories[category] += 1  
 
             #now look for changed scores (happens if a keyword got more important and gets mentioned again)   
             for key in (new_relevant_entries_set & relevant_entries_set):
@@ -208,6 +226,10 @@ class EventGenerator:
 
             for key in new_relevant_entries_set - relevant_entries_set:
                 self.relevant_entries[key] = new_relevant_entries[key]
+
+        print self.topCategories()
+        # TODO: only send something if topCategories changes
+        self.keyword_client.sendCategories(self.topCategories())
 
         print 'send_relevant_entry_updates finished. Time needed:', t.secs, 'seconds.'
         print 'Displayed entries should now be:',[entry['title'] for entry in self.displayed_entries]

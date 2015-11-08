@@ -77,6 +77,10 @@ class KeywordClient():
     def getSettings(self):
         r = requests.get(self.server_url+'getSettings')
         return r.json()
+
+    def sendCategories(self, categories):
+        data = {'handle':'setCategories', 'categories':categories}
+        red.publish('ambient', json.dumps(data))
         
     def addRelevantEntry(self, type, title, text, url, score, insert_before):
         self.checkTimer()

@@ -9,6 +9,8 @@ Author: Benjamin Milde
 
 /*This generates a template function for the template in index.html with the id relevantDocs_tmpl*/
 var wikiEntryTemplate = doT.template(document.getElementById('relevant-entry-template').text);
+var categoryEntryTemplate = doT.template(document.getElementById('relevantCategory_tmpl').text);
+
 var fadeInTimeMs = 800;
 
 var xlBreakPoint = 1800;
@@ -185,7 +187,11 @@ source.onmessage = function (event) {
 	}else if (jsonEvent.handle == 'delRelevantEntry')
 	{
 		delRelevantEntry(jsonEvent);
-	}else if (jsonEvent.handle == 'reset')
+	}else if (jsonEvent.handle == 'setCategories')
+	{
+		setCategories(jsonEvent);
+	}
+	else if (jsonEvent.handle == 'reset')
 	{
 		reset();
 	}
@@ -289,9 +295,24 @@ function filterTimeline() {
 	});
 }
 
-
-
 /* utility */
+
+/* Render a set of catgeories */
+function setCategories(json_event)
+{
+    arrayOfCategories = json_event['categories']
+	var innerHTML = '';
+	var category = '';
+	for (var i = 0, l=arrayOfCategories.length; i<l; i++) 
+	{
+		innerHTML = innerHTML + categoryEntryTemplate(arrayOfCategories[i]);
+		category = arrayOfCategories[i].title;
+		//m_listOfHistoricalCategories.push(category);  // adding a new category to the historical category list.
+	}	
+	
+	$("#categorylist").html(innerHTML);
+	//updateHistoricalCategories();
+}
 
 function renderUtterance(jsonEvent) {
 	return '<span>'+jsonEvent.speaker+':</span> '+jsonEvent.utterance

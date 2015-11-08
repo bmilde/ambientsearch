@@ -158,6 +158,13 @@
             <div id="additional-information" class="col-md-3">
                 <h2 class="lang_en">Categories</h2>
                 <h2 class="lang_de">Kategorien</h2>
+                <div id="categories">
+                    <ul id="categorylist">
+                    </ul>
+                </div>
+                <script id="relevantCategory_tmpl" type="text/x-dot-template">
+                    <li><div class="entry-{{=it.entry_id}}"><div class="entry-content" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}"><a onclick="showModal('{{=it.entry_id}}')" >{{=it.title}}</a></div></div></li>
+                </script>
             </div>
         </div>
 
