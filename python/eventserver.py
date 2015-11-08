@@ -8,6 +8,8 @@ import os
 import json
 import bs4
 import bridge
+import codecs
+import datetime
 
 from werkzeug.serving import WSGIRequestHandler
 
@@ -29,6 +31,8 @@ relevant_event_generator_channel = 'ambient_transcript_only'
 return_string_ok = "ok"
 
 kc = bridge.KeywordClient()
+
+session_outfile = None
 
 #Send event to the event stream
 def event_stream():
@@ -62,6 +66,7 @@ def closed():
     print received_json
     data = {'handle':'closed', 'entry_id':received_json['entry_id']}
     red.publish(relevant_event_generator_channel, json.dumps(data))
+    session_outfile.write('closed ' + json.dumps(received_json) + '\n')
     return return_string_ok
 
 @app.route('/starred', methods=['POST'])
@@ -69,6 +74,7 @@ def starred():
     received_json = flask.request.json
     print "starred called"
     print received_json
+    session_outfile.write('starred ' + json.dumps(received_json) + '\n')
     return return_string_ok
 
 @app.route('/unstarred', methods=['POST'])
@@ -76,6 +82,7 @@ def unstarred():
     received_json = flask.request.json
     print "unstarred called"
     print received_json
+    session_outfile.write('unstarred ' + json.dumps(received_json) + '\n')
     return return_string_ok
 
 @app.route('/viewing', methods=['POST'])
@@ -83,6 +90,7 @@ def viewing():
     received_json = flask.request.json
     print "viewing called"
     print received_json
+    session_outfile.write('viewing ' + json.dumps(received_json) + '\n')
     return return_string_ok
 
 @app.route('/viewingClosed', methods=['POST'])
@@ -90,6 +98,7 @@ def viewingClosed():
     received_json = flask.request.json
     print "viewingClosed called"
     print received_json
+    session_outfile.write('viewingClosed ' + json.dumps(received_json) + '\n')
     return return_string_ok
 
 @app.route('/reset', methods=['GET'])
@@ -99,6 +108,7 @@ def reset():
     kc.resetTimer()
     data = {'handle':'reset'}
     red.publish(relevant_event_generator_channel, json.dumps(data))
+    new_session_outfile()
     return return_string_ok
 
 #These are now replaced by using redis and message passing. Do we still need them?
@@ -165,8 +175,15 @@ def test_videos(path):
     return flask.send_from_directory(base_path+'test_videos', path)
     
 #END static files
+
+def new_session_outfile():
+    global session_outfile
+    if session_outfile is not None:
+        session_outfile.close()
+    session_outfile = codecs.open('sessions/' + str(datetime.datetime.now()).replace('-',' ').replace(':','_').replace(' ','_') + '.txt','w','utf-8')
                           
 if __name__ == '__main__':
+    new_session_outfile()
     app.debug = True
     WSGIRequestHandler.protocol_version = "HTTP/1.1"
     app.run(threaded=True)
