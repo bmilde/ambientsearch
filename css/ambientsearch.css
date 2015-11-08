@@ -275,3 +275,11 @@ h1, .h1, h2, .h2, h3, .h3 {
 /*#additional-information {
   display:none;
 }*/
+
+#flickrSortLabel {
+  display:none;
+}
+
+#flickrSort {
+  display:none;
+}

@@ -332,6 +332,7 @@ function reset() {
 
 	$('#chat-area').empty();
 	$('#relevant-entries').empty();
+	$('#categorylist').empty();
 	$('.timeline-entry').remove();
 }
 
@@ -416,6 +417,28 @@ $(document).ready(function() {
 		imageSize = 'q';
 	else
 		imageSize = 's';
+});
+
+$('#speechInputSetting').change(function() {
+	var val = $('#speechInputSetting').val();
+	if (val == 'On')
+	{
+		$('#speech-input').show();
+	}else if (val == 'Off')
+	{
+		$('#speech-input').hide();
+	}
+});
+
+$('#categorySetting').change(function() {
+	var val = $('#categorySetting').val();
+	if (val == 'On')
+	{
+		$('#additional-information').show();
+	}else if (val == 'Off')
+	{
+		$('#additional-information').hide();
+	}
 });
 
 $('#flickrSort').change(function() {

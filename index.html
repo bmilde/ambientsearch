@@ -83,20 +83,33 @@
 	            </div>
 	            <div class="modal-body">
 					<div class="form-group">
-						<label for="flickrSort" class="lang_de">Flickr Bilder</label>
+						<label for="flickrSort" class="lang_de" id="flickrSortLabel">Flickr Bilder</label>
 						<select name="flickrSort" id="flickrSort" class="lang_de">
 							<option value="relevance">Relevanz</option>
 							<option value="interestingness-desc">Interessant</option>
 						</select>
+                        <label for="speechInputSetting" class="lang_de">Spracheingabe anzeigen?</label>
+                        <label for="speechInputSetting" class="lang_en">Display speech input?</label>
+                        <select name="speechInputSetting" id="speechInputSetting">
+                            <option value="On">On</option>
+                            <option value="Off">Off</option>
+                        </select>
+                        <br/>
+                        <label for="categorySetting" class="lang_de">Kategorien anzeigen?</label>
+                        <label for="categorySetting" class="lang_en">Display categories?</label>
+                        <select name="categorySetting" id="categorySetting">
+                            <option value="On">On</option>
+                            <option value="Off">Off</option>
+                        </select>
 					</div>
 	            </div>
 	            <div class="modal-footer">
 	            	<button type="button" class="btn btn-default lang_en" onclick="resetConversation()">Reset Conversation</button>
 	                <button type="button" class="btn btn-default lang_en" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-primary lang_en">Save changes</button>
+	                <!--button type="button" class="btn btn-primary lang_en">Save changes</button-->
                     <button type="button" class="btn btn-default lang_de" onclick="resetConversation()">Konversation zurücksetzen</button>
                     <button type="button" class="btn btn-default lang_de" data-dismiss="modal">Schließen</button>
-                    <button type="button" class="btn btn-primary lang_de">Speichern</button>
+                    <!--button type="button" class="btn btn-primary lang_de">Speichern</button-->
 	            </div>
             </div>
         </div>
