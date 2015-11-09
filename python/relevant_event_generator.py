@@ -91,7 +91,7 @@ class EventGenerator:
     def topCategories(self,maxCategories=5):
         topCat = sorted(self.categories.items(), key=lambda x:x[1], reverse=True)[:maxCategories]
         return [{'entry_id':idFromTitle(cat[0]),'title':cat[0].replace(u'Kategorie:',u''), 'url': u'http://' + self.lang + u'.wikipedia.org/w/index.php?title=' 
-                    + self.wiki_category_string + cat[0].replace(' ','_'), 'score': cat[1]} for cat in topCat if cat[1] > 1]
+                    + self.wiki_category_string + cat[0].replace(' ','_'), 'score': cat[1]} for cat in topCat if cat[1] > 1 and 'Wikipedia:' not in cat[0]]
 
     #Listen loop (redis)
     #Todo: for other languages than English, utf8 de and encoding will be needed
@@ -132,7 +132,7 @@ class EventGenerator:
             entry['entry_id'] = idFromTitle(entry['title'])
 
         if entry['entry_id'] in self.blacklist_ids:
-            return
+            return False
 
         #Determine position by its score
         displayed_entries_get_score = dict_list_index_get_member(self.displayed_entries,'score')
@@ -163,9 +163,11 @@ class EventGenerator:
 
             print 'add', entry['title'], entry['score']
             self.keyword_client.addRelevantEntry('wiki', entry['title'], entry['text'], entry['url'], entry['score'], insert_before)
+            return True
 
         else:
             print "Insert pos is:", insert_pos, "below max_entries for",  entry["title"]
+            return False
 
     # Delete a relevant entry from the display
     def delDisplayEntry(self, entry_type, title):
@@ -214,9 +216,9 @@ class EventGenerator:
             #generate add relevant entries
             for key in new_relevant_entries_set - relevant_entries_set:
                 entry = new_relevant_entries[key]
-                self.addDisplayEntry("wiki", entry)
-                for category in entry["categories"]:
-                    self.categories[category] += 1  
+                if self.addDisplayEntry("wiki", entry):
+                    for category in entry["categories"]:
+                        self.categories[category] += 1  
 
             #now look for changed scores (happens if a keyword got more important and gets mentioned again)   
             for key in (new_relevant_entries_set & relevant_entries_set):
