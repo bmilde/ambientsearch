@@ -3,6 +3,7 @@
 __author__ = 'Benjamin Milde'
 
 import wikipedia
+import requests
 from timer import Timer
 
 summary_cache = {}
