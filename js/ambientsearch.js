@@ -30,8 +30,11 @@ var colorScoreHigh = [255,64,64];
 var time = 0;
 var runTimer = false;
 
+var debugOutput = false;
+
 function addRelevantEntry(jsonEvent) {
-	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
+	if(debugOutput)
+		console.log('addRelevantEntry ' + jsonEvent['entry_id']);
 
 	if(jsonEvent['type'] == 'wiki')
 	{
@@ -72,7 +75,8 @@ function addRelevantEntry(jsonEvent) {
 }
 
 function delRelevantEntry(jsonEvent) {
-	console.log('delRelevantEntry ' + jsonEvent['entry_id']);
+	if(debugOutput)
+		console.log('delRelevantEntry ' + jsonEvent['entry_id']);
 	
 	var relevantEntry = $('#relevant-entries .entry-' + jsonEvent['entry_id']);
 	var entryContent = relevantEntry.children('.entry-content');
@@ -209,14 +213,16 @@ function starEntry(entryID) {
 
 	if(entryContent.hasClass('starred')) { 
 		// unstar entry
-		console.log('unstar ' + entryID);
+		if(debugOutput)
+			console.log('unstar ' + entryID);
 		$.postJSON('/unstarred', JSON.stringify({"entry_id": entryID}), function() {
 			entryContent.find('button.star-icon span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
 			entryContent.removeClass('starred');
 		});
 	} else { 
 		// star entry
-		console.log('star ' + entryID);
+		if(debugOutput)
+			console.log('star ' + entryID);
 		$.postJSON('/starred', JSON.stringify({"entry_id": entryID}), function() {
 			entryContent.find('button.star-icon span').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
 			entryContent.addClass('starred');
@@ -226,7 +232,8 @@ function starEntry(entryID) {
 }
 
 function closeEntry(entryID) {
-	console.log('closeEntry ' + entryID);
+	if(debugOutput)
+		console.log('closeEntry ' + entryID);
 
 	$.postJSON('/closed', JSON.stringify({"entry_id": entryID}), function() {
 		// remove relevant entry
@@ -243,7 +250,8 @@ function closeEntry(entryID) {
 }
 
 function showModal(entryID) {
-	console.log('showModal ' + entryID);
+	if(debugOutput)
+		console.log('showModal ' + entryID);
 
 	$.postJSON('/viewing', JSON.stringify({"entry_id": entryID}), function() {
 		
@@ -257,7 +265,8 @@ function showModal(entryID) {
 
 		// register onClose-event
 		$('#entry-modal').on('hide.bs.modal', function(e) {
-			console.log('closeModal ' + entryID);
+			if(debugOutput)
+				console.log('closeModal ' + entryID);
 
 			$('#entry-modal').off('hide.bs.modal');
 			$.postJSON('/viewingClosed', JSON.stringify({"entry_id": entryID}), null);
@@ -268,13 +277,15 @@ function showModal(entryID) {
 }
 
 function resetConversation() {
-	console.log('resetConversation() called');
+	if(debugOutput)
+		console.log('resetConversation() called');
 	$.get('/reset');
 	reset();
 }
 
 function filterTimeline() {
-	console.log('filterTimeline starredOnly=' + filterStarredOnly + ' minScore=' + filterMinScore);
+	if(debugOutput)
+		console.log('filterTimeline starredOnly=' + filterStarredOnly + ' minScore=' + filterMinScore);
 
 	var entries = $('li.timeline-entry');
 	entries.removeClass('timeline-inverted');
@@ -323,7 +334,8 @@ function renderUtterance(jsonEvent) {
 }
 
 function reset() {
-	console.log('reset called');
+	if(debugOutput)
+		console.log('reset called');
 
 	time = 0;
 	runTimer = false;
@@ -454,7 +466,8 @@ $('#categorySetting').change(function() {
 });
 
 $('#flickrSort').change(function() {
-	console.log('flickrSort updated');
+	if(debugOutput)
+		console.log('flickrSort updated');
 
 	// update images
 	$('.entry-content').each(function(index, element) {
@@ -492,7 +505,8 @@ $(window).resize(function() {
 
 	// update images if size changed
 	if(oldSize != newSize) {
-		console.log('image size changed');
+		if(debugOutput)
+			console.log('image size changed');
 
 		imageSize = newSize;
 
@@ -522,7 +536,8 @@ $('#chat-area').scroll(function() {
 });
 
 $('#entry-modal-iframe').load(function() {
-	console.log('ready');
+	if(debugOutput)
+		console.log('ready');
 	$(this).contents().find('html').css('background-color', 'red');
 });
 
