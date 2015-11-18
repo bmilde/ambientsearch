@@ -21,7 +21,6 @@ What can be experimented on to improve relevant document display and online perf
 
 ToDo:
 -insert history entries at time.entry
--start timer at first entry
 -relevance bar +/-
 -bookmarks -> relevance=1 (don't filter)
 -cmd+ for 1080 (small grid) -> 125% (settings large-font?)

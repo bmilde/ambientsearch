@@ -28,6 +28,7 @@ var colorScoreLow = [128,128,255];
 var colorScoreHigh = [255,64,64];
 
 var time = 0;
+var runTimer = false;
 
 function addRelevantEntry(jsonEvent) {
 	console.log('addRelevantEntry ' + jsonEvent['entry_id']);
@@ -43,6 +44,8 @@ function addRelevantEntry(jsonEvent) {
 			entry.hide().appendTo('#relevant-entries');
 		else
 			entry.hide().insertBefore('#relevant-entries .entry-'+jsonEvent['insert_before']);
+
+		runTimer = true;
 
 		// add flickr image
 		getFlickrImage(jsonEvent['entry_id'], imageSize, function(imageUrl) {
@@ -171,6 +174,7 @@ E.g.
 
 source.onmessage = function (event) {
 	jsonEvent = JSON.parse(event.data);
+
 	if (jsonEvent.handle == 'addUtterance')
 	{
 		utts.push(jsonEvent.utterance);
@@ -322,6 +326,9 @@ function reset() {
 	console.log('reset called');
 
 	time = 0;
+	runTimer = false;
+	updateTimerGUI();
+
 	scrollChatAreaBottom = true;
 	scrollBottom = true;
 
@@ -364,6 +371,11 @@ function getTimeString(seconds) {
 		secondsFormatted = '0' + secondsFormatted;
 
 	return minutesFormatted + ':' + secondsFormatted;
+}
+
+function updateTimerGUI() {
+	var timeString = getTimeString(time);
+	$('#time .timeline-badge').html(timeString);
 }
 
 jQuery["postJSON"] = function( url, data, callback ) {
@@ -515,9 +527,8 @@ $('#entry-modal-iframe').load(function() {
 });
 
 window.setInterval(function() {
-	time = time + 1;
-
-	var timeString = getTimeString(time);
-	$('#time .timeline-badge').html(timeString);
-
+	if(runTimer) {
+		time = time + 1;
+		updateTimerGUI();
+	}
 }, 1000);
