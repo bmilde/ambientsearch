@@ -104,7 +104,7 @@ function delRelevantEntry(jsonEvent) {
 		// determine badge color from score
 		var score = entryContent.attr('data-score');
 		var badge = timelineEntry.children('.timeline-badge');
-		var color = [Math.round(colorScoreLow[0] + score * (colorScoreHigh[0] - colorScoreLow[0])), Math.round(colorScoreLow[1] + score * (colorScoreHigh[1] - colorScoreLow[1])), Math.round(colorScoreLow[2] + score * (colorScoreHigh[2] - colorScoreLow[2]))];
+		var color = getBadgeColor(score);
 		badge.css({
 			backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
 		});
@@ -373,7 +373,7 @@ function getFlickrImage(searchTerm, size, callback) {
 }
 
 function showEntry(starred, score) {
-	return ((!filterStarredOnly || (filterStarredOnly && starred)) && score >= filterMinScore);
+	return (starred || (!filterStarredOnly && score >= filterMinScore));
 }
 
 function getTimeString(seconds) {
@@ -388,6 +388,10 @@ function getTimeString(seconds) {
 function updateTimerGUI() {
 	var timeString = getTimeString(time);
 	$('#time .timeline-badge').html(timeString);
+}
+
+function getBadgeColor(score) {
+	return [Math.round(colorScoreLow[0] + score * (colorScoreHigh[0] - colorScoreLow[0])), Math.round(colorScoreLow[1] + score * (colorScoreHigh[1] - colorScoreLow[1])), Math.round(colorScoreLow[2] + score * (colorScoreHigh[2] - colorScoreLow[2]))];
 }
 
 jQuery["postJSON"] = function( url, data, callback ) {
