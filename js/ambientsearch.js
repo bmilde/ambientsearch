@@ -27,7 +27,7 @@ var filterMinScore = 0;
 var colorScoreLow = [128,128,255];
 var colorScoreHigh = [255,64,64];
 
-var time = 0;
+var timer = 0;
 var runTimer = false;
 
 var debugOutput = false;
@@ -92,6 +92,10 @@ function delRelevantEntry(jsonEvent) {
 			image.attr('src', newUrl);
 		}
 
+		var starred = entryContent.hasClass('starred');
+		var score = parseFloat(entryContent.attr('data-score'));
+		var time = parseFloat(entryContent.attr('data-time'));
+
 		// construct timeline entry
 		var timeString = getTimeString(time);
 		entryContent.addClass('timeline-panel');
@@ -99,8 +103,7 @@ function delRelevantEntry(jsonEvent) {
 		timelineEntry.hide();
 		timelineEntry.append(entryContent);
 		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
-		timelineEntry.insertBefore('#time');
-
+		
 		// determine badge color from score
 		var score = entryContent.attr('data-score');
 		var badge = timelineEntry.children('.timeline-badge');
@@ -109,15 +112,30 @@ function delRelevantEntry(jsonEvent) {
 			backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
 		});
 
-		var starred = entryContent.hasClass('starred');
-		var score = entryContent.attr('data-score');
+		// insert in timeline (sorted)
+		var timelineEntries = $('.timeline-entry');
+		var inserted = false;
+		timelineEntries.each(function(index, element) {
+			var e = $(element);
+			var t = parseFloat(e.children('.entry-content').attr('data-time'));
+			if(t > time) {
+				if(e.hasClass('timeline-inverted'))
+					timelineEntry.addClass('timeline-inverted');
+				timelineEntry.insertBefore(element);
+				timelineEntry.nextAll('.timeline-entry').toggleClass('timeline-inverted');
+				timelineInverted = !timelineInverted;
+				inserted = true;
+				return false;
+			}
+		});
+		if(!inserted) {
+			if(timelineInverted)
+				timelineEntry.addClass('timeline-inverted');
+			timelineInverted = !timelineInverted;
+			timelineEntry.insertBefore('#timer');
+		}
 
 		if(showEntry(starred, score)) {
-			// determine timeline position (left/right)
-			if(timelineInverted) {
-				timelineEntry.addClass('timeline-inverted');
-			}
-			timelineInverted = !timelineInverted;
 
 			// slide in new timeline entry
 			timelineEntry.slideDown( {
@@ -337,7 +355,7 @@ function reset() {
 	if(debugOutput)
 		console.log('reset called');
 
-	time = 0;
+	timer = 0;
 	runTimer = false;
 	updateTimerGUI();
 
@@ -386,8 +404,8 @@ function getTimeString(seconds) {
 }
 
 function updateTimerGUI() {
-	var timeString = getTimeString(time);
-	$('#time .timeline-badge').html(timeString);
+	var timeString = getTimeString(timer);
+	$('#timer .timeline-badge').html(timeString);
 }
 
 function getBadgeColor(score) {
@@ -403,6 +421,8 @@ jQuery["postJSON"] = function( url, data, callback ) {
         success: callback
     });
 };
+
+jQuery.fn.reverse = [].reverse;
 
 
 /* bindings */
@@ -547,7 +567,7 @@ $('#entry-modal-iframe').load(function() {
 
 window.setInterval(function() {
 	if(runTimer) {
-		time = time + 1;
+		timer = timer + 1;
 		updateTimerGUI();
 	}
 }, 1000);

@@ -20,7 +20,6 @@ What can be experimented on to improve relevant document display and online perf
 
 
 ToDo:
--insert history entries at time.entry
 -relevance bar +/-
 -cmd+ for 1080 (small grid) -> 125% (settings large-font?)
 -iframe font
