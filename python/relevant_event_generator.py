@@ -88,10 +88,11 @@ class EventGenerator:
                     self.blacklist_ids[line[:-1]] = 1
 
 
-    def topCategories(self,maxCategories=5):
-        topCat = sorted(self.categories.items(), key=lambda x:x[1], reverse=True)[:maxCategories]
-        return [{'entry_id':idFromTitle(cat[0]),'title':cat[0].replace(u'Kategorie:',u''), 'url': u'http://' + self.lang + u'.wikipedia.org/w/index.php?title=' 
+    def topCategories(self,maxCategories=6):
+        topCat = sorted(self.categories.items(), key=lambda x:x[1], reverse=True)
+        topCat_json = [{'entry_id':idFromTitle(cat[0]),'title':cat[0].replace(u'Kategorie:',u''), 'url': u'http://' + self.lang + u'.wikipedia.org/w/index.php?title=' 
                     + self.wiki_category_string + cat[0].replace(' ','_'), 'score': cat[1]} for cat in topCat if cat[1] > 1 and 'Wikipedia:' not in cat[0]]
+        return topCat_json[:maxCategories]
 
     #Listen loop (redis)
     #Todo: for other languages than English, utf8 de and encoding will be needed
@@ -242,9 +243,10 @@ class EventGenerator:
             for key in new_relevant_entries_set - relevant_entries_set:
                 self.relevant_entries[key] = new_relevant_entries[key]
 
-        print self.topCategories()
-        # TODO: only send something if topCategories changes
-        self.keyword_client.sendCategories(self.topCategories())
+        topCategories_Event = self.topCategories()
+        print topCategories_Event
+        # TODO: only send something if topCategories actually changes
+        self.keyword_client.sendCategories(topCategories_Event)
 
         print 'send_relevant_entry_updates finished. Time needed:', t.secs, 'seconds.'
         print 'Displayed entries should now be:',[entry['title'] for entry in self.displayed_entries]
