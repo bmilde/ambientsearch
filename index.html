@@ -150,7 +150,7 @@
         <div id="relevant-entries" class="row">
             <script id="relevant-entry-template" type="text/x-dot-template">
                 <div class="col-sm-3 col-xs-12 entry-{{=it.entry_id}}">
-                    <div class="entry-content" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}" data-score={{=it.score}} data-time="{{=it.time}}">
+                    <div class="entry-content" data-entry-id="{{=it.entry_id}}" data-modal-url="{{=it.url}}" data-score={{=it.score}} data-time="{{=it.time}}" data-title="{{=it.title}}">
                         <button class="star-icon" onclick="starEntry('{{=it.entry_id}}');"><span class="glyphicon glyphicon-star-empty"></span></button>
                         <button class="close close-darker" onclick="closeEntry('{{=it.entry_id}}');"><span aria-hidden="true">&times;</span></button>
                         <h3><a onclick="showModal('{{=it.entry_id}}')">{{=it.title}}</a></h3>

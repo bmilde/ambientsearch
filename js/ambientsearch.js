@@ -51,7 +51,7 @@ function addRelevantEntry(jsonEvent) {
 		runTimer = true;
 
 		// add flickr image
-		getFlickrImage(jsonEvent['entry_id'], imageSize, function(imageUrl) {
+		getFlickrImage(jsonEvent['title'], imageSize, function(imageUrl) {
 			if(imageUrl) {
 				entryContent.prepend('<img src="' + imageUrl +'" class="flickr-image" alt="' + jsonEvent['entry_id'] + '" />');
 
@@ -290,12 +290,12 @@ function showModal(entryID) {
 
 	$.postJSON('/viewing', JSON.stringify({"entry_id": entryID}), function() {
 		
-		// set title
-		var title = $('.entry-' + entryID + ' h3').text();
+		var entryContent = $('.entry-' + entryID + ' .entry-content');
+
+		// set title & iframe content
+		var title = entryContent.attr('data-title');
+		var url = entryContent.attr('data-modal-url');
 		$('#entry-modal h4.modal-title').html(title);
-		
-		// set iframe content
-		var url = $('.entry-' + entryID + ' .entry-content').attr('data-modal-url');
 		$('#entry-modal-iframe').attr('src', url + '&printable=yes');
 
 		// register onClose-event
@@ -393,8 +393,7 @@ function reset() {
 function getFlickrImage(searchTerm, size, callback) {
 	var flickrSort = $('#flickrSort').val();
 	var flickrApiKey = 'fed915bcf3c85271ac6f9ef1823175bf';
-	var flickrRequestUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrApiKey + '&text=' + searchTerm + '&sort=' + flickrSort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
-
+	var flickrRequestUrl = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + flickrApiKey + '&text="' + searchTerm + '"&sort=' + flickrSort + '&is_commons=&per_page=1&page=1&format=json&nojsoncallback=1';
 
 	$.getJSON(flickrRequestUrl, function(data) {
 		var imageUrl = "";
@@ -517,13 +516,14 @@ $('#flickrSort').change(function() {
 	$('.entry-content').each(function(index, element) {
 		var element = $(this);
 		var entryID = element.attr('data-entry-id');
+		var title = element.attr('data-title');
 
 		// determine image size ('s' for timeline and 'q' or 's' for relevant entries depending on current image size)
 		var size = 's';
 		if(element.parents('#relevant-entries').length > 0)
 			size = imageSize;
 
-		getFlickrImage(entryID, size, function(imageUrl) {
+		getFlickrImage(title, size, function(imageUrl) {
 			if(imageUrl) {
 				if(element.has('.flickr-image')) {
 					// replace image
