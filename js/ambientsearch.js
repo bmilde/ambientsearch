@@ -236,6 +236,15 @@ function starEntry(entryID) {
 		$.postJSON('/unstarred', JSON.stringify({"entry_id": entryID}), function() {
 			entryContent.find('button.star-icon span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');
 			entryContent.removeClass('starred');
+
+			// determine badge color from score
+			var score = entryContent.attr('data-score');
+			var timelineEntry = $('.timeline-entry.entry-' + entryID);
+			var badge = timelineEntry.children('.timeline-badge');
+			var color = getBadgeColor(score);
+			badge.css({
+				backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
+			});
 		});
 	} else { 
 		// star entry
@@ -244,6 +253,14 @@ function starEntry(entryID) {
 		$.postJSON('/starred', JSON.stringify({"entry_id": entryID}), function() {
 			entryContent.find('button.star-icon span').removeClass('glyphicon-star-empty').addClass('glyphicon-star');
 			entryContent.addClass('starred');
+
+			// set badge color to score==1
+			var timelineEntry = $('.timeline-entry.entry-' + entryID);
+			var badge = timelineEntry.children('.timeline-badge');
+			var color = getBadgeColor(1);
+			badge.css({
+				backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
+			});
 		});
 	}
 

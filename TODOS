@@ -21,10 +21,8 @@ What can be experimented on to improve relevant document display and online perf
 
 ToDo:
 -iframe font
--modal bigger
 -search relevant entries / wikipedia
 
--refactor -> ReactJS
--bookmarks -> change badge color?
+-refactor
 
 -äöü -> ae, oe, ue
