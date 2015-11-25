@@ -19,14 +19,6 @@ a {
   cursor: pointer;
 }
 
-.slider-handle {
-  background: #aaa;
-}
-
-.slider-selection {
-  background: none;
-}
-
 #timeline {
   margin-bottom: 40px;
 }
@@ -279,6 +271,27 @@ h1, .h1, h2, .h2, h3, .h3 {
   margin-left: 25px;
   color: #aaa;
   font-weight: normal
+}
+
+
+
+.navbar-form .slider.slider-horizontal .slider-handle {
+  background: #aaa;
+}
+
+.navbar-form .slider.slider-horizontal .slider-selection {
+  background: none;
+}
+
+.navbar-form .slider.slider-horizontal .slider-tick {
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: 0px;
+}
+
+.navbar-form .slider.slider-horizontal .slider-tick-label {
+  color: #aaa;
 }
 
 @media (max-width: 992px)  {

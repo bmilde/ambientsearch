@@ -446,7 +446,10 @@ $(document).ready(function() {
 		max: 1,
 		step: 0.05,
 		value: filterMinScore,
-		tooltip_position: 'bottom'
+		tooltip_position: 'bottom',
+		ticks: [0,1],
+		ticks_positions: [0,100],
+		ticks_labels: ['-', '+']
 	});
 
 	slider.on('change', function(event) {
