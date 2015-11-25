@@ -562,12 +562,6 @@ $('#chat-area').scroll(function() {
 		scrollChatAreaBottom = false;
 });
 
-$('#entry-modal-iframe').load(function() {
-	if(debugOutput)
-		console.log('ready');
-	$(this).contents().find('html').css('background-color', 'red');
-});
-
 window.setInterval(function() {
 	if(runTimer) {
 		timer = timer + 1;
