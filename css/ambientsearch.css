@@ -43,16 +43,28 @@ a {
     overflow: hidden;
 }
 
-.flickr-image {
+#relevant-entries {
+  text-align: center;
+}
+
+@media (min-width: 1200px), (max-width: 768px)  {
+  #relevant-entries .flickr-image {
     float: left;
     margin-right: 8px;
     margin-left: 0px;
+  }
 }
 
-.timeline-inverted .flickr-image {
+#timeline .timeline-inverted .flickr-image {
     float: right;
     margin-right: 0px;
     margin-left: 8px;
+}
+
+#timeline .flickr-image {
+    float: left;
+    margin-right: 8px;
+    margin-left: 0px;
 }
 
 .entry-content.starred {
@@ -264,8 +276,15 @@ h1, .h1, h2, .h2, h3, .h3 {
 .navbar-form label {
   margin-top: 5px;
   margin-right: 10px;
-  margin-left: 50px;
+  margin-left: 25px;
   color: #aaa;
+  font-weight: normal
+}
+
+@media (max-width: 992px)  {
+  .navbar-form .slider.slider-horizontal {
+    width: 100px;
+  }
 }
 
 .lang_en {
