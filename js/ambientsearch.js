@@ -92,6 +92,66 @@ function delRelevantEntry(jsonEvent) {
 			image.attr('src', newUrl);
 		}
 
+		// construct timeline entry
+		var timeString = getTimeString(timer);
+		entryContent.addClass('timeline-panel');
+		var timelineEntry = $('<li class="timeline-entry"><div class="timeline-badge">' + timeString + '</div></li>');
+		timelineEntry.hide();
+		timelineEntry.append(entryContent);
+		timelineEntry.addClass('entry-' + jsonEvent['entry_id']);
+		timelineEntry.insertBefore('#timer');
+
+		// determine badge color from score
+		var score = entryContent.attr('data-score');
+		var badge = timelineEntry.children('.timeline-badge');
+		var color = getBadgeColor(score);
+		badge.css({
+			backgroundColor: 'rgb('+color[0]+','+color[1]+','+color[2]+')'
+		});
+
+		var starred = entryContent.hasClass('starred');
+		var score = entryContent.attr('data-score');
+
+		if(showEntry(starred, score)) {
+			// determine timeline position (left/right)
+			if(timelineInverted) {
+				timelineEntry.addClass('timeline-inverted');
+			}
+			timelineInverted = !timelineInverted;
+
+			// slide in new timeline entry
+			timelineEntry.slideDown( {
+				duration: fadeInTimeMs / 2,
+				progress: function() {
+					if(scrollBottom) 
+						window.scrollTo(0,document.body.scrollHeight);
+				}
+			});
+		}
+
+		
+	}
+
+}
+
+/*function delRelevantEntry(jsonEvent) {
+	if(debugOutput)
+		console.log('delRelevantEntry ' + jsonEvent['entry_id']);
+	
+	var relevantEntry = $('#relevant-entries .entry-' + jsonEvent['entry_id']);
+	var entryContent = relevantEntry.children('.entry-content');
+	if(relevantEntry.length == 1) {
+		// detach content and remove old relevant entry
+		entryContent.detach();
+		relevantEntry.remove();
+
+		// update image size to smaller thumbnail
+		var image = entryContent.children('.flickr-image')
+		if(image.length == 1 && imageSize == 'q') {
+			var newUrl = image.attr('src').replace('_q.jpg', '_s.jpg');
+			image.attr('src', newUrl);
+		}
+
 		var starred = entryContent.hasClass('starred');
 		var score = parseFloat(entryContent.attr('data-score'));
 		var time = parseFloat(entryContent.attr('data-time'));
@@ -150,7 +210,7 @@ function delRelevantEntry(jsonEvent) {
 		
 	}
 
-}
+}*/
 
 /*Events: speech recognition feedback*/
 
@@ -463,9 +523,9 @@ $(document).ready(function() {
 		step: 0.05,
 		value: filterMinScore,
 		tooltip_position: 'bottom',
-		ticks: [0,1],
+		/*ticks: [0,1],
 		ticks_positions: [0,100],
-		ticks_labels: ['-', '+']
+		ticks_labels: ['-', '+']*/
 	});
 
 	slider.on('change', function(event) {
