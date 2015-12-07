@@ -163,7 +163,7 @@ class KeywordExtract:
                 else:
                     break
         if self.extra_keywords != '':
-            with codecs.open(self.extra_keywords) as infile:
+            with codecs.open(self.extra_keywords, 'r', 'utf-8') as infile:
                 for line in infile:
                     words = line[:-1].lower()
                     print 'Loading user set keyword:',words
