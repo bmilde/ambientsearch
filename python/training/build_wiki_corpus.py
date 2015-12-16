@@ -34,7 +34,7 @@ max_threshold = 0.2
 # Lower threshold for word occurences: words that appear in less than N documents are removed (too uncommon)
 min_threshold = 20
 # Stop words filename for stop words in spoken language
-stop_words_file = os.path.join(data_directory(), 'stop_words.txt')
+stop_words_file = os.path.join(data_directory(), 'stop_words_en.txt')
 
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])
