@@ -46,7 +46,7 @@ def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
-tfidf_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.tfidf_model'))
+tfidf_model_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 # dictionary_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles_wordids.txt.bz2'))
 
 # Filter hypens at the beginning and/or end of a word
@@ -114,26 +114,40 @@ class W2VKeywordExtract:
         # compiled regex that can check if a string contains numbers
         self.RE_D = re.compile('\d')
 
+        self.stemmer = nltk.stem.PorterStemmer()
+
         print 'Loading TF-IDF Model...'
         self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(tfidf_model_path)
         print 'Loading Word2Vec model... (this can take some time)'
         # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_model_path, binary=True)
         self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
 
-    def get_tokens(self, text):
+    def preprocess_text(self, text):
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
             tokens = nltk.word_tokenize(text)
 
-            # Remove stopwords (words that were too frequent in the corpus)
-            filtered = []
+            # Apply a POS Tagger
+            tags = nltk.pos_tag(tokens)
+            # grammar = r"""RULE_1: {<JJ>+<NNP>*<NN>*}"""
+            # noun phrases: (adjective)*(noun)+
+            # chunker = nltk.RegexpParser(grammar)
+            # chunked = chunker.parse(tags)
+            # def filter(tree):
+            #     return (tree.node == "RULE_1")
+            # for s in chunked.subtrees(filter):
+            #     print s
 
-            for token in tokens:
-                try:
-                    self.tfidf.id2word.token2id[token.lower()]
-                except KeyError:
-                    continue
-                filtered.append(token.lower())
+            # Remove stopwords (words that were too frequent in the corpus)
+            pos_pattern = ['NN', 'NNP', 'NNS', 'JJ']
+            filtered = [tag[0].lower() for tag in tags if tag[1] in pos_pattern]
+
+            # try:
+            #     token_id = self.tfidf.id2word.token2id[self.stemmer.stem(token.lower())]
+            #     if self.tfidf.idfs[token_id] < 3.65:
+            #         continue
+            # except KeyError:
+            #     continue
 
             return filtered
         return None
@@ -153,25 +167,44 @@ class W2VKeywordExtract:
 
         return numpy.array(numpy_arrays), labels_array
 
-    def compute_cluster_score(self, cluster, text):
-        # Compute frequency score
-        freq = 0
-        bow = dict(self.tfidf.id2word.doc2bow(text))
+    def compute_cluster_connectivity(self, cluster, cluster_center):
+        num_words = len(cluster)
+        df, labels_array = self.build_word_vector_matrix(cluster)
+        total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
+
+        return 1 / (total_distance / num_words)
+
+    def compute_cluster_tfidf(self, cluster, tokens):
+        score = 0
+        num_words = len(cluster)
 
         for word in cluster:
+            tf = len([token for token in tokens if word == token])
+
             try:
-                token_id = self.tfidf.id2word.token2id[word]
+                token_id = self.tfidf.id2word.token2id[self.stemmer.stem(word)]
+                idf = self.tfidf.idfs[token_id]
             except KeyError:
-                continue
+                idf = 1
 
-            freq += bow[token_id]
+            score += tf * idf
 
-        return freq
+        return score / num_words
+
+    def get_cluster_score(self, cluster, cluster_center, tokens):
+        connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
+        tfidf_score = self.compute_cluster_tfidf(cluster, tokens)
+
+        print cluster
+        print tfidf_score
+        print connectivity_score
+
+        return tfidf_score + connectivity_score
 
     # Assigns a score to each cluster, sorts them according to the score.
     # Returns a sorted clusters array with each cluster's corresponding score.
-    def get_sorted_clusters(self, clusters, text):
-        scores = [self.compute_cluster_score(clusters[index], text) for index in clusters]
+    def get_sorted_clusters(self, clusters, cluster_centers, tokens):
+        scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
         cluster_scores = sorted(zip(clusters, scores), key=lambda tuple: tuple[1])
 
         return [(clusters[score[0]], score[1]) for score in cluster_scores]
@@ -183,8 +216,8 @@ class W2VKeywordExtract:
         # Remove duplicates
         tokens = list(set(tokens))
 
-        clusters_to_make  = int(len(tokens) / 4)
         df, labels_array  = self.build_word_vector_matrix(tokens)
+        clusters_to_make  = int(len(labels_array) / 4)
         kmeans_model      = KMeans(init='k-means++', n_clusters=clusters_to_make, n_init=10)
         kmeans_model.fit(df)
 
@@ -193,17 +226,15 @@ class W2VKeywordExtract:
 
         # Get cluster_word assignments by inverting word_cluster assignments
         # cluster_to_words  = find_word_clusters(labels_array, cluster_labels)
-        word_centroid_map = dict(zip(tokens, cluster_labels))
+        word_centroid_map = dict(zip(labels_array, cluster_labels))
         centroid_word_map = {}
         for k, v in word_centroid_map.iteritems():
             centroid_word_map[v] = centroid_word_map.get(v, [])
             centroid_word_map[v].append(k)
 
-        word_centroid_distances = metrics.pairwise.pairwise_distances(df, cluster_centers, metric='euclidean')
+        return centroid_word_map, cluster_centers
 
-        return centroid_word_map, word_centroid_distances
-
-    # Build affinity propagation clusters
+    # Build spherical kmeans clusters
     def get_sp_kmeans_clusters(self, tokens):
         # Remove duplicates
         tokens = list(set(tokens))
@@ -239,7 +270,7 @@ class W2VKeywordExtract:
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
-    tokens = ke.get_tokens(u"A columbia university law professor stood in a hotel lobby one morning and"
+    tokens = ke.preprocess_text(u"A columbia university law professor stood in a hotel lobby one morning and"
                          u"noticed a sign apologizing for an elevator that was out of order."
                          u"it had dropped unexpectedly three stories a few days earlier."
                          u"the professor, eben moglen, tried to imagine what the world would be like"
@@ -256,8 +287,8 @@ if __name__ == "__main__":
     #                        u"source software.")
     print tokens
 
-    kmeans_clusters_map, word_centroid_distances = ke.get_kmeans_clusters(tokens)
-    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, tokens)
+    kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
+    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, cluster_centers, tokens)
     sphere_clusters = ke.get_sp_kmeans_clusters(tokens)
 
 
@@ -274,9 +305,9 @@ if __name__ == "__main__":
     # print wiki_search.get_summaries_single_keyword(test)
 
     ami = read_file('data/ami_transcripts/remote_control.txt')
-    tokens = ke.get_tokens(ami)
-    kmeans_clusters_map, word_centroid_distances = ke.get_kmeans_clusters(tokens)
-    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, tokens)
+    tokens = ke.preprocess_text(ami)
+    kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
+    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, cluster_centers, tokens)
     sphere_clusters = ke.get_sp_kmeans_clusters(tokens)
 
     print "K-Means:"
