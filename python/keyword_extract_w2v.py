@@ -16,6 +16,7 @@ import sys
 import math
 import gensim
 import random
+import time
 
 from sklearn.cluster import KMeans
 from sklearn import metrics
@@ -114,13 +115,19 @@ class W2VKeywordExtract:
         # compiled regex that can check if a string contains numbers
         self.RE_D = re.compile('\d')
 
+        self.start_time = time.time()
+
         self.stemmer = nltk.stem.PorterStemmer()
+        self.lemmatizer = nltk.stem.WordNetLemmatizer()
 
         print 'Loading TF-IDF Model...'
         self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(tfidf_model_path)
         print 'Loading Word2Vec model... (this can take some time)'
         # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_model_path, binary=True)
         self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
+
+        print 'Time for loading models:', time.time() - self.start_time
+        self.start_time = time.time()
 
     def preprocess_text(self, text):
         # Automatically tokenize strings if nessecary
@@ -139,8 +146,22 @@ class W2VKeywordExtract:
             #     print s
 
             # Remove stopwords (words that were too frequent in the corpus)
-            pos_pattern = ['NN', 'NNP', 'NNS', 'JJ']
-            filtered = [tag[0].lower() for tag in tags if tag[1] in pos_pattern]
+            # Filter nouns and adjectives. Dictionary is used to translate into WordNet Tags
+            pos_pattern = {'NN': 'n', 'NNP': 'n', 'NNS': 'n'}  # , 'JJ': 'a'}
+            tag_filtered = [tag for tag in tags if tag[1] in pos_pattern]
+            lemmatized = [self.lemmatizer.lemmatize(token[0], pos=pos_pattern[token[1]]).lower() for token in tag_filtered]
+
+            #idf_filtered = [token for token in lemmatized if self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]] > 3.66]
+            idf_filtered = []
+            for token in lemmatized:
+                try:
+                    idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]]
+                    if idf > 3.66:
+                        idf_filtered.append(token)
+                except KeyError:
+                    idf_filtered.append(token)
+
+            print 'Time for preprocessing text:', time.time() - self.start_time
 
             # try:
             #     token_id = self.tfidf.id2word.token2id[self.stemmer.stem(token.lower())]
@@ -149,7 +170,7 @@ class W2VKeywordExtract:
             # except KeyError:
             #     continue
 
-            return filtered
+            return idf_filtered
         return None
 
     def build_word_vector_matrix(self, words):
@@ -169,6 +190,8 @@ class W2VKeywordExtract:
 
     def compute_cluster_connectivity(self, cluster, cluster_center):
         num_words = len(cluster)
+        if num_words == 1:
+            return 1
         df, labels_array = self.build_word_vector_matrix(cluster)
         total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
 
@@ -185,7 +208,7 @@ class W2VKeywordExtract:
                 token_id = self.tfidf.id2word.token2id[self.stemmer.stem(word)]
                 idf = self.tfidf.idfs[token_id]
             except KeyError:
-                idf = 1
+                idf = 1.0
 
             score += tf * idf
 
@@ -199,15 +222,23 @@ class W2VKeywordExtract:
         print tfidf_score
         print connectivity_score
 
-        return tfidf_score + connectivity_score
+        return tfidf_score, connectivity_score
 
     # Assigns a score to each cluster, sorts them according to the score.
     # Returns a sorted clusters array with each cluster's corresponding score.
     def get_sorted_clusters(self, clusters, cluster_centers, tokens):
-        scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
-        cluster_scores = sorted(zip(clusters, scores), key=lambda tuple: tuple[1])
+        alpha = 0.6
 
-        return [(clusters[score[0]], score[1]) for score in cluster_scores]
+        scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
+        max_tfidf = max([score[0] for score in scores])
+        max_connectivity = max([score[1] for score in scores])
+        normalized_scores = [(score[0] / max_tfidf, score[1] / max_connectivity) for score in scores]
+        # cluster_score = alpha * tfidf_norm + (1-alpha) * connectivity_norm
+        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+
+        cluster_scores_sorted = sorted(zip(clusters, cluster_scores), key=lambda tuple: tuple[1])
+
+        return [(clusters[score[0]], score[1]) for score in cluster_scores_sorted]
 
 
 
@@ -217,7 +248,7 @@ class W2VKeywordExtract:
         tokens = list(set(tokens))
 
         df, labels_array  = self.build_word_vector_matrix(tokens)
-        clusters_to_make  = int(len(labels_array) / 4)
+        clusters_to_make  = int(numpy.ceil(len(labels_array) / 3.0))
         kmeans_model      = KMeans(init='k-means++', n_clusters=clusters_to_make, n_init=10)
         kmeans_model.fit(df)
 
