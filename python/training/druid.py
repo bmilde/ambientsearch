@@ -71,9 +71,6 @@ class DruidDictionary:
         # start with bigrams
         for index in range(n-1):
             filtered_tokens = []
-            if (len(tokens) == 1):
-                filtered_tokens.append(tokens[0])
-                continue
 
             while len(tokens) > 1:
                 search_gram = tokens[0] + u' ' + tokens[1]
@@ -85,7 +82,11 @@ class DruidDictionary:
                     del tokens[1]
                 else:
                     filtered_tokens.append(tokens[0])
+
                 del tokens[0]
+
+            if (len(tokens) == 1):
+                filtered_tokens.append(tokens[0])
 
             tokens = filtered_tokens
 
