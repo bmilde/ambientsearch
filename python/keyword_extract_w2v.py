@@ -151,7 +151,6 @@ class W2VKeywordExtract:
             tag_filtered = [tag for tag in tags if tag[1] in pos_pattern]
             lemmatized = [self.lemmatizer.lemmatize(token[0], pos=pos_pattern[token[1]]).lower() for token in tag_filtered]
 
-            #idf_filtered = [token for token in lemmatized if self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]] > 3.66]
             idf_filtered = []
             for token in lemmatized:
                 try:
@@ -162,13 +161,6 @@ class W2VKeywordExtract:
                     idf_filtered.append(token)
 
             print 'Time for preprocessing text:', time.time() - self.start_time
-
-            # try:
-            #     token_id = self.tfidf.id2word.token2id[self.stemmer.stem(token.lower())]
-            #     if self.tfidf.idfs[token_id] < 3.65:
-            #         continue
-            # except KeyError:
-            #     continue
 
             return idf_filtered
         return None
@@ -191,7 +183,7 @@ class W2VKeywordExtract:
     def compute_cluster_connectivity(self, cluster, cluster_center):
         num_words = len(cluster)
         if num_words == 1:
-            return 1
+            return 0
         df, labels_array = self.build_word_vector_matrix(cluster)
         total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
 
@@ -208,6 +200,8 @@ class W2VKeywordExtract:
                 token_id = self.tfidf.id2word.token2id[self.stemmer.stem(word)]
                 idf = self.tfidf.idfs[token_id]
             except KeyError:
+                # idf score is ignored for unknown words
+                # (assumption: ASR noise, disadvantage: important terms need to be part of corpus)
                 idf = 1.0
 
             score += tf * idf
@@ -234,7 +228,9 @@ class W2VKeywordExtract:
         max_connectivity = max([score[1] for score in scores])
         normalized_scores = [(score[0] / max_tfidf, score[1] / max_connectivity) for score in scores]
         # cluster_score = alpha * tfidf_norm + (1-alpha) * connectivity_norm
-        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+        # exception: one-worded clusters get a connectivity score of 0 by default => only tf-idf scores used
+        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) if score[1] > 0 else score[0]
+                          for score in normalized_scores]
 
         cluster_scores_sorted = sorted(zip(clusters, cluster_scores), key=lambda tuple: tuple[1])
 
