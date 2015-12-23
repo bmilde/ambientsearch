@@ -4,27 +4,21 @@ from __future__ import division
 __author__ = 'Jonas Wacker'
 
 import nltk
-import bz2
 import codecs
 import re
-import operator
-from collections import defaultdict
 from topia.termextract import extract
 import wiki_search
 import os.path
 import sys
-import math
 import gensim
-import random
 import time
+import operator
 
 from sklearn.cluster import KMeans
-from sklearn import metrics
 from scipy.spatial import distance
-from numbers import Number
 import numpy
 
-import kmeans
+from training import druid
 
 
 def check_path(path):
@@ -47,8 +41,9 @@ def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
-tfidf_model_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
-# dictionary_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles_wordids.txt.bz2'))
+tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
+tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
+druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
 
 # Filter hypens at the beginning and/or end of a word
 # E.g. "schlechteste -> schlechteste
@@ -61,33 +56,6 @@ def filterHyphens(word):
         word = word[:-1]
 
     return word
-
-
-class autovivify_list(dict):
-        """Pickleable class to replicate the functionality of collections.defaultdict"""
-        def __missing__(self, key):
-                value = self[key] = []
-                return value
-
-        def __add__(self, x):
-                """Override addition for numeric types when self is empty"""
-                if not self and isinstance(x, Number):
-                        return x
-                raise ValueError
-
-        def __sub__(self, x):
-                """Also provide subtraction method"""
-                if not self and isinstance(x, Number):
-                        return -1 * x
-                raise ValueError
-
-
-def find_word_clusters(labels_array, cluster_labels):
-        """Read in the labels array and clusters label and return the set of words in each cluster"""
-        cluster_to_words = autovivify_list()
-        for c, i in enumerate(cluster_labels):
-                cluster_to_words[i].append(labels_array[c])
-        return cluster_to_words
 
 
 class W2VKeywordExtract:
@@ -122,9 +90,11 @@ class W2VKeywordExtract:
 
         print 'Loading TF-IDF Model...'
         self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(tfidf_model_path)
+        self.tfidf_conversation = gensim.models.tfidfmodel.TfidfModel.load(tfidf_conversation_path)
         print 'Loading Word2Vec model... (this can take some time)'
         # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_model_path, binary=True)
         self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
+        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_score=0.0)
 
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
@@ -132,37 +102,34 @@ class W2VKeywordExtract:
     def preprocess_text(self, text):
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
-            tokens = nltk.word_tokenize(text)
+            tokens = nltk.word_tokenize(text.lower())
 
             # Apply a POS Tagger
             tags = nltk.pos_tag(tokens)
-            # grammar = r"""RULE_1: {<JJ>+<NNP>*<NN>*}"""
-            # noun phrases: (adjective)*(noun)+
-            # chunker = nltk.RegexpParser(grammar)
-            # chunked = chunker.parse(tags)
-            # def filter(tree):
-            #     return (tree.node == "RULE_1")
-            # for s in chunked.subtrees(filter):
-            #     print s
 
             # Remove stopwords (words that were too frequent in the corpus)
             # Filter nouns and adjectives. Dictionary is used to translate into WordNet Tags
-            pos_pattern = {'NN': 'n', 'NNP': 'n', 'NNS': 'n'}  # , 'JJ': 'a'}
-            tag_filtered = [tag for tag in tags if tag[1] in pos_pattern]
-            lemmatized = [self.lemmatizer.lemmatize(token[0], pos=pos_pattern[token[1]]).lower() for token in tag_filtered]
-
+            pos_pattern = ['NN', 'NNP', 'NNS', 'JJ']
+            tag_filtered = [tag[0] for tag in tags if tag[1] in pos_pattern]
+            # stop_filtered = [token for token in tag_filtered if token not in self.stopwords]
             idf_filtered = []
-            for token in lemmatized:
+            for token in tag_filtered:
                 try:
+                    if token in self.stopwords:
+                        continue
                     idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]]
-                    if idf > 3.66:
+                    if idf > 3.67:
                         idf_filtered.append(token)
                 except KeyError:
                     idf_filtered.append(token)
 
+            ngrams = self.druid.find_ngrams(idf_filtered, n=3)
+
+            lemmatized = [self.lemmatizer.lemmatize(token) for token in ngrams]
+
             print 'Time for preprocessing text:', time.time() - self.start_time
 
-            return idf_filtered
+            return lemmatized
         return None
 
     def build_word_vector_matrix(self, words):
@@ -171,7 +138,7 @@ class W2VKeywordExtract:
 
         for token in words:
             try:
-                vector = self.word2vec[token]
+                vector = self.word2vec[self.stemmer.stem(token)]
             except KeyError:
                 continue
 
@@ -209,6 +176,9 @@ class W2VKeywordExtract:
         return score / num_words
 
     def get_cluster_score(self, cluster, cluster_center, tokens):
+        if len(cluster) == 1:
+            return 0, 0
+
         connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
         tfidf_score = self.compute_cluster_tfidf(cluster, tokens)
 
@@ -220,8 +190,8 @@ class W2VKeywordExtract:
 
     # Assigns a score to each cluster, sorts them according to the score.
     # Returns a sorted clusters array with each cluster's corresponding score.
-    def get_sorted_clusters(self, clusters, cluster_centers, tokens):
-        alpha = 0.6
+    def get_scored_clusters(self, clusters, cluster_centers, tokens):
+        alpha = 0.8
 
         scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
         max_tfidf = max([score[0] for score in scores])
@@ -232,24 +202,22 @@ class W2VKeywordExtract:
         cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) if score[1] > 0 else score[0]
                           for score in normalized_scores]
 
-        cluster_scores_sorted = sorted(zip(clusters, cluster_scores), key=lambda tuple: tuple[1])
+        scored_clusters = zip(clusters, cluster_scores)
 
-        return [(clusters[score[0]], score[1]) for score in cluster_scores_sorted]
-
-
+        return [(clusters[score[0]], score[1]) for score in scored_clusters]
 
     # Build word clusters using K-Means++
     def get_kmeans_clusters(self, tokens):
         # Remove duplicates
         tokens = list(set(tokens))
 
-        df, labels_array  = self.build_word_vector_matrix(tokens)
-        clusters_to_make  = int(numpy.ceil(len(labels_array) / 3.0))
-        kmeans_model      = KMeans(init='k-means++', n_clusters=clusters_to_make, n_init=10)
+        df, labels_array = self.build_word_vector_matrix(tokens)
+        clusters_to_make = int(numpy.ceil(len(labels_array) / 4.0))
+        kmeans_model = KMeans(init='k-means++', n_clusters=clusters_to_make, n_init=10)
         kmeans_model.fit(df)
 
-        cluster_labels    = kmeans_model.labels_
-        cluster_centers   = kmeans_model.cluster_centers_
+        cluster_labels = kmeans_model.labels_
+        cluster_centers = kmeans_model.cluster_centers_
 
         # Get cluster_word assignments by inverting word_cluster assignments
         # cluster_to_words  = find_word_clusters(labels_array, cluster_labels)
@@ -261,51 +229,94 @@ class W2VKeywordExtract:
 
         return centroid_word_map, cluster_centers
 
-    # Build spherical kmeans clusters
-    def get_sp_kmeans_clusters(self, tokens):
-        # Remove duplicates
-        tokens = list(set(tokens))
+    # Scores a keyphrase according to its centrality within the weighted clusters.
+    #
+    def score_keyphrase(self, phrase, cluster_centers, cluster_scores, text_tokens):
+        try:
+            phrase_vector = self.word2vec[self.stemmer.stem(phrase)]
+            total_distance = numpy.sum([cluster_scores[index] * distance.euclidean(phrase_vector, cluster_centers[index])
+                                        for index in range(0, len(cluster_centers))])
+        except KeyError:
+            total_distance = -1
 
-        ncluster  = int(len(tokens) / 4)
-        kmsample = 5  # 0: random centres, > 0: kmeanssample
-        kmdelta = .001
-        kmiter = 10
-        metric = "cosine"  # "chebyshev" = max, "cityblock" L1,  Lqmetric
-        seed = 1
+        tf = len([token for token in text_tokens if phrase == token])
+        try:
+            idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(phrase)]]
+        except KeyError:
+            idf = 1.0
 
-        numpy.set_printoptions( 1, threshold=200, edgeitems=5, suppress=True )
-        numpy.random.seed(seed)
-        random.seed(seed)
+        distance_score = numpy.log(1.0 + 1.0 / total_distance) if total_distance > 0 else 0.01
+        tfidf_score = tf * idf
 
-        df, labels_array  = self.build_word_vector_matrix(tokens)
-            # cf scikits-learn datasets/
-        if kmsample > 0:
-            centres, xtoc, dist = kmeans.kmeanssample(df, ncluster, nsample=kmsample,
-                delta=kmdelta, maxiter=kmiter, metric=metric, verbose=2 )
+        return distance_score, tfidf_score
+
+    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores):
+        alpha = 1.0
+
+        tokens = list(set(text_tokens))
+        scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, text_tokens) for phrase in tokens]
+        max_dist_score = max([score[0] for score in scores])
+        max_tfidf_score = max([score[1] for score in scores])
+        normalized_scores = [(score[0] / max_dist_score, score[1] / max_tfidf_score) for score in scores]
+        keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) if score[0] > 0 else score[1]
+                            for score in normalized_scores]
+
+        keyphrase_scores_sorted = sorted(zip(tokens, keyphrase_scores), key=lambda keyphrase: keyphrase[1])
+        return keyphrase_scores_sorted
+
+
+    # Habibi Diversity
+    def subset_cluster_distance(self, subset, cluster_center):
+        df, labels_array = self.build_word_vector_matrix(subset)
+        if len(labels_array) == 0:
+            return 0
         else:
-            randomcentres = kmeans.randomsample(df, ncluster )
-            centres, xtoc, dist = kmeans.kmeans(df, randomcentres,
-                delta=kmdelta, maxiter=kmiter, metric=metric, verbose=2 )
+            # proximity_scores = [numpy.log(1.0 + 1.0 / distance.euclidean(vector, cluster_center)) for vector in df]
+            proximity_scores = [1.0 / distance.euclidean(vector, cluster_center) for vector in df]
+            # total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
 
-        cluster_labels    = xtoc
-        cluster_inertia   = centres
-        cluster_to_words  = find_word_clusters(labels_array, cluster_labels)
+        # return numpy.log(1.0 + 1.0 / total_distance)
+        return 10 * numpy.sum(proximity_scores)
 
-        return cluster_to_words
+    def score_subset(self, subset, cluster_centers, cluster_scores, text_tokens):
+        beta = 1.0
+        tfidf_score = self.compute_cluster_tfidf(subset, text_tokens)
+        centrality_score = numpy.sum(
+            [cluster_scores[index] * self.subset_cluster_distance(subset, cluster_centers[index])**beta
+             for index in range(0, len(cluster_centers))])
+
+        return centrality_score # * tfidf_score
+
+    def find_best_subset(self, text_tokens, n, cluster_centers, cluster_scores):
+        tokens = list(set(text_tokens))
+        extracted_tokens = []
+        extracted_scores = []
+
+        while len(extracted_tokens) < n and len(tokens) > 0:
+            scores = [self.score_subset(extracted_tokens + [token], cluster_centers, cluster_scores, text_tokens)
+                      for token in tokens]
+            max_index, max_value = max(enumerate(scores), key=operator.itemgetter(1))
+            extracted_tokens.append(tokens[max_index])
+            extracted_scores.append(max_value)
+            del tokens[max_index]
+
+        return zip(extracted_tokens, extracted_scores)
+
 
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
-    tokens = ke.preprocess_text(u"A columbia university law professor stood in a hotel lobby one morning and"
-                         u"noticed a sign apologizing for an elevator that was out of order."
-                         u"it had dropped unexpectedly three stories a few days earlier."
-                         u"the professor, eben moglen, tried to imagine what the world would be like"
-                         u"if elevators were not built so that people could inspect them. mr. moglen"
-                         u"was on his way to give a talk about the dangers of secret code,"
-                         u"known as proprietary software, that controls more and more devices every day."
-                         u"proprietary software is an unsafe building material, mr. moglen had said."
-                         u"you can't inspect it. he then went to the golden gate bridge and jumped.")
+    text = u"""A columbia university law professor stood in a hotel lobby one morning and
+                noticed a sign apologizing for an elevator that was out of order.
+                it had dropped unexpectedly three stories a few days earlier.
+                the professor, eben moglen, tried to imagine what the world would be like
+                if elevators were not built so that people could inspect them. mr. moglen
+                was on his way to give a talk about the dangers of secret code,
+                known as proprietary software, that controls more and more devices every day.
+                proprietary software is an unsafe building material, mr. moglen had said.
+                you can't inspect it. he then went to the golden gate bridge and jumped."""
+    tokens = ke.preprocess_text(text)
     # print test
     # print wiki_search.get_summaries_single_keyword(test)
     # test = ke.get_keywords(u"So i was walking down the golden gate bridge, i had the epiphany that in order"
@@ -315,15 +326,19 @@ if __name__ == "__main__":
     print tokens
 
     kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, cluster_centers, tokens)
-    sphere_clusters = ke.get_sp_kmeans_clusters(tokens)
+    kmeans_clusters = ke.get_scored_clusters(kmeans_clusters_map, cluster_centers, tokens)
+    cluster_scores = [cluster[1] for cluster in kmeans_clusters]
+    sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
+    habibi_keyphrases = ke.find_best_subset(tokens, 10, cluster_centers, cluster_scores)
 
 
 
-    print "K-Means:"
-    print kmeans_sorted_clusters
-    print "Sphere:"
-    print sphere_clusters
+    print "K-Means Clusters:"
+    print sorted(kmeans_clusters, key=lambda cluster: cluster[1])
+    print "Keyphrases:"
+    print sorted_keyphrases
+    print "Habibi:"
+    print habibi_keyphrases
     # print "Affinity-Propagation:"
     # print af_clusters
 
@@ -334,11 +349,14 @@ if __name__ == "__main__":
     ami = read_file('data/ami_transcripts/remote_control.txt')
     tokens = ke.preprocess_text(ami)
     kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-    kmeans_sorted_clusters = ke.get_sorted_clusters(kmeans_clusters_map, cluster_centers, tokens)
-    sphere_clusters = ke.get_sp_kmeans_clusters(tokens)
+    kmeans_clusters = ke.get_scored_clusters(kmeans_clusters_map, cluster_centers, tokens)
+    cluster_scores = [cluster[1] for cluster in kmeans_clusters]
+    sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
+    habibi_keyphrases = ke.find_best_subset(tokens, 8, cluster_centers, cluster_scores)
 
     print "K-Means:"
-    print kmeans_sorted_clusters
-    print "Sphere:"
-    print sphere_clusters
-
+    print sorted(kmeans_clusters, key=lambda cluster: cluster[1])
+    print "Keyphrases:"
+    print sorted_keyphrases
+    print "Habibi:"
+    print habibi_keyphrases
