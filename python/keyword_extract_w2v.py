@@ -14,7 +14,8 @@ import gensim
 import time
 import operator
 
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, AffinityPropagation
+from sklearn.metrics import pairwise
 from scipy.spatial import distance
 import numpy
 
@@ -41,6 +42,7 @@ def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
+w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-vectors-negative300.bin.gz'))
 tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
 tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
@@ -92,9 +94,9 @@ class W2VKeywordExtract:
         self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(tfidf_model_path)
         self.tfidf_conversation = gensim.models.tfidfmodel.TfidfModel.load(tfidf_conversation_path)
         print 'Loading Word2Vec model... (this can take some time)'
-        # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_model_path, binary=True)
+        # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_google_model_path, binary=True)
         self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
-        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_score=0.0)
+        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_score=0.2)
 
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
@@ -139,6 +141,7 @@ class W2VKeywordExtract:
         for token in words:
             try:
                 vector = self.word2vec[self.stemmer.stem(token)]
+                # vector = self.word2vec[token]
             except KeyError:
                 continue
 
@@ -152,7 +155,9 @@ class W2VKeywordExtract:
         if num_words == 1:
             return 0
         df, labels_array = self.build_word_vector_matrix(cluster)
-        total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
+        center_vector = self.word2vec[self.stemmer.stem(cluster_center)]
+        # center_vector = self.word2vec[cluster_center]
+        total_distance = numpy.sum([distance.euclidean(vector, center_vector) for vector in df])
 
         return 1 / (total_distance / num_words)
 
@@ -176,9 +181,6 @@ class W2VKeywordExtract:
         return score / num_words
 
     def get_cluster_score(self, cluster, cluster_center, tokens):
-        if len(cluster) == 1:
-            return 0, 0
-
         connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
         tfidf_score = self.compute_cluster_tfidf(cluster, tokens)
 
@@ -198,9 +200,8 @@ class W2VKeywordExtract:
         max_connectivity = max([score[1] for score in scores])
         normalized_scores = [(score[0] / max_tfidf, score[1] / max_connectivity) for score in scores]
         # cluster_score = alpha * tfidf_norm + (1-alpha) * connectivity_norm
-        # exception: one-worded clusters get a connectivity score of 0 by default => only tf-idf scores used
-        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) if score[1] > 0 else score[0]
-                          for score in normalized_scores]
+        # note: single-worded clusters have no connectivity score => penality for their score (assumption: off-topic)
+        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
 
         scored_clusters = zip(clusters, cluster_scores)
 
@@ -229,12 +230,39 @@ class W2VKeywordExtract:
 
         return centroid_word_map, cluster_centers
 
+    def get_ap_clusters(self, tokens):
+        tokens = list(set(tokens))
+        df, labels_array = self.build_word_vector_matrix(tokens)
+
+        sim_matrix = pairwise.pairwise_distances(df, metric='euclidean')
+
+        af = AffinityPropagation(affinity='euclidean').fit(df)
+
+        cluster_centers_indices = af.cluster_centers_indices_
+        cluster_labels = af.labels_
+        # Dictionary: cluster_id -> center_word
+        cluster_centers = dict([(index, labels_array[cluster_centers_indices[index]])
+                                for index in range(0, len(cluster_centers_indices))])
+
+        n_clusters_ = len(cluster_centers_indices)
+
+        word_centroid_map = dict(zip(labels_array, cluster_labels))
+        centroid_word_map = {}
+        for k, v in word_centroid_map.iteritems():
+            centroid_word_map[v] = centroid_word_map.get(v, [])
+            centroid_word_map[v].append(k)
+
+        return centroid_word_map, cluster_centers
+
+
     # Scores a keyphrase according to its centrality within the weighted clusters.
     #
     def score_keyphrase(self, phrase, cluster_centers, cluster_scores, text_tokens):
         try:
             phrase_vector = self.word2vec[self.stemmer.stem(phrase)]
-            total_distance = numpy.sum([cluster_scores[index] * distance.euclidean(phrase_vector, cluster_centers[index])
+            # phrase_vector = self.word2vec[phrase]
+            center_vectors, labels = self.build_word_vector_matrix(cluster_centers.values())
+            total_distance = numpy.sum([cluster_scores[index] * distance.euclidean(phrase_vector, center_vectors[index])
                                         for index in range(0, len(cluster_centers))])
         except KeyError:
             total_distance = -1
@@ -245,57 +273,67 @@ class W2VKeywordExtract:
         except KeyError:
             idf = 1.0
 
-        distance_score = numpy.log(1.0 + 1.0 / total_distance) if total_distance > 0 else 0.01
+        distance_score = 1.0 / total_distance if total_distance > 0 else 0
         tfidf_score = tf * idf
 
         return distance_score, tfidf_score
 
-    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores):
-        alpha = 1.0
-
+    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores, alpha=0.6):
         tokens = list(set(text_tokens))
         scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, text_tokens) for phrase in tokens]
         max_dist_score = max([score[0] for score in scores])
         max_tfidf_score = max([score[1] for score in scores])
         normalized_scores = [(score[0] / max_dist_score, score[1] / max_tfidf_score) for score in scores]
-        keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) if score[0] > 0 else score[1]
-                            for score in normalized_scores]
+        keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
 
         keyphrase_scores_sorted = sorted(zip(tokens, keyphrase_scores), key=lambda keyphrase: keyphrase[1])
         return keyphrase_scores_sorted
 
 
     # Habibi Diversity
-    def subset_cluster_distance(self, subset, cluster_center):
-        df, labels_array = self.build_word_vector_matrix(subset)
+    def subset_cluster_score(self, subset, center_vector, max_distance):
+        subset_vectors, labels_array = self.build_word_vector_matrix(subset)
+
         if len(labels_array) == 0:
             return 0
-        else:
-            # proximity_scores = [numpy.log(1.0 + 1.0 / distance.euclidean(vector, cluster_center)) for vector in df]
-            proximity_scores = [1.0 / distance.euclidean(vector, cluster_center) for vector in df]
-            # total_distance = numpy.sum([distance.euclidean(vector, cluster_center) for vector in df])
 
-        # return numpy.log(1.0 + 1.0 / total_distance)
-        return 10 * numpy.sum(proximity_scores)
+        dist_matrix = pairwise.pairwise_distances(X=center_vector, Y=subset_vectors, metric='euclidean')
+        proximity_scores = [(1 - vector_distance / max_distance) for vector_distance in dist_matrix[0]]
+        avg_proximity_score = numpy.sum(proximity_scores) / len(labels_array)
 
-    def score_subset(self, subset, cluster_centers, cluster_scores, text_tokens):
+        return avg_proximity_score
+
+    def score_subset(self, subset, cluster_scores, center_vectors, max_distance, text_tokens):
         beta = 1.0
+
         tfidf_score = self.compute_cluster_tfidf(subset, text_tokens)
         centrality_score = numpy.sum(
-            [cluster_scores[index] * self.subset_cluster_distance(subset, cluster_centers[index])**beta
-             for index in range(0, len(cluster_centers))])
+            [cluster_scores[index] * self.subset_cluster_score(subset, center_vectors[index], max_distance)**beta
+             for index in range(0, len(cluster_scores))])
 
-        return centrality_score # * tfidf_score
+        return centrality_score, tfidf_score
 
-    def find_best_subset(self, text_tokens, n, cluster_centers, cluster_scores):
+    def find_best_subset(self, text_tokens, n, cluster_centers, cluster_scores, beta=0.25):
         tokens = list(set(text_tokens))
+        token_vectors, token_labels = self.build_word_vector_matrix(tokens)
+        center_vectors, center_labels = self.build_word_vector_matrix(cluster_centers.values())
+        dist_matrix = pairwise.pairwise_distances(X=center_vectors, Y=token_vectors, metric='euclidean')
+        # Maximum distance for any token to any cluster
+        max_distance = numpy.max(dist_matrix)
+
+
         extracted_tokens = []
         extracted_scores = []
 
         while len(extracted_tokens) < n and len(tokens) > 0:
-            scores = [self.score_subset(extracted_tokens + [token], cluster_centers, cluster_scores, text_tokens)
+            scores = [self.score_subset(extracted_tokens + [token], cluster_scores, center_vectors, max_distance, text_tokens)
                       for token in tokens]
-            max_index, max_value = max(enumerate(scores), key=operator.itemgetter(1))
+            max_centrality = max(score[0] for score in scores)
+            max_tfidf = max(score[1] for score in scores)
+            # normalized_scores = [(score[0] / max_centrality, score[1] / max_tfidf) for score in scores]
+            # weighted_scores = [(beta * score[0] + (1 - beta) * score[1]) for score in normalized_scores]
+            weighted_scores = [(score[0] * score[1]) for score in scores]
+            max_index, max_value = max(enumerate(weighted_scores), key=operator.itemgetter(1))
             extracted_tokens.append(tokens[max_index])
             extracted_scores.append(max_value)
             del tokens[max_index]
@@ -307,56 +345,34 @@ class W2VKeywordExtract:
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
-    text = u"""A columbia university law professor stood in a hotel lobby one morning and
-                noticed a sign apologizing for an elevator that was out of order.
-                it had dropped unexpectedly three stories a few days earlier.
-                the professor, eben moglen, tried to imagine what the world would be like
-                if elevators were not built so that people could inspect them. mr. moglen
-                was on his way to give a talk about the dangers of secret code,
-                known as proprietary software, that controls more and more devices every day.
-                proprietary software is an unsafe building material, mr. moglen had said.
-                you can't inspect it. he then went to the golden gate bridge and jumped."""
-    tokens = ke.preprocess_text(text)
-    # print test
-    # print wiki_search.get_summaries_single_keyword(test)
-    # test = ke.get_keywords(u"So i was walking down the golden gate bridge, i had the epiphany that in order"
-    #                        u"to be a good computer scientist, i need to learn and practise machine learning."
-    #                        u"Also proprietary software is the root of all evil and I should better use open"
-    #                        u"source software.")
-    print tokens
 
-    kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-    kmeans_clusters = ke.get_scored_clusters(kmeans_clusters_map, cluster_centers, tokens)
-    cluster_scores = [cluster[1] for cluster in kmeans_clusters]
-    sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
-    habibi_keyphrases = ke.find_best_subset(tokens, 10, cluster_centers, cluster_scores)
+    ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
+    for file in os.listdir(ted_root_dir):
+        if file.endswith('.txt'):
+            with codecs.open(os.path.join(ted_root_dir, file), 'r', encoding='utf-8', errors='replace') as in_file:
+                print 'Processing', file, ':'
 
+                raw = in_file.read()
+                tokens = ke.preprocess_text(raw)
 
+                print 'Text:'
+                for sentence in nltk.sent_tokenize(raw):
+                    print sentence
+                print 'Tokens:', tokens
 
-    print "K-Means Clusters:"
-    print sorted(kmeans_clusters, key=lambda cluster: cluster[1])
-    print "Keyphrases:"
-    print sorted_keyphrases
-    print "Habibi:"
-    print habibi_keyphrases
-    # print "Affinity-Propagation:"
-    # print af_clusters
-
-    # test2 = ke.get_tokens(u"key open door car key principle metric component phrase moment")
-
-    # print wiki_search.get_summaries_single_keyword(test)
-
-    ami = read_file('data/ami_transcripts/remote_control.txt')
-    tokens = ke.preprocess_text(ami)
-    kmeans_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-    kmeans_clusters = ke.get_scored_clusters(kmeans_clusters_map, cluster_centers, tokens)
-    cluster_scores = [cluster[1] for cluster in kmeans_clusters]
-    sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
-    habibi_keyphrases = ke.find_best_subset(tokens, 8, cluster_centers, cluster_scores)
-
-    print "K-Means:"
-    print sorted(kmeans_clusters, key=lambda cluster: cluster[1])
-    print "Keyphrases:"
-    print sorted_keyphrases
-    print "Habibi:"
-    print habibi_keyphrases
+                ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
+                scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
+                cluster_scores = [cluster[1] for cluster in scored_clusters]
+                sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
+                sorted_keyphrases_tfidf = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores, 0.0)
+                habibi_subset = ke.find_best_subset(tokens, 9, cluster_centers, cluster_scores)
+                print "Affinity Propagation:"
+                print ap_clusters_map
+                print cluster_centers
+                print sorted(scored_clusters, key=lambda cluster: cluster[1])
+                print "Keyphrases:"
+                print sorted_keyphrases
+                print "Keyphrases (TFIDF):"
+                print sorted_keyphrases_tfidf
+                print "Habibi:"
+                print habibi_subset
