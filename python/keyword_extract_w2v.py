@@ -157,6 +157,7 @@ class W2VKeywordExtract:
         df, labels_array = self.build_word_vector_matrix(cluster)
         center_vector = self.word2vec[self.stemmer.stem(cluster_center)]
         # center_vector = self.word2vec[cluster_center]
+        # center_vector = cluster_center
         total_distance = numpy.sum([distance.euclidean(vector, center_vector) for vector in df])
 
         return 1 / (total_distance / num_words)
@@ -193,7 +194,7 @@ class W2VKeywordExtract:
     # Assigns a score to each cluster, sorts them according to the score.
     # Returns a sorted clusters array with each cluster's corresponding score.
     def get_scored_clusters(self, clusters, cluster_centers, tokens):
-        alpha = 0.8
+        alpha = 1.0
 
         scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
         max_tfidf = max([score[0] for score in scores])
@@ -201,7 +202,8 @@ class W2VKeywordExtract:
         normalized_scores = [(score[0] / max_tfidf, score[1] / max_connectivity) for score in scores]
         # cluster_score = alpha * tfidf_norm + (1-alpha) * connectivity_norm
         # note: single-worded clusters have no connectivity score => penality for their score (assumption: off-topic)
-        cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+        # cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+        cluster_scores = [score[0] * score[1] for score in scores]
 
         scored_clusters = zip(clusters, cluster_scores)
 
@@ -262,6 +264,7 @@ class W2VKeywordExtract:
             phrase_vector = self.word2vec[self.stemmer.stem(phrase)]
             # phrase_vector = self.word2vec[phrase]
             center_vectors, labels = self.build_word_vector_matrix(cluster_centers.values())
+            # center_vectors = cluster_centers
             total_distance = numpy.sum([cluster_scores[index] * distance.euclidean(phrase_vector, center_vectors[index])
                                         for index in range(0, len(cluster_centers))])
         except KeyError:
@@ -278,13 +281,14 @@ class W2VKeywordExtract:
 
         return distance_score, tfidf_score
 
-    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores, alpha=0.6):
+    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores, alpha=0.8):
         tokens = list(set(text_tokens))
         scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, text_tokens) for phrase in tokens]
         max_dist_score = max([score[0] for score in scores])
         max_tfidf_score = max([score[1] for score in scores])
         normalized_scores = [(score[0] / max_dist_score, score[1] / max_tfidf_score) for score in scores]
-        keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+        # keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
+        keyphrase_scores = [(score[0] * score[1]) for score in scores]
 
         keyphrase_scores_sorted = sorted(zip(tokens, keyphrase_scores), key=lambda keyphrase: keyphrase[1])
         return keyphrase_scores_sorted
@@ -317,6 +321,7 @@ class W2VKeywordExtract:
         tokens = list(set(text_tokens))
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
         center_vectors, center_labels = self.build_word_vector_matrix(cluster_centers.values())
+        # center_vectors = cluster_centers
         dist_matrix = pairwise.pairwise_distances(X=center_vectors, Y=token_vectors, metric='euclidean')
         # Maximum distance for any token to any cluster
         max_distance = numpy.max(dist_matrix)
@@ -361,6 +366,7 @@ if __name__ == "__main__":
                 print 'Tokens:', tokens
 
                 ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
+                # ap_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
                 scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
                 cluster_scores = [cluster[1] for cluster in scored_clusters]
                 sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
