@@ -259,31 +259,39 @@ class W2VKeywordExtract:
 
     # Scores a keyphrase according to its centrality within the weighted clusters.
     #
-    def score_keyphrase(self, phrase, cluster_centers, cluster_scores, text_tokens):
+    def score_keyphrase(self, phrase, cluster_centers, cluster_scores, max_distance, text_tokens):
         try:
             phrase_vector = self.word2vec[self.stemmer.stem(phrase)]
             # phrase_vector = self.word2vec[phrase]
             center_vectors, labels = self.build_word_vector_matrix(cluster_centers.values())
             # center_vectors = cluster_centers
-            total_distance = numpy.sum([cluster_scores[index] * distance.euclidean(phrase_vector, center_vectors[index])
-                                        for index in range(0, len(cluster_centers))])
+            total_distance_score = numpy.sum(
+                [cluster_scores[index] * (1 - distance.euclidean(phrase_vector, center_vectors[index]) / max_distance)
+                 for index in range(0, len(cluster_centers))])
         except KeyError:
-            total_distance = -1
+            total_distance_score = 0
 
-        tf = len([token for token in text_tokens if phrase == token])
+        tf = len([token for token in text_tokens if self.stemmer.stem(phrase) == self.stemmer.stem(token)])
         try:
             idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(phrase)]]
         except KeyError:
             idf = 1.0
 
-        distance_score = 1.0 / total_distance if total_distance > 0 else 0
+        # distance_score = 1.0 / total_distance if total_distance > 0 else 0
         tfidf_score = tf * idf
 
-        return distance_score, tfidf_score
+        return total_distance_score, tfidf_score
 
     def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores, alpha=0.8):
         tokens = list(set(text_tokens))
-        scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, text_tokens) for phrase in tokens]
+
+        token_vectors, token_labels = self.build_word_vector_matrix(tokens)
+        center_vectors, center_labels = self.build_word_vector_matrix(cluster_centers.values())
+        dist_matrix = pairwise.pairwise_distances(X=center_vectors, Y=token_vectors, metric='euclidean')
+        # Maximum distance for any token to any cluster
+        max_distance = numpy.max(dist_matrix)
+
+        scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, max_distance, text_tokens) for phrase in tokens]
         max_dist_score = max([score[0] for score in scores])
         max_tfidf_score = max([score[1] for score in scores])
         normalized_scores = [(score[0] / max_dist_score, score[1] / max_tfidf_score) for score in scores]
@@ -333,8 +341,8 @@ class W2VKeywordExtract:
         while len(extracted_tokens) < n and len(tokens) > 0:
             scores = [self.score_subset(extracted_tokens + [token], cluster_scores, center_vectors, max_distance, text_tokens)
                       for token in tokens]
-            max_centrality = max(score[0] for score in scores)
-            max_tfidf = max(score[1] for score in scores)
+            # max_centrality = max(score[0] for score in scores)
+            # max_tfidf = max(score[1] for score in scores)
             # normalized_scores = [(score[0] / max_centrality, score[1] / max_tfidf) for score in scores]
             # weighted_scores = [(beta * score[0] + (1 - beta) * score[1]) for score in normalized_scores]
             weighted_scores = [(score[0] * score[1]) for score in scores]
