@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from __future__ import division
 __author__ = 'Jonas Wacker'
 
 import nltk
@@ -20,6 +19,10 @@ from scipy.spatial import distance
 import numpy
 
 from training import druid
+
+import matplotlib.pyplot as plt
+from sklearn import decomposition
+from itertools import cycle
 
 
 def check_path(path):
@@ -113,13 +116,12 @@ class W2VKeywordExtract:
             # Filter nouns and adjectives. Dictionary is used to translate into WordNet Tags
             pos_pattern = ['NN', 'NNP', 'NNS', 'JJ']
             tag_filtered = [tag[0] for tag in tags if tag[1] in pos_pattern]
-            # stop_filtered = [token for token in tag_filtered if token not in self.stopwords]
             idf_filtered = []
             for token in tag_filtered:
                 try:
                     if token in self.stopwords:
                         continue
-                    idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]]
+                    idf = self.tfidf_conversation.idfs[self.tfidf_conversation.id2word.token2id[self.stemmer.stem(token)]]
                     if idf > 3.67:
                         idf_filtered.append(token)
                 except KeyError:
@@ -179,7 +181,7 @@ class W2VKeywordExtract:
 
             score += tf * idf
 
-        return score / num_words
+        return score  #/ num_words
 
     def get_cluster_score(self, cluster, cluster_center, tokens):
         connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
@@ -235,18 +237,34 @@ class W2VKeywordExtract:
     def get_ap_clusters(self, tokens):
         tokens = list(set(tokens))
         df, labels_array = self.build_word_vector_matrix(tokens)
-
-        sim_matrix = pairwise.pairwise_distances(df, metric='euclidean')
-
         af = AffinityPropagation(affinity='euclidean').fit(df)
 
         cluster_centers_indices = af.cluster_centers_indices_
         cluster_labels = af.labels_
+
+
+        # n_clusters_ = len(cluster_centers_indices)
+        # m = decomposition.RandomizedPCA(n_components=2)
+        # tokens_vec = numpy.asarray(df)
+        # tokens_vec_2d = m.fit_transform(tokens_vec)
+        # colors = cycle('bgrcmykbgrcmykbgrcmykbgrcmyk')
+        # for k, col in zip(range(n_clusters_), colors):
+        #     class_members = cluster_labels == k
+        #     cluster_center = tokens_vec_2d[cluster_centers_indices[k]]
+        #     plt.plot(tokens_vec_2d[class_members, 0], tokens_vec_2d[class_members, 1], col + '.')
+        #     plt.plot(cluster_center[0], cluster_center[1], 'o', markerfacecolor=col, markeredgecolor='k', markersize=14)
+        #     for x in tokens_vec_2d[class_members]:
+        #         plt.plot([cluster_center[0], x[0]], [cluster_center[1], x[1]], col)
+        #
+        # for index, point in enumerate(tokens_vec_2d):
+        #     plt.annotate(labels_array[index], xy=(point[0], point[1]), fontsize=24)
+        #
+        # plt.show()
+
+
         # Dictionary: cluster_id -> center_word
         cluster_centers = dict([(index, labels_array[cluster_centers_indices[index]])
                                 for index in range(0, len(cluster_centers_indices))])
-
-        n_clusters_ = len(cluster_centers_indices)
 
         word_centroid_map = dict(zip(labels_array, cluster_labels))
         centroid_word_map = {}
@@ -292,11 +310,8 @@ class W2VKeywordExtract:
         max_distance = numpy.max(dist_matrix)
 
         scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, max_distance, text_tokens) for phrase in tokens]
-        max_dist_score = max([score[0] for score in scores])
-        max_tfidf_score = max([score[1] for score in scores])
-        normalized_scores = [(score[0] / max_dist_score, score[1] / max_tfidf_score) for score in scores]
-        # keyphrase_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
         keyphrase_scores = [(score[0] * score[1]) for score in scores]
+        # keyphrase_scores = [score[1] for score in scores]
 
         keyphrase_scores_sorted = sorted(zip(tokens, keyphrase_scores), key=lambda keyphrase: keyphrase[1])
         return keyphrase_scores_sorted
