@@ -6,12 +6,10 @@ import nltk
 import codecs
 import re
 from topia.termextract import extract
-import wiki_search
 import os.path
 import sys
 import gensim
 import time
-import operator
 
 from sklearn.cluster import KMeans, AffinityPropagation
 from sklearn.metrics import pairwise
@@ -49,18 +47,6 @@ w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-ve
 tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
 tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
-
-# Filter hypens at the beginning and/or end of a word
-# E.g. "schlechteste -> schlechteste
-# There are many unicode hyphen variant (which all look very similar), we also want ot filter these
-def filterHyphens(word):
-    if word.startswith(u'"') or word.startswith(u"'") or word.startswith(u'"') or word.startswith(u'"') or word.startswith(u'"') or word.startswith(u'"'):
-        word = word[1:]
-
-    if word.endswith(u'"') or word.endswith(u"'") or word.endswith(u'"') or word.endswith(u'"') or word.endswith(u'"') or word.endswith(u'"'):
-        word = word[:-1]
-
-    return word
 
 
 class W2VKeywordExtract:
@@ -166,7 +152,7 @@ class W2VKeywordExtract:
 
     def compute_cluster_tfidf(self, cluster, tokens):
         score = 0
-        num_words = len(cluster)
+        # num_words = len(cluster)
 
         for word in cluster:
             tf = len([token for token in tokens if word == token])
@@ -184,27 +170,16 @@ class W2VKeywordExtract:
         return score  #/ num_words
 
     def get_cluster_score(self, cluster, cluster_center, tokens):
-        connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
         tfidf_score = self.compute_cluster_tfidf(cluster, tokens)
-
-        print cluster
-        print tfidf_score
-        print connectivity_score
+        connectivity_score = self.compute_cluster_connectivity(cluster, cluster_center)
 
         return tfidf_score, connectivity_score
 
     # Assigns a score to each cluster, sorts them according to the score.
     # Returns a sorted clusters array with each cluster's corresponding score.
     def get_scored_clusters(self, clusters, cluster_centers, tokens):
-        alpha = 1.0
-
         scores = [self.get_cluster_score(clusters[index], cluster_centers[index], tokens) for index in clusters]
-        max_tfidf = max([score[0] for score in scores])
-        max_connectivity = max([score[1] for score in scores])
-        normalized_scores = [(score[0] / max_tfidf, score[1] / max_connectivity) for score in scores]
-        # cluster_score = alpha * tfidf_norm + (1-alpha) * connectivity_norm
         # note: single-worded clusters have no connectivity score => penality for their score (assumption: off-topic)
-        # cluster_scores = [(alpha * score[0] + (1-alpha) * score[1]) for score in normalized_scores]
         cluster_scores = [score[0] * score[1] for score in scores]
 
         scored_clusters = zip(clusters, cluster_scores)
@@ -234,6 +209,7 @@ class W2VKeywordExtract:
 
         return centroid_word_map, cluster_centers
 
+    # Build word clusters using Affinity Propagation (Default clustering method)
     def get_ap_clusters(self, tokens):
         tokens = list(set(tokens))
         df, labels_array = self.build_word_vector_matrix(tokens)
@@ -242,7 +218,7 @@ class W2VKeywordExtract:
         cluster_centers_indices = af.cluster_centers_indices_
         cluster_labels = af.labels_
 
-
+        # Uncomment the code below to visualise the ap clusters
         # n_clusters_ = len(cluster_centers_indices)
         # m = decomposition.RandomizedPCA(n_components=2)
         # tokens_vec = numpy.asarray(df)
@@ -261,7 +237,6 @@ class W2VKeywordExtract:
         #
         # plt.show()
 
-
         # Dictionary: cluster_id -> center_word
         cluster_centers = dict([(index, labels_array[cluster_centers_indices[index]])
                                 for index in range(0, len(cluster_centers_indices))])
@@ -276,7 +251,6 @@ class W2VKeywordExtract:
 
 
     # Scores a keyphrase according to its centrality within the weighted clusters.
-    #
     def score_keyphrase(self, phrase, cluster_centers, cluster_scores, max_distance, text_tokens):
         try:
             phrase_vector = self.word2vec[self.stemmer.stem(phrase)]
@@ -300,7 +274,7 @@ class W2VKeywordExtract:
 
         return total_distance_score, tfidf_score
 
-    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores, alpha=0.8):
+    def get_sorted_keyphrases(self, text_tokens, cluster_centers, cluster_scores):
         tokens = list(set(text_tokens))
 
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
@@ -311,62 +285,26 @@ class W2VKeywordExtract:
 
         scores = [self.score_keyphrase(phrase, cluster_centers, cluster_scores, max_distance, text_tokens) for phrase in tokens]
         keyphrase_scores = [(score[0] * score[1]) for score in scores]
+        # use the scores below to disable word2vec -> pure tf-idf (with preprocessing)
         # keyphrase_scores = [score[1] for score in scores]
 
-        keyphrase_scores_sorted = sorted(zip(tokens, keyphrase_scores), key=lambda keyphrase: keyphrase[1])
+        keyphrase_scores_sorted = sorted(
+            zip(tokens, keyphrase_scores),
+            key=lambda keyphrase: keyphrase[1],
+            reverse=True)
+
         return keyphrase_scores_sorted
 
+    # Method used by the rest of the application.
+    # Extracts the n best scoring keyphrases along with their scores from the given text.
+    def extract_best_keywords(self, text, n=9):
+        tokens = self.preprocess_text(text)
+        ap_clusters_map, cluster_centers = self.get_ap_clusters(tokens)
+        scored_clusters = self.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
+        cluster_scores = [cluster[1] for cluster in scored_clusters]
+        sorted_keyphrases = self.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
 
-    # Habibi Diversity
-    def subset_cluster_score(self, subset, center_vector, max_distance):
-        subset_vectors, labels_array = self.build_word_vector_matrix(subset)
-
-        if len(labels_array) == 0:
-            return 0
-
-        dist_matrix = pairwise.pairwise_distances(X=center_vector, Y=subset_vectors, metric='euclidean')
-        proximity_scores = [(1 - vector_distance / max_distance) for vector_distance in dist_matrix[0]]
-        avg_proximity_score = numpy.sum(proximity_scores) / len(labels_array)
-
-        return avg_proximity_score
-
-    def score_subset(self, subset, cluster_scores, center_vectors, max_distance, text_tokens):
-        beta = 1.0
-
-        tfidf_score = self.compute_cluster_tfidf(subset, text_tokens)
-        centrality_score = numpy.sum(
-            [cluster_scores[index] * self.subset_cluster_score(subset, center_vectors[index], max_distance)**beta
-             for index in range(0, len(cluster_scores))])
-
-        return centrality_score, tfidf_score
-
-    def find_best_subset(self, text_tokens, n, cluster_centers, cluster_scores, beta=0.25):
-        tokens = list(set(text_tokens))
-        token_vectors, token_labels = self.build_word_vector_matrix(tokens)
-        center_vectors, center_labels = self.build_word_vector_matrix(cluster_centers.values())
-        # center_vectors = cluster_centers
-        dist_matrix = pairwise.pairwise_distances(X=center_vectors, Y=token_vectors, metric='euclidean')
-        # Maximum distance for any token to any cluster
-        max_distance = numpy.max(dist_matrix)
-
-
-        extracted_tokens = []
-        extracted_scores = []
-
-        while len(extracted_tokens) < n and len(tokens) > 0:
-            scores = [self.score_subset(extracted_tokens + [token], cluster_scores, center_vectors, max_distance, text_tokens)
-                      for token in tokens]
-            # max_centrality = max(score[0] for score in scores)
-            # max_tfidf = max(score[1] for score in scores)
-            # normalized_scores = [(score[0] / max_centrality, score[1] / max_tfidf) for score in scores]
-            # weighted_scores = [(beta * score[0] + (1 - beta) * score[1]) for score in normalized_scores]
-            weighted_scores = [(score[0] * score[1]) for score in scores]
-            max_index, max_value = max(enumerate(weighted_scores), key=operator.itemgetter(1))
-            extracted_tokens.append(tokens[max_index])
-            extracted_scores.append(max_value)
-            del tokens[max_index]
-
-        return zip(extracted_tokens, extracted_scores)
+        return sorted_keyphrases[:n]
 
 
 
@@ -393,15 +331,9 @@ if __name__ == "__main__":
                 scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
                 cluster_scores = [cluster[1] for cluster in scored_clusters]
                 sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
-                sorted_keyphrases_tfidf = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores, 0.0)
-                habibi_subset = ke.find_best_subset(tokens, 9, cluster_centers, cluster_scores)
                 print "Affinity Propagation:"
                 print ap_clusters_map
                 print cluster_centers
                 print sorted(scored_clusters, key=lambda cluster: cluster[1])
                 print "Keyphrases:"
                 print sorted_keyphrases
-                print "Keyphrases (TFIDF):"
-                print sorted_keyphrases_tfidf
-                print "Habibi:"
-                print habibi_subset
