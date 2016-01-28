@@ -69,7 +69,7 @@ def extract_best_articles(keywords, n=10):
 
     try:
         results = es.search(index=wiki_index, doc_type=default_type, body=query)
-    except TransportError:
+    except Exception:
         summary_box_info['error'] = {
             'title': 'Elasticsearch Error',
             'text': 'Unable to connect to elasticsearch server. Server running?',
@@ -79,14 +79,13 @@ def extract_best_articles(keywords, n=10):
         }
         return summary_box_info
 
-
     for result in results['hits']['hits']:
         title = result['_source']['title']
         full_text = result['_source']['text']
         categories = result['_source']['category']
         score = result['_score']
         summary = get_summary_from_text(full_text)
-        url = 'https://simple.wikipedia.org/wiki/'+title.replace(' ','_')
+        url = 'https://simple.wikipedia.org/w/index.php?title='+title.replace(' ', '_')
 
         summary_box_info[title] = {
             'title': title,

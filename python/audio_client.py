@@ -188,7 +188,7 @@ def main():
     parser = argparse.ArgumentParser(description='Command line client for kaldigstserver')
     parser.add_argument('-u', '--uri', default="ws://localhost:8888/client/ws/speech", dest="uri",
                         help="Server websocket URI")
-    parser.add_argument('-a', '--ambient-uri', default='http://localhost:8000/', dest='ambient_uri',
+    parser.add_argument('-a', '--ambient-uri', default='http://localhost:5000/', dest='ambient_uri',
                         help='Ambient server websocket URI')
     parser.add_argument('-r', '--rate', default=0, dest="rate", type=int,
                         help="Rate in bytes/sec at which audio should be sent to the server."

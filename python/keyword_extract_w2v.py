@@ -51,7 +51,7 @@ druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
 
 class W2VKeywordExtract:
 
-    def __init__(self, lang='en', extra_keywords=''):
+    def __init__(self, lang='en', extra_keywords='', cutoff_druid_score=0.2):
         self.lang = lang
         self.extra_keywords = extra_keywords
         self.keyword_extractor = extract.TermExtractor()
@@ -85,7 +85,7 @@ class W2VKeywordExtract:
         print 'Loading Word2Vec model... (this can take some time)'
         # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_google_model_path, binary=True)
         self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
-        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_score=0.2)
+        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_druid_score)
 
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
@@ -218,6 +218,9 @@ class W2VKeywordExtract:
         cluster_centers_indices = af.cluster_centers_indices_
         cluster_labels = af.labels_
 
+        if cluster_centers_indices == None:
+            return False, tokens
+
         # Uncomment the code below to visualise the ap clusters
         # n_clusters_ = len(cluster_centers_indices)
         # m = decomposition.RandomizedPCA(n_components=2)
@@ -300,6 +303,9 @@ class W2VKeywordExtract:
     def extract_best_keywords(self, text, n=9):
         tokens = self.preprocess_text(text)
         ap_clusters_map, cluster_centers = self.get_ap_clusters(tokens)
+        # Dirty fix for bug if no clusters can be formed because Word2Vec does not recognize a single word.
+        if not ap_clusters_map:
+            return [(token, 1.0) for token in cluster_centers]
         scored_clusters = self.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
         cluster_scores = [cluster[1] for cluster in scored_clusters]
         sorted_keyphrases = self.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
