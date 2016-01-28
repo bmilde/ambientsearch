@@ -307,7 +307,6 @@ class W2VKeywordExtract:
         return sorted_keyphrases[:n]
 
 
-
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
@@ -327,6 +326,7 @@ if __name__ == "__main__":
                 print 'Tokens:', tokens
 
                 ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
+                # K-Means can be used alternatively (speeds up process, yields slightly worse results though)
                 # ap_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
                 scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
                 cluster_scores = [cluster[1] for cluster in scored_clusters]
