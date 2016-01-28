@@ -32,13 +32,6 @@ def check_path(path):
     return path
 
 
-def read_file(path):
-    ami_file_name = check_path(path)
-
-    with codecs.open(ami_file_name, 'r', 'utf-8') as in_file:
-        return in_file.read()
-
-
 def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 

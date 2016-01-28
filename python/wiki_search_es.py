@@ -44,19 +44,22 @@ query = {
     }
 }
 
+
 # Expects a set of keywords along with their scores (Tuples).
-# Returns an es-compatible simple query string.
-def construct_simple_query_string(keywords, use_scores = True):
+# Returns an es-compatible simple query string (see example query field above).
+def construct_simple_query_string(keywords, use_scores=True):
     if use_scores:
-        query_string = " ".join(["'" + keyword.replace('_', ' ') + "'" + "~^" + str(score) for keyword, score in keywords])
+        query_string = " ".join(["('" + keyword.replace('_', ' ') + "'^" + str(score) + ")~" for keyword, score in keywords])
     else:
         query_string = " ".join(["'" + keyword.replace('_', ' ') + "'" + "~" for keyword, score in keywords])
 
     return query_string
 
+
 # Extracts the first n words from the given text.
-def get_summary_from_text(text, n=20):
+def get_summary_from_text(text, n=50):
     return " ".join(nltk.word_tokenize(text)[:n])
+
 
 # Expects a set of keywords along with their scores (Tuples).
 # Extracts the n best scoring article results from elasticsearch.
@@ -75,7 +78,7 @@ def extract_best_articles(keywords, n=10):
             'text': 'Unable to connect to elasticsearch server. Server running?',
             'url': 'https://www.elastic.co/',
             'categories': [],
-            'score': 1
+            'score': 10
         }
         return summary_box_info
 
