@@ -16,11 +16,12 @@ query = {
     "query": {
         "filtered": {
            "query": {
-               "simple_query_string": {
-                  "fields": ["text", "title", "category"],
-                  "query": "woman~ spiritual~ 'mutual aid'~ kind~ religion~ mormon~ mormonism~ religious~",
-                  "minimum_should_match": "30%"
-
+               "query_string": {
+                   "fields": ["text", "title", "category"],
+                   "query": "woman~ spiritual~ 'mutual aid'~ kind~ religion~ mormon~ mormonism~ religious~",
+                   "minimum_should_match": "30%",
+                   "use_dis_max": "false",
+                   "phrase_slop": "0"
                }
            },
            "filter": {
@@ -46,14 +47,28 @@ query = {
 
 
 # Expects a set of keywords along with their scores (Tuples).
-# Returns an es-compatible simple query string (see example query field above).
-def construct_simple_query_string(keywords, use_scores=True):
-    if use_scores:
-        query_string = " ".join(["('" + keyword.replace('_', ' ') + "'^" + str(score) + ")~" for keyword, score in keywords])
-    else:
-        query_string = " ".join(["'" + keyword.replace('_', ' ') + "'" + "~" for keyword, score in keywords])
+# Returns an es-compatible query string (see example query field above).
+# Scores boost each keyword along with their scores, fuzziness also matches different spellings.
+# Recommendation: Scores - yes, fuzziness - no, Multiword - yes
+def construct_query_string(keywords, scores=True, fuzziness=False, multiword=True):
+    keyword_strings = []
 
-    return query_string
+    for keyword, score in keywords:
+        keyword = keyword.replace('_', ' ')
+
+        # Phrases need to be in quotation marks
+        if multiword and len(keyword.split()) > 1:
+            keyword = "\"" + keyword + "\""
+
+        # Fuzziness rather causes problems (~)
+        if fuzziness:
+            keyword += "~"
+        if scores:
+            keyword += "^" + str(score)
+
+        keyword_strings.append(keyword)
+
+    return " ".join(keyword_strings)
 
 
 # Extracts the first n words from the given text.
@@ -64,8 +79,8 @@ def get_summary_from_text(text, n=50):
 # Expects a set of keywords along with their scores (Tuples).
 # Extracts the n best scoring article results from elasticsearch.
 def extract_best_articles(keywords, n=10):
-    simple_query_string = construct_simple_query_string(keywords)
-    query['query']['filtered']['query']['simple_query_string']['query'] = simple_query_string
+    simple_query_string = construct_query_string(keywords)
+    query['query']['filtered']['query']['query_string']['query'] = simple_query_string
 
     summary_box_info = {}
     articles = []
