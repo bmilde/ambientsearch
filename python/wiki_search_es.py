@@ -49,7 +49,7 @@ query = {
 # Expects a set of keywords along with their scores (Tuples).
 # Returns an es-compatible query string (see example query field above).
 # Scores boost each keyword along with their scores, fuzziness also matches different spellings.
-# Recommendation: Scores - yes, fuzziness - no, Multiword - yes
+# Recommendation: Scores - yes, fuzziness - yes, Multiword - yes
 def construct_query_string(keywords, scores=True, fuzziness=False, multiword=True):
     keyword_strings = []
 

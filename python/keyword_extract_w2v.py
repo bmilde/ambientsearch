@@ -306,6 +306,34 @@ class W2VKeywordExtract:
         return sorted_keyphrases[:n]
 
 
+    def get_tf_idf(self, token, all_tokens):
+        tf = len([item for item in all_tokens if self.stemmer.stem(item) == self.stemmer.stem(token)])
+        try:
+            idf = self.tfidf.idfs[self.tfidf.id2word.token2id[self.stemmer.stem(token)]]
+        except KeyError:
+            idf = 1.0
+
+        return tf * idf
+
+    def habibi_mimic(self, text, n=9):
+        tokens = self.preprocess_text(text)
+        token_vectors, token_labels = self.build_word_vector_matrix(tokens)
+
+        # Compute the weight vector
+        sum_vector = numpy.sum(token_vectors, axis=0)
+        weight_vector = sum_vector / len(tokens)
+
+        # Compute Word2Vec score for each token
+        score_vector = numpy.dot(token_vectors, weight_vector)
+        tf_idf_vector = [self.get_tf_idf(token, token_labels) for token in token_labels]
+        score_vector_two = score_vector * tf_idf_vector
+
+        token_scores = list(set(zip(token_labels, score_vector_two)))
+        sorted_keyphrases = sorted(token_scores, key=lambda token: token[1], reverse=True)
+
+        return sorted_keyphrases[:n]
+
+
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
@@ -336,3 +364,6 @@ if __name__ == "__main__":
                 print sorted(scored_clusters, key=lambda cluster: cluster[1])
                 print "Keyphrases:"
                 print sorted_keyphrases
+
+                # print "Habibi-Mimic:"
+                # print ke.habibi_mimic(tokens)

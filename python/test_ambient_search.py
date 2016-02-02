@@ -9,7 +9,7 @@ import codecs
 import nltk
 import time
 
-num_test_transcripts = 6
+num_test_transcripts = 30
 
 def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
