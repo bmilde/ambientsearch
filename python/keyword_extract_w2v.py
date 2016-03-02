@@ -36,7 +36,7 @@ def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
-w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-vectors-negative300.bin.gz'))
+# w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-vectors-negative300.bin.gz'))
 tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
 tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
