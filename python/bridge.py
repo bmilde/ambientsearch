@@ -22,7 +22,7 @@ class KeywordClientHttp():
         self.server_url = server_url
         self.request_header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
-    def getSettings():
+    def getSettings(self):
         r = requests.get(self.server_url+'getSettings')
         return r.json()
         
