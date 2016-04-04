@@ -80,7 +80,8 @@ for file in os.listdir(manual_keyword_dir_two):
 	with codecs.open(os.path.join(manual_output_dir, file + '.gold_keywords.txt'), 'w' , encoding='utf-8') as outfile:
 		outfile.write('\n'.join(list(gold_standard)))
 
-	gold_goals += [(manual_output_dir + file, len(list(gold_standard)))]
+	gold_goals += [(manual_output_dir + file, len(' '.join(list(gold_standard)).split(' ')))] #if mwe counts as multiple words
+	#gold_goals += [(manual_output_dir + file, len(list(gold_standard)))]# if mwe count as one word
 
 	with codecs.open(os.path.join(manual_output_dir, file + '.tolerated.txt'), 'w' , encoding='utf-8') as outfile:
 		outfile.write('\n'.join(list(tolerated)))
