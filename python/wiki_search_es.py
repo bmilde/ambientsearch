@@ -5,11 +5,15 @@ __author__ = 'Jonas Wacker'
 from elasticsearch import Elasticsearch
 import nltk
 
-wiki_index = 'en-simple-wiki'
+wiki_index = 'simple_en_wiki2'
 default_type = 'page'
 
+#es = Elasticsearch([
+#    {'host': 'localhost', 'port': 9200}
+#], send_get_body_as='POST')
+
 es = Elasticsearch([
-    {'host': 'localhost', 'port': 9200}
+    {'host': 'wiki.machinelearning.online', 'port': 80}
 ], send_get_body_as='POST')
 
 query = {
