@@ -1,4 +1,4 @@
-consumer-centric
+consumer centric
 feedback
 customer
 drugs
@@ -11,8 +11,8 @@ innovative
 markets
 decentralized
 censor
-customer-friendly
+customer friendly
 payment system
-crypto-currency
+crypto currency
 bitcoin
 anonymity

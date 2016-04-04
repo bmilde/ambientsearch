@@ -2,8 +2,11 @@ release
 parachute
 drogue parachute
 stabilise
-gravity
+zero gravity
 wraparound
 skydiving
 pipe
 tangle
+potential
+problem
+critical

@@ -1,7 +1,7 @@
 doctors
 trust
 blind faith
-medication
+medications
 medical science
 sex
 gender

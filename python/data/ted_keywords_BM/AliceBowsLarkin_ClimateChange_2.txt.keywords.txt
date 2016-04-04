@@ -1,4 +1,4 @@
-global average temperature.
+global average temperature
 planet
 sea
 thermal
@@ -16,6 +16,7 @@ temperature extremes
 climate impacts
 infrastructure
 rail networks
-power stationstemperature
+power stations
+temperature
 four degree type scenario
 infrastructure

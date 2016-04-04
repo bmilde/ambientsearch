@@ -4,5 +4,6 @@ medical science
 emergency medicine doctor
 medical emergency
 ER
+sex
 gender
 patients

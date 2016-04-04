@@ -1,6 +1,7 @@
 site
 choice
-crypto currency bitcoin
+crypto currency
+bitcoin
 product
 post
 encryption
@@ -20,6 +21,7 @@ product quality
 vendors
 attentive
 polite
-consumer-centric
+consumer centric
+anonymous
 special deals
 free delivery

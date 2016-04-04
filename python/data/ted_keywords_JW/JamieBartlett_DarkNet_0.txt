@@ -5,7 +5,7 @@ Internet
 Tor hidden services
 Tor browser
 Tor browser
-U.S. Naval intelligence
+US Naval intelligence
 encrypting
 IP address
 Internet

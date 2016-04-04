@@ -7,5 +7,6 @@ patients life
 hospitals
 hospitals
 hospitals
+treatable illness
 live
 die

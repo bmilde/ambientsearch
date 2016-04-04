@@ -1,4 +1,4 @@
-crypto-currency
+crypto currency
 bitcoin
 user reviews
 vendor
@@ -6,4 +6,8 @@ reputation
 vendor
 feedback
 vendors
-consumer-centric
+price
+economic
+choice
+consumer centric
+anonymous

@@ -1,5 +1,8 @@
 global average temperature
+sea
+city
 thermal inertia
 extremes
 climate impacts
+temperature
 infrastructure
