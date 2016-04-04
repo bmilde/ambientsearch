@@ -209,6 +209,9 @@ class EventGenerator:
             # Extract top 9 keywords
             keywords = self.ke.extract_best_keywords(most_recent_transcript, n=9)
             print keywords
+	    #abort if we found very little keywords and haven't seen 10 utterances
+	    if len(keywords) < 5 and len(self.complete_transcript) < 10:
+		return
             # Extract top 5 wiki articles
             new_relevant_entries = wiki_search_es.extract_best_articles(keywords, n=5)
 
