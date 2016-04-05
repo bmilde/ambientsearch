@@ -1,11 +1,13 @@
-parachute
-united parachute technologies
-tandem skydiving
-skydiving
-drogue late
-potential
-wraparound
-stabilise
-release
-problem
+late
+united
 critical
+parachute
+skydiving
+tandem
+drogue
+wraparound
+release
+stabilise
+problem
+technology
+potential

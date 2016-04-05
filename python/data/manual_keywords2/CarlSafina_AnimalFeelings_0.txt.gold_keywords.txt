@@ -1,6 +1,7 @@
-narcissists
 evolution
-animals
-brains
-capacities
-human mind
+capacity
+animal
+mind
+brain
+human
+narcissist

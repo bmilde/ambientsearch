@@ -1,6 +1,9 @@
-behaviors
+impact
 climate
-climate impacts
-per capita emissions
-future climate change
-choices
+behavior
+emission
+per
+choice
+future
+caput
+change

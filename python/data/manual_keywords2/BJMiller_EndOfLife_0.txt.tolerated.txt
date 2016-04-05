@@ -1,11 +1,18 @@
 physician
+patient
+commuter
+relationship
+sophomore
+palliative
+year
 brilliance
-commuter train
-formal relationship
+thanksgiving
+current
+train
+electrical
+doc,
+doc
+medicine
+holiday
 solidarity
-electrical current
-thanksgiving holiday
-palliative medicine doc
-sophomore year
-patients
-palliative medicine doc,
+formal

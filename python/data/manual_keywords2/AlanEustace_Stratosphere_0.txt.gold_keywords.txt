@@ -1,4 +1,7 @@
+program
+space
 planet
 stratosphere
-international space station
-apollo program
+station
+international
+apollo

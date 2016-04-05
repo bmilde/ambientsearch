@@ -59,6 +59,7 @@ for file in os.listdir(manual_keyword_dir_two):
 	print('t1',tokens_one)
 	print('t2',tokens_two)
 	gold_standard = tokens_one & tokens_two
+
 	print(gold_standard)
 	tolerated = tokens_one.symmetric_difference(tokens_two)
 
@@ -77,14 +78,34 @@ for file in os.listdir(manual_keyword_dir_two):
 
 	contigency_tables += contigency_table
 
-	with codecs.open(os.path.join(manual_output_dir, file + '.gold_keywords.txt'), 'w' , encoding='utf-8') as outfile:
-		outfile.write('\n'.join(list(gold_standard)))
 
-	gold_goals += [(manual_output_dir + file, len(' '.join(list(gold_standard)).split(' ')))] #if mwe counts as multiple words
+
+	# Let's Transform Gold Standard and Tolerated Phrases into a set of lemmatized words.
+	lemmatizer = nltk.stem.WordNetLemmatizer()
+	
+	gold_standard_tokens = []
+	for token in gold_standard:
+		gold_standard_tokens += token.split()
+
+	gold_standard_lemmatized = [lemmatizer.lemmatize(token) for token in gold_standard_tokens]
+	gold_standard_lemmatized = list(set(gold_standard_lemmatized))
+
+	tolerated_tokens = []
+	for token in tolerated:
+		tolerated_tokens += token.split()
+
+	tolerated_lemmatized = [lemmatizer.lemmatize(token) for token in tolerated_tokens]
+	tolerated_lemmatized = list(set(tolerated_lemmatized))
+
+
+	with codecs.open(os.path.join(manual_output_dir, file + '.gold_keywords.txt'), 'w' , encoding='utf-8') as outfile:
+		outfile.write('\n'.join(list(gold_standard_lemmatized)))
+
+	gold_goals += [(manual_output_dir + file, len(' '.join(list(gold_standard_lemmatized)).split(' ')))] #if mwe counts as multiple words
 	#gold_goals += [(manual_output_dir + file, len(list(gold_standard)))]# if mwe count as one word
 
 	with codecs.open(os.path.join(manual_output_dir, file + '.tolerated.txt'), 'w' , encoding='utf-8') as outfile:
-		outfile.write('\n'.join(list(tolerated)))
+		outfile.write('\n'.join(list(tolerated_lemmatized)))
 
 	tokens_one_count += len(tokens_one)
 	tokens_two_count += len(tokens_two)

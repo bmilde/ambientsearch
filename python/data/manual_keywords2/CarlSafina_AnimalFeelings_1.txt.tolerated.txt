@@ -1,7 +1,9 @@
-bushes
-behaviors
-water holes
+perfect
+tourist
+sense
+water
+brain
+bush
+behavior
 logic
-perfect sense
-brains
-tourists
+hole

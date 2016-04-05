@@ -1,7 +1,7 @@
-belief
 family
+belief
+parent
 unbelief
-parents
-arguments
+argument
 mormonism
-religious beliefs
+religious

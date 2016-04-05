@@ -1,17 +1,23 @@
-body
 anesthetic
+san
+resident
+perspective
+mortuary
+hospital
+crew
+machine
+setting
+trauma
+sterility
+warmth
+body
+life
+francisco
+patient
 garden
 repugnance
-sterility
-hospital setting
-patients life
-machines
-mortuary men
+men
+cleaning
+acute
 aesthetic
-san francisco
-residents
-acute trauma
-tubes
-warmth
-perspective
-cleaning crew
+tube

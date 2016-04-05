@@ -1,5 +1,8 @@
+thermal
 parachute
 stratosphere
-scuba diving
-thermal protection
-stratospheric suit
+protection
+suit
+stratospheric
+diving
+scuba
