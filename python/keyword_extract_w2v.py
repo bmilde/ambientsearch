@@ -331,7 +331,26 @@ class W2VKeywordExtract:
         token_scores = list(set(zip(token_labels, score_vector_two)))
         sorted_keyphrases = sorted(token_scores, key=lambda token: token[1], reverse=True)
 
-        return sorted_keyphrases[:n]
+
+        # Extract n words (phrases count as multiple words)
+        output_phrases = []
+        word_counter = 0
+        for phrase in sorted_keyphrases:
+            phrase_length = len(phrase.split('_'))
+            word_counter += phrase_length
+
+            if word_counter > n:
+                # Too many words -> cut off mwe
+                remain = '_'.join(phrase.split('_')[:-(word_counter - n)])
+                output_phrases.append(remain)
+                break
+            elif word_counter == n:
+                output_phrases.append(phrase)
+                break
+            else:
+                output_phrases.append(phrase)
+
+        return output_phrases
 
 
 if __name__ == "__main__":
@@ -339,31 +358,48 @@ if __name__ == "__main__":
     ke = W2VKeywordExtract()
 
     ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
+    output_dir = os.path.join(data_directory(), 'keywords_our_method')
+
+    # Fetching number of keywords to extract
+    keyword_counts = {}
+    with codecs.open('goal_goals.txt', 'r', encoding='utf-8', errors='replace') as in_file:
+        for line in in_file:
+            keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
+
+
     for file in os.listdir(ted_root_dir):
         if file.endswith('.txt'):
             with codecs.open(os.path.join(ted_root_dir, file), 'r', encoding='utf-8', errors='replace') as in_file:
+
                 print 'Processing', file, ':'
 
                 raw = in_file.read()
-                tokens = ke.preprocess_text(raw)
+                num_tokens = keyword_counts[file]
+                # tokens = ke.preprocess_text(raw)
 
                 print 'Text:'
                 for sentence in nltk.sent_tokenize(raw):
                     print sentence
-                print 'Tokens:', tokens
+                # print 'Tokens:', tokens
 
-                ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
+                # ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
                 # K-Means can be used alternatively (speeds up process, yields slightly worse results though)
                 # ap_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-                scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
-                cluster_scores = [cluster[1] for cluster in scored_clusters]
-                sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
-                print "Affinity Propagation:"
-                print ap_clusters_map
-                print cluster_centers
-                print sorted(scored_clusters, key=lambda cluster: cluster[1])
-                print "Keyphrases:"
-                print sorted_keyphrases
+                # scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
+                # cluster_scores = [cluster[1] for cluster in scored_clusters]
+                # sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
+                # print "Affinity Propagation:"
+                # print ap_clusters_map
+                # print cluster_centers
+                # print sorted(scored_clusters, key=lambda cluster: cluster[1])
+                # print "Keyphrases:"
+                # print sorted_keyphrases
 
-                # print "Habibi-Mimic:"
-                # print ke.habibi_mimic(tokens)
+                print "Habibi-Mimic:"
+                extracted = ke.habibi_mimic(raw, n=num_tokens)
+                print extracted
+
+                # Write extracted tokens into file
+                with codecs.open(os.path.join(output_dir, file), 'w', encoding='utf-8') as out_file:
+                    out_file.write('\n'.join([elem for elem in extracted]))
+
