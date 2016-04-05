@@ -1,12 +1,16 @@
+map
+plant
 radioactivity
-topographical map
-elevation map
-river system
-nuclear power plant
+elevation
+estuary
+power
+nuclear
+topographical
+system
 ocean
-radioactive dust
-fisherman
-estuaries
 seabed
-fishermen
+fisherman
+dust
+radioactive
+river
 sediment

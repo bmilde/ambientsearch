@@ -1,4 +1,6 @@
+parachute
+gravity
 pipe
-zero gravity
-drogue parachute
+zero
+drogue
 tangle

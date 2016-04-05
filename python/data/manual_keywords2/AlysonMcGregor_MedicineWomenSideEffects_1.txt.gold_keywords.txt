@@ -1,9 +1,18 @@
-medical research
-animal studies
-government accountability
-male cells
-food and drug administration
-patients
-side effects
-women
-clinical trials
+and
+male
+patient
+government
+food
+medical
+administration
+effect
+drug
+accountability
+cell
+trial
+woman
+animal
+clinical
+research
+study
+side

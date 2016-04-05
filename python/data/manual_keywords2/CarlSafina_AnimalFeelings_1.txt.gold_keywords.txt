@@ -1,7 +1,7 @@
-bigger brain
-elephants
-humans
+convolution
 dolphin
 mind
-minds
-convolutions
+brain
+human
+elephant
+bigger

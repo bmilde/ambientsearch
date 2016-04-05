@@ -1,8 +1,9 @@
-spectrometry
-bangladesh
-hong kong
-water
-spectrums
-spectrometer
+hong
 prototype
+bangladesh
+spectrum
+kong
+water
+spectrometer
+spectrometry
 sensor

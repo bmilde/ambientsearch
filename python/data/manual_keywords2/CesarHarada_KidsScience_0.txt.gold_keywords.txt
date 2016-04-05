@@ -1,9 +1,8 @@
 classroom
-oceans
-plastic bits
-robots
+rapid
 robot
-workshop
-ocean
 plastic
-rapid prototyping
+prototyping
+workshop
+bit
+ocean

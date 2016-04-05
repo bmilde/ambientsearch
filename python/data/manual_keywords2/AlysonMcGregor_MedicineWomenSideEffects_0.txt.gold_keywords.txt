@@ -1,6 +1,7 @@
-medical science
-medications
-gender
+medication
+patient
+doctor
+science
+medical
 sex
-patients
-doctors
+gender

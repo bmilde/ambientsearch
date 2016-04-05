@@ -1,6 +1,9 @@
 death
 patient
-american health care system
+system
+american
+health
 healthcare
 hospice
 dysfunction
+care

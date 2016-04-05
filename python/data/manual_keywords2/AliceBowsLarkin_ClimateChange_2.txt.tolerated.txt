@@ -1,18 +1,25 @@
 beijing
-power stations
+global
+four
 thermal
 london
-temperature extremes
 city
-average temperatures
+temperature
 mumbai
-heat wave
-new york
-global average temperatures
-thermal inertia
-rail networks
+power
+station
+new
+extreme
+type
+degree
+rail
+wave
+heat
+york
+inertia
+network
 land
-four degree type scenario
+scenario
+average
 planet
-extremes
 manchester
