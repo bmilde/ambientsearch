@@ -35,8 +35,10 @@ def check_path(path):
 def data_directory():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
+# w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
 w2v_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.word2vec'))
 # w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-vectors-negative300.bin.gz'))
+# tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
 tfidf_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.tfidf'))
 tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
@@ -331,24 +333,23 @@ class W2VKeywordExtract:
         token_scores = list(set(zip(token_labels, score_vector_two)))
         sorted_keyphrases = sorted(token_scores, key=lambda token: token[1], reverse=True)
 
-
         # Extract n words (phrases count as multiple words)
         output_phrases = []
         word_counter = 0
         for phrase in sorted_keyphrases:
-            phrase_length = len(phrase.split('_'))
+            phrase_length = len(phrase[0].split('_'))
             word_counter += phrase_length
 
             if word_counter > n:
                 # Too many words -> cut off mwe
-                remain = '_'.join(phrase.split('_')[:-(word_counter - n)])
-                output_phrases.append(remain)
+                remain = '_'.join(phrase[0].split('_')[:-(word_counter - n)])
+                output_phrases.append((remain, phrase[1]))
                 break
             elif word_counter == n:
-                output_phrases.append(phrase)
+                output_phrases.append((phrase[0], phrase[1]))
                 break
             else:
-                output_phrases.append(phrase)
+                output_phrases.append((phrase[0], phrase[1]))
 
         return output_phrases
 
@@ -377,9 +378,9 @@ if __name__ == "__main__":
                 num_tokens = keyword_counts[file]
                 # tokens = ke.preprocess_text(raw)
 
-                print 'Text:'
-                for sentence in nltk.sent_tokenize(raw):
-                    print sentence
+                # print 'Text:'
+                # for sentence in nltk.sent_tokenize(raw):
+                    # print sentence
                 # print 'Tokens:', tokens
 
                 # ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
@@ -401,5 +402,5 @@ if __name__ == "__main__":
 
                 # Write extracted tokens into file
                 with codecs.open(os.path.join(output_dir, file), 'w', encoding='utf-8') as out_file:
-                    out_file.write('\n'.join([elem for elem in extracted]))
+                    out_file.write('\n'.join([' '.join(elem[0].split('_')) for elem in extracted]))
 
