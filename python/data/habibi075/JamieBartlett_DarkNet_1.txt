@@ -9,4 +9,3 @@ users
 buyer
 deals
 product
-browse

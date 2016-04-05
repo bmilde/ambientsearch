@@ -5,4 +5,3 @@ google
 acknowledge
 question
 fact
-applauded

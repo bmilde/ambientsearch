@@ -5,4 +5,3 @@ sense
 aware
 brains
 humans
-mind

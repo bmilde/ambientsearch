@@ -5,4 +5,3 @@ infrastructure
 experience
 temperatures
 energy
-withstand

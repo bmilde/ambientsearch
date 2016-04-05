@@ -7,4 +7,3 @@ blog
 facebook
 dog
 pig
-search

@@ -5,4 +5,3 @@ mind
 dolphin
 sense
 humans
-bother

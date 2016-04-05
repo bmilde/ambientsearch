@@ -9,9 +9,3 @@ attacks
 officer
 terrorist
 conflict
-weapon
-captured
-discover
-adversary
-security
-fight

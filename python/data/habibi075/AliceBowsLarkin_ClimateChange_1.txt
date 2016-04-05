@@ -12,5 +12,3 @@ emissions
 devastating
 subjective
 climate
-degree
-disruptive

@@ -9,9 +9,3 @@ security
 warfare
 app
 constant
-attack
-conflict
-rifle
-phones
-tells
-costly

@@ -10,5 +10,3 @@ existential
 argue
 allies
 response
-war
-calls

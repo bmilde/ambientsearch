@@ -12,5 +12,3 @@ disruptive
 cost
 immediately
 trend
-poor
-equity

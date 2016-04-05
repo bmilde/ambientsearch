@@ -14,5 +14,3 @@ sprinkled
 plant
 banks
 leaking
-data
-nickel

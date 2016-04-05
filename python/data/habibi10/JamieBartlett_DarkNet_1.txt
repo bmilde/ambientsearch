@@ -9,4 +9,3 @@ vendors
 pay
 consumer
 currency
-browse

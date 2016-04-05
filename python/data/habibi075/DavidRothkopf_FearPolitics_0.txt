@@ -10,5 +10,3 @@ casualties
 surveillance
 calls
 values
-allies
-entire

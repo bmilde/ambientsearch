@@ -7,4 +7,3 @@ google
 protest
 web
 swedish
-search
