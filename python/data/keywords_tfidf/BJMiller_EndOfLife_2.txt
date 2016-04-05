@@ -1,0 +1,10 @@
+hospital
+body
+mortuary
+treatable
+resident
+anaesthetic
+hospice
+sheen
+numbness
+warmth

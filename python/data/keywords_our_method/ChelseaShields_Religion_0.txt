@@ -1,0 +1,12 @@
+religion
+belief
+influence
+sanction
+discrimination
+secular
+religious
+amendment
+gender
+financial
+leadership
+organisation

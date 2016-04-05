@@ -1,0 +1,6 @@
+temperature
+global
+infrastructure
+impact
+extreme
+temperature range

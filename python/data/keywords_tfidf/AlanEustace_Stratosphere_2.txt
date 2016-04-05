@@ -1,0 +1,6 @@
+tandem
+parachute
+pipe
+gravity
+potential
+stroke

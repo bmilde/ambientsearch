@@ -1,0 +1,10 @@
+hospital
+body
+anaesthetic
+trauma
+mortuary
+warmth
+grief
+acute
+treatable
+numbness

@@ -1,0 +1,6 @@
+medical
+medication
+evidence
+prescribing
+medical emergency
+patient

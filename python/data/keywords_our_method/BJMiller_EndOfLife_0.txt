@@ -1,0 +1,8 @@
+patient
+health
+dysfunction
+palliative
+electrical current
+hospice
+commuter
+brilliance
