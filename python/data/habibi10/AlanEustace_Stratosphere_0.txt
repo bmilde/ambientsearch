@@ -1,0 +1,7 @@
+astronauts
+apollo
+planet
+stratosphere
+space
+colder
+warmer

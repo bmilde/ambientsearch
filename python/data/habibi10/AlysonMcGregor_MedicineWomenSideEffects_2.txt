@@ -1,0 +1,11 @@
+medical
+sex
+health
+pregnancy
+fetus
+women
+uterus
+hormones
+reproductive
+ovaries
+organs

@@ -1,0 +1,7 @@
+medical
+sex
+medication
+gender
+medicine
+prescribing
+stabbed

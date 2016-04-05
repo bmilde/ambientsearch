@@ -20,4 +20,4 @@ for myfile,number in goal_goals:
 
     subprocess.call("touch W/2", shell=True)
     subprocess.call("matlab -r \"try;run('TestMaryamTexts2.m');catch;end;quit;\"", shell=True)
-    subprocess.call("mv W/2 habibi10/" + myfile.split("/")[-1], shell=True)
+    subprocess.call("mv W/2 habibi075/" + myfile.split("/")[-1], shell=True)
