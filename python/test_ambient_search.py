@@ -26,7 +26,7 @@ if __name__ == "__main__":
             keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
 
     i = 0
-    for file in os.listdir(ted_root_dir):
+    for file in sorted(os.listdir(ted_root_dir)):
         if file.endswith('.txt'):
             with codecs.open(os.path.join(ted_root_dir, file), 'r', encoding='utf-8', errors='replace') as in_file:
                 print 'Processing', file, ':'

@@ -359,7 +359,7 @@ if __name__ == "__main__":
     ke = W2VKeywordExtract()
 
     ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
-    output_dir = os.path.join(data_directory(), 'keywords_our_method')
+    output_dir = os.path.join(data_directory(), 'keywords_tfidf')
 
     # Fetching number of keywords to extract
     keyword_counts = {}
