@@ -18,6 +18,12 @@ if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = keyword_extract_w2v.W2VKeywordExtract()
     ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
+    
+    # Fetching number of keywords to extract
+    keyword_counts = {}
+    with codecs.open('goal_goals.txt', 'r', encoding='utf-8', errors='replace') as in_file:
+        for line in in_file:
+            keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
 
     i = 0
     for file in os.listdir(ted_root_dir):
@@ -26,11 +32,12 @@ if __name__ == "__main__":
                 print 'Processing', file, ':'
 
                 raw = in_file.read()
+                num_tokens = keyword_counts[file]
 
                 start_time = time.time()
 
                 print 'Extracting keyphrases...'
-                tokens = ke.extract_best_keywords(raw, n=9)
+                tokens = ke.habibi_mimic(raw, n=num_tokens)
                 print 'Done extracting keyphrases. Time needed:', time.time() - start_time
 
                 print '==========Text=========='
