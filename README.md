@@ -32,42 +32,64 @@ At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR
 
 The system extracts keyphrases from speech input. This mainly uses a precomputed [http://maggie.lt.informatik.tu-darmstadt.de/jobimtext/components/druid/](DRUID) list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF.
 
-Some examples of the keyphrase extraction:
+Examples of keyphrase extraction in speech transcriptions using various methods:
 
 Original:
 
-> Over our lifetimes, we've all contributed to climate change. Actions, choices and behaviors will have led to an increase in greenhouse gas emissions. And I think that that's quite a powerful thought. But it does have the potential to make us feel guilty when we think about decisions we might have made around where to travel to, how often and how, about the energy that we choose to use in our homes or in our workplaces, or quite simply the lifestyles that we lead and enjoy. But we can also turn that thought on its head, and think that if we've had such a profound but a negative impact on our climate already, then we have an opportunity to influence the amount of future climate change that we will need to adapt to. So we have a choice. We can either choose to start to take climate change seriously, and significantly cut and mitigate our greenhouse gas emissions, and then we will have to adapt to less of the climate change impacts in future. Alternatively, we can continue to really ignore the climate change problem. But if we do that, we are also choosing to adapt to very much more powerful climate impacts in future. And not only that. As people who live in countries with high per capita emissions, we're making that choice on behalf of others as well. But the choice that we don't have is a no climate change future.
+> But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death. So this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.
 
 Kaldi transcript from audio file:
 
-> 
+> but dangerous climate change can be subjective so if we think about extreme weather event that might happen in some part of the world and if that happens in a part of the world where there is good. infrastructure whether people are well insured and so on then time had can be disruptive it can cause upsets it could cause cost it could even cause some deaths but if the exact same weather event happens in a part of the world where there is poor infrastructure or where people are not. well insured over not having good support networks then assign climate change impacts could be devastating it could cause a significant loss of home but it could also cause significant amounts of deaths so this is a graph of the c o two emissions of the left hand side from fossil fuels. an industry and time from before the industrial revolution out towards the present child and was immediately striking about best is the emissions have been growing exponentially. if we focus in on a shorter period of time from nineteen fifty we have established in nineteen eighty eight the intergovernmental panel on climate change. the rio earth summit in ninety ninety two than rolling on a few years in two thousand and nine we had the copenhagen accord were established avoiding a two degree temperature rise in keeping with the science and on the basis of equity and then in twenty twelve we had the rio plus twenty. event and all the way through during all of these meetings and many others as well and missions have continued to rise. and if we focus on our historical and mission trend in recent years and we put that together with our understanding of the direction of travel in our global economy then we're much more on track for a full degree centigrade global warming family are for the two degree centigrade
 
 TF-IDF trained on all entries of the DRUID dictionary:
 
+centigrade
 climate
-future
 emission
-impact
-greenhouse gas emissions
-negative impacts
-kurd
+infrastructure
+rio
+significant
+o
+mission
+event
+equity
+fossil fuel
+industrial revolution
 
-Using the method from Habibi and Popescu-Belis: ["Keyword extraction and clustering for document recommendation in conversations"](http://infoscience.epfl.ch/record/203854/files/Habibi_IEEEACMTASLP_2014.pdf)
+Using the method from Habibi and Popescu-Belis ["Keyword extraction and clustering for document recommendation in conversations"](http://infoscience.epfl.ch/record/203854/files/Habibi_IEEEACMTASLP_2014.pdf):
 
-greenhouse
+warming
 impacts
-emissions
-workplaces
-gas
-behaviors
-mitigate
-energy
+global
+infrastructure
+insured
 climate
-potential
+subjective
+understanding
+emissions
+economy
+disruptive
+cost
+immediately
+trend
 
+Ambient Search:
 
+emission
+climate
+infrastructure
+significant
+centigrade
+global warming
+event
+fossil fuel
+trend
+mission
+disruptive
+graph
 
-In the above, we have allowed an equal number of words per method, counting multi-word terms as multiple words.
+In the above, we have allowed each method to propose its 14 best ranking words (keywords), counting proposed multi-word terms (key phrases) as multiple words.
 
 # Installation and running instructions
 
