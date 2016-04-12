@@ -47,47 +47,81 @@ TF-IDF trained on all entries of the DRUID dictionary:
 >centigrade
 
 >climate
+
 >emission
+
 >infrastructure
+
 >rio
+
 >significant
+
 >o
+
 >mission
+
 >event
+
 >equity
+
 >fossil fuel
+
 >industrial revolution
 
 Using the method from Habibi and Popescu-Belis ["Keyword extraction and clustering for document recommendation in conversations"](http://infoscience.epfl.ch/record/203854/files/Habibi_IEEEACMTASLP_2014.pdf):
 
 >warming
+
 >impacts
+
 >global
+
 >infrastructure
+
 >insured
+
 >climate
+
 >subjective
+
 >understanding
+
 >emissions
+
 >economy
+
 >disruptive
+
 >cost
+
 >immediately
+
 >trend
 
 Ambient Search:
 
 >emission
+
 >climate
+
 >infrastructure
+
 >significant
+
 >centigrade
+
 >global warming
+
 >event
+
 >fossil fuel
+
 >trend
+
 >mission
+
 >disruptive
+
 >graph
 
 In the above, we have allowed each method to propose its 14 best ranking words (keywords), counting proposed multi-word terms (key phrases) as multiple words. You can find many more examples in the python/data folder.
