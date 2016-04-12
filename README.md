@@ -30,11 +30,11 @@ At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR
 
 # Keyphrase extraction
 
-The system extracts keyphrases from speech input. This mainly uses a precomputed [http://maggie.lt.informatik.tu-darmstadt.de/jobimtext/components/druid/](DRUID) list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF.
+The system extracts keyphrases from speech input. This mainly uses a precomputed [http://maggie.lt.informatik.tu-darmstadt.de/jobimtext/components/druid/](DRUID) list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF in Ambient Search.
 
 Examples of keyphrase extraction in speech transcriptions using various methods:
 
-Original:
+Manual transcript:
 
 > But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death. So this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.
 
@@ -89,7 +89,7 @@ mission
 disruptive
 graph
 
-In the above, we have allowed each method to propose its 14 best ranking words (keywords), counting proposed multi-word terms (key phrases) as multiple words.
+In the above, we have allowed each method to propose its 14 best ranking words (keywords), counting proposed multi-word terms (key phrases) as multiple words. You can find many more examples in the python/data folder.
 
 # Installation and running instructions
 
