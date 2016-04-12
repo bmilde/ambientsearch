@@ -44,29 +44,18 @@ Kaldi transcript from audio file:
 
 TF-IDF trained on all entries of the DRUID dictionary:
 
->centigrade
-
->climate
-
->emission
-
->infrastructure
-
->rio
-
->significant
-
->o
-
->mission
-
->event
-
->equity
-
->fossil fuel
-
->industrial revolution
+| centigrade |
+| climate |
+| emission |
+| infrastructure |
+| rio |
+| significant |
+| o |
+| mission |
+| event |
+| equity |
+| fossil fuel |
+| industrial revolution |
 
 Using the method from Habibi and Popescu-Belis ["Keyword extraction and clustering for document recommendation in conversations"](http://infoscience.epfl.ch/record/203854/files/Habibi_IEEEACMTASLP_2014.pdf):
 
