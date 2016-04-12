@@ -29,9 +29,9 @@ At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR
 
 # Keyphrase extraction
 
-The system extracts keyphrases from speech input. This mainly uses a precomuted DRUID list, to find possible candidates. These candidates are then ranked using word2vec and TF-IDF
+The system extracts keyphrases from speech input. This mainly uses a precomuted DRUID list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF
 
-Some exmamples of the keyphrase extraction:
+Some examples of the keyphrase extraction:
 
 TODO
 
