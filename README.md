@@ -11,18 +11,19 @@ Ambient search is implemented in Python and uses the Flask Microframework to int
 Impression of the system after listening to the TED talk ["We’re too late to prevent climate change - here is how we adapt"](https://www.ted.com/talks/alice_bows_larkin_we_re_too_late_to_prevent_climate_change_here_s_how_we_adapt?language=en):
 
 <p align="center">
-<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot1.png" width="600px" align="center">
+<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot1.png" width="600px">
 </p>
 
 Detail view to read an article:
 
 <p align="center">
-<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot2.png" width="600px" align="center">
+<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot2.png" width="600px">
 </p>
 
 # Overview
+
 <p align="center">
-![overview](https://github.com/bmilde/ambientsearch/raw/master/screenshots/overview.png)
+<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/overview.png">
 </p>
 
 At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR system emits the partial sentence hypothesis and also predicts sentence boundaries. Once a full sentence has been hypothesized, new keywords/keyphrases are extracted in the current sentence, if available (2). These keyphrases are then ranked (3) and merged with the ones from previous sentences. A query is then composed, which is submitted to a precomputed index of documents (4). Eventually, the returned documents are also aggregated (5a), i.e. older documents found with previous sentences decay their score over time and newer documents are sorted into a list of n best documents. This list is thus sorted by topical relevance of the documents and by time, with newer documents having precedence. Finally, the n best relevant documents are presented to the user (5b) and updated as soon as changes become available. Alongside the n best documents,a timeline of previously suggested articles is also maintained and displayed.
