@@ -1,6 +1,6 @@
 # Ambient Search
 
-Ambient search is an open source system released under the Apache license for displaying and retrieving relevant documents in real time for speech input. The system works ambiently, that is, it unobstructively listens to speech streams in the background and continuously serves relevant documents from its index. 
+Ambient search is an open source system for displaying and retrieving relevant documents in real time for speech input. The system works ambiently, that is, it unobstructively listens to speech streams in the background and continuously serves relevant documents from its index. 
 
 The retrieved documents, in the default installation Wikipedia articles from the [Simple English Wikipedia](https://simple.wikipedia.org/wiki/Main_Page), are visualized in real time in a browser interface and as a user you can choose to interact with the system or merely employ it as an enriched conversation protocol.
 
