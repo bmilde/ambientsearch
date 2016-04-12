@@ -45,6 +45,7 @@ Kaldi transcript from audio file:
 TF-IDF trained on all entries of the DRUID dictionary:
 
 >centigrade
+
 >climate
 >emission
 >infrastructure
