@@ -38,6 +38,6 @@ TODO
 
 # Installation instructions
 
-Prerequisits: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [https://github.com/elastic/stream2es](stream2es)
+Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [https://github.com/elastic/stream2es](stream2es)
 
 Clone this project and check out the detailed installation instructions in the INSTALL file.
