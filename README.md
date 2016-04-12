@@ -30,14 +30,18 @@ At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR
 
 # Keyphrase extraction
 
-The system extracts keyphrases from speech input. This mainly uses a precomuted DRUID list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF.
+The system extracts keyphrases from speech input. This mainly uses a precomputed [http://maggie.lt.informatik.tu-darmstadt.de/jobimtext/components/druid/](DRUID) list to find possible candidates. These candidates are then ranked using Word2vec and TF-IDF.
 
 Some examples of the keyphrase extraction:
 
 TODO
 
-# Installation instructions
+# Installation and running instructions
 
-Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [https://github.com/elastic/stream2es](stream2es)
+Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [https://github.com/elastic/stream2es](stream2es). Precompiled models are available for the Simple English Wikipedia, see [https://github.com/bmilde/ambientsearch/blob/master/python/data/download_druid.sh](this download script.)
 
-Clone this project and check out the detailed installation instructions in the INSTALL file.
+Clone this project and check out the detailed installation and running instructions in the INSTALL file.
+
+# Training your own model
+
+Coming very soon
