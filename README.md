@@ -21,7 +21,9 @@ Detail view to read an article:
 </p>
 
 # Overview
+<p align="center">
 ![overview](https://github.com/bmilde/ambientsearch/raw/master/screenshots/overview.png)
+</p>
 
 At ﬁrst, the speech signal is transcribed by an online ASR system (1). The ASR system emits the partial sentence hypothesis and also predicts sentence boundaries. Once a full sentence has been hypothesized, new keywords/keyphrases are extracted in the current sentence, if available (2). These keyphrases are then ranked (3) and merged with the ones from previous sentences. A query is then composed, which is submitted to a precomputed index of documents (4). Eventually, the returned documents are also aggregated (5a), i.e. older documents found with previous sentences decay their score over time and newer documents are sorted into a list of n best documents. This list is thus sorted by topical relevance of the documents and by time, with newer documents having precedence. Finally, the n best relevant documents are presented to the user (5b) and updated as soon as changes become available. Alongside the n best documents,a timeline of previously suggested articles is also maintained and displayed.
 
