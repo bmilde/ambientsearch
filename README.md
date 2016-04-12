@@ -8,11 +8,11 @@ Ambient search is implemented in Python and uses the Flask Microframework to int
 
 # Impressions
 
-<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot1.png" width="600px">
+<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot1.png" width="600px" align="center">
 
 Impression of the system after listening to the TED talk ["We’re too late to prevent climate change - here is how we adapt"](https://www.ted.com/talks/alice_bows_larkin_we_re_too_late_to_prevent_climate_change_here_s_how_we_adapt?language=en)
 
-<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot2.png" width="600px">
+<img src="https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot2.png" width="600px" align="center">
 
 Detail view to read an article.
 
