@@ -1,3 +1,3 @@
 # Ambientsearch
 
-![screenshot](https://github.com/bmilde/ambientsearch/raw/master/screenshots/solarized-vim.png)
+![screenshot](https://github.com/bmilde/ambientsearch/raw/master/screenshots/screenshot1.png)
