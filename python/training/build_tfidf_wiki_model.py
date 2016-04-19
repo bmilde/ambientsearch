@@ -49,6 +49,8 @@ def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_
         logger.info('Converting ' + str(corpus_path) + ' into plain text file: ' + wiki_text_output_path)
         # Convert Wikipedia XML dump into .txt format
         wikidump2text.convert(corpus_path, wiki_text_output_path)
+    else:
+        logger.info('Found ', wiki_text_output_path, ' not converting from the raw bz2 file.')
 
     # Load Multiword Expressions as Dictionary
     stopwords_path = join(data_directory, 'stopwords_en.txt')
