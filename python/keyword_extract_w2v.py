@@ -317,7 +317,7 @@ class W2VKeywordExtract:
 
         return tf * idf
 
-    def habibi_mimic(self, text, n=9):
+    def habibi_mimic(self, text, n=9, tfidf_only=True):
         tokens = self.preprocess_text(text)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
@@ -330,7 +330,11 @@ class W2VKeywordExtract:
         tf_idf_vector = [self.get_tf_idf(token, token_labels) for token in token_labels]
         score_vector_two = score_vector * tf_idf_vector
 
-        token_scores = list(set(zip(token_labels, score_vector_two)))
+        if tfidf_only:
+            token_scores = list(set(zip(token_labels, score_vector_two)))
+        else:
+            token_scores = list(set(zip(token_labels, tf_idf_vector)))
+        
         sorted_keyphrases = sorted(token_scores, key=lambda token: token[1], reverse=True)
 
         # Extract n words (phrases count as multiple words)
@@ -359,7 +363,7 @@ if __name__ == "__main__":
     ke = W2VKeywordExtract()
 
     ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
-    output_dir = os.path.join(data_directory(), 'keywords_tfidf')
+    output_dir = os.path.join(data_directory(), 'keywords_tfidf_only')
 
     # Fetching number of keywords to extract
     keyword_counts = {}
