@@ -14,7 +14,6 @@ tfidf_dir = os.path.join(data_directory(), 'keywords_tfidf')
 
 lemmatizer = nltk.stem.WordNetLemmatizer()
 
-
 habibi_div_recalls = []
 habibi_no_div_recalls = []
 our_method_recalls = []
@@ -25,6 +24,7 @@ habibi_no_div_hrrs = []
 our_method_hrrs = []
 tfidf_hrrs = []
 
+filenames = []
 
 for file in os.listdir(manual_dir):
     if file.endswith('gold_keywords.txt'):
@@ -100,8 +100,11 @@ for file in os.listdir(manual_dir):
             hrr = len(list(set(tfidf_tokens) - set(gold_standard) - set(tolerated))) / float(len(tfidf_tokens))
             tfidf_hrrs.append(hrr)
 
+
             print 'Recall:', len(list(set(tfidf_tokens) & set(gold_standard))), '/', len(gold_standard), '=', recall
             print 'HRR:', len(list(set(tfidf_tokens) - set(gold_standard) - set(tolerated))), '/', len(tfidf_tokens), '=', hrr
+
+        filenames.append(raw_file)
 
 
 print "-----------------Final Scores-----------------"
@@ -130,3 +133,6 @@ hrr = sum(tfidf_hrrs) / len(tfidf_hrrs)
 hrr_std = np.std(tfidf_hrrs)
 difference = recall - hrr
 print "TF-IDF:", recall, "(", recall_std, "), ", hrr, "(", hrr_std, "), ", difference
+
+print "Individual keyphrase relevance values:"
+print sorted(zip(filenames,np.array(our_method_recalls) - np.array(our_method_hrrs)))
