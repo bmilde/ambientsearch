@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd data/
 # English DRUID wiki lookup list
 wget http://machinelearning.online/nlp/druid/enwiki_mwe_druid_200_1000_sorted_length.bz2
 mv enwiki_mwe_druid_200_1000_sorted_length.bz2 druid_en.bz2
@@ -13,3 +14,5 @@ wget http://machinelearning.online/ambient_search/simple-enwiki-latest-models.ta
 tar xvfj simple-enwiki-latest-models.tar.bz2
 rm simple-enwiki-latest-models.tar.bz2
 wget http://machinelearning.online/ambient_search/conversation.tfidf
+
+cd ..
