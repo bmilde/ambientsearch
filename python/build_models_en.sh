@@ -1,3 +1,14 @@
+#!/bin/bash
+
+cd data/
+if [ ! -f druid_en.bz ]
+then
+    # download English DRUID wiki lookup list
+    wget http://machinelearning.online/nlp/druid/enwiki_mwe_druid_200_1000_sorted_length.bz2
+    mv enwiki_mwe_druid_200_1000_sorted_length.bz2 druid_en.bz2
+fi
+cd ..
+
 # Build conversational model
 
 mkdir data/ami_raw
