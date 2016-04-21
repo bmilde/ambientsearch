@@ -2,12 +2,15 @@ INSTALL
 #######
 
 Prequisites: Currently a running local redis server is needed, see http://redis.io/
-e.g. on Debian/Ubuntu, this can be easily installed with: sudo apt-get install redis-server
-on Mac/OS X: brew install redis (and you need to start the redis-server program manually in a console)
+and the port audio library is needed if you want to stream microphone input.
 
-You also need Python-2.7 with a couple of additional modules that you can easily install with pip:
+e.g. on Debian/Ubuntu, this can be easily installed with: sudo apt-get install redis-server libportaudio-dev
+on Mac/OS X: brew install redis portaudio (and you need to start the redis-server program manually in a console
+ or follow the instructions to have it automatically started with each boot)
 
-pip install flask redis nltk wikipedia ws4py pyaudio topia.termextract elasticsearch
+You need Python-2.7 with a couple of additional modules that you can easily install with pip:
+
+pip install numpy flask redis nltk wikipedia ws4py pyaudio topia.termextract elasticsearch gensim
 
 You can now start the scripts from the root directory of the project:
 

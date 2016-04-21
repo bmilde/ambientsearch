@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Build conversational model
 
 mkdir data/ami_raw
@@ -14,17 +16,18 @@ cd ../../
 mkdir data/ami_transcripts/
 
 python training/ami2text.py
+python training/build_tfidf_conversation_model.py
 
 # Build models for the simple Wikipedia
 
 cd data/
-
 if [ ! -f simplewiki-latest-pages-articles.xml.bz2 ]
 then
         echo "Downloading simple Wikipedia"
         wget https://dumps.wikimedia.org/simplewiki/latest/simplewiki-latest-pages-articles.xml.bz2
         tar xvfj simplewiki-latest-pages-articles.xml.bz2
 fi
+cd ..
 
 python training/build_tfidf_wiki_model.py
 python training/build_word2vec_model.py
