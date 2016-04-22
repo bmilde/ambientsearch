@@ -64,4 +64,4 @@ Clone this project and check out the detailed installation and running instructi
 
 # Training your own models
 
-If you want to train your own models, see our [training script](https://github.com/bmilde/ambientsearch/blob/master/python/build_models_en.sh). You can of course also change the input corpus from the simple Wikipedia to the full Wikipedia, but it will take considerably longer to train your models. Instructions to train your own DRUID lookup table can be found on the [Jobimtext / DRUID website](http://jobimtext.org/components/druid/).
+If you want to train your own models, see our [training script](https://github.com/bmilde/ambientsearch/blob/master/python/build_models_en.sh). You can of course also change the input corpus from the simple Wikipedia to the full Wikipedia, but it will take considerably longer to train your models. Instructions to train your own DRUID lookup table can be found on the [JoBimText / DRUID website](http://jobimtext.org/components/druid/).
