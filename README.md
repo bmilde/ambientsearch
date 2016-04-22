@@ -60,7 +60,7 @@ In the above, we have allowed each method to propose its 14 best ranking words (
 
 Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [stream2es](https://github.com/elastic/stream2es). Precompiled models are available for the Simple English Wikipedia, see [this download script.](https://github.com/bmilde/ambientsearch/blob/master/python/download_models_en.sh)
 
-Clone this project and check out the detailed installation and running instructions in the INSTALL file.
+Clone this project and check out the detailed installation and running instructions in the [INSTALL](https://github.com/bmilde/ambientsearch/blob/master/INSTALL) file.
 
 # Training your own models
 
