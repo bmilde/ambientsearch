@@ -4,7 +4,7 @@ Ambient search is an open source system for displaying and retrieving relevant d
 
 The retrieved documents, in the default installation Wikipedia articles from the [Simple English Wikipedia](https://simple.wikipedia.org/wiki/Main_Page), are visualized in real time in a browser interface and as a user you can choose to interact with the system or merely employ it as an enriched conversation protocol.
 
-Ambient search is implemented in Python and uses the Flask Microframework to interact with its browser interface. It builds on [Kaldi](http://kaldi-asr.org/) and [Kaldi Gstreamer Server](https://github.com/alumae/kaldi-gstreamer-server) for the speech recognition, [Redis](http://redis.io/) to interact and pass messages between its modules and [Gensim](https://radimrehurek.com/gensim/) for topic modelling. 
+Ambient search is implemented in Python and uses the Flask Microframework to interact with its browser interface. It builds on [Kaldi](http://kaldi-asr.org/) and [Kaldi Gstreamer Server](https://github.com/alumae/kaldi-gstreamer-server) for the speech recognition, [Redis](http://redis.io/) to interact and pass messages between its modules, [DRUID](http://jobimtext.org/components/druid/) for keyphrase extraction and [Gensim](https://radimrehurek.com/gensim/) for topic modelling. 
 
 # Impressions
 
