@@ -193,7 +193,7 @@ class EventGenerator:
 
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
-    def send_relevant_entry_updates(self,max_entries=4, decay=.8):
+    def send_relevant_entry_updates(self,max_entries=4, decay=.9, context_utts=6, extract_top_n_keywords=8, min_found_keywords=4, min_transcript_utts=3):
 
         print 'send_relevant_entry_updates called'
         with Timer() as t:
@@ -205,15 +205,19 @@ class EventGenerator:
 
             # keywords = self.ke.getKeywordsDruid(self.complete_transcript[-1])
             # Take last 10 utterances and combine them
-            most_recent_transcript = " ".join(self.complete_transcript[-10:])
+            most_recent_transcript = " ".join(self.complete_transcript[-context_utts:])
             # Extract top 9 keywords
-            keywords = self.ke.extract_best_keywords(most_recent_transcript, n=9)
+            keywords = self.ke.extract_best_keywords(most_recent_transcript, n=extract_top_n_keywords)
             print keywords
-	    #abort if we found very little keywords and haven't seen 10 utterances
-	    if len(keywords) < 5 and len(self.complete_transcript) < 10:
-		return
-            # Extract top 5 wiki articles
-            new_relevant_entries = wiki_search_es.extract_best_articles(keywords, n=5)
+
+            #abort if we found very little keywords and haven't seen 4 utterances
+            if len(keywords) < min_found_keywords or len(self.complete_transcript) < min_transcript_utts:
+                return
+
+            # Extract top wiki articles
+            new_relevant_entries = wiki_search_es.extract_best_articles(keywords, n=max_entries)
+
+            print "-> Extracted top ", len(new_relevant_entries), "documents"
 
             new_relevant_entries_set = set(new_relevant_entries)
             relevant_entries_set = set(self.relevant_entries)
@@ -223,10 +227,13 @@ class EventGenerator:
             #    entry = self.relevant_entries[key]
             #    self.delDisplayEntry("wiki", entry["title"])
                 
+            num_added = 0
+
             #generate add relevant entries
             for key in new_relevant_entries_set - relevant_entries_set:
                 entry = new_relevant_entries[key]
                 if self.addDisplayEntry("wiki", entry):
+                    num_added += 1
                     for category in entry["categories"]:
                         self.categories[category] += 1  
 
@@ -258,6 +265,7 @@ class EventGenerator:
 
         print 'send_relevant_entry_updates finished. Time needed:', t.secs, 'seconds.'
         print 'Displayed entries should now be:',[entry['title'] for entry in self.displayed_entries]
+        print 'Added:',num_added
 
 if __name__ == "__main__":
 
