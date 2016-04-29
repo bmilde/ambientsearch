@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-__author__ = 'Jonas Wacker'
+__author__ = 'Jonas Wacker, Benjamin Milde'
 
 import redis
 
@@ -193,7 +193,7 @@ class EventGenerator:
 
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
-    def send_relevant_entry_updates(self,max_entries=4, decay=.9, context_utts=6, extract_top_n_keywords=8, min_found_keywords=4, min_transcript_utts=3):
+    def send_relevant_entry_updates(self,max_entries=4, decay=.8, context_utts=6, extract_top_n_keywords=8, min_found_keywords=4, min_transcript_utts=3):
 
         print 'send_relevant_entry_updates called'
         with Timer() as t:
@@ -216,16 +216,14 @@ class EventGenerator:
 
             # Extract top wiki articles
             new_relevant_entries = wiki_search_es.extract_best_articles(keywords, n=max_entries)
+            print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
 
-            print "-> Extracted top ", len(new_relevant_entries), "documents"
+            new_relevant_entries = dict(zip([entry["title"] for entry in new_relevant_entries],
+                                            [entry for entry in new_relevant_entries ] ) ) 
+
 
             new_relevant_entries_set = set(new_relevant_entries)
             relevant_entries_set = set(self.relevant_entries)
-
-            #generate del relevant entries
-            #for key in relevant_entries_set - new_relevant_entries_set:
-            #    entry = self.relevant_entries[key]
-            #    self.delDisplayEntry("wiki", entry["title"])
                 
             num_added = 0
 
