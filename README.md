@@ -4,7 +4,7 @@ Ambient search is an open source system for displaying and retrieving relevant d
 
 The retrieved documents, in the default installation Wikipedia articles from the [Simple English Wikipedia](https://simple.wikipedia.org/wiki/Main_Page), are visualized in real time in a browser interface and as a user you can choose to interact with the system or merely employ it as an enriched conversation protocol.
 
-Ambient search is implemented in Python and uses the Flask Microframework to interact with its browser interface. It builds on [Kaldi](http://kaldi-asr.org/) and [Kaldi Gstreamer Server](https://github.com/alumae/kaldi-gstreamer-server) for the speech recognition, [Redis](http://redis.io/) to interact and pass messages between its modules and [Gensim](https://radimrehurek.com/gensim/) for topic modelling. 
+Ambient search is implemented in Python and uses the Flask Microframework to interact with its browser interface. It builds on [Kaldi](http://kaldi-asr.org/) and [Kaldi Gstreamer Server](https://github.com/alumae/kaldi-gstreamer-server) for the speech recognition, [Redis](http://redis.io/) to interact and pass messages between its modules, [DRUID](http://jobimtext.org/components/druid/) for keyphrase extraction and [Gensim](https://radimrehurek.com/gensim/) for topic modelling. 
 
 # Impressions
 
@@ -58,10 +58,10 @@ In the above, we have allowed each method to propose its 14 best ranking words (
 
 # Installation and running instructions
 
-Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [https://github.com/elastic/stream2es](stream2es). Precompiled models are available for the Simple English Wikipedia, see [https://github.com/bmilde/ambientsearch/blob/master/python/data/download_druid.sh](this download script.)
+Prerequisites: you need to index some documents using elastic search. We recommend to index the Simple English Wikipedia with [stream2es](https://github.com/elastic/stream2es). Precompiled models are available for the Simple English Wikipedia, see [this download script.](https://github.com/bmilde/ambientsearch/blob/master/python/download_models_en.sh)
 
-Clone this project and check out the detailed installation and running instructions in the INSTALL file.
+Clone this project and check out the detailed installation and running instructions in the [INSTALL](https://github.com/bmilde/ambientsearch/blob/master/INSTALL) file.
 
 # Training your own models
 
-Coming very soon
+If you want to train your own models, see our [training script](https://github.com/bmilde/ambientsearch/blob/master/python/build_models_en.sh). You can of course also change the input corpus from the simple Wikipedia to the full Wikipedia, but it will take considerably longer to train your models. Instructions to train your own DRUID lookup table can be found on the [JoBimText / DRUID website](http://jobimtext.org/components/druid/).
