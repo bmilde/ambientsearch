@@ -208,6 +208,10 @@ class W2VKeywordExtract:
     def get_ap_clusters(self, tokens):
         tokens = list(set(tokens))
         df, labels_array = self.build_word_vector_matrix(tokens)
+
+        if df.shape[0] == 0:
+        	return False, tokens
+
         af = AffinityPropagation(affinity='euclidean').fit(df)
 
         cluster_centers_indices = af.cluster_centers_indices_
