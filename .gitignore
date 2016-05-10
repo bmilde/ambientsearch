@@ -1,0 +1,8 @@
+foo.mp4
+foo.vtt
+python/data/conversation.tfidf
+python/data/druid_en.bz2
+python/data/simple-enwiki-latest.tfidf
+python/data/simple-enwiki-latest.word2vec
+python/data/simple-enwiki-latest.word2vec.syn0.npy
+python/data/simple-enwiki-latest.word2vec.syn1neg.npy

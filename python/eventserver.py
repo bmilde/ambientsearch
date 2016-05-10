@@ -153,6 +153,14 @@ def flow_player():
     print 'flow player called'
     return app.send_static_file('flow_player.html')
 
+@app.route('/foo.mp4')
+def foo1():
+    return app.send_static_file('foo.mp4')
+
+@app.route('/foo.vtt')
+def foo2():
+    return app.send_static_file('foo.vtt')
+
 @app.route('/css/<path:path>')
 def send_css(path):
     return flask.send_from_directory(base_path+'css', path)
