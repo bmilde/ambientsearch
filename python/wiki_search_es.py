@@ -5,9 +5,12 @@ __author__ = 'Jonas Wacker, Benjamin Milde'
 from elasticsearch import Elasticsearch
 import nltk
 import traceback
+import nltk.data
 
 wiki_index = 'simple_en_wiki2'
 default_type = 'page'
+
+sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 
 # Currently using a public server. Configure this to your own server.
 es = Elasticsearch([
@@ -78,10 +81,57 @@ def construct_query_string(keywords, scores=True, fuzziness=False, multiword=Tru
 
     return " ".join(keyword_strings)
 
+#Adapted from http://stackoverflow.com/questions/14596884/remove-text-between-and-in-python
+def clean_wiki_brackets(text):
+  ret = ''
+  skip1c = 0
+  skip2c = 0
+  skip3c = 0
+  skip4c = 0
+
+  for i in text:
+      if i == '[':
+          skip1c += 1
+      elif i == '(':
+          skip2c += 1
+      elif i == '{':
+          skip3c += 1
+      elif i == '|':
+          skip4c += 1    
+      elif i == ']' and skip1c > 0:
+          skip1c -= 1
+      elif i == ')'and skip2c > 0:
+          skip2c -= 1
+      elif i == '}'and skip3c > 0:
+          skip3c -= 1
+      elif i == '|'and skip4c > 0:
+          skip4c -= 1
+      elif skip1c == 0 and skip2c == 0 and skip3c == 0 and skip4c == 0:
+          ret += i
+  return ret
 
 # Extracts the first n words from the given text.
 def get_summary_from_text(text, n=50):
-    return " ".join(nltk.word_tokenize(text)[:n])
+    print '-> fulltext:',text[:500]
+    text = clean_wiki_brackets(text)
+
+    # This is actually specific to stream2es, which sometimes returns broken wiki text.
+    # This is an attempt to fix it.
+
+    if ']]' in text:
+        text = ''.join(text.split(']]')[1:])
+    print '-> fulltext cleaned:',text[:500]
+
+    sents = sent_detector.tokenize(text)
+
+    summary = ''
+
+    i = 0
+    while(len(summary) < 50):
+        summary += sents[i] + ' '
+        i += 1
+
+    return summary
 
 # Expects a set of keywords along with their scores (Tuples).
 # Extracts the n best scoring article results from elasticsearch. Use n=-1 if you want all articles returned.
