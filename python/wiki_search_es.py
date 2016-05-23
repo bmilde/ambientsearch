@@ -112,7 +112,7 @@ def clean_wiki_brackets(text):
 
 # Extracts the first n words from the given text.
 def get_summary_from_text(text, n=50):
-    print '-> fulltext:',text[:500]
+    #print '-> fulltext:',text[:500]
     text = clean_wiki_brackets(text)
 
     # This is actually specific to stream2es, which sometimes returns broken wiki text.
@@ -120,23 +120,27 @@ def get_summary_from_text(text, n=50):
 
     if ']]' in text:
         text = ''.join(text.split(']]')[1:])
-    print '-> fulltext cleaned:',text[:500]
+    #print '-> fulltext cleaned:',text[:500]
 
     sents = sent_detector.tokenize(text)
 
     summary = ''
 
     i = 0
-    while(len(summary) < 50):
+    while(len(summary) < 50 and i < len(sents)):
         summary += sents[i] + ' '
         i += 1
+
+    #print 'summary:', summary
 
     return summary
 
 # Expects a set of keywords along with their scores (Tuples).
 # Extracts the n best scoring article results from elasticsearch. Use n=-1 if you want all articles returned.
-def extract_best_articles(keywords, n=10, minimum_should_match_percent=30):
+def extract_best_articles(keywords, n=10, minimum_should_match_percent=25):
+
     simple_query_string = construct_query_string(keywords)
+    print 'wiki search query:',simple_query_string
     query = es_full_query_with_wiki_filters(simple_query_string,minimum_should_match_percent)
 
     summary_box_infos = []
@@ -153,12 +157,14 @@ def extract_best_articles(keywords, n=10, minimum_should_match_percent=30):
         return summary_box_info
 
     for result in results['hits']['hits']:
+
         title = result['_source']['title']
         full_text = result['_source']['text']
         categories = result['_source']['category']
         score = result['_score']
         summary = get_summary_from_text(full_text)
         url = 'https://simple.wikipedia.org/w/index.php?title='+title.replace(' ', '_')
+        print 'wiki search: found',title,'with score',score
 
         summary_box_infos.append({
             'title': title,
