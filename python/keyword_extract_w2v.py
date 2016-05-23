@@ -18,7 +18,8 @@ import numpy
 
 from training import druid
 
-import matplotlib.pyplot as plt
+#only used for visualization of AP clusters
+#import matplotlib.pyplot as plt
 from sklearn import decomposition
 from itertools import cycle
 
@@ -85,7 +86,24 @@ class W2VKeywordExtract:
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
 
-    def preprocess_text(self, text):
+    def preprocess_text(self, text, lemmatize=False):
+        # Automatically tokenize strings if nessecary
+        if type(text) is str or type(text) is unicode:
+            tokens = nltk.word_tokenize(text.lower())
+            ngrams = self.druid.find_ngrams(tokens, n=3)
+
+            if lemmatize:
+                ngrams = [self.lemmatizer.lemmatize(token) for token in ngrams]
+            #else:
+                #base_form = [self.stemmer.stem(token) for token in ngrams]
+
+            #print ngrams
+            print 'Time for preprocessing text:', time.time() - self.start_time
+
+            return ngrams
+        return None
+
+    def preprocess_text_old(self, text, lemmatize=True):
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
             tokens = nltk.word_tokenize(text.lower())
@@ -110,11 +128,15 @@ class W2VKeywordExtract:
 
             ngrams = self.druid.find_ngrams(idf_filtered, n=3)
 
-            lemmatized = [self.lemmatizer.lemmatize(token) for token in ngrams]
+            if lemmatize:
+                base_form = [self.lemmatizer.lemmatize(token) for token in ngrams]
+            else:
+                base_form = [self.stemmer.stem(token) for token in ngrams]
 
+            print base_form
             print 'Time for preprocessing text:', time.time() - self.start_time
 
-            return lemmatized
+            return base_form
         return None
 
     def build_word_vector_matrix(self, words):
@@ -299,8 +321,8 @@ class W2VKeywordExtract:
 
     # Method used by the rest of the application.
     # Extracts the n best scoring keyphrases along with their scores from the given text.
-    def extract_best_keywords(self, text, n=9):
-        tokens = self.preprocess_text(text)
+    def extract_best_keywords_clusters(self, text, n=9, lemmatize=True):
+        tokens = self.preprocess_text(text, lemmatize)
         ap_clusters_map, cluster_centers = self.get_ap_clusters(tokens)
         # Dirty fix for bug if no clusters can be formed because Word2Vec does not recognize a single word.
         if not ap_clusters_map:
@@ -321,8 +343,12 @@ class W2VKeywordExtract:
 
         return tf * idf
 
-    def habibi_mimic(self, text, n=9, tfidf_only=True):
-        tokens = self.preprocess_text(text)
+    def habibi_mimic(self, text, n=9, tfidf_only=False, lemmatize=True):
+        print 'DEPRECATED, habibi_mimic will removed.'
+        return extract_best_keywords(text, n=9, tfidf_only=False, lemmatize=True)
+
+    def extract_best_keywords(self, text, n=9, tfidf_only=False, lemmatize=False, min_score=0.2):
+        tokens = self.preprocess_text(text,lemmatize)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
         # Compute the weight vector
@@ -334,12 +360,12 @@ class W2VKeywordExtract:
         tf_idf_vector = [self.get_tf_idf(token, token_labels) for token in token_labels]
         score_vector_two = score_vector * tf_idf_vector
 
-        if tfidf_only:
+        if not tfidf_only:
             token_scores = list(set(zip(token_labels, score_vector_two)))
         else:
             token_scores = list(set(zip(token_labels, tf_idf_vector)))
         
-        sorted_keyphrases = sorted(token_scores, key=lambda token: token[1], reverse=True)
+        sorted_keyphrases = [item for item in sorted(token_scores, key=lambda token: token[1], reverse=True) if item[1] > min_score]
 
         # Extract n words (phrases count as multiple words)
         output_phrases = []
