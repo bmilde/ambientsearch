@@ -49,7 +49,7 @@ class DruidDictionary:
 
         self.build_druid_cache(cutoff_score)
 
-    def build_druid_cache(self, cutoff_druid_score):
+    def build_druid_cache(self, cutoff_druid_score, post_filter=False, old_format=False):
         druid_bz2 = bz2.BZ2File(self.druid_mwe_file, mode='r')
         druid_file = codecs.iterdecode(druid_bz2, 'utf-8')
         num_added_words = 0
@@ -59,9 +59,30 @@ class DruidDictionary:
 
         for line in druid_file:
             split = line.split(u'\t')
-            words = split[1].lower()
-            druid_score = split[2]
-            has_number = self.RE_D.search(words)
+
+            if len(split) == 2:
+                old_format=False
+                post_filter=False
+            else:
+                print('Warning, you need to update your Druid dictionary and models.')
+                old_format=True
+                post_filter=True
+
+
+            if old_format:
+                words = split[1].lower()
+            else:
+                words = split[0].lower()
+
+            if old_format:
+                druid_score = split[2]
+            else:
+                druid_score = split[1]
+
+            if post_filter:
+                has_number = self.RE_D.search(words)
+            else:
+                has_number = False
             # exclude any lines that have one or more numbers in them
             if not has_number:
                 words_split = [filter_hyphens(word) for word in words.split(u' ')]
@@ -69,7 +90,7 @@ class DruidDictionary:
                 if float_druid_score < cutoff_druid_score:
                     break
 
-                if not any((word in self.stopwords) for word in words_split):
+                if not post_filter or not any((word in self.stopwords) for word in words_split):
                     self.keyword_dict[words] = float_druid_score
                     num_added_words += 1
                     if num_added_words % 1000 == 0:
@@ -105,17 +126,17 @@ class DruidDictionary:
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
-    druid_dict = DruidDictionary('/Users/Jonas/Documents/bachelor/ambientsearch/python/data/druid_en.bz2', '/Users/Jonas/Documents/bachelor/ambientsearch/python/data/stopwords_en.txt', cutoff_score=0.2)
+    druid_dict = DruidDictionary('data/druid_en.bz2', 'data/stopwords_en.txt', cutoff_score=0.0)
 
-    text = u"""A columbia university law professor stood in a hotel lobby one morning and
-                    noticed a sign apologizing for an elevator that was out of order.
-                    it had dropped unexpectedly three stories a few days earlier.
-                    the professor, eben moglen, tried to imagine what the world would be like
-                    if elevators were not built so that people could inspect them. mr. moglen
-                    was on his way to give a talk about the dangers of secret code,
-                    known as proprietary software, that controls more and more devices every day.
-                    proprietary software is an unsafe building material, mr. moglen had said.
-                    you can't inspect it. he then went to the golden gate bridge and jumped."""
+    text = u"""Climate change is real , as is global warming . A columbia university law professor stood in a hotel lobby one morning and
+                    noticed a sign apologizing for an elevator that was out of order .
+                    it had dropped unexpectedly three stories a few days earlier .
+                    the professor , eben moglen , tried to imagine what the world would be like
+                    if elevators were not built so that people could inspect them . mr. moglen
+                    was on his way to give a talk about the dangers of secret code ,
+                    known as proprietary software , that controls more and more devices every day .
+                    proprietary software is an unsafe building material , mr. moglen had said .
+                    you can't inspect it . he then went to the golden gate bridge and jumped ."""
     print druid_dict.find_ngrams(text.lower().split())
 
     text = u"""Remote controls are very handy electronic devices that we can use to negotiate with Barack Obama and Angela Merkel new york city is very beautiful with a lot of red blood cells"""
