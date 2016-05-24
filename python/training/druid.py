@@ -49,7 +49,7 @@ class DruidDictionary:
 
         self.build_druid_cache(cutoff_score)
 
-    def build_druid_cache(self, cutoff_druid_score, post_filter=False, old_format=False):
+    def build_druid_cache(self, cutoff_druid_score):
         druid_bz2 = bz2.BZ2File(self.druid_mwe_file, mode='r')
         druid_file = codecs.iterdecode(druid_bz2, 'utf-8')
         num_added_words = 0
@@ -62,12 +62,13 @@ class DruidDictionary:
 
             if len(split) == 2:
                 old_format=False
-                post_filter=False
+                number_filter=False
+                stopwords_filter = False
             else:
                 print('Warning, you need to update your Druid dictionary and models.')
                 old_format=True
-                post_filter=True
-
+                number_filter=True
+                stopwords_filter = True
 
             if old_format:
                 words = split[1].lower()
@@ -79,10 +80,11 @@ class DruidDictionary:
             else:
                 druid_score = split[1]
 
-            if post_filter:
+            if number_filter:
                 has_number = self.RE_D.search(words)
             else:
                 has_number = False
+
             # exclude any lines that have one or more numbers in them
             if not has_number:
                 words_split = [filter_hyphens(word) for word in words.split(u' ')]
@@ -90,7 +92,7 @@ class DruidDictionary:
                 if float_druid_score < cutoff_druid_score:
                     break
 
-                if not post_filter or not any((word in self.stopwords) for word in words_split):
+                if not stopwords_filter or not any((word in self.stopwords) for word in words_split):
                     self.keyword_dict[words] = float_druid_score
                     num_added_words += 1
                     if num_added_words % 1000 == 0:
