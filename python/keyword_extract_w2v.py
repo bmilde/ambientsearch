@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-__author__ = 'Jonas Wacker'
+__author__ = 'Jonas Wacker, Benjamin Milde'
 
 import nltk
 import codecs
@@ -15,6 +15,16 @@ from sklearn.cluster import KMeans, AffinityPropagation
 from sklearn.metrics import pairwise
 from scipy.spatial import distance
 import numpy
+
+#spacy for pos tagging
+from spacy.en import English#, LOCAL_DATA_DIR
+import spacy.en
+import os
+
+#data_dir = os.environ.get('SPACY_DATA', LOCAL_DATA_DIR)
+
+nlp = English(parser=False, tagger=True, entity=False)
+#spacy end
 
 from training import druid
 
@@ -44,6 +54,17 @@ tfidf_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-late
 tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
 druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
 
+def print_fine_pos(token):
+    return (token.tag_)
+
+def pos_tags(text):
+    if type(text) != unicode:
+        text = unicode(text, "utf-8")
+    tokens = nlp(text)
+    tags = []
+    for tok in tokens:
+        tags.append((unicode(tok),print_fine_pos(tok)))
+    return tags
 
 class W2VKeywordExtract:
 
@@ -87,20 +108,48 @@ class W2VKeywordExtract:
         self.start_time = time.time()
 
     def preprocess_text(self, text, lemmatize=False):
+        start_time = time.time()
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
+            #text = text.lower()
             tokens = nltk.word_tokenize(text.lower())
-            ngrams = self.druid.find_ngrams(tokens, n=3)
+
+            #tags = nltk.pos_tag(tokens)
+            #print tags
+
+            pos_pattern = [u'NN', u'NNP', u'NNS', u'JJ']
+            #tag_filtered = [tag[0] for tag in tags if tag[1] in pos_pattern]
+
+            #print tag_filtered
+            ngrams = self.druid.find_ngrams(tokens, n=3) #[term for term in self.druid.find_ngrams(tokens, n=3) if term not in self.stopwords]
+            print ngrams
+            tags = pos_tags(u' '.join(ngrams))
+            print tags
+            idf_filtered = []
+            for token,tag in tags:
+                try:
+                    if token in self.stopwords:
+                        continue
+                    if (not '_' in token) and (tag not in pos_pattern):
+                        continue
+
+                    idf = self.tfidf_conversation.idfs[self.tfidf_conversation.id2word.token2id[self.stemmer.stem(token)]]
+                    if idf > 3.67:
+                        idf_filtered.append(token)
+                except KeyError:
+                    idf_filtered.append(token)
+
+            print 
 
             if lemmatize:
-                ngrams = [self.lemmatizer.lemmatize(token) for token in ngrams]
+                idf_filtered = [self.lemmatizer.lemmatize(token) for token in idf_filtered]
             #else:
                 #base_form = [self.stemmer.stem(token) for token in ngrams]
 
             #print ngrams
-            print 'Time for preprocessing text:', time.time() - self.start_time
+            print 'Time for preprocessing text:', time.time() - start_time
 
-            return ngrams
+            return idf_filtered
         return None
 
     def preprocess_text_old(self, text, lemmatize=True):
@@ -347,7 +396,7 @@ class W2VKeywordExtract:
         print 'DEPRECATED, habibi_mimic will removed.'
         return extract_best_keywords(text, n=9, tfidf_only=False, lemmatize=True)
 
-    def extract_best_keywords(self, text, n=9, tfidf_only=False, lemmatize=False, min_score=0.2):
+    def extract_best_keywords(self, text, n_words=9, tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False):
         tokens = self.preprocess_text(text,lemmatize)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
@@ -374,12 +423,15 @@ class W2VKeywordExtract:
             phrase_length = len(phrase[0].split('_'))
             word_counter += phrase_length
 
-            if word_counter > n:
-                # Too many words -> cut off mwe
-                remain = '_'.join(phrase[0].split('_')[:-(word_counter - n)])
-                output_phrases.append((remain, phrase[1]))
+            if word_counter > n_words:
+                if cutoff_mwe:
+                    # Too many words -> cut off mwe
+                    remain = '_'.join(phrase[0].split('_')[:-(word_counter - n)])
+                    output_phrases.append((remain, phrase[1]))
+                else:
+                    output_phrases.append((phrase[0], phrase[1]))
                 break
-            elif word_counter == n:
+            elif word_counter == n_words:
                 output_phrases.append((phrase[0], phrase[1]))
                 break
             else:

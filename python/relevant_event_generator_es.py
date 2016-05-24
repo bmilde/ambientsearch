@@ -193,7 +193,7 @@ class EventGenerator:
 
     # Send relevant entry updates to the display, given a new full utterance. 
     # Also specify how many entries we want (max_entries) and how existing keywords should decay their score.
-    def send_relevant_entry_updates(self,max_entries=4, decay=.8, context_utts=6, extract_top_n_keywords=8, min_found_keywords=3, min_transcript_utts=2):
+    def send_relevant_entry_updates(self,max_entries=4, decay=.9, context_utts=9, extract_top_n_keywords=10, min_found_keywords=3, min_transcript_utts=2):
 
         print 'send_relevant_entry_updates called'
         with Timer() as t:
@@ -207,7 +207,7 @@ class EventGenerator:
             # Take last 10 utterances and combine them
             most_recent_transcript = " ".join(self.complete_transcript[-context_utts:])
             # Extract top 9 keywords
-            keywords = self.ke.extract_best_keywords(most_recent_transcript, n=extract_top_n_keywords)
+            keywords = self.ke.extract_best_keywords(most_recent_transcript, n_words=extract_top_n_keywords)
             print keywords
 
             #abort if we found very little keywords and haven't seen enough utterances
