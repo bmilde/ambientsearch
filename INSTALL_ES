@@ -1,0 +1,27 @@
+# You can follow these instructions to install Elastic Search and index the newest Wikipedia
+
+# sudo apt-get install openjdk-7-jre
+
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get -y install oracle-java8-installer
+
+# Install Elastic Search
+mkdir ~/elastic_search
+cd ~/elastic_search
+wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.3/elasticsearch-2.3.3.deb
+dpkg -i elasticsearch-2.3.3.deb
+
+git clone https://github.com/elastic/stream2es
+cd stream2es
+
+wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod guo+x lein
+sudo cp lein /usr/bin
+make
+cp target/stream2es- stream2es
+
+# Get the latest dump (you can also change this to the full Wikipedia, but indexing will take considerably longer)
+wget https://dumps.wikimedia.org/simplewiki/latest/simplewiki-latest-pages-articles.xml.bz2
+
+./stream2es wiki --source ~/elastic_search/stream2es/simplewiki-latest-pages-articles.xml.bz2 --target http://localhost:9200/simple_en_wiki --log debug

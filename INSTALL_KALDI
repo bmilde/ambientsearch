@@ -1,0 +1,80 @@
+Install Kaldi and OpenBLAS dependencies and compile an optimized version of OpenBLAS specificall for your architecture
+It is important to build a non-multithreaded version of OpenBLAS, as race conditions and strange errors will pop while using Kaldi otherwise.  
+
+sudo apt-get install gfortran build-essential automake git zlib1g-dev libtool subversion curl vim python-pip screen
+wget http://github.com/xianyi/OpenBLAS/archive/v0.2.18.tar.gz
+make BINARY=64 FC=gfortran USE_THREAD=0
+sudo make install
+
+# Now build Kaldi:
+
+cd ~
+git clone https://github.com/kaldi-asr/kaldi kaldi
+cd ~/kaldi/tools
+make
+cd ~/kaldi/
+./configure --mathlib=OPENBLAS --static-math=yes --use-cuda={yes|no} --shared
+
+# Dependencies for the gst-kaldi-nnet2-online plugin:
+
+sudo apt-get install gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-pulseaudio gstreamer1.0-plugins-ugly  gstreamer1.0-tools libgstreamer1.0-dev libjansson-dev
+
+# Now install the gst-kaldi-nnet2-online plugin:
+
+export KALDI_ROOT=~/kaldi/
+cd ~/kaldi/tools/
+git clone https://github.com/alumae/gst-kaldi-nnet2-online
+cd gst-kaldi-nnet2-online/src
+make depend
+make
+
+# You can now test if the gst-kaldi-nnet2-online installation works:
+GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinnet2onlinedecoder
+
+#[...]
+#Plugin Details:
+#  Name                     kaldinnet2onlinedecoder
+#  Description              kaldinnet2onlinedecoder
+#  Filename                 /home/ambientsearch/kaldi/tools/gst-kaldi-nnet2-online/src/libgstkaldionline2.so
+#  Version                  1.0
+#  License                  unknown
+#  Source module            Kaldi
+#  Binary package           GStreamer
+#  Origin URL               http://gstreamer.net/
+#[...]
+
+# Now install ~/kaldi/tools/kaldi-gstreamer-server
+
+cd ~/kaldi/tools/
+git clone https://github.com/alumae/kaldi-gstreamer-server
+
+# Download the Tedlium nnet2 model
+cd kaldi-gstreamer-server/test/models
+ ./download-tedlium-nnet2.sh
+
+# (You should now have the model in test/models/english/tedlium_nnet_ms_sp_online)
+
+# Make a start script for a tedlium model worker:
+
+echo export KALDI_ROOT=~/kaldi/ > run_tedlium.sh
+echo export GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
+echo python kaldigstserver/worker.py -u ws://localhost:8100/worker/ws/speech -c sample_english_nnet2.yaml >> run_tedlium.sh
+chmod guo+x run_tedlium.sh
+
+# edit sample_english_nnet2.yaml
+vim sample_english_nnet2.yaml
+#-> uncomment the line "big-lm-const-arpa: test/models/english/tedlium_nnet_ms_sp_online/G.carpa" to get language model rescoring (recommended)
+
+#Install kaldi-gstreamer-server dependencies:
+sudo apt-get install python-gi
+sudo pip install --upgrade ws4py==0.3.2 pyyaml tornado
+
+# Start a new screen session:
+screen
+python kaldigstserver/master_server.py --port=8100
+
+CRTL-A C
+
+# Now run the worker (You will need about 4gb of RAM per worker)
+
+./run_tedlium.sh
