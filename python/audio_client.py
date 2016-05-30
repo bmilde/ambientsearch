@@ -1,4 +1,6 @@
-__author__ = 'Jonas Wacker'
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+__author__ = 'Benjamin Milde and Jonas Wacker'
 
 import argparse
 from ws4py.client.threadedclient import WebSocketClient
@@ -175,7 +177,7 @@ def connect_ws(args):
         ws.connect()
 
         while not ws.maximum_sentences_reached():
-            time.sleep(3)
+            time.sleep(1)
     except KeyboardInterrupt:
         ws.close()
 

@@ -23,7 +23,9 @@ import keyword_extract
 
 from bridge import KeywordClient
 
+default_content_type = "audio/x-raw, layout=(string)interleaved, rate=(int)%d, format=(string)S16LE, channels=(int)1"
 std_speaker = "You"
+ignore_hyp = ['a.','I.','i.','the.','but.','one.','it.','she.']
 
 def rate_limited(maxPerSecond):
     minInterval = 1.0 / float(maxPerSecond)
@@ -85,12 +87,13 @@ class KaldiClient(WebSocketClient):
         self.keyword_client = KeywordClient(keyword_server_url)
         self.keyword_client.reset()
         self.send_to_keywordserver = not (keyword_server_url == '')
+        self.abort = False
 
         #self.keyword_extractor = extract.TermExtractor()
         #self.keyword_extractor.filter = extract.permissiveFilter
 
         if self.send_to_keywordserver:
-            self.keyword_client.addUtterance('','You')
+            self.keyword_client.addUtterance('',std_speaker)
             self.last_hyp = ''
 
         self.input_microphone_id = input_microphone_id
@@ -112,8 +115,8 @@ class KaldiClient(WebSocketClient):
                 else:
                     print 'Selecting device',self.input_microphone_id,'as input device'
 
-            stream = self.paudio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024, input_device_index = self.input_microphone_id) #buffer   
-            #f = open(self.fn, "rb")
+            stream = self.paudio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024, input_device_index = self.input_microphone_id)  
+            
             if self.send_adaptation_state_filename is not None:
                 print >> sys.stderr, "Sending adaptation state from %s" % self.send_adaptation_state_filename
                 try:
@@ -122,15 +125,17 @@ class KaldiClient(WebSocketClient):
                 except:
                     e = sys.exc_info()[0]
                     print >> sys.stderr, "Failed to send adaptation state: ",  e
-            abort = False
-            while not abort:
+            
+            while not self.abort:
                 block = stream.read(buffer_size)
                 self.send_data(block)
-            print >> sys.stderr, "Audio sent, now sending EOS"
+            print >> sys.stderr, "\nReceived abort signal, sending EOS to server before closing the stream.\n"
             self.send("EOS")
 
-        t = threading.Thread(target=send_data_to_ws)
-        t.start()
+        print("starting send_data thread.")
+
+        self.record_thread = threading.Thread(target=send_data_to_ws)
+        self.record_thread.start()
 
     # received decoding message from upstream Kaldi server
     def received_message(self, m):
@@ -142,7 +147,7 @@ class KaldiClient(WebSocketClient):
                 if 'result' in response:
                     trans = response['result']['hypotheses'][0]['transcript']
                     if response['result']['final']:
-                        if trans not in ['a.','I.','i.','the.','but.','one.','it.','she.']:
+                        if trans not in ignore_hyp:
                             self.final_hyps.append(trans)
                             		    
                             if self.send_to_keywordserver:
@@ -153,8 +158,6 @@ class KaldiClient(WebSocketClient):
 
                                 complete_transcript = '\n'.join(sentence[:-1] for sentence in self.final_hyps)
                                 
-
-
                             print u'\r\033[K',trans.replace(u'\n', u'\\n')
                     else:
                         if self.send_to_keywordserver:
@@ -186,16 +189,27 @@ class KaldiClient(WebSocketClient):
         self.final_hyp_queue.put(' '.join(self.final_hyps))
 
 def connect_ws(args):
+
     content_type = args.content_type
     if content_type == '' and args.audiofile == '':
-        content_type = "audio/x-raw, layout=(string)interleaved, rate=(int)%d, format=(string)S16LE, channels=(int)1" %(args.rate/2)
+        content_type = default_content_type % (args.rate/2)
 
-    ws = KaldiClient('', args.uri + '?%s' % (urllib.urlencode([("content-type", content_type)])), byterate=args.rate,
+    try:
+        ws = KaldiClient('', args.uri + '?%s' % (urllib.urlencode([("content-type", content_type)])), byterate=args.rate,
                   save_adaptation_state_filename=args.save_adaptation_state, send_adaptation_state_filename=args.send_adaptation_state, keyword_server_url=args.ambient_uri,input_microphone_id=args.input_device_id)
-    ws.connect()
-    #print 'Disconnected.'
-    result = ws.get_full_hyp()
-    print result.encode('utf-8')
+        ws.connect()
+    
+        while True:
+            time.sleep(1)
+
+        #result = ws.get_full_hyp()
+        #print result.encode('utf-8')
+    except KeyboardInterrupt:
+        ws.abort = True
+        time.sleep(1.0)
+        ws.close()
+
+    print 'Disconnected. Bye.'    
 
 def main():
 
@@ -214,6 +228,4 @@ def main():
 
 if __name__ == "__main__":
     args = main()
-    #ke = keyword_extract.KeywordExtract()
-    #ke.buildDruidCache()
     connect_ws(args)
