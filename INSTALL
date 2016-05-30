@@ -10,7 +10,11 @@ on Mac/OS X: brew install redis portaudio (and you need to start the redis-serve
 
 You need Python-2.7 with a couple of additional modules that you can easily install with pip:
 
-pip install numpy flask redis nltk wikipedia ws4py pyaudio topia.termextract elasticsearch gensim
+pip install --upgrade numpy
+pip install --upgrade scipy
+pip install --upgrade flask redis wikipedia ws4py==0.3.2 topia.termextract elasticsearch
+pip install --upgrade nltk gensim spacy sklearn
+pip install --upgrade pyaudio mutagen
 
 You can now start the scripts from the root directory of the project:
 
