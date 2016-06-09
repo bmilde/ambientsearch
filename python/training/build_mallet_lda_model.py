@@ -20,16 +20,17 @@ import bz2
 import os.path
 from gensim import corpora, models, utils
 
+wiki_file = 'simplewiki'
 
 def data_directory():
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # Path to mallet binary file in the data directory
-mallet_path = os.path.join(data_directory(), 'mallet-2.0.7/bin/mallet')
+mallet_path = os.path.join(data_directory(), 'mallet/bin/mallet')
 # Path to the dictionary file in the data directory
-dictionary_path = os.path.join(data_directory(), 'enwiki-latest-pages-articles_wordids.txt.bz2')
+dictionary_path = os.path.join(data_directory(), wiki_file + '_wordids.txt.bz2')
 # Path to the training corpus in the data directory
-corpus_path = os.path.join(data_directory(), 'enwiki-latest-pages-articles_bow.mm')
+corpus_path = os.path.join(data_directory(), wiki_file + '_bow.mm')
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
@@ -45,7 +46,7 @@ if not os.path.exists(os.path.join(data_directory(), 'mallet_output/')):
     os.makedirs(os.path.join(data_directory(), 'mallet_output/'))
 model = models.wrappers.LdaMallet(mallet_path, corpus, num_topics=100, id2word=id2word,
                                   prefix=os.path.join(data_directory(), 'mallet_output/'))
-model.save(os.path.join(data_directory(), 'enwiki-latest-pages-articles_mallet.lda'))
+model.save(os.path.join(data_directory(), wiki_file + '_mallet.lda'))
 
 # now use the trained model to infer topics on a new document
 doc = "Don't sell coffee, wheat nor sugar; trade gold, oil and gas instead."

@@ -25,16 +25,16 @@ def data_directory():
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # Size of the dictionary (# of most frequent types are kept after removal of stop-words)
-keep_words = 100000
+keep_words = 1000000
 # Lemmatization (slows down the process a lot, but uses a good lemmatizer)
 # Requires python pattern package to be installed. Otherwise simple RegExp Lemmatizer is used.
 lemmatize = False
 # Upper limit for word occurences: words that appear in more than X% of the documents are removed (too common)
-max_threshold = 0.2
+max_threshold = 0.1
 # Lower threshold for word occurences: words that appear in less than N documents are removed (too uncommon)
-min_threshold = 20
+min_threshold = 10
 # Stop words filename for stop words in spoken language
-stop_words_file = os.path.join(data_directory(), 'stop_words_en.txt')
+stop_words_file = os.path.join(data_directory(), 'stopwords_en.txt')
 
 if __name__ == '__main__':
     program = os.path.basename(sys.argv[0])

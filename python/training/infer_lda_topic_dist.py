@@ -4,16 +4,17 @@ import numpy as np
 import scipy.io
 from gensim import corpora, models
 
+wiki_file = 'simplewiki'
 
 def data_directory():
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 # Path to the dictionary file in the data directory
-dictionary_path = os.path.join(data_directory(), 'enwiki-latest-pages-articles_wordids.txt.bz2')
+dictionary_path = os.path.join(data_directory(), wiki_file + '_wordids.txt.bz2')
 # Path to the training corpus in the data directory
-corpus_path = os.path.join(data_directory(), 'enwiki-latest-pages-articles_bow.mm')
+corpus_path = os.path.join(data_directory(), wiki_file + '_bow.mm')
 # Path to the mallet lda model in the data directory
-lda_model_path = os.path.join(data_directory(), 'enwiki-latest-pages-articles_mallet.lda')
+lda_model_path = os.path.join(data_directory(), wiki_file + '_mallet.lda')
 # Path at which the p(t|w) distribution should be saved
 filename_twp = os.path.join(data_directory(), 'word_topic_prob_dist')
 filename_dict = os.path.join(data_directory(), 'dict')
