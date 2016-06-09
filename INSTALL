@@ -20,6 +20,18 @@ Download needed model files:
 
 sudo python -m spacy.en.download
 
+Open a python shell:
+
+python
+>>> import nltk
+>>> nltk.download()
+
+Now download the punkt and wordnet packages (only needed for lemmatization, which is turned off by default). 
+In the GUI version select those in the list, in the command line version of the downloader type: 
+
+d punkt
+d wordnet
+
 You can now start the scripts from the root directory of the project:
 
 - To start the event server:
