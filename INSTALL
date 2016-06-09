@@ -16,6 +16,10 @@ pip install --upgrade flask redis wikipedia ws4py==0.3.2 topia.termextract elast
 pip install --upgrade nltk gensim spacy sklearn
 pip install --upgrade pyaudio mutagen
 
+Download needed model files:
+
+sudo python -m spacy.en.download
+
 You can now start the scripts from the root directory of the project:
 
 - To start the event server:
