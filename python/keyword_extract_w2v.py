@@ -4,9 +4,11 @@ __author__ = 'Jonas Wacker, Benjamin Milde'
 
 import nltk
 import codecs
+import io
 import re
 from topia.termextract import extract
 import os.path
+import os
 import sys
 import gensim
 import time
@@ -396,7 +398,7 @@ class W2VKeywordExtract:
         print 'DEPRECATED, habibi_mimic will removed.'
         return extract_best_keywords(text, n=9, tfidf_only=False, lemmatize=True)
 
-    def extract_best_keywords(self, text, n_words=9, tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False):
+    def extract_best_keywords(self, text, n_words=9, tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True):
         tokens = self.preprocess_text(text,lemmatize)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
@@ -421,7 +423,11 @@ class W2VKeywordExtract:
         word_counter = 0
         for phrase in sorted_keyphrases:
             phrase_length = len(phrase[0].split('_'))
-            word_counter += phrase_length
+
+            if count_words_in_keyphrase:
+                word_counter += phrase_length
+            else:
+                word_counter += 1
 
             if word_counter > n_words:
                 if cutoff_mwe:
@@ -439,13 +445,24 @@ class W2VKeywordExtract:
 
         return output_phrases
 
+# From http://stackoverflow.com/questions/273192/how-to-check-if-a-directory-exists-and-create-it-if-necessary
+def ensure_dir(f):
+    d = os.path.dirname(f)
+    if not os.path.exists(d):
+        os.makedirs(d)
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
     ke = W2VKeywordExtract()
 
+    method_name = 'proposed/'
+
     ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
-    output_dir = os.path.join(data_directory(), 'keywords_tfidf_only')
+    keyword_eval_dir = os.path.join(data_directory(), 'keywords_eval_dir/'+method_name)
+    ndcg_eval_dir = os.path.join(data_directory(), 'ndcg_eval_dir/'+method_name)
+
+    ensure_dir(keyword_eval_dir)
+    ensure_dir(ndcg_eval_dir) 
 
     # Fetching number of keywords to extract
     keyword_counts = {}
@@ -453,15 +470,14 @@ if __name__ == "__main__":
         for line in in_file:
             keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
 
-
-    for file in os.listdir(ted_root_dir):
-        if file.endswith('.txt'):
-            with codecs.open(os.path.join(ted_root_dir, file), 'r', encoding='utf-8', errors='replace') as in_file:
+    for myfile in os.listdir(ted_root_dir):
+        if myfile.endswith('.txt'):
+            with codecs.open(os.path.join(ted_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as in_file:
 
                 print 'Processing', file, ':'
 
                 raw = in_file.read()
-                num_tokens = keyword_counts[file]
+                num_tokens = keyword_counts[myfile]
                 # tokens = ke.preprocess_text(raw)
 
                 # print 'Text:'
@@ -482,11 +498,16 @@ if __name__ == "__main__":
                 # print "Keyphrases:"
                 # print sorted_keyphrases
 
-                print "Habibi-Mimic:"
-                extracted = ke.habibi_mimic(raw, n=num_tokens)
-                print extracted
+                print "extract_best_keywords:"
+                extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens)
+                print extracted_num_tokens_like_manual
+
+                extracted_10_tokens_like_manual = ke.extract_best_keywords(raw, n_words=10)
+                print extracted_10_tokens_like_manual
 
                 # Write extracted tokens into file
-                with codecs.open(os.path.join(output_dir, file), 'w', encoding='utf-8') as out_file:
-                    out_file.write('\n'.join([' '.join(elem[0].split('_')) for elem in extracted]))
+                with io.open(os.path.join(keyword_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                    out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_num_tokens_like_manual])+u'\n')
 
+                with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                    out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens_like_manual])+u'\n')
