@@ -22,6 +22,7 @@ import numpy
 from spacy.en import English#, LOCAL_DATA_DIR
 import spacy.en
 import os
+import json
 
 #data_dir = os.environ.get('SPACY_DATA', LOCAL_DATA_DIR)
 
@@ -35,6 +36,7 @@ from training import druid
 from sklearn import decomposition
 from itertools import cycle
 
+import wiki_search_es
 
 def check_path(path):
     if not os.path.isfile(path):
@@ -124,9 +126,9 @@ class W2VKeywordExtract:
 
             #print tag_filtered
             ngrams = self.druid.find_ngrams(tokens, n=3) #[term for term in self.druid.find_ngrams(tokens, n=3) if term not in self.stopwords]
-            print ngrams
+            #print ngrams
             tags = pos_tags(u' '.join(ngrams))
-            print tags
+            #print tags
             idf_filtered = []
             for token,tag in tags:
                 try:
@@ -140,8 +142,6 @@ class W2VKeywordExtract:
                         idf_filtered.append(token)
                 except KeyError:
                     idf_filtered.append(token)
-
-            print 
 
             if lemmatize:
                 idf_filtered = [self.lemmatizer.lemmatize(token) for token in idf_filtered]
@@ -184,7 +184,7 @@ class W2VKeywordExtract:
             else:
                 base_form = [self.stemmer.stem(token) for token in ngrams]
 
-            print base_form
+            #print base_form
             print 'Time for preprocessing text:', time.time() - self.start_time
 
             return base_form
@@ -415,8 +415,22 @@ class W2VKeywordExtract:
             token_scores = list(set(zip(token_labels, score_vector_two)))
         else:
             token_scores = list(set(zip(token_labels, tf_idf_vector)))
-        
-        sorted_keyphrases = [item for item in sorted(token_scores, key=lambda token: token[1], reverse=True) if item[1] > min_score]
+
+        collapsed_keyphrases = {}
+
+        # We collapse items (add their scores up) if the stem is the same, e.g. fuel and fuels.
+        # We then use the short keyword / keyphrase (unstemmed).
+        for item in token_scores:
+            stemmed_word = self.stemmer.stem(item[0])
+            if stemmed_word in collapsed_keyphrases:
+                keyphrase = item[0] if len(item[0]) >= len(collapsed_keyphrases[stemmed_word][0]) else collapsed_keyphrases[stemmed_word][0]
+                score = item[1] + collapsed_keyphrases[stemmed_word][1]
+            else:
+                keyphrase,score = item
+            
+            collapsed_keyphrases[stemmed_word] = (keyphrase,score)
+            
+        sorted_keyphrases = [item for item in sorted(collapsed_keyphrases.values(), key=lambda token: token[1], reverse=True) if item[1] > min_score]
 
         # Extract n words (phrases count as multiple words)
         output_phrases = []
@@ -453,11 +467,12 @@ def ensure_dir(f):
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
-    ke = W2VKeywordExtract()
+    ke = W2VKeywordExtract(cutoff_druid_score=0.2)
 
-    method_name = 'proposed/'
+    method_name = 'proposed_0.2/'
 
-    ted_root_dir = os.path.join(data_directory(), 'ted_transcripts')
+    ted_trans_root_dir = os.path.join(data_directory(), 'ted_transcripts')
+    ted_orig_root_dir = os.path.join(data_directory(), 'ted_originals')
     keyword_eval_dir = os.path.join(data_directory(), 'keywords_eval_dir/'+method_name)
     ndcg_eval_dir = os.path.join(data_directory(), 'ndcg_eval_dir/'+method_name)
 
@@ -470,14 +485,18 @@ if __name__ == "__main__":
         for line in in_file:
             keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
 
-    for myfile in os.listdir(ted_root_dir):
+    for myfile in os.listdir(ted_trans_root_dir):
         if myfile.endswith('.txt'):
-            with codecs.open(os.path.join(ted_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as in_file:
+            with codecs.open(os.path.join(ted_trans_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as in_file, \
+                    codecs.open(os.path.join(ted_orig_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as orig_in_file:
 
-                print 'Processing', file, ':'
+                print 'Processing', in_file, ':'
 
                 raw = in_file.read()
+                orig = orig_in_file.read()
+
                 num_tokens = keyword_counts[myfile]
+                
                 # tokens = ke.preprocess_text(raw)
 
                 # print 'Text:'
@@ -502,12 +521,22 @@ if __name__ == "__main__":
                 extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens)
                 print extracted_num_tokens_like_manual
 
-                extracted_10_tokens_like_manual = ke.extract_best_keywords(raw, n_words=10)
-                print extracted_10_tokens_like_manual
+                extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10)
+                print extracted_10_tokens
+
+                # Extract top wiki articles
+                new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=400)
+                print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
 
                 # Write extracted tokens into file
                 with io.open(os.path.join(keyword_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
                     out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_num_tokens_like_manual])+u'\n')
 
                 with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                    out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens_like_manual])+u'\n')
+                    out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+
+                json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
+                print json_out
+
+                with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
+                    json.dump(json_out, outfile)
