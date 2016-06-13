@@ -55,8 +55,7 @@ def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_
     # Load Multiword Expressions as Dictionary
     stopwords_path = join(data_directory, 'stopwords_en.txt')
     druid_path = join(data_directory, 'druid_en.bz2')
-    druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.0)
-
+    druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.2)
 
     logger.info("Building tfidf model...")
     start_time = time.time()

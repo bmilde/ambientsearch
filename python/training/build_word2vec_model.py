@@ -42,7 +42,7 @@ def train_w2v(data_directory, corpus_path, wiki_text_output_path, word2vec_outpu
     # Load Multiword Expressions as Dictionary
     stopwords_path = join(data_directory, 'stopwords_en.txt')
     druid_path = join(data_directory, 'druid_en.bz2')
-    druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.0)
+    druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.2)
 
     # Train the word2vec model, also use DRUID multiwords
     sentences = MySentences(wiki_text_output_path, druid_dict)  # a memory-friendly iterator
