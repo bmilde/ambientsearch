@@ -7,7 +7,7 @@ import nltk
 import traceback
 import nltk.data
 
-wiki_index = 'simple_en_wiki2'
+wiki_index = 'simple_en_wiki_may2016'
 default_type = 'page'
 
 sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
@@ -137,7 +137,7 @@ def get_summary_from_text(text, n=50):
 
 # Expects a set of keywords along with their scores (Tuples).
 # Extracts the n best scoring article results from elasticsearch. Use n=-1 if you want all articles returned.
-def extract_best_articles(keywords, n=10, minimum_should_match_percent=25):
+def extract_best_articles(keywords, n=10, minimum_should_match_percent=25, min_summary_chars=50):
 
     simple_query_string = construct_query_string(keywords)
     print 'wiki search query:',simple_query_string
@@ -162,7 +162,7 @@ def extract_best_articles(keywords, n=10, minimum_should_match_percent=25):
         full_text = result['_source']['text']
         categories = result['_source']['category']
         score = result['_score']
-        summary = get_summary_from_text(full_text)
+        summary = get_summary_from_text(full_text,min_summary_chars)
         url = 'https://simple.wikipedia.org/w/index.php?title='+title.replace(' ', '_')
         print 'wiki search: found',title,'with score',score
 
