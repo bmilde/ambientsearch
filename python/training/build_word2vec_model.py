@@ -28,6 +28,8 @@ class MySentences(object):
         # One line contains one wiki article.
         self.corpus = codecs.open(self.filename, 'r', encoding='utf-8')
         for line in self.corpus:
+            if line[:-1] == '\n':
+                line = line[:-1]
             ngrams = self.druid_dict.find_ngrams(line.lower().split())
             yield [self.stemmer.stem(token) for token in ngrams]
 
@@ -65,6 +67,7 @@ if __name__ == '__main__':
     parser.add_argument('-w', '--wiki-text-output-path', dest='wiki_text_output_path', help='Wiki text output path (converted from raw wikipedia xml)', type=str, default = 'simplewiki-latest-pages-articles.txt')
     parser.add_argument('-o', '--word2vec-output-path', dest='word2vec_output_path', help='Output model file', type=str, default = 'simple-enwiki-latest.word2vec')
     parser.add_argument('-v', '--w2v-dim',  dest='w2v_dim', help='The dimensionality of the word2vec vectors', default=100)
+    parser.add_argument('-nm', '--no-multiwords', dest='no_multiwords', help='No multiwords in model generation', action='store_true', default=False)
 
     args = parser.parse_args()
 
