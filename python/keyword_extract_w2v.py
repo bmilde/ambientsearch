@@ -533,7 +533,6 @@ if __name__ == "__main__":
                     num_tokens = keyword_counts[myfile]
                     
                     # tokens = ke.preprocess_text(raw)
-
                     # print 'Text:'
                     # for sentence in nltk.sent_tokenize(raw):
                         # print sentence
@@ -551,12 +550,13 @@ if __name__ == "__main__":
                     # print sorted(scored_clusters, key=lambda cluster: cluster[1])
                     # print "Keyphrases:"
                     # print sorted_keyphrases
+                    # tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True
 
                     print "extract_best_keywords:"
-                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens)
+                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens, tfidf_only=tfidf_only)
                     print extracted_num_tokens_like_manual
 
-                    extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10)
+                    extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10, tfidf_only=tfidf_only)
                     print extracted_10_tokens
 
                     # Extract top wiki articles
