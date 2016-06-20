@@ -74,6 +74,8 @@ def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_
     if multiwords:
         druid_path = join(data_directory, 'druid_en.bz2')
         druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.2)
+    else:
+        druid_dict = None
 
     logger.info("Building tfidf model...")
     start_time = time.time()
@@ -88,7 +90,7 @@ def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_
     tokenid_dictionary.add_documents(articles)
 
 
-    model = TfidfModel(BowCorpus(wiki_text_output_path, druid_dict, tokenid_dictionary), id2word=tokenid_dictionary)
+    model = TfidfModel(BowCorpus(wiki_text_output_path, druid_dict, tokenid_dictionary, multiwords=multiwords), id2word=tokenid_dictionary)
     model.save(model_output_path)
 
     logger.info("Finished building tfidf model. Time needed: " + str(time.time() - start_time))
