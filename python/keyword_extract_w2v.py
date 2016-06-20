@@ -47,16 +47,16 @@ def check_path(path):
     return path
 
 
-def data_directory():
-    return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+#def data_directory():
+#    return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
 # w2v_model_path = check_path(os.path.join(data_directory(), 'enwiki-latest-pages-articles.word2vec'))
-w2v_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.word2vec'))
+#w2v_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.word2vec'))
 # w2v_google_model_path = check_path(os.path.join(data_directory(), 'GoogleNews-vectors-negative300.bin.gz'))
 # tfidf_model_path = check_path(os.path.join(data_directory(), 'wiki.tfidf'))
-tfidf_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.tfidf'))
-tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
-druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
+#tfidf_model_path = check_path(os.path.join(data_directory(), 'simple-enwiki-latest.tfidf'))
+#tfidf_conversation_path = check_path(os.path.join(data_directory(), 'conversation.tfidf'))
+#druid_path = check_path(os.path.join(data_directory(), 'druid_en.bz2'))
 
 def print_fine_pos(token):
     return (token.tag_)
@@ -72,7 +72,16 @@ def pos_tags(text):
 
 class W2VKeywordExtract:
 
-    def __init__(self, lang='en', extra_keywords='', cutoff_druid_score=0.2):
+    def __init__(self, lang='en', extra_keywords='', cutoff_druid_score=0.2, data_directory='data/',
+            w2v_model_path='simple-enwiki-latest.word2vec', tfidf_model_path='simple-enwiki-latest.tfidf', 
+            tfidf_conversation_path='conversation.tfidf', druid_path='druid_en.bz2', multiwords=True):
+
+        self.data_directory = data_directory
+        self.w2v_model_path = check_path(os.path.join(data_directory, w2v_model_path))
+        self.tfidf_model_path = check_path(os.path.join(data_directory, tfidf_model_path))
+        self.tfidf_conversation_path = check_path(os.path.join(data_directory, tfidf_conversation_path))
+        self.druid_path = check_path(os.path.join(data_directory, druid_path))
+
         self.lang = lang
         self.extra_keywords = extra_keywords
         self.keyword_extractor = extract.TermExtractor()
@@ -98,20 +107,25 @@ class W2VKeywordExtract:
         self.start_time = time.time()
 
         self.stemmer = nltk.stem.PorterStemmer()
-        self.lemmatizer = nltk.stem.WordNetLemmatizer()
+        #self.lemmatizer = nltk.stem.WordNetLemmatizer()
 
         print 'Loading TF-IDF Model...'
-        self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(tfidf_model_path)
-        self.tfidf_conversation = gensim.models.tfidfmodel.TfidfModel.load(tfidf_conversation_path)
+        self.tfidf = gensim.models.tfidfmodel.TfidfModel.load(self.tfidf_model_path)
+        self.tfidf_conversation = gensim.models.tfidfmodel.TfidfModel.load(self.tfidf_conversation_path)
         print 'Loading Word2Vec model... (this can take some time)'
         # self.word2vec = gensim.models.Word2Vec.load_word2vec_format(w2v_google_model_path, binary=True)
-        self.word2vec = gensim.models.Word2Vec.load(w2v_model_path)
-        self.druid = druid.DruidDictionary(druid_path, self.stopwords_filename, cutoff_druid_score)
+        self.word2vec = gensim.models.Word2Vec.load(self.w2v_model_path)
 
+        if multiwords:
+            self.druid = druid.DruidDictionary(self.druid_path, self.stopwords_filename, cutoff_druid_score)
+        else:
+            self.druid = {}
+
+        self.multiwords = multiwords
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
 
-    def preprocess_text(self, text, lemmatize=False):
+    def preprocess_text(self, text, lemmatize=False, multiwords=True):
         start_time = time.time()
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
@@ -124,8 +138,11 @@ class W2VKeywordExtract:
             pos_pattern = [u'NN', u'NNP', u'NNS', u'JJ']
             #tag_filtered = [tag[0] for tag in tags if tag[1] in pos_pattern]
 
-            #print tag_filtered
-            ngrams = self.druid.find_ngrams(tokens, n=3) #[term for term in self.druid.find_ngrams(tokens, n=3) if term not in self.stopwords]
+            # Only use druid if we want multiwords
+            if multiwords:
+                ngrams = self.druid.find_ngrams(tokens, n=3) #[term for term in self.druid.find_ngrams(tokens, n=3) if term not in self.stopwords]
+            else:
+                ngrams = tokens
             #print ngrams
             tags = pos_tags(u' '.join(ngrams))
             #print tags
@@ -373,7 +390,7 @@ class W2VKeywordExtract:
     # Method used by the rest of the application.
     # Extracts the n best scoring keyphrases along with their scores from the given text.
     def extract_best_keywords_clusters(self, text, n=9, lemmatize=True):
-        tokens = self.preprocess_text(text, lemmatize)
+        tokens = self.preprocess_text(text, lemmatize, self.multiwords)
         ap_clusters_map, cluster_centers = self.get_ap_clusters(tokens)
         # Dirty fix for bug if no clusters can be formed because Word2Vec does not recognize a single word.
         if not ap_clusters_map:
@@ -399,7 +416,7 @@ class W2VKeywordExtract:
         return extract_best_keywords(text, n=9, tfidf_only=False, lemmatize=True)
 
     def extract_best_keywords(self, text, n_words=9, tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True):
-        tokens = self.preprocess_text(text,lemmatize)
+        tokens = self.preprocess_text(text,lemmatize,self.multiwords)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
         # Compute the weight vector
@@ -419,7 +436,7 @@ class W2VKeywordExtract:
         collapsed_keyphrases = {}
 
         # We collapse items (add their scores up) if the stem is the same, e.g. fuel and fuels.
-        # We then use the short keyword / keyphrase (unstemmed).
+        # We then use the shorter keyword / keyphrase (unstemmed) for IR.
         for item in token_scores:
             stemmed_word = self.stemmer.stem(item[0])
             if stemmed_word in collapsed_keyphrases:
@@ -467,76 +484,94 @@ def ensure_dir(f):
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
-    ke = W2VKeywordExtract(cutoff_druid_score=0.2)
 
-    method_name = 'proposed_0.2/'
+    data_directory = 'data/'
+    ted_trans_root_dir = os.path.join(data_directory, 'ted_transcripts')
+    ted_orig_root_dir = os.path.join(data_directory, 'ted_originals')
+    
+    for method_name in ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/']:
+        
+        print 'Computing for scores', method_name
 
-    ted_trans_root_dir = os.path.join(data_directory(), 'ted_transcripts')
-    ted_orig_root_dir = os.path.join(data_directory(), 'ted_originals')
-    keyword_eval_dir = os.path.join(data_directory(), 'keywords_eval_dir/'+method_name)
-    ndcg_eval_dir = os.path.join(data_directory(), 'ndcg_eval_dir/'+method_name)
+        multiwords = True
+        w2v_model_path = 'simple_enwiki_latest.word2vec'
+        tfidf_model_path = 'simple_enwiki_latest.tfidf'
 
-    ensure_dir(keyword_eval_dir)
-    ensure_dir(ndcg_eval_dir) 
+        if method_name.endswith('nodruid/'):
+            multiwords = False
+            w2v_model_path = 'simple_enwiki_latest_no_druid.word2vec'
+            tfidf_model_path = 'simple_enwiki_latest_no_druid.tfidf'
 
-    # Fetching number of keywords to extract
-    keyword_counts = {}
-    with codecs.open('goal_goals.txt', 'r', encoding='utf-8', errors='replace') as in_file:
-        for line in in_file:
-            keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
+        tfidf_only = False
+        if method_name.startswith('tfidf'):
+            tfidf_only = True
+            
+        ke = W2VKeywordExtract(cutoff_druid_score=0.2, multiwords=multiwords, w2v_model_path=w2v_model_path, tfidf_model_path=tfidf_model_path)
+        
+        keyword_eval_dir = os.path.join(data_directory, 'keywords_eval_dir/' + method_name)
+        ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/' + method_name)
 
-    for myfile in os.listdir(ted_trans_root_dir):
-        if myfile.endswith('.txt'):
-            with codecs.open(os.path.join(ted_trans_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as in_file, \
-                    codecs.open(os.path.join(ted_orig_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as orig_in_file:
+        ensure_dir(keyword_eval_dir)
+        ensure_dir(ndcg_eval_dir) 
 
-                print 'Processing', in_file, ':'
+        # Fetching number of keywords to extract
+        keyword_counts = {}
+        with codecs.open('goal_goals.txt', 'r', encoding='utf-8', errors='replace') as in_file:
+            for line in in_file:
+                keyword_counts[line.split()[0].split('/')[-1]] = int(line.split()[-1])
 
-                raw = in_file.read()
-                orig = orig_in_file.read()
+        for myfile in os.listdir(ted_trans_root_dir):
+            if myfile.endswith('.txt'):
+                with codecs.open(os.path.join(ted_trans_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as in_file, \
+                        codecs.open(os.path.join(ted_orig_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as orig_in_file:
 
-                num_tokens = keyword_counts[myfile]
-                
-                # tokens = ke.preprocess_text(raw)
+                    print 'Processing', in_file, ':'
 
-                # print 'Text:'
-                # for sentence in nltk.sent_tokenize(raw):
-                    # print sentence
-                # print 'Tokens:', tokens
+                    raw = in_file.read()
+                    orig = orig_in_file.read()
 
-                # ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
-                # K-Means can be used alternatively (speeds up process, yields slightly worse results though)
-                # ap_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
-                # scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
-                # cluster_scores = [cluster[1] for cluster in scored_clusters]
-                # sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
-                # print "Affinity Propagation:"
-                # print ap_clusters_map
-                # print cluster_centers
-                # print sorted(scored_clusters, key=lambda cluster: cluster[1])
-                # print "Keyphrases:"
-                # print sorted_keyphrases
+                    num_tokens = keyword_counts[myfile]
+                    
+                    # tokens = ke.preprocess_text(raw)
 
-                print "extract_best_keywords:"
-                extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens)
-                print extracted_num_tokens_like_manual
+                    # print 'Text:'
+                    # for sentence in nltk.sent_tokenize(raw):
+                        # print sentence
+                    # print 'Tokens:', tokens
 
-                extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10)
-                print extracted_10_tokens
+                    # ap_clusters_map, cluster_centers = ke.get_ap_clusters(tokens)
+                    # K-Means can be used alternatively (speeds up process, yields slightly worse results though)
+                    # ap_clusters_map, cluster_centers = ke.get_kmeans_clusters(tokens)
+                    # scored_clusters = ke.get_scored_clusters(ap_clusters_map, cluster_centers, tokens)
+                    # cluster_scores = [cluster[1] for cluster in scored_clusters]
+                    # sorted_keyphrases = ke.get_sorted_keyphrases(tokens, cluster_centers, cluster_scores)
+                    # print "Affinity Propagation:"
+                    # print ap_clusters_map
+                    # print cluster_centers
+                    # print sorted(scored_clusters, key=lambda cluster: cluster[1])
+                    # print "Keyphrases:"
+                    # print sorted_keyphrases
 
-                # Extract top wiki articles
-                new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=400)
-                print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
+                    print "extract_best_keywords:"
+                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens)
+                    print extracted_num_tokens_like_manual
 
-                # Write extracted tokens into file
-                with io.open(os.path.join(keyword_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                    out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_num_tokens_like_manual])+u'\n')
+                    extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10)
+                    print extracted_10_tokens
 
-                with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                    out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+                    # Extract top wiki articles
+                    new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=400)
+                    print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
 
-                json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
-                print json_out
+                    # Write extracted tokens into file
+                    with io.open(os.path.join(keyword_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                        out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_num_tokens_like_manual])+u'\n')
 
-                with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
-                    json.dump(json_out, outfile)
+                    with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                        out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+
+                    json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
+                    print json_out
+
+                    with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
+                        json.dump(json_out, outfile)
