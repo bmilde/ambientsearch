@@ -60,6 +60,8 @@ if __name__ == '__main__':
     stop_ids = []
     with open(stop_words_file, 'r') as infile:
         for line in infile:
+            if line[-1] == '\n':
+                line = line[:-1]
             try:
                 stop_ids.append(wiki.dictionary.token2id[line.lower().strip()])
             except KeyError:
