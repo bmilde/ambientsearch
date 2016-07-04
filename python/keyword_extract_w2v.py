@@ -74,7 +74,7 @@ class W2VKeywordExtract:
 
     def __init__(self, lang='en', extra_keywords='', cutoff_druid_score=0.2, data_directory='data/',
             w2v_model_path='simple-enwiki-latest.word2vec', tfidf_model_path='simple-enwiki-latest.tfidf', 
-            tfidf_conversation_path='conversation.tfidf', druid_path='druid_en.bz2', multiwords=True):
+            tfidf_conversation_path='conversation.tfidf', druid_path='druid_en.bz2', multiwords=True, noun_adj_filter=True, stopword_removal=True):
 
         self.data_directory = data_directory
         self.w2v_model_path = check_path(os.path.join(data_directory, w2v_model_path))
@@ -122,10 +122,13 @@ class W2VKeywordExtract:
             self.druid = {}
 
         self.multiwords = multiwords
+        self.noun_adj_filter = noun_adj_filter
+        self.stopword_removal = stopword_removal
+
         print 'Time for loading models:', time.time() - self.start_time
         self.start_time = time.time()
 
-    def preprocess_text(self, text, lemmatize=False, multiwords=True):
+    def preprocess_text(self, text, lemmatize=False, multiwords=True, noun_adj_filter=True, stopword_removal=True):
         start_time = time.time()
         # Automatically tokenize strings if nessecary
         if type(text) is str or type(text) is unicode:
@@ -149,13 +152,13 @@ class W2VKeywordExtract:
             idf_filtered = []
             for token,tag in tags:
                 try:
-                    if token in self.stopwords:
+                    if stopword_removal and (token in self.stopwords):
                         continue
-                    if (not '_' in token) and (tag not in pos_pattern):
+                    if noun_adj_filter and (not '_' in token) and (tag not in pos_pattern):
                         continue
 
                     idf = self.tfidf_conversation.idfs[self.tfidf_conversation.id2word.token2id[self.stemmer.stem(token)]]
-                    if idf > 3.67:
+                    if idf > 3.67 or ('_' in token) or not stopword_removal:
                         idf_filtered.append(token)
                 except KeyError:
                     idf_filtered.append(token)
@@ -390,7 +393,8 @@ class W2VKeywordExtract:
     # Method used by the rest of the application.
     # Extracts the n best scoring keyphrases along with their scores from the given text.
     def extract_best_keywords_clusters(self, text, n=9, lemmatize=True):
-        tokens = self.preprocess_text(text, lemmatize, self.multiwords)
+        tokens = self.preprocess_text(text, lemmatize, self.multiwords, noun_adj_filter = self.noun_adj_filter,
+                        stopword_removal = self.stopword_removal)
         ap_clusters_map, cluster_centers = self.get_ap_clusters(tokens)
         # Dirty fix for bug if no clusters can be formed because Word2Vec does not recognize a single word.
         if not ap_clusters_map:
@@ -416,7 +420,8 @@ class W2VKeywordExtract:
         return extract_best_keywords(text, n=9, tfidf_only=False, lemmatize=True)
 
     def extract_best_keywords(self, text, n_words=9, tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True):
-        tokens = self.preprocess_text(text,lemmatize,self.multiwords)
+        tokens = self.preprocess_text(text,lemmatize,multiwords=self.multiwords, noun_adj_filter=self.noun_adj_filter,
+                        stopword_removal = self.stopword_removal)
         token_vectors, token_labels = self.build_word_vector_matrix(tokens)
 
         # Compute the weight vector
@@ -489,7 +494,7 @@ if __name__ == "__main__":
     ted_trans_root_dir = os.path.join(data_directory, 'ted_transcripts')
     ted_orig_root_dir = os.path.join(data_directory, 'ted_originals')
     
-    for method_name in ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/']:
+    for method_name in ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter/', 'tfidf_nodruid_nofilter_nostopwords/']:
         
         print 'Computing for scores', method_name
 
@@ -497,16 +502,25 @@ if __name__ == "__main__":
         w2v_model_path = 'simple_enwiki_latest.word2vec'
         tfidf_model_path = 'simple_enwiki_latest.tfidf'
 
-        if method_name.endswith('nodruid/'):
+        if 'nodruid' in method_name:
             multiwords = False
             w2v_model_path = 'simple_enwiki_latest_no_druid.word2vec'
             tfidf_model_path = 'simple_enwiki_latest_no_druid.tfidf'
+        
+        noun_adj_filter = True
+        if 'nofilter' in method_name:
+            noun_adj_filter = False
+
+        stopword_removal = True
+        if 'nostopwords' in method_name:
+            stopword_removal = False
 
         tfidf_only = False
         if method_name.startswith('tfidf'):
             tfidf_only = True
             
-        ke = W2VKeywordExtract(cutoff_druid_score=0.2, multiwords=multiwords, w2v_model_path=w2v_model_path, tfidf_model_path=tfidf_model_path)
+        ke = W2VKeywordExtract(cutoff_druid_score=0.2, multiwords=multiwords, noun_adj_filter=noun_adj_filter,
+                stopword_removal=stopword_removal, w2v_model_path=w2v_model_path, tfidf_model_path=tfidf_model_path)
         
         keyword_eval_dir = os.path.join(data_directory, 'keywords_eval_dir/' + method_name)
         ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/' + method_name)
@@ -553,7 +567,7 @@ if __name__ == "__main__":
                     # tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True
 
                     print "extract_best_keywords:"
-                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=num_tokens, tfidf_only=tfidf_only)
+                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=10, tfidf_only=tfidf_only) #was n_words=num_tokens
                     print extracted_num_tokens_like_manual
 
                     extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10, tfidf_only=tfidf_only)

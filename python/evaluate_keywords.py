@@ -12,7 +12,8 @@ stemmer = nltk.stem.PorterStemmer()
 manual_dir = os.path.join(data_directory(), 'manual_keywords_merged')
 eval_dir = os.path.join(data_directory(), 'keywords_eval_dir')
 
-methods = ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/', 'habibi075', 'habibi10']
+methods = ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter', 
+                    'tfidf_nodruid_nofilter_nostopwords', 'habibi075', 'habibi10']
 
 filenames = []
 
@@ -64,14 +65,16 @@ def eval_file(method_dir, raw_file, gold_standard, tolerated):
         print 'tolerated:', tolerated, tolerated_stemmed
         
         recall = len(list(set(method_tokens_stemmed) & set(gold_standard_stemmed))) / float(len(gold_standard_stemmed))
+        precision = len(list(set(method_tokens_stemmed) & set(gold_standard_stemmed))) / float(len(method_tokens_stemmed))
         hrr = len(list(set(method_tokens_stemmed) - set(gold_standard_stemmed) - set(tolerated_stemmed))) / float(len(method_tokens_stemmed))
 
         print 'Recall:', len(list(set(method_tokens_stemmed) & set(gold_standard_stemmed))), '/', len(gold_standard_stemmed), '=', recall
         print 'HRR:', len(list(set(method_tokens_stemmed) - set(gold_standard_stemmed) - set(tolerated_stemmed))), '/', len(method_tokens_stemmed), '=', hrr
 
-        return recall,hrr
+        return recall,precision,hrr
 
 recalls = defaultdict(list)
+precs = defaultdict(list)
 hrrs = defaultdict(list)
 
 for myfile in filelist:
@@ -84,16 +87,21 @@ for myfile in filelist:
         tolerated = [remove_line_end(line).strip() for line in in_file]
 
     for method in methods:
-        recall,hrr = eval_file(method, myfile, gold_standards[myfile], tolerated)
+        recall,precision,hrr = eval_file(method, myfile, gold_standards[myfile], tolerated)
         recalls[method].append(recall)
+        precs[method].append(precision)
         hrrs[method].append(hrr)
 
 for key in sorted(recalls.keys()):
     print "-----------------Final Scores-----------------"
-    print "Method:", "Avg. Recall (Std. Dev.),", "Avg. HRR (Std. Dev.),", "Avg. Recall - Avg. HRR"
+    print "Method:", "Avg. Recall (Std. Dev.),", "Avg. Precision (Std. Dev.)," , "Avg. HRR (Std. Dev.),", "Avg. Recall - Avg. HRR"
     recall = sum(recalls[key]) / len(recalls[key])
     recall_std = np.std(recalls[key])
+
+    precision = sum(precs[key]) / len(precs[key])
+    precision_std = np.std(precs[key])
+
     hrr = sum(hrrs[key]) / len(hrrs[key])
     hrr_std = np.std(hrrs[key])
     difference = recall - hrr
-    print key, recall, "(", recall_std, "), ", hrr, "(", hrr_std, "), ", difference
+    print key, recall, "(", recall_std, "), ", precision, "(", precision_std, "), ", hrr, "(", hrr_std, "), ", difference
