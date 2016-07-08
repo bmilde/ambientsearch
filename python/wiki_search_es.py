@@ -127,7 +127,7 @@ def get_summary_from_text(text, n=50):
     summary = ''
 
     i = 0
-    while(len(summary) < 50 and i < len(sents)):
+    while(len(summary) < n and i < len(sents)):
         summary += sents[i] + ' '
         i += 1
 

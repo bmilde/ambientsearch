@@ -12,6 +12,7 @@ import os
 import sys
 import gensim
 import time
+import itertools
 
 from sklearn.cluster import KMeans, AffinityPropagation
 from sklearn.metrics import pairwise
@@ -493,8 +494,11 @@ if __name__ == "__main__":
     data_directory = 'data/'
     ted_trans_root_dir = os.path.join(data_directory, 'ted_transcripts')
     ted_orig_root_dir = os.path.join(data_directory, 'ted_originals')
-    
-    for method_name in ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter/', 'tfidf_nodruid_nofilter_nostopwords/']:
+   
+#    habibi_trans_dir = 'DocRec/ted_transcripts/habibi75'
+ #   habibi_orig_dir = 'DocRec/ted_originals/habibi75'
+
+    for method_name in ['proposed/', 'proposed_nodruid/', 'proposed_orig/', 'tfidf/', 'tfidf_orig/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter/', 'tfidf_nodruid_nofilter_nostopwords/']:
         
         print 'Computing for scores', method_name
 
@@ -514,6 +518,11 @@ if __name__ == "__main__":
         stopword_removal = True
         if 'nostopwords' in method_name:
             stopword_removal = False
+
+        # standard is to use the transcript from the ASR system
+        use_transcript = True
+        if 'orig' in method_name:
+            use_transcript = False
 
         tfidf_only = False
         if method_name.startswith('tfidf'):
@@ -543,6 +552,11 @@ if __name__ == "__main__":
 
                     raw = in_file.read()
                     orig = orig_in_file.read()
+                    
+                    if use_transcript:
+                        in_text = raw
+                    else:
+                        in_text = orig
 
                     num_tokens = keyword_counts[myfile]
                     
@@ -567,14 +581,14 @@ if __name__ == "__main__":
                     # tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True
 
                     print "extract_best_keywords:"
-                    extracted_num_tokens_like_manual = ke.extract_best_keywords(raw, n_words=10, tfidf_only=tfidf_only) #was n_words=num_tokens
+                    extracted_num_tokens_like_manual = ke.extract_best_keywords(in_text, n_words=10, tfidf_only=tfidf_only) #was n_words=num_tokens
                     print extracted_num_tokens_like_manual
 
-                    extracted_10_tokens = ke.extract_best_keywords(raw, n_words=10, tfidf_only=tfidf_only)
+                    extracted_10_tokens = ke.extract_best_keywords(in_text, n_words=10, tfidf_only=tfidf_only)
                     print extracted_10_tokens
 
                     # Extract top wiki articles
-                    new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=400)
+                    new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300)
                     print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
 
                     # Write extracted tokens into file
@@ -589,3 +603,71 @@ if __name__ == "__main__":
 
                     with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
                         json.dump(json_out, outfile)
+    
+
+    habibi_trans_dir, habibi_orig_dir_prep, habibi_trans_dir_prep = 'DocRec/ted_transcripts/habibi75','DocRec/orig_preprocessed/habibi75','DocRec/trans_preprocessed/habibi75'
+    # Now do 
+    if os.path.exists('DocRec'):
+        for method_dir in [habibi_trans_dir, habibi_orig_dir_prep, habibi_trans_dir_prep]:
+            for myfile in os.listdir(method_dir+'_1/'):
+                if myfile.endswith('.txt'):
+                    with codecs.open(os.path.join(method_dir+'_2/', myfile), 'r', encoding='utf-8', errors='replace') as keyword_file, \
+                         codecs.open(os.path.join(method_dir+'_1/', myfile), 'r', encoding='utf-8', errors='replace') as weight_file, \
+                         codecs.open(os.path.join(ted_orig_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as orig_file, \
+                         codecs.open(os.path.join(ted_trans_root_dir, myfile), 'r', encoding='utf-8', errors='replace') as trans_file:
+                        
+                        if method_dir==habibi_trans_dir:
+                            ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_trans/')
+                        if method_dir==habibi_orig_dir_prep:
+                            ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_orig_prep/')    
+                        if method_dir==habibi_trans_dir_prep:
+                            ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_trans_prep/')
+
+                        ensure_dir(ndcg_eval_dir)
+
+                        orig = orig_file.read()
+                        trans = trans_file.read()
+            
+                        #temporary for DocRec
+                        #w2v_model_path = 'simple_enwiki_latest_no_druid.word2vec'
+                        #tfidf_model_path = 'simple_enwiki_latest_no_druid.tfidf'
+                        # 
+                        #ke = W2VKeywordExtract(cutoff_druid_score=0.2, multiwords=False, noun_adj_filter=True,
+                        #            stopword_removal=True, w2v_model_path=w2v_model_path, tfidf_model_path=tfidf_model_path)
+#
+ #                       orig_preprocessed = ' '.join(ke.preprocess_text(orig,multiwords=False))
+  #                      trans_preprocessed = ' '.join(ke.preprocess_text(trans,multiwords=False))
+#
+ #                       ensure_dir('DocRec/orig_preprocessed/')
+  #                      ensure_dir('DocRec/trans_preprocessed/')
+   #                     ensure_dir('DocRec/orig_lower/')
+#
+ #                       with io.open(os.path.join('DocRec/orig_preprocessed/', myfile), 'w', encoding='utf-8') as outfile:
+  #                          outfile.write(orig_preprocessed)
+#
+ #                       with io.open(os.path.join('DocRec/trans_preprocessed/', myfile), 'w', encoding='utf-8') as outfile:
+  #                          outfile.write(trans_preprocessed)
+#
+ #                       with io.open(os.path.join('DocRec/orig_lower/', myfile), 'w', encoding='utf-8') as outfile:
+  #                          outfile.write(orig.lower())
+#
+                        extracted_10_tokens = []
+                        for keyword_line,weight_line in itertools.izip(keyword_file,weight_file):
+                            if keyword_line[-1] == '\n':
+                                keyword_line = keyword_line[:-1]
+                            if weight_line[-1] == '\n':
+                                weight_line = weight_line[:-1]
+                            extracted_10_tokens += [(keyword_line,float(weight_line))]
+                        new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300)
+                        
+                        with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                            out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+
+                        json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
+                        print json_out
+
+                        with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
+                            json.dump(json_out, outfile)  
+
+    else:
+        print 'DocRec not found. You can find it at https://github.com/idiap/DocRec.'

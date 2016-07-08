@@ -12,8 +12,24 @@ stemmer = nltk.stem.PorterStemmer()
 manual_dir = os.path.join(data_directory(), 'manual_keywords_merged')
 eval_dir = os.path.join(data_directory(), 'keywords_eval_dir')
 
-methods = ['proposed/', 'proposed_nodruid/', 'tfidf/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter', 
-                    'tfidf_nodruid_nofilter_nostopwords', 'habibi075', 'habibi10']
+#methods = ['tfidf_nodruid_nofilter_nostopwords', 'tfidf_nodruid_nofilter', 'tfidf_nodruid', 'tfidf', 'tfidf_orig', 'habibi75', 'habibi75_orig', 'proposed', 'proposed_nodruid','proposed_orig']
+
+methods = ['habibi75', 'habibi75_orig', 'habibi75_prep', 'habibi75_orig_prep']
+
+pretty_method_names = {
+    'tfidf_nodruid_nofilter_nostopwords' : 'TF-IDF baseline, no multiwords, no filtering',
+    'tfidf_nodruid_nofilter' : 'TF-IDF baseline, no multiwords, only stopword filtering',
+    'tfidf_nodruid' : 'TF-IDF baseline, no multiwords, full filtering',
+    'tfidf' : 'TF-IDF baseline, with DRUID multiwords, full filtering',
+    'tfidf_orig' : 'TF-IDF baseline on gold transcriptions, with DRUID multiwords, full filtering',
+    'habibi75' : 'Habibi and PB',
+    'habibi75_orig' : 'Habibi and PB, gold transcriptions',
+    'habibi75_prep' : 'Habibi and PB, our preprocessing',
+    'habibi75_orig_prep' : 'Habibi and PB, our preprocessing, gold transcriptions',
+    'proposed_nodruid' : 'Our proposed method, without DRUID multiwords',
+    'proposed' : 'Our proposed method, with DRUID multiwords',
+    'proposed_orig' : 'Our proposed method on gold transcriptions, with DRUID multiwords',
+}
 
 filenames = []
 
@@ -92,9 +108,9 @@ for myfile in filelist:
         precs[method].append(precision)
         hrrs[method].append(hrr)
 
-for key in sorted(recalls.keys()):
-    print "-----------------Final Scores-----------------"
-    print "Method:", "Avg. Recall (Std. Dev.),", "Avg. Precision (Std. Dev.)," , "Avg. HRR (Std. Dev.),", "Avg. Recall - Avg. HRR"
+for i,key in enumerate(methods):
+    #print "-----------------Final Scores-----------------"
+    #print "Method:", "Avg. Recall (Std. Dev.),", "Avg. Precision (Std. Dev.)," , "Avg. HRR (Std. Dev.),", "Avg. Recall - Avg. HRR"
     recall = sum(recalls[key]) / len(recalls[key])
     recall_std = np.std(recalls[key])
 
@@ -104,4 +120,9 @@ for key in sorted(recalls.keys()):
     hrr = sum(hrrs[key]) / len(hrrs[key])
     hrr_std = np.std(hrrs[key])
     difference = recall - hrr
-    print key, recall, "(", recall_std, "), ", precision, "(", precision_std, "), ", hrr, "(", hrr_std, "), ", difference
+    #print key, '%0.4f' % recall, "(", '%0.4f' % recall_std, "), ", '%0.4f' % precision, "(", '%0.4f' % precision_std, "), ", \
+            #'%0.4f' % hrr, "(", '%0.4f' % hrr_std, "), ", '%0.4f' % difference
+
+    #print 'latex:'
+    print ('(%i)'%(i+1)),pretty_method_names[key],'&',('%0.2f' % (recall*100.0))+'\\%', ' ('+ ('%0.2f' % (recall_std*100.0))+'\\%'+ ')','&', ('%0.2f' % (precision*100.0))+'\\%' , \
+    '\\% ('+ ('%0.2f' % (precision_std*100.0))+'\\%'+ ')', '&', ('%0.2f' % (hrr*100.0)) + '\\%', '(' + ('%0.2f' % (hrr_std*100.0))+'\\%' + ')', '&' , ('%0.2f' % (difference*100.0))+'\\%','& (NDCG here)','\\\\ \\hline'

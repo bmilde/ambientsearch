@@ -102,8 +102,9 @@ if mallet:
     # Also save to matlab format.
     scipy.io.savemat(filename_twp, mdict={'twp': word_topic_dist})
     wordsw = np.zeros((model.num_terms, 1), dtype=np.object)
+    print id2word[0],type(id2word[0])
     for token_id in range(0, model.num_terms):
-        wordsw[token_id, 0] = id2word[token_id]
-    scipy.io.savemat(filename_dict, mdict={'wordsw': wordsw})
+        wordsw[token_id, 0] = id2word[token_id].encode("utf8")
+    scipy.io.savemat(filename_dict, mdict={'wordsw': wordsw},long_field_names=True)
 
     print('Done.')
