@@ -1,0 +1,10 @@
+medications
+runny
+doctors
+tests
+patients
+medication
+medical
+prescribe
+told
+medicine

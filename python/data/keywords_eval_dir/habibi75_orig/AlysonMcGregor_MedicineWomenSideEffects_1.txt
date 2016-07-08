@@ -1,0 +1,10 @@
+disorders
+patients
+idea
+drugs
+clinical
+regulatory
+drug
+suffer
+prescriptions
+risk

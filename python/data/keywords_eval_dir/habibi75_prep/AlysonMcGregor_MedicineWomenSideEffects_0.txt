@@ -1,0 +1,10 @@
+medications
+patients
+doctors
+medication
+medical
+gender
+medicine
+evidence
+noses
+emergency

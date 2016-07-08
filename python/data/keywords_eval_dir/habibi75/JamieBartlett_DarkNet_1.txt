@@ -1,0 +1,10 @@
+consumer
+prices
+user
+buyer
+costing
+encrypt
+deals
+buy
+economists
+product

@@ -1,0 +1,8 @@
+currencies
+drugs
+feedback
+credit card
+good way
+consumer
+marketplace
+quality

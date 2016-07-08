@@ -1,0 +1,10 @@
+patients
+health
+hospice
+dysfunction
+palliative
+night
+death
+brilliance
+commuter
+medicine

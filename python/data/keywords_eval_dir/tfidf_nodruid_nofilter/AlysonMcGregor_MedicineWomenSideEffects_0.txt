@@ -1,0 +1,10 @@
+medications
+prescribing
+emergency
+evidence
+ok
+stabbed
+toes
+gender
+noses
+patients

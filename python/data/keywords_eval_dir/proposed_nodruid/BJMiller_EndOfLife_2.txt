@@ -1,0 +1,10 @@
+hospitals
+bodies
+warmth
+anaesthetic
+grief
+trauma
+hospice
+numbness
+patient
+treatable

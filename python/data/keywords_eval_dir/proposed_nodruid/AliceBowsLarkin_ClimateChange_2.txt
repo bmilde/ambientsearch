@@ -1,0 +1,10 @@
+temperatures
+global
+extremes
+degrees
+infrastructure
+impacts
+thermal
+warmer
+resilient
+heat

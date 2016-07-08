@@ -1,0 +1,10 @@
+patient
+train
+father
+patients
+hospice
+dysfunction
+healthcare
+commuter
+medicine
+ladder
