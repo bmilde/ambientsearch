@@ -1,0 +1,7 @@
+drugs 40.1804441265
+side_effects 29.2248454352
+women 29.1393344724
+clinical_trials 24.4988195705
+laboratory 15.0841013064
+your_doctor 13.9274816904
+male_model 13.6644472845

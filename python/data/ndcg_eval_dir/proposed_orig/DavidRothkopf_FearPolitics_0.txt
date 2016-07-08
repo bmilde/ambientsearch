@@ -1,0 +1,7 @@
+terrorists 11.2631479788
+threat 4.0290402921
+casualties 2.4668442815
+terrorist_attacks 2.36575495871
+state_department 1.95527994753
+international_law 1.89855195097
+trillions 1.88282660922

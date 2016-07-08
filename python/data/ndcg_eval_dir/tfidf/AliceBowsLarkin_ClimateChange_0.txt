@@ -1,0 +1,6 @@
+climate_change 44.5034081552
+we_will 18.8584616457
+future 17.5938781055
+impacts 14.4430075774
+negative_impacts 13.2494097853
+greenhouse_gas_emissions 13.0794847838

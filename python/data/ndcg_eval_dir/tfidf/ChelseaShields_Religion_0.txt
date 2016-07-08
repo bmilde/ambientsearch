@@ -1,0 +1,7 @@
+one_woman 22.323893888
+influence 16.0140533923
+scrimmage 13.9274816904
+belief 13.475314263
+religious_life 13.0794847838
+world_religion 12.7899781666
+common_practice 12.0014822718

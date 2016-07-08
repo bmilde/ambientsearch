@@ -1,0 +1,7 @@
+belief 2.91955928422
+one_woman 2.86126642016
+religion 2.56031086112
+influence 2.55167297019
+decision_making 2.03950395615
+equal_rights 1.96698171149
+religious_life 1.73539966937

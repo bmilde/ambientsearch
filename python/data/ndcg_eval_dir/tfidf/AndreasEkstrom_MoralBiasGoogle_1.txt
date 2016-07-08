@@ -1,0 +1,6 @@
+michelle_obama 32.8920226992
+search_result 26.4988195705
+pretty_good 24.6850383793
+knowledge 20.4069796772
+google 17.0024338714
+this_is 16.9416143964

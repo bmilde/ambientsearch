@@ -1,0 +1,6 @@
+patients 5.35011110929
+dysfunction 1.97536812556
+electrical_current 1.55029870404
+hospice 1.52947809054
+health_care_system 1.48255872336
+my_friends 1.24241706087

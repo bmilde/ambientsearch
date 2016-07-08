@@ -1,0 +1,7 @@
+missions 26.9348397879
+climate_change 26.7020448931
+centigrade 26.4988195705
+emissions 19.6462900611
+insured 18.5904269498
+global_economy 13.4420548632
+extreme_weather 12.9274816904

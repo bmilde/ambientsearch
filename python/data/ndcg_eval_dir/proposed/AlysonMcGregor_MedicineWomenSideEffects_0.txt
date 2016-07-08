@@ -1,0 +1,7 @@
+medications 8.87428533526
+evidence 3.03116185424
+medical_emergency 2.91083099474
+only_half 2.82609335272
+prescribing 2.55859676131
+emergency_medicine 2.55658511248
+patients 2.50044318615

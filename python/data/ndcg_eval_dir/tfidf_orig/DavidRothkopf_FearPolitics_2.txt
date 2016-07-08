@@ -1,0 +1,8 @@
+cell_phones 62.4991186266
+cyber 45.7682194528
+superpowers 42.5387997646
+attacks 39.0909612401
+apps 34.3079377732
+ipad 31.6469102014
+satellite_imagery 12.5489700671
+law_enforcement_officer 12.4420548632

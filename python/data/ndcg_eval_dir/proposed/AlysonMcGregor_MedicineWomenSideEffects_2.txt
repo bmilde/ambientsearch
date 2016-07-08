@@ -1,0 +1,7 @@
+medical_research 9.31085926863
+women 7.9696998987
+studies 4.96758303836
+health 3.53160050747
+medical_community 3.22311630695
+fetus 2.83247306646
+reproductive_organs 2.710207508

@@ -1,0 +1,7 @@
+drugs 11.5251822359
+side_effects 8.1824106596
+clinical_trials 6.0677167021
+women 6.01519990397
+prescriptions 2.63341133069
+dose 2.58893801239
+sleep_disorders 2.48632365757

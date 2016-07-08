@@ -1,0 +1,7 @@
+radioactivity 70.8567388999
+nuclear_power_plant 29.2248454352
+sediment 26.1540849743
+seabed 21.2693998823
+bags 16.8712571881
+rough_estimate 13.6644472845
+topographical_map 13.6644472845

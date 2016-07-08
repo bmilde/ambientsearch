@@ -1,0 +1,8 @@
+medical_research 41.6660790844
+reproductive 31.1599126665
+women 29.1393344724
+studies 23.1393344724
+men 18.7049440023
+policymakers 14.2494097853
+informed_consent 13.9274816904
+medical_community 13.6644472845

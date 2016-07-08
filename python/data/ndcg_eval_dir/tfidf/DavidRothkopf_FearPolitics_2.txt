@@ -1,0 +1,7 @@
+cellphone 25.3288945691
+superpower 21.2693998823
+pad 18.1390013905
+law_enforcement_officer 12.4420548632
+deterrent 12.2494097853
+never_stop 12.161946944
+adversary 11.5489700671

@@ -1,0 +1,9 @@
+empathy 10.9503408972
+conscious 6.62528729716
+companions 5.94042320134
+courtship 5.7140103582
+humans 3.4516435352
+companion_star 3.44483374219
+contagious 3.24031350963
+unconscious 3.15671801909
+killer_whale 3.06294211371

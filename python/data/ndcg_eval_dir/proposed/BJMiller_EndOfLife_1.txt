@@ -1,0 +1,8 @@
+human_beings 2.39592616303
+proportionality 2.36328713195
+caregiver 2.07757605425
+compassion 1.92057937454
+conversation 1.86774223953
+creativity 1.84492442899
+limbs 1.78149302703
+civil_society 1.74840148657

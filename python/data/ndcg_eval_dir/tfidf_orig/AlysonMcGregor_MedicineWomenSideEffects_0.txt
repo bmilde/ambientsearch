@@ -1,0 +1,7 @@
+medications 28.1989497617
+doctors 22.6166092153
+blind_faith 13.6644472845
+runny 12.9274816904
+evidence 12.8584616457
+emergency_medicine 12.6644472845
+medical_science 11.7258478292

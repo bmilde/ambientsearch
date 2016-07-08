@@ -1,0 +1,8 @@
+average_temperatures 56.887352763
+degrees 25.2275811197
+global 21.8682235596
+infrastructure 17.8013632621
+impacts 14.4430075774
+temperature_range 13.2494097853
+resilient 12.4420548632
+hot_days 12.0794847838

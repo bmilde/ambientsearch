@@ -1,0 +1,7 @@
+stratosphere 9.5877633803
+colder 6.50593443922
+planet 5.71854783808
+way_up 3.47934772278
+apollo_program 3.06096387448
+impressed 2.5037463824
+slower_rate 2.1231310893

@@ -1,0 +1,7 @@
+emissions 23.1235765684
+climate_change 8.26212417083
+impact 3.85079611801
+degree 3.60752566048
+temperature_rise 3.2513881195
+extreme_weather 3.05587647175
+centigrade 2.99701786818

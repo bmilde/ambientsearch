@@ -1,0 +1,7 @@
+beliefs 9.94522375522
+my_parents 8.2634037964
+the_way 4.47750707041
+arguments 3.19866043661
+tightrope 2.99343480921
+religious_beliefs 2.22665758641
+unworthy 2.22525259162

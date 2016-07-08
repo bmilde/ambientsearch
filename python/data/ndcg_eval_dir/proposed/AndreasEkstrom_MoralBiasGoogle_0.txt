@@ -1,0 +1,8 @@
+google 8.32819606425
+search_result 6.08008669014
+alternatives 5.57273056739
+unbiased 4.74170973534
+students 3.65188627058
+query 3.14185944311
+search_engine 2.86600898498
+basic_principle 2.44908805643

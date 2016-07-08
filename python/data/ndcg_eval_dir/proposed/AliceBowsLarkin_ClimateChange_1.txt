@@ -1,0 +1,7 @@
+climate_change 7.93645397732
+centigrade 5.3564513412
+emissions 5.21786426959
+missions 4.75058465066
+insured 3.82479896177
+temperature_rise 2.9442779296
+extreme_weather 2.91037405619

@@ -1,0 +1,6 @@
+this_is 5.63463877703
+search_result 5.12801548808
+knowledge 4.75382359278
+pretty_good 3.74459942601
+michelle_obama 3.68447324553
+google 3.30472560132

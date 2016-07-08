@@ -1,0 +1,7 @@
+terrorists 25.027557569
+threat 15.0634667244
+existential 11.2494097853
+state_department 11.2050156659
+phone_calls 10.9640075664
+trillions 10.2494097853
+terrorist_attacks 9.71025097416

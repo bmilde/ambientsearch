@@ -1,0 +1,6 @@
+medications 28.1989497617
+blind_faith 13.6644472845
+evidence 12.8584616457
+emergency_medicine 12.6644472845
+medical_science 11.7258478292
+only_half 11.2494097853

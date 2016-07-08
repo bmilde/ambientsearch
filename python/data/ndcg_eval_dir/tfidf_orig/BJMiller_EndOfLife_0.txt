@@ -1,0 +1,7 @@
+patients 29.0089212173
+health_care_system 13.9274816904
+brilliance 12.7899781666
+dysfunction 12.161946944
+hospice 11.6644472845
+commuter_train 11.5489700671
+electrical_current 11.3914287901

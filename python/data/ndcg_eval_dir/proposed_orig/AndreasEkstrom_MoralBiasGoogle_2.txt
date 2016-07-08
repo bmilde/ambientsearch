@@ -1,0 +1,7 @@
+search_results 10.733770017
+blogs 7.68540688646
+poop 5.88892531054
+sidewalks 4.39917118027
+search_engine_optimization 3.21083147861
+dog 2.87449536075
+terrorist 2.77199641869

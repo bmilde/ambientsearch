@@ -1,0 +1,9 @@
+human_beings 2.62249891511
+suffering 2.41192469108
+proportionality 2.16797762886
+caregiver 2.15228040942
+healing 2.02626273158
+creativity 1.96277708855
+compassion 1.90504324371
+conversation 1.88439520481
+limbs 1.85374109279

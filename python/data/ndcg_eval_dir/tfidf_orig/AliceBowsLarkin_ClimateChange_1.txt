@@ -1,0 +1,8 @@
+emissions 78.5851602445
+climate_change 26.7020448931
+centigrade 26.4988195705
+degree 18.9206858398
+impact 14.4430075774
+deaths 13.9605829603
+global_economy 13.4420548632
+extreme_weather 12.9274816904

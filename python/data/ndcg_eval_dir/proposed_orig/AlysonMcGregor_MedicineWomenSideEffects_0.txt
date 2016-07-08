@@ -1,0 +1,7 @@
+medications 9.75241994942
+doctors 6.81570925086
+medical_emergency 3.34703225377
+evidence 3.21347228997
+only_half 3.19112754152
+emergency_medicine 2.98014454069
+runny 2.88712981563

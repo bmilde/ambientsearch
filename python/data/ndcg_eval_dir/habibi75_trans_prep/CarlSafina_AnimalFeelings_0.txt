@@ -1,0 +1,7 @@
+capacities 4980.0
+brains 24160.0
+dog 30332.0
+evolution 17454.0
+human 39313.0
+fuzzy 17353.0
+capacities 4980.0
