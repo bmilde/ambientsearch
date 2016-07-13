@@ -101,7 +101,6 @@ def calc_ndgc():
                     if json_file in judges[judge]:
                         single_judgement = judges[judge][json_file]
                         for title in single_judgement:
-                            print 'single:',single_judgement[title]
                             judgement[title] += single_judgement[title]
                             judgement_div[title] += 1.0
                     else:
@@ -154,89 +153,6 @@ def calc_ndgc():
         #print method,'mean DCG:','%0.3f' % np.mean(DCGs[method]),'std','%0.3f' % np.std(DCGs[method])
         #print method,'mean hit:','%0.3f' % np.mean(hits[method]),'std','%0.3f' % np.std(hits[method])
 
-@app.route("/ndcg_list/<username>")
-def ndcg_list(username):
-    html = u'''<!doctype html><html lang=en><head><meta charset=utf-8><title>NDCG Ambient Search Eval</title>
-            </head><body>'''
-    
-    html += u'<h1>Hi '+username+u'</h1>'
-    html += u'<ul>'
-    for key in needed_judgements:
-        length = str(len(needed_judgements[key]))
-        html += u'<li><a href="/ndcg/'+key+u'/'+username+u'">'+key+u'</a> ('+length+u')</li>'
-    html += u'</ul>'
-    html += u'''
-    </body>
-    </html>'''
-    return html
-
-@app.route('/ndcg_save/<filename>/<username>', methods=['POST'])
-def ndcg_save(filename,username):
-    username_dir = 'data/ndcg_save/' + make_id_save(username) + "/"
-    ensure_dir(username_dir)
-    json_out = {}
-
-    parse_errors = ''
-    for key in flask.request.form:
-        try:
-            value = int(flask.request.form[key])
-            if value >= 0 and value <= 3: 
-                json_out[key] = value
-                parse_error = False
-            else:
-                parse_error = True
-        except:
-            parse_error = True
-        if parse_error:
-            parse_errors += key + ' ' + (flask.request.form[key] if flask.request.form[key] != '' else '&lt;empty string&gt;') + '<br/>'
-
-    json_str = json.dumps(json_out)
-
-    print 'New json str:',json_str
-    print 'Parse errors:',parse_errors
-
-    with open(username_dir + filename + '.json','w') as filename_out:
-        filename_out.write(json_str)
-
-    html = u'''<!doctype html><html lang=en><head><meta charset=utf-8><title>NDCG Ambient Search Eval</title>
-                    </head><body>'''
-    if parse_errors != '':
-        html += u'Could not parse: <br/>' + parse_errors + '<br/>'
-    html += u'Thanks. Now go back to: <a href="/ndcg_list/'+username+'">the list</a>'
-    html += u'</body></html>'
-    return html
-
-@app.route("/ndcg/<filename>/<username>")
-def ndcg(filename,username):
-    if filename not in origs:
-        return u'Could not find: '+filename
-    #if os.path.exists('data/ndcg_save/' + make_id_save(username) + "/" + filename + '.json'):
-    
-    html = u'''<!doctype html><html lang=en><head><meta charset=utf-8><title>NDCG Ambient Search Eval</title>
-            </head><body>'''
-#you give a 0 score for an irrelevant result, 1 for a partially relevant, 2 for relevant, and 3 for perfect.
-
-    html += u'<h1>Hi '+username+u'</h1>'
-    html +=u'''<p>Each document is to be judged on a scale of 0-3 with 0 meaning irrelevant, 
-    1 partially relevant, 2 for relevant and 3 for very relevant / perfect.</p>'''
-    html += u'<h2>' + filename + u' text is:</h2>'
-    html += origs[filename]
-    html += '<form action="/ndcg_save/'+filename+'/'+username+'" method="post">'
-    for judgement in needed_judgements[filename]:
-        html += u'<h3>On a scale from 0 to 3, how relevant is <a href="'+ judgement[u'url'] +'">'+ judgement[u'title']  +'</a></h3>'
-        html += u'Wiki text: ' + judgement[u'text'] + u'<br/>'
-        html += u'Wiki categories: ' + u' '.join(judgement[u'categories']) + u'<br/>'
-        my_id = judgement[u'id']
-        html += u'<input list="'+my_id+u'" name="'+judgement[u'title']+'"><datalist id="'+my_id+'"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></datalist></input>'
-    html += '<br/><input type="submit"></form>'
-        #html += u'<ul>'
-
-        #html += u'/<ul>'
-    html += u'</body></html>'
-    return html
-
 if __name__ == "__main__":
     #parse_ndcg_data()
     calc_ndgc()
-    #app.debug = True
-    #app.run(host='0.0.0.0')
