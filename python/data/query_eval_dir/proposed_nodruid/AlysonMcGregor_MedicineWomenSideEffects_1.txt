@@ -1,0 +1,1 @@
+drugs^42.53642 women^7.47852 clinical^4.92147 accidents^4.21319 studies^3.92992 vehicle^2.84723 prescriptions^2.80586 dose^2.57243 trials^2.56831 laboratory^2.34025

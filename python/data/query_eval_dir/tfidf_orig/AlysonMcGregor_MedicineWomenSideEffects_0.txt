@@ -1,0 +1,1 @@
+medications^26.97439 doctors^22.24814 "emergency medicine"^12.66445 evidence^12.54140 runny^11.78998 "medical science"^11.72585 "medical emergency"^10.52149 prescribing^9.50794 toes^8.29521 gender^7.98731

@@ -1,0 +1,1 @@
+medications^8.67869 evidence^3.15872 prescribing^2.63370 "medical emergency"^2.57672 patients^2.52337 gender^2.25753 "emergency medicine"^2.23160 sex^1.98783 blind^1.89176 noses^1.60128

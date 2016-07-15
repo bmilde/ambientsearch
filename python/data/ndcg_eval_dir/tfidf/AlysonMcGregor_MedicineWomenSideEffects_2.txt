@@ -1,7 +1,10 @@
-medical_research 41.6660790844
-women 29.1393344724
-studies 23.1393344724
+medical_research 40.3986506631
+women 27.8608040739
+studies 22.8808748014
 informed_consent 13.9274816904
 medical_community 13.6644472845
-health 13.475314263
 sex_hormones 13.2494097853
+health 12.7704472812
+irresponsible 12.161946944
+bresse 12.0014822718
+reproductive_organs 11.7899781666

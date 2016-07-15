@@ -1,0 +1,1 @@
+suits^24.28911 scuba^11.19542 parachute^10.58441 stratospheric^8.10444 tanks^7.81340 diving^4.36685 wetsuit^2.91712 reserve^2.16442 redundant^2.01467 thermal^1.92796

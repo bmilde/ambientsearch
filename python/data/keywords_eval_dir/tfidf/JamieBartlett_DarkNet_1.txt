@@ -1,7 +1,10 @@
 vendors
 sites
 pseudonym
-user reviews
-your home
 crypto
 positive feedback
+buyer
+encrypt
+clever
+delivery
+currency

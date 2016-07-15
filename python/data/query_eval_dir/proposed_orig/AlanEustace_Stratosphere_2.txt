@@ -1,0 +1,1 @@
+pipe^4.47490 parachute^2.32172 tandem^2.17056 gravity^1.87066 skydiving^1.73773 solid^1.38895 roll^1.25836 entire^0.94502 miles^0.70765 release^0.47880

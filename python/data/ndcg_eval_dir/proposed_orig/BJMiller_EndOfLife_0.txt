@@ -1,6 +1,10 @@
-patients 4.84208999071
-dysfunction 2.13761026552
-health_care_system 1.66289568471
-electrical_current 1.6043697804
-hospice 1.57364522235
-my_friends 1.49719428658
+patients 6.35710531915
+palliative 2.48899504095
+hospice 2.19308530906
+brilliance 2.07304222336
+great_idea 2.03702627745
+dysfunction 1.89927562878
+electrical_current 1.83684203677
+long_run 1.61811258945
+healthcare 1.55632519297
+commuter_train 1.41430937999

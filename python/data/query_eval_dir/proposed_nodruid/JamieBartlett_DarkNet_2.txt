@@ -1,0 +1,1 @@
+currencies^6.35157 drugs^5.13338 conditions^2.79571 payment^2.26025 consumer^2.11454 purity^1.82187 quality^1.77107 risks^1.72523 feedback^1.69506 attitude^1.56189

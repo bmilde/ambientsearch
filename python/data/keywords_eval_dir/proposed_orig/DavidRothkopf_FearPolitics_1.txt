@@ -6,4 +6,5 @@ cycles
 threat
 reactive
 heightened
-political debate
+strategy
+reaction

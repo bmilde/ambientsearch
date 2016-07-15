@@ -1,0 +1,10 @@
+temperatures
+degrees
+average temperature
+infrastructure
+global
+temperature range
+scenario
+sea
+impacts
+inertia

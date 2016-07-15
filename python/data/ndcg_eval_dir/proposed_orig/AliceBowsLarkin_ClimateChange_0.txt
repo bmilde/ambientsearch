@@ -1,6 +1,10 @@
-climate_change 41.06964584
-greenhouse_gas_emissions 7.38255648252
-future 5.79584978712
-impacts 5.26513807153
-we_will 3.89222081821
-climate 3.76915456715
+climate_change 26.5052903889
+future 7.99703270585
+greenhouse_gas_emissions 7.62644437553
+impacts 5.22583269495
+negative_impact 3.82396956353
+climate 3.68550860868
+potential 3.41369952029
+profound 3.29692280744
+emissions 3.22164700026
+workplaces 3.05481515742

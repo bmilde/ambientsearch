@@ -1,0 +1,10 @@
+currencies
+drugs
+sites
+bitcoin
+conditions
+credit card
+payment
+feedback
+consumer
+decentralized

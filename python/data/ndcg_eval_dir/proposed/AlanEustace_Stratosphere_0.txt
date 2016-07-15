@@ -1,7 +1,10 @@
-colder 10.3793839141
-stratosphere 10.1909831743
-planet 5.87693298677
-way_up 3.57295865156
-apollo_program 2.92157076564
-impressed 2.66988113258
-slower_rate 2.26900338893
+stratosphere 11.0041761375
+colder 10.512772018
+planet 5.8812003901
+slower_rate 2.94026822781
+apollo_program 2.78084744579
+impressed 2.64539453979
+amazing 2.58938741129
+international_space_station 2.35090247181
+astronauts 1.82989030663
+backyard 1.72420483879

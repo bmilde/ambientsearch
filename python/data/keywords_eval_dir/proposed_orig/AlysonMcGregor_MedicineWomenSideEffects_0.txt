@@ -1,7 +1,10 @@
 medications
 doctors
-medical emergency
 evidence
-only half
+medical emergency
+prescribing
+patients
 emergency medicine
+gender
 runny
+sex

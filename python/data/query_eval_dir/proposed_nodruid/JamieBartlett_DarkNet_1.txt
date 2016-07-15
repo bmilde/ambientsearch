@@ -1,0 +1,1 @@
+vendors^23.91823 sites^4.04331 encrypt^2.53963 buyer^2.47605 pseudonym^2.34682 consumer^2.05441 address^1.85013 delivery^1.81652 feedback^1.77386 quality^1.67382

@@ -1,0 +1,1 @@
+currencies^6.39487 sites^6.07094 drugs^4.84121 bitcoin^3.60699 conditions^2.58030 payment^2.10322 consumer^2.02618 purity^1.73083 quality^1.72838 feedback^1.66246

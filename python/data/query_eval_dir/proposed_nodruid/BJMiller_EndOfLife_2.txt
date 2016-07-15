@@ -1,0 +1,1 @@
+hospitals^7.91073 bodies^5.80924 warmth^2.14144 anaesthetic^1.96644 grief^1.83537 trauma^1.78425 hospice^1.78329 numbness^1.69694 patient^1.58854 treatable^1.58630

@@ -4,5 +4,7 @@ alternatives
 unbiased
 students
 query
-search engine
 basic principle
+search engine
+biased
+building blocks

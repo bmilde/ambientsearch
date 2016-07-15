@@ -1,7 +1,10 @@
-one_woman 22.323893888
-influence 16.0140533923
+religion 17.3976886143
+influence 15.8508765018
+woman 15.8465505793
 scrimmage 13.9274816904
-belief 13.475314263
+belief 13.3064400582
 religious_life 13.0794847838
-world_religion 12.7899781666
 common_practice 12.0014822718
+basketball_games 11.1201267683
+equal_rights 10.5214893307
+world_today 10.4945222831

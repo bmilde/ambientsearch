@@ -1,0 +1,10 @@
+temperatures
+degrees
+global
+extremes
+scenario
+impacts
+infrastructure
+sea
+thermal
+inertia

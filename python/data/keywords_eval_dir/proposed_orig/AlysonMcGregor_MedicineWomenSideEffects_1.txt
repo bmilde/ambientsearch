@@ -1,8 +1,10 @@
 drugs
-side effects
 women
 clinical trials
+laboratory
 cells
-dose
-prescriptions
 sleep disorders
+prescriptions
+dose
+men
+drowsy

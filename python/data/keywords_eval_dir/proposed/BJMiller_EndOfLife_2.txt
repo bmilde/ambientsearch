@@ -1,9 +1,10 @@
+bodies
 hospitals
-the body
 anaesthetic
-mortuary
-warmth
-treatable
+trauma
 grief
 numbness
+warmth
+treatable
+acute
 patient

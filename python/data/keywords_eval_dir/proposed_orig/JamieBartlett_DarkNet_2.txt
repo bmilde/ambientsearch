@@ -1,8 +1,10 @@
 currencies
-sites
 drugs
+sites
 bitcoin
-feedback
 credit card
-good way
-marketplace
+payment
+feedback
+consumer
+decentralized
+quality

@@ -5,3 +5,6 @@ sidewalks
 dog
 terrorist
 search engine optimization
+campaign
+caption
+michelle obama

@@ -1,0 +1,10 @@
+temperatures 12.0923670011
+impacts 6.42432953076
+extremes 5.2674911822
+degrees 4.58712057727
+global 4.32306971327
+infrastructure 3.74374140218
+temperature_range 3.67926821071
+heat_wave 2.6182374863
+thermal_energy 2.58137037582
+average_temperature 2.37275505208

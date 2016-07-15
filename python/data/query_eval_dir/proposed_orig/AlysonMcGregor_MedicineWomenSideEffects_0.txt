@@ -1,0 +1,1 @@
+medications^9.35916 doctors^6.88064 evidence^3.26216 "medical emergency"^2.87365 prescribing^2.83198 patients^2.73274 "emergency medicine"^2.48807 gender^2.36080 runny^2.31318 sex^2.09615

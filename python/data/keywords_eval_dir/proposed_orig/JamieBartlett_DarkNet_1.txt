@@ -1,8 +1,10 @@
 vendors
 sites
+pseudonym
+frees
 bitcoin
 address
-other users
+buyer
 encryption
-crypto
-user reviews
+positive feedback
+delivery

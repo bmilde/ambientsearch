@@ -5,4 +5,6 @@ infrastructure
 impacts
 temperature range
 resilient
-hot days
+rail networks
+heat wave
+thermal energy

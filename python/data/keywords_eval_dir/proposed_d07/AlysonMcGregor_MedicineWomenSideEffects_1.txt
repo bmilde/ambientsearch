@@ -1,0 +1,10 @@
+drugs
+women
+accidents
+clinical
+studies
+motor vehicle
+prescriptions
+trials
+dose
+laboratory

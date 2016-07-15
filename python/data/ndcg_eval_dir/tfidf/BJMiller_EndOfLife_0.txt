@@ -1,7 +1,10 @@
-patients 29.0089212173
-health_care_system 13.9274816904
+patients 28.3884997719
+palliative 13.6644472845
+great_idea 13.6644472845
 brilliance 12.7899781666
-dysfunction 12.161946944
+dysfunction 12.0794847838
 hospice 11.6644472845
-commuter_train 11.5489700671
+commuter_train 11.4945222831
 electrical_current 11.3914287901
+sophomore 11.2494097853
+long_run 11.2494097853

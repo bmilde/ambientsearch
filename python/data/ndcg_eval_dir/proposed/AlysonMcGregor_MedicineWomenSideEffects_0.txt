@@ -1,7 +1,10 @@
-medications 8.87428533526
-evidence 3.03116185424
-medical_emergency 2.91083099474
-only_half 2.82609335272
-prescribing 2.55859676131
-emergency_medicine 2.55658511248
-patients 2.50044318615
+medications 8.67869218079
+evidence 3.15871880875
+prescribing 2.63369571675
+medical_emergency 2.57671574832
+patients 2.52337128894
+gender 2.25753310915
+emergency_medicine 2.2316024588
+sex 1.98783335395
+blind 1.89176427405
+noses 1.6012773219

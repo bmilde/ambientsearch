@@ -1,8 +1,10 @@
 parachute
 drug
-zero gravity
 tandem
 pipe
+gravity
 release
-no way
 stroke
+solid
+entire
+critical

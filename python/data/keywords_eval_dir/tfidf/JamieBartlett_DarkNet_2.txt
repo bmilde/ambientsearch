@@ -1,8 +1,10 @@
 currencies
 drugs
-month period
+inhospitable
 crypto
 marketplace
-good way
-feedback
 reckoning
+feedback
+credit card
+purity
+real world

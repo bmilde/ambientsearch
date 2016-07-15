@@ -6,4 +6,5 @@ reactive
 bold
 threat
 political debate
-government job
+heightened
+think tanks

@@ -1,8 +1,10 @@
 vendors
 sites
+frees
 pseudonym
 bitcoin
 address
-user reviews
-your home
 crypto
+positive feedback
+allegiance
+buyer

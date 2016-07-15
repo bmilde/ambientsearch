@@ -1,0 +1,1 @@
+patients^6.82983 hospice^1.98425 palliative^1.84392 brilliance^1.83392 healthcare^1.72789 dysfunction^1.50068 night^1.39864 health^1.35557 commuter^1.24929 medicine^1.10603

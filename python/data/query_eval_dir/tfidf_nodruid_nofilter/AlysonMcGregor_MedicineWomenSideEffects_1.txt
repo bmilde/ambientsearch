@@ -1,0 +1,1 @@
+drugs^84.55939 women^27.09328 accidents^26.07236 studies^22.37127 clinical^16.10931 laboratory^14.08968 motor^12.96576 vehicle^12.88411 sleep^12.78597 trials^12.69709

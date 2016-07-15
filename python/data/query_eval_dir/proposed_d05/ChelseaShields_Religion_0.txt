@@ -1,0 +1,1 @@
+religion^5.96917 belief^4.49176 influence^3.83625 woman^3.08588 "equal rights"^2.98629 "religious life"^2.81661 "decision making"^2.69604 discrimination^2.65420 secular^2.44383 gender^2.24640

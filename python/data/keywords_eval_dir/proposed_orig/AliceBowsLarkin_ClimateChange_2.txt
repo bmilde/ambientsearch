@@ -1,8 +1,10 @@
 average temperatures
 degrees
-the sea
-scenario
-infrastructure
-global
 impacts
+global
+temperature range
+infrastructure
+scenario
+sea
+heat wave
 extremes

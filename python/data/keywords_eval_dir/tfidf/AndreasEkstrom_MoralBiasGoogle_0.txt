@@ -3,5 +3,8 @@ unbiased
 alternatives
 search result
 students
-me first
-my skin
+word search
+basic principle
+building blocks
+query
+cornerstone

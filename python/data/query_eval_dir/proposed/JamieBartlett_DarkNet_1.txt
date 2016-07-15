@@ -1,0 +1,1 @@
+vendors^15.87116 sites^5.75010 buyer^2.72295 encrypt^2.48685 pseudonym^2.40647 "positive feedback"^2.16900 delivery^2.10796 address^1.98130 consumer^1.96769 crypto^1.82784

@@ -1,7 +1,10 @@
 poop 38.7824450711
-blogs 31.6560777223
-search_results 26.4988195705
-sidewalks 21.211107191
-dog 18.8725712095
-terrorist 16.6850383793
-search_engine_optimization 14.6644472845
+blogs 30.9033913168
+search_results 25.3288945691
+sidewalks 20.9361001435
+dog 18.3836288038
+terrorist 16.4652029952
+search_engine_optimization 14.2494097853
+campaign 12.6314382606
+caption 11.1201267683
+michelle_obama 10.9274816904

@@ -1,7 +1,10 @@
 medications
 doctors
-blind faith
-runny
-evidence
 emergency medicine
+evidence
+runny
 medical science
+medical emergency
+prescribing
+toes
+gender

@@ -1,0 +1,1 @@
+suits^14.36359 scuba^13.70864 parachute^11.90457 tanks^9.54224 diving^4.26676 wetsuit^3.77417 reserve^2.72977 scalp^2.56028 thermal^2.44782 stratosphere^2.37439

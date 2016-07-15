@@ -1,0 +1,1 @@
+temperatures^28.34084 degrees^11.60844 extremes^4.63962 global^4.63446 scenario^3.97011 "temperature range"^3.93017 infrastructure^3.76936 sea^3.59793 impacts^3.35921 inertia^3.21388

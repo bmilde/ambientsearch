@@ -1,0 +1,1 @@
+hospitals^8.17109 body^2.92737 warmth^2.08868 hospice^1.93091 grief^1.83228 anesthetic^1.82105 trauma^1.79290 sterility^1.78978 treatable^1.72473 patient^1.66530

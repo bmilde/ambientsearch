@@ -1,0 +1,1 @@
+drugs^21.33205 women^6.65328 "clinical trials"^5.84743 prescriptions^3.01100 "sleep disorders"^2.93822 dose^2.69635 laboratory^2.65217 drowsy^2.54766 cells^2.25975 patients^2.17411

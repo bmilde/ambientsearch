@@ -1,0 +1,1 @@
+currencies^7.38426 drugs^6.16792 conditions^3.42528 "credit card"^3.17379 payment^2.72465 feedback^2.50260 consumer^2.49375 quality^2.33000 "real world"^2.21391 risks^1.97729

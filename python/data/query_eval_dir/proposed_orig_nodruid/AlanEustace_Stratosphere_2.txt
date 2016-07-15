@@ -1,0 +1,1 @@
+parachute^13.13220 pipe^4.54326 gravity^1.88420 skydiving^1.88337 tandem^1.71483 solid^1.25639 potential^1.23634 roll^1.20494 entire^0.91791 miles^0.64623

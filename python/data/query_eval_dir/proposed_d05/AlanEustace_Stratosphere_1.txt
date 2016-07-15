@@ -1,0 +1,1 @@
+suits^21.32999 parachute^11.60425 tanks^9.48151 scuba^6.24189 "scuba diving"^5.43701 wetsuit^3.68357 amazing^3.20913 reserve^2.85156 scalp^2.57106 thermal^2.39499

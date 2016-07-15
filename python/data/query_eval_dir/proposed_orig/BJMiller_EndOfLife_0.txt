@@ -1,0 +1,1 @@
+patients^6.35711 palliative^2.48900 hospice^2.19309 brilliance^2.07304 "great idea"^2.03703 dysfunction^1.89928 "electrical current"^1.83684 "long run"^1.61811 healthcare^1.55633 "commuter train"^1.41431

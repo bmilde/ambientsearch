@@ -1,0 +1,1 @@
+medications^25.18274 doctors^7.13596 emergency^3.53902 evidence^2.94346 prescribing^2.89435 patients^2.66827 gender^2.08407 sex^1.76878 blind^1.74047 medicine^1.68661

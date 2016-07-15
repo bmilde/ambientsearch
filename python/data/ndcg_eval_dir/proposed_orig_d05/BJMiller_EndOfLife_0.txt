@@ -1,0 +1,10 @@
+patients 6.62958453745
+palliative 2.1464536589
+hospice 2.11709738794
+brilliance 1.92698624291
+healthcare 1.80414377734
+electrical_current 1.80294708227
+dysfunction 1.69656508709
+health_care 1.5088417825
+long_run 1.48978752313
+night 1.3222299897

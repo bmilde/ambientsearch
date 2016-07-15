@@ -1,0 +1,10 @@
+superpower 7.69903791463
+pad 6.47653139907
+cellphone 4.05195498948
+adversary 2.34649905887
+insurgents 2.28448026819
+deterrent 2.2610854767
+cell_phones 2.25488269181
+warfare 2.07399061049
+nuclear_war 2.02150967407
+law_enforcement_officer 1.8444566678

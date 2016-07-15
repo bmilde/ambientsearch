@@ -1,0 +1,1 @@
+medications^26.97439 "emergency medicine"^12.66445 evidence^12.54140 "medical science"^11.72585 "medical emergency"^10.52149 prescribing^9.50794 toes^8.29521 gender^7.98731 noses^7.53173 trust^7.20775

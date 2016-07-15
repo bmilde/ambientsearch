@@ -1,8 +1,10 @@
 elephants
-brains
 dangerous
+brains
 humans
 palm trees
-water holes
-tourists
 patch
+convolutions
+tourists
+hidden
+concerned

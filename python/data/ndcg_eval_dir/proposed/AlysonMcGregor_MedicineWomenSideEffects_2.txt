@@ -1,7 +1,10 @@
-medical_research 9.31085926863
-women 7.9696998987
-studies 4.96758303836
-health 3.53160050747
-medical_community 3.22311630695
-fetus 2.83247306646
-reproductive_organs 2.710207508
+medical_research 14.8375053069
+women 8.03317257994
+studies 4.41748421881
+men 4.09783006311
+health 3.51034349132
+fetus 2.94129767835
+medical_community 2.75668957641
+reproductive_organs 2.58220212272
+sex_hormones 2.45863119899
+pregnancy 2.40433733688

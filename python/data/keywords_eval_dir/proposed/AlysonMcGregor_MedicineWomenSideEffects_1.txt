@@ -1,7 +1,10 @@
 drugs
-side effects
-clinical trials
 women
+clinical trials
 prescriptions
-dose
 sleep disorders
+dose
+laboratory
+drowsy
+cells
+patients

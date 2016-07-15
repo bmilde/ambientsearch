@@ -1,0 +1,1 @@
+hospitals^9.10790 body^3.53436 trauma^2.39098 grief^2.22251 treatable^2.20733 warmth^2.13489 anesthetic^2.12380 hearse^2.10015 hospice^2.04568 numbness^2.02465

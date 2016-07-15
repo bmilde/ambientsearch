@@ -1,0 +1,1 @@
+browser^28.93421 anonymous^5.23382 net^3.92145 ip^3.59050 firefox^3.42363 software^2.53361 address^1.86752 sites^1.83461 meaningless^1.82862 quality^1.62771

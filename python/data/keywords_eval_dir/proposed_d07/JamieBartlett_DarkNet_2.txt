@@ -1,0 +1,10 @@
+currencies
+drugs
+conditions
+credit card
+payment
+consumer
+feedback
+quality
+risks
+comfort

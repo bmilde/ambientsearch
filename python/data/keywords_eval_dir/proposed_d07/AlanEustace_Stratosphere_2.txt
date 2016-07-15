@@ -1,0 +1,10 @@
+parachute
+drug
+tandem
+pipe
+gravity
+potential
+release
+stroke
+solid
+entire

@@ -1,0 +1,10 @@
+emissions 24.1102147159
+climate_change 8.92213128593
+weather_event 5.40382268226
+industrial 5.15820396372
+infrastructure 4.24285282402
+impact 4.05503798869
+significant 3.99447965059
+degree 3.44229468018
+global_economy 2.81490367133
+fossil_fuel 2.62804864742

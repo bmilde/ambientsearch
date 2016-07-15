@@ -1,8 +1,10 @@
 vendors
 sites
-other users
-encrypt
 buyer
-user reviews
-crypto
+encrypt
 pseudonym
+positive feedback
+delivery
+address
+consumer
+crypto

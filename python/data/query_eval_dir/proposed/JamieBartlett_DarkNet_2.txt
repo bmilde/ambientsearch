@@ -1,0 +1,1 @@
+currencies^7.26696 drugs^5.83049 "credit card"^3.10454 payment^2.62298 feedback^2.42619 consumer^2.39443 quality^2.23034 "real world"^2.11399 creative^1.89576 risks^1.84873

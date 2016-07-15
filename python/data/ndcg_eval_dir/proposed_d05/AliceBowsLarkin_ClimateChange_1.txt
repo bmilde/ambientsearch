@@ -1,0 +1,10 @@
+insured 8.14023291575
+climate_change 8.11607084492
+emissions 5.24927830931
+industrial 4.99367687682
+weather_event 4.74955334334
+missions 4.49215601196
+infrastructure 4.2222983672
+significant 3.7780583224
+degree 3.38323873899
+global_economy 2.71203145244

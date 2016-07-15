@@ -1,8 +1,10 @@
 suits
+scuba
 scuba diving
 parachute
-scuba
 wetsuit
-amazing
-scalp
 oxygen tanks
+scalp
+stratosphere
+tank
+amazing

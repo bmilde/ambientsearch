@@ -6,3 +6,5 @@ apps
 ipad
 satellite imagery
 law enforcement officer
+deterrent
+adversary

@@ -1,7 +1,10 @@
-terrorists 5.78713085499
-threat 4.05635970157
-casualties 2.48335386751
-terrorist_attacks 2.41214747726
-state_department 2.04867268762
-international_law 1.95797231004
-trillions 1.91924554279
+terrorists 5.66470203811
+threat 4.00810410271
+wars 2.96463905311
+casualties 2.28799706529
+terrorist_attacks 2.23978116598
+international_law 2.01983491166
+trillions 1.69436772384
+phone_calls 1.63486047012
+allies 1.58707461659
+countries 1.5552861259

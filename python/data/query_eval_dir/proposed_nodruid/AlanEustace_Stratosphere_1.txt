@@ -1,0 +1,1 @@
+suits^12.31728 scuba^11.68016 parachute^11.26458 tanks^8.53634 diving^4.54822 wetsuit^2.96637 reserve^2.38408 scalp^1.97765 vehicle^1.96071 thermal^1.95908

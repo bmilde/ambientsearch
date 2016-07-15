@@ -1,0 +1,1 @@
+drugs^35.05086 women^7.50301 accidents^6.68309 clinical^5.62719 studies^4.39294 "motor vehicle"^4.13798 prescriptions^3.53209 trials^3.39499 dose^3.11217 laboratory^2.90599

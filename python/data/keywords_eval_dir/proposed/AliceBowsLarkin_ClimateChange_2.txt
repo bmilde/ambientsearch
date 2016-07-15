@@ -1,8 +1,10 @@
 average temperatures
-impacts
-degrees
 global
 infrastructure
+degrees
+temperature range
+impacts
+heat wave
 thermal energy
 extremes
-heat wave
+resilient

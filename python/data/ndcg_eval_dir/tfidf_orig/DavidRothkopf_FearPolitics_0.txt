@@ -1,7 +1,10 @@
-terrorists 50.055115138
-threat 15.0634667244
+terrorists 49.3956089855
+threat 14.7642620911
+wars 14.6465290758
+phone_calls 11.4945222831
 existential 11.2494097853
-state_department 11.2050156659
-phone_calls 10.9640075664
-trillions 10.2494097853
+trillions 10.0595852264
 terrorist_attacks 9.71025097416
+sweeping 9.2607250985
+international_law 9.20501566591
+unstable 8.96400756641

@@ -1,0 +1,10 @@
+medications
+doctors
+evidence
+emergency
+prescribing
+patients
+gender
+sex
+blind
+medicine

@@ -1,9 +1,10 @@
-the body
+body
 hospitals
-mortuary
-treatable
-warmth
-anesthetic
-sterility
+trauma
 grief
+warmth
+treatable
+anesthetic
+hearse
 numbness
+hospice

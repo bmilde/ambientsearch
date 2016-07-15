@@ -5,5 +5,6 @@ companions
 skeleton
 humans
 unconscious
-contagious
+consciousness
 killer whale
+contagious

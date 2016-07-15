@@ -1,0 +1,1 @@
+sediment^4.53557 plants^4.28542 rough^3.71652 seabed^2.52955 estuaries^1.91194 bed^1.78580 sushi^1.78534 pigments^1.76084 coal^1.69590 nickel^1.53220

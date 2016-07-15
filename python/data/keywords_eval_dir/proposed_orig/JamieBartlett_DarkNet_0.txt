@@ -1,8 +1,10 @@
 browser
-anonymous
 tor
 net
+anonymous
 urls
-ip address
 firefox
+ip address
 open source
+encryption
+chrome

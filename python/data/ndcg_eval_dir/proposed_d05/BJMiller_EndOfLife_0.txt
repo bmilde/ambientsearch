@@ -1,0 +1,10 @@
+patients 7.29651702542
+health_care 3.47203999669
+hospice 2.291835539
+palliative 2.23240532207
+electrical_current 2.02145658168
+brilliance 1.93554124602
+dysfunction 1.9279950855
+long_run 1.58743945063
+commuter 1.49230664272
+solidarity 1.30393890775

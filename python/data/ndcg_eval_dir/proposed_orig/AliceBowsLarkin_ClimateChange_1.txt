@@ -1,7 +1,10 @@
-emissions 23.1235765684
-climate_change 8.26212417083
-impact 3.85079611801
-degree 3.60752566048
-temperature_rise 3.2513881195
-extreme_weather 3.05587647175
-centigrade 2.99701786818
+emissions 23.4806962431
+climate_change 17.5558309518
+significant 3.9777735676
+impact 3.95943435602
+degree 3.55260389452
+extreme_weather 3.26920414227
+global_warming 2.99891743909
+temperature_rise 2.83262755419
+global_economy 2.74857018395
+centigrade 2.66909979017

@@ -2,7 +2,9 @@ average temperatures
 degrees
 global
 scenario
-the sea
 infrastructure
+sea
 impacts
 temperature range
+resilient
+rail networks

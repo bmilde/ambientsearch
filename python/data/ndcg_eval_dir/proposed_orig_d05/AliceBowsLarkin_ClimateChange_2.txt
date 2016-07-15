@@ -1,0 +1,10 @@
+temperatures 12.9373173015
+degrees 10.6836008069
+average_temperature 10.0016949178
+infrastructure 7.36085357191
+global 4.46365007401
+temperature_range 3.84707243011
+scenario 3.68350782692
+sea 3.45784486679
+impacts 3.21443495388
+inertia 2.92423455506

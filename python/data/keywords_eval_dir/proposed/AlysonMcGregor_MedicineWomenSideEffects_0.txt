@@ -1,7 +1,10 @@
 medications
 evidence
-medical emergency
-only half
 prescribing
-emergency medicine
+medical emergency
 patients
+gender
+emergency medicine
+sex
+blind
+noses

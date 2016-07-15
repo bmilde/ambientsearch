@@ -1,0 +1,1 @@
+patients^6.62958 palliative^2.14645 hospice^2.11710 brilliance^1.92699 healthcare^1.80414 "electrical current"^1.80295 dysfunction^1.69657 "health care"^1.50884 "long run"^1.48979 night^1.32223

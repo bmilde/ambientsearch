@@ -1,0 +1,10 @@
+currencies
+drugs
+conditions
+credit card
+payment
+feedback
+consumer
+quality
+real world
+risks

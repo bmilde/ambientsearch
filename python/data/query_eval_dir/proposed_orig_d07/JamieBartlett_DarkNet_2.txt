@@ -1,0 +1,1 @@
+currencies^7.74557 drugs^5.83806 sites^5.35936 bitcoin^3.88484 conditions^3.17469 "credit card"^3.15756 payment^2.66042 feedback^2.53672 consumer^2.43134 decentralized^2.32015

@@ -1,0 +1,1 @@
+medications^66.94504 prescribing^38.03177 emergency^12.76735 evidence^12.25058 ok^9.28363 stabbed^8.81478 toes^8.20502 gender^7.82735 noses^7.40392 patients^7.02541

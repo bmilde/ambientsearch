@@ -1,0 +1,1 @@
+drugs^52.78158 male^8.21405 women^7.84516 accidents^6.72212 clinical^5.68318 studies^4.44123 cells^4.25634 "motor vehicle"^4.21145 prescriptions^3.50524 trials^3.39099

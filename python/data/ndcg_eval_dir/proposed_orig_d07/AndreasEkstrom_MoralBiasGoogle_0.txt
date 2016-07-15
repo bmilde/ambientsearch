@@ -1,0 +1,10 @@
+google 17.8283128719
+unbiased 7.12791596594
+students 4.82936328397
+query 3.20619280318
+alternatives 2.81237514174
+search_engine 2.57641357696
+humanities 2.37543598
+building_blocks 2.12307103658
+principle 1.73014132383
+impossibility 1.58179312533

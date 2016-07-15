@@ -1,0 +1,1 @@
+parachute^8.03727 drug^4.73298 gravity^1.84895 pipe^1.82935 potential^1.81283 release^1.56500 tandem^1.25707 solid^1.16289 stroke^1.13664 entire^0.99700
