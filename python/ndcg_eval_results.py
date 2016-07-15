@@ -87,8 +87,8 @@ def calc_ndgc():
 
         #for key in origs:
         #    shorter_origs.
-
-        for json_file in [f for f in os.listdir(method_dir) if f.endswith(".json")]:
+        NDCG_files = sorted([f for f in os.listdir(method_dir) if f.endswith(".json")])
+        for json_file in NDCG_files:
             with io.open(method_dir + '/' +json_file, 'r', encoding='utf-8') as json_in_file:
                 filename_raw = json_file[:-5]
                 ndcg_json = json.loads(json_in_file.read())
@@ -152,6 +152,27 @@ def calc_ndgc():
         #print method,'median NDCG:','%0.3f' % np.median(NDCGs[method]),'std', '%0.3f' % np.std(NDCGs[method])
         #print method,'mean DCG:','%0.3f' % np.mean(DCGs[method]),'std','%0.3f' % np.std(DCGs[method])
         #print method,'mean hit:','%0.3f' % np.mean(hits[method]),'std','%0.3f' % np.std(hits[method])
+    
+    # habibi75_trans_prep
+    print 'Individual habibi'
+    for i,filename in enumerate(NDCG_files):
+        print NDCGs['habibi75_trans_prep'][i]
+
+    print 'Individual proposed_orig_d07'
+    for i,filename in enumerate(NDCG_files):
+        print NDCGs['proposed_orig_d07'][i]
+
+    print 'Individual proposed_d07'
+    for i,filename in enumerate(NDCG_files):
+        print NDCGs['proposed_d07'][i]
+
+    print 'Individual proposed_nodruid'
+    for i,filename in enumerate(NDCG_files):
+        print NDCGs['proposed_nodruid'][i]
+
+    print 'Individual proposed_orig_nodruid'
+    for i,filename in enumerate(NDCG_files):
+        print NDCGs['proposed_orig_nodruid'][i]
 
 if __name__ == "__main__":
     #parse_ndcg_data()

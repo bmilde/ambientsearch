@@ -12,9 +12,9 @@ stemmer = nltk.stem.PorterStemmer()
 manual_dir = os.path.join(data_directory(), 'manual_keywords_merged')
 eval_dir = os.path.join(data_directory(), 'keywords_eval_dir')
 
-#methods = ['tfidf_nodruid_nofilter_nostopwords', 'tfidf_nodruid_nofilter', 'tfidf_nodruid', 'tfidf', 'tfidf_orig', 'habibi75', 'habibi75_orig', 'proposed', 'proposed_nodruid','proposed_orig']
+methods = ['tfidf_nodruid_nofilter_nostopwords', 'tfidf_nodruid_nofilter', 'tfidf_nodruid', 'tfidf', 'tfidf_orig', 'habibi75', 'habibi75_orig', 'proposed', 'proposed_nodruid','proposed_orig']
 
-methods = ['habibi75', 'habibi75_orig', 'habibi75_prep', 'habibi75_orig_prep']
+#methods = ['habibi75', 'habibi75_orig', 'habibi75_prep', 'habibi75_orig_prep']
 
 pretty_method_names = {
     'tfidf_nodruid_nofilter_nostopwords' : 'TF-IDF baseline, no multiwords, no filtering',

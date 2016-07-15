@@ -38,7 +38,7 @@ class MySentences(object):
                 ngrams = line.lower().split()
             yield [self.stemmer.stem(token) for token in ngrams]
 
-def train_w2v(data_directory, corpus_path, wiki_text_output_path, word2vec_output_path, w2v_dim, multiwords=True):
+def train_w2v(data_directory, corpus_path, wiki_text_output_path, word2vec_output_path, w2v_dim, multiwords=True, druid_cutoff_score=0.4):
     start_time = time.time()
     
     # Convert Wikipedia XML dump into .txt format
@@ -52,8 +52,8 @@ def train_w2v(data_directory, corpus_path, wiki_text_output_path, word2vec_outpu
     if multiwords:
         logger.info('Using druid_en.bz2 in  ' + data_directory + ' as multiword dictionary.')
         druid_path = join(data_directory, 'druid_en.bz2')
-        druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.2)
-
+        druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=druid_cutoff_score)
+        logger.info('Loaded Druid with cutoff'+str(druid_cutoff_score))
         # Train the word2vec model, also use DRUID multiwords
         sentences = MySentences(wiki_text_output_path, druid_dict, multiwords=True)  # a memory-friendly iterator
     else:
@@ -82,6 +82,7 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--word2vec-output-path', dest='word2vec_output_path', help='Output model file', type=str, default = 'simple-enwiki-latest.word2vec')
     parser.add_argument('-v', '--w2v-dim',  dest='w2v_dim', help='The dimensionality of the word2vec vectors', default=100)
     parser.add_argument('-nm', '--no-multiwords', dest='no_multiwords', help='No multiwords in model generation', action='store_true', default=False)
+    parser.add_argument('-s', '--druid-cutoff-score', dest='druid_cutoff_score', help='DRUID cutoff score', type=float, default = 0.3)
 
     args = parser.parse_args()
 
@@ -91,5 +92,5 @@ if __name__ == '__main__':
     wiki_text_output_path = join(args.data_directory, args.wiki_text_output_path)
     word2vec_output_path = join(args.data_directory, args.word2vec_output_path)
 
-    train_w2v(args.data_directory, corpus_path, wiki_text_output_path, word2vec_output_path, args.w2v_dim, not args.no_multiwords)
+    train_w2v(args.data_directory, corpus_path, wiki_text_output_path, word2vec_output_path, args.w2v_dim, not args.no_multiwords, args.druid_cutoff_score)
 

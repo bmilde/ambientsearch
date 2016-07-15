@@ -13,6 +13,7 @@ import sys
 import gensim
 import time
 import itertools
+import math
 
 from sklearn.cluster import KMeans, AffinityPropagation
 from sklearn.metrics import pairwise
@@ -414,6 +415,10 @@ class W2VKeywordExtract:
         except KeyError:
             idf = 1.0
 
+        TFTEST = 'climate_change'
+        if token == TFTEST or token == TFTEST.replace(' ','_'):
+            print 'TFTEST: (tf,idf):',TFTEST,tf,idf
+
         return tf * idf
 
     def habibi_mimic(self, text, n=9, tfidf_only=False, lemmatize=True):
@@ -455,30 +460,35 @@ class W2VKeywordExtract:
             
         sorted_keyphrases = [item for item in sorted(collapsed_keyphrases.values(), key=lambda token: token[1], reverse=True) if item[1] > min_score]
 
+        # Extract n terms
+        output_phrases = sorted_keyphrases
+        if len(output_phrases) > n_words:
+            output_phrases = output_phrases[:n_words]
+
         # Extract n words (phrases count as multiple words)
-        output_phrases = []
-        word_counter = 0
-        for phrase in sorted_keyphrases:
-            phrase_length = len(phrase[0].split('_'))
-
-            if count_words_in_keyphrase:
-                word_counter += phrase_length
-            else:
-                word_counter += 1
-
-            if word_counter > n_words:
-                if cutoff_mwe:
-                    # Too many words -> cut off mwe
-                    remain = '_'.join(phrase[0].split('_')[:-(word_counter - n)])
-                    output_phrases.append((remain, phrase[1]))
-                else:
-                    output_phrases.append((phrase[0], phrase[1]))
-                break
-            elif word_counter == n_words:
-                output_phrases.append((phrase[0], phrase[1]))
-                break
-            else:
-                output_phrases.append((phrase[0], phrase[1]))
+        # output_phrases = []
+        #word_counter = 0
+        #for phrase in sorted_keyphrases:
+        #    phrase_length = len(phrase[0].split('_'))
+        #
+        #    if count_words_in_keyphrase:
+        #        word_counter += phrase_length
+        #    else:
+        #        word_counter += 1
+        #
+        #    if word_counter > n_words:
+        #        if cutoff_mwe:
+        #            # Too many words -> cut off mwe
+        #            remain = '_'.join(phrase[0].split('_')[:-(word_counter - n)])
+        #            output_phrases.append((remain, phrase[1]))
+        #        else:
+        #            output_phrases.append((phrase[0], phrase[1]))
+        #        break
+        #    elif word_counter == n_words:
+        #        output_phrases.append((phrase[0], phrase[1]))
+        #        break
+        #    else:
+        #        output_phrases.append((phrase[0], phrase[1]))
 
         return output_phrases
 
@@ -494,11 +504,13 @@ if __name__ == "__main__":
     data_directory = 'data/'
     ted_trans_root_dir = os.path.join(data_directory, 'ted_transcripts')
     ted_orig_root_dir = os.path.join(data_directory, 'ted_originals')
-   
+  
+    do_habibi = True
 #    habibi_trans_dir = 'DocRec/ted_transcripts/habibi75'
  #   habibi_orig_dir = 'DocRec/ted_originals/habibi75'
 
-    for method_name in ['proposed/', 'proposed_nodruid/', 'proposed_orig/', 'tfidf/', 'tfidf_orig/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter/', 'tfidf_nodruid_nofilter_nostopwords/']:
+    #for method_name in ['proposed/','tfidf/']:
+    for method_name in ['proposed/', 'proposed_nodruid/', 'proposed_orig/', 'proposed_orig_d05/', 'proposed_d05/' , 'proposed_orig_nodruid/' ,'tfidf/', 'tfidf_orig/', 'tfidf_nodruid/', 'tfidf_nodruid_nofilter/', 'tfidf_nodruid_nofilter_nostopwords/', 'proposed_orig_d07/', 'proposed_d07/']:
         
         print 'Computing for scores', method_name
 
@@ -519,23 +531,33 @@ if __name__ == "__main__":
         if 'nostopwords' in method_name:
             stopword_removal = False
 
+        druid_cutoff = 0.3
+        if 'd05' in method_name:
+            druid_cutoff = 0.5
+
+        if 'd07' in method_name:
+            druid_cutoff = 0.7
+
         # standard is to use the transcript from the ASR system
         use_transcript = True
         if 'orig' in method_name:
             use_transcript = False
 
+
         tfidf_only = False
         if method_name.startswith('tfidf'):
             tfidf_only = True
             
-        ke = W2VKeywordExtract(cutoff_druid_score=0.2, multiwords=multiwords, noun_adj_filter=noun_adj_filter,
+        ke = W2VKeywordExtract(cutoff_druid_score=druid_cutoff, multiwords=multiwords, noun_adj_filter=noun_adj_filter,
                 stopword_removal=stopword_removal, w2v_model_path=w2v_model_path, tfidf_model_path=tfidf_model_path)
         
         keyword_eval_dir = os.path.join(data_directory, 'keywords_eval_dir/' + method_name)
         ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/' + method_name)
+        query_eval_dir = os.path.join(data_directory, 'query_eval_dir/' + method_name)
 
         ensure_dir(keyword_eval_dir)
         ensure_dir(ndcg_eval_dir) 
+        ensure_dir(query_eval_dir)
 
         # Fetching number of keywords to extract
         keyword_counts = {}
@@ -580,23 +602,33 @@ if __name__ == "__main__":
                     # print sorted_keyphrases
                     # tfidf_only=False, lemmatize=False, min_score=0.0, cutoff_mwe=False, count_words_in_keyphrase=True
 
+                    minimum_should_match_percent=25
+                    
+                    #if multiwords:
+                    #    minimum_should_match_percent=5
+
                     print "extract_best_keywords:"
-                    extracted_num_tokens_like_manual = ke.extract_best_keywords(in_text, n_words=10, tfidf_only=tfidf_only) #was n_words=num_tokens
-                    print extracted_num_tokens_like_manual
+                    #extracted_num_tokens_like_manual = ke.extract_best_keywords(in_text, n_words=10, tfidf_only=tfidf_only) #was n_words=num_tokens
+                    #print extracted_num_tokens_like_manual
 
                     extracted_10_tokens = ke.extract_best_keywords(in_text, n_words=10, tfidf_only=tfidf_only)
+
+                    #if multiwords:
+                    #    #boost scores
+                    #    extracted_10_tokens = [(elem,score) for (elem,score) in extracted_10_tokens]
+                    
                     print extracted_10_tokens
 
                     # Extract top wiki articles
-                    new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300)
+                    new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300, minimum_should_match_percent=minimum_should_match_percent)
                     print "-> Extracted top ", len(new_relevant_entries), " documents", [(entry["title"], entry["score"]) for entry in new_relevant_entries]
 
                     # Write extracted tokens into file
                     with io.open(os.path.join(keyword_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                        out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_num_tokens_like_manual])+u'\n')
+                        out_file.write(u'\n'.join([' '.join(elem[0].split('_')) for elem in extracted_10_tokens])+u'\n')
 
-                    with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                        out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+                    with io.open(os.path.join(query_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                        out_file.write(wiki_search_es.construct_query_string(extracted_10_tokens)+u'\n')
 
                     json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
                     print json_out
@@ -607,7 +639,7 @@ if __name__ == "__main__":
 
     habibi_trans_dir, habibi_orig_dir_prep, habibi_trans_dir_prep = 'DocRec/ted_transcripts/habibi75','DocRec/orig_preprocessed/habibi75','DocRec/trans_preprocessed/habibi75'
     # Now do 
-    if os.path.exists('DocRec'):
+    if os.path.exists('DocRec') and do_habibi:
         for method_dir in [habibi_trans_dir, habibi_orig_dir_prep, habibi_trans_dir_prep]:
             for myfile in os.listdir(method_dir+'_1/'):
                 if myfile.endswith('.txt'):
@@ -618,12 +650,16 @@ if __name__ == "__main__":
                         
                         if method_dir==habibi_trans_dir:
                             ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_trans/')
+                            query_eval_dir = os.path.join(data_directory, 'query_eval_dir/habibi75_trans/')
                         if method_dir==habibi_orig_dir_prep:
                             ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_orig_prep/')    
+                            query_eval_dir = os.path.join(data_directory, 'query_eval_dir/habibi75_orig_prep/')
                         if method_dir==habibi_trans_dir_prep:
                             ndcg_eval_dir = os.path.join(data_directory, 'ndcg_eval_dir/habibi75_trans_prep/')
+                            query_eval_dir = os.path.join(data_directory, 'query_eval_dir/habibi75_trans_prep/')
 
                         ensure_dir(ndcg_eval_dir)
+                        ensure_dir(query_eval_dir)
 
                         orig = orig_file.read()
                         trans = trans_file.read()
@@ -655,13 +691,18 @@ if __name__ == "__main__":
                         for keyword_line,weight_line in itertools.izip(keyword_file,weight_file):
                             if keyword_line[-1] == '\n':
                                 keyword_line = keyword_line[:-1]
+                            if keyword_line[-1] == '\r':
+                                keyword_line = keyword_line[:-1]
                             if weight_line[-1] == '\n':
                                 weight_line = weight_line[:-1]
+                            if weight_line[-1] == '\r':
+                                weight_line = weight_line[:-1]
                             extracted_10_tokens += [(keyword_line,float(weight_line))]
-                        new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300)
                         
-                        with io.open(os.path.join(ndcg_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
-                            out_file.write(u'\n'.join([elem[0] + u' ' + str(elem[1]) for elem in extracted_10_tokens])+u'\n')
+                        new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300,minimum_should_match_percent=minimum_should_match_percent)
+                        
+                        with io.open(os.path.join(query_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
+                            out_file.write(wiki_search_es.construct_query_string(extracted_10_tokens)+u'\n')
 
                         json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
                         print json_out

@@ -9,7 +9,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-ndcg_eval_dir = "data/ndcg_eval_dir"
+#ndcg_eval_dir = "data/ndcg_eval_dir"
 
 origs = {}
 needed_judgements = defaultdict(list)
@@ -23,20 +23,22 @@ def ensure_dir(f):
 def make_id_save(name):
     return re.sub(r'[^\w]', '_', name.replace(' ','_'))
 
-def parse_ndcg_data():
+def parse_ndcg_data(ndcg_eval_dir):
     methods = os.listdir(ndcg_eval_dir)
     print methods
     for method in methods:
         method_dir = ndcg_eval_dir + '/' + method
-        for json_file in [f for f in os.listdir(method_dir) if f.endswith(".json")]:
+        for json_file in [f for f in os.listdir(method_dir) if f.endswith('.json')]:
             with io.open(method_dir + '/' +json_file, 'r', encoding='utf-8') as json_in_file:
                 filename_raw = json_file[:-5]
                 ndcg_json = json.loads(json_in_file.read())
-                top10 = ndcg_json[u"top10"]
+                top10 = ndcg_json[u'top10']
+                print method,json_file,[(top["title"],top["score"]) for top in top10]
                 top5 = top10[:5]
-                
+                print method,json_file,[(top["title"],top["score"]) for top in top5]
+
                 if filename_raw not in origs:
-                    origs[filename_raw] = ndcg_json[u"orig"]
+                    origs[filename_raw] = ndcg_json[u'orig']
 
                 for top in top5:
                     top[u'id'] = make_id_save(top[u'title'])
@@ -59,9 +61,20 @@ def ndcg_list(username):
     
     html += u'<h1>Hi '+username+u'</h1>'
     html += u'<ul>'
+
     for key in needed_judgements:
-        length = str(len(needed_judgements[key]))
-        html += u'<li><a href="/ndcg/'+key+u'/'+username+u'">'+key+u'</a> ('+length+u')</li>'
+        length = len(needed_judgements[key])
+
+        potential_save = 'data/ndcg_save/' + make_id_save(username) + "/" + key + '.json'
+        saved_judgements = {}
+        if os.path.exists(potential_save):
+            with open(potential_save) as file_in:
+                json_save = json.loads(file_in.read())
+                saved_judgements = json_save.keys()
+        
+        needed = len(list(set([elem['title'] for elem in needed_judgements[key]]) - set(saved_judgements)))
+
+        html += u'<li><a href="/ndcg/'+key+u'/'+username+u'">'+key+u'</a> (needed '+str(needed)+'/'+str(length)+u')</li>'
     html += u'</ul>'
     html += u'''
     </body>
@@ -100,7 +113,7 @@ def ndcg_save(filename,username):
                     </head><body>'''
     if parse_errors != '':
         html += u'Could not parse: <br/>' + parse_errors + '<br/>'
-    html += u'Thanks. Now go back to: <a href="/ndcg_list/'+username+'/">the list</a>'
+    html += u'Thanks. Now go back to: <a href="/ndcg_list/'+username+'">the list</a>'
     html += u'</body></html>'
     return html
 
@@ -108,9 +121,18 @@ def ndcg_save(filename,username):
 def ndcg(filename,username):
     if filename not in origs:
         return u'Could not find: '+filename
+
+    potential_save = {}
+    #check if we already have scores, if so load them
+    potential_save = 'data/ndcg_save/' + make_id_save(username) + "/" + filename + '.json'
+    if os.path.exists(potential_save):
+        with open(potential_save) as in_file:
+            json_save = json.loads(in_file.read())
+
     html = u'''<!doctype html><html lang=en><head><meta charset=utf-8><title>NDCG Ambient Search Eval</title>
             </head><body>'''
-#you give a 0 score for an irrelevant result, 1 for a partially relevant, 2 for relevant, and 3 for perfect.
+            
+    #you give a 0 score for an irrelevant result, 1 for a partially relevant, 2 for relevant, and 3 for perfect.
 
     html += u'<h1>Hi '+username+u'</h1>'
     html +=u'''<p>Each document is to be judged on a scale of 0-3 with 0 meaning irrelevant, 
@@ -123,7 +145,7 @@ def ndcg(filename,username):
         html += u'Wiki text: ' + judgement[u'text'] + u'<br/>'
         html += u'Wiki categories: ' + u' '.join(judgement[u'categories']) + u'<br/>'
         my_id = judgement[u'id']
-        html += u'<input list="'+my_id+u'" name="'+judgement[u'title']+'"><datalist id="'+my_id+'"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></datalist></input>'
+        html += u'<input value="'+ (str(json_save[judgement[u'title']]) if judgement[u'title'] in json_save else '') +'" list="'+my_id+u'" name="'+judgement[u'title']+'"><datalist id="'+my_id+'"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></datalist></input>'
     html += '<br/><input type="submit"></form>'
         #html += u'<ul>'
 
@@ -132,6 +154,7 @@ def ndcg(filename,username):
     return html
 
 if __name__ == "__main__":
-    parse_ndcg_data()
+    parse_ndcg_data("data/ndcg_eval_dir")
+    #parse_ndcg_data("data/ndcg_eval_dir_unfair_druid")
     app.debug = True
     app.run(host='0.0.0.0')

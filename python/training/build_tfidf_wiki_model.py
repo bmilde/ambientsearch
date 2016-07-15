@@ -56,7 +56,7 @@ class BowCorpus(object):
             stemmed_article = [self.stemmer.stem(token) for token in ngrams]
             yield self.tokenid_dictionary.doc2bow(stemmed_article)
 
-def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_output_path, multiwords=True):
+def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_output_path, multiwords=True, druid_cutoff_score=0.3):
 
     stemmer = nltk.stem.PorterStemmer()
     tokenid_dictionary = corpora.Dictionary()
@@ -73,7 +73,8 @@ def build_tfidf_model(data_directory, corpus_path, wiki_text_output_path, model_
     
     if multiwords:
         druid_path = join(data_directory, 'druid_en.bz2')
-        druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=0.2)
+        druid_dict = druid.DruidDictionary(druid_path, stopwords_path, cutoff_score=druid_cutoff_score)
+        logger.info('Loaded Druid with cutoff' + str(druid_cutoff_score))
     else:
         druid_dict = None
 
@@ -102,6 +103,7 @@ if __name__ == '__main__':
     parser.add_argument('-w', '--wiki-text-output-path', dest='wiki_text_output_path', help='Wiki text output path (converted from raw wikipedia xml)', type=str, default = 'simplewiki-latest-pages-articles.txt')
     parser.add_argument('-o', '--model-output-path', dest='model_output_path', help='Output model file', type=str, default = 'simple-enwiki-latest.tfidf')
     parser.add_argument('-nm', '--no-multiwords', dest='no_multiwords', help='No multiwords in model generation', action='store_true', default=False)
+    parser.add_argument('-s', '--druid-cutoff-score', dest='druid_cutoff_score', help='DRUID cutoff score', type=float, default = 0.3)
 
     args = parser.parse_args()
 
@@ -111,4 +113,4 @@ if __name__ == '__main__':
     wiki_text_output_path = join(args.data_directory, args.wiki_text_output_path)
     model_output_path = join(args.data_directory, args.model_output_path)
 
-    build_tfidf_model(args.data_directory, corpus_path, wiki_text_output_path, model_output_path, not args.no_multiwords)
+    build_tfidf_model(args.data_directory, corpus_path, wiki_text_output_path, model_output_path, not args.no_multiwords, args.druid_cutoff_score)

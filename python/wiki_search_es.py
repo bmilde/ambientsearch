@@ -21,7 +21,7 @@ es = Elasticsearch([
 # and matching typical wiki fields (["text", "title", "category"]), for a simple query string
 # e.g. es_full_query_with_wiki_filters(query="woman~ spiritual~ 'mutual aid'~ kind~ religion~ mormon~ mormonism~ religious~")
 
-def es_full_query_with_wiki_filters(query,minimum_should_match_percent=30):
+def es_full_query_with_wiki_filters(query,minimum_should_match_percent=25):
     query = {
         "query": {
             "filtered": {
@@ -61,7 +61,7 @@ def es_full_query_with_wiki_filters(query,minimum_should_match_percent=30):
 # Returns an es-compatible query string (see example query field above).
 # Scores boost each keyword along with their scores, fuzziness also matches different spellings.
 # Recommendation: Scores - yes, fuzziness - yes, Multiword - yes
-def construct_query_string(keywords, scores=True, fuzziness=False, multiword=True):
+def construct_query_string(keywords, scores=True, fuzziness=False, multiword=True, round_numbers=True):
     keyword_strings = []
 
     for keyword, score in keywords:
@@ -75,7 +75,7 @@ def construct_query_string(keywords, scores=True, fuzziness=False, multiword=Tru
         if fuzziness:
             keyword += "~"
         if scores:
-            keyword += "^" + str(score)
+            keyword += "^" + ("%.5f" % score)
 
         keyword_strings.append(keyword)
 
@@ -164,7 +164,7 @@ def extract_best_articles(keywords, n=10, minimum_should_match_percent=25, min_s
         score = result['_score']
         summary = get_summary_from_text(full_text,min_summary_chars)
         url = 'https://simple.wikipedia.org/w/index.php?title='+title.replace(' ', '_')
-        print 'wiki search: found',title,'with score',score
+        #print 'wiki search: found',title,'with score',score
 
         summary_box_infos.append({
             'title': title,
@@ -180,3 +180,6 @@ def extract_best_articles(keywords, n=10, minimum_should_match_percent=25, min_s
         summary_box_infos = summary_box_infos[:n]
 
     return summary_box_infos
+
+if __name__ == "__main__":
+    print(extract_best_articles([("climate change",2.0), ("global warming",2.0)]))

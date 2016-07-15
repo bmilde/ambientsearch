@@ -63,7 +63,7 @@ class DruidDictionary:
             if len(split) == 2:
                 old_format=False
                 number_filter=False
-                stopwords_filter = False
+                stopwords_filter = True
             else:
                 print('Warning, you need to update your Druid dictionary and models.')
                 old_format=True
@@ -128,9 +128,9 @@ class DruidDictionary:
 
 if __name__ == "__main__":
     print 'Scripting directly called, I will perform some testing.'
-    druid_dict = DruidDictionary('data/druid_en.bz2', 'data/stopwords_en.txt', cutoff_score=0.0)
+    druid_dict = DruidDictionary('data/druid_en.bz2', 'data/stopwords_en.txt', cutoff_score=0.50)
 
-    text = u"""Climate change is real , as is global warming . A columbia university law professor stood in a hotel lobby one morning and
+    text = u"""Climate change is real , as is global warming . The greenhouse gas effect is undeniable . A columbia university law professor stood in a hotel lobby one morning and
                     noticed a sign apologizing for an elevator that was out of order .
                     it had dropped unexpectedly three stories a few days earlier .
                     the professor , eben moglen , tried to imagine what the world would be like
