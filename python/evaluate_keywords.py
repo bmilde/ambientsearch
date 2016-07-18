@@ -12,7 +12,7 @@ stemmer = nltk.stem.PorterStemmer()
 manual_dir = os.path.join(data_directory(), 'manual_keywords_merged')
 eval_dir = os.path.join(data_directory(), 'keywords_eval_dir')
 
-methods = ['tfidf_nodruid_nofilter_nostopwords', 'tfidf_nodruid_nofilter', 'tfidf_nodruid', 'tfidf', 'tfidf_orig', 'habibi75', 'habibi75_orig', 'proposed', 'proposed_nodruid','proposed_orig']
+methods = ['tfidf_nodruid_nofilter_nostopwords', 'tfidf_nodruid_nofilter', 'tfidf_nodruid', 'tfidf', 'habibi75', 'habibi75_prep', 'proposed','proposed_d05','proposed_d07','proposed_nodruid','habibi75_orig_prep','proposed_orig', 'proposed_orig_d05', 'proposed_orig_d07', 'proposed_orig_nodruid']
 
 #methods = ['habibi75', 'habibi75_orig', 'habibi75_prep', 'habibi75_orig_prep']
 
@@ -25,10 +25,15 @@ pretty_method_names = {
     'habibi75' : 'Habibi and PB',
     'habibi75_orig' : 'Habibi and PB, gold transcriptions',
     'habibi75_prep' : 'Habibi and PB, our preprocessing',
-    'habibi75_orig_prep' : 'Habibi and PB, our preprocessing, gold transcriptions',
     'proposed_nodruid' : 'Our proposed method, without DRUID multiwords',
-    'proposed' : 'Our proposed method, with DRUID multiwords',
-    'proposed_orig' : 'Our proposed method on gold transcriptions, with DRUID multiwords',
+    'proposed' : 'Our proposed method, with DRUID multiwords (c=0.3)',
+    'proposed_d05' : 'Our proposed method, with DRUID multiwords (c=0.5)',
+    'proposed_d07' :'Our proposed method, with DRUID multiwords (c=0.7)',
+    'habibi75_orig_prep' : 'Habibi and PB, our preprocessing, gold transcriptions',
+    'proposed_orig' : 'Our proposed method on gold transcriptions, with DRUID multiwords (c=0.3)',
+    'proposed_orig_d05' : 'Our proposed method on gold transcriptions, with DRUID multiwords (c=0.5)',
+    'proposed_orig_d07' : 'Our proposed method on gold transcriptions, with DRUID multiwords (c=0.7)',
+    'proposed_orig_nodruid' : 'Our proposed method on gold transcriptions, without DRUID multiwords'
 }
 
 filenames = []
@@ -70,6 +75,9 @@ def eval_file(method_dir, raw_file, gold_standard, tolerated):
     with codecs.open(os.path.join(method_dir, raw_file), 'r', encoding='utf-8', errors='replace') as in_file:
         for line in in_file:
             method_tokens += remove_line_end(line).split()
+
+        if len(method_tokens)>10:
+            method_tokens = method_tokens[:10]
 
         method_tokens_stemmed = [stemmer.stem(token) for token in method_tokens] 
         gold_standard_stemmed = [stemmer.stem(token) for token in gold_standard]
@@ -124,5 +132,5 @@ for i,key in enumerate(methods):
             #'%0.4f' % hrr, "(", '%0.4f' % hrr_std, "), ", '%0.4f' % difference
 
     #print 'latex:'
-    print ('(%i)'%(i+1)),pretty_method_names[key],'&',('%0.2f' % (recall*100.0))+'\\%', ' ('+ ('%0.2f' % (recall_std*100.0))+'\\%'+ ')','&', ('%0.2f' % (precision*100.0))+'\\%' , \
-    '\\% ('+ ('%0.2f' % (precision_std*100.0))+'\\%'+ ')', '&', ('%0.2f' % (hrr*100.0)) + '\\%', '(' + ('%0.2f' % (hrr_std*100.0))+'\\%' + ')', '&' , ('%0.2f' % (difference*100.0))+'\\%','& (NDCG here)','\\\\ \\hline'
+    print ('(%i)'%(i+1)),pretty_method_names[key],'&',('%0.2f' % (recall*100.0))+'\\%', ' ('+ ('%0.2f' % (recall_std*100.0))+'\\%'+ ')','&', ('%0.2f' % (precision*100.0)), \
+    '\\% ('+ ('%0.2f' % (precision_std*100.0))+'\\%'+ ')', '&', ('%0.2f' % (hrr*100.0)) + '\\%', '(' + ('%0.2f' % (hrr_std*100.0))+'\\%' + ')','& (NDCG here)','\\\\ \\hline'
