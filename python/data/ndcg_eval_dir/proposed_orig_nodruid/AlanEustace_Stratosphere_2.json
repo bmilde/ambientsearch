@@ -1,1 +1,116 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Parachute", "text": "\n\nA parachute uses drag to slow something moving in air. It is often an umbrella shaped device on which people or things can float slowly and safely down to the ground from a great height, such as an aircraft. The word parachute comes from the French words parer meaning to protect and chute meaning fall carefully down making sure you are safe. ", "score": 2.060601, "categories": ["Sports equipment"], "title": "Parachute"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pipe_organ", "text": "\n pedals which also make notes. town halls and concert halls or even large private houses. Very small organs can be called \u201cchamber organs\u201d. Organs in large churches, cathedrals or halls are very large instruments indeed, and are built especially for the building they are in. They are called \u201cpipe organs\u201d to distinguish them from modern \u201celectronic organs\u201d. ", "score": 0.2519315, "categories": ["Keyboard instruments", "Former good articles"], "title": "Pipe organ"}, {"url": "https://simple.wikipedia.org/w/index.php?title=BASE_jumping", "text": "BASE jumping is a fringe sport in which a person jumps from a fixed place and uses a  s,   sport. This means it involves speed, height, danger or spectacular stuntman ", "score": 0.100828014, "categories": ["Sports"], "title": "BASE jumping"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Potential_energy", "text": "\nA potential energy is the energy that an object has because of its position on a gradient of potential energy called a potential Field  ", "score": 0.08096361, "categories": ["Energy", "Basic physics ideas", "Force"], "title": "Potential energy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Flight", "text": " force of gravity. jet thrust, or other means of propulsion, and without it . Best adapted for long controlled powered flight are flying birds and insects, and mammals of the order Chiroptera and extinct reptiles of the order pterosaurs. All of these animals use the aerodynamic principles of flight, using the load-bearing properties of the wing. ", "score": 0.052095603, "categories": ["Basic English 850 words", "Zoology", "Physics"], "title": "Flight"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Nylon", "text": "", "score": 0.049419627, "categories": ["Polymers"], "title": "Nylon"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Space_Shuttle_Challenger_disaster", "text": "The Space Shuttle Challenger Disaster\u00a0occurred on January 28, 1986, when the\u00a0NASA\u00a0Space Shuttle Challenger\u00a0broke up 73 seconds after liftoff. All seven crew members were killed. The cause of the explosion was a part called an O-ring that broke in the right solid rocket booster. During the flight, hot gases escaped from the O-ring and made it break apart. ", "score": 0.049073193, "categories": ["1986 in the United States", "Aviation deaths in the United States", "Aviation disasters in the 1980s", "Disasters in the United States", "20th century in Florida", "Presidency of Ronald Reagan", "Space Shuttles"], "title": "Space Shuttle Challenger disaster"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Zip-line", "text": "A zip-line  is a device that allows a person to slide down an inclined wire or rope. The process uses gravity to propel the user. You can be stopped by dragging your feet or by water. Often a pulley is used suspended on a Wire rope ", "score": 0.03793076, "categories": ["Entertainment"], "title": "Zip-line"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Six_Flags_Great_Adventure", "text": "", "score": 0.029409006, "categories": ["Six Flags Great Adventure", "1974 establishments", "Theme parks in the United States"], "title": "Six Flags Great Adventure"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Lauri_T\u00f6rni", "text": "", "score": 0.02566099, "categories": ["1919 births", "1965 deaths", "American military people", "Aviation deaths", "Burials at Arlington National Cemetery", "Finnish people", "Military people killed in action", "World War II people"], "title": "Lauri T\u00f6rni"}], "orig": "So I want to tell you one thing that you might not have seen in that video, but one of the most critical parts of the entire thing was the release and what happens right after you release. And what we tried to do was use something called a drogue parachute, and a drogue parachute was there to stabilize me. And I'll show you one of those right now. If any of you have ever gone tandem skydiving, you probably used one of these. But the problem with one of these things is right when you release, you're in zero gravity. So it's very easy for this to just turn right around you. And before you know it, you can be tangled up or spinning, or you can release this drogue late, in which case what happens is you're going down at 800 miles an hour, and this thing is going to destroy itself and not be very useful. But the guys at United Parachute Technologies came up with this idea, and it was a roll that looks like that, but watch what happens when I pull it out. It's forming a pipe. This pipe is so solid that you can take this drogue parachute and wrap it around, and there's no way it will ever tangle with you. And that prevented a very serious potential problem.", "filename": "AlanEustace_Stratosphere_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Parachute", 
+            "text": "\n\nA parachute uses drag to slow something moving in air. It is often an umbrella shaped device on which people or things can float slowly and safely down to the ground from a great height, such as an aircraft. The word parachute comes from the French words parer meaning to protect and chute meaning fall carefully down making sure you are safe. ", 
+            "score": 2.060601, 
+            "categories": [
+                "Sports equipment"
+            ], 
+            "title": "Parachute"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pipe_organ", 
+            "text": "\n pedals which also make notes. town halls and concert halls or even large private houses. Very small organs can be called \u201cchamber organs\u201d. Organs in large churches, cathedrals or halls are very large instruments indeed, and are built especially for the building they are in. They are called \u201cpipe organs\u201d to distinguish them from modern \u201celectronic organs\u201d. ", 
+            "score": 0.2519315, 
+            "categories": [
+                "Keyboard instruments", 
+                "Former good articles"
+            ], 
+            "title": "Pipe organ"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=BASE_jumping", 
+            "text": "BASE jumping is a fringe sport in which a person jumps from a fixed place and uses a  s,   sport. This means it involves speed, height, danger or spectacular stuntman ", 
+            "score": 0.100828014, 
+            "categories": [
+                "Sports"
+            ], 
+            "title": "BASE jumping"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Potential_energy", 
+            "text": "\nA potential energy is the energy that an object has because of its position on a gradient of potential energy called a potential Field  ", 
+            "score": 0.08096361, 
+            "categories": [
+                "Energy", 
+                "Basic physics ideas", 
+                "Force"
+            ], 
+            "title": "Potential energy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Flight", 
+            "text": " force of gravity. jet thrust, or other means of propulsion, and without it . Best adapted for long controlled powered flight are flying birds and insects, and mammals of the order Chiroptera and extinct reptiles of the order pterosaurs. All of these animals use the aerodynamic principles of flight, using the load-bearing properties of the wing. ", 
+            "score": 0.052095603, 
+            "categories": [
+                "Basic English 850 words", 
+                "Zoology", 
+                "Physics"
+            ], 
+            "title": "Flight"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Nylon", 
+            "text": "", 
+            "score": 0.049419627, 
+            "categories": [
+                "Polymers"
+            ], 
+            "title": "Nylon"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Space_Shuttle_Challenger_disaster", 
+            "text": "The Space Shuttle Challenger Disaster\u00a0occurred on January 28, 1986, when the\u00a0NASA\u00a0Space Shuttle Challenger\u00a0broke up 73 seconds after liftoff. All seven crew members were killed. The cause of the explosion was a part called an O-ring that broke in the right solid rocket booster. During the flight, hot gases escaped from the O-ring and made it break apart. ", 
+            "score": 0.049073193, 
+            "categories": [
+                "1986 in the United States", 
+                "Aviation deaths in the United States", 
+                "Aviation disasters in the 1980s", 
+                "Disasters in the United States", 
+                "20th century in Florida", 
+                "Presidency of Ronald Reagan", 
+                "Space Shuttles"
+            ], 
+            "title": "Space Shuttle Challenger disaster"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Zip-line", 
+            "text": "A zip-line  is a device that allows a person to slide down an inclined wire or rope. The process uses gravity to propel the user. You can be stopped by dragging your feet or by water. Often a pulley is used suspended on a Wire rope ", 
+            "score": 0.03793076, 
+            "categories": [
+                "Entertainment"
+            ], 
+            "title": "Zip-line"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Six_Flags_Great_Adventure", 
+            "text": "", 
+            "score": 0.029409006, 
+            "categories": [
+                "Six Flags Great Adventure", 
+                "1974 establishments", 
+                "Theme parks in the United States"
+            ], 
+            "title": "Six Flags Great Adventure"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Lauri_T\u00f6rni", 
+            "text": "", 
+            "score": 0.02566099, 
+            "categories": [
+                "1919 births", 
+                "1965 deaths", 
+                "American military people", 
+                "Aviation deaths", 
+                "Burials at Arlington National Cemetery", 
+                "Finnish people", 
+                "Military people killed in action", 
+                "World War II people"
+            ], 
+            "title": "Lauri T\u00f6rni"
+        }
+    ], 
+    "orig": "So I want to tell you one thing that you might not have seen in that video, but one of the most critical parts of the entire thing was the release and what happens right after you release. And what we tried to do was use something called a drogue parachute, and a drogue parachute was there to stabilize me. And I'll show you one of those right now. If any of you have ever gone tandem skydiving, you probably used one of these. But the problem with one of these things is right when you release, you're in zero gravity. So it's very easy for this to just turn right around you. And before you know it, you can be tangled up or spinning, or you can release this drogue late, in which case what happens is you're going down at 800 miles an hour, and this thing is going to destroy itself and not be very useful. But the guys at United Parachute Technologies came up with this idea, and it was a roll that looks like that, but watch what happens when I pull it out. It's forming a pipe. This pipe is so solid that you can take this drogue parachute and wrap it around, and there's no way it will ever tangle with you. And that prevented a very serious potential problem.", 
+    "filename": "AlanEustace_Stratosphere_2.txt"
+}

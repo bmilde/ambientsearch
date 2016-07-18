@@ -1,1 +1,103 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Water_(molecule)", "text": "", "score": 1.173905, "categories": ["Water"], "title": "Water (molecule)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_heating", "text": ". solar powered water heaters are installed outside dwellings, typically on the roof or nearby. Nearly all models are the direct-gain type. They consist of flat panels in which water circulates. == Geothermal heating ==\nIn countries like Iceland and New Zealand, and other volcanic regions, water heating may be done using geothermal power, rather than combustion. ", "score": 0.9136669, "categories": ["Energy", "Water"], "title": "Water heating"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Brackish_water", "text": "Brackish saltier than fresh water, but not as salty as salt water ", "score": 0.9024556, "categories": ["Water", "Ecology"], "title": "Brackish water"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_pollution", "text": "\n  color this stream blue. Water pollution is the pollution of bodies of water, such as lakes, rivers, the oceans, as well as groundwater. It occurs when pollutants reach these bodies of water, without treatment. Waste from homes, factories and other buildings get into the water bodies. ecosystems there. ", "score": 0.8998925, "categories": ["Water pollution"], "title": "Water pollution"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_water_sports", "text": "There are a large number of sports that involve water. The following is a List of water sports, divided by category. This list is not complete. Some of the sports include only one part related to swimming, as for example Triathlon. ==In the water==\n*Swimming\n*Triathlon - Usually a combination of swimming, cycling and running\n*Modern pentathlon includes \u00e9p\u00e9e fencing, pistol shooting, swimming, a show jumping course on horseback, and a cross-country run. ", "score": 0.7528497, "categories": ["Water sports", "Sports lists"], "title": "List of water sports"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Collegiate_Water_Polo_Association", "text": "This universities who play water polo in the Collegiate Water Polo Association:\n*Brown University\n*Bucknell University\n*Connecticut College\n*Fordham University\n*Gannon University\n*George Washington University\n*Grove City College\n*Hartwick College\n*Harvard University\n*Indiana University\n*Iona College\n*Johns Hopkins University\n*Massachusetts Institute of Technology\n*Mercyhurst College\n*Pennsylvania State University\n*Princeton University\n*Queens College of the City of New York\n*Saint Francis College\n*Slippery Rock University\n*United States Naval Academy\n*University of Maryland\n*University of Michigan\n*Utica College\n*Washington and Jefferson College\n\n==References==\n* ", "score": 0.74894255, "categories": ["Collegiate Water Polo Association", "Water polo"], "title": "Collegiate Water Polo Association"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_turbine", "text": "\n==History==\n===Swirl=== head that can be used. The migration from water wheels to modern turbines took about one hundred years. Development occurred during the Industrial revolution, using scientific principles and methods. They also made extensive use of new materials and manufacturing methods developed at the time. ", "score": 0.73177975, "categories": ["Tools", "Electricity", "Hydropower"], "title": "Water turbine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mangrove", "text": "\n  mangrove roots from Wadi Al-Hitan\n\nMangroves are trees or shrubs that grow in salty water in hot places like the tropics. Mangroves make a special saltwater woodland or shrubland habitat, called a mangrove swamp, mangrove forest, mangrove or mangal. Mangroves grow on 1/3 of tropical shores. They are also found in sub-tropical Africa, Asia, and the           southwest Pacific Ocean ", "score": 0.68623406, "categories": ["Trees", "Wetlands"], "title": "Mangrove"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_beetle", "text": "Water beetles are beetles who live in water. Water beetles are black, brown, or greenish. They are 0.08 to 1.57&nbsp;inches long. There are 2,000 species of water beetles. These include whirligig beetles , Haliplidae, Noteridae, Amphizoidae, Dytiscidae, and Hydroscaphidae. ==References==\n* ", "score": 0.5196611, "categories": ["Beetles"], "title": "Water beetle"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_viper", "text": "Water venomous snakes found in the southern United States. They are capable of performing a highly painful bite. If they are antagonized they stand their ground by coiling their bodies and then show off their fangs. These snakes are almost always found in or near water. They are also known as water moccasins. ", "score": 0.50510216, "categories": ["Vipers"], "title": "Water viper"}], "orig": "But my students in Hong Kong are hyperconnected kids. And they watch the news, they watch the Internet, and they came across this image. This was a child, probably under 10, cleaning up an oil spill bare-handed, in the Sundarbans, which is the world's largest mangrove forest in Bangladesh. So they were very shocked, because this is the water they drink, this is the water they bathe in, this is the water they fish in -- this is the place where they live. And also you can see the water is brown, the mud is brown and oil is brown, so when everything is mixed up, it's really hard to see what's in the water. But, there's a technology that's rather simple, that's called spectrometry, that allows you see what's in the water. So we built a rough prototype of a spectrometer, and you can shine light through different substances that produce different spectrums, so that can help you identify what's in the water. So we packed this prototype of a sensor, and we shipped it to Bangladesh. So what was cool about this project was that beyond addressing a local problem, or looking at a local problem, my students used their empathy and their sense of being creative to help, remotely, other kids.", "filename": "CesarHarada_KidsScience_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_(molecule)", 
+            "text": "", 
+            "score": 1.173905, 
+            "categories": [
+                "Water"
+            ], 
+            "title": "Water (molecule)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_heating", 
+            "text": ". solar powered water heaters are installed outside dwellings, typically on the roof or nearby. Nearly all models are the direct-gain type. They consist of flat panels in which water circulates. == Geothermal heating ==\nIn countries like Iceland and New Zealand, and other volcanic regions, water heating may be done using geothermal power, rather than combustion. ", 
+            "score": 0.9136669, 
+            "categories": [
+                "Energy", 
+                "Water"
+            ], 
+            "title": "Water heating"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Brackish_water", 
+            "text": "Brackish saltier than fresh water, but not as salty as salt water ", 
+            "score": 0.9024556, 
+            "categories": [
+                "Water", 
+                "Ecology"
+            ], 
+            "title": "Brackish water"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_pollution", 
+            "text": "\n  color this stream blue. Water pollution is the pollution of bodies of water, such as lakes, rivers, the oceans, as well as groundwater. It occurs when pollutants reach these bodies of water, without treatment. Waste from homes, factories and other buildings get into the water bodies. ecosystems there. ", 
+            "score": 0.8998925, 
+            "categories": [
+                "Water pollution"
+            ], 
+            "title": "Water pollution"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_water_sports", 
+            "text": "There are a large number of sports that involve water. The following is a List of water sports, divided by category. This list is not complete. Some of the sports include only one part related to swimming, as for example Triathlon. ==In the water==\n*Swimming\n*Triathlon - Usually a combination of swimming, cycling and running\n*Modern pentathlon includes \u00e9p\u00e9e fencing, pistol shooting, swimming, a show jumping course on horseback, and a cross-country run. ", 
+            "score": 0.7528497, 
+            "categories": [
+                "Water sports", 
+                "Sports lists"
+            ], 
+            "title": "List of water sports"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Collegiate_Water_Polo_Association", 
+            "text": "This universities who play water polo in the Collegiate Water Polo Association:\n*Brown University\n*Bucknell University\n*Connecticut College\n*Fordham University\n*Gannon University\n*George Washington University\n*Grove City College\n*Hartwick College\n*Harvard University\n*Indiana University\n*Iona College\n*Johns Hopkins University\n*Massachusetts Institute of Technology\n*Mercyhurst College\n*Pennsylvania State University\n*Princeton University\n*Queens College of the City of New York\n*Saint Francis College\n*Slippery Rock University\n*United States Naval Academy\n*University of Maryland\n*University of Michigan\n*Utica College\n*Washington and Jefferson College\n\n==References==\n* ", 
+            "score": 0.74894255, 
+            "categories": [
+                "Collegiate Water Polo Association", 
+                "Water polo"
+            ], 
+            "title": "Collegiate Water Polo Association"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_turbine", 
+            "text": "\n==History==\n===Swirl=== head that can be used. The migration from water wheels to modern turbines took about one hundred years. Development occurred during the Industrial revolution, using scientific principles and methods. They also made extensive use of new materials and manufacturing methods developed at the time. ", 
+            "score": 0.73177975, 
+            "categories": [
+                "Tools", 
+                "Electricity", 
+                "Hydropower"
+            ], 
+            "title": "Water turbine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mangrove", 
+            "text": "\n  mangrove roots from Wadi Al-Hitan\n\nMangroves are trees or shrubs that grow in salty water in hot places like the tropics. Mangroves make a special saltwater woodland or shrubland habitat, called a mangrove swamp, mangrove forest, mangrove or mangal. Mangroves grow on 1/3 of tropical shores. They are also found in sub-tropical Africa, Asia, and the           southwest Pacific Ocean ", 
+            "score": 0.68623406, 
+            "categories": [
+                "Trees", 
+                "Wetlands"
+            ], 
+            "title": "Mangrove"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_beetle", 
+            "text": "Water beetles are beetles who live in water. Water beetles are black, brown, or greenish. They are 0.08 to 1.57&nbsp;inches long. There are 2,000 species of water beetles. These include whirligig beetles , Haliplidae, Noteridae, Amphizoidae, Dytiscidae, and Hydroscaphidae. ==References==\n* ", 
+            "score": 0.5196611, 
+            "categories": [
+                "Beetles"
+            ], 
+            "title": "Water beetle"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_viper", 
+            "text": "Water venomous snakes found in the southern United States. They are capable of performing a highly painful bite. If they are antagonized they stand their ground by coiling their bodies and then show off their fangs. These snakes are almost always found in or near water. They are also known as water moccasins. ", 
+            "score": 0.50510216, 
+            "categories": [
+                "Vipers"
+            ], 
+            "title": "Water viper"
+        }
+    ], 
+    "orig": "But my students in Hong Kong are hyperconnected kids. And they watch the news, they watch the Internet, and they came across this image. This was a child, probably under 10, cleaning up an oil spill bare-handed, in the Sundarbans, which is the world's largest mangrove forest in Bangladesh. So they were very shocked, because this is the water they drink, this is the water they bathe in, this is the water they fish in -- this is the place where they live. And also you can see the water is brown, the mud is brown and oil is brown, so when everything is mixed up, it's really hard to see what's in the water. But, there's a technology that's rather simple, that's called spectrometry, that allows you see what's in the water. So we built a rough prototype of a spectrometer, and you can shine light through different substances that produce different spectrums, so that can help you identify what's in the water. So we packed this prototype of a sensor, and we shipped it to Bangladesh. So what was cool about this project was that beyond addressing a local problem, or looking at a local problem, my students used their empathy and their sense of being creative to help, remotely, other kids.", 
+    "filename": "CesarHarada_KidsScience_1.txt"
+}

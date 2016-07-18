@@ -1,1 +1,102 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Human_evolution", "text": "\n . Fossil number KNM ER 1813, found at Koobi Fora, Kenya\n  . Fossil number Khm-Heu 3733 discovered in 1975 in Kenya\n\nHuman evolution is about the origin of human beings. All humans belong to the same species, which has spread from its birthplace in Africa to almost all parts of the world. Its origin in Africa is proved by the fossils which have been found there. ", "score": 0.6309101, "categories": ["Evolution", "Anthropology", "Hominins"], "title": "Human evolution"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Evolution", "text": "\n\nEvolution is a scientific theory used by biologists. It explains how living things change over a long time, and how they have come to be the way they are. Mayr, Ernst. 2001. What evolution is. Weidenfeld & Nicolson, London. ISBN 0-465-04426-3 \n\nThe   on the layers of Rock  ", "score": 0.5220297, "categories": ["Evolution", "History of science"], "title": "Evolution"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fuzzy_logic", "text": "Fuzzy logic is a sort of   than on or off. While boolean logic only allows true or false, fuzzy logic allows all things in between. An example of this could be a computer game: A person is standing in a doorway while a thing explodes. The character is hit or not hit if boolean logic is used, but the doorway protects him from the explosion. ", "score": 0.4491285, "categories": ["Artificial Intelligence"], "title": "Fuzzy logic"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Social_responses_to_the_idea_of_evolution", "text": "\n\nThe idea that all life evolved was hotly debated even before Charles Darwin published On the Origin of Species. Even today, some people still talk about the concept of evolution and what it means to them, to their philosophy and  their religion. Sometimes these people also talk about the social implications of evolution. ", "score": 0.3846394, "categories": ["Evolution"], "title": "Social responses to the idea of evolution"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Human", "text": "", "score": 0.27149785, "categories": ["Humans"], "title": "Human"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dog", "text": "", "score": 0.2560066, "categories": ["Dogs"], "title": "Dog"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Police_dog", "text": "\n  ballistic vests, and some are given their own police IDs and badges. == What can police dogs do? ==\nA police dog may be trained to do one special thing, or a few different things. Common K-9 jobs include:   drugs  ", "score": 0.24786645, "categories": ["Working dogs", "Police"], "title": "Police dog"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dogue_de_Bordeaux", "text": "The Dogue de Bordeaux, Bordeaux Mastiff, French Mastiff is a dog breed that originated in France. The dogs are large, and usually grow to a shoulder height of between   and  . They weight between   and  , but the official standard does not specify a weight. The Bordeaux is a very powerful dog, with a very muscular body. ", "score": 0.20874558, "categories": ["Dog breeds"], "title": "Dogue de Bordeaux"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Human_nature", "text": "Human feeling and acting which humans have naturally. What these characteristics are, what causes them and how fixed human nature is, are good questions. They among the oldest and most important questions in western   on living a good life. The complex implications of such questions are also dealt with in art and literature, while the humanities inquire into human nature, and what it means to be human. ", "score": 0.20418033, "categories": ["Psychology", "Humans"], "title": "Human nature"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Evolution_of_colour_vision", "text": "The evolution of colour vision causes light to be seen according to its wavelength. This has obvious advantages, especially it helps animals find food. The colour vision of many herbivores allows them to see fruit or  leaves which are good to eat. In hummingbirds, particular flowers are often recognized by colour. ", "score": 0.18362282, "categories": ["Vision", "Evolution"], "title": "Evolution of colour vision"}], "orig": "Have you ever wondered what animals think and feel? Let's start with a question: Does my dog really love me, or does she just want a treat? Well, it's easy to see that our dog really loves us, easy to see, right, what's going on in that fuzzy little head. What is going on? Something's going on.\nBut why is the question always do they love us? Why is it always about us? Why are we such narcissists? I found a different question to ask animals. Who are you?\nThere are capacities of the human mind that we tend to think are capacities only of the human mind. But is that true? What are other beings doing with those brains? What are they thinking and feeling? Is there a way to know? I think there is a way in. I think there are several ways in. We can look at evolution, we can look at their brains and we can watch what they do.", "filename": "CarlSafina_AnimalFeelings_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human_evolution", 
+            "text": "\n . Fossil number KNM ER 1813, found at Koobi Fora, Kenya\n  . Fossil number Khm-Heu 3733 discovered in 1975 in Kenya\n\nHuman evolution is about the origin of human beings. All humans belong to the same species, which has spread from its birthplace in Africa to almost all parts of the world. Its origin in Africa is proved by the fossils which have been found there. ", 
+            "score": 0.6309101, 
+            "categories": [
+                "Evolution", 
+                "Anthropology", 
+                "Hominins"
+            ], 
+            "title": "Human evolution"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Evolution", 
+            "text": "\n\nEvolution is a scientific theory used by biologists. It explains how living things change over a long time, and how they have come to be the way they are. Mayr, Ernst. 2001. What evolution is. Weidenfeld & Nicolson, London. ISBN 0-465-04426-3 \n\nThe   on the layers of Rock  ", 
+            "score": 0.5220297, 
+            "categories": [
+                "Evolution", 
+                "History of science"
+            ], 
+            "title": "Evolution"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fuzzy_logic", 
+            "text": "Fuzzy logic is a sort of   than on or off. While boolean logic only allows true or false, fuzzy logic allows all things in between. An example of this could be a computer game: A person is standing in a doorway while a thing explodes. The character is hit or not hit if boolean logic is used, but the doorway protects him from the explosion. ", 
+            "score": 0.4491285, 
+            "categories": [
+                "Artificial Intelligence"
+            ], 
+            "title": "Fuzzy logic"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Social_responses_to_the_idea_of_evolution", 
+            "text": "\n\nThe idea that all life evolved was hotly debated even before Charles Darwin published On the Origin of Species. Even today, some people still talk about the concept of evolution and what it means to them, to their philosophy and  their religion. Sometimes these people also talk about the social implications of evolution. ", 
+            "score": 0.3846394, 
+            "categories": [
+                "Evolution"
+            ], 
+            "title": "Social responses to the idea of evolution"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human", 
+            "text": "", 
+            "score": 0.27149785, 
+            "categories": [
+                "Humans"
+            ], 
+            "title": "Human"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dog", 
+            "text": "", 
+            "score": 0.2560066, 
+            "categories": [
+                "Dogs"
+            ], 
+            "title": "Dog"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Police_dog", 
+            "text": "\n  ballistic vests, and some are given their own police IDs and badges. == What can police dogs do? ==\nA police dog may be trained to do one special thing, or a few different things. Common K-9 jobs include:   drugs  ", 
+            "score": 0.24786645, 
+            "categories": [
+                "Working dogs", 
+                "Police"
+            ], 
+            "title": "Police dog"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dogue_de_Bordeaux", 
+            "text": "The Dogue de Bordeaux, Bordeaux Mastiff, French Mastiff is a dog breed that originated in France. The dogs are large, and usually grow to a shoulder height of between   and  . They weight between   and  , but the official standard does not specify a weight. The Bordeaux is a very powerful dog, with a very muscular body. ", 
+            "score": 0.20874558, 
+            "categories": [
+                "Dog breeds"
+            ], 
+            "title": "Dogue de Bordeaux"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human_nature", 
+            "text": "Human feeling and acting which humans have naturally. What these characteristics are, what causes them and how fixed human nature is, are good questions. They among the oldest and most important questions in western   on living a good life. The complex implications of such questions are also dealt with in art and literature, while the humanities inquire into human nature, and what it means to be human. ", 
+            "score": 0.20418033, 
+            "categories": [
+                "Psychology", 
+                "Humans"
+            ], 
+            "title": "Human nature"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Evolution_of_colour_vision", 
+            "text": "The evolution of colour vision causes light to be seen according to its wavelength. This has obvious advantages, especially it helps animals find food. The colour vision of many herbivores allows them to see fruit or  leaves which are good to eat. In hummingbirds, particular flowers are often recognized by colour. ", 
+            "score": 0.18362282, 
+            "categories": [
+                "Vision", 
+                "Evolution"
+            ], 
+            "title": "Evolution of colour vision"
+        }
+    ], 
+    "orig": "Have you ever wondered what animals think and feel? Let's start with a question: Does my dog really love me, or does she just want a treat? Well, it's easy to see that our dog really loves us, easy to see, right, what's going on in that fuzzy little head. What is going on? Something's going on.\nBut why is the question always do they love us? Why is it always about us? Why are we such narcissists? I found a different question to ask animals. Who are you?\nThere are capacities of the human mind that we tend to think are capacities only of the human mind. But is that true? What are other beings doing with those brains? What are they thinking and feeling? Is there a way to know? I think there is a way in. I think there are several ways in. We can look at evolution, we can look at their brains and we can watch what they do.", 
+    "filename": "CarlSafina_AnimalFeelings_0.txt"
+}

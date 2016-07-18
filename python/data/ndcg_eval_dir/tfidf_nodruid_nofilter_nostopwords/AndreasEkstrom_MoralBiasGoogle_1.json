@@ -1,1 +1,122 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=List_of_Universal_Pictures_movies", "text": "motion picture distribution arm of Universal Studios, a subsidiary of NBCUniversal and Comcast. == List of movies ==\n===1920s===\n* White Youth \n* The Flaming Disc \n* Am I Dreaming? * The Dragons Net \n* The Adorable Savage \n* Putting It Over \n* The Fire Eater  A Battle of Wits  Dream Girl  The Millionaire \n* A Daughter of the Law \n* The Conflict \n* The Rage of Paris \n* No Woman Knows \n* Action  ", "score": 1.3281362, "categories": ["Lists of movies", "Universal Pictures movies"], "title": "List of Universal Pictures movies"}, {"url": "https://simple.wikipedia.org/w/index.php?title=A*_search_algorithm", "text": "A* is a set of steps  that computers can use to figure out how to get somewhere fast between two places. If you have a list of locations, and how hard it is to get from one straight to the other, using A* can quickly tell you the fastest way. Its related to Dijkstras algorithm, but makes smart guesses so that it doesnt spend as long trying slow ways. ", "score": 0.847785, "categories": ["Algorithms"], "title": "A* search algorithm"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Columbia_Pictures", "text": "American company that produces movies and television shows. It is part of the Columbia TriStar Motion Picture Group, which is owned by the Japanese company Sony. == Movies Columbia Pictures has made ==\n=== 1930s === \n* Tolable David  \n* Arizona  ", "score": 0.74447924, "categories": ["Movie studios", "Sony", "Coca-Cola", "Companies based in California"], "title": "Columbia Pictures"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Touchstone_Pictures", "text": "Walt Disney Studios Motion Pictures Group and Walt Disney Pictures . == Background ==\n=== Ratings === PG rating. Never Cry Wolf and Trenchcoat  ", "score": 0.7158125, "categories": ["Disney companies", "Movie studios"], "title": "Touchstone Pictures"}, {"url": "https://simple.wikipedia.org/w/index.php?title=I_Know_What_You_Did_Last_Summer", "text": "", "score": 0.5917746, "categories": ["1997 horror movies", "1990s mystery movies", "1990s teen horror movies", "American horror movies", "American mystery movies", "American teen movies", "Columbia Pictures movies", "English language movies", "Movies based on books", "Movies set in North Carolina"], "title": "I Know What You Did Last Summer"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Hollywood_Pictures", "text": "Hollywood Pictures is one of Walt Disney Studios movie company ", "score": 0.5621504, "categories": ["Movie studios"], "title": "Hollywood Pictures"}, {"url": "https://simple.wikipedia.org/w/index.php?title=1492_Pictures", "text": "1492 Pictures is an American movie production company founded by director  , Christopher Columbus. Harry Potter Fantastic Four films), and Shawn Levy . The logo music was composed by Academy award winner Hans Zimmer. == movies ==\n*Nine Months \n*Jingle All the Way \n*Stepmom  ", "score": 0.56065303, "categories": ["Movie studios", "1995 establishments"], "title": "1492 Pictures"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Common_misconceptions", "text": "\n\n . Napoleon was taller than his nickname, The Little Corporal, suggests. feet 2&nbsp;inches French feet. international feet, or 1.686 metres. American slaves Thirteenth Amendment on June 19 1865 that slavery was officially abolished in all of the United States. Fascists came to power in 1922. Accounts from the era also suggest that the Italian railways legendary adherence to timetables was more myth than reality. ", "score": 0.5605818, "categories": ["Society", "Lists", "Knowledge"], "title": "Common misconceptions"}, {"url": "https://simple.wikipedia.org/w/index.php?title=I_Still_Know_What_You_Did_Last_Summer", "text": "", "score": 0.55797565, "categories": ["1998 movies", "1990s horror movies", "1990s teen horror movies", "1990s teen movies", "American sequel movies", "American thriller movies", "Columbia Pictures movies", "English language movies", "Movies about revenge"], "title": "I Still Know What You Did Last Summer"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knowledge", "text": "Knowledge means the things which are true, as opposed to opinion. Information which is correct is knowledge. Knowledge can always be supported by evidence, because that is how the word is used. If a statement is not supported by evidence, then it is not knowledge. The evidence makes it justified; it is not an opinion or a guess. ", "score": 0.52601326, "categories": ["Basic English 850 words", "Epistemology"], "title": "Knowledge"}], "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_Universal_Pictures_movies", 
+            "text": "motion picture distribution arm of Universal Studios, a subsidiary of NBCUniversal and Comcast. == List of movies ==\n===1920s===\n* White Youth \n* The Flaming Disc \n* Am I Dreaming? * The Dragons Net \n* The Adorable Savage \n* Putting It Over \n* The Fire Eater  A Battle of Wits  Dream Girl  The Millionaire \n* A Daughter of the Law \n* The Conflict \n* The Rage of Paris \n* No Woman Knows \n* Action  ", 
+            "score": 1.3281362, 
+            "categories": [
+                "Lists of movies", 
+                "Universal Pictures movies"
+            ], 
+            "title": "List of Universal Pictures movies"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=A*_search_algorithm", 
+            "text": "A* is a set of steps  that computers can use to figure out how to get somewhere fast between two places. If you have a list of locations, and how hard it is to get from one straight to the other, using A* can quickly tell you the fastest way. Its related to Dijkstras algorithm, but makes smart guesses so that it doesnt spend as long trying slow ways. ", 
+            "score": 0.847785, 
+            "categories": [
+                "Algorithms"
+            ], 
+            "title": "A* search algorithm"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Columbia_Pictures", 
+            "text": "American company that produces movies and television shows. It is part of the Columbia TriStar Motion Picture Group, which is owned by the Japanese company Sony. == Movies Columbia Pictures has made ==\n=== 1930s === \n* Tolable David  \n* Arizona  ", 
+            "score": 0.74447924, 
+            "categories": [
+                "Movie studios", 
+                "Sony", 
+                "Coca-Cola", 
+                "Companies based in California"
+            ], 
+            "title": "Columbia Pictures"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Touchstone_Pictures", 
+            "text": "Walt Disney Studios Motion Pictures Group and Walt Disney Pictures . == Background ==\n=== Ratings === PG rating. Never Cry Wolf and Trenchcoat  ", 
+            "score": 0.7158125, 
+            "categories": [
+                "Disney companies", 
+                "Movie studios"
+            ], 
+            "title": "Touchstone Pictures"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=I_Know_What_You_Did_Last_Summer", 
+            "text": "", 
+            "score": 0.5917746, 
+            "categories": [
+                "1997 horror movies", 
+                "1990s mystery movies", 
+                "1990s teen horror movies", 
+                "American horror movies", 
+                "American mystery movies", 
+                "American teen movies", 
+                "Columbia Pictures movies", 
+                "English language movies", 
+                "Movies based on books", 
+                "Movies set in North Carolina"
+            ], 
+            "title": "I Know What You Did Last Summer"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hollywood_Pictures", 
+            "text": "Hollywood Pictures is one of Walt Disney Studios movie company ", 
+            "score": 0.5621504, 
+            "categories": [
+                "Movie studios"
+            ], 
+            "title": "Hollywood Pictures"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=1492_Pictures", 
+            "text": "1492 Pictures is an American movie production company founded by director  , Christopher Columbus. Harry Potter Fantastic Four films), and Shawn Levy . The logo music was composed by Academy award winner Hans Zimmer. == movies ==\n*Nine Months \n*Jingle All the Way \n*Stepmom  ", 
+            "score": 0.56065303, 
+            "categories": [
+                "Movie studios", 
+                "1995 establishments"
+            ], 
+            "title": "1492 Pictures"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Common_misconceptions", 
+            "text": "\n\n . Napoleon was taller than his nickname, The Little Corporal, suggests. feet 2&nbsp;inches French feet. international feet, or 1.686 metres. American slaves Thirteenth Amendment on June 19 1865 that slavery was officially abolished in all of the United States. Fascists came to power in 1922. Accounts from the era also suggest that the Italian railways legendary adherence to timetables was more myth than reality. ", 
+            "score": 0.5605818, 
+            "categories": [
+                "Society", 
+                "Lists", 
+                "Knowledge"
+            ], 
+            "title": "Common misconceptions"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=I_Still_Know_What_You_Did_Last_Summer", 
+            "text": "", 
+            "score": 0.55797565, 
+            "categories": [
+                "1998 movies", 
+                "1990s horror movies", 
+                "1990s teen horror movies", 
+                "1990s teen movies", 
+                "American sequel movies", 
+                "American thriller movies", 
+                "Columbia Pictures movies", 
+                "English language movies", 
+                "Movies about revenge"
+            ], 
+            "title": "I Still Know What You Did Last Summer"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knowledge", 
+            "text": "Knowledge means the things which are true, as opposed to opinion. Information which is correct is knowledge. Knowledge can always be supported by evidence, because that is how the word is used. If a statement is not supported by evidence, then it is not knowledge. The evidence makes it justified; it is not an opinion or a guess. ", 
+            "score": 0.52601326, 
+            "categories": [
+                "Basic English 850 words", 
+                "Epistemology"
+            ], 
+            "title": "Knowledge"
+        }
+    ], 
+    "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"
+}

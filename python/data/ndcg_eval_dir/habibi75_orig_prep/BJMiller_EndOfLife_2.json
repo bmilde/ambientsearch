@@ -1,1 +1,108 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Hospital", "text": "Doctors and nurses work at hospitals. Doctors make use of advanced medical technology to heal patients. The hospital may charge money for treatments/checkups or the treatment may be free or the money will be paid by the government on behalf of the patient. ==Related pages==\n* Intensive care unit ", "score": 0.9190256, "categories": ["Basic English 850 words", "Hospitals"], "title": "Hospital"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", "score": 0.4533369, "categories": ["Medicine", "Relationships"], "title": "Doctor-patient relationship"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Theme_Hospital", "text": "", "score": 0.38736948, "categories": ["Simulator video games", "1997 video games", "Electronic Arts video games"], "title": "Theme Hospital"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Body_volume_index", "text": "The Body Volume Index is a proposed alternative to the Body Mass Index . The BMI is used as an indicator for weight problems such as being overweight or underweight. The BMI puts a persons total weight in relation to their height. This measure does not take into account where on the body the mass is located. ", "score": 0.26018342, "categories": ["Fitness"], "title": "Body volume index"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_medical_abbreviations", "text": "Medical medical professionals  to hurry explanation of diseases , patients, or medicines . Greek part that makes it). Medical professionals also create  words that mean something. An example of this is \"stat\", used to indicate  that something needs to be hurried . It is from the Latin \"base word\" statim, meaning quick. ", "score": 0.08388913, "categories": ["Medicine", "Science-related lists", "Glossaries"], "title": "List of medical abbreviations"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Marie_Claire_Tchecola", "text": "", "score": 0.08194742, "categories": ["Women who received the International Women of Courage Award", "Year of birth missing (living people)", "Living people", "Guinean people", "Nurses", "Activists"], "title": "Marie Claire Tchecola"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Stroke", "text": "", "score": 0.079683565, "categories": ["Stroke"], "title": "Stroke"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cocaine", "text": "Cocaine coca leaves. Cocaine is usually a white powder. Most cocaine is used as an illegal drug. Because it is a stimulant, cocaine gives people energy. It also makes people feel very happy when it is taken. When used this way, cocaine is very addiction ", "score": 0.076698914, "categories": ["Illegal drugs"], "title": "Cocaine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Paramedic", "text": "A paramedic is a health care professional who works in different cases of emergency. They help people who have been in accidents or are having medical emergencies. They use different techniques and protocols to stabilize the patient. Then they take the person to a hospital in an ambulance. They evaluate the patient with specific information they have. ", "score": 0.07247703, "categories": ["Emergency services"], "title": "Paramedic"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Manatee_Palms_Youth_Services", "text": "", "score": 0.0706043, "categories": ["Hospitals in the United States", "Buildings and structures in Florida"], "title": "Manatee Palms Youth Services"}], "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", "filename": "BJMiller_EndOfLife_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hospital", 
+            "text": "Doctors and nurses work at hospitals. Doctors make use of advanced medical technology to heal patients. The hospital may charge money for treatments/checkups or the treatment may be free or the money will be paid by the government on behalf of the patient. ==Related pages==\n* Intensive care unit ", 
+            "score": 0.9190256, 
+            "categories": [
+                "Basic English 850 words", 
+                "Hospitals"
+            ], 
+            "title": "Hospital"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", 
+            "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", 
+            "score": 0.4533369, 
+            "categories": [
+                "Medicine", 
+                "Relationships"
+            ], 
+            "title": "Doctor-patient relationship"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Theme_Hospital", 
+            "text": "", 
+            "score": 0.38736948, 
+            "categories": [
+                "Simulator video games", 
+                "1997 video games", 
+                "Electronic Arts video games"
+            ], 
+            "title": "Theme Hospital"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Body_volume_index", 
+            "text": "The Body Volume Index is a proposed alternative to the Body Mass Index . The BMI is used as an indicator for weight problems such as being overweight or underweight. The BMI puts a persons total weight in relation to their height. This measure does not take into account where on the body the mass is located. ", 
+            "score": 0.26018342, 
+            "categories": [
+                "Fitness"
+            ], 
+            "title": "Body volume index"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_medical_abbreviations", 
+            "text": "Medical medical professionals  to hurry explanation of diseases , patients, or medicines . Greek part that makes it). Medical professionals also create  words that mean something. An example of this is \"stat\", used to indicate  that something needs to be hurried . It is from the Latin \"base word\" statim, meaning quick. ", 
+            "score": 0.08388913, 
+            "categories": [
+                "Medicine", 
+                "Science-related lists", 
+                "Glossaries"
+            ], 
+            "title": "List of medical abbreviations"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Marie_Claire_Tchecola", 
+            "text": "", 
+            "score": 0.08194742, 
+            "categories": [
+                "Women who received the International Women of Courage Award", 
+                "Year of birth missing (living people)", 
+                "Living people", 
+                "Guinean people", 
+                "Nurses", 
+                "Activists"
+            ], 
+            "title": "Marie Claire Tchecola"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Stroke", 
+            "text": "", 
+            "score": 0.079683565, 
+            "categories": [
+                "Stroke"
+            ], 
+            "title": "Stroke"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cocaine", 
+            "text": "Cocaine coca leaves. Cocaine is usually a white powder. Most cocaine is used as an illegal drug. Because it is a stimulant, cocaine gives people energy. It also makes people feel very happy when it is taken. When used this way, cocaine is very addiction ", 
+            "score": 0.076698914, 
+            "categories": [
+                "Illegal drugs"
+            ], 
+            "title": "Cocaine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Paramedic", 
+            "text": "A paramedic is a health care professional who works in different cases of emergency. They help people who have been in accidents or are having medical emergencies. They use different techniques and protocols to stabilize the patient. Then they take the person to a hospital in an ambulance. They evaluate the patient with specific information they have. ", 
+            "score": 0.07247703, 
+            "categories": [
+                "Emergency services"
+            ], 
+            "title": "Paramedic"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Manatee_Palms_Youth_Services", 
+            "text": "", 
+            "score": 0.0706043, 
+            "categories": [
+                "Hospitals in the United States", 
+                "Buildings and structures in Florida"
+            ], 
+            "title": "Manatee Palms Youth Services"
+        }
+    ], 
+    "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", 
+    "filename": "BJMiller_EndOfLife_2.txt"
+}

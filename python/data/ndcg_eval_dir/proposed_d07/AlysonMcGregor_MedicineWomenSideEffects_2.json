@@ -1,1 +1,103 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Medical_specialty", "text": "Medicine is a very complex field. In the past, a doctor could learn almost all that we knew about medicine. Now that is impossible. So after finishing medical school, young doctors choose what kind of doctor they wish to be. After school, they usually do more years of training to learn about the kind of medical specialty they want to do. ", "score": 1.2508663, "categories": ["Medical specialties"], "title": "Medical specialty"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Bisphenol_A", "text": "", "score": 0.7500198, "categories": ["Hormones"], "title": "Bisphenol A"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_doctor", "text": "A medical doctor  is a person who practices medicine to treat illness and injuries. degree in medicine. Medical doctors used to make house calls to treat patients at home. Now they usually see patients in their offices or in hospitals. Medical doctors may also work for schools, companies, sports teams, or the military. ", "score": 0.7457199, "categories": ["Medicine", "Healthcare occupations"], "title": "Medical doctor"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_microbiology", "text": "Medical microbiology, also known as \u2018\u2019\u2019clinical microbiology\u2019\u2019\u2019, is the study of microbes, such as bacteria, viruses, fungi and parasites, which cause a human illness and their role in the disease. The microbes and the branch of microbiology are the most studied due to their great importance to medicine. ", "score": 0.72730726, "categories": ["Microbiology", "Medicine"], "title": "Medical microbiology"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_school", "text": "A medical school is a place where medical students learn medicine. When they graduate from a medical school, they become a physician or a doctor. Medical Schools grant Doctor of Medicine , Doctor of Osteopathic Medicine  and sometimes Doctor of Philosophy  Degrees. Students take classes in human biology and disease then take a license exam to practice medicine. ", "score": 0.71544, "categories": ["Types of educational institutions", "Medical education"], "title": "Medical school"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Oestradiol", "text": "Oestradiol, E2, is an oestrogen, a steroidal hormone secreted by the Ovary ", "score": 0.6041926, "categories": ["Hormones"], "title": "Oestradiol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Acupuncture", "text": "Acupuncture is an ancient kind of   . Liu, Gang et al 2013. Effects of painful stimulation and acupuncture on attention networks in healthy subjects. Behavioral and Brain Functions 9 : 23. Complete article:   It uses the Chinese philosophy of yin and yang. == Effectiveness ==\nThere is no general agreement as to whether acupuncture is effective. ", "score": 0.6004347, "categories": ["Medical procedures", "China"], "title": "Acupuncture"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pregnancy", "text": "conception to childbirth. Usually the mother has one baby at a time. Sometimes the mother has two babies at one time. Two babies are called twins. The mother can have three or more babies at one time. This does not happen very often. == Start ==\nPregnancy usually starts after a woman has sexual intercourse with a man. ", "score": 0.59582466, "categories": ["Biological reproduction"], "title": "Pregnancy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Myocardial_infarction", "text": "", "score": 0.58932966, "categories": ["Heart disease", "Medical emergencies"], "title": "Myocardial infarction"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_medical_abbreviations", "text": "Medical medical professionals  to hurry explanation of diseases , patients, or medicines . Greek part that makes it). Medical professionals also create  words that mean something. An example of this is \"stat\", used to indicate  that something needs to be hurried . It is from the Latin \"base word\" statim, meaning quick. ", "score": 0.584743, "categories": ["Medicine", "Science-related lists", "Glossaries"], "title": "List of medical abbreviations"}], "orig": "World War II changed a lot of things, and one of them was this need to protect people from becoming victims of medical research without informed consent. So some much-needed guidelines or rules were set into place, and part of that was this desire to protect women of childbearing age from entering into any medical research studies. There was fear: what if something happened to the fetus during the study? Who would be responsible? And so the scientists at this time actually thought this was a blessing in disguise, because let's face it -- men's bodies are pretty homogeneous. They don't have the constantly fluctuating levels of hormones that could disrupt clean data they could get if they had only men. It was easier. It was cheaper. Not to mention, at this time, there was a general assumption that men and women were alike in every way, apart from their reproductive organs and sex hormones. So it was decided: medical research was performed on men, and the results were later applied to women.\nWhat did this do to the notion of women's health? Women's health became synonymous with reproduction: breasts, ovaries, uterus, pregnancy. It's this term we now refer to as \"bikini medicine.\" And this stayed this way until about the 1980s, when this concept was challenged by the medical community and by the public health policymakers when they realized that by excluding women from all medical research studies we actually did them a disservice, in that apart from reproductive issues, virtually nothing was known about the unique needs of the female patient.", "filename": "AlysonMcGregor_MedicineWomenSideEffects_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_specialty", 
+            "text": "Medicine is a very complex field. In the past, a doctor could learn almost all that we knew about medicine. Now that is impossible. So after finishing medical school, young doctors choose what kind of doctor they wish to be. After school, they usually do more years of training to learn about the kind of medical specialty they want to do. ", 
+            "score": 1.2508663, 
+            "categories": [
+                "Medical specialties"
+            ], 
+            "title": "Medical specialty"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Bisphenol_A", 
+            "text": "", 
+            "score": 0.7500198, 
+            "categories": [
+                "Hormones"
+            ], 
+            "title": "Bisphenol A"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_doctor", 
+            "text": "A medical doctor  is a person who practices medicine to treat illness and injuries. degree in medicine. Medical doctors used to make house calls to treat patients at home. Now they usually see patients in their offices or in hospitals. Medical doctors may also work for schools, companies, sports teams, or the military. ", 
+            "score": 0.7457199, 
+            "categories": [
+                "Medicine", 
+                "Healthcare occupations"
+            ], 
+            "title": "Medical doctor"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_microbiology", 
+            "text": "Medical microbiology, also known as \u2018\u2019\u2019clinical microbiology\u2019\u2019\u2019, is the study of microbes, such as bacteria, viruses, fungi and parasites, which cause a human illness and their role in the disease. The microbes and the branch of microbiology are the most studied due to their great importance to medicine. ", 
+            "score": 0.72730726, 
+            "categories": [
+                "Microbiology", 
+                "Medicine"
+            ], 
+            "title": "Medical microbiology"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_school", 
+            "text": "A medical school is a place where medical students learn medicine. When they graduate from a medical school, they become a physician or a doctor. Medical Schools grant Doctor of Medicine , Doctor of Osteopathic Medicine  and sometimes Doctor of Philosophy  Degrees. Students take classes in human biology and disease then take a license exam to practice medicine. ", 
+            "score": 0.71544, 
+            "categories": [
+                "Types of educational institutions", 
+                "Medical education"
+            ], 
+            "title": "Medical school"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Oestradiol", 
+            "text": "Oestradiol, E2, is an oestrogen, a steroidal hormone secreted by the Ovary ", 
+            "score": 0.6041926, 
+            "categories": [
+                "Hormones"
+            ], 
+            "title": "Oestradiol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Acupuncture", 
+            "text": "Acupuncture is an ancient kind of   . Liu, Gang et al 2013. Effects of painful stimulation and acupuncture on attention networks in healthy subjects. Behavioral and Brain Functions 9 : 23. Complete article:   It uses the Chinese philosophy of yin and yang. == Effectiveness ==\nThere is no general agreement as to whether acupuncture is effective. ", 
+            "score": 0.6004347, 
+            "categories": [
+                "Medical procedures", 
+                "China"
+            ], 
+            "title": "Acupuncture"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pregnancy", 
+            "text": "conception to childbirth. Usually the mother has one baby at a time. Sometimes the mother has two babies at one time. Two babies are called twins. The mother can have three or more babies at one time. This does not happen very often. == Start ==\nPregnancy usually starts after a woman has sexual intercourse with a man. ", 
+            "score": 0.59582466, 
+            "categories": [
+                "Biological reproduction"
+            ], 
+            "title": "Pregnancy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Myocardial_infarction", 
+            "text": "", 
+            "score": 0.58932966, 
+            "categories": [
+                "Heart disease", 
+                "Medical emergencies"
+            ], 
+            "title": "Myocardial infarction"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_medical_abbreviations", 
+            "text": "Medical medical professionals  to hurry explanation of diseases , patients, or medicines . Greek part that makes it). Medical professionals also create  words that mean something. An example of this is \"stat\", used to indicate  that something needs to be hurried . It is from the Latin \"base word\" statim, meaning quick. ", 
+            "score": 0.584743, 
+            "categories": [
+                "Medicine", 
+                "Science-related lists", 
+                "Glossaries"
+            ], 
+            "title": "List of medical abbreviations"
+        }
+    ], 
+    "orig": "World War II changed a lot of things, and one of them was this need to protect people from becoming victims of medical research without informed consent. So some much-needed guidelines or rules were set into place, and part of that was this desire to protect women of childbearing age from entering into any medical research studies. There was fear: what if something happened to the fetus during the study? Who would be responsible? And so the scientists at this time actually thought this was a blessing in disguise, because let's face it -- men's bodies are pretty homogeneous. They don't have the constantly fluctuating levels of hormones that could disrupt clean data they could get if they had only men. It was easier. It was cheaper. Not to mention, at this time, there was a general assumption that men and women were alike in every way, apart from their reproductive organs and sex hormones. So it was decided: medical research was performed on men, and the results were later applied to women.\nWhat did this do to the notion of women's health? Women's health became synonymous with reproduction: breasts, ovaries, uterus, pregnancy. It's this term we now refer to as \"bikini medicine.\" And this stayed this way until about the 1980s, when this concept was challenged by the medical community and by the public health policymakers when they realized that by excluding women from all medical research studies we actually did them a disservice, in that apart from reproductive issues, virtually nothing was known about the unique needs of the female patient.", 
+    "filename": "AlysonMcGregor_MedicineWomenSideEffects_2.txt"
+}

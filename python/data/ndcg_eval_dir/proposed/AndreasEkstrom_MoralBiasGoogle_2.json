@@ -1,1 +1,107 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 0.87563527, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", "score": 0.33947644, "categories": ["Google", "Censorship"], "title": "Censorship by Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", "text": "", "score": 0.29930303, "categories": ["Google"], "title": "Google Play"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", "text": "", "score": 0.27019846, "categories": ["Google"], "title": "Google Chrome OS"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google+", "text": "", "score": 0.23730956, "categories": ["2011 establishments", "Google", "Social networking", "Web 2.0"], "title": "Google+"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google", "text": "", "score": 0.22693323, "categories": ["1998 establishments in the United States", "Companies listed on NASDAQ", "Google", "Mountain View, California"], "title": "Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.21309769, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", "text": "", "score": 0.20957442, "categories": ["Software", "Google"], "title": "Google Maps (application)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", "text": "", "score": 0.19681959, "categories": ["Web browsers", "Google"], "title": "Google Chrome"}, {"url": "https://simple.wikipedia.org/w/index.php?title=SEOmoz", "text": "", "score": 0.18794636, "categories": ["Companies of the United States", "Technology companies", "2004 establishments"], "title": "SEOmoz"}], "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 0.87563527, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", 
+            "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", 
+            "score": 0.33947644, 
+            "categories": [
+                "Google", 
+                "Censorship"
+            ], 
+            "title": "Censorship by Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", 
+            "text": "", 
+            "score": 0.29930303, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Play"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", 
+            "text": "", 
+            "score": 0.27019846, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Chrome OS"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google+", 
+            "text": "", 
+            "score": 0.23730956, 
+            "categories": [
+                "2011 establishments", 
+                "Google", 
+                "Social networking", 
+                "Web 2.0"
+            ], 
+            "title": "Google+"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google", 
+            "text": "", 
+            "score": 0.22693323, 
+            "categories": [
+                "1998 establishments in the United States", 
+                "Companies listed on NASDAQ", 
+                "Google", 
+                "Mountain View, California"
+            ], 
+            "title": "Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.21309769, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", 
+            "text": "", 
+            "score": 0.20957442, 
+            "categories": [
+                "Software", 
+                "Google"
+            ], 
+            "title": "Google Maps (application)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", 
+            "text": "", 
+            "score": 0.19681959, 
+            "categories": [
+                "Web browsers", 
+                "Google"
+            ], 
+            "title": "Google Chrome"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=SEOmoz", 
+            "text": "", 
+            "score": 0.18794636, 
+            "categories": [
+                "Companies of the United States", 
+                "Technology companies", 
+                "2004 establishments"
+            ], 
+            "title": "SEOmoz"
+        }
+    ], 
+    "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"
+}

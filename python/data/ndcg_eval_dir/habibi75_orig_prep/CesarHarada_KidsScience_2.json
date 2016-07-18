@@ -1,1 +1,99 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Sediment", "text": "Sediment is the matter which falls to the bottom of oceans and lakes. Compressed and gradually transformed, sediment is the basis of sedimentary rocks. The term is also used for material transported by wind or water, and deposited on the surface. In due course, this may also turn into rock. The study of how sedimentary rocks are formed is called sedimentology. ", "score": 0.86667204, "categories": ["Sedimentology"], "title": "Sediment"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mountain_range", "text": "\n ocean ridges form the longest continuous mountain system on Earth, with a length of  . == Divisions and categories == Appalachian Mountains White Mountains and the Blue Ridge Mountains. The White Mountains are a child of the Appalachians, and there are also children of the Whites, like the Sandwich Range and the Presidential Range. ", "score": 0.7053378, "categories": ["Mountain ranges"], "title": "Mountain range"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fukushima_Daini_Nuclear_Power_Plant", "text": "", "score": 0.60088366, "categories": ["Buildings and structures in Japan", "Nuclear power plants"], "title": "Fukushima Daini Nuclear Power Plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mountain", "text": "mountain in Alaska  ", "score": 0.59224933, "categories": ["Basic English 850 words", "Mountains"], "title": "Mountain"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Nuclear_power_plant", "text": "\n \n \n\nA nuclear power plant is a type of power station that generates electricity using heat from nuclear reactions. These reactions take place within a Nuclear reactor ", "score": 0.4933146, "categories": ["Power plants", "Nuclear energy"], "title": "Nuclear power plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Tricastin_nuclear_power_plant", "text": "River Rh\u00f4ne. It was built form 1974 to 1981; the first reactors started working in 1980. It has been criticized several times, because of incidents:\n*The French control authority said in 2002 that certain means of cooling would not work when there was an earthquake. *A study done in 2004 said that tests done at the site showed that firefighters needed 37 minutes to bring a fire under control. ", "score": 0.491134, "categories": ["Nuclear power plants"], "title": "Tricastin nuclear power plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mountain_pass", "text": "In a group of hills or mountain range ", "score": 0.4746034, "categories": ["Mountain passes"], "title": "Mountain pass"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Plant_physiology", "text": "Plant physiology is the part of botany which studies how plants work. That is the physiology of plants. Using a variety of methods, botanists study how plants reproduction ", "score": 0.47158566, "categories": ["Plant physiology"], "title": "Plant physiology"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Water_(molecule)", "text": "", "score": 0.46261334, "categories": ["Water"], "title": "Water (molecule)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Plant_sap", "text": "Plant sap, or just sap, is fluid transported in xylem tubes or phloem cells of a plant. Xylem cells transport water and inorganic nutrients through the plant; phloem cells transport sugary fluids and other biological molecules. Latex or resin is not plant sap. They are separately produced, with different components and functions. ", "score": 0.46126834, "categories": ["Plant physiology"], "title": "Plant sap"}], "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", "filename": "CesarHarada_KidsScience_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Sediment", 
+            "text": "Sediment is the matter which falls to the bottom of oceans and lakes. Compressed and gradually transformed, sediment is the basis of sedimentary rocks. The term is also used for material transported by wind or water, and deposited on the surface. In due course, this may also turn into rock. The study of how sedimentary rocks are formed is called sedimentology. ", 
+            "score": 0.86667204, 
+            "categories": [
+                "Sedimentology"
+            ], 
+            "title": "Sediment"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mountain_range", 
+            "text": "\n ocean ridges form the longest continuous mountain system on Earth, with a length of  . == Divisions and categories == Appalachian Mountains White Mountains and the Blue Ridge Mountains. The White Mountains are a child of the Appalachians, and there are also children of the Whites, like the Sandwich Range and the Presidential Range. ", 
+            "score": 0.7053378, 
+            "categories": [
+                "Mountain ranges"
+            ], 
+            "title": "Mountain range"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fukushima_Daini_Nuclear_Power_Plant", 
+            "text": "", 
+            "score": 0.60088366, 
+            "categories": [
+                "Buildings and structures in Japan", 
+                "Nuclear power plants"
+            ], 
+            "title": "Fukushima Daini Nuclear Power Plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mountain", 
+            "text": "mountain in Alaska  ", 
+            "score": 0.59224933, 
+            "categories": [
+                "Basic English 850 words", 
+                "Mountains"
+            ], 
+            "title": "Mountain"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Nuclear_power_plant", 
+            "text": "\n \n \n\nA nuclear power plant is a type of power station that generates electricity using heat from nuclear reactions. These reactions take place within a Nuclear reactor ", 
+            "score": 0.4933146, 
+            "categories": [
+                "Power plants", 
+                "Nuclear energy"
+            ], 
+            "title": "Nuclear power plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Tricastin_nuclear_power_plant", 
+            "text": "River Rh\u00f4ne. It was built form 1974 to 1981; the first reactors started working in 1980. It has been criticized several times, because of incidents:\n*The French control authority said in 2002 that certain means of cooling would not work when there was an earthquake. *A study done in 2004 said that tests done at the site showed that firefighters needed 37 minutes to bring a fire under control. ", 
+            "score": 0.491134, 
+            "categories": [
+                "Nuclear power plants"
+            ], 
+            "title": "Tricastin nuclear power plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mountain_pass", 
+            "text": "In a group of hills or mountain range ", 
+            "score": 0.4746034, 
+            "categories": [
+                "Mountain passes"
+            ], 
+            "title": "Mountain pass"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Plant_physiology", 
+            "text": "Plant physiology is the part of botany which studies how plants work. That is the physiology of plants. Using a variety of methods, botanists study how plants reproduction ", 
+            "score": 0.47158566, 
+            "categories": [
+                "Plant physiology"
+            ], 
+            "title": "Plant physiology"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Water_(molecule)", 
+            "text": "", 
+            "score": 0.46261334, 
+            "categories": [
+                "Water"
+            ], 
+            "title": "Water (molecule)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Plant_sap", 
+            "text": "Plant sap, or just sap, is fluid transported in xylem tubes or phloem cells of a plant. Xylem cells transport water and inorganic nutrients through the plant; phloem cells transport sugary fluids and other biological molecules. Latex or resin is not plant sap. They are separately produced, with different components and functions. ", 
+            "score": 0.46126834, 
+            "categories": [
+                "Plant physiology"
+            ], 
+            "title": "Plant sap"
+        }
+    ], 
+    "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", 
+    "filename": "CesarHarada_KidsScience_2.txt"
+}

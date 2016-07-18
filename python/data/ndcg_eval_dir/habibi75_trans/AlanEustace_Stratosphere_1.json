@@ -1,1 +1,97 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Scuba", "text": "#redirectScuba diving ", "score": 0.26501688, "categories": [], "title": "Scuba"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Scuba_diving", "text": "\nScuba Diving is a sport where people  can swim underwater for a long time, using a   filled with compressed air. The tank is a large metal cylinder made of steel or aluminum. The word Scuba is an acronym from   Underwater ", "score": 0.21682978, "categories": ["Diving"], "title": "Scuba diving"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Diving_suit", "text": "A scuba divers insulate the diver from the cold temperature of the water. There are several types of diving suits, including wetsuits and dry suits. ", "score": 0.21334417, "categories": ["Protective clothing"], "title": "Diving suit"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Main_battle_tank", "text": "\nMedium tanks were the earliest MBTs. MBTs started replacing medium tanks when guns on medium tanks became powerful enough to win against heavy tanks. Heavy tanks could not carry armor strong enough to win against medium tanks. in 1979. The nuclear weapon threat and other anti-tank weapons in the Cold War made countries add more protection to survive in all types of combat. ", "score": 0.20318387, "categories": ["Tanks"], "title": "Main battle tank"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Merkava", "text": "The Merkava is a main battle tank. It is developed and produced in Israel for the Israel Defense Forces. The tank was first introduced in 1978 and it was first used in combat during the 1982 Lebanon War. Four main versions have been developed. These are called Merkava Mark I \u2013 Mark IV. When designing the Merkava tank, everything was subordinated to the survival aspect of the crew, the engine is placed in front of the tank and thus serve as an additional component of ballistic protection, while the crew can escape from the damaged Merkava door at the rear of the tank. ", "score": 0.1758293, "categories": ["Tanks"], "title": "Merkava"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Tank", "text": "\nA tank is an armoured combat vehicle, typically armed with a large cannon and a few machine guns. British during World War I as a way of attacking enemy trenches. They were called tanks to trick the Germans into thinking they were water carriers for areas where water was hard to move or find in large amounts. ", "score": 0.12623207, "categories": ["Tanks", "Army", "Vehicles"], "title": "Tank"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Operation_Sea_Lion", "text": "German Air Force defeated in the Battle of Britain, the operation was put off on 17 September 1940 and never happened. The invasion force would have used a varied amount of weapons, developing underwater tanks, the first Jet powered airplane, and a massive underwater army armed with old an innovative Scuba Suits. ", "score": 0.1213372, "categories": ["World War II"], "title": "Operation Sea Lion"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Wetsuit", "text": "scuba diving ", "score": 0.09042445, "categories": ["Sports clothing"], "title": "Wetsuit"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Underwater_diving", "text": "Different types of underwater diving include :\n\n*Sports diving can be done with air cylinders carried by the diver. This is called scuba diving. It can also be done for shorter dives by holding your breath. This is called freediving. *Scuba diving is done with metal cylinders carried by the diver to hold the breathing air. ", "score": 0.063896954, "categories": ["Diving"], "title": "Underwater diving"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Airbag", "text": "injuries that occur because the driver hit a hard object. An airbag is a useful vehicle safety device. Airbags are used in the world increasingly because in accidents, it can help passengers reduce shock. When the sensor feels a strong shock, the gas device explodes. This gas fills the bag immediately. ", "score": 0.055963006, "categories": ["Automobiles", "Safety"], "title": "Airbag"}], "orig": "But this is really a science talk, and it's really an engineering talk, and what was amazing to me about that experience is that Taber said, yes, I think we can build a stratospheric suit, and more than that, come down tomorrow and let's talk to the team that formed the core of the group that actually built it. And they did something which I think is important, which is they took the analogy of scuba diving. So in scuba diving, you have a self-contained system. You have everything that you could ever need. You have a scuba tank. You have a wetsuit. You have visibility. And that scuba is exactly this system, and we're going to launch it into the stratosphere.\nThree years later, this is what we have. We've got an amazing suit that was made by ILC Dover. ILC Dover was the company that made all of the Apollo suits and all of the extravehicular activity suits. They had never sold a suit commercially, only to the government, but they sold one to me, which I am very grateful for. Up here we have a parachute. This was all about safety. Everyone on the team knew that I have a wife and two small children -- 10 and 15 -- and I wanted to come back safely. So there's a main parachute and a reserve parachute, and if I do nothing, the reserve parachute is going to open because of an automatic opening device. The suit itself can protect me from the cold. This area in the front here has thermal protection. It will actually heat water that will wrap around my body. It has two redundant oxygen tanks. Even if I was to get a quarter-inch hole in this suit, which is extremely unlikely, this system would still protect me from the low pressure of space.", "filename": "AlanEustace_Stratosphere_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Scuba", 
+            "text": "#redirectScuba diving ", 
+            "score": 0.26501688, 
+            "categories": [], 
+            "title": "Scuba"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Scuba_diving", 
+            "text": "\nScuba Diving is a sport where people  can swim underwater for a long time, using a   filled with compressed air. The tank is a large metal cylinder made of steel or aluminum. The word Scuba is an acronym from   Underwater ", 
+            "score": 0.21682978, 
+            "categories": [
+                "Diving"
+            ], 
+            "title": "Scuba diving"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Diving_suit", 
+            "text": "A scuba divers insulate the diver from the cold temperature of the water. There are several types of diving suits, including wetsuits and dry suits. ", 
+            "score": 0.21334417, 
+            "categories": [
+                "Protective clothing"
+            ], 
+            "title": "Diving suit"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Main_battle_tank", 
+            "text": "\nMedium tanks were the earliest MBTs. MBTs started replacing medium tanks when guns on medium tanks became powerful enough to win against heavy tanks. Heavy tanks could not carry armor strong enough to win against medium tanks. in 1979. The nuclear weapon threat and other anti-tank weapons in the Cold War made countries add more protection to survive in all types of combat. ", 
+            "score": 0.20318387, 
+            "categories": [
+                "Tanks"
+            ], 
+            "title": "Main battle tank"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Merkava", 
+            "text": "The Merkava is a main battle tank. It is developed and produced in Israel for the Israel Defense Forces. The tank was first introduced in 1978 and it was first used in combat during the 1982 Lebanon War. Four main versions have been developed. These are called Merkava Mark I \u2013 Mark IV. When designing the Merkava tank, everything was subordinated to the survival aspect of the crew, the engine is placed in front of the tank and thus serve as an additional component of ballistic protection, while the crew can escape from the damaged Merkava door at the rear of the tank. ", 
+            "score": 0.1758293, 
+            "categories": [
+                "Tanks"
+            ], 
+            "title": "Merkava"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Tank", 
+            "text": "\nA tank is an armoured combat vehicle, typically armed with a large cannon and a few machine guns. British during World War I as a way of attacking enemy trenches. They were called tanks to trick the Germans into thinking they were water carriers for areas where water was hard to move or find in large amounts. ", 
+            "score": 0.12623207, 
+            "categories": [
+                "Tanks", 
+                "Army", 
+                "Vehicles"
+            ], 
+            "title": "Tank"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Operation_Sea_Lion", 
+            "text": "German Air Force defeated in the Battle of Britain, the operation was put off on 17 September 1940 and never happened. The invasion force would have used a varied amount of weapons, developing underwater tanks, the first Jet powered airplane, and a massive underwater army armed with old an innovative Scuba Suits. ", 
+            "score": 0.1213372, 
+            "categories": [
+                "World War II"
+            ], 
+            "title": "Operation Sea Lion"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Wetsuit", 
+            "text": "scuba diving ", 
+            "score": 0.09042445, 
+            "categories": [
+                "Sports clothing"
+            ], 
+            "title": "Wetsuit"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Underwater_diving", 
+            "text": "Different types of underwater diving include :\n\n*Sports diving can be done with air cylinders carried by the diver. This is called scuba diving. It can also be done for shorter dives by holding your breath. This is called freediving. *Scuba diving is done with metal cylinders carried by the diver to hold the breathing air. ", 
+            "score": 0.063896954, 
+            "categories": [
+                "Diving"
+            ], 
+            "title": "Underwater diving"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Airbag", 
+            "text": "injuries that occur because the driver hit a hard object. An airbag is a useful vehicle safety device. Airbags are used in the world increasingly because in accidents, it can help passengers reduce shock. When the sensor feels a strong shock, the gas device explodes. This gas fills the bag immediately. ", 
+            "score": 0.055963006, 
+            "categories": [
+                "Automobiles", 
+                "Safety"
+            ], 
+            "title": "Airbag"
+        }
+    ], 
+    "orig": "But this is really a science talk, and it's really an engineering talk, and what was amazing to me about that experience is that Taber said, yes, I think we can build a stratospheric suit, and more than that, come down tomorrow and let's talk to the team that formed the core of the group that actually built it. And they did something which I think is important, which is they took the analogy of scuba diving. So in scuba diving, you have a self-contained system. You have everything that you could ever need. You have a scuba tank. You have a wetsuit. You have visibility. And that scuba is exactly this system, and we're going to launch it into the stratosphere.\nThree years later, this is what we have. We've got an amazing suit that was made by ILC Dover. ILC Dover was the company that made all of the Apollo suits and all of the extravehicular activity suits. They had never sold a suit commercially, only to the government, but they sold one to me, which I am very grateful for. Up here we have a parachute. This was all about safety. Everyone on the team knew that I have a wife and two small children -- 10 and 15 -- and I wanted to come back safely. So there's a main parachute and a reserve parachute, and if I do nothing, the reserve parachute is going to open because of an automatic opening device. The suit itself can protect me from the cold. This area in the front here has thermal protection. It will actually heat water that will wrap around my body. It has two redundant oxygen tanks. Even if I was to get a quarter-inch hole in this suit, which is extremely unlikely, this system would still protect me from the low pressure of space.", 
+    "filename": "AlanEustace_Stratosphere_1.txt"
+}

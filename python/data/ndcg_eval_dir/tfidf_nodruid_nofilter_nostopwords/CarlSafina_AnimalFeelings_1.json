@@ -1,1 +1,101 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=African_forest_elephant", "text": "", "score": 0.95795393, "categories": ["Elephants"], "title": "African forest elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=African_elephant", "text": "", "score": 0.95307404, "categories": ["Elephants"], "title": "African elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Elephant_gun", "text": "\n gauge - or the guns were named by how much the projectiles  weighed in ounces. The projectiles were lead round balls or short slugs shaped like cones. Sometimes, antimony was put in them to make them harder. These very large and heavy firearms were the first to be known as the elephant guns of the black powder era . ", "score": 0.79128844, "categories": ["Elephants", "Firearms"], "title": "Elephant gun"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Elephants_Dream", "text": "Blender was the main program used to make the movie. It began production in September 2005 and was released on March 24, 2006. It was first developed under the name Orange, then later changed to Machina then finally to Elephants Dream since the people working on the movie could not decide how \"Machina\" would be pronounced. ", "score": 0.75714904, "categories": ["Animated movies", "2006 movies", "English language movies"], "title": "Elephants Dream"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", "text": "", "score": 0.717009, "categories": ["Elephants", "Mammals of Asia"], "title": "Sri Lankan elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Elephant", "text": "", "score": 0.66758764, "categories": ["Elephants", "Animals used for transport"], "title": "Elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=African_bush_elephant", "text": "", "score": 0.6292832, "categories": ["Elephants"], "title": "African bush elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Proboscidea", "text": "", "score": 0.6186834, "categories": ["Elephants"], "title": "Proboscidea"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gomphothere", "text": "", "score": 0.6010285, "categories": ["Extinct elephants"], "title": "Gomphothere"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gomphotherium", "text": "", "score": 0.5959958, "categories": ["Extinct elephants"], "title": "Gomphotherium"}], "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", "filename": "CarlSafina_AnimalFeelings_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=African_forest_elephant", 
+            "text": "", 
+            "score": 0.95795393, 
+            "categories": [
+                "Elephants"
+            ], 
+            "title": "African forest elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=African_elephant", 
+            "text": "", 
+            "score": 0.95307404, 
+            "categories": [
+                "Elephants"
+            ], 
+            "title": "African elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Elephant_gun", 
+            "text": "\n gauge - or the guns were named by how much the projectiles  weighed in ounces. The projectiles were lead round balls or short slugs shaped like cones. Sometimes, antimony was put in them to make them harder. These very large and heavy firearms were the first to be known as the elephant guns of the black powder era . ", 
+            "score": 0.79128844, 
+            "categories": [
+                "Elephants", 
+                "Firearms"
+            ], 
+            "title": "Elephant gun"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Elephants_Dream", 
+            "text": "Blender was the main program used to make the movie. It began production in September 2005 and was released on March 24, 2006. It was first developed under the name Orange, then later changed to Machina then finally to Elephants Dream since the people working on the movie could not decide how \"Machina\" would be pronounced. ", 
+            "score": 0.75714904, 
+            "categories": [
+                "Animated movies", 
+                "2006 movies", 
+                "English language movies"
+            ], 
+            "title": "Elephants Dream"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", 
+            "text": "", 
+            "score": 0.717009, 
+            "categories": [
+                "Elephants", 
+                "Mammals of Asia"
+            ], 
+            "title": "Sri Lankan elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Elephant", 
+            "text": "", 
+            "score": 0.66758764, 
+            "categories": [
+                "Elephants", 
+                "Animals used for transport"
+            ], 
+            "title": "Elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=African_bush_elephant", 
+            "text": "", 
+            "score": 0.6292832, 
+            "categories": [
+                "Elephants"
+            ], 
+            "title": "African bush elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Proboscidea", 
+            "text": "", 
+            "score": 0.6186834, 
+            "categories": [
+                "Elephants"
+            ], 
+            "title": "Proboscidea"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gomphothere", 
+            "text": "", 
+            "score": 0.6010285, 
+            "categories": [
+                "Extinct elephants"
+            ], 
+            "title": "Gomphothere"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gomphotherium", 
+            "text": "", 
+            "score": 0.5959958, 
+            "categories": [
+                "Extinct elephants"
+            ], 
+            "title": "Gomphotherium"
+        }
+    ], 
+    "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", 
+    "filename": "CarlSafina_AnimalFeelings_1.txt"
+}

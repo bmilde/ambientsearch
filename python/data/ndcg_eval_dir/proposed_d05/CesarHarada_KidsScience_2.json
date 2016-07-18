@@ -1,1 +1,115 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Mediterranean_Ridge", "text": "floor of the Mediterranean Sea. It is next to a rough quarter circle from Calabria, south of Crete, to the southwest corner of Turkey, and from there eastwards south of Turkey, with Cyprus. tectonic theory subducting under Eurasian and Anatolian Plate plows up the floor of the Mediterranean, lifting it from the seabed, and then above sea level, making the island of Cyprus. ", "score": 0.04570734, "categories": ["Plate tectonics", "Oceanography"], "title": "Mediterranean Ridge"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gulf_of_Honduras", "text": "The Gulf or Bay of Honduras is a large inlet of the Caribbean Sea. It indents the coasts of Belize, Guatemala, and Honduras. From north to south, it runs for approximately 200&nbsp;km from Dangriga, Belize, to La Ceiba, Honduras. The inner Gulf of Honduras is lined by the Belize Barrier Reef. It forms the southern part of the 900&nbsp;km long Mesoamerican Barrier Reef System. ", "score": 0.036087316, "categories": ["Gulfs", "Atlantic Ocean"], "title": "Gulf of Honduras"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mazon_Creek", "text": "\n  swamps. Mazon Creek is a lagerst\u00e4tte in northeast Illinois. It is a site of exceptional fossil preservation from the Pennsylvanian sub-period of the Carboniferous, about 300 million years ago. The area was declared a National Historic Landmark in 1997.   ", "score": 0.03108874, "categories": ["Lagerst\u00e4tten"], "title": "Mazon Creek"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Megaflood", "text": "A megaflood is a  , many large floods were caused by the collapse of ice sheets or glaciers which formed the dams of glacial lakes. Examples of older outburst floods are known from the geological past of the Earth. collapses, or is erosion ", "score": 0.030695587, "categories": ["Floods"], "title": "Megaflood"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Anchor", "text": "\nMushroom and pyramid anchors are good where the seabed is soft. This type of anchor needs time to dig into the seabed. It can be smaller and lighter than a deadweight anchor. The mushroom anchor is shaped like a mushroom, and the pyramid anchor is shaped like a pyramid with the apex pointing down. ", "score": 0.029873956, "categories": ["Ship building", "Boats"], "title": "Anchor"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Microbial_mat", "text": "\n  are formed by some microbial mats as the microbes slowly move upwards to avoid being smothered by sediment. of a non-stromatolite microbial mat. The image shows the location, in the Burgsvik beds of Sweden, where the texture was first identified as evidence of a microbial mat. A microbial mat is a multi-layered sheet of microorganisms, mainly bacteria and archaea. ", "score": 0.02983427, "categories": ["Ecology", "Microbiology"], "title": "Microbial mat"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Lake_Macquarie_(New_South_Wales)", "text": "", "score": 0.029446317, "categories": ["Lakes of Australia", "New South Wales"], "title": "Lake Macquarie (New South Wales)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Carbon_cycle", "text": "The carbon cycle is the way carbon is stored and replaced on Earth. Some of the main events take hundreds of millions of years, others happen annually. The main ways that carbon gets into the carbon cycle are volcanoes, and the burning of fossil fuels like coal and natural gas ", "score": 0.029128889, "categories": ["Geochemistry"], "title": "Carbon cycle"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Diamond", "text": "", "score": 0.022394462, "categories": ["Gemstones", "Carbon", "Birthstones"], "title": "Diamond"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Morrison_Formation", "text": "\n geological formation laid down in the Upper Jurassic. It is a distinctive sequence of sedimentary rock in the western United States, and is named after Morrison, Colorado. It has been the most fertile source of dinosaur fossils in North America. It is composed of mudstone, sandstone, siltstone and limestone. ", "score": 0.020166755, "categories": ["Jurassic dinosaurs", "Geography of Montana", "Geography of Utah", "Geography of Colorado", "Geography of Nebraska", "Geography of Kansas", "Geography of Arizona", "New Mexico", "Geography of Wyoming", "Lagerst\u00e4tten", "Dinosaurs of North America", "Geological formations", "Sedimentary rocks"], "title": "Morrison Formation"}], "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", "filename": "CesarHarada_KidsScience_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mediterranean_Ridge", 
+            "text": "floor of the Mediterranean Sea. It is next to a rough quarter circle from Calabria, south of Crete, to the southwest corner of Turkey, and from there eastwards south of Turkey, with Cyprus. tectonic theory subducting under Eurasian and Anatolian Plate plows up the floor of the Mediterranean, lifting it from the seabed, and then above sea level, making the island of Cyprus. ", 
+            "score": 0.04570734, 
+            "categories": [
+                "Plate tectonics", 
+                "Oceanography"
+            ], 
+            "title": "Mediterranean Ridge"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gulf_of_Honduras", 
+            "text": "The Gulf or Bay of Honduras is a large inlet of the Caribbean Sea. It indents the coasts of Belize, Guatemala, and Honduras. From north to south, it runs for approximately 200&nbsp;km from Dangriga, Belize, to La Ceiba, Honduras. The inner Gulf of Honduras is lined by the Belize Barrier Reef. It forms the southern part of the 900&nbsp;km long Mesoamerican Barrier Reef System. ", 
+            "score": 0.036087316, 
+            "categories": [
+                "Gulfs", 
+                "Atlantic Ocean"
+            ], 
+            "title": "Gulf of Honduras"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mazon_Creek", 
+            "text": "\n  swamps. Mazon Creek is a lagerst\u00e4tte in northeast Illinois. It is a site of exceptional fossil preservation from the Pennsylvanian sub-period of the Carboniferous, about 300 million years ago. The area was declared a National Historic Landmark in 1997.   ", 
+            "score": 0.03108874, 
+            "categories": [
+                "Lagerst\u00e4tten"
+            ], 
+            "title": "Mazon Creek"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Megaflood", 
+            "text": "A megaflood is a  , many large floods were caused by the collapse of ice sheets or glaciers which formed the dams of glacial lakes. Examples of older outburst floods are known from the geological past of the Earth. collapses, or is erosion ", 
+            "score": 0.030695587, 
+            "categories": [
+                "Floods"
+            ], 
+            "title": "Megaflood"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Anchor", 
+            "text": "\nMushroom and pyramid anchors are good where the seabed is soft. This type of anchor needs time to dig into the seabed. It can be smaller and lighter than a deadweight anchor. The mushroom anchor is shaped like a mushroom, and the pyramid anchor is shaped like a pyramid with the apex pointing down. ", 
+            "score": 0.029873956, 
+            "categories": [
+                "Ship building", 
+                "Boats"
+            ], 
+            "title": "Anchor"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Microbial_mat", 
+            "text": "\n  are formed by some microbial mats as the microbes slowly move upwards to avoid being smothered by sediment. of a non-stromatolite microbial mat. The image shows the location, in the Burgsvik beds of Sweden, where the texture was first identified as evidence of a microbial mat. A microbial mat is a multi-layered sheet of microorganisms, mainly bacteria and archaea. ", 
+            "score": 0.02983427, 
+            "categories": [
+                "Ecology", 
+                "Microbiology"
+            ], 
+            "title": "Microbial mat"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Lake_Macquarie_(New_South_Wales)", 
+            "text": "", 
+            "score": 0.029446317, 
+            "categories": [
+                "Lakes of Australia", 
+                "New South Wales"
+            ], 
+            "title": "Lake Macquarie (New South Wales)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Carbon_cycle", 
+            "text": "The carbon cycle is the way carbon is stored and replaced on Earth. Some of the main events take hundreds of millions of years, others happen annually. The main ways that carbon gets into the carbon cycle are volcanoes, and the burning of fossil fuels like coal and natural gas ", 
+            "score": 0.029128889, 
+            "categories": [
+                "Geochemistry"
+            ], 
+            "title": "Carbon cycle"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Diamond", 
+            "text": "", 
+            "score": 0.022394462, 
+            "categories": [
+                "Gemstones", 
+                "Carbon", 
+                "Birthstones"
+            ], 
+            "title": "Diamond"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Morrison_Formation", 
+            "text": "\n geological formation laid down in the Upper Jurassic. It is a distinctive sequence of sedimentary rock in the western United States, and is named after Morrison, Colorado. It has been the most fertile source of dinosaur fossils in North America. It is composed of mudstone, sandstone, siltstone and limestone. ", 
+            "score": 0.020166755, 
+            "categories": [
+                "Jurassic dinosaurs", 
+                "Geography of Montana", 
+                "Geography of Utah", 
+                "Geography of Colorado", 
+                "Geography of Nebraska", 
+                "Geography of Kansas", 
+                "Geography of Arizona", 
+                "New Mexico", 
+                "Geography of Wyoming", 
+                "Lagerst\u00e4tten", 
+                "Dinosaurs of North America", 
+                "Geological formations", 
+                "Sedimentary rocks"
+            ], 
+            "title": "Morrison Formation"
+        }
+    ], 
+    "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", 
+    "filename": "CesarHarada_KidsScience_2.txt"
+}

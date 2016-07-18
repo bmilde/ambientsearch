@@ -1,1 +1,103 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_Firefox", "text": "", "score": 2.2809243, "categories": ["Mozilla Firefox"], "title": "Mozilla Firefox"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Free_software_movement", "text": "The free software movement is a software movement which aims to improve the users rights on software and reducing proprietary  software through the use of operating systems such as Ubuntu. The movement is generally signified through open source software such as Mozilla Firefox, Mozilla Thunderbird, FileZilla and open source operating systems such as Linux and ReactOS. ", "score": 1.324008, "categories": ["Software"], "title": "Free software movement"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Free_software", "text": "\nFree software is software that anyone may run, share, and change, at any time, for any reason. The opposite of free software is proprietary software. == History ==\n\nIn 1984, Richard Stallman started the free software movement when he began the GNU project. == Free software and open source ==\n\nFree software is very similar, but different from open source software. ", "score": 1.2119898, "categories": ["Free software"], "title": "Free software"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Free_and_open-source_software", "text": "Free and open source software  is software whose source code is open and available to anyone who wishes to:\n* improve it,\n* study it,\n* modify it, and\n* share the original and the modifications with others. These additional rights are generally granted to the user through the GPL, LGPL, or BSD license. ", "score": 0.9446984, "categories": ["Software"], "title": "Free and open-source software"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Git_(software)", "text": "", "score": 0.9003551, "categories": ["Free software"], "title": "Git (software)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=W-PuTTY-CD", "text": "", "score": 0.8329951, "categories": ["Free software"], "title": "W-PuTTY-CD"}, {"url": "https://simple.wikipedia.org/w/index.php?title=PuTTY", "text": "", "score": 0.80610746, "categories": ["Free software"], "title": "PuTTY"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Free_content", "text": "Free content, or free information, is any kind of  work,   copies of the content and changed versions of it. The author of free content does not use all of his copyright monopoly, he gives many of the rights to others. The articles in Wikipedia are free content. Free software is different from free music or text, because it is often much more difficult to understand and change a program if one does not have its source code, than it is to change a song or a text. ", "score": 0.79154044, "categories": ["Free content"], "title": "Free content"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Free_Software_Foundation", "text": "\n Commonwealth of Massachusetts, United States of America. software developers to write free software for the GNU Project. Since the mid-1990s, the FSFs employees and volunteers have mostly worked on legal and structural issues for the free software movement and the free software community. == GPL enforcement ==\nThe FSF holds the copyrights on many important pieces of the GNU system, such as the GNU Compiler Collection ", "score": 0.76509666, "categories": ["1985 establishments", "Non-profit organizations of the United States", "Intellectual property law", "Boston, Massachusetts", "Educational organizations", "Political organizations", "Free software"], "title": "Free Software Foundation"}, {"url": "https://simple.wikipedia.org/w/index.php?title=HTTrack", "text": "free and browser by Xavier Roche, licensed under the GNU General Public License. It allows you to download World Wide Web sites from the Internet to a computer. == Other websites ==\n*  \n*  \n* ", "score": 0.7353526, "categories": ["Web browsers", "Free software"], "title": "HTTrack"}], "orig": "If you want to buy high-quality, low-price cocaine, there really is only one place to go, and that is the dark net anonymous markets.\nNow, you can't get to these sites with a normal browser -- Chrome or Firefox -- because they're on this hidden part of the Internet, known as Tor hidden services, where URLs are a string of meaningless numbers and letters that end in .onion, and which you access with a special browser called the Tor browser.\nNow, the Tor browser was originally a U.S. Naval intelligence project. It then became open source, and it allows anybody to browse the net without giving away their location. And it does this by encrypting your IP address and then routing it via several other computers around the world that use the same software. You can use it on the normal Internet, but it's also your key to the dark net. And because of this fiendishly clever encryption system, the 20 or 30 -- we don't know exactly -- thousand sites that operate there are incredibly difficult to shut down. It is a censorship-free world visited by anonymous users.", "filename": "JamieBartlett_DarkNet_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_Firefox", 
+            "text": "", 
+            "score": 2.2809243, 
+            "categories": [
+                "Mozilla Firefox"
+            ], 
+            "title": "Mozilla Firefox"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Free_software_movement", 
+            "text": "The free software movement is a software movement which aims to improve the users rights on software and reducing proprietary  software through the use of operating systems such as Ubuntu. The movement is generally signified through open source software such as Mozilla Firefox, Mozilla Thunderbird, FileZilla and open source operating systems such as Linux and ReactOS. ", 
+            "score": 1.324008, 
+            "categories": [
+                "Software"
+            ], 
+            "title": "Free software movement"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Free_software", 
+            "text": "\nFree software is software that anyone may run, share, and change, at any time, for any reason. The opposite of free software is proprietary software. == History ==\n\nIn 1984, Richard Stallman started the free software movement when he began the GNU project. == Free software and open source ==\n\nFree software is very similar, but different from open source software. ", 
+            "score": 1.2119898, 
+            "categories": [
+                "Free software"
+            ], 
+            "title": "Free software"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Free_and_open-source_software", 
+            "text": "Free and open source software  is software whose source code is open and available to anyone who wishes to:\n* improve it,\n* study it,\n* modify it, and\n* share the original and the modifications with others. These additional rights are generally granted to the user through the GPL, LGPL, or BSD license. ", 
+            "score": 0.9446984, 
+            "categories": [
+                "Software"
+            ], 
+            "title": "Free and open-source software"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Git_(software)", 
+            "text": "", 
+            "score": 0.9003551, 
+            "categories": [
+                "Free software"
+            ], 
+            "title": "Git (software)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=W-PuTTY-CD", 
+            "text": "", 
+            "score": 0.8329951, 
+            "categories": [
+                "Free software"
+            ], 
+            "title": "W-PuTTY-CD"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=PuTTY", 
+            "text": "", 
+            "score": 0.80610746, 
+            "categories": [
+                "Free software"
+            ], 
+            "title": "PuTTY"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Free_content", 
+            "text": "Free content, or free information, is any kind of  work,   copies of the content and changed versions of it. The author of free content does not use all of his copyright monopoly, he gives many of the rights to others. The articles in Wikipedia are free content. Free software is different from free music or text, because it is often much more difficult to understand and change a program if one does not have its source code, than it is to change a song or a text. ", 
+            "score": 0.79154044, 
+            "categories": [
+                "Free content"
+            ], 
+            "title": "Free content"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Free_Software_Foundation", 
+            "text": "\n Commonwealth of Massachusetts, United States of America. software developers to write free software for the GNU Project. Since the mid-1990s, the FSFs employees and volunteers have mostly worked on legal and structural issues for the free software movement and the free software community. == GPL enforcement ==\nThe FSF holds the copyrights on many important pieces of the GNU system, such as the GNU Compiler Collection ", 
+            "score": 0.76509666, 
+            "categories": [
+                "1985 establishments", 
+                "Non-profit organizations of the United States", 
+                "Intellectual property law", 
+                "Boston, Massachusetts", 
+                "Educational organizations", 
+                "Political organizations", 
+                "Free software"
+            ], 
+            "title": "Free Software Foundation"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=HTTrack", 
+            "text": "free and browser by Xavier Roche, licensed under the GNU General Public License. It allows you to download World Wide Web sites from the Internet to a computer. == Other websites ==\n*  \n*  \n* ", 
+            "score": 0.7353526, 
+            "categories": [
+                "Web browsers", 
+                "Free software"
+            ], 
+            "title": "HTTrack"
+        }
+    ], 
+    "orig": "If you want to buy high-quality, low-price cocaine, there really is only one place to go, and that is the dark net anonymous markets.\nNow, you can't get to these sites with a normal browser -- Chrome or Firefox -- because they're on this hidden part of the Internet, known as Tor hidden services, where URLs are a string of meaningless numbers and letters that end in .onion, and which you access with a special browser called the Tor browser.\nNow, the Tor browser was originally a U.S. Naval intelligence project. It then became open source, and it allows anybody to browse the net without giving away their location. And it does this by encrypting your IP address and then routing it via several other computers around the world that use the same software. You can use it on the normal Internet, but it's also your key to the dark net. And because of this fiendishly clever encryption system, the 20 or 30 -- we don't know exactly -- thousand sites that operate there are incredibly difficult to shut down. It is a censorship-free world visited by anonymous users.", 
+    "filename": "JamieBartlett_DarkNet_0.txt"
+}

@@ -1,1 +1,103 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Web_browser", "text": "A mobile devices and tablet computer  ", "score": 1.2208896, "categories": ["Web browsers"], "title": "Web browser"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Safari_(web_browser)", "text": "", "score": 1.068405, "categories": ["Apple software", "Web browsers"], "title": "Safari (web browser)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dolphin_Browser", "text": "", "score": 0.8584609, "categories": ["Web browsers"], "title": "Dolphin Browser"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_(web_browser)", "text": "Mozilla was a web browser that was made open source. It was developed by Mozilla Foundation. Mozilla was the base of Mozilla Firefox. ", "score": 0.7090561, "categories": ["Web browsers", "Mozilla"], "title": "Mozilla (web browser)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Opera_(web_browser)", "text": "", "score": 0.62546235, "categories": ["IRC clients", "Web browsers", "Opera ASA"], "title": "Opera (web browser)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_Firefox", "text": "", "score": 0.45505685, "categories": ["Mozilla Firefox"], "title": "Mozilla Firefox"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Tor_(software)", "text": "", "score": 0.2369794, "categories": ["Software"], "title": "Tor (software)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Computer_program", "text": "A instructions that computer what to do. Everything a computer does is done by using a computer program. A computer program is written in a programming language. Some examples of computer programs:\n* A web browser like Mozilla Firefox and Apple Safari can be used to view web pages on the Internet. * An  s or spreadsheets. ", "score": 0.20330897, "categories": ["Software"], "title": "Computer program"}, {"url": "https://simple.wikipedia.org/w/index.php?title=SeaMonkey", "text": "free and Gecko rendering IRC client, and a web browser. It is made by the SeaMonkey Council, formerly by Mozilla Foundation. == History ==\nOn March 10, 2005 the Mozilla Foundation said that they will not develop the Mozilla Application suite, including the Netscape web browser, because Firefox and Thunderbird were more popular. ", "score": 0.1919926, "categories": ["IRC clients", "Web browsers", "Mozilla"], "title": "SeaMonkey"}, {"url": "https://simple.wikipedia.org/w/index.php?title=HTTrack", "text": "free and browser by Xavier Roche, licensed under the GNU General Public License. It allows you to download World Wide Web sites from the Internet to a computer. == Other websites ==\n*  \n*  \n* ", "score": 0.19155674, "categories": ["Web browsers", "Free software"], "title": "HTTrack"}], "orig": "If you want to buy high-quality, low-price cocaine, there really is only one place to go, and that is the dark net anonymous markets.\nNow, you can't get to these sites with a normal browser -- Chrome or Firefox -- because they're on this hidden part of the Internet, known as Tor hidden services, where URLs are a string of meaningless numbers and letters that end in .onion, and which you access with a special browser called the Tor browser.\nNow, the Tor browser was originally a U.S. Naval intelligence project. It then became open source, and it allows anybody to browse the net without giving away their location. And it does this by encrypting your IP address and then routing it via several other computers around the world that use the same software. You can use it on the normal Internet, but it's also your key to the dark net. And because of this fiendishly clever encryption system, the 20 or 30 -- we don't know exactly -- thousand sites that operate there are incredibly difficult to shut down. It is a censorship-free world visited by anonymous users.", "filename": "JamieBartlett_DarkNet_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Web_browser", 
+            "text": "A mobile devices and tablet computer  ", 
+            "score": 1.2208896, 
+            "categories": [
+                "Web browsers"
+            ], 
+            "title": "Web browser"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Safari_(web_browser)", 
+            "text": "", 
+            "score": 1.068405, 
+            "categories": [
+                "Apple software", 
+                "Web browsers"
+            ], 
+            "title": "Safari (web browser)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dolphin_Browser", 
+            "text": "", 
+            "score": 0.8584609, 
+            "categories": [
+                "Web browsers"
+            ], 
+            "title": "Dolphin Browser"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_(web_browser)", 
+            "text": "Mozilla was a web browser that was made open source. It was developed by Mozilla Foundation. Mozilla was the base of Mozilla Firefox. ", 
+            "score": 0.7090561, 
+            "categories": [
+                "Web browsers", 
+                "Mozilla"
+            ], 
+            "title": "Mozilla (web browser)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Opera_(web_browser)", 
+            "text": "", 
+            "score": 0.62546235, 
+            "categories": [
+                "IRC clients", 
+                "Web browsers", 
+                "Opera ASA"
+            ], 
+            "title": "Opera (web browser)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mozilla_Firefox", 
+            "text": "", 
+            "score": 0.45505685, 
+            "categories": [
+                "Mozilla Firefox"
+            ], 
+            "title": "Mozilla Firefox"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Tor_(software)", 
+            "text": "", 
+            "score": 0.2369794, 
+            "categories": [
+                "Software"
+            ], 
+            "title": "Tor (software)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Computer_program", 
+            "text": "A instructions that computer what to do. Everything a computer does is done by using a computer program. A computer program is written in a programming language. Some examples of computer programs:\n* A web browser like Mozilla Firefox and Apple Safari can be used to view web pages on the Internet. * An  s or spreadsheets. ", 
+            "score": 0.20330897, 
+            "categories": [
+                "Software"
+            ], 
+            "title": "Computer program"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=SeaMonkey", 
+            "text": "free and Gecko rendering IRC client, and a web browser. It is made by the SeaMonkey Council, formerly by Mozilla Foundation. == History ==\nOn March 10, 2005 the Mozilla Foundation said that they will not develop the Mozilla Application suite, including the Netscape web browser, because Firefox and Thunderbird were more popular. ", 
+            "score": 0.1919926, 
+            "categories": [
+                "IRC clients", 
+                "Web browsers", 
+                "Mozilla"
+            ], 
+            "title": "SeaMonkey"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=HTTrack", 
+            "text": "free and browser by Xavier Roche, licensed under the GNU General Public License. It allows you to download World Wide Web sites from the Internet to a computer. == Other websites ==\n*  \n*  \n* ", 
+            "score": 0.19155674, 
+            "categories": [
+                "Web browsers", 
+                "Free software"
+            ], 
+            "title": "HTTrack"
+        }
+    ], 
+    "orig": "If you want to buy high-quality, low-price cocaine, there really is only one place to go, and that is the dark net anonymous markets.\nNow, you can't get to these sites with a normal browser -- Chrome or Firefox -- because they're on this hidden part of the Internet, known as Tor hidden services, where URLs are a string of meaningless numbers and letters that end in .onion, and which you access with a special browser called the Tor browser.\nNow, the Tor browser was originally a U.S. Naval intelligence project. It then became open source, and it allows anybody to browse the net without giving away their location. And it does this by encrypting your IP address and then routing it via several other computers around the world that use the same software. You can use it on the normal Internet, but it's also your key to the dark net. And because of this fiendishly clever encryption system, the 20 or 30 -- we don't know exactly -- thousand sites that operate there are incredibly difficult to shut down. It is a censorship-free world visited by anonymous users.", 
+    "filename": "JamieBartlett_DarkNet_0.txt"
+}

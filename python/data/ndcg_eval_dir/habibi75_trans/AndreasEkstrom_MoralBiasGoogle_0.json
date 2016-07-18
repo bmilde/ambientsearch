@@ -1,1 +1,106 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 2.2204926, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google", "text": "", "score": 1.095128, "categories": ["1998 establishments in the United States", "Companies listed on NASDAQ", "Google", "Mountain View, California"], "title": "Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Earth", "text": "Google Earth is a virtual globe program that was first called Earth Viewer and was created by Keyhole, Inc. It maps the surface of the earth by combining pictures taken by satellites and airplanes. There are also three-dimensional maps where you can look at the area from different angles. It is kind of like Google Maps. ", "score": 0.75349474, "categories": ["Google"], "title": "Google Earth"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Books", "text": "Google Books is a website run by Google. It lets you search and browse books and magazines that have been scanned in. The text of the books has been made searchable using optical character recognition . The site has been known under different names including Google Print and Google Book Search. It was announced and launched in 2004. ", "score": 0.735795, "categories": ["Google"], "title": "Google Books"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", "score": 0.73201627, "categories": ["Google"], "title": "Google Videos"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google+", "text": "", "score": 0.5845731, "categories": ["2011 establishments", "Google", "Social networking", "Web 2.0"], "title": "Google+"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", "score": 0.556534, "categories": ["Google", "Censorship"], "title": "Censorship by Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", "text": "", "score": 0.4858869, "categories": ["Web browsers", "Google"], "title": "Google Chrome"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.48105288, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Science_Fair", "text": "science competition. National Geographic, and Scientific American. The first competition took place in 2011. The science fair is open to 13\u201318 year old students around the world. Students make an explanation for something, do an experiment and write down their results. ==References==\n \n\n==Other websites==\n* ", "score": 0.42945406, "categories": ["Google", "Competitions", "Science"], "title": "Google Science Fair"}], "orig": "So whenever I visit a school and talk to students, I always ask them the same thing: Why do you Google? Why is Google the search engine of choice for you? Strangely enough, I always get the same three answers. One, \"Because it works,\" which is a great answer; that's why I Google, too. Two, somebody will say, \"I really don't know of any alternatives.\" It's not an equally great answer and my reply to that is usually, \"Try to Google the word 'search engine,' you may find a couple of interesting alternatives.\" And last but not least, thirdly, inevitably, one student will raise her or his hand and say, \"With Google, I'm certain to always get the best, unbiased search result.\" Certain to always get the best, unbiased search result.\nNow, as a man of the humanities, albeit a digital humanities man, that just makes my skin curl, even if I, too, realize that that trust, that idea of the unbiased search result is a cornerstone in our collective love for and appreciation of Google. I will show you why that, philosophically, is almost an impossibility.\nBut let me first elaborate, just a little bit, on a basic principle behind each search query that we sometimes seem to forget. So whenever you set out to Google something, start by asking yourself this: \"Am I looking for an isolated fact?\" What is the capital of France? What are the building blocks of a water molecule? Great -- Google away. There's not a group of scientists who are this close to proving that it's actually London and H30. You don't see a big conspiracy among those things. We agree, on a global scale, what the answers are to these isolated facts.", "filename": "AndreasEkstrom_MoralBiasGoogle_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 2.2204926, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google", 
+            "text": "", 
+            "score": 1.095128, 
+            "categories": [
+                "1998 establishments in the United States", 
+                "Companies listed on NASDAQ", 
+                "Google", 
+                "Mountain View, California"
+            ], 
+            "title": "Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Earth", 
+            "text": "Google Earth is a virtual globe program that was first called Earth Viewer and was created by Keyhole, Inc. It maps the surface of the earth by combining pictures taken by satellites and airplanes. There are also three-dimensional maps where you can look at the area from different angles. It is kind of like Google Maps. ", 
+            "score": 0.75349474, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Earth"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Books", 
+            "text": "Google Books is a website run by Google. It lets you search and browse books and magazines that have been scanned in. The text of the books has been made searchable using optical character recognition . The site has been known under different names including Google Print and Google Book Search. It was announced and launched in 2004. ", 
+            "score": 0.735795, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Books"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", 
+            "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", 
+            "score": 0.73201627, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Videos"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google+", 
+            "text": "", 
+            "score": 0.5845731, 
+            "categories": [
+                "2011 establishments", 
+                "Google", 
+                "Social networking", 
+                "Web 2.0"
+            ], 
+            "title": "Google+"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", 
+            "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", 
+            "score": 0.556534, 
+            "categories": [
+                "Google", 
+                "Censorship"
+            ], 
+            "title": "Censorship by Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", 
+            "text": "", 
+            "score": 0.4858869, 
+            "categories": [
+                "Web browsers", 
+                "Google"
+            ], 
+            "title": "Google Chrome"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.48105288, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Science_Fair", 
+            "text": "science competition. National Geographic, and Scientific American. The first competition took place in 2011. The science fair is open to 13\u201318 year old students around the world. Students make an explanation for something, do an experiment and write down their results. ==References==\n \n\n==Other websites==\n* ", 
+            "score": 0.42945406, 
+            "categories": [
+                "Google", 
+                "Competitions", 
+                "Science"
+            ], 
+            "title": "Google Science Fair"
+        }
+    ], 
+    "orig": "So whenever I visit a school and talk to students, I always ask them the same thing: Why do you Google? Why is Google the search engine of choice for you? Strangely enough, I always get the same three answers. One, \"Because it works,\" which is a great answer; that's why I Google, too. Two, somebody will say, \"I really don't know of any alternatives.\" It's not an equally great answer and my reply to that is usually, \"Try to Google the word 'search engine,' you may find a couple of interesting alternatives.\" And last but not least, thirdly, inevitably, one student will raise her or his hand and say, \"With Google, I'm certain to always get the best, unbiased search result.\" Certain to always get the best, unbiased search result.\nNow, as a man of the humanities, albeit a digital humanities man, that just makes my skin curl, even if I, too, realize that that trust, that idea of the unbiased search result is a cornerstone in our collective love for and appreciation of Google. I will show you why that, philosophically, is almost an impossibility.\nBut let me first elaborate, just a little bit, on a basic principle behind each search query that we sometimes seem to forget. So whenever you set out to Google something, start by asking yourself this: \"Am I looking for an isolated fact?\" What is the capital of France? What are the building blocks of a water molecule? Great -- Google away. There's not a group of scientists who are this close to proving that it's actually London and H30. You don't see a big conspiracy among those things. We agree, on a global scale, what the answers are to these isolated facts.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_0.txt"
+}

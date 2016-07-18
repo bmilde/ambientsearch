@@ -1,1 +1,109 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Fossil_fuel", "text": "Fossil fuels are fuels that come from very old life forms that decomposed over a long period of time. The three most important fossil fuels are coal, petroleum, and natural gas. Oil and gas are hydrocarbons . Coal is mostly carbon. These fuels are called fossil fuels because they are dug up from underground. ", "score": 1.7252094, "categories": ["Geology", "Fuel"], "title": "Fossil fuel"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", "score": 0.81041884, "categories": ["Energy", "Climate change", "Air pollution"], "title": "Global warming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fuel_cell", "text": "\n\n==How to Create Energy==\nWater is a molecule that consists of one oxygen atom and two hydrogen atoms. It takes energy to separate water into oxygen and hydrogens. And energy is released when they are put back together. A fuel cell does the latter. Hydrogen  and oxygen  are put into the fuel cell. ", "score": 0.6223588, "categories": ["Energy"], "title": "Fuel cell"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Petroleum_industry", "text": "The petroleum industry includes the global processes of Hydrocarbon exploration ", "score": 0.5601079, "categories": ["Fuel"], "title": "Petroleum industry"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Coal", "text": "\n\nUnder suitable conditions, plant material is transformed step by step into\n# Peat, which has industrial importance as a fuel in some regions, for example, Ireland and Finland. In its dehydrated form, peat is a highly effective absorbent for fuel and oil spills on land and water Jet is a compact form of lignite that is sometimes polished and has long been used as an ornamental stone. ", "score": 0.40558138, "categories": ["Basic English 850 words", "Fuel", "Sedimentary rocks", "Environmental issues"], "title": "Coal"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Environmental_impact_of_aviation", "text": "Air travel has a major impact on the worlds environment, especially the atmosphere. With fast globalisation, air traffic has quickly increased, and is one of the biggest causes of climate change. This is due to the noise pollution emitted from the aircraft while it is flying. It also takes fuel to fly the planes which causes pollution. ", "score": 0.32166192, "categories": ["Environmental issues", "Aviation"], "title": "Environmental impact of aviation"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Peat", "text": " Isle of Lewis . Peat, or turf, is an accumulation of partially decayed vegetation. Peat forms in wetland bogs, Moorland ", "score": 0.2791001, "categories": ["Fuel", "Sedimentary rocks"], "title": "Peat"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", "score": 0.20705064, "categories": ["Climate change", "Environmental issues"], "title": "Global dimming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", "score": 0.1841839, "categories": ["1988 establishments", "International environmental organizations", "United Nations specialized agencies", "Climate change"], "title": "Intergovernmental Panel on Climate Change"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", "score": 0.17738378, "categories": ["Environment", "Green politics"], "title": "Carbon diet"}], "orig": "But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death.\nSo this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.", "filename": "AliceBowsLarkin_ClimateChange_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fossil_fuel", 
+            "text": "Fossil fuels are fuels that come from very old life forms that decomposed over a long period of time. The three most important fossil fuels are coal, petroleum, and natural gas. Oil and gas are hydrocarbons . Coal is mostly carbon. These fuels are called fossil fuels because they are dug up from underground. ", 
+            "score": 1.7252094, 
+            "categories": [
+                "Geology", 
+                "Fuel"
+            ], 
+            "title": "Fossil fuel"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", 
+            "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", 
+            "score": 0.81041884, 
+            "categories": [
+                "Energy", 
+                "Climate change", 
+                "Air pollution"
+            ], 
+            "title": "Global warming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fuel_cell", 
+            "text": "\n\n==How to Create Energy==\nWater is a molecule that consists of one oxygen atom and two hydrogen atoms. It takes energy to separate water into oxygen and hydrogens. And energy is released when they are put back together. A fuel cell does the latter. Hydrogen  and oxygen  are put into the fuel cell. ", 
+            "score": 0.6223588, 
+            "categories": [
+                "Energy"
+            ], 
+            "title": "Fuel cell"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Petroleum_industry", 
+            "text": "The petroleum industry includes the global processes of Hydrocarbon exploration ", 
+            "score": 0.5601079, 
+            "categories": [
+                "Fuel"
+            ], 
+            "title": "Petroleum industry"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Coal", 
+            "text": "\n\nUnder suitable conditions, plant material is transformed step by step into\n# Peat, which has industrial importance as a fuel in some regions, for example, Ireland and Finland. In its dehydrated form, peat is a highly effective absorbent for fuel and oil spills on land and water Jet is a compact form of lignite that is sometimes polished and has long been used as an ornamental stone. ", 
+            "score": 0.40558138, 
+            "categories": [
+                "Basic English 850 words", 
+                "Fuel", 
+                "Sedimentary rocks", 
+                "Environmental issues"
+            ], 
+            "title": "Coal"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Environmental_impact_of_aviation", 
+            "text": "Air travel has a major impact on the worlds environment, especially the atmosphere. With fast globalisation, air traffic has quickly increased, and is one of the biggest causes of climate change. This is due to the noise pollution emitted from the aircraft while it is flying. It also takes fuel to fly the planes which causes pollution. ", 
+            "score": 0.32166192, 
+            "categories": [
+                "Environmental issues", 
+                "Aviation"
+            ], 
+            "title": "Environmental impact of aviation"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Peat", 
+            "text": " Isle of Lewis . Peat, or turf, is an accumulation of partially decayed vegetation. Peat forms in wetland bogs, Moorland ", 
+            "score": 0.2791001, 
+            "categories": [
+                "Fuel", 
+                "Sedimentary rocks"
+            ], 
+            "title": "Peat"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", 
+            "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", 
+            "score": 0.20705064, 
+            "categories": [
+                "Climate change", 
+                "Environmental issues"
+            ], 
+            "title": "Global dimming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", 
+            "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", 
+            "score": 0.1841839, 
+            "categories": [
+                "1988 establishments", 
+                "International environmental organizations", 
+                "United Nations specialized agencies", 
+                "Climate change"
+            ], 
+            "title": "Intergovernmental Panel on Climate Change"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", 
+            "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", 
+            "score": 0.17738378, 
+            "categories": [
+                "Environment", 
+                "Green politics"
+            ], 
+            "title": "Carbon diet"
+        }
+    ], 
+    "orig": "But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death.\nSo this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.", 
+    "filename": "AliceBowsLarkin_ClimateChange_1.txt"
+}

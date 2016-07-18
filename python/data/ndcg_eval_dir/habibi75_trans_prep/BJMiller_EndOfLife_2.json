@@ -1,1 +1,105 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", "score": 0.42796776, "categories": ["Medicine", "Relationships"], "title": "Doctor-patient relationship"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Body_volume_index", "text": "The Body Volume Index is a proposed alternative to the Body Mass Index . The BMI is used as an indicator for weight problems such as being overweight or underweight. The BMI puts a persons total weight in relation to their height. This measure does not take into account where on the body the mass is located. ", "score": 0.38431448, "categories": ["Fitness"], "title": "Body volume index"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Headache", "text": "A headache is when your head hurts. It is not when you hit your head with something and made it hurt that way, but when your head hurts from inside. A headache can be caused by one of several things, which are listed here:\n\n* Fever\n* Watching television or looking at a computer screen for a long time. ", "score": 0.31020048, "categories": ["Symptoms", "Head (body part)", "Pain"], "title": "Headache"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Nasal_cavity", "text": "", "score": 0.21240382, "categories": ["Head (body part)", "Anatomy of the respiratory system"], "title": "Nasal cavity"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Extrapyramidal_symptom", "text": "Extrapyramidal syndrome is when involuntary muscle movements occur in the face and neck. This may include lip smacking, tongue movements, blinking, and head or finger spasms. The patient may have difficulty moving his arms and legs, and slur their words. It occurs when dopamine is not correctly regulated by the body. ", "score": 0.15638708, "categories": ["Muscular system"], "title": "Extrapyramidal symptom"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Severe_acute_respiratory_syndrome", "text": "\n Guangdong Province, in the city of Foshan, of the Peoples Republic of China. The disease was caused by the SARS coronavirus , a new coronavirus. It was also a part-time Sexually transmitted disease ", "score": 0.105183296, "categories": ["Diseases caused by viruses", "Pulmonology", "Viruses"], "title": "Severe acute respiratory syndrome"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_doctor", "text": "A medical doctor  is a person who practices medicine to treat illness and injuries. degree in medicine. Medical doctors used to make house calls to treat patients at home. Now they usually see patients in their offices or in hospitals. Medical doctors may also work for schools, companies, sports teams, or the military. ", "score": 0.09428671, "categories": ["Medicine", "Healthcare occupations"], "title": "Medical doctor"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Food_poisoning", "text": "Food poisoning is when someone gets sick from eating food or drink that has gone bad or is contamination ", "score": 0.08804964, "categories": ["Illnesses", "Food and drink"], "title": "Food poisoning"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Exsanguination", "text": "\n\n==Definition== Doctors define exsanguination this way:   \n* The patient has lost over 40% of their blood \n* The patient is still losing blood\n* The bleeding is so bad that if it is not stopped quickly, the patient will die\n\n==Types of bleeding==\n \nBleeding can be external or internal. \"External\" means \"outside the body.\" ", "score": 0.078858234, "categories": ["Blood disorders", "Medical emergencies"], "title": "Exsanguination"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Stroke", "text": "", "score": 0.075461075, "categories": ["Stroke"], "title": "Stroke"}], "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", "filename": "BJMiller_EndOfLife_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", 
+            "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", 
+            "score": 0.42796776, 
+            "categories": [
+                "Medicine", 
+                "Relationships"
+            ], 
+            "title": "Doctor-patient relationship"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Body_volume_index", 
+            "text": "The Body Volume Index is a proposed alternative to the Body Mass Index . The BMI is used as an indicator for weight problems such as being overweight or underweight. The BMI puts a persons total weight in relation to their height. This measure does not take into account where on the body the mass is located. ", 
+            "score": 0.38431448, 
+            "categories": [
+                "Fitness"
+            ], 
+            "title": "Body volume index"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Headache", 
+            "text": "A headache is when your head hurts. It is not when you hit your head with something and made it hurt that way, but when your head hurts from inside. A headache can be caused by one of several things, which are listed here:\n\n* Fever\n* Watching television or looking at a computer screen for a long time. ", 
+            "score": 0.31020048, 
+            "categories": [
+                "Symptoms", 
+                "Head (body part)", 
+                "Pain"
+            ], 
+            "title": "Headache"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Nasal_cavity", 
+            "text": "", 
+            "score": 0.21240382, 
+            "categories": [
+                "Head (body part)", 
+                "Anatomy of the respiratory system"
+            ], 
+            "title": "Nasal cavity"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Extrapyramidal_symptom", 
+            "text": "Extrapyramidal syndrome is when involuntary muscle movements occur in the face and neck. This may include lip smacking, tongue movements, blinking, and head or finger spasms. The patient may have difficulty moving his arms and legs, and slur their words. It occurs when dopamine is not correctly regulated by the body. ", 
+            "score": 0.15638708, 
+            "categories": [
+                "Muscular system"
+            ], 
+            "title": "Extrapyramidal symptom"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Severe_acute_respiratory_syndrome", 
+            "text": "\n Guangdong Province, in the city of Foshan, of the Peoples Republic of China. The disease was caused by the SARS coronavirus , a new coronavirus. It was also a part-time Sexually transmitted disease ", 
+            "score": 0.105183296, 
+            "categories": [
+                "Diseases caused by viruses", 
+                "Pulmonology", 
+                "Viruses"
+            ], 
+            "title": "Severe acute respiratory syndrome"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_doctor", 
+            "text": "A medical doctor  is a person who practices medicine to treat illness and injuries. degree in medicine. Medical doctors used to make house calls to treat patients at home. Now they usually see patients in their offices or in hospitals. Medical doctors may also work for schools, companies, sports teams, or the military. ", 
+            "score": 0.09428671, 
+            "categories": [
+                "Medicine", 
+                "Healthcare occupations"
+            ], 
+            "title": "Medical doctor"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Food_poisoning", 
+            "text": "Food poisoning is when someone gets sick from eating food or drink that has gone bad or is contamination ", 
+            "score": 0.08804964, 
+            "categories": [
+                "Illnesses", 
+                "Food and drink"
+            ], 
+            "title": "Food poisoning"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Exsanguination", 
+            "text": "\n\n==Definition== Doctors define exsanguination this way:   \n* The patient has lost over 40% of their blood \n* The patient is still losing blood\n* The bleeding is so bad that if it is not stopped quickly, the patient will die\n\n==Types of bleeding==\n \nBleeding can be external or internal. \"External\" means \"outside the body.\" ", 
+            "score": 0.078858234, 
+            "categories": [
+                "Blood disorders", 
+                "Medical emergencies"
+            ], 
+            "title": "Exsanguination"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Stroke", 
+            "text": "", 
+            "score": 0.075461075, 
+            "categories": [
+                "Stroke"
+            ], 
+            "title": "Stroke"
+        }
+    ], 
+    "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", 
+    "filename": "BJMiller_EndOfLife_2.txt"
+}

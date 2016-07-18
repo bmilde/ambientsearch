@@ -1,1 +1,112 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", "score": 0.40374193, "categories": ["1988 establishments", "International environmental organizations", "United Nations specialized agencies", "Climate change"], "title": "Intergovernmental Panel on Climate Change"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", "score": 0.27675718, "categories": ["Energy", "Climate change", "Air pollution"], "title": "Global warming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Climate_change", "text": "\n\nClimate change means the difference in the Earths global climate or in regional climates over time. It describes changes in the state of the atmosphere over time scales ranging from decades to millions of years. These changes can be caused by processes inside the Earth, forces from outside  or, more recently, human activities. ", "score": 0.2600958, "categories": ["Climate change"], "title": "Climate change"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_effect", "text": "The greenhouse effect occurs when certain gases in the Earths atmosphere  entraps infrared radiation. This makes the planet become warmer, similar to the way it makes a greenhouse become warmer. The greenhouse effect is caused by  , carbon dioxide, and methane. When there is more greenhouse gas in the air, the air holds more heat. ", "score": 0.18683128, "categories": ["Weather", "Climate change", "Greenhouse gases"], "title": "Greenhouse effect"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_gas", "text": ". Energy flows between outer space ", "score": 0.16701625, "categories": ["Greenhouse gases"], "title": "Greenhouse gas"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Storms_of_My_Grandchildren", "text": "Storms of My Grandchildren is the first book written by climate scientist James Hansen. changing our climate and that the earth is in danger. Millions of species, and humanity itself, are threatened. James Hansen . Storms of My Grandchildren, Bloomsbury, New York, pp. ix-xii. The title of the book, Storms of My Grandchildren, refers to the extreme weather events \"that will greet the next generation if the unmitigated use of fossil fuels continues\". ", "score": 0.15801087, "categories": ["Climate change", "Non-fiction books", "Environment"], "title": "Storms of My Grandchildren"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", "score": 0.15476939, "categories": ["Climate change", "Environmental issues"], "title": "Global dimming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", "score": 0.14074199, "categories": ["Environment", "Green politics"], "title": "Carbon diet"}, {"url": "https://simple.wikipedia.org/w/index.php?title=United_Kingdom_Climate_Change_Programme", "text": "The Britain looks wind and solar power. ", "score": 0.13829224, "categories": ["Environmental organizations", "Organisations based in the United Kingdom", "2000 establishments", "Climate change"], "title": "United Kingdom Climate Change Programme"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Ocean_acidification", "text": "Ocean acidification is the decrease in the pH  and increase in acidity of the Earths oceans. It is caused by the increase of carbon dioxide  that humans have put into the atmosphere. More than 30% of the carbon dioxide in the air goes into the oceans. Therefore, when carbon dioxide in the atmosphere increases, the carbon dioxide in the ocean increases, too. ", "score": 0.13363717, "categories": ["Oceans", "Environmental issues", "Climate change"], "title": "Ocean acidification"}], "orig": "Over our lifetimes, we've all contributed to climate change. Actions, choices and behaviors will have led to an increase in greenhouse gas emissions. And I think that that's quite a powerful thought. But it does have the potential to make us feel guilty when we think about decisions we might have made around where to travel to, how often and how, about the energy that we choose to use in our homes or in our workplaces, or quite simply the lifestyles that we lead and enjoy. But we can also turn that thought on its head, and think that if we've had such a profound but a negative impact on our climate already, then we have an opportunity to influence the amount of future climate change that we will need to adapt to.\nSo we have a choice. We can either choose to start to take climate change seriously, and significantly cut and mitigate our greenhouse gas emissions, and then we will have to adapt to less of the climate change impacts in future. Alternatively, we can continue to really ignore the climate change problem. But if we do that, we are also choosing to adapt to very much more powerful climate impacts in future. And not only that. As people who live in countries with high per capita emissions, we're making that choice on behalf of others as well. But the choice that we don't have is a no climate change future.", "filename": "AliceBowsLarkin_ClimateChange_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", 
+            "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", 
+            "score": 0.40374193, 
+            "categories": [
+                "1988 establishments", 
+                "International environmental organizations", 
+                "United Nations specialized agencies", 
+                "Climate change"
+            ], 
+            "title": "Intergovernmental Panel on Climate Change"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", 
+            "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", 
+            "score": 0.27675718, 
+            "categories": [
+                "Energy", 
+                "Climate change", 
+                "Air pollution"
+            ], 
+            "title": "Global warming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Climate_change", 
+            "text": "\n\nClimate change means the difference in the Earths global climate or in regional climates over time. It describes changes in the state of the atmosphere over time scales ranging from decades to millions of years. These changes can be caused by processes inside the Earth, forces from outside  or, more recently, human activities. ", 
+            "score": 0.2600958, 
+            "categories": [
+                "Climate change"
+            ], 
+            "title": "Climate change"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_effect", 
+            "text": "The greenhouse effect occurs when certain gases in the Earths atmosphere  entraps infrared radiation. This makes the planet become warmer, similar to the way it makes a greenhouse become warmer. The greenhouse effect is caused by  , carbon dioxide, and methane. When there is more greenhouse gas in the air, the air holds more heat. ", 
+            "score": 0.18683128, 
+            "categories": [
+                "Weather", 
+                "Climate change", 
+                "Greenhouse gases"
+            ], 
+            "title": "Greenhouse effect"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_gas", 
+            "text": ". Energy flows between outer space ", 
+            "score": 0.16701625, 
+            "categories": [
+                "Greenhouse gases"
+            ], 
+            "title": "Greenhouse gas"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Storms_of_My_Grandchildren", 
+            "text": "Storms of My Grandchildren is the first book written by climate scientist James Hansen. changing our climate and that the earth is in danger. Millions of species, and humanity itself, are threatened. James Hansen . Storms of My Grandchildren, Bloomsbury, New York, pp. ix-xii. The title of the book, Storms of My Grandchildren, refers to the extreme weather events \"that will greet the next generation if the unmitigated use of fossil fuels continues\". ", 
+            "score": 0.15801087, 
+            "categories": [
+                "Climate change", 
+                "Non-fiction books", 
+                "Environment"
+            ], 
+            "title": "Storms of My Grandchildren"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", 
+            "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", 
+            "score": 0.15476939, 
+            "categories": [
+                "Climate change", 
+                "Environmental issues"
+            ], 
+            "title": "Global dimming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", 
+            "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", 
+            "score": 0.14074199, 
+            "categories": [
+                "Environment", 
+                "Green politics"
+            ], 
+            "title": "Carbon diet"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=United_Kingdom_Climate_Change_Programme", 
+            "text": "The Britain looks wind and solar power. ", 
+            "score": 0.13829224, 
+            "categories": [
+                "Environmental organizations", 
+                "Organisations based in the United Kingdom", 
+                "2000 establishments", 
+                "Climate change"
+            ], 
+            "title": "United Kingdom Climate Change Programme"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Ocean_acidification", 
+            "text": "Ocean acidification is the decrease in the pH  and increase in acidity of the Earths oceans. It is caused by the increase of carbon dioxide  that humans have put into the atmosphere. More than 30% of the carbon dioxide in the air goes into the oceans. Therefore, when carbon dioxide in the atmosphere increases, the carbon dioxide in the ocean increases, too. ", 
+            "score": 0.13363717, 
+            "categories": [
+                "Oceans", 
+                "Environmental issues", 
+                "Climate change"
+            ], 
+            "title": "Ocean acidification"
+        }
+    ], 
+    "orig": "Over our lifetimes, we've all contributed to climate change. Actions, choices and behaviors will have led to an increase in greenhouse gas emissions. And I think that that's quite a powerful thought. But it does have the potential to make us feel guilty when we think about decisions we might have made around where to travel to, how often and how, about the energy that we choose to use in our homes or in our workplaces, or quite simply the lifestyles that we lead and enjoy. But we can also turn that thought on its head, and think that if we've had such a profound but a negative impact on our climate already, then we have an opportunity to influence the amount of future climate change that we will need to adapt to.\nSo we have a choice. We can either choose to start to take climate change seriously, and significantly cut and mitigate our greenhouse gas emissions, and then we will have to adapt to less of the climate change impacts in future. Alternatively, we can continue to really ignore the climate change problem. But if we do that, we are also choosing to adapt to very much more powerful climate impacts in future. And not only that. As people who live in countries with high per capita emissions, we're making that choice on behalf of others as well. But the choice that we don't have is a no climate change future.", 
+    "filename": "AliceBowsLarkin_ClimateChange_0.txt"
+}

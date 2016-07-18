@@ -1,1 +1,118 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=List_of_terrorist_incidents", "text": "The following is a timeline of acts and failed attempts that can be considered terrorism. Note: there is no single accepted definition of terrorism in common use. Incidents listed here are commonly called terrorism, or meet some of the commonly used criteria. ==17th century== English Parliament while King James I of England was there. ", "score": 1.2549107, "categories": ["History-related lists", "Terrorist attacks"], "title": "List of terrorist incidents"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Surveillance", "text": "\n , Cuba, on Oct. 14, 1962  ", "score": 1.2466341, "categories": ["Espionage", "Technology"], "title": "Surveillance"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Torture_in_the_United_States", "text": "Torture in the United States includes cases of torture reported in the United States and outside the USA by U.S. government workers. == Torture and the War on Terror ==\n \nThe United States and other countries involved in the War on Terror have used torture to get information from suspected terrorists. ", "score": 1.0013527, "categories": ["Torture"], "title": "Torture in the United States"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Waterboarding", "text": "Waterboarding is a type of torture that has been used for a long time. It was often used to make people confess. The victim is tied onto a table or wooden board. The questioner has a helper, whose job it is to pour water on the victims nose and mouth through a towel or cloth, to make it difficult for him to breathe. ", "score": 0.65460557, "categories": ["Torture"], "title": "Waterboarding"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2008_Mumbai_attacks", "text": "", "score": 0.62748724, "categories": ["2008", "21st century in India", "Islamic terrorist attacks", "Mumbai", "Terrorist incidents in the 2000s"], "title": "2008 Mumbai attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2002_Bali_terrorist_bombing", "text": "\nThe 2002 Bali terrorist bombings took place in Kuta on the Indonesian island of Bali. The attack was the deadliest act of terrorism in the history of Indonesia. Kuta is a popular tourist destination. 202 people were killed. 164 of them were foreigners, 38 were Indonesian citizens. Most of those killed were Australians, Britons or Indonesians. ", "score": 0.56932753, "categories": ["2002 crimes", "2000s in Asia", "Bali", "Islamic terrorist attacks", "Massacres", "Terrorist incidents in the 2000s"], "title": "2002 Bali terrorist bombing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=American_Airlines_Flight_77", "text": "", "score": 0.5178732, "categories": ["September 11, 2001 attacks", "Terrorist attacks"], "title": "American Airlines Flight 77"}, {"url": "https://simple.wikipedia.org/w/index.php?title=United_Airlines_Flight_93", "text": "", "score": 0.38534623, "categories": ["September 11, 2001 attacks", "Terrorist attacks"], "title": "United Airlines Flight 93"}, {"url": "https://simple.wikipedia.org/w/index.php?title=November_2015_Paris_attacks", "text": "Bataclan concert venue, and at other sites. 139 people were killed. Because of this, French President Fran\u00e7ois Hollande announced a national state of emergency. In his speech of 14 November, Hollande said that 128 people were killed and another 128 were gravely injured. In total, over 350 people were injured during the attacks, about 100 of them are gravely injured. ", "score": 0.37740856, "categories": ["2015 in France", "History of Paris", "Islamic State", "Islamic terrorist attacks", "Massacres", "Murder in 2015", "Murders by firearm in France", "Terrorist incidents in 2015"], "title": "November 2015 Paris attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Aircraft_hijacking", "text": "Aircraft hijacking  is the takeover of an aircraft, by a person or group, usually armed. In most cases the pilot is forced to fly according to the orders of the hijackers. Sometimes the hijackers fly the planes themselves, as believed to have occurred in the September 11, 2001 attacks. In one case the official pilot hijacked the plane, when he diverted his internal Air China flight to Taiwan. ", "score": 0.37485775, "categories": ["Aviation safety", "Types of crime", "Terrorist attacks"], "title": "Aircraft hijacking"}], "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", "filename": "DavidRothkopf_FearPolitics_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_terrorist_incidents", 
+            "text": "The following is a timeline of acts and failed attempts that can be considered terrorism. Note: there is no single accepted definition of terrorism in common use. Incidents listed here are commonly called terrorism, or meet some of the commonly used criteria. ==17th century== English Parliament while King James I of England was there. ", 
+            "score": 1.2549107, 
+            "categories": [
+                "History-related lists", 
+                "Terrorist attacks"
+            ], 
+            "title": "List of terrorist incidents"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Surveillance", 
+            "text": "\n , Cuba, on Oct. 14, 1962  ", 
+            "score": 1.2466341, 
+            "categories": [
+                "Espionage", 
+                "Technology"
+            ], 
+            "title": "Surveillance"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Torture_in_the_United_States", 
+            "text": "Torture in the United States includes cases of torture reported in the United States and outside the USA by U.S. government workers. == Torture and the War on Terror ==\n \nThe United States and other countries involved in the War on Terror have used torture to get information from suspected terrorists. ", 
+            "score": 1.0013527, 
+            "categories": [
+                "Torture"
+            ], 
+            "title": "Torture in the United States"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Waterboarding", 
+            "text": "Waterboarding is a type of torture that has been used for a long time. It was often used to make people confess. The victim is tied onto a table or wooden board. The questioner has a helper, whose job it is to pour water on the victims nose and mouth through a towel or cloth, to make it difficult for him to breathe. ", 
+            "score": 0.65460557, 
+            "categories": [
+                "Torture"
+            ], 
+            "title": "Waterboarding"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2008_Mumbai_attacks", 
+            "text": "", 
+            "score": 0.62748724, 
+            "categories": [
+                "2008", 
+                "21st century in India", 
+                "Islamic terrorist attacks", 
+                "Mumbai", 
+                "Terrorist incidents in the 2000s"
+            ], 
+            "title": "2008 Mumbai attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2002_Bali_terrorist_bombing", 
+            "text": "\nThe 2002 Bali terrorist bombings took place in Kuta on the Indonesian island of Bali. The attack was the deadliest act of terrorism in the history of Indonesia. Kuta is a popular tourist destination. 202 people were killed. 164 of them were foreigners, 38 were Indonesian citizens. Most of those killed were Australians, Britons or Indonesians. ", 
+            "score": 0.56932753, 
+            "categories": [
+                "2002 crimes", 
+                "2000s in Asia", 
+                "Bali", 
+                "Islamic terrorist attacks", 
+                "Massacres", 
+                "Terrorist incidents in the 2000s"
+            ], 
+            "title": "2002 Bali terrorist bombing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=American_Airlines_Flight_77", 
+            "text": "", 
+            "score": 0.5178732, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "Terrorist attacks"
+            ], 
+            "title": "American Airlines Flight 77"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=United_Airlines_Flight_93", 
+            "text": "", 
+            "score": 0.38534623, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "Terrorist attacks"
+            ], 
+            "title": "United Airlines Flight 93"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=November_2015_Paris_attacks", 
+            "text": "Bataclan concert venue, and at other sites. 139 people were killed. Because of this, French President Fran\u00e7ois Hollande announced a national state of emergency. In his speech of 14 November, Hollande said that 128 people were killed and another 128 were gravely injured. In total, over 350 people were injured during the attacks, about 100 of them are gravely injured. ", 
+            "score": 0.37740856, 
+            "categories": [
+                "2015 in France", 
+                "History of Paris", 
+                "Islamic State", 
+                "Islamic terrorist attacks", 
+                "Massacres", 
+                "Murder in 2015", 
+                "Murders by firearm in France", 
+                "Terrorist incidents in 2015"
+            ], 
+            "title": "November 2015 Paris attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Aircraft_hijacking", 
+            "text": "Aircraft hijacking  is the takeover of an aircraft, by a person or group, usually armed. In most cases the pilot is forced to fly according to the orders of the hijackers. Sometimes the hijackers fly the planes themselves, as believed to have occurred in the September 11, 2001 attacks. In one case the official pilot hijacked the plane, when he diverted his internal Air China flight to Taiwan. ", 
+            "score": 0.37485775, 
+            "categories": [
+                "Aviation safety", 
+                "Types of crime", 
+                "Terrorist attacks"
+            ], 
+            "title": "Aircraft hijacking"
+        }
+    ], 
+    "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", 
+    "filename": "DavidRothkopf_FearPolitics_0.txt"
+}

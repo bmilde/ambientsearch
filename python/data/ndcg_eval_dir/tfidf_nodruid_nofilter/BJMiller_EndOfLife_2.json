@@ -1,1 +1,105 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Hospice", "text": "\nA hospice is a type of medical   that helps take care of people who are very sick and have an   them. Hospice tries to allow people to die with as little pain as possible. nursing homes and hospitals to talk to people who want to use hospice medicine. == History ==\nThe Hospice movement was started in England in the 1950s by a nurse named Dame Cicely Saunders. ", "score": 0.3530603, "categories": ["Medicine", "Death"], "title": "Hospice"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Addenbrooke's_Hospital", "text": "Addenbrookes Hospital is a large hospital in Cambridge, England. The hospital lets people in to look around, once every two years. You can visit the mortuary, the operating theatres and the hospital roof. ", "score": 0.24172822, "categories": ["Buildings and structures in England", "Cambridge", "Hospitals in the United Kingdom"], "title": "Addenbrooke's Hospital"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Anatomy", "text": "study of bodies of living beings. This can be human ", "score": 0.042358186, "categories": ["Anatomy"], "title": "Anatomy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Group_home", "text": "A group home is a private house that serves as a home for people who are not in the same family but have a common  . In the United States, this would mean a home for people who need social assistance or who are not able to live alone or without proper care for safety reasons. Before the 1970s, these people lived in psychiatric hospitals, homes for the poor and orphanages. ", "score": 0.03968606, "categories": ["Drug rehabilitation", "Disability"], "title": "Group home"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Wishaw", "text": "", "score": 0.03842727, "categories": ["Towns in North Lanarkshire"], "title": "Wishaw"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_services_in_the_United_Kingdom", "text": " Special Health Board), the Welsh Ambulance Service, and the Northern Ireland Ambulance Service. ==Job of the Ambulance Services==\nNHS ambulance services must by law answer four types of requests for care,  which are:\n* Emergency Calls \n* Doctors urgent admission requests\n* High dependency and urgent inter-hospital transfers\n* Major incidents\n\nThe ambulance services have getting more and more busy. ", "score": 0.036078244, "categories": ["Politics of the United Kingdom"], "title": "Emergency medical services in the United Kingdom"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Rei_Ayanami", "text": "is the central character from the anime series Neon Genesis Evangelion. She is a very popular character. In 1996 and 1997, Rei Ayanami was listed as a best female character in anime under the version journal Animage. Rei was born in the underground laboratory Nerv, but all information of her childhood was lost. ", "score": 0.031166825, "categories": ["Anime", "Anime characters"], "title": "Rei Ayanami"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Combat_stress_reaction", "text": "soldiers because trauma of mental and physical problems. It is similar to acute stress disorder, and can often become post-traumatic stress disorder. Combat stress reaction does not affect everyone equally. Sometimes it causes soldiers to be very unhappy. Sometimes it causes soldiers severe disability. ", "score": 0.029422844, "categories": ["Conflicts", "Mental illnesses"], "title": "Combat stress reaction"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Providence,_Rhode_Island", "text": "", "score": 0.02882045, "categories": ["Providence, Rhode Island", "County seats in the United States", "State capitals in the United States"], "title": "Providence, Rhode Island"}, {"url": "https://simple.wikipedia.org/w/index.php?title=National_Health_Service", "text": "The National Health Service is a government run health care organization that provides health and medical services to citizens and residents of the United Kingdom. It was started in 1948 and intended by its creators to be \"free at the point of service\". This meant that people who use the NHS would not be required to pay for services each time they used them. ", "score": 0.02882045, "categories": ["Public services in the United Kingdom", "Health care"], "title": "National Health Service"}], "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", "filename": "BJMiller_EndOfLife_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hospice", 
+            "text": "\nA hospice is a type of medical   that helps take care of people who are very sick and have an   them. Hospice tries to allow people to die with as little pain as possible. nursing homes and hospitals to talk to people who want to use hospice medicine. == History ==\nThe Hospice movement was started in England in the 1950s by a nurse named Dame Cicely Saunders. ", 
+            "score": 0.3530603, 
+            "categories": [
+                "Medicine", 
+                "Death"
+            ], 
+            "title": "Hospice"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Addenbrooke's_Hospital", 
+            "text": "Addenbrookes Hospital is a large hospital in Cambridge, England. The hospital lets people in to look around, once every two years. You can visit the mortuary, the operating theatres and the hospital roof. ", 
+            "score": 0.24172822, 
+            "categories": [
+                "Buildings and structures in England", 
+                "Cambridge", 
+                "Hospitals in the United Kingdom"
+            ], 
+            "title": "Addenbrooke's Hospital"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Anatomy", 
+            "text": "study of bodies of living beings. This can be human ", 
+            "score": 0.042358186, 
+            "categories": [
+                "Anatomy"
+            ], 
+            "title": "Anatomy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Group_home", 
+            "text": "A group home is a private house that serves as a home for people who are not in the same family but have a common  . In the United States, this would mean a home for people who need social assistance or who are not able to live alone or without proper care for safety reasons. Before the 1970s, these people lived in psychiatric hospitals, homes for the poor and orphanages. ", 
+            "score": 0.03968606, 
+            "categories": [
+                "Drug rehabilitation", 
+                "Disability"
+            ], 
+            "title": "Group home"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Wishaw", 
+            "text": "", 
+            "score": 0.03842727, 
+            "categories": [
+                "Towns in North Lanarkshire"
+            ], 
+            "title": "Wishaw"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_services_in_the_United_Kingdom", 
+            "text": " Special Health Board), the Welsh Ambulance Service, and the Northern Ireland Ambulance Service. ==Job of the Ambulance Services==\nNHS ambulance services must by law answer four types of requests for care,  which are:\n* Emergency Calls \n* Doctors urgent admission requests\n* High dependency and urgent inter-hospital transfers\n* Major incidents\n\nThe ambulance services have getting more and more busy. ", 
+            "score": 0.036078244, 
+            "categories": [
+                "Politics of the United Kingdom"
+            ], 
+            "title": "Emergency medical services in the United Kingdom"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Rei_Ayanami", 
+            "text": "is the central character from the anime series Neon Genesis Evangelion. She is a very popular character. In 1996 and 1997, Rei Ayanami was listed as a best female character in anime under the version journal Animage. Rei was born in the underground laboratory Nerv, but all information of her childhood was lost. ", 
+            "score": 0.031166825, 
+            "categories": [
+                "Anime", 
+                "Anime characters"
+            ], 
+            "title": "Rei Ayanami"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Combat_stress_reaction", 
+            "text": "soldiers because trauma of mental and physical problems. It is similar to acute stress disorder, and can often become post-traumatic stress disorder. Combat stress reaction does not affect everyone equally. Sometimes it causes soldiers to be very unhappy. Sometimes it causes soldiers severe disability. ", 
+            "score": 0.029422844, 
+            "categories": [
+                "Conflicts", 
+                "Mental illnesses"
+            ], 
+            "title": "Combat stress reaction"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Providence,_Rhode_Island", 
+            "text": "", 
+            "score": 0.02882045, 
+            "categories": [
+                "Providence, Rhode Island", 
+                "County seats in the United States", 
+                "State capitals in the United States"
+            ], 
+            "title": "Providence, Rhode Island"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=National_Health_Service", 
+            "text": "The National Health Service is a government run health care organization that provides health and medical services to citizens and residents of the United Kingdom. It was started in 1948 and intended by its creators to be \"free at the point of service\". This meant that people who use the NHS would not be required to pay for services each time they used them. ", 
+            "score": 0.02882045, 
+            "categories": [
+                "Public services in the United Kingdom", 
+                "Health care"
+            ], 
+            "title": "National Health Service"
+        }
+    ], 
+    "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", 
+    "filename": "BJMiller_EndOfLife_2.txt"
+}

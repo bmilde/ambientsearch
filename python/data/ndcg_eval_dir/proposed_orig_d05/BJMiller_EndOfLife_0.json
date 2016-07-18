@@ -1,1 +1,97 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Health_care", "text": "\n\n== Primary care == doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. == Culture of health ==\n\n term \u2033Culture holistic approach to physical, mental and spiritual health. ", "score": 0.8000269, "categories": ["Health care"], "title": "Health care"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Single-payer_health_care", "text": "Single-payer health care is a system in which the government, rather than private insurers, pays for all health care costs. Single-payer systems may contract for healthcare services from private organizations. The actual funding of a \"single payer\" system comes from all or a portion of the covered population. ", "score": 0.738435, "categories": ["Health care"], "title": "Single-payer health care"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Primary_care_doctor", "text": "A doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. ", "score": 0.40837985, "categories": ["Health care"], "title": "Primary care doctor"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Clinic", "text": "\n practice managers. Physiotherapy clinics are run by physiotherapists, psychology clinics run by clinical psychologists, and so on for each type of health care. Some clinics are operated, or run, by employers. Other clinics are owned by people who do not have medical education, like in China. Some clinics are a place for people with injuries or illness to come and be seen by triage nurse or other health worker. ", "score": 0.31537205, "categories": ["Health care", "Hospitals"], "title": "Clinic"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Speech_and_language_therapist", "text": "A Speech and Language Therapist is a health care professional who specialises in communication and swallowing difficulties. The main part of their work involves assessing people and planning therapy. They work with people of all ages across different settings such as nurseries, schools, day centres, care homes, clinics and hospitals. ", "score": 0.296892, "categories": ["Healthcare occupations"], "title": "Speech and language therapist"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Universal_healthcare", "text": "#REDIRECTUniversal health care ", "score": 0.26410523, "categories": [], "title": "Universal healthcare"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dietitian", "text": "A dietitian or dietician is an expert in food and nutrition. Dietitians help promote good health through proper eating. They often write custom diets for people. In a medical setting they can give food supplements for those people who cannot get what they need because of swallowing problems. Dietitians want to find, cook and serve tasty, attractive and healthy food to patients, their families and healthcare providers. ", "score": 0.2429474, "categories": ["Nutrition", "Healthcare occupations"], "title": "Dietitian"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_technician", "text": " sick and hurt people. == What Can EMTs Do? ==\nEMTs used to be called \"ambulance drivers,\" but now this name is thought of as insulting. There are many things that EMTs can do , like:  electric shocks to a persons chest if their heart is beating in a way that could kill them not breathing well enough to survive\n* Insert a breathing tube down someones windpipe to help them breathe better  hemorrhaging \n* Treating burns \n* Treat very bad physical trauma \n* Deliver a baby broken bones, dislocated joints, sprains, and wounds\n\n=== State Laws ===\nIn the United States, each state gets to decide exactly what their EMTs can do. ", "score": 0.1878737, "categories": ["Healthcare occupations"], "title": "Emergency medical technician"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Multiple_organ_dysfunction_syndrome", "text": "Multiple organ function medical intervention to achieve homeostasis. It usually involves two or more organ systems. The use of \"multiple organ failure\" or \"multisystem organ failure\" should be avoided since that phrase was based upon physiological parameters to determine whether or not a particular organ was failing. ", "score": 0.18421994, "categories": ["Organ failure", "Medical emergencies"], "title": "Multiple organ dysfunction syndrome"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_assistant", "text": "A medical assistant  is a medical professional who works in medical settings along with doctors and nurses. They do things to help doctors and nurses with their jobs, and may perform many different tasks. Medical Assistant Schools Directory. Some medical assistants are similar in some ways to a nurse. ", "score": 0.18343814, "categories": ["Healthcare occupations"], "title": "Medical assistant"}], "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", "filename": "BJMiller_EndOfLife_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Health_care", 
+            "text": "\n\n== Primary care == doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. == Culture of health ==\n\n term \u2033Culture holistic approach to physical, mental and spiritual health. ", 
+            "score": 0.8000269, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Health care"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Single-payer_health_care", 
+            "text": "Single-payer health care is a system in which the government, rather than private insurers, pays for all health care costs. Single-payer systems may contract for healthcare services from private organizations. The actual funding of a \"single payer\" system comes from all or a portion of the covered population. ", 
+            "score": 0.738435, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Single-payer health care"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Primary_care_doctor", 
+            "text": "A doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. ", 
+            "score": 0.40837985, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Primary care doctor"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Clinic", 
+            "text": "\n practice managers. Physiotherapy clinics are run by physiotherapists, psychology clinics run by clinical psychologists, and so on for each type of health care. Some clinics are operated, or run, by employers. Other clinics are owned by people who do not have medical education, like in China. Some clinics are a place for people with injuries or illness to come and be seen by triage nurse or other health worker. ", 
+            "score": 0.31537205, 
+            "categories": [
+                "Health care", 
+                "Hospitals"
+            ], 
+            "title": "Clinic"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Speech_and_language_therapist", 
+            "text": "A Speech and Language Therapist is a health care professional who specialises in communication and swallowing difficulties. The main part of their work involves assessing people and planning therapy. They work with people of all ages across different settings such as nurseries, schools, day centres, care homes, clinics and hospitals. ", 
+            "score": 0.296892, 
+            "categories": [
+                "Healthcare occupations"
+            ], 
+            "title": "Speech and language therapist"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Universal_healthcare", 
+            "text": "#REDIRECTUniversal health care ", 
+            "score": 0.26410523, 
+            "categories": [], 
+            "title": "Universal healthcare"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dietitian", 
+            "text": "A dietitian or dietician is an expert in food and nutrition. Dietitians help promote good health through proper eating. They often write custom diets for people. In a medical setting they can give food supplements for those people who cannot get what they need because of swallowing problems. Dietitians want to find, cook and serve tasty, attractive and healthy food to patients, their families and healthcare providers. ", 
+            "score": 0.2429474, 
+            "categories": [
+                "Nutrition", 
+                "Healthcare occupations"
+            ], 
+            "title": "Dietitian"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_technician", 
+            "text": " sick and hurt people. == What Can EMTs Do? ==\nEMTs used to be called \"ambulance drivers,\" but now this name is thought of as insulting. There are many things that EMTs can do , like:  electric shocks to a persons chest if their heart is beating in a way that could kill them not breathing well enough to survive\n* Insert a breathing tube down someones windpipe to help them breathe better  hemorrhaging \n* Treating burns \n* Treat very bad physical trauma \n* Deliver a baby broken bones, dislocated joints, sprains, and wounds\n\n=== State Laws ===\nIn the United States, each state gets to decide exactly what their EMTs can do. ", 
+            "score": 0.1878737, 
+            "categories": [
+                "Healthcare occupations"
+            ], 
+            "title": "Emergency medical technician"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Multiple_organ_dysfunction_syndrome", 
+            "text": "Multiple organ function medical intervention to achieve homeostasis. It usually involves two or more organ systems. The use of \"multiple organ failure\" or \"multisystem organ failure\" should be avoided since that phrase was based upon physiological parameters to determine whether or not a particular organ was failing. ", 
+            "score": 0.18421994, 
+            "categories": [
+                "Organ failure", 
+                "Medical emergencies"
+            ], 
+            "title": "Multiple organ dysfunction syndrome"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_assistant", 
+            "text": "A medical assistant  is a medical professional who works in medical settings along with doctors and nurses. They do things to help doctors and nurses with their jobs, and may perform many different tasks. Medical Assistant Schools Directory. Some medical assistants are similar in some ways to a nurse. ", 
+            "score": 0.18343814, 
+            "categories": [
+                "Healthcare occupations"
+            ], 
+            "title": "Medical assistant"
+        }
+    ], 
+    "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", 
+    "filename": "BJMiller_EndOfLife_0.txt"
+}

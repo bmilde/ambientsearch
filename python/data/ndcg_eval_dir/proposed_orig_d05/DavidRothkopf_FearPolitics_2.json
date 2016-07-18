@@ -1,1 +1,107 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Nuclear_war", "text": "\nA nuclear war is a war in which countries fight with nuclear weapons. A nuclear war has never happened, but because nuclear weapons are extremely powerful and could cause destruction throughout the world, the possibility of nuclear war has had a great effect on international politics. ==History==\n cities of Hiroshima and Nagasaki. ", "score": 0.12020587, "categories": ["War", "Nuclear weapons"], "title": "Nuclear war"}, {"url": "https://simple.wikipedia.org/w/index.php?title=ARM_architecture", "text": "ARM CPU architecture commonly used in embedded systems and mobile devices such as cell phones, smartphones, tablet computers, and handheld game consoles such as the Game Boy Advance. ARM CPUs use very little electricity and produce very little heat. Most ARM CPUs run on battery power and dont need a cooling fan. ", "score": 0.08438797, "categories": ["Computer processors"], "title": "ARM architecture"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Android_(operating_system)", "text": "", "score": 0.07288894, "categories": ["Google", "Operating systems", "Linux", "Linux distributions"], "title": "Android (operating system)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IOS_8", "text": "", "score": 0.026951304, "categories": ["Apple software", "Operating systems"], "title": "IOS 8"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Biophilia", "text": "", "score": 0.023911653, "categories": ["Bj\u00f6rk albums", "2011 albums"], "title": "Biophilia"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IOS_6", "text": "", "score": 0.021862587, "categories": ["Operating systems", "Apple software"], "title": "IOS 6"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Multitasking_(iOS)", "text": "Multitasking applications to run and perform tasks at the same time. It is available in iOS 4 or later. Multitasking was first released in June 2010 with the release of iOS 4.0. Only iPhone 4, iPhone 3GS, and iPod Touch 3rd generation were able to use multitasking. The iPad did not get multitasking until iOS 4.2 was released in November 2010. ", "score": 0.02162509, "categories": ["Apple software"], "title": "Multitasking (iOS)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mutual_assured_destruction", "text": "Mutual assured destruction  is a military strategy in which two opposing military forces are powerful enough to completely destroy each other. It should help to avoid a nuclear war. This usually happens when both forces have nuclear weapons. If a state attacks another with nuclear weapons, the state attacked will potentially be able to attack back. ", "score": 0.01940465, "categories": ["Military", "Nuclear weapons"], "title": "Mutual assured destruction"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IOS", "text": "", "score": 0.019177955, "categories": ["Apple software", "Operating systems"], "title": "IOS"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Federal_Bureau_of_Investigation", "text": "Director of the Bureau from its start, and continued as Director of the FBI until his death in 1972. Although the FBI work worldwide, their headquarters is in Washington DC. They have 56 main offices in cities throughout the United States. == Mission and priorities ==\nThe FBIs mission is to protect the USA and maintain justice. ", "score": 0.018806871, "categories": ["Federal Bureau of Investigation", "1908 establishments", "20th century establishments in the United States"], "title": "Federal Bureau of Investigation"}], "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", "filename": "DavidRothkopf_FearPolitics_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Nuclear_war", 
+            "text": "\nA nuclear war is a war in which countries fight with nuclear weapons. A nuclear war has never happened, but because nuclear weapons are extremely powerful and could cause destruction throughout the world, the possibility of nuclear war has had a great effect on international politics. ==History==\n cities of Hiroshima and Nagasaki. ", 
+            "score": 0.12020587, 
+            "categories": [
+                "War", 
+                "Nuclear weapons"
+            ], 
+            "title": "Nuclear war"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=ARM_architecture", 
+            "text": "ARM CPU architecture commonly used in embedded systems and mobile devices such as cell phones, smartphones, tablet computers, and handheld game consoles such as the Game Boy Advance. ARM CPUs use very little electricity and produce very little heat. Most ARM CPUs run on battery power and dont need a cooling fan. ", 
+            "score": 0.08438797, 
+            "categories": [
+                "Computer processors"
+            ], 
+            "title": "ARM architecture"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Android_(operating_system)", 
+            "text": "", 
+            "score": 0.07288894, 
+            "categories": [
+                "Google", 
+                "Operating systems", 
+                "Linux", 
+                "Linux distributions"
+            ], 
+            "title": "Android (operating system)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IOS_8", 
+            "text": "", 
+            "score": 0.026951304, 
+            "categories": [
+                "Apple software", 
+                "Operating systems"
+            ], 
+            "title": "IOS 8"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Biophilia", 
+            "text": "", 
+            "score": 0.023911653, 
+            "categories": [
+                "Bj\u00f6rk albums", 
+                "2011 albums"
+            ], 
+            "title": "Biophilia"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IOS_6", 
+            "text": "", 
+            "score": 0.021862587, 
+            "categories": [
+                "Operating systems", 
+                "Apple software"
+            ], 
+            "title": "IOS 6"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Multitasking_(iOS)", 
+            "text": "Multitasking applications to run and perform tasks at the same time. It is available in iOS 4 or later. Multitasking was first released in June 2010 with the release of iOS 4.0. Only iPhone 4, iPhone 3GS, and iPod Touch 3rd generation were able to use multitasking. The iPad did not get multitasking until iOS 4.2 was released in November 2010. ", 
+            "score": 0.02162509, 
+            "categories": [
+                "Apple software"
+            ], 
+            "title": "Multitasking (iOS)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mutual_assured_destruction", 
+            "text": "Mutual assured destruction  is a military strategy in which two opposing military forces are powerful enough to completely destroy each other. It should help to avoid a nuclear war. This usually happens when both forces have nuclear weapons. If a state attacks another with nuclear weapons, the state attacked will potentially be able to attack back. ", 
+            "score": 0.01940465, 
+            "categories": [
+                "Military", 
+                "Nuclear weapons"
+            ], 
+            "title": "Mutual assured destruction"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IOS", 
+            "text": "", 
+            "score": 0.019177955, 
+            "categories": [
+                "Apple software", 
+                "Operating systems"
+            ], 
+            "title": "IOS"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Federal_Bureau_of_Investigation", 
+            "text": "Director of the Bureau from its start, and continued as Director of the FBI until his death in 1972. Although the FBI work worldwide, their headquarters is in Washington DC. They have 56 main offices in cities throughout the United States. == Mission and priorities ==\nThe FBIs mission is to protect the USA and maintain justice. ", 
+            "score": 0.018806871, 
+            "categories": [
+                "Federal Bureau of Investigation", 
+                "1908 establishments", 
+                "20th century establishments in the United States"
+            ], 
+            "title": "Federal Bureau of Investigation"
+        }
+    ], 
+    "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", 
+    "filename": "DavidRothkopf_FearPolitics_2.txt"
+}

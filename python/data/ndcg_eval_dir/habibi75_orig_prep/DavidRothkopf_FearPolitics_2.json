@@ -1,1 +1,96 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=IPad_Mini", "text": "", "score": 0.5866113, "categories": ["Apple hardware"], "title": "IPad Mini"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IPad", "text": "", "score": 0.5781677, "categories": ["Apple hardware"], "title": "IPad"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IPad_(3rd_generation)", "text": "", "score": 0.52012306, "categories": ["Apple hardware"], "title": "IPad (3rd generation)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IPad_Mini_(1st_generation)", "text": "", "score": 0.4677345, "categories": ["Apple hardware"], "title": "IPad Mini (1st generation)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IPad_Air", "text": "", "score": 0.40116474, "categories": ["Apple hardware"], "title": "IPad Air"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Canadian_Forces", "text": "The Canadian Forces   ", "score": 0.39955398, "categories": ["Military of Canada"], "title": "Canadian Forces"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chemical_warfare", "text": "injure or kill people. chemicals used for chemical warfare are poisonous. Chemical warfare has been used since the   . wikisource.org. Retrieved September 14, 2013.  . . yale.edu. Retrieved September 14, 2013. ==Definition==\nChemical weapons are different than regular weapons  or nuclear weapons because they do not explosion ", "score": 0.3908317, "categories": ["Chemical warfare"], "title": "Chemical warfare"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Choking_agent", "text": "\nPhosgene is the most dangerous choking agent that is commonly used. . breathe it in for long periods of time. It smells like freshly cut grass or moldy hay. Along with being a choking agent, phosgene is also a blood agent. This means it keeps oxygen from getting into the bodys cells. Without oxygen, a persons cells will die, and the person will suffocate. ", "score": 0.33610234, "categories": ["Chemical warfare"], "title": "Choking agent"}, {"url": "https://simple.wikipedia.org/w/index.php?title=IPad_(4th_generation)", "text": "", "score": 0.32712552, "categories": ["Apple hardware"], "title": "IPad (4th generation)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Russian_Ground_Forces", "text": "Chechen Wars, peace keeping, and other operations in the post-Soviet states. == Organisation ==\n\nThe President of Russia Dmitry Medvedev is the supreme commander-in-chief of the Russian Ground Forces. The headquarters is located in Moscow. === Structure ===\n\nThe branches of service is made up of the rifle troops, tank troops, artillery and rocket forces, troop air defense, special corp, etc. ", "score": 0.31948537, "categories": ["Military of Russia"], "title": "Russian Ground Forces"}], "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", "filename": "DavidRothkopf_FearPolitics_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad_Mini", 
+            "text": "", 
+            "score": 0.5866113, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad Mini"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad", 
+            "text": "", 
+            "score": 0.5781677, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad_(3rd_generation)", 
+            "text": "", 
+            "score": 0.52012306, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad (3rd generation)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad_Mini_(1st_generation)", 
+            "text": "", 
+            "score": 0.4677345, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad Mini (1st generation)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad_Air", 
+            "text": "", 
+            "score": 0.40116474, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad Air"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Canadian_Forces", 
+            "text": "The Canadian Forces   ", 
+            "score": 0.39955398, 
+            "categories": [
+                "Military of Canada"
+            ], 
+            "title": "Canadian Forces"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chemical_warfare", 
+            "text": "injure or kill people. chemicals used for chemical warfare are poisonous. Chemical warfare has been used since the   . wikisource.org. Retrieved September 14, 2013.  . . yale.edu. Retrieved September 14, 2013. ==Definition==\nChemical weapons are different than regular weapons  or nuclear weapons because they do not explosion ", 
+            "score": 0.3908317, 
+            "categories": [
+                "Chemical warfare"
+            ], 
+            "title": "Chemical warfare"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Choking_agent", 
+            "text": "\nPhosgene is the most dangerous choking agent that is commonly used. . breathe it in for long periods of time. It smells like freshly cut grass or moldy hay. Along with being a choking agent, phosgene is also a blood agent. This means it keeps oxygen from getting into the bodys cells. Without oxygen, a persons cells will die, and the person will suffocate. ", 
+            "score": 0.33610234, 
+            "categories": [
+                "Chemical warfare"
+            ], 
+            "title": "Choking agent"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=IPad_(4th_generation)", 
+            "text": "", 
+            "score": 0.32712552, 
+            "categories": [
+                "Apple hardware"
+            ], 
+            "title": "IPad (4th generation)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Russian_Ground_Forces", 
+            "text": "Chechen Wars, peace keeping, and other operations in the post-Soviet states. == Organisation ==\n\nThe President of Russia Dmitry Medvedev is the supreme commander-in-chief of the Russian Ground Forces. The headquarters is located in Moscow. === Structure ===\n\nThe branches of service is made up of the rifle troops, tank troops, artillery and rocket forces, troop air defense, special corp, etc. ", 
+            "score": 0.31948537, 
+            "categories": [
+                "Military of Russia"
+            ], 
+            "title": "Russian Ground Forces"
+        }
+    ], 
+    "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", 
+    "filename": "DavidRothkopf_FearPolitics_2.txt"
+}

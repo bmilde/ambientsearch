@@ -1,1 +1,129 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 1.586216, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Michelle_Obama", "text": "", "score": 0.7141888, "categories": ["African-Americans", "African American lawyers", "First Ladies of the United States", "Barack Obama", "People from Chicago", "Obama family", "1964 births", "Living people"], "title": "Michelle Obama"}, {"url": "https://simple.wikipedia.org/w/index.php?title=United_Nations_Human_Rights_Council", "text": "The United Nations Human Rights Council  is in the United Nations System. The UNHRC was made after the United Nations Commission on Human Rights . It is a small part of the United Nations General Assembly. The General Assembly made the UNHRC on 15 March 2006. This was to replace the previous CHR. People did not like the CHR because they allowed countries with poor human rights records to be members. ", "score": 0.69970137, "categories": ["United Nations", "Human rights", "2006 establishments"], "title": "United Nations Human Rights Council"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.6677122, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Michelle", "text": "Michelle French feminine form of Michael. It means \"Who is Like God\". Michelle is also a last name. People named Michelle include Michelle Pfeiffer and Michelle Obama. Fictional characters include Michelle Tanner from the sitcom Full House. ==References== ", "score": 0.45805427, "categories": ["Given names"], "title": "Michelle"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Human", "text": "", "score": 0.45338508, "categories": ["Humans"], "title": "Human"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Barack_Obama", "text": "", "score": 0.382506, "categories": ["African American lawyers", "African American politicians", "American Christians", "American Nobel Prize winners", "Barack Obama", "Columbia University alumni", "Current national leaders", "Harvard University alumni", "Obama family", "Politicians from Honolulu", "Politicians from Chicago", "Presidents of the United States", "Time People of the Year", "US Democratic Party politicians", "United States presidential candidates, 2008", "United States presidential candidates, 2012", "United States senators from Illinois", "1961 births", "Living people"], "title": "Barack Obama"}, {"url": "https://simple.wikipedia.org/w/index.php?title=United_States_Secretary_of_Health_and_Human_Services", "text": "", "score": 0.3742965, "categories": ["United States Executive Cabinet", "United States Secretaries of Health and Human Services"], "title": "United States Secretary of Health and Human Services"}, {"url": "https://simple.wikipedia.org/w/index.php?title=European_Court_of_Human_Rights", "text": "The European Court of Human Rights  hears and decides particular type of complaints. These complaints relate to abuse of human rights. ECoHR\u2019s other popular name is \"Strasbourg Court\". Member countries of the Council of Europe created ECoHR to arrange all such complaints, listen to the complaints, and to give decisions. ", "score": 0.35666808, "categories": ["Human rights", "Council of Europe"], "title": "European Court of Human Rights"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Human_Rights_Campaign", "text": " right to marry people of the same sex if they want. == Related pages ==\n*Human rights\n*LGBT\n*Declaration of Montreal\n*Yogyakarta Principles\n\n== References ==\n \n\n== Other websites ==\n*   \u2014 HRCs  website ", "score": 0.3324168, "categories": ["LGBT rights", "Human rights organizations", "1980 establishments", "Organizations based in the United States", "Washington, D.C."], "title": "Human Rights Campaign"}], "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 1.586216, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Michelle_Obama", 
+            "text": "", 
+            "score": 0.7141888, 
+            "categories": [
+                "African-Americans", 
+                "African American lawyers", 
+                "First Ladies of the United States", 
+                "Barack Obama", 
+                "People from Chicago", 
+                "Obama family", 
+                "1964 births", 
+                "Living people"
+            ], 
+            "title": "Michelle Obama"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=United_Nations_Human_Rights_Council", 
+            "text": "The United Nations Human Rights Council  is in the United Nations System. The UNHRC was made after the United Nations Commission on Human Rights . It is a small part of the United Nations General Assembly. The General Assembly made the UNHRC on 15 March 2006. This was to replace the previous CHR. People did not like the CHR because they allowed countries with poor human rights records to be members. ", 
+            "score": 0.69970137, 
+            "categories": [
+                "United Nations", 
+                "Human rights", 
+                "2006 establishments"
+            ], 
+            "title": "United Nations Human Rights Council"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.6677122, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Michelle", 
+            "text": "Michelle French feminine form of Michael. It means \"Who is Like God\". Michelle is also a last name. People named Michelle include Michelle Pfeiffer and Michelle Obama. Fictional characters include Michelle Tanner from the sitcom Full House. ==References== ", 
+            "score": 0.45805427, 
+            "categories": [
+                "Given names"
+            ], 
+            "title": "Michelle"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human", 
+            "text": "", 
+            "score": 0.45338508, 
+            "categories": [
+                "Humans"
+            ], 
+            "title": "Human"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Barack_Obama", 
+            "text": "", 
+            "score": 0.382506, 
+            "categories": [
+                "African American lawyers", 
+                "African American politicians", 
+                "American Christians", 
+                "American Nobel Prize winners", 
+                "Barack Obama", 
+                "Columbia University alumni", 
+                "Current national leaders", 
+                "Harvard University alumni", 
+                "Obama family", 
+                "Politicians from Honolulu", 
+                "Politicians from Chicago", 
+                "Presidents of the United States", 
+                "Time People of the Year", 
+                "US Democratic Party politicians", 
+                "United States presidential candidates, 2008", 
+                "United States presidential candidates, 2012", 
+                "United States senators from Illinois", 
+                "1961 births", 
+                "Living people"
+            ], 
+            "title": "Barack Obama"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=United_States_Secretary_of_Health_and_Human_Services", 
+            "text": "", 
+            "score": 0.3742965, 
+            "categories": [
+                "United States Executive Cabinet", 
+                "United States Secretaries of Health and Human Services"
+            ], 
+            "title": "United States Secretary of Health and Human Services"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=European_Court_of_Human_Rights", 
+            "text": "The European Court of Human Rights  hears and decides particular type of complaints. These complaints relate to abuse of human rights. ECoHR\u2019s other popular name is \"Strasbourg Court\". Member countries of the Council of Europe created ECoHR to arrange all such complaints, listen to the complaints, and to give decisions. ", 
+            "score": 0.35666808, 
+            "categories": [
+                "Human rights", 
+                "Council of Europe"
+            ], 
+            "title": "European Court of Human Rights"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human_Rights_Campaign", 
+            "text": " right to marry people of the same sex if they want. == Related pages ==\n*Human rights\n*LGBT\n*Declaration of Montreal\n*Yogyakarta Principles\n\n== References ==\n \n\n== Other websites ==\n*   \u2014 HRCs  website ", 
+            "score": 0.3324168, 
+            "categories": [
+                "LGBT rights", 
+                "Human rights organizations", 
+                "1980 establishments", 
+                "Organizations based in the United States", 
+                "Washington, D.C."
+            ], 
+            "title": "Human Rights Campaign"
+        }
+    ], 
+    "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"
+}

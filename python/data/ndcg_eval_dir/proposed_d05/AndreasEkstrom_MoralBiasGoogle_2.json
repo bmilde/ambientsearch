@@ -1,1 +1,104 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 1.373667, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google+", "text": "", "score": 0.6393227, "categories": ["2011 establishments", "Google", "Social networking", "Web 2.0"], "title": "Google+"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google", "text": "", "score": 0.6061202, "categories": ["1998 establishments in the United States", "Companies listed on NASDAQ", "Google", "Mountain View, California"], "title": "Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", "score": 0.5591111, "categories": ["Google"], "title": "Google Videos"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", "text": "", "score": 0.52808464, "categories": ["Google"], "title": "Google Play"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Search_engine", "text": "A search engine. To use a search engine you must enter at least one keyword in to the search box. Usually an on-screen button must be clicked on to submit the search. The search engine looks for matches between the keyword entered and its database of websites and words. Quickly after a search is submitted the results appear on screen. ", "score": 0.52083385, "categories": ["Internet"], "title": "Search engine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", "text": "", "score": 0.4767604, "categories": ["Google"], "title": "Google Chrome OS"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Search_engine_optimisation", "text": "Search engine optimisation is a way to make websites appear in the search engines results pages  such as those given by Google. Many people use search engine optimisation companies to do the work for them because it takes too much time to do themselves. A more common word used to describe search engine optimisation is internet marketing or search engine marketing. ", "score": 0.44912085, "categories": ["Internet"], "title": "Search engine optimisation"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Facebook", "text": "", "score": 0.39835298, "categories": ["2004 establishments in the United States", "Social networking"], "title": "Facebook"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", "text": "", "score": 0.36414576, "categories": ["Software", "Google"], "title": "Google Maps (application)"}], "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 1.373667, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google+", 
+            "text": "", 
+            "score": 0.6393227, 
+            "categories": [
+                "2011 establishments", 
+                "Google", 
+                "Social networking", 
+                "Web 2.0"
+            ], 
+            "title": "Google+"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google", 
+            "text": "", 
+            "score": 0.6061202, 
+            "categories": [
+                "1998 establishments in the United States", 
+                "Companies listed on NASDAQ", 
+                "Google", 
+                "Mountain View, California"
+            ], 
+            "title": "Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", 
+            "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", 
+            "score": 0.5591111, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Videos"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", 
+            "text": "", 
+            "score": 0.52808464, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Play"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Search_engine", 
+            "text": "A search engine. To use a search engine you must enter at least one keyword in to the search box. Usually an on-screen button must be clicked on to submit the search. The search engine looks for matches between the keyword entered and its database of websites and words. Quickly after a search is submitted the results appear on screen. ", 
+            "score": 0.52083385, 
+            "categories": [
+                "Internet"
+            ], 
+            "title": "Search engine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", 
+            "text": "", 
+            "score": 0.4767604, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Chrome OS"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Search_engine_optimisation", 
+            "text": "Search engine optimisation is a way to make websites appear in the search engines results pages  such as those given by Google. Many people use search engine optimisation companies to do the work for them because it takes too much time to do themselves. A more common word used to describe search engine optimisation is internet marketing or search engine marketing. ", 
+            "score": 0.44912085, 
+            "categories": [
+                "Internet"
+            ], 
+            "title": "Search engine optimisation"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Facebook", 
+            "text": "", 
+            "score": 0.39835298, 
+            "categories": [
+                "2004 establishments in the United States", 
+                "Social networking"
+            ], 
+            "title": "Facebook"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", 
+            "text": "", 
+            "score": 0.36414576, 
+            "categories": [
+                "Software", 
+                "Google"
+            ], 
+            "title": "Google Maps (application)"
+        }
+    ], 
+    "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"
+}

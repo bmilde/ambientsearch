@@ -1,1 +1,115 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Farthing_(English_coin)", "text": "\n\nThe farthing was a coin of the Kingdom of England. It was worth one quarter of a penny, or   of a pound sterling. The word farthing is derived from the Old English ", "score": 0.12662637, "categories": ["British currency"], "title": "Farthing (English coin)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Takalik_Abaj", "text": " Maya features. Preclassic and Classic periods, from the 9th century BC through to at least the 10th century AD. It was an important place for trade. It traded with Kaminaljuyu and Chocol\u00e1. It is one of the largest sites with carved monuments on the Pacific coast. Olmec-style sculptures include a possible colossal head, rock carvings and others. ", "score": 0.074714206, "categories": ["History of Mesoamerica", "Maya civilization", "Archaeological sites in Guatemala"], "title": "Takalik Abaj"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Iwami_Ginzan_Silver_Mine", "text": "", "score": 0.065142035, "categories": ["World Heritage Sites in Japan", "Museums in Japan", "Mining", "Buildings and structures in Japan", "Shimane Prefecture"], "title": "Iwami Ginzan Silver Mine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=ISO_4217", "text": "\n  ticket showing the price in the ISO 4217 code \"Euro ", "score": 0.04827742, "categories": ["Currency", "ISO standards"], "title": "ISO 4217"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Bitcoin", "text": "", "score": 0.045315754, "categories": ["2009 establishments", "Commerce", "Currency", "Technology"], "title": "Bitcoin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=United_States_dollar", "text": "", "score": 0.033086818, "categories": ["Economy of the United States", "Currency of the United States"], "title": "United States dollar"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Norton_Internet_Security", "text": "", "score": 0.033047404, "categories": ["Antivirus software"], "title": "Norton Internet Security"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", "score": 0.032522608, "categories": ["Computer science", "Internet", "Computer networking", "Metaphors"], "title": "Cloud computing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=O._Henry", "text": "American writer William Sydney Porter . O. Henrys short stories are well known for their  clever twist endings. O. Henry,\u00a0pseudonym of\u00a0William Sydney Porter, original name\u00a0William Sidney Porter American short-story writer whose tales romanticized the commonplace\u2014in particular the life of ordinary people in\u00a0New York City. ", "score": 0.017612288, "categories": ["Writers from North Carolina", "Deaths from diabetes", "1862 births", "1910 deaths", "Pen names"], "title": "O. Henry"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Instant_messaging", "text": "Instant messaging  is a way of chatting between two or more people by typing text. The text is then sent by computers over a network such as the Internet. Instant messaging must have an instant messaging client that hooks up to a service that can send instant messages. Instant messaging is different from e-mail because conversations happen and can be read right away . ", "score": 0.016130814, "categories": ["Instant messaging software", "Messaging"], "title": "Instant messaging"}], "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", "filename": "JamieBartlett_DarkNet_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Farthing_(English_coin)", 
+            "text": "\n\nThe farthing was a coin of the Kingdom of England. It was worth one quarter of a penny, or   of a pound sterling. The word farthing is derived from the Old English ", 
+            "score": 0.12662637, 
+            "categories": [
+                "British currency"
+            ], 
+            "title": "Farthing (English coin)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Takalik_Abaj", 
+            "text": " Maya features. Preclassic and Classic periods, from the 9th century BC through to at least the 10th century AD. It was an important place for trade. It traded with Kaminaljuyu and Chocol\u00e1. It is one of the largest sites with carved monuments on the Pacific coast. Olmec-style sculptures include a possible colossal head, rock carvings and others. ", 
+            "score": 0.074714206, 
+            "categories": [
+                "History of Mesoamerica", 
+                "Maya civilization", 
+                "Archaeological sites in Guatemala"
+            ], 
+            "title": "Takalik Abaj"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Iwami_Ginzan_Silver_Mine", 
+            "text": "", 
+            "score": 0.065142035, 
+            "categories": [
+                "World Heritage Sites in Japan", 
+                "Museums in Japan", 
+                "Mining", 
+                "Buildings and structures in Japan", 
+                "Shimane Prefecture"
+            ], 
+            "title": "Iwami Ginzan Silver Mine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=ISO_4217", 
+            "text": "\n  ticket showing the price in the ISO 4217 code \"Euro ", 
+            "score": 0.04827742, 
+            "categories": [
+                "Currency", 
+                "ISO standards"
+            ], 
+            "title": "ISO 4217"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Bitcoin", 
+            "text": "", 
+            "score": 0.045315754, 
+            "categories": [
+                "2009 establishments", 
+                "Commerce", 
+                "Currency", 
+                "Technology"
+            ], 
+            "title": "Bitcoin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=United_States_dollar", 
+            "text": "", 
+            "score": 0.033086818, 
+            "categories": [
+                "Economy of the United States", 
+                "Currency of the United States"
+            ], 
+            "title": "United States dollar"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Norton_Internet_Security", 
+            "text": "", 
+            "score": 0.033047404, 
+            "categories": [
+                "Antivirus software"
+            ], 
+            "title": "Norton Internet Security"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", 
+            "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", 
+            "score": 0.032522608, 
+            "categories": [
+                "Computer science", 
+                "Internet", 
+                "Computer networking", 
+                "Metaphors"
+            ], 
+            "title": "Cloud computing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=O._Henry", 
+            "text": "American writer William Sydney Porter . O. Henrys short stories are well known for their  clever twist endings. O. Henry,\u00a0pseudonym of\u00a0William Sydney Porter, original name\u00a0William Sidney Porter American short-story writer whose tales romanticized the commonplace\u2014in particular the life of ordinary people in\u00a0New York City. ", 
+            "score": 0.017612288, 
+            "categories": [
+                "Writers from North Carolina", 
+                "Deaths from diabetes", 
+                "1862 births", 
+                "1910 deaths", 
+                "Pen names"
+            ], 
+            "title": "O. Henry"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Instant_messaging", 
+            "text": "Instant messaging  is a way of chatting between two or more people by typing text. The text is then sent by computers over a network such as the Internet. Instant messaging must have an instant messaging client that hooks up to a service that can send instant messages. Instant messaging is different from e-mail because conversations happen and can be read right away . ", 
+            "score": 0.016130814, 
+            "categories": [
+                "Instant messaging software", 
+                "Messaging"
+            ], 
+            "title": "Instant messaging"
+        }
+    ], 
+    "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", 
+    "filename": "JamieBartlett_DarkNet_1.txt"
+}

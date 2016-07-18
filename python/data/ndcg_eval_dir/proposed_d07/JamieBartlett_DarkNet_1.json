@@ -1,1 +1,112 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Content_delivery", "text": "media content content such as Sound recording and reproduction ", "score": 0.11604804, "categories": ["Media"], "title": "Content delivery"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chauvet_Cave", "text": "The Chauvet Cave   or Chauvet-Pont-dArc Cave is near Vallon-Pont-dArc, in the Ard\u00e8che d\u00e9partement, in southern France. It became famous in 1994 when Paleolithic artwork was found on the walls. There were remains of many animals, some which are now extinction ", "score": 0.08762016, "categories": ["Ard\u00e8che", "Archaeological sites"], "title": "Chauvet Cave"}, {"url": "https://simple.wikipedia.org/w/index.php?title=V\u00e9z\u00e8re_Valley", "text": "", "score": 0.083680265, "categories": ["World Heritage Sites in France", "Valleys", "Archaeological sites in France"], "title": "V\u00e9z\u00e8re Valley"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gettysburg_Address", "text": "\nThe Gettysburg Address is a   of the Gettysburg National Cemetery ", "score": 0.07193225, "categories": ["American Civil War", "1863", "Abraham Lincoln", "Speeches"], "title": "Gettysburg Address"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Highness", "text": "Highness is a   when compared to Royal Highness and Imperial Highness. Highness is literally and, historically, the quality of being lofty or above. It is used as a term to evoke dignity or honour, and to acknowledge the importance or high rank of the person being addressed. The short way to write it is HH. ", "score": 0.06651004, "categories": ["Styles (manners of address)"], "title": "Highness"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", "score": 0.060940407, "categories": ["Computer science", "Internet", "Computer networking", "Metaphors"], "title": "Cloud computing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Audiophile", "text": "An audiophile is a person who cares about how good music sounds on a stereo or other high fidelity sound system. An audiophile is interested in how to improve the sound quality of sound recordings, such as vinyl records and Compact Discs, as well as the equipment used to listen to recordings such as CD players, amplifiers and loudspeakers. ", "score": 0.058600742, "categories": ["Music"], "title": "Audiophile"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Sutton_Hoo", "text": "\n archaeological significance, which are now held in the British Museum in London. Other sites had produced significant finds, but had previously been looted. The ship-burial, probably dating from the early 7th century and excavated in 1939, is one of the most magnificent archaeological finds in England for its size and completeness, its meaning, the quality and beauty of its contents, and for the profound interest of the burial ritual itself. ", "score": 0.05614342, "categories": ["Archaeological sites in the United Kingdom", "Essex", "History of England", "Art"], "title": "Sutton Hoo"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Iwami_Ginzan_Silver_Mine", "text": "", "score": 0.053543188, "categories": ["World Heritage Sites in Japan", "Museums in Japan", "Mining", "Buildings and structures in Japan", "Shimane Prefecture"], "title": "Iwami Ginzan Silver Mine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Universal_Serial_Bus", "text": "electronic device serial computer bus ", "score": 0.0487267, "categories": ["Computer hardware"], "title": "Universal Serial Bus"}], "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", "filename": "JamieBartlett_DarkNet_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Content_delivery", 
+            "text": "media content content such as Sound recording and reproduction ", 
+            "score": 0.11604804, 
+            "categories": [
+                "Media"
+            ], 
+            "title": "Content delivery"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chauvet_Cave", 
+            "text": "The Chauvet Cave   or Chauvet-Pont-dArc Cave is near Vallon-Pont-dArc, in the Ard\u00e8che d\u00e9partement, in southern France. It became famous in 1994 when Paleolithic artwork was found on the walls. There were remains of many animals, some which are now extinction ", 
+            "score": 0.08762016, 
+            "categories": [
+                "Ard\u00e8che", 
+                "Archaeological sites"
+            ], 
+            "title": "Chauvet Cave"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=V\u00e9z\u00e8re_Valley", 
+            "text": "", 
+            "score": 0.083680265, 
+            "categories": [
+                "World Heritage Sites in France", 
+                "Valleys", 
+                "Archaeological sites in France"
+            ], 
+            "title": "V\u00e9z\u00e8re Valley"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gettysburg_Address", 
+            "text": "\nThe Gettysburg Address is a   of the Gettysburg National Cemetery ", 
+            "score": 0.07193225, 
+            "categories": [
+                "American Civil War", 
+                "1863", 
+                "Abraham Lincoln", 
+                "Speeches"
+            ], 
+            "title": "Gettysburg Address"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Highness", 
+            "text": "Highness is a   when compared to Royal Highness and Imperial Highness. Highness is literally and, historically, the quality of being lofty or above. It is used as a term to evoke dignity or honour, and to acknowledge the importance or high rank of the person being addressed. The short way to write it is HH. ", 
+            "score": 0.06651004, 
+            "categories": [
+                "Styles (manners of address)"
+            ], 
+            "title": "Highness"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", 
+            "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", 
+            "score": 0.060940407, 
+            "categories": [
+                "Computer science", 
+                "Internet", 
+                "Computer networking", 
+                "Metaphors"
+            ], 
+            "title": "Cloud computing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Audiophile", 
+            "text": "An audiophile is a person who cares about how good music sounds on a stereo or other high fidelity sound system. An audiophile is interested in how to improve the sound quality of sound recordings, such as vinyl records and Compact Discs, as well as the equipment used to listen to recordings such as CD players, amplifiers and loudspeakers. ", 
+            "score": 0.058600742, 
+            "categories": [
+                "Music"
+            ], 
+            "title": "Audiophile"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Sutton_Hoo", 
+            "text": "\n archaeological significance, which are now held in the British Museum in London. Other sites had produced significant finds, but had previously been looted. The ship-burial, probably dating from the early 7th century and excavated in 1939, is one of the most magnificent archaeological finds in England for its size and completeness, its meaning, the quality and beauty of its contents, and for the profound interest of the burial ritual itself. ", 
+            "score": 0.05614342, 
+            "categories": [
+                "Archaeological sites in the United Kingdom", 
+                "Essex", 
+                "History of England", 
+                "Art"
+            ], 
+            "title": "Sutton Hoo"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Iwami_Ginzan_Silver_Mine", 
+            "text": "", 
+            "score": 0.053543188, 
+            "categories": [
+                "World Heritage Sites in Japan", 
+                "Museums in Japan", 
+                "Mining", 
+                "Buildings and structures in Japan", 
+                "Shimane Prefecture"
+            ], 
+            "title": "Iwami Ginzan Silver Mine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Universal_Serial_Bus", 
+            "text": "electronic device serial computer bus ", 
+            "score": 0.0487267, 
+            "categories": [
+                "Computer hardware"
+            ], 
+            "title": "Universal Serial Bus"
+        }
+    ], 
+    "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", 
+    "filename": "JamieBartlett_DarkNet_1.txt"
+}

@@ -1,1 +1,101 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Multiple_organ_dysfunction_syndrome", "text": "Multiple organ function medical intervention to achieve homeostasis. It usually involves two or more organ systems. The use of \"multiple organ failure\" or \"multisystem organ failure\" should be avoided since that phrase was based upon physiological parameters to determine whether or not a particular organ was failing. ", "score": 0.1991447, "categories": ["Organ failure", "Medical emergencies"], "title": "Multiple organ dysfunction syndrome"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Terminal_illness", "text": "Terminal illness is a term used to describe an illness which cannot be cured and will almost definitely end in the death of the patient. The term is mostly used for progressive diseases such as cancer or advanced heart disease. Someone who has a terminal illness may be described as a terminal patient or as being terminally ill.  Usually a patient is called \"terminally ill\" when they are not expected to live more than 6 months. ", "score": 0.09187212, "categories": ["Diseases", "Death"], "title": "Terminal illness"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Morphine", "text": "central nervous addictive when compared to other substances, and tolerance and physical and mental dependences develop very rapidly. Patients on morphine sometimes say they have insomnia, visual hallucinations and nightmares;  if these occur then reduction in dosage or switch to an alternative opioid analgesic should be considered. ", "score": 0.04089134, "categories": ["Opioids", "Analgesics"], "title": "Morphine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Leslie_Orgel", "text": "", "score": 0.026407657, "categories": ["1927 births", "2007 deaths", "English chemists", "Jewish people", "Fellows of the Royal Society"], "title": "Leslie Orgel"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pulmonary_hypertension", "text": "Pulmonary hypertension or PH is a disease where there is high blood pressure in the lungs. The disease makes it hard to breathe. Some people with the disease need extra oxygen. This disease can also make a person dizzy and become easily tired. Some people with the disease faint easily. The symptoms get worse when exercising or working hard. ", "score": 0.024745109, "categories": ["Cardiovascular system", "Respiratory system", "Diseases"], "title": "Pulmonary hypertension"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Euthanasia", "text": "Many people have  , where the person who dies specifically asks for help in ending their life. There are cases, where the person is not able to say that they do, or do not, wish to die. These cases are usually called non-voluntary euthanasia. Involuntary euthanasia, where someone is killed against their will, is generally regarded as murder. ", "score": 0.024333859, "categories": ["Death", "Law", "Social sciences", "Ethics", "Suicide"], "title": "Euthanasia"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Prostatitis", "text": "", "score": 0.020238059, "categories": ["Male reproductive system"], "title": "Prostatitis"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gout", "text": "", "score": 0.00986796, "categories": ["Diseases", "Rheumatology"], "title": "Gout"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Alzheimer's_disease", "text": "", "score": 0.007894368, "categories": ["Diseases"], "title": "Alzheimer's disease"}], "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", "filename": "BJMiller_EndOfLife_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Multiple_organ_dysfunction_syndrome", 
+            "text": "Multiple organ function medical intervention to achieve homeostasis. It usually involves two or more organ systems. The use of \"multiple organ failure\" or \"multisystem organ failure\" should be avoided since that phrase was based upon physiological parameters to determine whether or not a particular organ was failing. ", 
+            "score": 0.1991447, 
+            "categories": [
+                "Organ failure", 
+                "Medical emergencies"
+            ], 
+            "title": "Multiple organ dysfunction syndrome"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Terminal_illness", 
+            "text": "Terminal illness is a term used to describe an illness which cannot be cured and will almost definitely end in the death of the patient. The term is mostly used for progressive diseases such as cancer or advanced heart disease. Someone who has a terminal illness may be described as a terminal patient or as being terminally ill.  Usually a patient is called \"terminally ill\" when they are not expected to live more than 6 months. ", 
+            "score": 0.09187212, 
+            "categories": [
+                "Diseases", 
+                "Death"
+            ], 
+            "title": "Terminal illness"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Morphine", 
+            "text": "central nervous addictive when compared to other substances, and tolerance and physical and mental dependences develop very rapidly. Patients on morphine sometimes say they have insomnia, visual hallucinations and nightmares;  if these occur then reduction in dosage or switch to an alternative opioid analgesic should be considered. ", 
+            "score": 0.04089134, 
+            "categories": [
+                "Opioids", 
+                "Analgesics"
+            ], 
+            "title": "Morphine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Leslie_Orgel", 
+            "text": "", 
+            "score": 0.026407657, 
+            "categories": [
+                "1927 births", 
+                "2007 deaths", 
+                "English chemists", 
+                "Jewish people", 
+                "Fellows of the Royal Society"
+            ], 
+            "title": "Leslie Orgel"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pulmonary_hypertension", 
+            "text": "Pulmonary hypertension or PH is a disease where there is high blood pressure in the lungs. The disease makes it hard to breathe. Some people with the disease need extra oxygen. This disease can also make a person dizzy and become easily tired. Some people with the disease faint easily. The symptoms get worse when exercising or working hard. ", 
+            "score": 0.024745109, 
+            "categories": [
+                "Cardiovascular system", 
+                "Respiratory system", 
+                "Diseases"
+            ], 
+            "title": "Pulmonary hypertension"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Euthanasia", 
+            "text": "Many people have  , where the person who dies specifically asks for help in ending their life. There are cases, where the person is not able to say that they do, or do not, wish to die. These cases are usually called non-voluntary euthanasia. Involuntary euthanasia, where someone is killed against their will, is generally regarded as murder. ", 
+            "score": 0.024333859, 
+            "categories": [
+                "Death", 
+                "Law", 
+                "Social sciences", 
+                "Ethics", 
+                "Suicide"
+            ], 
+            "title": "Euthanasia"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Prostatitis", 
+            "text": "", 
+            "score": 0.020238059, 
+            "categories": [
+                "Male reproductive system"
+            ], 
+            "title": "Prostatitis"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gout", 
+            "text": "", 
+            "score": 0.00986796, 
+            "categories": [
+                "Diseases", 
+                "Rheumatology"
+            ], 
+            "title": "Gout"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Alzheimer's_disease", 
+            "text": "", 
+            "score": 0.007894368, 
+            "categories": [
+                "Diseases"
+            ], 
+            "title": "Alzheimer's disease"
+        }
+    ], 
+    "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", 
+    "filename": "BJMiller_EndOfLife_0.txt"
+}

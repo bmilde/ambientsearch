@@ -1,1 +1,129 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", "text": "", "score": 0.72979, "categories": ["September 11, 2001 attacks", "Conspiracy theories"], "title": "September 11 attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Majed_Moqed", "text": "", "score": 0.56398666, "categories": ["1977 births", "2001 deaths", "Terrorists", "Al-Qaeda"], "title": "Majed Moqed"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Wail_al-Shehri", "text": "", "score": 0.53685594, "categories": ["1975 births", "2001 deaths", "Terrorists", "Al-Qaeda"], "title": "Wail al-Shehri"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", "score": 0.49270412, "categories": ["September 11, 2001 attacks", "War"], "title": "Authorization for Use of Military Force Against Terrorists"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mohamed_Atta", "text": "", "score": 0.4539345, "categories": ["1968 births", "2001 deaths", "Al-Qaeda", "Egyptian people", "Terrorists"], "title": "Mohamed Atta"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Abdulaziz_al-Omari", "text": "", "score": 0.45273504, "categories": ["Terrorists", "1979 births", "2001 deaths", "Saudi Arabian people", "Al-Qaeda"], "title": "Abdulaziz al-Omari"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Satam_al-Suqami", "text": "", "score": 0.44342077, "categories": ["1976 births", "2001 deaths", "Terrorists", "People from Riyadh", "September 11, 2001 attacks", "Al-Qaeda"], "title": "Satam al-Suqami"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Osama_bin_Laden", "text": "", "score": 0.4177617, "categories": ["Al-Qaeda", "Arab people", "Deaths by firearm", "Muslims", "Saudi Arabian people", "September 11, 2001 attacks", "Terrorists", "1957 births", "2011 deaths"], "title": "Osama bin Laden"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Jemaah_Islamiyah", "text": "Jemaah Islamiah   ,  is a Southeast Asian militant Islamic organization. It wants the creation of an Islamic caliphate   \n ", "score": 0.41156998, "categories": ["Islamic organizations", "Terrorists", "Rebel militia groups in Asia", "Indonesia"], "title": "Jemaah Islamiyah"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", "score": 0.4107615, "categories": ["Terrorists", "Islamic terrorism"], "title": "Armed Islamic Group"}], "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", "filename": "DavidRothkopf_FearPolitics_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", 
+            "text": "", 
+            "score": 0.72979, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "Conspiracy theories"
+            ], 
+            "title": "September 11 attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Majed_Moqed", 
+            "text": "", 
+            "score": 0.56398666, 
+            "categories": [
+                "1977 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "Al-Qaeda"
+            ], 
+            "title": "Majed Moqed"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Wail_al-Shehri", 
+            "text": "", 
+            "score": 0.53685594, 
+            "categories": [
+                "1975 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "Al-Qaeda"
+            ], 
+            "title": "Wail al-Shehri"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", 
+            "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", 
+            "score": 0.49270412, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "War"
+            ], 
+            "title": "Authorization for Use of Military Force Against Terrorists"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mohamed_Atta", 
+            "text": "", 
+            "score": 0.4539345, 
+            "categories": [
+                "1968 births", 
+                "2001 deaths", 
+                "Al-Qaeda", 
+                "Egyptian people", 
+                "Terrorists"
+            ], 
+            "title": "Mohamed Atta"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Abdulaziz_al-Omari", 
+            "text": "", 
+            "score": 0.45273504, 
+            "categories": [
+                "Terrorists", 
+                "1979 births", 
+                "2001 deaths", 
+                "Saudi Arabian people", 
+                "Al-Qaeda"
+            ], 
+            "title": "Abdulaziz al-Omari"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Satam_al-Suqami", 
+            "text": "", 
+            "score": 0.44342077, 
+            "categories": [
+                "1976 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "People from Riyadh", 
+                "September 11, 2001 attacks", 
+                "Al-Qaeda"
+            ], 
+            "title": "Satam al-Suqami"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Osama_bin_Laden", 
+            "text": "", 
+            "score": 0.4177617, 
+            "categories": [
+                "Al-Qaeda", 
+                "Arab people", 
+                "Deaths by firearm", 
+                "Muslims", 
+                "Saudi Arabian people", 
+                "September 11, 2001 attacks", 
+                "Terrorists", 
+                "1957 births", 
+                "2011 deaths"
+            ], 
+            "title": "Osama bin Laden"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Jemaah_Islamiyah", 
+            "text": "Jemaah Islamiah   ,  is a Southeast Asian militant Islamic organization. It wants the creation of an Islamic caliphate   \n ", 
+            "score": 0.41156998, 
+            "categories": [
+                "Islamic organizations", 
+                "Terrorists", 
+                "Rebel militia groups in Asia", 
+                "Indonesia"
+            ], 
+            "title": "Jemaah Islamiyah"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", 
+            "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", 
+            "score": 0.4107615, 
+            "categories": [
+                "Terrorists", 
+                "Islamic terrorism"
+            ], 
+            "title": "Armed Islamic Group"
+        }
+    ], 
+    "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", 
+    "filename": "DavidRothkopf_FearPolitics_0.txt"
+}

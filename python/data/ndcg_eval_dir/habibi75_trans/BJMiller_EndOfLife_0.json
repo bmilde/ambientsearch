@@ -1,1 +1,101 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Health_care", "text": "\n\n== Primary care == doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. == Culture of health ==\n\n term \u2033Culture holistic approach to physical, mental and spiritual health. ", "score": 2.6024172, "categories": ["Health care"], "title": "Health care"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Primary_care_doctor", "text": "A doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. ", "score": 1.607407, "categories": ["Health care"], "title": "Primary care doctor"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Patient_Protection_and_Affordable_Care_Act", "text": "The Patient Protection and Affordable Care Act was a bill in the United States. It was signed into law by President Barack Obama on March 23, 2010. It is also known as Obamacare. == Parts of the act ==\n\nThere are many parts to the health care law. ===General=== pay more for their coverage, they have to give an explanation of their decision to the public. ", "score": 1.468297, "categories": ["Laws of the United States", "Health care", "Barack Obama"], "title": "Patient Protection and Affordable Care Act"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Universal_health_care", "text": "Universal health care, sometimes referred to as universal health coverage, universal coverage, or universal care, usually refers to a health care system which provides health care and financial protection to all citizens of a particular country. ==Other websites==\n \n*  . MEDICC Review: International Journal of Cuban Health and Medicine 13 . ", "score": 0.9162039, "categories": ["Health care"], "title": "Universal health care"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Single-payer_health_care", "text": "Single-payer health care is a system in which the government, rather than private insurers, pays for all health care costs. Single-payer systems may contract for healthcare services from private organizations. The actual funding of a \"single payer\" system comes from all or a portion of the covered population. ", "score": 0.90418, "categories": ["Health care"], "title": "Single-payer health care"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", "score": 0.8964384, "categories": ["Medicine", "Relationships"], "title": "Doctor-patient relationship"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Patient", "text": "A patient is a person receiving medical care and/or treatment. ", "score": 0.83738387, "categories": ["Medicine"], "title": "Patient"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Clinic", "text": "\n practice managers. Physiotherapy clinics are run by physiotherapists, psychology clinics run by clinical psychologists, and so on for each type of health care. Some clinics are operated, or run, by employers. Other clinics are owned by people who do not have medical education, like in China. Some clinics are a place for people with injuries or illness to come and be seen by triage nurse or other health worker. ", "score": 0.80717707, "categories": ["Health care", "Hospitals"], "title": "Clinic"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Maternal_health", "text": "Maternal health is the health of a woman during pregnancy, childbirth and her postpartum periods. It includes the health care dimensions of family planning, preconception, prenatal and postnatal caring. The risk of maternal death is higher in some areas, such as Sub-Saharan Africa, than in others. Poverty is a problem in some countries, in particular, the developing countries. ", "score": 0.72555286, "categories": ["Health care"], "title": "Maternal health"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Respiratory_care", "text": "Respiratory care is a type of medicine that works with pulmonology to make people better who are suffering from lung problems. People working in respiratory care are called Respiratory Therapists. Respiratory Therapists help in every part of lung health. Respiratory Therapists are not all over the world, but are mostly in Canada, United States and Mexico. ", "score": 0.6929961, "categories": ["Health care", "Pulmonology"], "title": "Respiratory care"}], "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", "filename": "BJMiller_EndOfLife_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Health_care", 
+            "text": "\n\n== Primary care == doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. == Culture of health ==\n\n term \u2033Culture holistic approach to physical, mental and spiritual health. ", 
+            "score": 2.6024172, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Health care"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Primary_care_doctor", 
+            "text": "A doctor who provides general medical care. These doctors can answer health concerns and medical conditions a patient may have. They also can prescribe medicine for their patients, based on information gathered. ", 
+            "score": 1.607407, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Primary care doctor"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Patient_Protection_and_Affordable_Care_Act", 
+            "text": "The Patient Protection and Affordable Care Act was a bill in the United States. It was signed into law by President Barack Obama on March 23, 2010. It is also known as Obamacare. == Parts of the act ==\n\nThere are many parts to the health care law. ===General=== pay more for their coverage, they have to give an explanation of their decision to the public. ", 
+            "score": 1.468297, 
+            "categories": [
+                "Laws of the United States", 
+                "Health care", 
+                "Barack Obama"
+            ], 
+            "title": "Patient Protection and Affordable Care Act"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Universal_health_care", 
+            "text": "Universal health care, sometimes referred to as universal health coverage, universal coverage, or universal care, usually refers to a health care system which provides health care and financial protection to all citizens of a particular country. ==Other websites==\n \n*  . MEDICC Review: International Journal of Cuban Health and Medicine 13 . ", 
+            "score": 0.9162039, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Universal health care"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Single-payer_health_care", 
+            "text": "Single-payer health care is a system in which the government, rather than private insurers, pays for all health care costs. Single-payer systems may contract for healthcare services from private organizations. The actual funding of a \"single payer\" system comes from all or a portion of the covered population. ", 
+            "score": 0.90418, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Single-payer health care"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Doctor-patient_relationship", 
+            "text": " doctor and a patient is a very important part of medicine. Only when there is a good relationship between the two is it possible to have high-quality healthcare. This relationship is also at the base of medical ethics. Many medical schools teach the doctors to be to keep a professional relationship with their patients, to respect the patients dignity and privacy. ", 
+            "score": 0.8964384, 
+            "categories": [
+                "Medicine", 
+                "Relationships"
+            ], 
+            "title": "Doctor-patient relationship"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Patient", 
+            "text": "A patient is a person receiving medical care and/or treatment. ", 
+            "score": 0.83738387, 
+            "categories": [
+                "Medicine"
+            ], 
+            "title": "Patient"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Clinic", 
+            "text": "\n practice managers. Physiotherapy clinics are run by physiotherapists, psychology clinics run by clinical psychologists, and so on for each type of health care. Some clinics are operated, or run, by employers. Other clinics are owned by people who do not have medical education, like in China. Some clinics are a place for people with injuries or illness to come and be seen by triage nurse or other health worker. ", 
+            "score": 0.80717707, 
+            "categories": [
+                "Health care", 
+                "Hospitals"
+            ], 
+            "title": "Clinic"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Maternal_health", 
+            "text": "Maternal health is the health of a woman during pregnancy, childbirth and her postpartum periods. It includes the health care dimensions of family planning, preconception, prenatal and postnatal caring. The risk of maternal death is higher in some areas, such as Sub-Saharan Africa, than in others. Poverty is a problem in some countries, in particular, the developing countries. ", 
+            "score": 0.72555286, 
+            "categories": [
+                "Health care"
+            ], 
+            "title": "Maternal health"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Respiratory_care", 
+            "text": "Respiratory care is a type of medicine that works with pulmonology to make people better who are suffering from lung problems. People working in respiratory care are called Respiratory Therapists. Respiratory Therapists help in every part of lung health. Respiratory Therapists are not all over the world, but are mostly in Canada, United States and Mexico. ", 
+            "score": 0.6929961, 
+            "categories": [
+                "Health care", 
+                "Pulmonology"
+            ], 
+            "title": "Respiratory care"
+        }
+    ], 
+    "orig": "One night, sophomore year of college, just back from Thanksgiving holiday, a few of my friends and I were horsing around, and we decided to climb atop a parked commuter train. It was just sitting there, with the wires that run overhead. Somehow, that seemed like a great idea at the time. We'd certainly done stupider things. I scurried up the ladder on the back, and when I stood up, the electrical current entered my arm, blew down and out my feet, and that was that. Would you believe that watch still works? Takes a licking!\nMy father wears it now in solidarity.\nThat night began my formal relationship with death -- my death -- and it also began my long run as a patient. It's a good word. It means one who suffers. So I guess we're all patients.\nNow, the American health care system has more than its fair share of dysfunction -- to match its brilliance, to be sure. I'm a physician now, a hospice and palliative medicine doc, so I've seen care from both sides. And believe me: almost everyone who goes into healthcare really means well -- I mean, truly. But we who work in it are also unwitting agents for a system that too often does not serve.", 
+    "filename": "BJMiller_EndOfLife_0.txt"
+}

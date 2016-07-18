@@ -1,1 +1,100 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=River_delta", "text": "\n\nA river delta is a landform where the mouth of a river flows into an ocean, sea, desert, estuary, lake or another river. It is formed by sediment carried by the river being deposited in the wider mouth. The flow of water is often slower-moving there. letter delta, \u0394 , in the Greek alphabet because a river delta resembles the shape of this letter. ", "score": 0.93297654, "categories": ["River deltas"], "title": "River delta"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fishing", "text": "", "score": 0.9055959, "categories": ["Fishing", "Survival skills"], "title": "Fishing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fly_fishing", "text": "synthetic sling materials. ==History==\nFly fishing probably began in ancient Egypt, but its modern form goes all the way back to the England of the second half of the 19th century. The local fishermen caught fish with live and later artificial insects. This method began to spread to the rest of Europe. ", "score": 0.7573809, "categories": ["Fishing"], "title": "Fly fishing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Elevation", "text": "\nWhen talking about geography the elevation of a certain point is how high it is compared to some reference point. Very often, the reference point is mean sea level, the level of the ocean midway between high and low tide on an average day. Sometimes elevation is measured against the center of the earth. ", "score": 0.6318894, "categories": ["Geography"], "title": "Elevation"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Alaskan_king_crab_fishing", "text": "fish for King Crabs. The people fish from boats between 40 and 250 feet in length. They throw steel cages, called pots, over the side of the boat, and the crabs are lured to bait placed in them. Once they have been on the bottom of the sea long enough they are pulled back onto the boat using a special kind of Crane  ", "score": 0.61420476, "categories": ["Fishing"], "title": "Alaskan king crab fishing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=River", "text": "\n\nA river is a stream of water that flows through a channel  in the surface of the ground. The passage where the river flows is called the river bed and the earth on each side is called a river bank. A river begins on high ground or in hills or mountains and flows down from the high ground to the lower ground, because of gravity. ", "score": 0.5144419, "categories": ["Basic English 850 words", "Rivers", "Biomes"], "title": "River"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Panjnad_River", "text": "Beas and Sutlej River ", "score": 0.44401783, "categories": ["Rivers of Pakistan", "Tributaries of the Indus River"], "title": "Panjnad River"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fishing_dredge", "text": "\n\nA fishing dredge, also known as a scallop dredge or an oyster dredge, is a kind of   then lift the dredge into the boat and empty it. In Europe, used to have \"teeth\" at the bottom, called tynes. These teeth raked or ploughed the sand and mud. This dug up buried clams. The New Bedford  dredge does not have teeth. ", "score": 0.44309622, "categories": ["Fishing"], "title": "Fishing dredge"}, {"url": "https://simple.wikipedia.org/w/index.php?title=River_dolphin", "text": "", "score": 0.41231066, "categories": ["River dolphins"], "title": "River dolphin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=River_Thames", "text": "The River Thames is a large river in England. It goes through London the capital city of the United Kingdom. source is Eton and then Windsor, England ", "score": 0.40052414, "categories": ["River Thames"], "title": "River Thames"}], "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", "filename": "CesarHarada_KidsScience_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=River_delta", 
+            "text": "\n\nA river delta is a landform where the mouth of a river flows into an ocean, sea, desert, estuary, lake or another river. It is formed by sediment carried by the river being deposited in the wider mouth. The flow of water is often slower-moving there. letter delta, \u0394 , in the Greek alphabet because a river delta resembles the shape of this letter. ", 
+            "score": 0.93297654, 
+            "categories": [
+                "River deltas"
+            ], 
+            "title": "River delta"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fishing", 
+            "text": "", 
+            "score": 0.9055959, 
+            "categories": [
+                "Fishing", 
+                "Survival skills"
+            ], 
+            "title": "Fishing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fly_fishing", 
+            "text": "synthetic sling materials. ==History==\nFly fishing probably began in ancient Egypt, but its modern form goes all the way back to the England of the second half of the 19th century. The local fishermen caught fish with live and later artificial insects. This method began to spread to the rest of Europe. ", 
+            "score": 0.7573809, 
+            "categories": [
+                "Fishing"
+            ], 
+            "title": "Fly fishing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Elevation", 
+            "text": "\nWhen talking about geography the elevation of a certain point is how high it is compared to some reference point. Very often, the reference point is mean sea level, the level of the ocean midway between high and low tide on an average day. Sometimes elevation is measured against the center of the earth. ", 
+            "score": 0.6318894, 
+            "categories": [
+                "Geography"
+            ], 
+            "title": "Elevation"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Alaskan_king_crab_fishing", 
+            "text": "fish for King Crabs. The people fish from boats between 40 and 250 feet in length. They throw steel cages, called pots, over the side of the boat, and the crabs are lured to bait placed in them. Once they have been on the bottom of the sea long enough they are pulled back onto the boat using a special kind of Crane  ", 
+            "score": 0.61420476, 
+            "categories": [
+                "Fishing"
+            ], 
+            "title": "Alaskan king crab fishing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=River", 
+            "text": "\n\nA river is a stream of water that flows through a channel  in the surface of the ground. The passage where the river flows is called the river bed and the earth on each side is called a river bank. A river begins on high ground or in hills or mountains and flows down from the high ground to the lower ground, because of gravity. ", 
+            "score": 0.5144419, 
+            "categories": [
+                "Basic English 850 words", 
+                "Rivers", 
+                "Biomes"
+            ], 
+            "title": "River"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Panjnad_River", 
+            "text": "Beas and Sutlej River ", 
+            "score": 0.44401783, 
+            "categories": [
+                "Rivers of Pakistan", 
+                "Tributaries of the Indus River"
+            ], 
+            "title": "Panjnad River"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fishing_dredge", 
+            "text": "\n\nA fishing dredge, also known as a scallop dredge or an oyster dredge, is a kind of   then lift the dredge into the boat and empty it. In Europe, used to have \"teeth\" at the bottom, called tynes. These teeth raked or ploughed the sand and mud. This dug up buried clams. The New Bedford  dredge does not have teeth. ", 
+            "score": 0.44309622, 
+            "categories": [
+                "Fishing"
+            ], 
+            "title": "Fishing dredge"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=River_dolphin", 
+            "text": "", 
+            "score": 0.41231066, 
+            "categories": [
+                "River dolphins"
+            ], 
+            "title": "River dolphin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=River_Thames", 
+            "text": "The River Thames is a large river in England. It goes through London the capital city of the United Kingdom. source is Eton and then Windsor, England ", 
+            "score": 0.40052414, 
+            "categories": [
+                "River Thames"
+            ], 
+            "title": "River Thames"
+        }
+    ], 
+    "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", 
+    "filename": "CesarHarada_KidsScience_2.txt"
+}

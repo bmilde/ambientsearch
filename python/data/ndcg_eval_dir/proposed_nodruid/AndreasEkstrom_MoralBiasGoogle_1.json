@@ -1,1 +1,128 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 0.527203, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Common_misconceptions", "text": "\n\n . Napoleon was taller than his nickname, The Little Corporal, suggests. feet 2&nbsp;inches French feet. international feet, or 1.686 metres. American slaves Thirteenth Amendment on June 19 1865 that slavery was officially abolished in all of the United States. Fascists came to power in 1922. Accounts from the era also suggest that the Italian railways legendary adherence to timetables was more myth than reality. ", "score": 0.52424735, "categories": ["Society", "Lists", "Knowledge"], "title": "Common misconceptions"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Michelle_Obama", "text": "", "score": 0.3332859, "categories": ["African-Americans", "African American lawyers", "First Ladies of the United States", "Barack Obama", "People from Chicago", "Obama family", "1964 births", "Living people"], "title": "Michelle Obama"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", "text": "", "score": 0.32727084, "categories": ["Google"], "title": "Google Play"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", "text": "", "score": 0.29540464, "categories": ["Google"], "title": "Google Chrome OS"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google+", "text": "", "score": 0.25942734, "categories": ["2011 establishments", "Google", "Social networking", "Web 2.0"], "title": "Google+"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Barack_Obama", "text": "", "score": 0.24433322, "categories": ["African American lawyers", "African American politicians", "American Christians", "American Nobel Prize winners", "Barack Obama", "Columbia University alumni", "Current national leaders", "Harvard University alumni", "Obama family", "Politicians from Honolulu", "Politicians from Chicago", "Presidents of the United States", "Time People of the Year", "US Democratic Party politicians", "United States presidential candidates, 2008", "United States presidential candidates, 2012", "United States senators from Illinois", "1961 births", "Living people"], "title": "Barack Obama"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.23306523, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", "text": "", "score": 0.23121922, "categories": ["Software", "Google"], "title": "Google Maps (application)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", "text": "", "score": 0.21513596, "categories": ["Web browsers", "Google"], "title": "Google Chrome"}], "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 0.527203, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Common_misconceptions", 
+            "text": "\n\n . Napoleon was taller than his nickname, The Little Corporal, suggests. feet 2&nbsp;inches French feet. international feet, or 1.686 metres. American slaves Thirteenth Amendment on June 19 1865 that slavery was officially abolished in all of the United States. Fascists came to power in 1922. Accounts from the era also suggest that the Italian railways legendary adherence to timetables was more myth than reality. ", 
+            "score": 0.52424735, 
+            "categories": [
+                "Society", 
+                "Lists", 
+                "Knowledge"
+            ], 
+            "title": "Common misconceptions"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Michelle_Obama", 
+            "text": "", 
+            "score": 0.3332859, 
+            "categories": [
+                "African-Americans", 
+                "African American lawyers", 
+                "First Ladies of the United States", 
+                "Barack Obama", 
+                "People from Chicago", 
+                "Obama family", 
+                "1964 births", 
+                "Living people"
+            ], 
+            "title": "Michelle Obama"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Play", 
+            "text": "", 
+            "score": 0.32727084, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Play"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", 
+            "text": "", 
+            "score": 0.29540464, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Chrome OS"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google+", 
+            "text": "", 
+            "score": 0.25942734, 
+            "categories": [
+                "2011 establishments", 
+                "Google", 
+                "Social networking", 
+                "Web 2.0"
+            ], 
+            "title": "Google+"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Barack_Obama", 
+            "text": "", 
+            "score": 0.24433322, 
+            "categories": [
+                "African American lawyers", 
+                "African American politicians", 
+                "American Christians", 
+                "American Nobel Prize winners", 
+                "Barack Obama", 
+                "Columbia University alumni", 
+                "Current national leaders", 
+                "Harvard University alumni", 
+                "Obama family", 
+                "Politicians from Honolulu", 
+                "Politicians from Chicago", 
+                "Presidents of the United States", 
+                "Time People of the Year", 
+                "US Democratic Party politicians", 
+                "United States presidential candidates, 2008", 
+                "United States presidential candidates, 2012", 
+                "United States senators from Illinois", 
+                "1961 births", 
+                "Living people"
+            ], 
+            "title": "Barack Obama"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.23306523, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Maps_(application)", 
+            "text": "", 
+            "score": 0.23121922, 
+            "categories": [
+                "Software", 
+                "Google"
+            ], 
+            "title": "Google Maps (application)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome", 
+            "text": "", 
+            "score": 0.21513596, 
+            "categories": [
+                "Web browsers", 
+                "Google"
+            ], 
+            "title": "Google Chrome"
+        }
+    ], 
+    "orig": "But if you complicate your question just a little bit and ask something like, \"Why is there an Israeli-Palestine conflict?\" You're not exactly looking for a singular fact anymore, you're looking for knowledge, which is something way more complicated and delicate. And to get to knowledge, you have to bring 10 or 20 or 100 facts to the table and acknowledge them and say, \"Yes, these are all true.\" But because of who I am, young or old, black or white, gay or straight, I will value them differently. And I will say, \"Yes, this is true, but this is more important to me than that.\" And this is where it becomes interesting, because this is where we become human. This is when we start to argue, to form society. And to really get somewhere, we need to filter all our facts here, through friends and neighbors and parents and children and coworkers and newspapers and magazines, to finally be grounded in real knowledge, which is something that a search engine is a poor help to achieve.\nSo, I promised you an example just to show you why it's so hard to get to the point of true, clean, objective knowledge -- as food for thought. I will conduct a couple of simple queries, search queries. We'll start with \"Michelle Obama,\" the First Lady of the United States. And we'll click for pictures. It works really well, as you can see. It's a perfect search result, more or less. It's just her in the picture, not even the President.\nHow does this work? Quite simple. Google uses a lot of smartness to achieve this, but quite simply, they look at two things more than anything. First, what does it say in the caption under the picture on each website? Does it say \"Michelle Obama\" under the picture? Pretty good indication it's actually her on there. Second, Google looks at the picture file, the name of the file as such uploaded to the website. Again, is it called \"MichelleObama.jpeg\"? Pretty good indication it's not Clint Eastwood in the picture. So, you've got those two and you get a search result like this -- almost.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_1.txt"
+}

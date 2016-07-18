@@ -1,1 +1,135 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", "text": "", "score": 0.2599777, "categories": ["September 11, 2001 attacks", "Conspiracy theories"], "title": "September 11 attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2011_Norway_attacks", "text": "", "score": 0.20996647, "categories": ["2011 crimes", "2011 in Europe", "21st century in Norway", "Christian terrorism", "Islamophobic attacks and incidents", "Massacres in Europe", "Murder in Europe", "Murder in the 2010s", "Oslo", "Terrorist incidents in the 2010s"], "title": "2011 Norway attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2012_U.S._diplomatic_missions_attacks", "text": "On September 11, 2012, the U.S. embassies in Cairo, Egypt; Chennai, India; Tunis, Tunisia; Khartoum, Sudan; Sanaa, Yemen, and the U.S. consulate in Benghazi, Libya were attacked. ==Protest and attack== American flag, replacing it with a black Islamist flag. In Libya, rocket-propelled grenades were fired at the consulate from a nearby farm. ", "score": 0.17895474, "categories": ["2012 in the United States", "21st century in Egypt", "21st century in India", "Assassinations", "Cairo", "Chennai", "History of Israel", "Islamic terrorist attacks", "Murder in 2012", "Murder in Africa", "Murder in Asia", "Protests", "Sudan", "Terrorist incidents in the 2010s", "Tunisia", "Yemen"], "title": "2012 U.S. diplomatic missions attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", "score": 0.1488819, "categories": ["September 11, 2001 attacks", "War"], "title": "Authorization for Use of Military Force Against Terrorists"}, {"url": "https://simple.wikipedia.org/w/index.php?title=1983_Beirut_barracks_bombing", "text": "The terrorist attack that happened during the Lebanese Civil War. Two truck bombs hit buildings houising French and American troops. In total, 299 people were killed. A group called Islamic Jihad Organization claimed responsibility for the attack. ", "score": 0.13376191, "categories": ["Lebanon", "Terrorist attacks"], "title": "1983 Beirut barracks bombing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_terrorist_incidents", "text": "The following is a timeline of acts and failed attempts that can be considered terrorism. Note: there is no single accepted definition of terrorism in common use. Incidents listed here are commonly called terrorism, or meet some of the commonly used criteria. ==17th century== English Parliament while King James I of England was there. ", "score": 0.123487115, "categories": ["History-related lists", "Terrorist attacks"], "title": "List of terrorist incidents"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Motorola", "text": "", "score": 0.08734951, "categories": ["1928 establishments", "1920s establishments in the United States", "2011 disestablishments in the United States", "20th century establishments in Illinois", "American technology companies", "Companies based in Illinois", "Companies listed on the New York Stock Exchange", "Telephone companies"], "title": "Motorola"}, {"url": "https://simple.wikipedia.org/w/index.php?title=ARM_architecture", "text": "ARM CPU architecture commonly used in embedded systems and mobile devices such as cell phones, smartphones, tablet computers, and handheld game consoles such as the Game Boy Advance. ARM CPUs use very little electricity and produce very little heat. Most ARM CPUs run on battery power and dont need a cooling fan. ", "score": 0.08113835, "categories": ["Computer processors"], "title": "ARM architecture"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2012_Benghazi_attack", "text": "Islamic militants Sean Smith terrorist attack. Ansar al-Sharia. The assault began about an hour later. There were seven Americans in the building at the time. Five were armed security officers. == Background ==\n===Libyan events===\nIn February 2011, a civil war broke out in Libya. A rebellion started against Muammar al-Gaddafi and his government. ", "score": 0.08051261, "categories": ["Benghazi", "Islamic terrorist attacks", "2012 deaths", "Murder in Africa"], "title": "2012 Benghazi attack"}, {"url": "https://simple.wikipedia.org/w/index.php?title=War", "text": "\n countries or other groups of people. War can hurt people on both sides. International law has tried to reduce the harmful effects of war. The signing of the Kellogg-Briand Pact and the development of the United Nations have tried to limit wars. Examples include: \n* \"armed conflict\", \n* \"state aggression by armed force\", or \n* \"crime against international peace.\" ", "score": 0.07858708, "categories": ["War", "Basic English 850 words"], "title": "War"}], "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", "filename": "DavidRothkopf_FearPolitics_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", 
+            "text": "", 
+            "score": 0.2599777, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "Conspiracy theories"
+            ], 
+            "title": "September 11 attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2011_Norway_attacks", 
+            "text": "", 
+            "score": 0.20996647, 
+            "categories": [
+                "2011 crimes", 
+                "2011 in Europe", 
+                "21st century in Norway", 
+                "Christian terrorism", 
+                "Islamophobic attacks and incidents", 
+                "Massacres in Europe", 
+                "Murder in Europe", 
+                "Murder in the 2010s", 
+                "Oslo", 
+                "Terrorist incidents in the 2010s"
+            ], 
+            "title": "2011 Norway attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2012_U.S._diplomatic_missions_attacks", 
+            "text": "On September 11, 2012, the U.S. embassies in Cairo, Egypt; Chennai, India; Tunis, Tunisia; Khartoum, Sudan; Sanaa, Yemen, and the U.S. consulate in Benghazi, Libya were attacked. ==Protest and attack== American flag, replacing it with a black Islamist flag. In Libya, rocket-propelled grenades were fired at the consulate from a nearby farm. ", 
+            "score": 0.17895474, 
+            "categories": [
+                "2012 in the United States", 
+                "21st century in Egypt", 
+                "21st century in India", 
+                "Assassinations", 
+                "Cairo", 
+                "Chennai", 
+                "History of Israel", 
+                "Islamic terrorist attacks", 
+                "Murder in 2012", 
+                "Murder in Africa", 
+                "Murder in Asia", 
+                "Protests", 
+                "Sudan", 
+                "Terrorist incidents in the 2010s", 
+                "Tunisia", 
+                "Yemen"
+            ], 
+            "title": "2012 U.S. diplomatic missions attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", 
+            "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", 
+            "score": 0.1488819, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "War"
+            ], 
+            "title": "Authorization for Use of Military Force Against Terrorists"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=1983_Beirut_barracks_bombing", 
+            "text": "The terrorist attack that happened during the Lebanese Civil War. Two truck bombs hit buildings houising French and American troops. In total, 299 people were killed. A group called Islamic Jihad Organization claimed responsibility for the attack. ", 
+            "score": 0.13376191, 
+            "categories": [
+                "Lebanon", 
+                "Terrorist attacks"
+            ], 
+            "title": "1983 Beirut barracks bombing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_terrorist_incidents", 
+            "text": "The following is a timeline of acts and failed attempts that can be considered terrorism. Note: there is no single accepted definition of terrorism in common use. Incidents listed here are commonly called terrorism, or meet some of the commonly used criteria. ==17th century== English Parliament while King James I of England was there. ", 
+            "score": 0.123487115, 
+            "categories": [
+                "History-related lists", 
+                "Terrorist attacks"
+            ], 
+            "title": "List of terrorist incidents"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Motorola", 
+            "text": "", 
+            "score": 0.08734951, 
+            "categories": [
+                "1928 establishments", 
+                "1920s establishments in the United States", 
+                "2011 disestablishments in the United States", 
+                "20th century establishments in Illinois", 
+                "American technology companies", 
+                "Companies based in Illinois", 
+                "Companies listed on the New York Stock Exchange", 
+                "Telephone companies"
+            ], 
+            "title": "Motorola"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=ARM_architecture", 
+            "text": "ARM CPU architecture commonly used in embedded systems and mobile devices such as cell phones, smartphones, tablet computers, and handheld game consoles such as the Game Boy Advance. ARM CPUs use very little electricity and produce very little heat. Most ARM CPUs run on battery power and dont need a cooling fan. ", 
+            "score": 0.08113835, 
+            "categories": [
+                "Computer processors"
+            ], 
+            "title": "ARM architecture"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2012_Benghazi_attack", 
+            "text": "Islamic militants Sean Smith terrorist attack. Ansar al-Sharia. The assault began about an hour later. There were seven Americans in the building at the time. Five were armed security officers. == Background ==\n===Libyan events===\nIn February 2011, a civil war broke out in Libya. A rebellion started against Muammar al-Gaddafi and his government. ", 
+            "score": 0.08051261, 
+            "categories": [
+                "Benghazi", 
+                "Islamic terrorist attacks", 
+                "2012 deaths", 
+                "Murder in Africa"
+            ], 
+            "title": "2012 Benghazi attack"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=War", 
+            "text": "\n countries or other groups of people. War can hurt people on both sides. International law has tried to reduce the harmful effects of war. The signing of the Kellogg-Briand Pact and the development of the United Nations have tried to limit wars. Examples include: \n* \"armed conflict\", \n* \"state aggression by armed force\", or \n* \"crime against international peace.\" ", 
+            "score": 0.07858708, 
+            "categories": [
+                "War", 
+                "Basic English 850 words"
+            ], 
+            "title": "War"
+        }
+    ], 
+    "orig": "On the security side, we've come out of a Cold War in which it was too costly to fight a nuclear war, and so we didn't, to a period that I call Cool War, cyber war, where the costs of conflict are actually so low, that we may never stop. We may enter a period of constant warfare, and we know this because we've been in it for several years. And yet, we don't have the basic doctrines to guide us in this regard. We don't have the basic ideas formulated. If someone attacks us with a cyber attack, do have the ability to respond with a kinetic attack? We don't know. If somebody launches a cyber attack, how do we deter them? When China launched a series of cyber attacks, what did the U.S. government do? It said, we're going to indict a few of these Chinese guys, who are never coming to America. They're never going to be anywhere near a law enforcement officer who's going to take them into custody. It's a gesture -- it's not a deterrent.\nSpecial forces operators out there in the field today discover that small groups of insurgents with cell phones have access to satellite imagery that once only superpowers had. In fact, if you've got a cell phone, you've got access to power that a superpower didn't have, and would have highly classified 10 years ago. In my cell phone, I have an app that tells me where every plane in the world is, and its altitude, and its speed, and what kind of aircraft it is, and where it's going and where it's landing. They have apps that allow them to know what their adversary is about to do. They're using these tools in new ways. When a cafe in Sydney was taken over by a terrorist, he went in with a rifle... and an iPad. And the weapon was the iPad. Because he captured people, he terrorized them, he pointed the iPad at them, and then he took the video and he put it on the Internet, and he took over the world's media.", 
+    "filename": "DavidRothkopf_FearPolitics_2.txt"
+}

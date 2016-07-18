@@ -1,1 +1,104 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", "score": 0.3603846, "categories": ["Energy", "Climate change", "Air pollution"], "title": "Global warming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", "score": 0.13927375, "categories": ["Climate change", "Environmental issues"], "title": "Global dimming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Thermal_efficiency", "text": "The dimensionless performance measure of a thermal device such as an internal combustion engine, a boiler, or a furnace, for example. The input,  Q_ \\, , to the device is heat, or the heat-content of a fuel that is consumed. The desired output is mechanical work  ", "score": 0.09925917, "categories": ["Thermodynamics", "Engineering"], "title": "Thermal efficiency"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Coefficient_of_thermal_expansion", "text": "Solids mostly  expand in response to heating and contract on cooling. This response to temperature change is expressed as its coefficient of thermal expansion. The coefficient of thermal expansion is used:\n*in linear thermal expansion\n*in area thermal expansion\n*in volumetric thermal expansion\n\nThese characteristics are closely related. ", "score": 0.090770215, "categories": ["Heat", "Physical quantity"], "title": "Coefficient of thermal expansion"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Isotherm", "text": "Isotherms are lines drawn around places with the same temperature range on isotherm maps. Each point on this line shows one temperature reading, or the average of many temperature readings. Isotherm maps also have scales that tell the signals or colors for the different temperatures. Isotherm lines are usually curvy and not staight lines. ", "score": 0.081345595, "categories": ["Meteorology", "Thermodynamics"], "title": "Isotherm"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Hot_spring", "text": "", "score": 0.07021408, "categories": ["Geology"], "title": "Hot spring"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Hyperthermophile", "text": " C  ", "score": 0.07013049, "categories": ["Extremophiles"], "title": "Hyperthermophile"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2052_-_A_Global_Forecast_for_the_Next_Forty_Years", "text": "2252 - A Global Forecast for the Next Forty Years is a description of trends in global development of J\u00f8rgen Randers, that is a follow-up of The Limits to Growth which in 1972 was the first known worldwide report to the Club of Rome. There are three differences to the previous report. First, it does not describe a disaster scenario, but shows only trends. ", "score": 0.067069665, "categories": ["2012 books", "Environment", "Economics"], "title": "2052 - A Global Forecast for the Next Forty Years"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Glazed_tile", "text": "A glazed tile is a form of art. It is when you take a tile, put chemical glazes on it and let it dry and put it into a kiln . The kiln heats to about 2000 degrees turning the chemical glaze to colors. It is often framed and sold. This is a popular form of art. Glazed tiles were used to make the roof  on buildings in China. ", "score": 0.06327696, "categories": ["Ceramics"], "title": "Glazed tile"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Arc_flash", "text": "Arc flash is an accidental electrical explosion usually caused by a short circuit. It usually happens at higher-voltages . It can cause the electrical conductors to melt creating an explosion of molten or even vaporized metal. Temperatures can be as high as 20000 degrees Celsius. Arc flash is one of the reasons it is so important to turn the power off before working on any high-voltage equipment. ", "score": 0.06327696, "categories": ["Electricity"], "title": "Arc flash"}], "orig": "Now, let's just pause for a moment and think about this four-degree global average temperature. Most of our planet is actually made up of the sea. Now, because the sea has a greater thermal inertia than the land, the average temperatures over land are actually going to be higher than they are over the sea. The second thing is that we as human beings don't experience global average temperatures. We experience hot days, cold days, rainy days, especially if you live in Manchester like me.\nSo now put yourself in a city center. Imagine somewhere in the world: Mumbai, Beijing, New York, London. It's the hottest day that you've ever experienced. There's sun beating down, there's concrete and glass all around you. Now imagine that same day -- but it's six, eight, maybe 10 to 12 degrees warmer on that day during that heat wave. That's the kind of thing we're going to experience under a four-degree global average temperature scenario.\nAnd the problem with these extremes, and not just the temperature extremes, but also the extremes in terms of storms and other climate impacts, is our infrastructure is just not set up to deal with these sorts of events. So our roads and our rail networks have been designed to last for a long time and withstand only certain amounts of impacts in different parts of the world. And this is going to be extremely challenged. Our power stations are expected to be cooled by water to a certain temperature to remain effective and resilient. And our buildings are designed to be comfortable within a particular temperature range. And this is all going to be significantly challenged under a four-degree-type scenario. Our infrastructure has not been designed to cope with this.", "filename": "AliceBowsLarkin_ClimateChange_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", 
+            "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", 
+            "score": 0.3603846, 
+            "categories": [
+                "Energy", 
+                "Climate change", 
+                "Air pollution"
+            ], 
+            "title": "Global warming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_dimming", 
+            "text": "unit area. One of the possible causes of global dimming is pollution. It affects the water cycle by decreasing evaporation and by decreasing the rain in some areas. Global dimming also causes the earth to cool down. This cooling effect may cover the effect of greenhouse gases caused by global warming. ", 
+            "score": 0.13927375, 
+            "categories": [
+                "Climate change", 
+                "Environmental issues"
+            ], 
+            "title": "Global dimming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Thermal_efficiency", 
+            "text": "The dimensionless performance measure of a thermal device such as an internal combustion engine, a boiler, or a furnace, for example. The input,  Q_ \\, , to the device is heat, or the heat-content of a fuel that is consumed. The desired output is mechanical work  ", 
+            "score": 0.09925917, 
+            "categories": [
+                "Thermodynamics", 
+                "Engineering"
+            ], 
+            "title": "Thermal efficiency"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Coefficient_of_thermal_expansion", 
+            "text": "Solids mostly  expand in response to heating and contract on cooling. This response to temperature change is expressed as its coefficient of thermal expansion. The coefficient of thermal expansion is used:\n*in linear thermal expansion\n*in area thermal expansion\n*in volumetric thermal expansion\n\nThese characteristics are closely related. ", 
+            "score": 0.090770215, 
+            "categories": [
+                "Heat", 
+                "Physical quantity"
+            ], 
+            "title": "Coefficient of thermal expansion"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Isotherm", 
+            "text": "Isotherms are lines drawn around places with the same temperature range on isotherm maps. Each point on this line shows one temperature reading, or the average of many temperature readings. Isotherm maps also have scales that tell the signals or colors for the different temperatures. Isotherm lines are usually curvy and not staight lines. ", 
+            "score": 0.081345595, 
+            "categories": [
+                "Meteorology", 
+                "Thermodynamics"
+            ], 
+            "title": "Isotherm"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hot_spring", 
+            "text": "", 
+            "score": 0.07021408, 
+            "categories": [
+                "Geology"
+            ], 
+            "title": "Hot spring"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hyperthermophile", 
+            "text": " C  ", 
+            "score": 0.07013049, 
+            "categories": [
+                "Extremophiles"
+            ], 
+            "title": "Hyperthermophile"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2052_-_A_Global_Forecast_for_the_Next_Forty_Years", 
+            "text": "2252 - A Global Forecast for the Next Forty Years is a description of trends in global development of J\u00f8rgen Randers, that is a follow-up of The Limits to Growth which in 1972 was the first known worldwide report to the Club of Rome. There are three differences to the previous report. First, it does not describe a disaster scenario, but shows only trends. ", 
+            "score": 0.067069665, 
+            "categories": [
+                "2012 books", 
+                "Environment", 
+                "Economics"
+            ], 
+            "title": "2052 - A Global Forecast for the Next Forty Years"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Glazed_tile", 
+            "text": "A glazed tile is a form of art. It is when you take a tile, put chemical glazes on it and let it dry and put it into a kiln . The kiln heats to about 2000 degrees turning the chemical glaze to colors. It is often framed and sold. This is a popular form of art. Glazed tiles were used to make the roof  on buildings in China. ", 
+            "score": 0.06327696, 
+            "categories": [
+                "Ceramics"
+            ], 
+            "title": "Glazed tile"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Arc_flash", 
+            "text": "Arc flash is an accidental electrical explosion usually caused by a short circuit. It usually happens at higher-voltages . It can cause the electrical conductors to melt creating an explosion of molten or even vaporized metal. Temperatures can be as high as 20000 degrees Celsius. Arc flash is one of the reasons it is so important to turn the power off before working on any high-voltage equipment. ", 
+            "score": 0.06327696, 
+            "categories": [
+                "Electricity"
+            ], 
+            "title": "Arc flash"
+        }
+    ], 
+    "orig": "Now, let's just pause for a moment and think about this four-degree global average temperature. Most of our planet is actually made up of the sea. Now, because the sea has a greater thermal inertia than the land, the average temperatures over land are actually going to be higher than they are over the sea. The second thing is that we as human beings don't experience global average temperatures. We experience hot days, cold days, rainy days, especially if you live in Manchester like me.\nSo now put yourself in a city center. Imagine somewhere in the world: Mumbai, Beijing, New York, London. It's the hottest day that you've ever experienced. There's sun beating down, there's concrete and glass all around you. Now imagine that same day -- but it's six, eight, maybe 10 to 12 degrees warmer on that day during that heat wave. That's the kind of thing we're going to experience under a four-degree global average temperature scenario.\nAnd the problem with these extremes, and not just the temperature extremes, but also the extremes in terms of storms and other climate impacts, is our infrastructure is just not set up to deal with these sorts of events. So our roads and our rail networks have been designed to last for a long time and withstand only certain amounts of impacts in different parts of the world. And this is going to be extremely challenged. Our power stations are expected to be cooled by water to a certain temperature to remain effective and resilient. And our buildings are designed to be comfortable within a particular temperature range. And this is all going to be significantly challenged under a four-degree-type scenario. Our infrastructure has not been designed to cope with this.", 
+    "filename": "AliceBowsLarkin_ClimateChange_2.txt"
+}

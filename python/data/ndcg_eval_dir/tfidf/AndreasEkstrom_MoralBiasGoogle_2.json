@@ -1,1 +1,114 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 0.42679068, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", "score": 0.2976531, "categories": ["Google", "Censorship"], "title": "Censorship by Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google", "text": "", "score": 0.18057157, "categories": ["1998 establishments in the United States", "Companies listed on NASDAQ", "Google", "Mountain View, California"], "title": "Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.17469835, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=SEOmoz", "text": "", "score": 0.15157257, "categories": ["Companies of the United States", "Technology companies", "2004 establishments"], "title": "SEOmoz"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", "score": 0.12819257, "categories": ["Terrorists", "Islamic terrorism"], "title": "Armed Islamic Group"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Zvonko_Bu\u0161i\u0107", "text": "Zvonko Bu\u0161i\u0107  is a terrorist,   mastermind of the 1976 hijacking of TWA Flight 355 and a bombing at Grand Central Station in New York. For this crime he was sentenced to the mandatory minimum term of life imprisonment. He spent 32 years in prison before being released on parole in July 2008. ==Background==\nBu\u0161i\u0107 was born in Gorica, a village in  . ", "score": 0.08708214, "categories": ["1946 births", "2013 deaths", "Suicides by firearm", "Terrorists"], "title": "Zvonko Bu\u0161i\u0107"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pay_per_click", "text": "Pay Per Click advertising on search engines such as Google and Bing. On Google the adverts are displayed either at the very top of the search results with an orange background, on the right hand side or in both these places. Advertisers pay Google each time someone clicks on their advert. It is often referred to by the letters PPC. ", "score": 0.08615735, "categories": ["Advertising"], "title": "Pay per click"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Campaign_for_\"santorum\"_neologism", "text": "The campaign for the neologism \"santorum\" started with a contest held in May 2003 by Dan Savage. Savage is a sex columnist and LGBT rights activist. He asked his readers to create a definition for the word \"santorum\"        in response to then-U.S. Senator Rick Santorums opinions about homosexuality, and comments about same sex marriage. ", "score": 0.055994477, "categories": ["Controversies", "Politics of the United States"], "title": "Campaign for \"santorum\" neologism"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Andreas_Baader", "text": "German terrorist. He was born in Munich and was one of the first leaders of the Baader-Meinhof gang, later it was called the Red Army Faction or RAF. == Start of the Baader-Meinhof gang ==\nIn 1968, Baader and his girlfriend Gudrun Ensslin were convicted of the setting fire to a department store in Frankfurt am Main. ", "score": 0.051422745, "categories": ["1943 births", "1977 deaths", "German communists", "German prisoners", "German terrorists", "People from Munich", "Red Army Faction", "Suicides by firearm in Germany"], "title": "Andreas Baader"}], "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 0.42679068, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Censorship_by_Google", 
+            "text": "Censorship by Google refers to Googles removal of information from its services to comply with censorship laws, company policies, etc. In 2002, Google censored search results about Scientology. ", 
+            "score": 0.2976531, 
+            "categories": [
+                "Google", 
+                "Censorship"
+            ], 
+            "title": "Censorship by Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google", 
+            "text": "", 
+            "score": 0.18057157, 
+            "categories": [
+                "1998 establishments in the United States", 
+                "Companies listed on NASDAQ", 
+                "Google", 
+                "Mountain View, California"
+            ], 
+            "title": "Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.17469835, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=SEOmoz", 
+            "text": "", 
+            "score": 0.15157257, 
+            "categories": [
+                "Companies of the United States", 
+                "Technology companies", 
+                "2004 establishments"
+            ], 
+            "title": "SEOmoz"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", 
+            "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", 
+            "score": 0.12819257, 
+            "categories": [
+                "Terrorists", 
+                "Islamic terrorism"
+            ], 
+            "title": "Armed Islamic Group"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Zvonko_Bu\u0161i\u0107", 
+            "text": "Zvonko Bu\u0161i\u0107  is a terrorist,   mastermind of the 1976 hijacking of TWA Flight 355 and a bombing at Grand Central Station in New York. For this crime he was sentenced to the mandatory minimum term of life imprisonment. He spent 32 years in prison before being released on parole in July 2008. ==Background==\nBu\u0161i\u0107 was born in Gorica, a village in  . ", 
+            "score": 0.08708214, 
+            "categories": [
+                "1946 births", 
+                "2013 deaths", 
+                "Suicides by firearm", 
+                "Terrorists"
+            ], 
+            "title": "Zvonko Bu\u0161i\u0107"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pay_per_click", 
+            "text": "Pay Per Click advertising on search engines such as Google and Bing. On Google the adverts are displayed either at the very top of the search results with an orange background, on the right hand side or in both these places. Advertisers pay Google each time someone clicks on their advert. It is often referred to by the letters PPC. ", 
+            "score": 0.08615735, 
+            "categories": [
+                "Advertising"
+            ], 
+            "title": "Pay per click"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Campaign_for_\"santorum\"_neologism", 
+            "text": "The campaign for the neologism \"santorum\" started with a contest held in May 2003 by Dan Savage. Savage is a sex columnist and LGBT rights activist. He asked his readers to create a definition for the word \"santorum\"        in response to then-U.S. Senator Rick Santorums opinions about homosexuality, and comments about same sex marriage. ", 
+            "score": 0.055994477, 
+            "categories": [
+                "Controversies", 
+                "Politics of the United States"
+            ], 
+            "title": "Campaign for \"santorum\" neologism"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Andreas_Baader", 
+            "text": "German terrorist. He was born in Munich and was one of the first leaders of the Baader-Meinhof gang, later it was called the Red Army Faction or RAF. == Start of the Baader-Meinhof gang ==\nIn 1968, Baader and his girlfriend Gudrun Ensslin were convicted of the setting fire to a department store in Frankfurt am Main. ", 
+            "score": 0.051422745, 
+            "categories": [
+                "1943 births", 
+                "1977 deaths", 
+                "German communists", 
+                "German prisoners", 
+                "German terrorists", 
+                "People from Munich", 
+                "Red Army Faction", 
+                "Suicides by firearm in Germany"
+            ], 
+            "title": "Andreas Baader"
+        }
+    ], 
+    "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"
+}

@@ -1,1 +1,107 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_gas", "text": ". Energy flows between outer space ", "score": 0.6336381, "categories": ["Greenhouse gases"], "title": "Greenhouse gas"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chemical_potential", "text": "Chemical potential energy is the energy stored up in substances due to their chemical bonds. It is energy that is stored in Chemical substance ", "score": 0.29822835, "categories": ["Energy"], "title": "Chemical potential"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Natural_gas_vehicle", "text": "A natural gas vehicle or NGV is an alternative fuel vehicle that uses  natural gas instead of other fossil fuels. == Natural gas ==\n\nNatural gas is a mixture. It consists mainly of hydrocarbons. The main component is methane. Natural gas is often found in the ground together with petroleum. ===Storage and Transport===\n\nThe main difficulty in the use of natural gas is transportation. ", "score": 0.20291989, "categories": ["Green vehicles"], "title": "Natural gas vehicle"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", "score": 0.15035747, "categories": ["Environment", "Green politics"], "title": "Carbon diet"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", "score": 0.14478001, "categories": ["1988 establishments", "International environmental organizations", "United Nations specialized agencies", "Climate change"], "title": "Intergovernmental Panel on Climate Change"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", "score": 0.13213111, "categories": ["Energy", "Climate change", "Air pollution"], "title": "Global warming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Serpa_solar_power_plant", "text": "photovoltaic system that uses silicon solar cell technology to convert sunlight directly into energy. The Serpa solar power plant uses 52,000 photovoltaic modules manufactured by SunPower, Sanyo, and Sharp. The plant uses a new tracking system that follows the Suns daily path across the sky. Generating electricity from the sun with no fuel costs or emissions, the Serpa plant is on a 60-hectare  hillside and is a model of clean power generation integrated with agriculture. ", "score": 0.11431805, "categories": ["Solar energy", "Portugal"], "title": "Serpa solar power plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_effect", "text": "The greenhouse effect occurs when certain gases in the Earths atmosphere  entraps infrared radiation. This makes the planet become warmer, similar to the way it makes a greenhouse become warmer. The greenhouse effect is caused by  , carbon dioxide, and methane. When there is more greenhouse gas in the air, the air holds more heat. ", "score": 0.112785734, "categories": ["Weather", "Climate change", "Greenhouse gases"], "title": "Greenhouse effect"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Solar_power_station_in_Victoria", "text": "A big new Solar power station in Victoria is planned. A company called Solar Systems has announced a large 154 MW photovoltaic  solar power station for north-western Victoria  ", "score": 0.08810611, "categories": ["Solar energy", "Buildings and structures in Victoria, Australia"], "title": "Solar power station in Victoria"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Oil_sands", "text": "Oil sands, or tar sands are an unconventional source of petroleum. The oil sands are a mixture of sand, clay and water together with a dense and extremely sticky form of petroleum referred to as bitumen. Natural bitumen is found in many countries, with the largest quantities in Canada, Kazakhstan and Russia. \n ", "score": 0.087161355, "categories": ["Oils", "Geology"], "title": "Oil sands"}], "orig": "Over our lifetimes, we've all contributed to climate change. Actions, choices and behaviors will have led to an increase in greenhouse gas emissions. And I think that that's quite a powerful thought. But it does have the potential to make us feel guilty when we think about decisions we might have made around where to travel to, how often and how, about the energy that we choose to use in our homes or in our workplaces, or quite simply the lifestyles that we lead and enjoy. But we can also turn that thought on its head, and think that if we've had such a profound but a negative impact on our climate already, then we have an opportunity to influence the amount of future climate change that we will need to adapt to.\nSo we have a choice. We can either choose to start to take climate change seriously, and significantly cut and mitigate our greenhouse gas emissions, and then we will have to adapt to less of the climate change impacts in future. Alternatively, we can continue to really ignore the climate change problem. But if we do that, we are also choosing to adapt to very much more powerful climate impacts in future. And not only that. As people who live in countries with high per capita emissions, we're making that choice on behalf of others as well. But the choice that we don't have is a no climate change future.", "filename": "AliceBowsLarkin_ClimateChange_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_gas", 
+            "text": ". Energy flows between outer space ", 
+            "score": 0.6336381, 
+            "categories": [
+                "Greenhouse gases"
+            ], 
+            "title": "Greenhouse gas"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chemical_potential", 
+            "text": "Chemical potential energy is the energy stored up in substances due to their chemical bonds. It is energy that is stored in Chemical substance ", 
+            "score": 0.29822835, 
+            "categories": [
+                "Energy"
+            ], 
+            "title": "Chemical potential"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Natural_gas_vehicle", 
+            "text": "A natural gas vehicle or NGV is an alternative fuel vehicle that uses  natural gas instead of other fossil fuels. == Natural gas ==\n\nNatural gas is a mixture. It consists mainly of hydrocarbons. The main component is methane. Natural gas is often found in the ground together with petroleum. ===Storage and Transport===\n\nThe main difficulty in the use of natural gas is transportation. ", 
+            "score": 0.20291989, 
+            "categories": [
+                "Green vehicles"
+            ], 
+            "title": "Natural gas vehicle"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Carbon_diet", 
+            "text": "Carbon diet is the process of reducing the production of greenhouse gas, primarily carbon dioxide, to reduce effects on climate change and global warming. Carbon dioxide is produced from heating, driving and consuming products. The production of carbon dioxide can be reduced by decreasing the intake of carbon, and eventually reduces the effects of climate change. ", 
+            "score": 0.15035747, 
+            "categories": [
+                "Environment", 
+                "Green politics"
+            ], 
+            "title": "Carbon diet"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Intergovernmental_Panel_on_Climate_Change", 
+            "text": "The Intergovernmental Panel on Climate Change  is a group of scientists chosen by governments and other large groups from around the world who study the chance that humans may make the Earth heat up nature ", 
+            "score": 0.14478001, 
+            "categories": [
+                "1988 establishments", 
+                "International environmental organizations", 
+                "United Nations specialized agencies", 
+                "Climate change"
+            ], 
+            "title": "Intergovernmental Panel on Climate Change"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", 
+            "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", 
+            "score": 0.13213111, 
+            "categories": [
+                "Energy", 
+                "Climate change", 
+                "Air pollution"
+            ], 
+            "title": "Global warming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Serpa_solar_power_plant", 
+            "text": "photovoltaic system that uses silicon solar cell technology to convert sunlight directly into energy. The Serpa solar power plant uses 52,000 photovoltaic modules manufactured by SunPower, Sanyo, and Sharp. The plant uses a new tracking system that follows the Suns daily path across the sky. Generating electricity from the sun with no fuel costs or emissions, the Serpa plant is on a 60-hectare  hillside and is a model of clean power generation integrated with agriculture. ", 
+            "score": 0.11431805, 
+            "categories": [
+                "Solar energy", 
+                "Portugal"
+            ], 
+            "title": "Serpa solar power plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Greenhouse_effect", 
+            "text": "The greenhouse effect occurs when certain gases in the Earths atmosphere  entraps infrared radiation. This makes the planet become warmer, similar to the way it makes a greenhouse become warmer. The greenhouse effect is caused by  , carbon dioxide, and methane. When there is more greenhouse gas in the air, the air holds more heat. ", 
+            "score": 0.112785734, 
+            "categories": [
+                "Weather", 
+                "Climate change", 
+                "Greenhouse gases"
+            ], 
+            "title": "Greenhouse effect"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Solar_power_station_in_Victoria", 
+            "text": "A big new Solar power station in Victoria is planned. A company called Solar Systems has announced a large 154 MW photovoltaic  solar power station for north-western Victoria  ", 
+            "score": 0.08810611, 
+            "categories": [
+                "Solar energy", 
+                "Buildings and structures in Victoria, Australia"
+            ], 
+            "title": "Solar power station in Victoria"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Oil_sands", 
+            "text": "Oil sands, or tar sands are an unconventional source of petroleum. The oil sands are a mixture of sand, clay and water together with a dense and extremely sticky form of petroleum referred to as bitumen. Natural bitumen is found in many countries, with the largest quantities in Canada, Kazakhstan and Russia. \n ", 
+            "score": 0.087161355, 
+            "categories": [
+                "Oils", 
+                "Geology"
+            ], 
+            "title": "Oil sands"
+        }
+    ], 
+    "orig": "Over our lifetimes, we've all contributed to climate change. Actions, choices and behaviors will have led to an increase in greenhouse gas emissions. And I think that that's quite a powerful thought. But it does have the potential to make us feel guilty when we think about decisions we might have made around where to travel to, how often and how, about the energy that we choose to use in our homes or in our workplaces, or quite simply the lifestyles that we lead and enjoy. But we can also turn that thought on its head, and think that if we've had such a profound but a negative impact on our climate already, then we have an opportunity to influence the amount of future climate change that we will need to adapt to.\nSo we have a choice. We can either choose to start to take climate change seriously, and significantly cut and mitigate our greenhouse gas emissions, and then we will have to adapt to less of the climate change impacts in future. Alternatively, we can continue to really ignore the climate change problem. But if we do that, we are also choosing to adapt to very much more powerful climate impacts in future. And not only that. As people who live in countries with high per capita emissions, we're making that choice on behalf of others as well. But the choice that we don't have is a no climate change future.", 
+    "filename": "AliceBowsLarkin_ClimateChange_0.txt"
+}

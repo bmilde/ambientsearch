@@ -1,1 +1,112 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=A_Brief_History_of_Time", "text": "", "score": 0.6133163, "categories": ["1988 books", "Science books"], "title": "A Brief History of Time"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Bisphenol_A", "text": "", "score": 0.5041385, "categories": ["Hormones"], "title": "Bisphenol A"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_Latin_phrases_(A)", "text": "== A ==\n ", "score": 0.49517107, "categories": ["Latin words and phrases", "Language-related lists"], "title": "List of Latin phrases (A)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chester_A._Arthur", "text": "", "score": 0.44558692, "categories": ["1830 births", "1886 deaths", "Deaths from stroke", "US Republican Party politicians", "Vice Presidents of the United States", "Chester A. Arthur", "Politicians from Vermont"], "title": "Chester A. Arthur"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Limit_of_a_function", "text": "In function near a selected input value for that function. Limits are one of the main calculus topics, along with derivatives,  integration, and differential equations. == Definition of the limit ==\n\nThe definition of the limit is as follows:\n:If the function  f  approaches a number  L  as  x  approaches a number  c , then   \\lim_f = L, \\,  \n\nThe notation for the limit above is read as \"The limit of  f  as  x  approaches  c  is  L .\" ", "score": 0.43987703, "categories": ["Mathematics"], "title": "Limit of a function"}, {"url": "https://simple.wikipedia.org/w/index.php?title=A_Hard_Day's_Night", "text": "", "score": 0.41533777, "categories": ["The Beatles albums", "1964 albums", "Rock and roll albums"], "title": "A Hard Day's Night"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Military\u2013industrial_complex", "text": "The military\u2013industrial complex refers to the relationship between the government, the military, and the businesses that make things for the military. For example, the businesses can give money to politicians in elections. Then, politicians give more money to the military. Then, the military buys things from the businesses. ", "score": 0.37761378, "categories": ["Military-industrial complex"], "title": "Military\u2013industrial complex"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Rebel_Without_a_Cause", "text": "American drama movie directed by Nicholas Ray. It was produced by David Weisbart. It was written by Stewart Scott and Irving Shulman. It stars James Dean, Natalie Wood, and Sal Mineo. It was released on October 27, 1955. ", "score": 0.3735087, "categories": ["1955 movies", "1950s drama movies", "American teen drama movies", "English language movies", "Movies set in Los Angeles, California"], "title": "Rebel Without a Cause"}, {"url": "https://simple.wikipedia.org/w/index.php?title=A_Prairie_Home_Companion_(movie)", "text": "A Prairie Home Companion is a 2006 American ensemble comedy movie. It was directed by Robert Altman. It was Altmans last movie before he died in November 2006. The movie is a fictional story of behind-the-scenes activities at the long-running public radio show A Prairie Home Companion. == Plot ==\n\nA long-running live   at the end of the movie, the former cast members are reunited at Mickeys Diner. ", "score": 0.3724889, "categories": ["2006 movies", "2000s comedy movies", "American comedy movies"], "title": "A Prairie Home Companion (movie)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=A_Child_of_Our_Time", "text": "A Child of Our Time is an oratorio by Michael Tippett. It was composed between 1939 and 1941. ==Why Tippett wrote this oratorio==\n\nTippett composed this oratorio at the beginning of World War II. He had already lived through World War I and he was very upset about all the evil in this world. He wanted to write a musical work about it. ", "score": 0.36881945, "categories": ["Oratorios"], "title": "A Child of Our Time"}], "orig": "But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death.\nSo this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.", "filename": "AliceBowsLarkin_ClimateChange_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=A_Brief_History_of_Time", 
+            "text": "", 
+            "score": 0.6133163, 
+            "categories": [
+                "1988 books", 
+                "Science books"
+            ], 
+            "title": "A Brief History of Time"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Bisphenol_A", 
+            "text": "", 
+            "score": 0.5041385, 
+            "categories": [
+                "Hormones"
+            ], 
+            "title": "Bisphenol A"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_Latin_phrases_(A)", 
+            "text": "== A ==\n ", 
+            "score": 0.49517107, 
+            "categories": [
+                "Latin words and phrases", 
+                "Language-related lists"
+            ], 
+            "title": "List of Latin phrases (A)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chester_A._Arthur", 
+            "text": "", 
+            "score": 0.44558692, 
+            "categories": [
+                "1830 births", 
+                "1886 deaths", 
+                "Deaths from stroke", 
+                "US Republican Party politicians", 
+                "Vice Presidents of the United States", 
+                "Chester A. Arthur", 
+                "Politicians from Vermont"
+            ], 
+            "title": "Chester A. Arthur"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Limit_of_a_function", 
+            "text": "In function near a selected input value for that function. Limits are one of the main calculus topics, along with derivatives,  integration, and differential equations. == Definition of the limit ==\n\nThe definition of the limit is as follows:\n:If the function  f  approaches a number  L  as  x  approaches a number  c , then   \\lim_f = L, \\,  \n\nThe notation for the limit above is read as \"The limit of  f  as  x  approaches  c  is  L .\" ", 
+            "score": 0.43987703, 
+            "categories": [
+                "Mathematics"
+            ], 
+            "title": "Limit of a function"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=A_Hard_Day's_Night", 
+            "text": "", 
+            "score": 0.41533777, 
+            "categories": [
+                "The Beatles albums", 
+                "1964 albums", 
+                "Rock and roll albums"
+            ], 
+            "title": "A Hard Day's Night"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Military\u2013industrial_complex", 
+            "text": "The military\u2013industrial complex refers to the relationship between the government, the military, and the businesses that make things for the military. For example, the businesses can give money to politicians in elections. Then, politicians give more money to the military. Then, the military buys things from the businesses. ", 
+            "score": 0.37761378, 
+            "categories": [
+                "Military-industrial complex"
+            ], 
+            "title": "Military\u2013industrial complex"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Rebel_Without_a_Cause", 
+            "text": "American drama movie directed by Nicholas Ray. It was produced by David Weisbart. It was written by Stewart Scott and Irving Shulman. It stars James Dean, Natalie Wood, and Sal Mineo. It was released on October 27, 1955. ", 
+            "score": 0.3735087, 
+            "categories": [
+                "1955 movies", 
+                "1950s drama movies", 
+                "American teen drama movies", 
+                "English language movies", 
+                "Movies set in Los Angeles, California"
+            ], 
+            "title": "Rebel Without a Cause"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=A_Prairie_Home_Companion_(movie)", 
+            "text": "A Prairie Home Companion is a 2006 American ensemble comedy movie. It was directed by Robert Altman. It was Altmans last movie before he died in November 2006. The movie is a fictional story of behind-the-scenes activities at the long-running public radio show A Prairie Home Companion. == Plot ==\n\nA long-running live   at the end of the movie, the former cast members are reunited at Mickeys Diner. ", 
+            "score": 0.3724889, 
+            "categories": [
+                "2006 movies", 
+                "2000s comedy movies", 
+                "American comedy movies"
+            ], 
+            "title": "A Prairie Home Companion (movie)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=A_Child_of_Our_Time", 
+            "text": "A Child of Our Time is an oratorio by Michael Tippett. It was composed between 1939 and 1941. ==Why Tippett wrote this oratorio==\n\nTippett composed this oratorio at the beginning of World War II. He had already lived through World War I and he was very upset about all the evil in this world. He wanted to write a musical work about it. ", 
+            "score": 0.36881945, 
+            "categories": [
+                "Oratorios"
+            ], 
+            "title": "A Child of Our Time"
+        }
+    ], 
+    "orig": "But dangerous climate change can be subjective. So if we think about an extreme weather event that might happen in some part of the world, and if that happens in a part of the world where there is good infrastructure, where there are people that are well-insured and so on, then that impact can be disruptive. It can cause upset, it could cause cost. It could even cause some deaths. But if that exact same weather event happens in a part of the world where there is poor infrastructure, or where people are not well-insured, or they're not having good support networks, then that same climate change impact could be devastating. It could cause a significant loss of home, but it could also cause significant amounts of death.\nSo this is a graph of the CO2 emissions at the left-hand side from fossil fuel and industry, and time from before the Industrial Revolution out towards the present day. And what's immediately striking about this is that emissions have been growing exponentially. If we focus in on a shorter period of time from 1950, we have established in 1988 the Intergovernmental Panel on Climate Change, the Rio Earth Summit in 1992, then rolling on a few years, in 2009 we had the Copenhagen Accord, where it established avoiding a two-degree temperature rise in keeping with the science and on the basis of equity. And then in 2012, we had the Rio+20 event. And all the way through, during all of these meetings and many others as well, emissions have continued to rise. And if we focus on our historical emission trend in recent years, and we put that together with our understanding of the direction of travel in our global economy, then we are much more on track for a four-degree centigrade global warming than we are for the two-degree centigrade.", 
+    "filename": "AliceBowsLarkin_ClimateChange_1.txt"
+}

@@ -1,1 +1,105 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Coal_preparation_plant", "text": "\n\nA coal preparation plant  is a place where   for use after it has been Coal mining ", "score": 0.37177956, "categories": ["Coal mining"], "title": "Coal preparation plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Coal_mining", "text": "resource for making electricity. ==Extraction==\nSurface mining is done when the coal is near the surface. Coal miners remove the soil above the coal. The coal can then be removed without the coal miners having to go deep underground. Underground mining is when the coal is farther underground, making it too expensive to remove soil. ", "score": 0.3695912, "categories": ["Coal mining"], "title": "Coal mining"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Plant", "text": "", "score": 0.2762642, "categories": ["Basic English 850 words", "Plants"], "title": "Plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Nickel(II)_carbonate", "text": "Nickel carbonate, also known as nickelous carbonate, is a chemical compound. Its chemical formula is NiCO 3 . It contains nickel in its +2 oxidation state. It also contains carbonate ions. ==Properties==\nNickel carbonate is a pale green solid. It does not dissolve in water. It reacts with acids to make carbon dioxide. ", "score": 0.25351122, "categories": ["Nickel compounds", "Carbonates"], "title": "Nickel(II) carbonate"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Base_load_power_plant", "text": "\n power generation load it supplies. Examples of base load power plants are coal-fired power plant, geothermal power plant, tidal power plant, nuclear power plant, etc. ==Related pages==\n* Load following power plant\n* Peaking power plant ", "score": 0.25098145, "categories": ["Power plants"], "title": "Base load power plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Coal", "text": "\n\nUnder suitable conditions, plant material is transformed step by step into\n# Peat, which has industrial importance as a fuel in some regions, for example, Ireland and Finland. In its dehydrated form, peat is a highly effective absorbent for fuel and oil spills on land and water Jet is a compact form of lignite that is sometimes polished and has long been used as an ornamental stone. ", "score": 0.2370231, "categories": ["Basic English 850 words", "Fuel", "Sedimentary rocks", "Environmental issues"], "title": "Coal"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Lepidodendron", "text": "", "score": 0.23337097, "categories": ["Fossil plants", "Vascular plants", "Carboniferous", "Extinct plants"], "title": "Lepidodendron"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Thermal_power_plant", "text": "\n\nA Thermal power plant is a power plant where steam is used to drive a steam turbine. This turbine is connected to an electrical generator. After this, the water is condensation ", "score": 0.22732182, "categories": ["Power plants"], "title": "Thermal power plant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fossil-fuel_power_station", "text": "\nA fossil-fuel power station is a power station that makes electricity by burning certain fuels. Its machines change the heat energy that comes from burning the fuels into mechanical energy. The mechanical energy is then used to work an electrical generator. The generator makes the electricity. The fuels used in these kind of power stations are fossil fuels, such as coal and natural gas. ", "score": 0.22224672, "categories": ["Power plants"], "title": "Fossil-fuel power station"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Xanthophyll", "text": "\nXanthophylls are types of yellow pigments that can be seen in natural objects. They are found in the leaves of most green plants. They are difficult to see in a healthy leaf, because chlorophyll pigments make the leaf green. Unlike chlorophyll, however, xanthophylls do not need light for production. ", "score": 0.20690489, "categories": ["Pigments", "Botany"], "title": "Xanthophyll"}], "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", "filename": "CesarHarada_KidsScience_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Coal_preparation_plant", 
+            "text": "\n\nA coal preparation plant  is a place where   for use after it has been Coal mining ", 
+            "score": 0.37177956, 
+            "categories": [
+                "Coal mining"
+            ], 
+            "title": "Coal preparation plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Coal_mining", 
+            "text": "resource for making electricity. ==Extraction==\nSurface mining is done when the coal is near the surface. Coal miners remove the soil above the coal. The coal can then be removed without the coal miners having to go deep underground. Underground mining is when the coal is farther underground, making it too expensive to remove soil. ", 
+            "score": 0.3695912, 
+            "categories": [
+                "Coal mining"
+            ], 
+            "title": "Coal mining"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Plant", 
+            "text": "", 
+            "score": 0.2762642, 
+            "categories": [
+                "Basic English 850 words", 
+                "Plants"
+            ], 
+            "title": "Plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Nickel(II)_carbonate", 
+            "text": "Nickel carbonate, also known as nickelous carbonate, is a chemical compound. Its chemical formula is NiCO 3 . It contains nickel in its +2 oxidation state. It also contains carbonate ions. ==Properties==\nNickel carbonate is a pale green solid. It does not dissolve in water. It reacts with acids to make carbon dioxide. ", 
+            "score": 0.25351122, 
+            "categories": [
+                "Nickel compounds", 
+                "Carbonates"
+            ], 
+            "title": "Nickel(II) carbonate"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Base_load_power_plant", 
+            "text": "\n power generation load it supplies. Examples of base load power plants are coal-fired power plant, geothermal power plant, tidal power plant, nuclear power plant, etc. ==Related pages==\n* Load following power plant\n* Peaking power plant ", 
+            "score": 0.25098145, 
+            "categories": [
+                "Power plants"
+            ], 
+            "title": "Base load power plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Coal", 
+            "text": "\n\nUnder suitable conditions, plant material is transformed step by step into\n# Peat, which has industrial importance as a fuel in some regions, for example, Ireland and Finland. In its dehydrated form, peat is a highly effective absorbent for fuel and oil spills on land and water Jet is a compact form of lignite that is sometimes polished and has long been used as an ornamental stone. ", 
+            "score": 0.2370231, 
+            "categories": [
+                "Basic English 850 words", 
+                "Fuel", 
+                "Sedimentary rocks", 
+                "Environmental issues"
+            ], 
+            "title": "Coal"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Lepidodendron", 
+            "text": "", 
+            "score": 0.23337097, 
+            "categories": [
+                "Fossil plants", 
+                "Vascular plants", 
+                "Carboniferous", 
+                "Extinct plants"
+            ], 
+            "title": "Lepidodendron"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Thermal_power_plant", 
+            "text": "\n\nA Thermal power plant is a power plant where steam is used to drive a steam turbine. This turbine is connected to an electrical generator. After this, the water is condensation ", 
+            "score": 0.22732182, 
+            "categories": [
+                "Power plants"
+            ], 
+            "title": "Thermal power plant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fossil-fuel_power_station", 
+            "text": "\nA fossil-fuel power station is a power station that makes electricity by burning certain fuels. Its machines change the heat energy that comes from burning the fuels into mechanical energy. The mechanical energy is then used to work an electrical generator. The generator makes the electricity. The fuels used in these kind of power stations are fossil fuels, such as coal and natural gas. ", 
+            "score": 0.22224672, 
+            "categories": [
+                "Power plants"
+            ], 
+            "title": "Fossil-fuel power station"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Xanthophyll", 
+            "text": "\nXanthophylls are types of yellow pigments that can be seen in natural objects. They are found in the leaves of most green plants. They are difficult to see in a healthy leaf, because chlorophyll pigments make the leaf green. Unlike chlorophyll, however, xanthophylls do not need light for production. ", 
+            "score": 0.20690489, 
+            "categories": [
+                "Pigments", 
+                "Botany"
+            ], 
+            "title": "Xanthophyll"
+        }
+    ], 
+    "orig": "But every night we would report to \"Mission Control\" -- different masks they're wearing. It could look like they didn't take the work seriously, but they really did because they're going to have to live with radioactivity their whole life. And so what we did with them is that we'd discuss the data we collected that day, and talk about where we should be going next -- strategy, itinerary, etc... And to do this, we built a very rough topographical map of the region around the nuclear power plant. And so we built the elevation map, we sprinkled pigments to represent real-time data for radioactivity, and we sprayed water to simulate the rainfall. And with this we could see that the radioactive dust was washing from the top of the mountain into the river system, and leaking into the ocean. So it was a rough estimate.\nBut with this in mind, we organized this expedition, which was the closest civilians have been to the nuclear power plant. We are sailing 1.5 kilometers away from the nuclear power plant, and with the help of the local fisherman, we are collecting sediment from the seabed with a custom sediment sampler we've invented and built. We pack the sediment into small bags, we then dispatch them to hundreds of small bags that we send to different universities, and we produce the map of the seabed radioactivity, especially in estuaries where the fish will reproduce, and I will hope that we will have improved the safety of the local fishermen and of your favorite sushi.", 
+    "filename": "CesarHarada_KidsScience_2.txt"
+}

@@ -1,1 +1,110 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Bitcoin", "text": "", "score": 0.47207537, "categories": ["2009 establishments", "Commerce", "Currency", "Technology"], "title": "Bitcoin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Norton_Internet_Security", "text": "", "score": 0.031466912, "categories": ["Antivirus software"], "title": "Norton Internet Security"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Universal_Serial_Bus", "text": "electronic device serial computer bus ", "score": 0.027525866, "categories": ["Computer hardware"], "title": "Universal Serial Bus"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Abraham_Lincoln_Presidential_Library_and_Museum", "text": "The Abraham Lincoln Presidential Library and Museum is a   of Lincoln, such as the first copy of the Gettysburg Address. The librarys founding director was Richard Norton Smith, who wrote several books on American presidents. Its current director is Eileen R. Mackevich. Run by the state of Illinois, the library opened on April 19, 2005. ", "score": 0.023701547, "categories": ["Abraham Lincoln", "Museums in the United States", "Buildings and structures in Springfield, Illinois", "Presidential libraries"], "title": "Abraham Lincoln Presidential Library and Museum"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Website", "text": "web servers. There is almost always a single   page of a website. Websites can be used to advertise or sell things. They can also be used to talk to other people. A blog is a website where the location of the material is less relevant than who writes it, and which is more focused on dialogue. Very often the people who use blogs dislike the word \"site\" since it implies a controlled place. ", "score": 0.019790685, "categories": ["Websites"], "title": "Website"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", "score": 0.017892273, "categories": ["Computer science", "Internet", "Computer networking", "Metaphors"], "title": "Cloud computing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Instant_messaging", "text": "Instant messaging  is a way of chatting between two or more people by typing text. The text is then sent by computers over a network such as the Internet. Instant messaging must have an instant messaging client that hooks up to a service that can send instant messages. Instant messaging is different from e-mail because conversations happen and can be read right away . ", "score": 0.016068349, "categories": ["Instant messaging software", "Messaging"], "title": "Instant messaging"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gettysburg,_Pennsylvania", "text": "", "score": 0.011850773, "categories": ["County seats in Pennsylvania", "Gettysburg, Pennsylvania", "Boroughs in Pennsylvania"], "title": "Gettysburg, Pennsylvania"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Point_Grey_Secondary_School", "text": "", "score": 0.011850773, "categories": ["British Columbia"], "title": "Point Grey Secondary School"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Lisbon", "text": "", "score": 0.010157806, "categories": ["Phoenician colonies", "Lisbon", "Cities with more than 500,000 inhabitants"], "title": "Lisbon"}], "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", "filename": "JamieBartlett_DarkNet_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Bitcoin", 
+            "text": "", 
+            "score": 0.47207537, 
+            "categories": [
+                "2009 establishments", 
+                "Commerce", 
+                "Currency", 
+                "Technology"
+            ], 
+            "title": "Bitcoin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Norton_Internet_Security", 
+            "text": "", 
+            "score": 0.031466912, 
+            "categories": [
+                "Antivirus software"
+            ], 
+            "title": "Norton Internet Security"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Universal_Serial_Bus", 
+            "text": "electronic device serial computer bus ", 
+            "score": 0.027525866, 
+            "categories": [
+                "Computer hardware"
+            ], 
+            "title": "Universal Serial Bus"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Abraham_Lincoln_Presidential_Library_and_Museum", 
+            "text": "The Abraham Lincoln Presidential Library and Museum is a   of Lincoln, such as the first copy of the Gettysburg Address. The librarys founding director was Richard Norton Smith, who wrote several books on American presidents. Its current director is Eileen R. Mackevich. Run by the state of Illinois, the library opened on April 19, 2005. ", 
+            "score": 0.023701547, 
+            "categories": [
+                "Abraham Lincoln", 
+                "Museums in the United States", 
+                "Buildings and structures in Springfield, Illinois", 
+                "Presidential libraries"
+            ], 
+            "title": "Abraham Lincoln Presidential Library and Museum"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Website", 
+            "text": "web servers. There is almost always a single   page of a website. Websites can be used to advertise or sell things. They can also be used to talk to other people. A blog is a website where the location of the material is less relevant than who writes it, and which is more focused on dialogue. Very often the people who use blogs dislike the word \"site\" since it implies a controlled place. ", 
+            "score": 0.019790685, 
+            "categories": [
+                "Websites"
+            ], 
+            "title": "Website"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cloud_computing", 
+            "text": "electricity supply is outsourced. Users can simply use it. They do not need to worry where the electricity is from, how it is made, or transported. Every month, they pay for what they consumed. as a service\u201d,  allowing users to access technology-enabled services from the Internet   without knowledge of, or control over the technologies behind these servers. ", 
+            "score": 0.017892273, 
+            "categories": [
+                "Computer science", 
+                "Internet", 
+                "Computer networking", 
+                "Metaphors"
+            ], 
+            "title": "Cloud computing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Instant_messaging", 
+            "text": "Instant messaging  is a way of chatting between two or more people by typing text. The text is then sent by computers over a network such as the Internet. Instant messaging must have an instant messaging client that hooks up to a service that can send instant messages. Instant messaging is different from e-mail because conversations happen and can be read right away . ", 
+            "score": 0.016068349, 
+            "categories": [
+                "Instant messaging software", 
+                "Messaging"
+            ], 
+            "title": "Instant messaging"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gettysburg,_Pennsylvania", 
+            "text": "", 
+            "score": 0.011850773, 
+            "categories": [
+                "County seats in Pennsylvania", 
+                "Gettysburg, Pennsylvania", 
+                "Boroughs in Pennsylvania"
+            ], 
+            "title": "Gettysburg, Pennsylvania"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Point_Grey_Secondary_School", 
+            "text": "", 
+            "score": 0.011850773, 
+            "categories": [
+                "British Columbia"
+            ], 
+            "title": "Point Grey Secondary School"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Lisbon", 
+            "text": "", 
+            "score": 0.010157806, 
+            "categories": [
+                "Phoenician colonies", 
+                "Lisbon", 
+                "Cities with more than 500,000 inhabitants"
+            ], 
+            "title": "Lisbon"
+        }
+    ], 
+    "orig": "You browse through the site, you make your choice, you pay with the crypto-currency bitcoin, you enter an address -- preferably not your home address -- and you wait for your product to arrive in the post, which it nearly always does. And the reason it does is not because of the clever encryption. That's important. Something far simpler than that. It's the user reviews.\nYou see, every single vendor on these sites uses a pseudonym, naturally enough, but they keep the same pseudonym to build up a reputation. And because it's easy for the buyer to change allegiance whenever they want, the only way of trusting a vendor is if they have a good history of positive feedback from other users of the site.\nAnd this introduction of competition and choice does exactly what the economists would predict. Prices tend to go down, product quality tends to go up, and the vendors are attentive, they're polite, they're consumer-centric, offering you all manner of special deals, one-offs, buy-one-get-one-frees, free delivery, to keep you happy.", 
+    "filename": "JamieBartlett_DarkNet_1.txt"
+}

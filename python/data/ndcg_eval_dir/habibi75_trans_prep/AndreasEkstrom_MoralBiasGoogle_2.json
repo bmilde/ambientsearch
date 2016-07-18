@@ -1,1 +1,102 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", "text": "", "score": 2.2954092, "categories": ["Google"], "title": "Google Search"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google", "text": "", "score": 1.3428725, "categories": ["1998 establishments in the United States", "Companies listed on NASDAQ", "Google", "Mountain View, California"], "title": "Google"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Translate", "text": "Google Translate is a free translation service that provides instant translations between 103 different languages. It can translate words, sentences, and web pages between any combination of our supported languages. It was launched on April 28, 2006. ==Languages==\nGoogle Translate currently supports 103 languages:\n  Afrikaans\n*Albanian Albanian\n*Amharic Amharic\n*Arabic Arabic\n*Armenian Armenian\n*Azerbaijani Azerbaijani\n*Basque Basque\n*Belarusian Belarusian\n*Bengali Bengali\n*Bosnian Bosnian\n*Bulgarian Bulgarian\n*Catalan Catalan\n*Cebuano Cebuano\n*Chichewa Chichewa\n*Chinese Chinese\n*Corsican Corsican\n*Croatian Croatian\n*Czech Czech\n*Danish Danish\n*Dutch Dutch\n*English English\n*Esperanto Estonian\n*Filipino Filipino\n*Finnish Finnish\n*French French\n*Galician Galician\n*Georgian Georgian\n*German German\n*Greek Greek\n*Gujarati Gujarati\n*Haitian Creole Hausa\n*Hawaiian Hawaiian\n*Hebrew Hebrew\n*Hindi Hindi\n*Hmong Hmong\n*Hungarian Hungarian\n*Icelandic Icelandic\n*Igbo Igbo\n*Indonesian Indonesian\n*Irish Irish\n*Italian Italian\n*Japanese Japanese\n*Javanese Javanese\n*Kannada Kannada\n*Kazakh Kazakh\n*Khmer Khmer\n*Korean Korean\n*Kurdish Kurdish  ", "score": 1.2943397, "categories": ["Google"], "title": "Google Translate"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google+", "text": "", "score": 1.101739, "categories": ["2011 establishments", "Google", "Social networking", "Web 2.0"], "title": "Google+"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Talk", "text": "Google Voice over IP and instant messaging, offered by Google. It is built on the XMPP platform. A web-based version is also available online. == Other websites ==\n* ", "score": 0.93894845, "categories": ["Google"], "title": "Google Talk"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", "score": 0.8976092, "categories": ["Google"], "title": "Google Videos"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Picasa", "text": "", "score": 0.89339733, "categories": ["Google"], "title": "Google Picasa"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Sidewiki", "text": "Google Sidewiki is an online service from Google launched on September 23, 2009. Google Sidewiki is an extension for web browser. You have Sidewiki for Internet Explorer and Firefox through Google Toolbar. You have Sidewiki for Google Chrome browser through an add-on. You have Sidewiki for other browsers like Safari as a bookmarklet. ", "score": 0.8920149, "categories": ["Google"], "title": "Google Sidewiki"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Knol", "text": "", "score": 0.8857157, "categories": ["Google"], "title": "Knol"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", "text": "", "score": 0.8188898, "categories": ["Google"], "title": "Google Chrome OS"}], "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Search", 
+            "text": "", 
+            "score": 2.2954092, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Search"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google", 
+            "text": "", 
+            "score": 1.3428725, 
+            "categories": [
+                "1998 establishments in the United States", 
+                "Companies listed on NASDAQ", 
+                "Google", 
+                "Mountain View, California"
+            ], 
+            "title": "Google"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Translate", 
+            "text": "Google Translate is a free translation service that provides instant translations between 103 different languages. It can translate words, sentences, and web pages between any combination of our supported languages. It was launched on April 28, 2006. ==Languages==\nGoogle Translate currently supports 103 languages:\n  Afrikaans\n*Albanian Albanian\n*Amharic Amharic\n*Arabic Arabic\n*Armenian Armenian\n*Azerbaijani Azerbaijani\n*Basque Basque\n*Belarusian Belarusian\n*Bengali Bengali\n*Bosnian Bosnian\n*Bulgarian Bulgarian\n*Catalan Catalan\n*Cebuano Cebuano\n*Chichewa Chichewa\n*Chinese Chinese\n*Corsican Corsican\n*Croatian Croatian\n*Czech Czech\n*Danish Danish\n*Dutch Dutch\n*English English\n*Esperanto Estonian\n*Filipino Filipino\n*Finnish Finnish\n*French French\n*Galician Galician\n*Georgian Georgian\n*German German\n*Greek Greek\n*Gujarati Gujarati\n*Haitian Creole Hausa\n*Hawaiian Hawaiian\n*Hebrew Hebrew\n*Hindi Hindi\n*Hmong Hmong\n*Hungarian Hungarian\n*Icelandic Icelandic\n*Igbo Igbo\n*Indonesian Indonesian\n*Irish Irish\n*Italian Italian\n*Japanese Japanese\n*Javanese Javanese\n*Kannada Kannada\n*Kazakh Kazakh\n*Khmer Khmer\n*Korean Korean\n*Kurdish Kurdish  ", 
+            "score": 1.2943397, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Translate"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google+", 
+            "text": "", 
+            "score": 1.101739, 
+            "categories": [
+                "2011 establishments", 
+                "Google", 
+                "Social networking", 
+                "Web 2.0"
+            ], 
+            "title": "Google+"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Talk", 
+            "text": "Google Voice over IP and instant messaging, offered by Google. It is built on the XMPP platform. A web-based version is also available online. == Other websites ==\n* ", 
+            "score": 0.93894845, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Talk"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Videos", 
+            "text": "Google Video is a free video sharing and video search engine service from Google that allows anyone to upload video clips to Google  s web servers as well as make their own media available free of charge. Some videos are also offered for sale through the Google Video Store. == Other websites ==\n* ", 
+            "score": 0.8976092, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Videos"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Picasa", 
+            "text": "", 
+            "score": 0.89339733, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Picasa"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Sidewiki", 
+            "text": "Google Sidewiki is an online service from Google launched on September 23, 2009. Google Sidewiki is an extension for web browser. You have Sidewiki for Internet Explorer and Firefox through Google Toolbar. You have Sidewiki for Google Chrome browser through an add-on. You have Sidewiki for other browsers like Safari as a bookmarklet. ", 
+            "score": 0.8920149, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Sidewiki"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Knol", 
+            "text": "", 
+            "score": 0.8857157, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Knol"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Google_Chrome_OS", 
+            "text": "", 
+            "score": 0.8188898, 
+            "categories": [
+                "Google"
+            ], 
+            "title": "Google Chrome OS"
+        }
+    ], 
+    "orig": "And if there was somebody who immediately understood this, it was a Swedish web developer, a search engine optimization expert in Stockholm, named Nikke Lindqvist. He's also a very political guy and he was right out there in social media, on his blog and Facebook. And he told everybody, \"If there's something that this guy wants right now, it's to control the image of himself. Let's see if we can distort that. Let's see if we, in the civilized world, can protest against what he did through insulting him in his search results.\"\nAnd how? He told all of his readers the following, \"Go out there on the Internet, find pictures of dog poop on sidewalks -- find pictures of dog poop on sidewalks -- publish them in your feeds, on your websites, on your blogs. Make sure to write the terrorist's name in the caption, make sure to name the picture file \"Breivik.jpeg.\" Let's teach Google that that's the face of the terrorist.\" And it worked. Two years after that campaign against Michelle Obama, this manipulation campaign against Anders Behring Breivik worked. If you picture-Googled for him weeks after the July 22 events from Sweden, you'd see that picture of dog poop high up in the search results, as a little protest.", 
+    "filename": "AndreasEkstrom_MoralBiasGoogle_2.txt"
+}

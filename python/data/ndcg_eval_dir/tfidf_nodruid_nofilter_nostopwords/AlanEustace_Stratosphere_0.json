@@ -1,1 +1,112 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Getting_Better", "text": "", "score": 0.46328545, "categories": ["The Beatles songs", "1967 songs"], "title": "Getting Better"}, {"url": "https://simple.wikipedia.org/w/index.php?title=I", "text": "English alphabet. In English language ", "score": 0.45433933, "categories": ["Basic English 850 words", "Letters (alphabet)", "Vowel letters"], "title": "I"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Eastern_Front_(World_War_I)", "text": "Western Front but was at least three and up to five times longer than it, meaning that planning where to concentrate your forces was very important because you could only transfer and reinforce your forces very slowly compared to on the Western Front. Russia lost a lot of battles, but her overall situation improved as she improved her forces and more and more allies entered the war on her side. ", "score": 0.44506082, "categories": ["World War I"], "title": "Eastern Front (World War I)"}, {"url": "https://simple.wikipedia.org/w/index.php?title=I'm_Getting_Used_to_You", "text": "", "score": 0.39744017, "categories": ["Selena songs", "1995 songs"], "title": "I'm Getting Used to You"}, {"url": "https://simple.wikipedia.org/w/index.php?title=If_I_Were_a_Boy", "text": "", "score": 0.39478856, "categories": ["2008 songs", "2000s ballads", "Beyonc\u00e9 songs", "Pop ballads", "Songs with feminist themes"], "title": "If I Were a Boy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Getting_Things_Done", "text": "Getting Things Done  is a way of organizing all the things a person has to do. The method was made by David Allen. He has written a book about this subject, with the title of his method. The Getting Things Done method follows a simple rule: by writing down all tasks your mind is free to focus on the task at hand. ", "score": 0.39191362, "categories": ["Books", "Management"], "title": "Getting Things Done"}, {"url": "https://simple.wikipedia.org/w/index.php?title=I_Don't_Give_a_Fuck", "text": "", "score": 0.38889682, "categories": ["1991 songs", "Tupac Shakur songs"], "title": "I Don't Give a Fuck"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Still_Not_Getting_Any...", "text": "", "score": 0.37485784, "categories": ["2004 albums", "Simple Plan albums"], "title": "Still Not Getting Any..."}, {"url": "https://simple.wikipedia.org/w/index.php?title=Rachel_Getting_Married", "text": "", "score": 0.36757895, "categories": ["2008 movies", "2000s drama movies", "American drama movies", "English language movies", "Movies about drugs"], "title": "Rachel Getting Married"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Engineering", "text": "Engineering is the use of  . People who do engineering are called engineers. They learn engineering at a college or university. Engineers usually design or build things that are sold. Some engineers also use their skills to solve technical problems. There are different types of engineers that design everything from computers and buildings to watches and websites. ", "score": 0.3561901, "categories": ["Technology", "Engineering"], "title": "Engineering"}], "orig": "So I grew up in Orlando, Florida. I was the son of an aerospace engineer. I lived and breathed the Apollo program. We either saw the launches from our backyard or we saw it by driving in the hour over to the Cape. I was impressed by, obviously, space and everything about it, but I was most impressed by the engineering that went into it.\nBehind me you see an amazing view, a picture that was taken from the International Space Station, and it shows a portion of our planet that's rarely seen and rarely studied and almost never explored. That place is called the stratosphere.\nIf you start on the planet and you go up and up and up, it gets colder and colder and colder, until you reach the beginning of the stratosphere, and then an amazing thing happens. It gets colder at a much slower rate, and then it starts warming up, and then it gets warmer and warmer until the point where you can almost survive without any protection, about zero degrees, and then you end up getting colder and colder, and that's the top of the stratosphere. It is one of the least accessible places on our planet. Most often, when it's visited, it's by astronauts who are blazing up at it at probably several times the speed of sound, and they get a few seconds on the way up, and then they get this blazing ball of fire coming back in, on the way back in.", "filename": "AlanEustace_Stratosphere_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Getting_Better", 
+            "text": "", 
+            "score": 0.46328545, 
+            "categories": [
+                "The Beatles songs", 
+                "1967 songs"
+            ], 
+            "title": "Getting Better"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=I", 
+            "text": "English alphabet. In English language ", 
+            "score": 0.45433933, 
+            "categories": [
+                "Basic English 850 words", 
+                "Letters (alphabet)", 
+                "Vowel letters"
+            ], 
+            "title": "I"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Eastern_Front_(World_War_I)", 
+            "text": "Western Front but was at least three and up to five times longer than it, meaning that planning where to concentrate your forces was very important because you could only transfer and reinforce your forces very slowly compared to on the Western Front. Russia lost a lot of battles, but her overall situation improved as she improved her forces and more and more allies entered the war on her side. ", 
+            "score": 0.44506082, 
+            "categories": [
+                "World War I"
+            ], 
+            "title": "Eastern Front (World War I)"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=I'm_Getting_Used_to_You", 
+            "text": "", 
+            "score": 0.39744017, 
+            "categories": [
+                "Selena songs", 
+                "1995 songs"
+            ], 
+            "title": "I'm Getting Used to You"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=If_I_Were_a_Boy", 
+            "text": "", 
+            "score": 0.39478856, 
+            "categories": [
+                "2008 songs", 
+                "2000s ballads", 
+                "Beyonc\u00e9 songs", 
+                "Pop ballads", 
+                "Songs with feminist themes"
+            ], 
+            "title": "If I Were a Boy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Getting_Things_Done", 
+            "text": "Getting Things Done  is a way of organizing all the things a person has to do. The method was made by David Allen. He has written a book about this subject, with the title of his method. The Getting Things Done method follows a simple rule: by writing down all tasks your mind is free to focus on the task at hand. ", 
+            "score": 0.39191362, 
+            "categories": [
+                "Books", 
+                "Management"
+            ], 
+            "title": "Getting Things Done"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=I_Don't_Give_a_Fuck", 
+            "text": "", 
+            "score": 0.38889682, 
+            "categories": [
+                "1991 songs", 
+                "Tupac Shakur songs"
+            ], 
+            "title": "I Don't Give a Fuck"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Still_Not_Getting_Any...", 
+            "text": "", 
+            "score": 0.37485784, 
+            "categories": [
+                "2004 albums", 
+                "Simple Plan albums"
+            ], 
+            "title": "Still Not Getting Any..."
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Rachel_Getting_Married", 
+            "text": "", 
+            "score": 0.36757895, 
+            "categories": [
+                "2008 movies", 
+                "2000s drama movies", 
+                "American drama movies", 
+                "English language movies", 
+                "Movies about drugs"
+            ], 
+            "title": "Rachel Getting Married"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Engineering", 
+            "text": "Engineering is the use of  . People who do engineering are called engineers. They learn engineering at a college or university. Engineers usually design or build things that are sold. Some engineers also use their skills to solve technical problems. There are different types of engineers that design everything from computers and buildings to watches and websites. ", 
+            "score": 0.3561901, 
+            "categories": [
+                "Technology", 
+                "Engineering"
+            ], 
+            "title": "Engineering"
+        }
+    ], 
+    "orig": "So I grew up in Orlando, Florida. I was the son of an aerospace engineer. I lived and breathed the Apollo program. We either saw the launches from our backyard or we saw it by driving in the hour over to the Cape. I was impressed by, obviously, space and everything about it, but I was most impressed by the engineering that went into it.\nBehind me you see an amazing view, a picture that was taken from the International Space Station, and it shows a portion of our planet that's rarely seen and rarely studied and almost never explored. That place is called the stratosphere.\nIf you start on the planet and you go up and up and up, it gets colder and colder and colder, until you reach the beginning of the stratosphere, and then an amazing thing happens. It gets colder at a much slower rate, and then it starts warming up, and then it gets warmer and warmer until the point where you can almost survive without any protection, about zero degrees, and then you end up getting colder and colder, and that's the top of the stratosphere. It is one of the least accessible places on our planet. Most often, when it's visited, it's by astronauts who are blazing up at it at probably several times the speed of sound, and they get a few seconds on the way up, and then they get this blazing ball of fire coming back in, on the way back in.", 
+    "filename": "AlanEustace_Stratosphere_0.txt"
+}

@@ -1,1 +1,86 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Killer_whale", "text": "", "score": 0.43412772, "categories": ["Oceanic dolphins"], "title": "Killer whale"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Emotion", "text": "", "score": 0.039989367, "categories": ["Emotions"], "title": "Emotion"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Temnodontosaurus", "text": "", "score": 0.036327403, "categories": ["Ichthyosaurs"], "title": "Temnodontosaurus"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Michael_Brandon", "text": "", "score": 0.012874128, "categories": ["1945 births", "Living people", "Actors from Brooklyn", "American movie actors", "American television actors"], "title": "Michael Brandon"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Zombie", "text": "A zombie or zombi is a   dead person who has returned to life as a walking corpse. Mythical things that have been \"re-animated\" are called undead, and a group of them can be called the living dead. The Zombie myth came from the Caribbean. brains of living people. == Voodoo zombies ==\nIn Haiti people believe that Voodoo sorcerers or bokor can bring dead people back to life, making a zombie. ", "score": 0.012062529, "categories": ["Monsters"], "title": "Zombie"}, {"url": "https://simple.wikipedia.org/w/index.php?title=The_Lord_of_the_Rings", "text": "The Lord of the Rings is a book written by J. R. R. Tolkien. It was first published in 1954. It is split in three parts , which are named The Fellowship of the Ring, The Two Towers, and The Return of the King. races and peoples  ", "score": 0.008095137, "categories": ["The Lord of the Rings", "1954 books", "1955 books", "Fantasy books"], "title": "The Lord of the Rings"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Alzheimer's_disease", "text": "", "score": 0.007147649, "categories": ["Diseases"], "title": "Alzheimer's disease"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_characters_in_the_Camp_Half-Blood_series", "text": "This is a list of characters in the Percy Jackson & the Olympians and The Heroes of Olympus series. ==Main characters==\n===Percy Jackson===\n \nPerseus \"Percy\" Jackson is a son of Poseidon and is the protagonist and narrator of the series. Being a child of one of the \"Big Three\" , Percy is the hero referred to within the prophecy of the Oracle, which foretells that the next half-blood child of the \"Big Three\" to reach the age of sixteen would have to make a decision that would mean the destruction or saving of Olympus. ", "score": 0.0040408554, "categories": ["Percy Jackson and the Olympians characters", "Lists of fictional characters"], "title": "List of characters in the Camp Half-Blood series"}], "orig": "They have been watching us for much longer than we have been watching them. They know us better than we know them. We have the same imperatives: take care of our babies, find food, try to stay alive. Whether we're outfitted for hiking in the hills of Africa or outfitted for diving under the sea, we are basically the same. We are kin under the skin. The elephant has the same skeleton, the killer whale has the same skeleton, as do we. We see helping where help is needed. We see curiosity in the young. We see the bonds of family connections. We recognize affection. Courtship is courtship. And then we ask, \"Are they conscious?\"\nWhen you get general anesthesia, it makes you unconscious, which means you have no sensation of anything. Consciousness is simply the thing that feels like something. If you see, if you hear, if you feel, if you're aware of anything, you are conscious, and they are conscious.\nSome people say well, there are certain things that make humans humans, and one of those things is empathy. Empathy is the mind's ability to match moods with your companions. It's a very useful thing. If your companions start to move quickly, you have to feel like you need to hurry up. We're all in a hurry now. The oldest form of empathy is contagious fear. If your companions suddenly startle and fly away, it does not work very well for you to say, \"Jeez, I wonder why everybody just left.\"", "filename": "CarlSafina_AnimalFeelings_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Killer_whale", 
+            "text": "", 
+            "score": 0.43412772, 
+            "categories": [
+                "Oceanic dolphins"
+            ], 
+            "title": "Killer whale"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Emotion", 
+            "text": "", 
+            "score": 0.039989367, 
+            "categories": [
+                "Emotions"
+            ], 
+            "title": "Emotion"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Temnodontosaurus", 
+            "text": "", 
+            "score": 0.036327403, 
+            "categories": [
+                "Ichthyosaurs"
+            ], 
+            "title": "Temnodontosaurus"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Michael_Brandon", 
+            "text": "", 
+            "score": 0.012874128, 
+            "categories": [
+                "1945 births", 
+                "Living people", 
+                "Actors from Brooklyn", 
+                "American movie actors", 
+                "American television actors"
+            ], 
+            "title": "Michael Brandon"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Zombie", 
+            "text": "A zombie or zombi is a   dead person who has returned to life as a walking corpse. Mythical things that have been \"re-animated\" are called undead, and a group of them can be called the living dead. The Zombie myth came from the Caribbean. brains of living people. == Voodoo zombies ==\nIn Haiti people believe that Voodoo sorcerers or bokor can bring dead people back to life, making a zombie. ", 
+            "score": 0.012062529, 
+            "categories": [
+                "Monsters"
+            ], 
+            "title": "Zombie"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=The_Lord_of_the_Rings", 
+            "text": "The Lord of the Rings is a book written by J. R. R. Tolkien. It was first published in 1954. It is split in three parts , which are named The Fellowship of the Ring, The Two Towers, and The Return of the King. races and peoples  ", 
+            "score": 0.008095137, 
+            "categories": [
+                "The Lord of the Rings", 
+                "1954 books", 
+                "1955 books", 
+                "Fantasy books"
+            ], 
+            "title": "The Lord of the Rings"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Alzheimer's_disease", 
+            "text": "", 
+            "score": 0.007147649, 
+            "categories": [
+                "Diseases"
+            ], 
+            "title": "Alzheimer's disease"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_characters_in_the_Camp_Half-Blood_series", 
+            "text": "This is a list of characters in the Percy Jackson & the Olympians and The Heroes of Olympus series. ==Main characters==\n===Percy Jackson===\n \nPerseus \"Percy\" Jackson is a son of Poseidon and is the protagonist and narrator of the series. Being a child of one of the \"Big Three\" , Percy is the hero referred to within the prophecy of the Oracle, which foretells that the next half-blood child of the \"Big Three\" to reach the age of sixteen would have to make a decision that would mean the destruction or saving of Olympus. ", 
+            "score": 0.0040408554, 
+            "categories": [
+                "Percy Jackson and the Olympians characters", 
+                "Lists of fictional characters"
+            ], 
+            "title": "List of characters in the Camp Half-Blood series"
+        }
+    ], 
+    "orig": "They have been watching us for much longer than we have been watching them. They know us better than we know them. We have the same imperatives: take care of our babies, find food, try to stay alive. Whether we're outfitted for hiking in the hills of Africa or outfitted for diving under the sea, we are basically the same. We are kin under the skin. The elephant has the same skeleton, the killer whale has the same skeleton, as do we. We see helping where help is needed. We see curiosity in the young. We see the bonds of family connections. We recognize affection. Courtship is courtship. And then we ask, \"Are they conscious?\"\nWhen you get general anesthesia, it makes you unconscious, which means you have no sensation of anything. Consciousness is simply the thing that feels like something. If you see, if you hear, if you feel, if you're aware of anything, you are conscious, and they are conscious.\nSome people say well, there are certain things that make humans humans, and one of those things is empathy. Empathy is the mind's ability to match moods with your companions. It's a very useful thing. If your companions start to move quickly, you have to feel like you need to hurry up. We're all in a hurry now. The oldest form of empathy is contagious fear. If your companions suddenly startle and fly away, it does not work very well for you to say, \"Jeez, I wonder why everybody just left.\"", 
+    "filename": "CarlSafina_AnimalFeelings_2.txt"
+}

@@ -1,1 +1,101 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Hospice", "text": "\nA hospice is a type of medical   that helps take care of people who are very sick and have an   them. Hospice tries to allow people to die with as little pain as possible. nursing homes and hospitals to talk to people who want to use hospice medicine. == History ==\nThe Hospice movement was started in England in the 1950s by a nurse named Dame Cicely Saunders. ", "score": 0.45198083, "categories": ["Medicine", "Death"], "title": "Hospice"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Addenbrooke's_Hospital", "text": "Addenbrookes Hospital is a large hospital in Cambridge, England. The hospital lets people in to look around, once every two years. You can visit the mortuary, the operating theatres and the hospital roof. ", "score": 0.15166137, "categories": ["Buildings and structures in England", "Cambridge", "Hospitals in the United Kingdom"], "title": "Addenbrooke's Hospital"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Hallucination", "text": "\nA hallucination is seeing, hearing, tasting, smelling or feeling things that do not really exist. Usually people have to be awake and conscious to have hallucinations. That way, a person who sees or hears something that is not really there has a hallucination. Hallucinations are different from dreams. ", "score": 0.033398386, "categories": ["Psychology", "Health"], "title": "Hallucination"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Anatomy", "text": "study of bodies of living beings. This can be human ", "score": 0.031808656, "categories": ["Anatomy"], "title": "Anatomy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Radymno", "text": "Subcarpathian Voivodeship, in Jaros\u0142aw district, Poland. Between 1975\u20131998 the town was in Przemyskie Voivodeship. Judaic and Greek Catholic. Currently most of the residents are Roman Catholic. The town is situated in the Przemy\u015bl Gate on a plateau in the foothills of the Carpathian Mountains, in the valley of the San River, sited on the left bank of the Rada River, on the international road A4 which runs from J\u0119drzychowice-Korczowa  to Lviv . ", "score": 0.031171983, "categories": ["Cities in Poland"], "title": "Radymno"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Group_home", "text": "A group home is a private house that serves as a home for people who are not in the same family but have a common  . In the United States, this would mean a home for people who need social assistance or who are not able to live alone or without proper care for safety reasons. Before the 1970s, these people lived in psychiatric hospitals, homes for the poor and orphanages. ", "score": 0.027874334, "categories": ["Drug rehabilitation", "Disability"], "title": "Group home"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_services_in_the_United_Kingdom", "text": " Special Health Board), the Welsh Ambulance Service, and the Northern Ireland Ambulance Service. ==Job of the Ambulance Services==\nNHS ambulance services must by law answer four types of requests for care,  which are:\n* Emergency Calls \n* Doctors urgent admission requests\n* High dependency and urgent inter-hospital transfers\n* Major incidents\n\nThe ambulance services have getting more and more busy. ", "score": 0.02760583, "categories": ["Politics of the United Kingdom"], "title": "Emergency medical services in the United Kingdom"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Wishaw", "text": "", "score": 0.025065914, "categories": ["Towns in North Lanarkshire"], "title": "Wishaw"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Medical_specialty", "text": "Medicine is a very complex field. In the past, a doctor could learn almost all that we knew about medicine. Now that is impossible. So after finishing medical school, young doctors choose what kind of doctor they wish to be. After school, they usually do more years of training to learn about the kind of medical specialty they want to do. ", "score": 0.023856971, "categories": ["Medical specialties"], "title": "Medical specialty"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cocaine", "text": "Cocaine coca leaves. Cocaine is usually a white powder. Most cocaine is used as an illegal drug. Because it is a stimulant, cocaine gives people energy. It also makes people feel very happy when it is taken. When used this way, cocaine is very addiction ", "score": 0.020015916, "categories": ["Illegal drugs"], "title": "Cocaine"}], "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", "filename": "BJMiller_EndOfLife_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hospice", 
+            "text": "\nA hospice is a type of medical   that helps take care of people who are very sick and have an   them. Hospice tries to allow people to die with as little pain as possible. nursing homes and hospitals to talk to people who want to use hospice medicine. == History ==\nThe Hospice movement was started in England in the 1950s by a nurse named Dame Cicely Saunders. ", 
+            "score": 0.45198083, 
+            "categories": [
+                "Medicine", 
+                "Death"
+            ], 
+            "title": "Hospice"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Addenbrooke's_Hospital", 
+            "text": "Addenbrookes Hospital is a large hospital in Cambridge, England. The hospital lets people in to look around, once every two years. You can visit the mortuary, the operating theatres and the hospital roof. ", 
+            "score": 0.15166137, 
+            "categories": [
+                "Buildings and structures in England", 
+                "Cambridge", 
+                "Hospitals in the United Kingdom"
+            ], 
+            "title": "Addenbrooke's Hospital"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Hallucination", 
+            "text": "\nA hallucination is seeing, hearing, tasting, smelling or feeling things that do not really exist. Usually people have to be awake and conscious to have hallucinations. That way, a person who sees or hears something that is not really there has a hallucination. Hallucinations are different from dreams. ", 
+            "score": 0.033398386, 
+            "categories": [
+                "Psychology", 
+                "Health"
+            ], 
+            "title": "Hallucination"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Anatomy", 
+            "text": "study of bodies of living beings. This can be human ", 
+            "score": 0.031808656, 
+            "categories": [
+                "Anatomy"
+            ], 
+            "title": "Anatomy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Radymno", 
+            "text": "Subcarpathian Voivodeship, in Jaros\u0142aw district, Poland. Between 1975\u20131998 the town was in Przemyskie Voivodeship. Judaic and Greek Catholic. Currently most of the residents are Roman Catholic. The town is situated in the Przemy\u015bl Gate on a plateau in the foothills of the Carpathian Mountains, in the valley of the San River, sited on the left bank of the Rada River, on the international road A4 which runs from J\u0119drzychowice-Korczowa  to Lviv . ", 
+            "score": 0.031171983, 
+            "categories": [
+                "Cities in Poland"
+            ], 
+            "title": "Radymno"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Group_home", 
+            "text": "A group home is a private house that serves as a home for people who are not in the same family but have a common  . In the United States, this would mean a home for people who need social assistance or who are not able to live alone or without proper care for safety reasons. Before the 1970s, these people lived in psychiatric hospitals, homes for the poor and orphanages. ", 
+            "score": 0.027874334, 
+            "categories": [
+                "Drug rehabilitation", 
+                "Disability"
+            ], 
+            "title": "Group home"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Emergency_medical_services_in_the_United_Kingdom", 
+            "text": " Special Health Board), the Welsh Ambulance Service, and the Northern Ireland Ambulance Service. ==Job of the Ambulance Services==\nNHS ambulance services must by law answer four types of requests for care,  which are:\n* Emergency Calls \n* Doctors urgent admission requests\n* High dependency and urgent inter-hospital transfers\n* Major incidents\n\nThe ambulance services have getting more and more busy. ", 
+            "score": 0.02760583, 
+            "categories": [
+                "Politics of the United Kingdom"
+            ], 
+            "title": "Emergency medical services in the United Kingdom"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Wishaw", 
+            "text": "", 
+            "score": 0.025065914, 
+            "categories": [
+                "Towns in North Lanarkshire"
+            ], 
+            "title": "Wishaw"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Medical_specialty", 
+            "text": "Medicine is a very complex field. In the past, a doctor could learn almost all that we knew about medicine. Now that is impossible. So after finishing medical school, young doctors choose what kind of doctor they wish to be. After school, they usually do more years of training to learn about the kind of medical specialty they want to do. ", 
+            "score": 0.023856971, 
+            "categories": [
+                "Medical specialties"
+            ], 
+            "title": "Medical specialty"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cocaine", 
+            "text": "Cocaine coca leaves. Cocaine is usually a white powder. Most cocaine is used as an illegal drug. Because it is a stimulant, cocaine gives people energy. It also makes people feel very happy when it is taken. When used this way, cocaine is very addiction ", 
+            "score": 0.020015916, 
+            "categories": [
+                "Illegal drugs"
+            ], 
+            "title": "Cocaine"
+        }
+    ], 
+    "orig": "Flash forward: now I work at an amazing place in San Francisco called the Zen Hospice Project, where we have a little ritual that helps with this shift in perspective. When one of our residents dies, the mortuary men come, and as we're wheeling the body out through the garden, heading for the gate, we pause. Anyone who wants -- fellow residents, family, nurses, volunteers, the hearse drivers too, now -- shares a story or a song or silence, as we sprinkle the body with flower petals. It takes a few minutes; it's a sweet, simple parting image to usher in grief with warmth, rather than repugnance. Contrast that with the typical experience in the hospital setting, much like this -- floodlit room lined with tubes and beeping machines and blinking lights that don't stop even when the patient's life has. Cleaning crew swoops in, the body's whisked away, and it all feels as though that person had never really existed. Well-intended, of course, in the name of sterility, but hospitals tend to assault our senses, and the most we might hope for within those walls is numbness -- anesthetic, literally the opposite of aesthetic. I revere hospitals for what they can do; I am alive because of them. But we ask too much of our hospitals. They are places for acute trauma and treatable illness. They are no place to live and die; that's not what they were designed for.", 
+    "filename": "BJMiller_EndOfLife_2.txt"
+}

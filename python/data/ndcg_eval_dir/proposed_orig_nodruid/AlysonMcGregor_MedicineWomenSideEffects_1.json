@@ -1,1 +1,101 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Illegal_drugs", "text": "Illegal drugs are drugs which have limitations on their ownership or use by a government, and are illegal in certain situations . A drug is any chemical that affects the human body or mind when it is swallowed, breathed in, or consumed in another way. A psychoactive drug is a drug that affects the brain. ", "score": 2.0776825, "categories": ["Illegal drugs"], "title": "Illegal drugs"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Placebo", "text": "A placebo is a treatment for a   usually is that if a person believes that a medicine, diet, or other treatment is good for himself or herself, then it is good for the person. Sometimes sick people who receive a placebo feel like they are getting better, and sometimes their bodies actually do get better. ", "score": 1.5356212, "categories": ["Drugs"], "title": "Placebo"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Off-label_use", "text": "Off-label indications that for those which it was approved, or that is given to a group for which it was not approved, or the dosage prescribed is different from the one mentioned. Off-label use of drugs is very common. In many countries, drugs need to show that they are effective against a given condition in clinical trials. ", "score": 0.88253176, "categories": ["Drugs"], "title": "Off-label use"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pharmacokinetics", "text": "\nPharmacokinetics is a branch of pharmacology which studies what the body does to a drug. Pharmacokinetics looks at how a substance enters, moves through and exits the body. It relates how the dose delivered affects the concentration within the body. It is closely related to another branch of pharmacology, pharmacodynamics, which describes how a drugs affects the body. ", "score": 0.8483306, "categories": ["Pharmacology", "Drugs"], "title": "Pharmacokinetics"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pharmacy", "text": " therapeutic drugs are sold. Sometimes a pharmacy is also called a  drug store. The people working in a pharmacy are called pharmacists or chemists . These people can recognise simple diseases and give drugs for some of them. Certain drugs are special, because they can be addiction ", "score": 0.8139674, "categories": ["Medicine", "Drugs", "Health care"], "title": "Pharmacy"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pharmacology", "text": "Pharmacology is the study of how medicine and other things have an effect on living organisms and change how they function. Pharmacology could also be defined as the study of how medicine actually works. Pharmacology is not exactly the same as pharmacy, and a pharmacologist is not exactly the same as a pharmacist. ", "score": 0.8120385, "categories": ["Drugs", "Pharmacology"], "title": "Pharmacology"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Vytorin", "text": "Vytorin is a clinical drug made up of chemicals called ezetimibe  and simvastatin  to help people with diseases that change the amount of fats in the blood. ==Other websites==\n*http://www.vytorin.com/vytorin/shared/documents/vytorin_pi.pdf\n* http://blogs.wsj.com/health/2008/09/02/new-england-journal-of-medicine-vytorin-cancer-link-uncertain/\n* http://content.nejm.org/cgi/content/abstract/NEJMsa0806603v1 ", "score": 0.7774127, "categories": ["Drugs"], "title": "Vytorin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Gamma-Hydroxybutyric_acid", "text": "Gamma-Hydroxybutyric acid  is a chemical substance. Small quantities of it can be found in the central nervous system of many animals. It can also be discovered in wine, beef and small citrus fruits. In the central nervous system, GHB is involved in the exchange of information. It interacts with other neurotransmitters, such as gamma-Aminobutyric acid . ", "score": 0.7636744, "categories": ["Drugs"], "title": "Gamma-Hydroxybutyric acid"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Ketamine", "text": "Ketamine is an anesthetic, which is a type of drug a doctor might give to put someone to sleep for an operation. Ketamine can  also be used as a painkiller and a bronchodilator . Sometimes it can lead to a special type of hallucination which makes you feel detached from yourself and the things around you  \nwhich is why some people use it as a recreational drug. ", "score": 0.76272744, "categories": ["Drugs"], "title": "Ketamine"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Combined_oral_contraceptive_pill", "text": "contraceptive for pregnant during sexual intercourse. When a woman stops taking the pills, she will usually become fertile again. When taken as prescribed, the pills are one of the safest methods of contraception. In the 1950s, scientists  ", "score": 0.76272553, "categories": ["Contraception", "Drugs"], "title": "Combined oral contraceptive pill"}], "orig": "A recent Government Accountability study revealed that 80 percent of the drugs withdrawn from the market are due to side effects on women. So let's think about that for a minute. Why are we discovering side effects on women only after a drug has been released to the market? Do you know that it takes years for a drug to go from an idea to being tested on cells in a laboratory, to animal studies, to then clinical trials on humans, finally to go through a regulatory approval process, to be available for your doctor to prescribe to you? Not to mention the millions and billions of dollars of funding it takes to go through that process. So why are we discovering unacceptable side effects on half the population after that has gone through? What's happening?\nWell, it turns out that those cells used in that laboratory, they're male cells, and the animals used in the animal studies were male animals, and the clinical trials have been performed almost exclusively on men.\nHow is it that the male model became our framework for medical research? Let's look at an example that has been popularized in the media, and it has to do with the sleep aid Ambien. Ambien was released on the market over 20 years ago, and since then, hundreds of millions of prescriptions have been written, primarily to women, because women suffer more sleep disorders than men. But just this past year, the Food and Drug Administration recommended cutting the dose in half for women only, because they just realized that women metabolize the drug at a slower rate than men, causing them to wake up in the morning with more of the active drug in their system. And then they're drowsy and they're getting behind the wheel of the car, and they're at risk for motor vehicle accidents. And I can't help but think, as an emergency physician, how many of my patients that I've cared for over the years were involved in a motor vehicle accident that possibly could have been prevented if this type of analysis was performed and acted upon 20 years ago when this drug was first released. How many other things need to be analyzed by gender? What else are we missing?", "filename": "AlysonMcGregor_MedicineWomenSideEffects_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Illegal_drugs", 
+            "text": "Illegal drugs are drugs which have limitations on their ownership or use by a government, and are illegal in certain situations . A drug is any chemical that affects the human body or mind when it is swallowed, breathed in, or consumed in another way. A psychoactive drug is a drug that affects the brain. ", 
+            "score": 2.0776825, 
+            "categories": [
+                "Illegal drugs"
+            ], 
+            "title": "Illegal drugs"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Placebo", 
+            "text": "A placebo is a treatment for a   usually is that if a person believes that a medicine, diet, or other treatment is good for himself or herself, then it is good for the person. Sometimes sick people who receive a placebo feel like they are getting better, and sometimes their bodies actually do get better. ", 
+            "score": 1.5356212, 
+            "categories": [
+                "Drugs"
+            ], 
+            "title": "Placebo"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Off-label_use", 
+            "text": "Off-label indications that for those which it was approved, or that is given to a group for which it was not approved, or the dosage prescribed is different from the one mentioned. Off-label use of drugs is very common. In many countries, drugs need to show that they are effective against a given condition in clinical trials. ", 
+            "score": 0.88253176, 
+            "categories": [
+                "Drugs"
+            ], 
+            "title": "Off-label use"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pharmacokinetics", 
+            "text": "\nPharmacokinetics is a branch of pharmacology which studies what the body does to a drug. Pharmacokinetics looks at how a substance enters, moves through and exits the body. It relates how the dose delivered affects the concentration within the body. It is closely related to another branch of pharmacology, pharmacodynamics, which describes how a drugs affects the body. ", 
+            "score": 0.8483306, 
+            "categories": [
+                "Pharmacology", 
+                "Drugs"
+            ], 
+            "title": "Pharmacokinetics"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pharmacy", 
+            "text": " therapeutic drugs are sold. Sometimes a pharmacy is also called a  drug store. The people working in a pharmacy are called pharmacists or chemists . These people can recognise simple diseases and give drugs for some of them. Certain drugs are special, because they can be addiction ", 
+            "score": 0.8139674, 
+            "categories": [
+                "Medicine", 
+                "Drugs", 
+                "Health care"
+            ], 
+            "title": "Pharmacy"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pharmacology", 
+            "text": "Pharmacology is the study of how medicine and other things have an effect on living organisms and change how they function. Pharmacology could also be defined as the study of how medicine actually works. Pharmacology is not exactly the same as pharmacy, and a pharmacologist is not exactly the same as a pharmacist. ", 
+            "score": 0.8120385, 
+            "categories": [
+                "Drugs", 
+                "Pharmacology"
+            ], 
+            "title": "Pharmacology"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Vytorin", 
+            "text": "Vytorin is a clinical drug made up of chemicals called ezetimibe  and simvastatin  to help people with diseases that change the amount of fats in the blood. ==Other websites==\n*http://www.vytorin.com/vytorin/shared/documents/vytorin_pi.pdf\n* http://blogs.wsj.com/health/2008/09/02/new-england-journal-of-medicine-vytorin-cancer-link-uncertain/\n* http://content.nejm.org/cgi/content/abstract/NEJMsa0806603v1 ", 
+            "score": 0.7774127, 
+            "categories": [
+                "Drugs"
+            ], 
+            "title": "Vytorin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Gamma-Hydroxybutyric_acid", 
+            "text": "Gamma-Hydroxybutyric acid  is a chemical substance. Small quantities of it can be found in the central nervous system of many animals. It can also be discovered in wine, beef and small citrus fruits. In the central nervous system, GHB is involved in the exchange of information. It interacts with other neurotransmitters, such as gamma-Aminobutyric acid . ", 
+            "score": 0.7636744, 
+            "categories": [
+                "Drugs"
+            ], 
+            "title": "Gamma-Hydroxybutyric acid"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Ketamine", 
+            "text": "Ketamine is an anesthetic, which is a type of drug a doctor might give to put someone to sleep for an operation. Ketamine can  also be used as a painkiller and a bronchodilator . Sometimes it can lead to a special type of hallucination which makes you feel detached from yourself and the things around you  \nwhich is why some people use it as a recreational drug. ", 
+            "score": 0.76272744, 
+            "categories": [
+                "Drugs"
+            ], 
+            "title": "Ketamine"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Combined_oral_contraceptive_pill", 
+            "text": "contraceptive for pregnant during sexual intercourse. When a woman stops taking the pills, she will usually become fertile again. When taken as prescribed, the pills are one of the safest methods of contraception. In the 1950s, scientists  ", 
+            "score": 0.76272553, 
+            "categories": [
+                "Contraception", 
+                "Drugs"
+            ], 
+            "title": "Combined oral contraceptive pill"
+        }
+    ], 
+    "orig": "A recent Government Accountability study revealed that 80 percent of the drugs withdrawn from the market are due to side effects on women. So let's think about that for a minute. Why are we discovering side effects on women only after a drug has been released to the market? Do you know that it takes years for a drug to go from an idea to being tested on cells in a laboratory, to animal studies, to then clinical trials on humans, finally to go through a regulatory approval process, to be available for your doctor to prescribe to you? Not to mention the millions and billions of dollars of funding it takes to go through that process. So why are we discovering unacceptable side effects on half the population after that has gone through? What's happening?\nWell, it turns out that those cells used in that laboratory, they're male cells, and the animals used in the animal studies were male animals, and the clinical trials have been performed almost exclusively on men.\nHow is it that the male model became our framework for medical research? Let's look at an example that has been popularized in the media, and it has to do with the sleep aid Ambien. Ambien was released on the market over 20 years ago, and since then, hundreds of millions of prescriptions have been written, primarily to women, because women suffer more sleep disorders than men. But just this past year, the Food and Drug Administration recommended cutting the dose in half for women only, because they just realized that women metabolize the drug at a slower rate than men, causing them to wake up in the morning with more of the active drug in their system. And then they're drowsy and they're getting behind the wheel of the car, and they're at risk for motor vehicle accidents. And I can't help but think, as an emergency physician, how many of my patients that I've cared for over the years were involved in a motor vehicle accident that possibly could have been prevented if this type of analysis was performed and acted upon 20 years ago when this drug was first released. How many other things need to be analyzed by gender? What else are we missing?", 
+    "filename": "AlysonMcGregor_MedicineWomenSideEffects_1.txt"
+}

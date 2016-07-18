@@ -1,1 +1,103 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Human", "text": "", "score": 0.7265072, "categories": ["Humans"], "title": "Human"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dinosaur_brains_and_intelligence", "text": "Dinosaur brains and intelligence are interesting topics. Dinosaurs were once regarded as stupid animals, but it is now realised that some of the smaller carnivores had above average intelligence for reptiles. This idea led to exaggerated portrayals in films like Jurassic Park. == Stegosaurus ==\n \n \nThe idea that Stegosaurus had a \"brain the size of a  s  could have a brain of no more than 80&nbsp;grams  ", "score": 0.34313434, "categories": ["Dinosaurs", "Brain"], "title": "Dinosaur brains and intelligence"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Cro-Magnon", "text": "\n\nThe Cro-Magnon were early modern humans . They lived in Europe during the Upper Palaeolithic period. Some anthropologists use the term \"European early modern humans\" to describe the Cro-Magnons. Fagan B.M. 1996. The Oxford Companion to Archaeology. Oxford University Press, p. 864. ISBN 978-0-19-507618-9. ", "score": 0.25158367, "categories": ["Evolutionary biology", "Humans"], "title": "Cro-Magnon"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dolphin", "text": "order Cetacea. toothed whales. Generally, they are among the smaller whales. Most live in salt water oceans, but some live in rivers   there are oceanic dolphins and river dolphins. Dolphins are from 1.5 to 4 metres  long. The Killer whale is the largest of the group, and can be about  . Greek \u03b4\u03b5\u03bb\u03c6\u03af\u03c2  meaning \"with a womb\", because it was first thought to be a fish with a womb. ", "score": 0.2299922, "categories": ["Toothed whales"], "title": "Dolphin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Palm_tree", "text": "", "score": 0.18626523, "categories": ["Trees", "Arecaceae"], "title": "Palm tree"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Eucalyptus", "text": "", "score": 0.1559637, "categories": ["Eucalyptus", "Trees of Australia"], "title": "Eucalyptus"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Fruit_tree", "text": " edible fruits to hold its seeds. However, although every tree produces fruit, not all fruit is edible for humans. Nut trees bear such fruits as almonds, walnuts, brazil nuts. == Examples of tree fruit ==\n* Apricot\n* Apple\n* Cherry\n* Citrus  ", "score": 0.14447829, "categories": ["Trees", "Fruits"], "title": "Fruit tree"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", "text": "", "score": 0.1402022, "categories": ["Elephants", "Mammals of Asia"], "title": "Sri Lankan elephant"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chinese_river_dolphin", "text": "", "score": 0.13875626, "categories": ["River dolphins"], "title": "Chinese river dolphin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Oak", "text": "", "score": 0.12727699, "categories": ["Trees", "Fagales"], "title": "Oak"}], "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", "filename": "CarlSafina_AnimalFeelings_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human", 
+            "text": "", 
+            "score": 0.7265072, 
+            "categories": [
+                "Humans"
+            ], 
+            "title": "Human"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dinosaur_brains_and_intelligence", 
+            "text": "Dinosaur brains and intelligence are interesting topics. Dinosaurs were once regarded as stupid animals, but it is now realised that some of the smaller carnivores had above average intelligence for reptiles. This idea led to exaggerated portrayals in films like Jurassic Park. == Stegosaurus ==\n \n \nThe idea that Stegosaurus had a \"brain the size of a  s  could have a brain of no more than 80&nbsp;grams  ", 
+            "score": 0.34313434, 
+            "categories": [
+                "Dinosaurs", 
+                "Brain"
+            ], 
+            "title": "Dinosaur brains and intelligence"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Cro-Magnon", 
+            "text": "\n\nThe Cro-Magnon were early modern humans . They lived in Europe during the Upper Palaeolithic period. Some anthropologists use the term \"European early modern humans\" to describe the Cro-Magnons. Fagan B.M. 1996. The Oxford Companion to Archaeology. Oxford University Press, p. 864. ISBN 978-0-19-507618-9. ", 
+            "score": 0.25158367, 
+            "categories": [
+                "Evolutionary biology", 
+                "Humans"
+            ], 
+            "title": "Cro-Magnon"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dolphin", 
+            "text": "order Cetacea. toothed whales. Generally, they are among the smaller whales. Most live in salt water oceans, but some live in rivers   there are oceanic dolphins and river dolphins. Dolphins are from 1.5 to 4 metres  long. The Killer whale is the largest of the group, and can be about  . Greek \u03b4\u03b5\u03bb\u03c6\u03af\u03c2  meaning \"with a womb\", because it was first thought to be a fish with a womb. ", 
+            "score": 0.2299922, 
+            "categories": [
+                "Toothed whales"
+            ], 
+            "title": "Dolphin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Palm_tree", 
+            "text": "", 
+            "score": 0.18626523, 
+            "categories": [
+                "Trees", 
+                "Arecaceae"
+            ], 
+            "title": "Palm tree"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Eucalyptus", 
+            "text": "", 
+            "score": 0.1559637, 
+            "categories": [
+                "Eucalyptus", 
+                "Trees of Australia"
+            ], 
+            "title": "Eucalyptus"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Fruit_tree", 
+            "text": " edible fruits to hold its seeds. However, although every tree produces fruit, not all fruit is edible for humans. Nut trees bear such fruits as almonds, walnuts, brazil nuts. == Examples of tree fruit ==\n* Apricot\n* Apple\n* Cherry\n* Citrus  ", 
+            "score": 0.14447829, 
+            "categories": [
+                "Trees", 
+                "Fruits"
+            ], 
+            "title": "Fruit tree"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", 
+            "text": "", 
+            "score": 0.1402022, 
+            "categories": [
+                "Elephants", 
+                "Mammals of Asia"
+            ], 
+            "title": "Sri Lankan elephant"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chinese_river_dolphin", 
+            "text": "", 
+            "score": 0.13875626, 
+            "categories": [
+                "River dolphins"
+            ], 
+            "title": "Chinese river dolphin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Oak", 
+            "text": "", 
+            "score": 0.12727699, 
+            "categories": [
+                "Trees", 
+                "Fagales"
+            ], 
+            "title": "Oak"
+        }
+    ], 
+    "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", 
+    "filename": "CarlSafina_AnimalFeelings_1.txt"
+}

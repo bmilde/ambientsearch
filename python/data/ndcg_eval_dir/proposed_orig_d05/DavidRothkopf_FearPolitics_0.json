@@ -1,1 +1,122 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", "text": "", "score": 0.56169575, "categories": ["September 11, 2001 attacks", "Conspiracy theories"], "title": "September 11 attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", "score": 0.5278932, "categories": ["September 11, 2001 attacks", "War"], "title": "Authorization for Use of Military Force Against Terrorists"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", "score": 0.42342535, "categories": ["Terrorists", "Islamic terrorism"], "title": "Armed Islamic Group"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Jihad_Jabril", "text": "Jihad Palestinian nationalist organizations. Ahmed Jabril was co-leader of the militant Popular Front for the Liberation of Palestine-General Command. Israeli radio reports said that the son, Jihad Jabril, was involved in smuggling arms and explosives to Palestinian militants in the West Bank and Gaza Strip. ", "score": 0.39652395, "categories": ["1961 births", "2002 deaths", "Terrorists"], "title": "Jihad Jabril"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Majed_Moqed", "text": "", "score": 0.3413046, "categories": ["1977 births", "2001 deaths", "Terrorists", "Al-Qaeda"], "title": "Majed Moqed"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Wail_al-Shehri", "text": "", "score": 0.32881162, "categories": ["1975 births", "2001 deaths", "Terrorists", "Al-Qaeda"], "title": "Wail al-Shehri"}, {"url": "https://simple.wikipedia.org/w/index.php?title=2008_Mumbai_attacks", "text": "", "score": 0.29984352, "categories": ["2008", "21st century in India", "Islamic terrorist attacks", "Mumbai", "Terrorist incidents in the 2000s"], "title": "2008 Mumbai attacks"}, {"url": "https://simple.wikipedia.org/w/index.php?title=List_of_members_of_the_Red_Army_Faction", "text": " jail in Meinhof were arrested, they became known as the Red Army Faction. == First generation ==\nThese are the earliest members, from the late 1960s. The most important had all been arrested by 1972.\n\n ", "score": 0.29718044, "categories": ["Red Army Faction", "German terrorists", "Germany-related lists"], "title": "List of members of the Red Army Faction"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Satam_al-Suqami", "text": "", "score": 0.28874907, "categories": ["1976 births", "2001 deaths", "Terrorists", "People from Riyadh", "September 11, 2001 attacks", "Al-Qaeda"], "title": "Satam al-Suqami"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Zacarias_Moussaoui", "text": "French citizen guilty to conspiring to kill citizens of the United States as part of the September 11 attacks. As a result of his conviction, he is serving a life sentence without parole at the Federal ADX Supermax prison in Florence, Colorado. ==References==\n ", "score": 0.28703782, "categories": ["1968 births", "Living people", "French criminals", "French prisoners", "Terrorists"], "title": "Zacarias Moussaoui"}], "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", "filename": "DavidRothkopf_FearPolitics_0.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=September_11_attacks", 
+            "text": "", 
+            "score": 0.56169575, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "Conspiracy theories"
+            ], 
+            "title": "September 11 attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Authorization_for_Use_of_Military_Force_Against_Terrorists", 
+            "text": "The Authorization for Use of Military Force allows the use of United States Armed Forces against those responsible for the attacks on September 11, 2001. President the authority to use all \"necessary and appropriate force\" against those whom he determined \"planned, authorized, committed or aided\" the September 11th attacks, or who harbored said persons or groups. ", 
+            "score": 0.5278932, 
+            "categories": [
+                "September 11, 2001 attacks", 
+                "War"
+            ], 
+            "title": "Authorization for Use of Military Force Against Terrorists"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Armed_Islamic_Group", 
+            "text": "The French Groupe Arabic al-Jamaah terrorist organization based in Algeria. It wants to overthrow the Algerian government and replace it with an Islamic state. The GIA adopted violent tactics in 1992 after the military government did not recognise the victory of the Islamic Salvation Front in the first round of  elections held in December 1991. ", 
+            "score": 0.42342535, 
+            "categories": [
+                "Terrorists", 
+                "Islamic terrorism"
+            ], 
+            "title": "Armed Islamic Group"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Jihad_Jabril", 
+            "text": "Jihad Palestinian nationalist organizations. Ahmed Jabril was co-leader of the militant Popular Front for the Liberation of Palestine-General Command. Israeli radio reports said that the son, Jihad Jabril, was involved in smuggling arms and explosives to Palestinian militants in the West Bank and Gaza Strip. ", 
+            "score": 0.39652395, 
+            "categories": [
+                "1961 births", 
+                "2002 deaths", 
+                "Terrorists"
+            ], 
+            "title": "Jihad Jabril"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Majed_Moqed", 
+            "text": "", 
+            "score": 0.3413046, 
+            "categories": [
+                "1977 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "Al-Qaeda"
+            ], 
+            "title": "Majed Moqed"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Wail_al-Shehri", 
+            "text": "", 
+            "score": 0.32881162, 
+            "categories": [
+                "1975 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "Al-Qaeda"
+            ], 
+            "title": "Wail al-Shehri"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=2008_Mumbai_attacks", 
+            "text": "", 
+            "score": 0.29984352, 
+            "categories": [
+                "2008", 
+                "21st century in India", 
+                "Islamic terrorist attacks", 
+                "Mumbai", 
+                "Terrorist incidents in the 2000s"
+            ], 
+            "title": "2008 Mumbai attacks"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=List_of_members_of_the_Red_Army_Faction", 
+            "text": " jail in Meinhof were arrested, they became known as the Red Army Faction. == First generation ==\nThese are the earliest members, from the late 1960s. The most important had all been arrested by 1972.\n\n ", 
+            "score": 0.29718044, 
+            "categories": [
+                "Red Army Faction", 
+                "German terrorists", 
+                "Germany-related lists"
+            ], 
+            "title": "List of members of the Red Army Faction"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Satam_al-Suqami", 
+            "text": "", 
+            "score": 0.28874907, 
+            "categories": [
+                "1976 births", 
+                "2001 deaths", 
+                "Terrorists", 
+                "People from Riyadh", 
+                "September 11, 2001 attacks", 
+                "Al-Qaeda"
+            ], 
+            "title": "Satam al-Suqami"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Zacarias_Moussaoui", 
+            "text": "French citizen guilty to conspiring to kill citizens of the United States as part of the September 11 attacks. As a result of his conviction, he is serving a life sentence without parole at the Federal ADX Supermax prison in Florence, Colorado. ==References==\n ", 
+            "score": 0.28703782, 
+            "categories": [
+                "1968 births", 
+                "Living people", 
+                "French criminals", 
+                "French prisoners", 
+                "Terrorists"
+            ], 
+            "title": "Zacarias Moussaoui"
+        }
+    ], 
+    "orig": "on September eleventh two thousand and one, there were one hundred members of core Al-Qaeda. There were just a few thousand terrorists. They posed an existential threat to no one.\nBut we rearranged our entire national security apparatus in the most sweeping way since the end of the Second World War. We launched two wars. We spent trillions of dollars. We suspended our values. We violated international law. We embraced torture. We embraced the idea that if these 19 guys could do this, anybody could do it. And therefore, for the first time in history, we were seeing everybody as a threat. And what was the result of that? Surveillance programs that listened in on the emails and phone calls of entire countries -- hundreds of millions of people -- setting aside whether those countries were our allies, setting aside what our interests were. I would argue that 15 years later, since today there are more terrorists, more terrorist attacks, more terrorist casualties -- this by the count of the U.S. State Department -- since today the region from which those attacks emanate is more unstable than at any time in its history, since the Flood, perhaps, we have not succeeded in our response.", 
+    "filename": "DavidRothkopf_FearPolitics_0.txt"
+}

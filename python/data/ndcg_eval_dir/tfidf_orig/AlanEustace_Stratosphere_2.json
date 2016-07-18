@@ -1,1 +1,118 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Parachute", "text": "\n\nA parachute uses drag to slow something moving in air. It is often an umbrella shaped device on which people or things can float slowly and safely down to the ground from a great height, such as an aircraft. The word parachute comes from the French words parer meaning to protect and chute meaning fall carefully down making sure you are safe. ", "score": 0.78865796, "categories": ["Sports equipment"], "title": "Parachute"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Pipe_organ", "text": "\n pedals which also make notes. town halls and concert halls or even large private houses. Very small organs can be called \u201cchamber organs\u201d. Organs in large churches, cathedrals or halls are very large instruments indeed, and are built especially for the building they are in. They are called \u201cpipe organs\u201d to distinguish them from modern \u201celectronic organs\u201d. ", "score": 0.4502363, "categories": ["Keyboard instruments", "Former good articles"], "title": "Pipe organ"}, {"url": "https://simple.wikipedia.org/w/index.php?title=BASE_jumping", "text": "BASE jumping is a fringe sport in which a person jumps from a fixed place and uses a  s,   sport. This means it involves speed, height, danger or spectacular stuntman ", "score": 0.074091926, "categories": ["Sports"], "title": "BASE jumping"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Why,_Arizona", "text": "\n\nWhy  ", "score": 0.049736496, "categories": ["Unincorporated communities in the United States", "Settlements in Arizona"], "title": "Why, Arizona"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Creedence_Clearwater_Revival", "text": "", "score": 0.047870915, "categories": ["1967 establishments", "1972 disestablishments", "American rock bands", "Musical groups from California", "Rock and Roll Hall of Fame inductees", "Southern rock bands"], "title": "Creedence Clearwater Revival"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Grateful_Dead", "text": "", "score": 0.045548063, "categories": ["Musical groups from San Francisco, California", "American rock bands", "1960s American music groups", "1970s American music groups", "1980s music groups", "1990s American music groups", "Warner Bros. Records artists", "Rock and Roll Hall of Fame inductees"], "title": "Grateful Dead"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Irrigation", "text": "Irrigation is when people add water to plants, to help them grow when there is not enough rain. Irrigation water can be pumped from rivers, natural lakes or lakes created by dams, from wells or allowed to flow to the fields by the force of gravity along pipes or open canals. == Types of Irrigation ==\nIrrigation water can be applied to the plants from above by sprinklers that throw water out under pressure, or from watering cans. ", "score": 0.045514256, "categories": ["Agriculture"], "title": "Irrigation"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Plumbing", "text": "\nPlumbing  is the job of working with pipe  ", "score": 0.042441398, "categories": ["Water infrastructure", "Waste", "Engineering"], "title": "Plumbing"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Xylem", "text": "\n . When cut that way, they look like small circles. tissue in plants. Its cells have thick, hard walls. Xylem tissue dies soon after it is formed and is the wood in the middle of a tree. The dead cells are like Pipe  ", "score": 0.03752457, "categories": ["Plant anatomy", "Plant tissues", "Plant physiology"], "title": "Xylem"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Maurice_Durufl\u00e9", "text": "French composer and pipe organ ", "score": 0.034348108, "categories": ["1902 births", "1986 deaths", "20th century composers", "French composers", "French organists"], "title": "Maurice Durufl\u00e9"}], "orig": "So I want to tell you one thing that you might not have seen in that video, but one of the most critical parts of the entire thing was the release and what happens right after you release. And what we tried to do was use something called a drogue parachute, and a drogue parachute was there to stabilize me. And I'll show you one of those right now. If any of you have ever gone tandem skydiving, you probably used one of these. But the problem with one of these things is right when you release, you're in zero gravity. So it's very easy for this to just turn right around you. And before you know it, you can be tangled up or spinning, or you can release this drogue late, in which case what happens is you're going down at 800 miles an hour, and this thing is going to destroy itself and not be very useful. But the guys at United Parachute Technologies came up with this idea, and it was a roll that looks like that, but watch what happens when I pull it out. It's forming a pipe. This pipe is so solid that you can take this drogue parachute and wrap it around, and there's no way it will ever tangle with you. And that prevented a very serious potential problem.", "filename": "AlanEustace_Stratosphere_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Parachute", 
+            "text": "\n\nA parachute uses drag to slow something moving in air. It is often an umbrella shaped device on which people or things can float slowly and safely down to the ground from a great height, such as an aircraft. The word parachute comes from the French words parer meaning to protect and chute meaning fall carefully down making sure you are safe. ", 
+            "score": 0.78865796, 
+            "categories": [
+                "Sports equipment"
+            ], 
+            "title": "Parachute"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Pipe_organ", 
+            "text": "\n pedals which also make notes. town halls and concert halls or even large private houses. Very small organs can be called \u201cchamber organs\u201d. Organs in large churches, cathedrals or halls are very large instruments indeed, and are built especially for the building they are in. They are called \u201cpipe organs\u201d to distinguish them from modern \u201celectronic organs\u201d. ", 
+            "score": 0.4502363, 
+            "categories": [
+                "Keyboard instruments", 
+                "Former good articles"
+            ], 
+            "title": "Pipe organ"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=BASE_jumping", 
+            "text": "BASE jumping is a fringe sport in which a person jumps from a fixed place and uses a  s,   sport. This means it involves speed, height, danger or spectacular stuntman ", 
+            "score": 0.074091926, 
+            "categories": [
+                "Sports"
+            ], 
+            "title": "BASE jumping"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Why,_Arizona", 
+            "text": "\n\nWhy  ", 
+            "score": 0.049736496, 
+            "categories": [
+                "Unincorporated communities in the United States", 
+                "Settlements in Arizona"
+            ], 
+            "title": "Why, Arizona"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Creedence_Clearwater_Revival", 
+            "text": "", 
+            "score": 0.047870915, 
+            "categories": [
+                "1967 establishments", 
+                "1972 disestablishments", 
+                "American rock bands", 
+                "Musical groups from California", 
+                "Rock and Roll Hall of Fame inductees", 
+                "Southern rock bands"
+            ], 
+            "title": "Creedence Clearwater Revival"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Grateful_Dead", 
+            "text": "", 
+            "score": 0.045548063, 
+            "categories": [
+                "Musical groups from San Francisco, California", 
+                "American rock bands", 
+                "1960s American music groups", 
+                "1970s American music groups", 
+                "1980s music groups", 
+                "1990s American music groups", 
+                "Warner Bros. Records artists", 
+                "Rock and Roll Hall of Fame inductees"
+            ], 
+            "title": "Grateful Dead"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Irrigation", 
+            "text": "Irrigation is when people add water to plants, to help them grow when there is not enough rain. Irrigation water can be pumped from rivers, natural lakes or lakes created by dams, from wells or allowed to flow to the fields by the force of gravity along pipes or open canals. == Types of Irrigation ==\nIrrigation water can be applied to the plants from above by sprinklers that throw water out under pressure, or from watering cans. ", 
+            "score": 0.045514256, 
+            "categories": [
+                "Agriculture"
+            ], 
+            "title": "Irrigation"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Plumbing", 
+            "text": "\nPlumbing  is the job of working with pipe  ", 
+            "score": 0.042441398, 
+            "categories": [
+                "Water infrastructure", 
+                "Waste", 
+                "Engineering"
+            ], 
+            "title": "Plumbing"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Xylem", 
+            "text": "\n . When cut that way, they look like small circles. tissue in plants. Its cells have thick, hard walls. Xylem tissue dies soon after it is formed and is the wood in the middle of a tree. The dead cells are like Pipe  ", 
+            "score": 0.03752457, 
+            "categories": [
+                "Plant anatomy", 
+                "Plant tissues", 
+                "Plant physiology"
+            ], 
+            "title": "Xylem"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Maurice_Durufl\u00e9", 
+            "text": "French composer and pipe organ ", 
+            "score": 0.034348108, 
+            "categories": [
+                "1902 births", 
+                "1986 deaths", 
+                "20th century composers", 
+                "French composers", 
+                "French organists"
+            ], 
+            "title": "Maurice Durufl\u00e9"
+        }
+    ], 
+    "orig": "So I want to tell you one thing that you might not have seen in that video, but one of the most critical parts of the entire thing was the release and what happens right after you release. And what we tried to do was use something called a drogue parachute, and a drogue parachute was there to stabilize me. And I'll show you one of those right now. If any of you have ever gone tandem skydiving, you probably used one of these. But the problem with one of these things is right when you release, you're in zero gravity. So it's very easy for this to just turn right around you. And before you know it, you can be tangled up or spinning, or you can release this drogue late, in which case what happens is you're going down at 800 miles an hour, and this thing is going to destroy itself and not be very useful. But the guys at United Parachute Technologies came up with this idea, and it was a roll that looks like that, but watch what happens when I pull it out. It's forming a pipe. This pipe is so solid that you can take this drogue parachute and wrap it around, and there's no way it will ever tangle with you. And that prevented a very serious potential problem.", 
+    "filename": "AlanEustace_Stratosphere_2.txt"
+}

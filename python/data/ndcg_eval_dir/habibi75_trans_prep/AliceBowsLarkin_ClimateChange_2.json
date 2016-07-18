@@ -1,1 +1,108 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Temperature", "text": "Temperature measure temperature more accurately, a thermometer can be used. Thermometers use a temperature scale to record how hot or cold something is. The scale most often used is in degrees Celsius , sometimes called centigrade. In the USA, degrees Fahrenheit  are more often used while scientists mostly use kelvins  to measure temperature because it never goes below zero. ", "score": 1.3148865, "categories": ["Temperature", "Weather measurements", "Heat", "Physical quantity", "Thermodynamics", "Basic physics ideas"], "title": "Temperature"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Absolute_temperature", "text": "Absolute temperature is the temperature of an object on a scale where 0 is taken as absolute zero. Absolute temperature scales are Kelvin and Rankine. Absolute zero is the lowest temperature at which the system is in a state of lowest possible  energy.No electronic device can operate at this temperature. ", "score": 0.94889146, "categories": ["Temperature"], "title": "Absolute temperature"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Urban_heat_island", "text": "An urban heat island, or UHI, is what happens when a city is warmer than the area around it. It happens because things in cities like concrete take longer to give off heat than things like trees, which are common outside of cities. The urban heat island effect is stronger at night and when there is not much wind. ", "score": 0.8291015, "categories": ["Cities", "Temperature"], "title": "Urban heat island"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Negative_temperature", "text": "In physics, absolute zero  is one of the coldest temperatures. At that point, subatomic particles stop moving . Certain things can reach temperatures below absolute zero, known as negative temperatures. This is very difficult to do, and only very small objects can reach negative temperatures. It might seem absurd, but things at negative temperatures are actually hotter than things at positive temperatures . ", "score": 0.72438383, "categories": ["Thermodynamics"], "title": "Negative temperature"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Heat_conduction", "text": "\nHeat conduction  is the movement of heat from one solid to another one that has different temperature when they are touching each other. For example, we can warm our hands by touching hot-water bottles. When the cold hands touch the hot-water bottle, heat flows from the hotter object  to the colder one . ", "score": 0.6632974, "categories": ["Basic physics ideas", "Heat transfer"], "title": "Heat conduction"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Absolute_zero", "text": "In theory, absolute zero is the  kelvin, equal to 10 \u221210  kelvin) above absolute zero. Even getting close to absolute zero is difficult because anything that touches an object being cooled near absolute zero would give heat to the objects. Scientists use lasers to slow atoms when cooling objects to very low temperatures.  ", "score": 0.5969211, "categories": ["Temperature", "Thermodynamics"], "title": "Absolute zero"}, {"url": "https://simple.wikipedia.org/w/index.php?title=ITS_90", "text": "The ITS 90 is the international temperature scale, published in the year 1990. It mainly is a set of fixed temperatures and instructions how to realise a practical temperature scale, being as close to the thermodynamical temperature scale as current knowledge allows. == History ==\nThe first international temperature scale was established in 1927. ", "score": 0.59268206, "categories": ["Temperature"], "title": "ITS 90"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", "score": 0.5917454, "categories": ["Energy", "Climate change", "Air pollution"], "title": "Global warming"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Celsius", "text": "Celsius Swedish astronomer. 0 degrees  Celsius is the melting point of pure water at sea level . 100\u00b0 Celsius is the boiling point of water at normal pressure. . 1 \u00b0C is therefore one hundredth  of that difference. Since 1948 this unit has been called Celsius. Centigrade was the name of the unit before the change. ", "score": 0.5773773, "categories": ["Units of temperature"], "title": "Celsius"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Heat_engine", "text": "A heat engine is a device that converts heat into mechanical motion that can be used to do Mechanical work ", "score": 0.52702695, "categories": ["Basic physics ideas", "Heat", "Thermodynamics"], "title": "Heat engine"}], "orig": "Now, let's just pause for a moment and think about this four-degree global average temperature. Most of our planet is actually made up of the sea. Now, because the sea has a greater thermal inertia than the land, the average temperatures over land are actually going to be higher than they are over the sea. The second thing is that we as human beings don't experience global average temperatures. We experience hot days, cold days, rainy days, especially if you live in Manchester like me.\nSo now put yourself in a city center. Imagine somewhere in the world: Mumbai, Beijing, New York, London. It's the hottest day that you've ever experienced. There's sun beating down, there's concrete and glass all around you. Now imagine that same day -- but it's six, eight, maybe 10 to 12 degrees warmer on that day during that heat wave. That's the kind of thing we're going to experience under a four-degree global average temperature scenario.\nAnd the problem with these extremes, and not just the temperature extremes, but also the extremes in terms of storms and other climate impacts, is our infrastructure is just not set up to deal with these sorts of events. So our roads and our rail networks have been designed to last for a long time and withstand only certain amounts of impacts in different parts of the world. And this is going to be extremely challenged. Our power stations are expected to be cooled by water to a certain temperature to remain effective and resilient. And our buildings are designed to be comfortable within a particular temperature range. And this is all going to be significantly challenged under a four-degree-type scenario. Our infrastructure has not been designed to cope with this.", "filename": "AliceBowsLarkin_ClimateChange_2.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Temperature", 
+            "text": "Temperature measure temperature more accurately, a thermometer can be used. Thermometers use a temperature scale to record how hot or cold something is. The scale most often used is in degrees Celsius , sometimes called centigrade. In the USA, degrees Fahrenheit  are more often used while scientists mostly use kelvins  to measure temperature because it never goes below zero. ", 
+            "score": 1.3148865, 
+            "categories": [
+                "Temperature", 
+                "Weather measurements", 
+                "Heat", 
+                "Physical quantity", 
+                "Thermodynamics", 
+                "Basic physics ideas"
+            ], 
+            "title": "Temperature"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Absolute_temperature", 
+            "text": "Absolute temperature is the temperature of an object on a scale where 0 is taken as absolute zero. Absolute temperature scales are Kelvin and Rankine. Absolute zero is the lowest temperature at which the system is in a state of lowest possible  energy.No electronic device can operate at this temperature. ", 
+            "score": 0.94889146, 
+            "categories": [
+                "Temperature"
+            ], 
+            "title": "Absolute temperature"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Urban_heat_island", 
+            "text": "An urban heat island, or UHI, is what happens when a city is warmer than the area around it. It happens because things in cities like concrete take longer to give off heat than things like trees, which are common outside of cities. The urban heat island effect is stronger at night and when there is not much wind. ", 
+            "score": 0.8291015, 
+            "categories": [
+                "Cities", 
+                "Temperature"
+            ], 
+            "title": "Urban heat island"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Negative_temperature", 
+            "text": "In physics, absolute zero  is one of the coldest temperatures. At that point, subatomic particles stop moving . Certain things can reach temperatures below absolute zero, known as negative temperatures. This is very difficult to do, and only very small objects can reach negative temperatures. It might seem absurd, but things at negative temperatures are actually hotter than things at positive temperatures . ", 
+            "score": 0.72438383, 
+            "categories": [
+                "Thermodynamics"
+            ], 
+            "title": "Negative temperature"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Heat_conduction", 
+            "text": "\nHeat conduction  is the movement of heat from one solid to another one that has different temperature when they are touching each other. For example, we can warm our hands by touching hot-water bottles. When the cold hands touch the hot-water bottle, heat flows from the hotter object  to the colder one . ", 
+            "score": 0.6632974, 
+            "categories": [
+                "Basic physics ideas", 
+                "Heat transfer"
+            ], 
+            "title": "Heat conduction"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Absolute_zero", 
+            "text": "In theory, absolute zero is the  kelvin, equal to 10 \u221210  kelvin) above absolute zero. Even getting close to absolute zero is difficult because anything that touches an object being cooled near absolute zero would give heat to the objects. Scientists use lasers to slow atoms when cooling objects to very low temperatures.  ", 
+            "score": 0.5969211, 
+            "categories": [
+                "Temperature", 
+                "Thermodynamics"
+            ], 
+            "title": "Absolute zero"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=ITS_90", 
+            "text": "The ITS 90 is the international temperature scale, published in the year 1990. It mainly is a set of fixed temperatures and instructions how to realise a practical temperature scale, being as close to the thermodynamical temperature scale as current knowledge allows. == History ==\nThe first international temperature scale was established in 1927. ", 
+            "score": 0.59268206, 
+            "categories": [
+                "Temperature"
+            ], 
+            "title": "ITS 90"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Global_warming", 
+            "text": "\nClimate change has happened many times over the history of the Earth, including the coming and going of ice ages. For more recent centuries, we have more details. satellites started measuring the temperature of the Earth. Climatologists use proxy measurements to try to figure out past temperatures before there were thermometers. ", 
+            "score": 0.5917454, 
+            "categories": [
+                "Energy", 
+                "Climate change", 
+                "Air pollution"
+            ], 
+            "title": "Global warming"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Celsius", 
+            "text": "Celsius Swedish astronomer. 0 degrees  Celsius is the melting point of pure water at sea level . 100\u00b0 Celsius is the boiling point of water at normal pressure. . 1 \u00b0C is therefore one hundredth  of that difference. Since 1948 this unit has been called Celsius. Centigrade was the name of the unit before the change. ", 
+            "score": 0.5773773, 
+            "categories": [
+                "Units of temperature"
+            ], 
+            "title": "Celsius"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Heat_engine", 
+            "text": "A heat engine is a device that converts heat into mechanical motion that can be used to do Mechanical work ", 
+            "score": 0.52702695, 
+            "categories": [
+                "Basic physics ideas", 
+                "Heat", 
+                "Thermodynamics"
+            ], 
+            "title": "Heat engine"
+        }
+    ], 
+    "orig": "Now, let's just pause for a moment and think about this four-degree global average temperature. Most of our planet is actually made up of the sea. Now, because the sea has a greater thermal inertia than the land, the average temperatures over land are actually going to be higher than they are over the sea. The second thing is that we as human beings don't experience global average temperatures. We experience hot days, cold days, rainy days, especially if you live in Manchester like me.\nSo now put yourself in a city center. Imagine somewhere in the world: Mumbai, Beijing, New York, London. It's the hottest day that you've ever experienced. There's sun beating down, there's concrete and glass all around you. Now imagine that same day -- but it's six, eight, maybe 10 to 12 degrees warmer on that day during that heat wave. That's the kind of thing we're going to experience under a four-degree global average temperature scenario.\nAnd the problem with these extremes, and not just the temperature extremes, but also the extremes in terms of storms and other climate impacts, is our infrastructure is just not set up to deal with these sorts of events. So our roads and our rail networks have been designed to last for a long time and withstand only certain amounts of impacts in different parts of the world. And this is going to be extremely challenged. Our power stations are expected to be cooled by water to a certain temperature to remain effective and resilient. And our buildings are designed to be comfortable within a particular temperature range. And this is all going to be significantly challenged under a four-degree-type scenario. Our infrastructure has not been designed to cope with this.", 
+    "filename": "AliceBowsLarkin_ClimateChange_2.txt"
+}

@@ -1,1 +1,104 @@
-{"top10": [{"url": "https://simple.wikipedia.org/w/index.php?title=Mind", "text": "The mind is a general term for the way a   . Many people argue about what makes up the mind. Some say that only reason and   and emotional states cannot be separated and should all be part of what we call the mind. People often use mind  to mean the same as thought: the way we talk to ourselves \"inside our heads\". ", "score": 0.44140372, "categories": ["Psychology", "Philosophy"], "title": "Mind"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Human", "text": "", "score": 0.4087064, "categories": ["Humans"], "title": "Human"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mind_control", "text": "Mind control  refers to a theory on the way some have tried to control the beliefs and behaviour of others. It is a process where a group or individual uses methods to persuade other to change their basic beliefs and values. A group or individual may use unethical  methods to persuade others to believe and do what the manipulator want. ", "score": 0.28872135, "categories": ["Cults", "Human issues", "Psychiatry", "Psychology", "Pseudoscience"], "title": "Mind control"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Body_image", "text": "\n\nBody image refers to the perceptions of a humans own physical appearance. It can also refer to  the internal sense of having a body which is interpreted by the brain. A 2007 report by the American Psychological Association found that a culture-wide sexualization http://www.apa.org/pi/women/programs/girls/report-full.pdf   Report of the APA Task Force on the Sexualization of Girls, American Psychological Association, 2007.  of girls   was contributing to increased female anxiety associated with body image. ", "score": 0.27326798, "categories": ["Physiques", "Humans"], "title": "Body image"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Mono_no_aware", "text": "Mono no aware  is a  ,   and tenderness. Mono no aware is a very important concept when reading old literature, so that the reader can understand the importance and beauty of the literature. It is used to express the keen emotion and pathos of a piece of literature and the feeling it gives the readers senses, such as the description of a sound or scenery. ", "score": 0.25498888, "categories": ["Japanese culture"], "title": "Mono no aware"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Dolphin", "text": "order Cetacea. toothed whales. Generally, they are among the smaller whales. Most live in salt water oceans, but some live in rivers   there are oceanic dolphins and river dolphins. Dolphins are from 1.5 to 4 metres  long. The Killer whale is the largest of the group, and can be about  . Greek \u03b4\u03b5\u03bb\u03c6\u03af\u03c2  meaning \"with a womb\", because it was first thought to be a fish with a womb. ", "score": 0.19614908, "categories": ["Toothed whales"], "title": "Dolphin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Common_sense", "text": ":For the pamphlet by Thomas Paine see Common Sense \n\nCommon sense means what people would agree about. It is a personal judgement based on the facts of a situation. Common sense is usually the simplest and most direct account of a situation. It is the knowledge and experience which most people have, or should have. ", "score": 0.12909976, "categories": ["Everyday life", "Philosophy"], "title": "Common sense"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Chinese_river_dolphin", "text": "", "score": 0.1183384, "categories": ["River dolphins"], "title": "Chinese river dolphin"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Carrier_sense_multiple_access_with_collision_detection", "text": "Carrier sense multiple access with collision detection or CSMA/CD is a protocol  used by computer ethernet networks. It stops computers from sending information on the same ethernet wire at the same time. With this rule, a computer will check that the wire is not being used before it sends information. ", "score": 0.091456436, "categories": ["Computer networking"], "title": "Carrier sense multiple access with collision detection"}, {"url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", "text": "", "score": 0.08768344, "categories": ["Elephants", "Mammals of Asia"], "title": "Sri Lankan elephant"}], "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", "filename": "CarlSafina_AnimalFeelings_1.txt"}
+{
+    "top10": [
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mind", 
+            "text": "The mind is a general term for the way a   . Many people argue about what makes up the mind. Some say that only reason and   and emotional states cannot be separated and should all be part of what we call the mind. People often use mind  to mean the same as thought: the way we talk to ourselves \"inside our heads\". ", 
+            "score": 0.44140372, 
+            "categories": [
+                "Psychology", 
+                "Philosophy"
+            ], 
+            "title": "Mind"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Human", 
+            "text": "", 
+            "score": 0.4087064, 
+            "categories": [
+                "Humans"
+            ], 
+            "title": "Human"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mind_control", 
+            "text": "Mind control  refers to a theory on the way some have tried to control the beliefs and behaviour of others. It is a process where a group or individual uses methods to persuade other to change their basic beliefs and values. A group or individual may use unethical  methods to persuade others to believe and do what the manipulator want. ", 
+            "score": 0.28872135, 
+            "categories": [
+                "Cults", 
+                "Human issues", 
+                "Psychiatry", 
+                "Psychology", 
+                "Pseudoscience"
+            ], 
+            "title": "Mind control"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Body_image", 
+            "text": "\n\nBody image refers to the perceptions of a humans own physical appearance. It can also refer to  the internal sense of having a body which is interpreted by the brain. A 2007 report by the American Psychological Association found that a culture-wide sexualization http://www.apa.org/pi/women/programs/girls/report-full.pdf   Report of the APA Task Force on the Sexualization of Girls, American Psychological Association, 2007.  of girls   was contributing to increased female anxiety associated with body image. ", 
+            "score": 0.27326798, 
+            "categories": [
+                "Physiques", 
+                "Humans"
+            ], 
+            "title": "Body image"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Mono_no_aware", 
+            "text": "Mono no aware  is a  ,   and tenderness. Mono no aware is a very important concept when reading old literature, so that the reader can understand the importance and beauty of the literature. It is used to express the keen emotion and pathos of a piece of literature and the feeling it gives the readers senses, such as the description of a sound or scenery. ", 
+            "score": 0.25498888, 
+            "categories": [
+                "Japanese culture"
+            ], 
+            "title": "Mono no aware"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Dolphin", 
+            "text": "order Cetacea. toothed whales. Generally, they are among the smaller whales. Most live in salt water oceans, but some live in rivers   there are oceanic dolphins and river dolphins. Dolphins are from 1.5 to 4 metres  long. The Killer whale is the largest of the group, and can be about  . Greek \u03b4\u03b5\u03bb\u03c6\u03af\u03c2  meaning \"with a womb\", because it was first thought to be a fish with a womb. ", 
+            "score": 0.19614908, 
+            "categories": [
+                "Toothed whales"
+            ], 
+            "title": "Dolphin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Common_sense", 
+            "text": ":For the pamphlet by Thomas Paine see Common Sense \n\nCommon sense means what people would agree about. It is a personal judgement based on the facts of a situation. Common sense is usually the simplest and most direct account of a situation. It is the knowledge and experience which most people have, or should have. ", 
+            "score": 0.12909976, 
+            "categories": [
+                "Everyday life", 
+                "Philosophy"
+            ], 
+            "title": "Common sense"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Chinese_river_dolphin", 
+            "text": "", 
+            "score": 0.1183384, 
+            "categories": [
+                "River dolphins"
+            ], 
+            "title": "Chinese river dolphin"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Carrier_sense_multiple_access_with_collision_detection", 
+            "text": "Carrier sense multiple access with collision detection or CSMA/CD is a protocol  used by computer ethernet networks. It stops computers from sending information on the same ethernet wire at the same time. With this rule, a computer will check that the wire is not being used before it sends information. ", 
+            "score": 0.091456436, 
+            "categories": [
+                "Computer networking"
+            ], 
+            "title": "Carrier sense multiple access with collision detection"
+        }, 
+        {
+            "url": "https://simple.wikipedia.org/w/index.php?title=Sri_Lankan_elephant", 
+            "text": "", 
+            "score": 0.08768344, 
+            "categories": [
+                "Elephants", 
+                "Mammals of Asia"
+            ], 
+            "title": "Sri Lankan elephant"
+        }
+    ], 
+    "orig": "But, uh oh, there's a dolphin, a bigger brain with more convolutions. OK, maybe you're saying, all right, well, we see brains, but what does that have to say about minds? Well, we can see the working of the mind in the logic of behaviors. So these elephants, you can see, obviously, they are resting. They have found a patch of shade under the palm trees under which to let their babies sleep, while they doze but remain vigilant. We make perfect sense of that image just as they make perfect sense of what they're doing because under the arc of the same sun on the same plains, listening to the howls of the same dangers, they became who they are and we became who we are.\nWe've been neighbors for a very long time. No one would mistake these elephants as being relaxed. They're obviously very concerned about something. What are they concerned about? It turns out that if you record the voices of tourists and you play that recording from a speaker hidden in bushes, elephants will ignore it, because tourists never bother elephants. But if you record the voices of herders who carry spears and often hurt elephants in confrontations at water holes, the elephants will bunch up and run away from the hidden speaker. Not only do elephants know that there are humans, they know that there are different kinds of humans, and that some are OK and some are dangerous.", 
+    "filename": "CarlSafina_AnimalFeelings_1.txt"
+}
