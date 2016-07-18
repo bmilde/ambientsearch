@@ -1,1 +1,1 @@
-belief^25597.00000 organization^24176.00000 discrimination^17530.00000 financial^11922.00000 religion^38335.00000 scrutiny^11446.00000 accountability^16953.00000 gender^41591.00000 religious^4433.00000 multinational^16335.00000
+religious^4433.00000 scrutiny^11446.00000 financial^11922.00000 multinational^16335.00000 accountability^16953.00000 discrimination^17530.00000 organization^24176.00000 belief^25597.00000 religion^38335.00000 gender^41591.00000
