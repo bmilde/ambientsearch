@@ -634,7 +634,7 @@ if __name__ == "__main__":
                     print json_out
 
                     with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
-                        json.dump(json_out, outfile)
+                        json.dump(json_out, outfile, indent=4)
     
 
     habibi_trans_dir, habibi_orig_dir_prep, habibi_trans_dir_prep = 'DocRec/ted_transcripts/habibi75','DocRec/orig_preprocessed/habibi75','DocRec/trans_preprocessed/habibi75'
@@ -699,16 +699,19 @@ if __name__ == "__main__":
                                 weight_line = weight_line[:-1]
                             extracted_10_tokens += [(keyword_line,float(weight_line))]
                         
+
                         new_relevant_entries = wiki_search_es.extract_best_articles(extracted_10_tokens, n=10, min_summary_chars=300,minimum_should_match_percent=minimum_should_match_percent)
-                        
+                        extracted_10_tokens.sort(key=lambda tup: tup[1])
+
+                        print extracted_10_tokens[0]
+            
                         with io.open(os.path.join(query_eval_dir, myfile), 'w', encoding='utf-8') as out_file:
                             out_file.write(wiki_search_es.construct_query_string(extracted_10_tokens)+u'\n')
 
                         json_out = {'filename':myfile, 'orig':orig, 'top10':new_relevant_entries}
-                        print json_out
 
                         with open(os.path.join(ndcg_eval_dir, myfile[:-4]+'.json'), 'w') as outfile:
-                            json.dump(json_out, outfile)  
+                            json.dump(json_out, outfile, indent=4)  
 
     else:
         print 'DocRec not found. You can find it at https://github.com/idiap/DocRec.'
