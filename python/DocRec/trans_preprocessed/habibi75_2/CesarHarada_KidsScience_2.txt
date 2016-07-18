@@ -1,0 +1,10 @@
+elevation
+fishing
+sediment
+cinnamon
+coal
+sea
+river
+dust
+sushi
+ocean

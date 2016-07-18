@@ -1,0 +1,10 @@
+consumer
+marketplace
+drugs
+payment
+anonymity
+currencies
+currency
+crypto
+credit
+risks

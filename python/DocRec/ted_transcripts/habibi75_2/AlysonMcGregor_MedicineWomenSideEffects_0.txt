@@ -1,0 +1,10 @@
+medications
+doctors
+tests
+patients
+medical
+medication
+told
+prescribe
+evidence
+medicine

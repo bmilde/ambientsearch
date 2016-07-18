@@ -1,0 +1,10 @@
+disorders
+tested
+drugs
+patients
+idea
+drug
+funding
+prescriptions
+clinical
+humans

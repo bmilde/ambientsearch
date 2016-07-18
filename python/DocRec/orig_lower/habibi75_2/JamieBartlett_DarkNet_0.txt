@@ -1,0 +1,10 @@
+software
+firefox
+urls
+computers
+browser
+users
+encryption
+internet
+chrome
+ip

@@ -1,0 +1,8 @@
+capacities
+brains
+dog
+evolution
+human
+treat
+fuzzy
+treat

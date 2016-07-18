@@ -1,0 +1,10 @@
+temperatures
+extremes
+temperature
+impacts
+climate
+thermal
+degrees
+roads
+inertia
+scenario

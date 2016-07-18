@@ -1,0 +1,10 @@
+medications
+runny
+patients
+doctors
+medication
+medical
+gender
+medicine
+evidence
+doctor

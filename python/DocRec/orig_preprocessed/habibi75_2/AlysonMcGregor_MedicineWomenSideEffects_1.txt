@@ -1,0 +1,10 @@
+disorders
+drugs
+patients
+prescriptions
+clinical
+drug
+regulatory
+gender
+risk
+medical

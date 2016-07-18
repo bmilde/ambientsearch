@@ -1,0 +1,7 @@
+capacities
+brains
+dog
+evolution
+human
+fuzzy
+capacities
