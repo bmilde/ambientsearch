@@ -57,8 +57,8 @@ cd kaldi-gstreamer-server/test/models
 
 # Make a start script for a tedlium model worker:
 
-echo export KALDI_ROOT=~/kaldi/ > run_tedlium.sh
-echo export GST_PLUGIN_PATH=$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
+echo export KALDI_ROOT=$KALDI_ROOT > run_tedlium.sh
+echo export GST_PLUGIN_PATH=\$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
 echo python kaldigstserver/worker.py -u ws://localhost:8100/worker/ws/speech -c sample_english_nnet2.yaml >> run_tedlium.sh
 chmod guo+x run_tedlium.sh
 
