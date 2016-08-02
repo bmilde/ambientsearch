@@ -76,6 +76,6 @@ python kaldigstserver/master_server.py --port=8100
 
 CRTL-A C
 
-# Now run the worker (You will need about 4gb of RAM per worker)
+# Now run the worker (You will need about 4gb of RAM per worker if you activiated the LM)
 
 ./run_tedlium.sh
