@@ -23,14 +23,14 @@ sudo apt-get install gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreame
 # Now install the gst-kaldi-nnet2-online plugin:
 
 export KALDI_ROOT=~/kaldi/
-cd ~/kaldi/tools/
+cd $KALDI_ROOT/tools/
 git clone https://github.com/alumae/gst-kaldi-nnet2-online
 cd gst-kaldi-nnet2-online/src
 make depend
 make
 
 # You can now test if the gst-kaldi-nnet2-online installation works:
-GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinnet2onlinedecoder
+GST_PLUGIN_PATH=$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinnet2onlinedecoder
 
 #[...]
 #Plugin Details:
@@ -58,7 +58,7 @@ cd kaldi-gstreamer-server/test/models
 # Make a start script for a tedlium model worker:
 
 echo export KALDI_ROOT=~/kaldi/ > run_tedlium.sh
-echo export GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
+echo export GST_PLUGIN_PATH=$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
 echo python kaldigstserver/worker.py -u ws://localhost:8100/worker/ws/speech -c sample_english_nnet2.yaml >> run_tedlium.sh
 chmod guo+x run_tedlium.sh
 
