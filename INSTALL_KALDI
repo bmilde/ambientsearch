@@ -1,10 +1,11 @@
-Install Kaldi and OpenBLAS dependencies and compile an optimized version of OpenBLAS specificall for your architecture
-It is important to build a non-multithreaded version of OpenBLAS, as race conditions and strange errors will pop while using Kaldi otherwise.  
+#Install Kaldi and OpenBLAS dependencies and compile an optimized version of OpenBLAS specificall for your architecture
+#It is important to build a non-multithreaded version of OpenBLAS, as race conditions and strange errors will pop while using Kaldi otherwise.  
 
 sudo apt-get install gfortran build-essential automake git zlib1g-dev libtool subversion curl vim python-pip screen
 wget http://github.com/xianyi/OpenBLAS/archive/v0.2.18.tar.gz
 make BINARY=64 FC=gfortran USE_THREAD=0
-sudo make install
+sudo mkdir /opt/openblas_st
+sudo make PREFIX=/opt/openblas_st install
 
 # Now build Kaldi:
 
@@ -13,7 +14,7 @@ git clone https://github.com/kaldi-asr/kaldi kaldi
 cd ~/kaldi/tools
 make
 cd ~/kaldi/
-./configure --mathlib=OPENBLAS --static-math=yes --use-cuda={yes|no} --shared
+./configure --shared --static-math=yes --mathlib=OPENBLAS --openblas-root=/opt/openblas_st/ --use-cuda={yes|no} 
 
 # Dependencies for the gst-kaldi-nnet2-online plugin:
 
