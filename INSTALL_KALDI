@@ -79,3 +79,14 @@ CRTL-A C
 # Now run the worker (You will need about 4gb of RAM per worker if you activiated the LM)
 
 ./run_tedlium.sh
+
+# It should now load the acoustic and language model and finish with:
+
+2016-08-02 14:39:33 -    INFO:   __main__: Opened websocket connection to server
+
+# If you go back to the server, you should also see:
+CRTL-A P
+
+INFO 2016-08-02 14:39:33,061 New worker available <__main__.WorkerSocketHandler object at 0x7f2e7c087950>
+
+# Congratulations! Your full-duplex online speech recognition server is running on port 8100! You could also run multiple workers, if you need concurrent connections.
