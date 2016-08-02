@@ -46,7 +46,7 @@ GST_PLUGIN_PATH=$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kal
 
 # Now install ~/kaldi/tools/kaldi-gstreamer-server
 
-cd ~/kaldi/tools/
+cd $KALDI_ROOT/tools/
 git clone https://github.com/alumae/kaldi-gstreamer-server
 
 # Download the Tedlium nnet2 model
