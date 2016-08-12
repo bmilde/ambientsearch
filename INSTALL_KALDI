@@ -1,10 +1,11 @@
-Install Kaldi and OpenBLAS dependencies and compile an optimized version of OpenBLAS specificall for your architecture
-It is important to build a non-multithreaded version of OpenBLAS, as race conditions and strange errors will pop while using Kaldi otherwise.  
+#Install Kaldi and OpenBLAS dependencies and compile an optimized version of OpenBLAS specificall for your architecture
+#It is important to build a non-multithreaded version of OpenBLAS, as race conditions and strange errors will pop while using Kaldi otherwise.  
 
 sudo apt-get install gfortran build-essential automake git zlib1g-dev libtool subversion curl vim python-pip screen
 wget http://github.com/xianyi/OpenBLAS/archive/v0.2.18.tar.gz
 make BINARY=64 FC=gfortran USE_THREAD=0
-sudo make install
+sudo mkdir /opt/openblas_st
+sudo make PREFIX=/opt/openblas_st install
 
 # Now build Kaldi:
 
@@ -13,7 +14,7 @@ git clone https://github.com/kaldi-asr/kaldi kaldi
 cd ~/kaldi/tools
 make
 cd ~/kaldi/
-./configure --mathlib=OPENBLAS --static-math=yes --use-cuda={yes|no} --shared
+./configure --shared --static-math=yes --mathlib=OPENBLAS --openblas-root=/opt/openblas_st/ --use-cuda={yes|no} 
 
 # Dependencies for the gst-kaldi-nnet2-online plugin:
 
@@ -22,14 +23,14 @@ sudo apt-get install gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreame
 # Now install the gst-kaldi-nnet2-online plugin:
 
 export KALDI_ROOT=~/kaldi/
-cd ~/kaldi/tools/
+cd $KALDI_ROOT/tools/
 git clone https://github.com/alumae/gst-kaldi-nnet2-online
 cd gst-kaldi-nnet2-online/src
 make depend
 make
 
 # You can now test if the gst-kaldi-nnet2-online installation works:
-GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinnet2onlinedecoder
+GST_PLUGIN_PATH=$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinnet2onlinedecoder
 
 #[...]
 #Plugin Details:
@@ -45,7 +46,7 @@ GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src gst-inspect-1.0 kaldinn
 
 # Now install ~/kaldi/tools/kaldi-gstreamer-server
 
-cd ~/kaldi/tools/
+cd $KALDI_ROOT/tools/
 git clone https://github.com/alumae/kaldi-gstreamer-server
 
 # Download the Tedlium nnet2 model
@@ -56,8 +57,8 @@ cd kaldi-gstreamer-server/test/models
 
 # Make a start script for a tedlium model worker:
 
-echo export KALDI_ROOT=~/kaldi/ > run_tedlium.sh
-echo export GST_PLUGIN_PATH=~/kaldi/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
+echo export KALDI_ROOT=$KALDI_ROOT > run_tedlium.sh
+echo export GST_PLUGIN_PATH=\$KALDI_ROOT/tools/gst-kaldi-nnet2-online/src >> run_tedlium.sh
 echo python kaldigstserver/worker.py -u ws://localhost:8100/worker/ws/speech -c sample_english_nnet2.yaml >> run_tedlium.sh
 chmod guo+x run_tedlium.sh
 
@@ -75,6 +76,17 @@ python kaldigstserver/master_server.py --port=8100
 
 CRTL-A C
 
-# Now run the worker (You will need about 4gb of RAM per worker)
+# Now run the worker (You will need about 4gb of RAM per worker if you activiated the LM)
 
 ./run_tedlium.sh
+
+# It should now load the acoustic and language model and finish with:
+
+2016-08-02 14:39:33 -    INFO:   __main__: Opened websocket connection to server
+
+# If you go back to the server, you should also see:
+CRTL-A P
+
+INFO 2016-08-02 14:39:33,061 New worker available <__main__.WorkerSocketHandler object at 0x7f2e7c087950>
+
+# Congratulations! Your full-duplex online speech recognition server is running on port 8100! You could also run multiple workers, if you need concurrent connections.
