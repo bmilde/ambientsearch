@@ -273,14 +273,20 @@ if __name__ == "__main__":
         'lower value will find more keywords, but takes longer to load and needs more memory')
     parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
     parser.add_argument('-d', '--decay', type=float, default=0.5, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
-    parser.add_argument('-e', '--extra-keywords', type=str, default = '', dest = 'extra_keywords', help='Add these user defined extra keywords (filename)')
-    parser.add_argument('-b', '--blacklist-ids', type=str, default = '', dest = 'blacklist_file', help='Never show these wikipedia ids!')
 
+    use_extra_keywords = False
+    use_blacklist_file = False
+
+# This has been used for demonstratory purporses in early stages of development. You can activate it 
+#    parser.add_argument('-e', '--extra-keywords', type=str, default = '', dest = 'extra_keywords', help='Add these user defined extra keywords (filename)')
+#    parser.add_argument('-b', '--blacklist-ids', type=str, default = '', dest = 'blacklist_file', help='Never show these wikipedia ids!')
+#    use_extra_keywords = True
+#    use_blacklist_file = True
 
     args = parser.parse_args()
     ke = keyword_extract_w2v.W2VKeywordExtract(
-        lang=args.language, extra_keywords=args.extra_keywords, cutoff_druid_score=args.cutoff_druid_score)
+        lang=args.language, extra_keywords=(args.extra_keywords if use_extra_keywords else ''), cutoff_druid_score=args.cutoff_druid_score)
 
-    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay, blacklist_file=args.blacklist_file)
+    event_gen = EventGenerator(args.ambient_uri, ke, lang=args.language, decay=args.decay, blacklist_file=(args.blacklist_file if use_extra_keywords else ''))
     event_gen.start_listen()
 
