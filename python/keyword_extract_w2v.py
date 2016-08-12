@@ -75,7 +75,7 @@ def pos_tags(text):
 class W2VKeywordExtract:
 
     def __init__(self, lang='en', extra_keywords='', cutoff_druid_score=0.2, data_directory='data/',
-            w2v_model_path='simple-enwiki-latest.word2vec', tfidf_model_path='simple-enwiki-latest.tfidf', 
+            w2v_model_path='simple_enwiki_latest.word2vec', tfidf_model_path='simple_enwiki_latest.tfidf', 
             tfidf_conversation_path='conversation.tfidf', druid_path='druid_en.bz2', multiwords=True, noun_adj_filter=True, stopword_removal=True):
 
         self.data_directory = data_directory
