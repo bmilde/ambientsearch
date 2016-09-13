@@ -6,6 +6,10 @@ The retrieved documents, in the default installation Wikipedia articles from the
 
 Ambient search is implemented in Python and uses the Flask Microframework to interact with its browser interface. It builds on [Kaldi](http://kaldi-asr.org/) and [Kaldi Gstreamer Server](https://github.com/alumae/kaldi-gstreamer-server) for the speech recognition, [Redis](http://redis.io/) to interact and pass messages between its modules, [DRUID](http://jobimtext.org/components/druid/) for keyphrase extraction and [Gensim](https://radimrehurek.com/gensim/) for topic modelling. 
 
+# Demonstration video
+
+A video of the full system listening to the first minutes of the TED talk ["We’re too late to prevent climate change - here is how we adapt"](https://www.ted.com/talks/alice_bows_larkin_we_re_too_late_to_prevent_climate_change_here_s_how_we_adapt?language=en) can be viewed <a href="https://github.com/bmilde/ambientsearch/blob/master/demo_video_august_2016.mp4?raw=true">here</a>, also showing how one can interact with the system. 
+
 # Impressions
 
 Impression of the system after listening to the TED talk ["We’re too late to prevent climate change - here is how we adapt"](https://www.ted.com/talks/alice_bows_larkin_we_re_too_late_to_prevent_climate_change_here_s_how_we_adapt?language=en):
