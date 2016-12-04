@@ -14,7 +14,8 @@ sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 
 # Currently using a public server. Configure this to your own server.
 es = Elasticsearch([
-    {'host': 'localhost', 'port': 9200}
+    {'host': 'wiki.machinelearning.online', 'port': 80}
+    #{'host': 'localhost', 'port': 9200}
 ], send_get_body_as='POST')
 
 # Build a full ES query with filters (to remove redirect and special pages) 
