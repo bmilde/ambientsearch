@@ -269,10 +269,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Command line client for kaldigstserver and the ambient visualization server')
     parser.add_argument('-a', '--ambient-uri', type=str, default='http://localhost:5000/', dest='ambient_uri', help='Ambient server websocket URI')
-    parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.2, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
+    parser.add_argument('-c', '--cutoff-druid-score', type=float, default=0.5, dest='cutoff_druid_score', help='Cutoff score for the druid algorithm, '
         'lower value will find more keywords, but takes longer to load and needs more memory')
     parser.add_argument('-l', '--language', type=str, default='en', dest='language', help='Select a language for the relevant evant geneartor (en,de). Defaults to en.')
-    parser.add_argument('-d', '--decay', type=float, default=0.5, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
+    parser.add_argument('-d', '--decay', type=float, default=0.8, dest = 'decay', help='Score decay for displayed entries (so that new entries can come to replace the older ones')
 
     use_extra_keywords = False
     use_blacklist_file = False
