@@ -7,14 +7,14 @@ import nltk
 import traceback
 import nltk.data
 
-wiki_index = 'simple_en_wiki_may2016'
+wiki_index = 'simple_en_wiki'
 default_type = 'page'
 
 sent_detector = nltk.data.load('tokenizers/punkt/english.pickle')
 
 # Currently using a public server. Configure this to your own server.
 es = Elasticsearch([
-    {'host': 'wiki.machinelearning.online', 'port': 80}
+    {'host': 'localhost', 'port': 9200}
 ], send_get_body_as='POST')
 
 # Build a full ES query with filters (to remove redirect and special pages) 
