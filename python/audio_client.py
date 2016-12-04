@@ -188,7 +188,7 @@ def connect_ws(args):
 def main():
 
     parser = argparse.ArgumentParser(description='Command line client for kaldigstserver')
-    parser.add_argument('-u', '--uri', default="ws://engine.compress.to:8100/client/ws/speech", dest="uri",
+    parser.add_argument('-u', '--uri', default="ws://localhost:8100/client/ws/speech", dest="uri",
                         help="Server websocket URI")
     parser.add_argument('-a', '--ambient-uri', default='http://localhost:5000/', dest='ambient_uri',
                         help='Ambient server websocket URI')
