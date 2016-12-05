@@ -108,12 +108,10 @@ class KaldiClient(WebSocketClient):
         def send_data_to_ws():
             buffer_size = 1024
 
-            if  self.input_microphone_id == -1:
-                self.input_microphone_id = self.getAudioDeviceByString("Yamaha")
-                if self.input_microphone_id == -1:
-                    sys.exit(-1)
-                else:
-                    print 'Selecting device',self.input_microphone_id,'as input device'
+            if self.input_microphone_id == -1:
+                sys.exit(-1)
+            else:
+                print 'Selecting device',self.input_microphone_id,'as input device'
 
             stream = self.paudio.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=1024, input_device_index = self.input_microphone_id)  
             
