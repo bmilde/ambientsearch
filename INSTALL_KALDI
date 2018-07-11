@@ -12,9 +12,11 @@ sudo make PREFIX=/opt/openblas_st install
 cd ~
 git clone https://github.com/kaldi-asr/kaldi kaldi
 cd ~/kaldi/tools
-make
-cd ~/kaldi/
+make -j 8
+cd ../src
 ./configure --shared --static-math=yes --mathlib=OPENBLAS --openblas-root=/opt/openblas_st/ --use-cuda={yes|no} 
+# finally build Kaldi:
+make depend -j 8; make -j 8
 
 # Dependencies for the gst-kaldi-nnet2-online plugin:
 
